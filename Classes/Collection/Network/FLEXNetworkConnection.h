@@ -11,6 +11,7 @@
 #import "FLEXNetworkRequest.h"
 #import "FLEXNetworkResponse.h"
 #import "FLEXNetworkResourceTiming.h"
+#import "FLEXNetworkError.h"
 
 typedef enum : NSUInteger {
     FLEXNetworkConnectionTypeSession,
@@ -28,6 +29,8 @@ typedef enum : NSUInteger {
 
 // Timing information for the given request.
 @property (nonatomic, strong) FLEXNetworkResourceTiming *timing;
+
+@property (nonatomic, strong) FLEXNetworkError *error;
 
 @property (nonatomic, strong) NSString *responseString;
 //@property (nonatomic, strong) id responseObject;

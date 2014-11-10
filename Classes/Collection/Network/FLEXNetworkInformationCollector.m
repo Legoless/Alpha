@@ -925,6 +925,8 @@
         FLEXNetworkConnection *networkConnection = [self networkConnectionForObject:connection];
         networkConnection.timing.connectEnd = [NSDate PD_timestamp];
         
+        networkConnection.error = [FLEXNetworkError networkErrorWithError:error];
+        
         [self connectionFinished:connection];
     }];
 }
@@ -1022,6 +1024,8 @@
         }
         
         FLEXNetworkConnection *networkConnection = [self networkConnectionForObject:task];
+        
+        networkConnection.error = [FLEXNetworkError networkErrorWithError:error];
         
         networkConnection.timing.connectEnd = [NSDate PD_timestamp];
         

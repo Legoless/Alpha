@@ -32,7 +32,7 @@
     
     if (self)
     {
-        self.title = @"💬  Network";
+        self.title = @"Network";
         self.requests = [[FLEXNetworkInformationCollector sharedCollector].requests copy];
     }
     return self;
@@ -56,7 +56,7 @@
     NSURL *url = [NSURL URLWithString:networkConnection.request.url];
     NSInteger statusCode = [networkConnection.response.status integerValue];
     
-    NSString *string = [NSString stringWithFormat:@"● %ld  %@ %@", (long)statusCode, method, url.path];
+    NSString *string = [NSString stringWithFormat:@"● %@ %@", method, url.path];
     
     UIFont *font = [FLEXUtility defaultTableViewCellLabelFont];
     
@@ -79,7 +79,7 @@
     // Bold the method
     //
     
-    [title addAttributes:@{ NSFontAttributeName : [UIFont boldSystemFontOfSize:font.pointSize] } range:NSMakeRange(2 + [networkConnection.response.status stringValue].length + 2, method.length)];
+    [title addAttributes:@{ NSFontAttributeName : [UIFont boldSystemFontOfSize:font.pointSize] } range:NSMakeRange(2, method.length)];
     
     
     return title;
@@ -103,11 +103,14 @@
     }
     else
     {
-        [detailString appendFormat:@"%@ - ", networkConnection.response.mimeType];
-        
-        NSString* bytes = [NSByteCountFormatter stringFromByteCount:networkConnection.size.longLongValue countStyle:NSByteCountFormatterCountStyleFile];
-        
-        [detailString appendFormat:@"%@ - ", bytes];
+        if (networkConnection.response)
+        {
+            [detailString appendFormat:@"%@ - ", networkConnection.response.mimeType];
+            
+            NSString* bytes = [NSByteCountFormatter stringFromByteCount:networkConnection.size.longLongValue countStyle:NSByteCountFormatterCountStyleFile];
+            
+            [detailString appendFormat:@"%@ - ", bytes];
+        }
         
         if (timeMilliseconds > 1000.0)
         {
