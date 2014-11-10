@@ -42,7 +42,6 @@ static __weak UIWindow *s_applicationWindow = nil;
     return _entries;
 }
 
-
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -146,7 +145,7 @@ static __weak UIWindow *s_applicationWindow = nil;
     if ([KZBootstrap isReady])
     {
         titleFuture = ^NSString *{
-            return @"🎨  Environment";
+            return @"🎨  Environments";
         };
         viewControllerFuture = ^UIViewController *{
             return [[FLEXEnvironmentTableViewController alloc] init];
