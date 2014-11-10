@@ -103,13 +103,22 @@
     }
     else
     {
-        if (networkConnection.response)
+        if (networkConnection.response.status.integerValue > 0)
         {
+            [detailString appendFormat:@"%ld - ", networkConnection.response.status.longValue];
             [detailString appendFormat:@"%@ - ", networkConnection.response.mimeType];
             
             NSString* bytes = [NSByteCountFormatter stringFromByteCount:networkConnection.size.longLongValue countStyle:NSByteCountFormatterCountStyleFile];
             
             [detailString appendFormat:@"%@ - ", bytes];
+        }
+        else if (networkConnection.error)
+        {
+            [detailString appendFormat:@"Errored - "];
+        }
+        else
+        {
+            [detailString appendFormat:@"Timed out - "];
         }
         
         if (timeMilliseconds > 1000.0)
