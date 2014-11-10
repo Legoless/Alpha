@@ -150,7 +150,7 @@ static __weak UIWindow *s_applicationWindow = nil;
 {
     self = [super initWithStyle:style];
     if (self) {
-        self.title = @"🌎  Global State";
+        self.title = @"Global State";
         _entries = [[[self class] defaultGlobalEntries] arrayByAddingObjectsFromArray:[FLEXManager sharedManager].userGlobalEntries];
     }
     return self;

@@ -95,6 +95,12 @@
     double timeMilliseconds = time * 1000.0;
     
     NSMutableString *detailString = [NSMutableString string];
+    
+    if (networkConnection.response.status.integerValue > 0)
+    {
+        [detailString appendFormat:@"%ld - ", networkConnection.response.status.longValue];
+    }
+    
     [detailString appendFormat:@"%@ - ", url.host];
     
     if (!networkConnection.timing.connectEnd)
@@ -105,8 +111,7 @@
     {
         if (networkConnection.response.status.integerValue > 0)
         {
-            [detailString appendFormat:@"%ld - ", networkConnection.response.status.longValue];
-            [detailString appendFormat:@"%@ - ", networkConnection.response.mimeType];
+            [detailString appendFormat:@"%@ - ", [self shortStringForMimeType:networkConnection.response.mimeType]];
             
             NSString* bytes = [NSByteCountFormatter stringFromByteCount:networkConnection.size.longLongValue countStyle:NSByteCountFormatterCountStyleFile];
             
@@ -114,11 +119,11 @@
         }
         else if (networkConnection.error)
         {
-            [detailString appendFormat:@"Errored - "];
+            [detailString appendFormat:@"Error - "];
         }
         else
         {
-            [detailString appendFormat:@"Timed out - "];
+            [detailString appendFormat:@"Timeout - "];
         }
         
         if (timeMilliseconds > 1000.0)
@@ -180,6 +185,20 @@
     UIViewController *viewControllerToPush = [self viewControllerToPushForRowAtIndexPath:indexPath];
     
     [self.navigationController pushViewController:viewControllerToPush animated:YES];
+}
+
+#pragma mark - Helpers
+
+- (NSString *)shortStringForMimeType:(NSString *)mimeType
+{
+    NSString* finalType = [mimeType copy];
+
+    if ([finalType hasPrefix:@"application"])
+    {
+        finalType = [finalType stringByReplacingOccurrencesOfString:@"application/" withString:@""];
+    }
+    
+    return finalType;
 }
 
 @end

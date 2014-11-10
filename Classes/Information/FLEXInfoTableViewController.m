@@ -18,6 +18,9 @@
 #import "FLEXGlobalsTableViewControllerEntry.h"
 #import "FLEXManager+Private.h"
 #import "FLEXNetworkTableViewController.h"
+#import "FLEXEnvironmentTableViewController.h"
+
+#import "KZBootstrap+FLEXUtilities.h"
 
 static __weak UIWindow *s_applicationWindow = nil;
 
@@ -84,11 +87,11 @@ static __weak UIWindow *s_applicationWindow = nil;
     
     [self.entries removeAllObjects];
     
+    FLEXGlobalsTableViewControllerEntryNameFuture titleFuture = nil;
+    FLEXGlobalsTableViewControllerViewControllerFuture viewControllerFuture = nil;
+    
     for (NSInteger rowIndex = 0; rowIndex < 4; rowIndex++)
     {
-        FLEXGlobalsTableViewControllerEntryNameFuture titleFuture = nil;
-        FLEXGlobalsTableViewControllerViewControllerFuture viewControllerFuture = nil;
-        
         switch (rowIndex)
         {
             case 0:
@@ -133,6 +136,22 @@ static __weak UIWindow *s_applicationWindow = nil;
                 break;
         }
         
+        [self.entries addObject:[FLEXGlobalsTableViewControllerEntry entryWithNameFuture:titleFuture viewControllerFuture:viewControllerFuture]];
+    }
+    
+    //
+    // Add KZBootstrap
+    //
+    
+    if ([KZBootstrap isReady])
+    {
+        titleFuture = ^NSString *{
+            return @"🎨  Environment";
+        };
+        viewControllerFuture = ^UIViewController *{
+            return [[FLEXEnvironmentTableViewController alloc] init];
+        };
+
         [self.entries addObject:[FLEXGlobalsTableViewControllerEntry entryWithNameFuture:titleFuture viewControllerFuture:viewControllerFuture]];
     }
 }
