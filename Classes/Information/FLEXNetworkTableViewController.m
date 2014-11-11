@@ -181,6 +181,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     UIViewController *viewControllerToPush = [self viewControllerToPushForRowAtIndexPath:indexPath];
     
     [self.navigationController pushViewController:viewControllerToPush animated:YES];

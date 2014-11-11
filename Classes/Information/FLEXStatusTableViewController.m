@@ -59,6 +59,8 @@
 // Update timer
 //
 
+#warning ADD APPLICATION BADGE AND LOCALE INFORMATION, NETWORK INFORMATION, ...
+
 @property (nonatomic, strong) NSTimer* refreshTimer;
 
 @end
