@@ -9,8 +9,8 @@
 // Haystack
 #define COCOAPODS_POD_AVAILABLE_Haystack
 #define COCOAPODS_VERSION_MAJOR_Haystack 0
-#define COCOAPODS_VERSION_MINOR_Haystack 5
-#define COCOAPODS_VERSION_PATCH_Haystack 7
+#define COCOAPODS_VERSION_MINOR_Haystack 6
+#define COCOAPODS_VERSION_PATCH_Haystack 2
 
 // JSONModel
 #define COCOAPODS_POD_AVAILABLE_JSONModel

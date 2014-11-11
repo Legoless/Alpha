@@ -19,6 +19,7 @@
 #import "FLEXManager+Private.h"
 #import "FLEXNetworkTableViewController.h"
 #import "FLEXEnvironmentTableViewController.h"
+#import "FLEXStatusTableViewController.h"
 
 #import "KZBootstrap+FLEXUtilities.h"
 
@@ -89,7 +90,7 @@ static __weak UIWindow *s_applicationWindow = nil;
     FLEXGlobalsTableViewControllerEntryNameFuture titleFuture = nil;
     FLEXGlobalsTableViewControllerViewControllerFuture viewControllerFuture = nil;
     
-    for (NSInteger rowIndex = 0; rowIndex < 4; rowIndex++)
+    for (NSInteger rowIndex = 0; rowIndex < 5; rowIndex++)
     {
         switch (rowIndex)
         {
@@ -129,6 +130,14 @@ static __weak UIWindow *s_applicationWindow = nil;
                 };
                 viewControllerFuture = ^UIViewController *{
                     return [[FLEXNetworkTableViewController alloc] init];
+                };
+                break;
+            case 4:
+                titleFuture = ^NSString *{
+                    return @"📊  Status";
+                };
+                viewControllerFuture = ^UIViewController *{
+                    return [[FLEXStatusTableViewController alloc] init];
                 };
                 break;
             default:

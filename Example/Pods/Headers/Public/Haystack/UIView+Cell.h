@@ -1,1 +1,1 @@
-../../../Haystack/SDK/UIView+Cell/UIView+Cell.h
+../../../Haystack/SDK/Categories/UIView+Cell/UIView+Cell.h

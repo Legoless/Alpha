@@ -1,1 +1,1 @@
-../../../Haystack/SDK/UIViewController+BackgroundImage/UIViewController+BackgroundImage.h
+../../../Haystack/SDK/Categories/UIViewController+BackgroundImage/UIViewController+BackgroundImage.h

@@ -1,1 +1,1 @@
-../../../Haystack/SDK/NSObject+Swizzle/NSObject+Swizzle.h
+../../../Haystack/SDK/Categories/NSObject+Swizzle/NSObject+Swizzle.h

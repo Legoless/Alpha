@@ -1,1 +1,1 @@
-../../../Haystack/SDK/NSString+Additional/NSString+Additional.h
+../../../Haystack/SDK/Categories/NSString+Additional/NSString+Additional.h

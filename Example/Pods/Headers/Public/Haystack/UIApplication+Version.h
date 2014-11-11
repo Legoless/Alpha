@@ -1,1 +1,1 @@
-../../../Haystack/SDK/UIApplication+Version/UIApplication+Version.h
+../../../Haystack/SDK/Categories/UIApplication+Version/UIApplication+Version.h

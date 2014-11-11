@@ -1,1 +1,1 @@
-../../../Haystack/SDK/UIFont+SmallCaps/UIFont+SmallCaps.h
+../../../Haystack/SDK/Categories/UIFont+SmallCaps/UIFont+SmallCaps.h

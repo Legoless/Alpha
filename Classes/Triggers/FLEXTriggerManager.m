@@ -105,6 +105,12 @@
     [[FLEXInformationManager sharedManager] setupCollectors];
     
     [FLEXNetworkInformationCollector injectIntoAllNSURLConnectionDelegateClasses];
+    
+    for (FLEXInformationCollector *collector in [FLEXInformationManager sharedManager].collectors)
+    {
+        [collector activate];
+    }
+    
 }
 
 @end

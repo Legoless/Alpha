@@ -1,1 +1,1 @@
-../../../Haystack/SDK/UIColor+Flat/UIColor+Flat.h
+../../../Haystack/SDK/Categories/UIColor+Flat/UIColor+Flat.h

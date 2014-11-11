@@ -1,1 +1,1 @@
-../../../Haystack/SDK/NSDictionary+Class/NSDictionary+Class.h
+../../../Haystack/SDK/Categories/NSDictionary+Class/NSDictionary+Class.h

@@ -1,1 +1,1 @@
-../../../Haystack/SDK/UIAlertView+Short/UIAlertView+Short.h
+../../../Haystack/SDK/Categories/UIAlertView+Short/UIAlertView+Short.h

@@ -1,1 +1,1 @@
-../../../Haystack/SDK/UIView+Debug/UIView+Debug.h
+../../../Haystack/SDK/Categories/UIView+Debug/UIView+Debug.h

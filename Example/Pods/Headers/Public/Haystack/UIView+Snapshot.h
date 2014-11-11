@@ -1,1 +1,1 @@
-../../../Haystack/SDK/UIView+Snapshot/UIView+Snapshot.h
+../../../Haystack/SDK/Categories/UIView+Snapshot/UIView+Snapshot.h

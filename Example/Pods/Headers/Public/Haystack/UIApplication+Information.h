@@ -1,0 +1,1 @@
+../../../Haystack/SDK/Categories/UIApplication+Information/UIApplication+Information.h

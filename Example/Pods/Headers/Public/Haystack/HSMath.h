@@ -1,1 +1,1 @@
-../../../Haystack/SDK/HSMath/HSMath.h
+../../../Haystack/SDK/Classes/HSMath/HSMath.h

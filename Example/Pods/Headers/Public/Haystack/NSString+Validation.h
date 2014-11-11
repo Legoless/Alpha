@@ -1,1 +1,1 @@
-../../../Haystack/SDK/NSString+Validation/NSString+Validation.h
+../../../Haystack/SDK/Categories/NSString+Validation/NSString+Validation.h

@@ -1,1 +1,1 @@
-../../../Haystack/SDK/NSObject+PropertyList/NSObject+PropertyList.h
+../../../Haystack/SDK/Categories/NSObject+PropertyList/NSObject+PropertyList.h

@@ -1,1 +1,1 @@
-../../../Haystack/SDK/NSDate+Timestamp/NSDate+Timestamp.h
+../../../Haystack/SDK/Categories/NSDate+Timestamp/NSDate+Timestamp.h

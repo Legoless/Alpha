@@ -1,0 +1,1 @@
+../../../Haystack/SDK/Categories/UIDevice+Software/UIDevice+Software.h

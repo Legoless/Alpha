@@ -17,6 +17,11 @@
 
 @implementation FLEXInformationManager
 
+- (NSArray *)collectors
+{
+    return [self.baseCollectors copy];
+}
+
 - (NSMutableArray *)baseCollectors
 {
     if (!_baseCollectors)
