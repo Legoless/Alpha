@@ -115,6 +115,13 @@
 {
     BOOL supported = type && strcmp(type, FLEXEncodeClass(UIFont)) == 0;
     supported = supported || (value && [value isKindOfClass:[UIFont class]]);
+    
+    //
+    // Optional protocols because of JSONModel
+    //
+    
+    supported = supported || (type && (strcmp(type, FLEXEncodeClass(UIFont<Optional>)) == 0));
+    
     return supported;
 }
 

@@ -26,6 +26,7 @@
 @end
 
 @implementation FLEXNetworkTableViewController
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -37,7 +38,6 @@
     }
     return self;
 }
-
 
 #pragma mark - UIViewController
 
@@ -176,7 +176,6 @@
     
     return cell;
 }
-
 
 #pragma mark - Table View Delegate
 

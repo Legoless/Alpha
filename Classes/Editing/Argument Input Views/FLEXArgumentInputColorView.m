@@ -323,7 +323,15 @@
 
 + (BOOL)supportsObjCType:(const char *)type withCurrentValue:(id)value
 {
-    return (type && (strcmp(type, @encode(CGColorRef)) == 0 || strcmp(type, FLEXEncodeClass(UIColor)) == 0)) || [value isKindOfClass:[UIColor class]];
+    BOOL supported = (type && (strcmp(type, @encode(CGColorRef)) == 0 || strcmp(type, FLEXEncodeClass(UIColor)) == 0)) || [value isKindOfClass:[UIColor class]];
+    
+    //
+    // Optional protocols because of JSONModel
+    //
+    
+    supported = supported || (type && (strcmp(type, FLEXEncodeClass(UIColor<Optional>)) == 0));
+    
+    return supported;
 }
 
 @end

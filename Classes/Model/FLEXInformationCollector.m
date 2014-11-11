@@ -14,12 +14,18 @@
 
 + (instancetype)sharedCollector;
 {
-    static id defaultInstance = nil;
+    static NSMutableDictionary* defaultInstances = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        defaultInstance = [[self alloc] init];
+        defaultInstances = [[NSMutableDictionary alloc] init];
     });
-    return defaultInstance;
+    
+    if (!defaultInstances[NSStringFromClass(self.class)])
+    {
+        defaultInstances[NSStringFromClass(self.class)] = [[self.class alloc] init];
+    }
+    
+    return defaultInstances[NSStringFromClass(self.class)];
 }
 
 

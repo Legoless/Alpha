@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0149BFE2198FAFC700B90A1B /* FLEXFileBrowserSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0149BFE1198FAFC700B90A1B /* FLEXFileBrowserSearchOperation.m */; };
 		01985ABC1984DE9500A65332 /* FLEXArgumentInputFontsPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01985ABB1984DE9500A65332 /* FLEXArgumentInputFontsPickerView.m */; };
+		383156421A1210F10091216D /* FLEXConsoleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 383156411A1210F10091216D /* FLEXConsoleTableViewController.m */; };
+		383156451A1215B00091216D /* FLEXConsoleLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 383156441A1215B00091216D /* FLEXConsoleLog.m */; };
 		384517B21A0BB8E200399757 /* FLEXNetworkResourceTiming.m in Sources */ = {isa = PBXBuildFile; fileRef = 384517B11A0BB8E200399757 /* FLEXNetworkResourceTiming.m */; };
 		384517B51A0BB8FF00399757 /* FLEXNetworkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 384517B41A0BB8FF00399757 /* FLEXNetworkRequest.m */; };
 		384517B81A0BB91800399757 /* FLEXNetworkResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 384517B71A0BB91800399757 /* FLEXNetworkResponse.m */; };
@@ -127,6 +129,10 @@
 		01985ABA1984DE9500A65332 /* FLEXArgumentInputFontsPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXArgumentInputFontsPickerView.h; sourceTree = "<group>"; };
 		01985ABB1984DE9500A65332 /* FLEXArgumentInputFontsPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXArgumentInputFontsPickerView.m; sourceTree = "<group>"; };
 		0C6C81861F8DC133E5D85165 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		383156401A1210F10091216D /* FLEXConsoleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXConsoleTableViewController.h; sourceTree = "<group>"; };
+		383156411A1210F10091216D /* FLEXConsoleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXConsoleTableViewController.m; sourceTree = "<group>"; };
+		383156431A1215B00091216D /* FLEXConsoleLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXConsoleLog.h; sourceTree = "<group>"; };
+		383156441A1215B00091216D /* FLEXConsoleLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXConsoleLog.m; sourceTree = "<group>"; };
 		384517B01A0BB8E200399757 /* FLEXNetworkResourceTiming.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXNetworkResourceTiming.h; sourceTree = "<group>"; };
 		384517B11A0BB8E200399757 /* FLEXNetworkResourceTiming.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXNetworkResourceTiming.m; sourceTree = "<group>"; };
 		384517B31A0BB8FF00399757 /* FLEXNetworkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXNetworkRequest.h; sourceTree = "<group>"; };
@@ -376,6 +382,8 @@
 				384B27B91A0CEB8F00601515 /* FLEXInfoTableViewController.m */,
 				3890A7311A10DE8D001DE67B /* FLEXStatusTableViewController.h */,
 				3890A7321A10DE8D001DE67B /* FLEXStatusTableViewController.m */,
+				383156401A1210F10091216D /* FLEXConsoleTableViewController.h */,
+				383156411A1210F10091216D /* FLEXConsoleTableViewController.m */,
 			);
 			name = Information;
 			path = ../Classes/Information;
@@ -440,6 +448,8 @@
 			children = (
 				3890A72E1A10CB0A001DE67B /* FLEXConsoleInformationCollector.h */,
 				3890A72F1A10CB0A001DE67B /* FLEXConsoleInformationCollector.m */,
+				383156431A1215B00091216D /* FLEXConsoleLog.h */,
+				383156441A1215B00091216D /* FLEXConsoleLog.m */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -912,6 +922,7 @@
 				944F74A2197B458C009AB039 /* FLEXArgumentInputViewFactory.m in Sources */,
 				944F74A1197B458C009AB039 /* FLEXArgumentInputView.m in Sources */,
 				535682B618F3670300BAAD62 /* AAPLSegmentedControlViewController.m in Sources */,
+				383156421A1210F10091216D /* FLEXConsoleTableViewController.m in Sources */,
 				944F74AE197B458C009AB039 /* FLEXClassesTableViewController.m in Sources */,
 				944F74B1197B458C009AB039 /* FLEXInstancesTableViewController.m in Sources */,
 				944F7497197B458C009AB039 /* FLEXUtility.m in Sources */,
@@ -959,6 +970,7 @@
 				944F74AB197B458C009AB039 /* FLEXManager.m in Sources */,
 				944F74B2197B458C009AB039 /* FLEXLibrariesTableViewController.m in Sources */,
 				535682BF18F3670300BAAD62 /* UIColor+AAPLApplicationSpecific.m in Sources */,
+				383156451A1215B00091216D /* FLEXConsoleLog.m in Sources */,
 				535682B718F3670300BAAD62 /* AAPLSliderViewController.m in Sources */,
 				944F74AC197B458C009AB039 /* FLEXToolbarItem.m in Sources */,
 				944F74B7197B458C009AB039 /* FLEXImagePreviewViewController.m in Sources */,

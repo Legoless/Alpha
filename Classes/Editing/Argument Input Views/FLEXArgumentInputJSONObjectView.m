@@ -54,6 +54,11 @@
                 isJSONSerializableType = isJSONSerializableType || strcmp(type, FLEXEncodeClass(NSArray)) == 0;
                 isJSONSerializableType = isJSONSerializableType || strcmp(type, FLEXEncodeClass(NSDictionary)) == 0;
                 
+                isJSONSerializableType = isJSONSerializableType || strcmp(type, FLEXEncodeClass(NSString<Optional>)) == 0;
+                isJSONSerializableType = isJSONSerializableType || strcmp(type, FLEXEncodeClass(NSNumber<Optional>)) == 0;
+                isJSONSerializableType = isJSONSerializableType || strcmp(type, FLEXEncodeClass(NSArray<Optional>)) == 0;
+                isJSONSerializableType = isJSONSerializableType || strcmp(type, FLEXEncodeClass(NSDictionary<Optional>)) == 0;
+                
                 supported = isJSONSerializableType;
             }
         }

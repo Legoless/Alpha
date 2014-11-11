@@ -10,4 +10,6 @@
 
 @interface FLEXConsoleInformationCollector : FLEXInformationCollector
 
+@property (nonatomic, readonly) NSArray *logs;
+
 @end
