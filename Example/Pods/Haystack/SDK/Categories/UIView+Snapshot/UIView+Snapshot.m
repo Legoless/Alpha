@@ -8,7 +8,7 @@
 
 - (UIImage *)snapshotImage
 {
-    return [self snapshotImageWithScale:1.0];
+    return [self snapshotImageWithScale:2.0];
 }
 
 - (UIImage *)snapshotImageWithScale:(CGFloat)scale

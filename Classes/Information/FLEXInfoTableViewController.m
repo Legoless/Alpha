@@ -21,6 +21,7 @@
 #import "FLEXEnvironmentTableViewController.h"
 #import "FLEXStatusTableViewController.h"
 #import "FLEXConsoleTableViewController.h"
+#import "FLEXScreenshotTableViewController.h"
 #import "FLEXNotificationTableViewController.h"
 
 #import "KZBootstrap+FLEXUtilities.h"
@@ -92,7 +93,7 @@ static __weak UIWindow *s_applicationWindow = nil;
     FLEXGlobalsTableViewControllerEntryNameFuture titleFuture = nil;
     FLEXGlobalsTableViewControllerViewControllerFuture viewControllerFuture = nil;
     
-    for (NSInteger rowIndex = 0; rowIndex < 7; rowIndex++)
+    for (NSInteger rowIndex = 0; rowIndex < 8; rowIndex++)
     {
         switch (rowIndex)
         {
@@ -144,7 +145,7 @@ static __weak UIWindow *s_applicationWindow = nil;
                 break;
             case 5:
                 titleFuture = ^NSString *{
-                    return @"📱  Console";
+                    return @"⚠️  Console";
                 };
                 viewControllerFuture = ^UIViewController *{
                     return [[FLEXConsoleTableViewController alloc] init];
@@ -160,6 +161,14 @@ static __weak UIWindow *s_applicationWindow = nil;
                 };
                 
                 break;
+            case 7:
+                titleFuture = ^NSString *{
+                    return @"📱  Screenshots";
+                };
+                viewControllerFuture = ^UIViewController *{
+                    return [[FLEXScreenshotTableViewController alloc] init];
+                };
+
             default:
                 break;
         }

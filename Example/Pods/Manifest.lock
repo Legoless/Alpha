@@ -1,5 +1,5 @@
 PODS:
-  - Haystack (0.6.2)
+  - Haystack (0.6.4)
   - JSONModel (1.0.1)
   - KZAsserts (1.0)
   - KZBootstrap (0.5.1):
@@ -17,7 +17,7 @@ EXTERNAL SOURCES:
     :git: https://github.com/Legoless/KZBootstrap.git
 
 SPEC CHECKSUMS:
-  Haystack: 9343af23b87c01f6a594f7df9139fb38170251a8
+  Haystack: 4f8a508361e443fddc7ec639302c88b473a9b978
   JSONModel: 634100aaacbd89811bc8a03da209356e5989c569
   KZAsserts: 008f2f37ba7dcb4ce87bb262a7f91406812a66e5
   KZBootstrap: cb80f9c98ff9ba8635d491ac1dc24330c94b0f1e

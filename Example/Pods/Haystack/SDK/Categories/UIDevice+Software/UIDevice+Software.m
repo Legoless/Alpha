@@ -126,7 +126,7 @@
             inUse += _inUse;
             total += _total;
             
-            NSLog(@"Core : %u, Usage: %.2f%%", i, _inUse / _total * 100.f);
+            //NSLog(@"Core : %u, Usage: %.2f%%", i, _inUse / _total * 100.f);
         }
         
         [_cpuUsageLock unlock];

@@ -10,8 +10,9 @@
 #import "HSWeakPointer.h"
 #import "HSUnitFormatter.h"
 
-#import "UIApplication+Version.h"
 #import "UIApplication+Information.h"
+#import "UIApplication+Screenshot.h"
+#import "UIApplication+Version.h"
 
 #import "UIAlertView+Short.h"
 

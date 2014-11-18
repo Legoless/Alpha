@@ -1,0 +1,1 @@
+../../../Haystack/SDK/Categories/UIApplication+Screenshot/UIApplication+Screenshot.h

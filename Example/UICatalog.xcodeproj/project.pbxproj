@@ -32,6 +32,7 @@
 		3890A72D1A10BB5A001DE67B /* KZBootstrap+FLEXUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 3890A72C1A10BB5A001DE67B /* KZBootstrap+FLEXUtilities.m */; };
 		3890A7301A10CB0A001DE67B /* FLEXConsoleInformationCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 3890A72F1A10CB0A001DE67B /* FLEXConsoleInformationCollector.m */; };
 		3890A7331A10DE8D001DE67B /* FLEXStatusTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3890A7321A10DE8D001DE67B /* FLEXStatusTableViewController.m */; };
+		38A2811B1A1BD84300168085 /* FLEXScreenshotTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A2811A1A1BD84300168085 /* FLEXScreenshotTableViewController.m */; };
 		38DE4A291A0B704100EB447A /* FLEXNetworkInformationCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DE4A281A0B704100EB447A /* FLEXNetworkInformationCollector.m */; };
 		38DE4A441A0B781400EB447A /* NSDate+PDDebugger.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DE4A431A0B781400EB447A /* NSDate+PDDebugger.m */; };
 		38DE4A471A0B783600EB447A /* NSData+PDDebugger.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DE4A461A0B783600EB447A /* NSData+PDDebugger.m */; };
@@ -178,6 +179,8 @@
 		3890A72F1A10CB0A001DE67B /* FLEXConsoleInformationCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXConsoleInformationCollector.m; sourceTree = "<group>"; };
 		3890A7311A10DE8D001DE67B /* FLEXStatusTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXStatusTableViewController.h; sourceTree = "<group>"; };
 		3890A7321A10DE8D001DE67B /* FLEXStatusTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXStatusTableViewController.m; sourceTree = "<group>"; };
+		38A281191A1BD84300168085 /* FLEXScreenshotTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXScreenshotTableViewController.h; sourceTree = "<group>"; };
+		38A2811A1A1BD84300168085 /* FLEXScreenshotTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXScreenshotTableViewController.m; sourceTree = "<group>"; };
 		38DE4A271A0B704100EB447A /* FLEXNetworkInformationCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXNetworkInformationCollector.h; sourceTree = "<group>"; };
 		38DE4A281A0B704100EB447A /* FLEXNetworkInformationCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXNetworkInformationCollector.m; sourceTree = "<group>"; };
 		38DE4A421A0B781400EB447A /* NSDate+PDDebugger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+PDDebugger.h"; sourceTree = "<group>"; };
@@ -389,6 +392,8 @@
 				384B27B61A0CE87800601515 /* FLEXNetworkTableViewController.m */,
 				384B27B81A0CEB8F00601515 /* FLEXInfoTableViewController.h */,
 				384B27B91A0CEB8F00601515 /* FLEXInfoTableViewController.m */,
+				38A281191A1BD84300168085 /* FLEXScreenshotTableViewController.h */,
+				38A2811A1A1BD84300168085 /* FLEXScreenshotTableViewController.m */,
 				3890A7311A10DE8D001DE67B /* FLEXStatusTableViewController.h */,
 				3890A7321A10DE8D001DE67B /* FLEXStatusTableViewController.m */,
 				383156401A1210F10091216D /* FLEXConsoleTableViewController.h */,
@@ -976,6 +981,7 @@
 				3890A72A1A10B8AF001DE67B /* FLEXEnvironmentTableViewController.m in Sources */,
 				944F74A5197B458C009AB039 /* FLEXFieldEditorViewController.m in Sources */,
 				944F7489197B458C009AB039 /* FLEXArrayExplorerViewController.m in Sources */,
+				38A2811B1A1BD84300168085 /* FLEXScreenshotTableViewController.m in Sources */,
 				3890A72D1A10BB5A001DE67B /* KZBootstrap+FLEXUtilities.m in Sources */,
 				535682B418F3670300BAAD62 /* AAPLPickerViewController.m in Sources */,
 				387191D51A0A33AB004A1E7F /* NSObject+Swizzle.m in Sources */,

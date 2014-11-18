@@ -33,30 +33,38 @@ Haystack is **not limited only** to Objective-C code, but contains multiple reso
    - **Categories**
      - *Foundation*
         - NSArray+Class
+        - NSDate+Additional
         - NSDate+Timestamp
         - NSDictionary+Class
+        - NSObject+PropertyList
         - NSObject+Swizzle
         - NSSet+Class
         - NSString+Additional
+        - NSString+Validation
      - *UIKit*
         - UIAlertView+Short
+        - UIApplication+Information
         - UIApplication+Version
         - UIButton+Position
         - UIColor+Create
         - UIColor+Flat
         - UIFont+SmallCaps
+        - UIDevice+Capabilities
         - UIDevice+DeviceInfo
+        - UIDevice+Hardware
+        - UIDevice+Software
         - UIView+Cell
         - UIView+Debug
         - UIView+Snapshot
         - UIViewController+BackgroundImage
    - **Classes**
      - *HSMath*
+     - *HSUnitFormatter*
      - *HSWeakPointer*
 
 - **Templates**
 
-   Contains Liftoff templates for many different types of iOS or Mac OS X projects.
+   Contains Liftoff templates for different types of iOS or Mac OS X projects.
    
 - **Tests**
 
@@ -76,7 +84,7 @@ Usage
 
 Documentation
 -------
-All header files and fully documented for ease of use. Only method stubs are displayed in readme, to keep it short. The documentation is in DoxyGen format, allowing you to automatically generate documentation.
+All header files and fully documented for ease of use. Only method stubs are displayed in readme, to keep it short. The documentation is in DoxyGen format, allowing Xcode to parse documentation headers.
 
 Installation & Setup
 --------

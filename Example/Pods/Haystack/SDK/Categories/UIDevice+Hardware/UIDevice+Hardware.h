@@ -13,8 +13,14 @@
 // CPU Related
 //
 
+/*!
+ * Number of CPU cores
+ */
 - (NSUInteger)hs_cpuCount;
 
+/*!
+ * Number of active CPU cores
+ */
 - (NSUInteger)hs_cpuActiveCount;
 
 - (NSUInteger)hs_cpuPhysicalCount;
@@ -63,6 +69,7 @@
 //
 // Network Related
 //
+
 
 /**
  *  Returns MAC address of network adapter
