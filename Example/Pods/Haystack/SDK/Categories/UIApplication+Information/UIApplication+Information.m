@@ -110,4 +110,11 @@
     return tot_cpu;
 }
 
+- (BOOL)isRunningTests
+{
+    NSDictionary* environment = [[NSProcessInfo processInfo] environment];
+    NSString* injectBundle = environment[@"XCInjectBundle"];
+    return [[injectBundle pathExtension] isEqualToString:@"xctest"];
+}
+
 @end

@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 f. All rights reserved.
 //
 
+#import <Haystack/Haystack.h>
+
 #import "FLEXNetworkInformationCollector.h"
 
 #import "FLEXTapTrigger.h"
@@ -91,6 +93,16 @@
  */
 - (void)activate
 {
+    //
+    // Check for testing target, not activating anything in that
+    // case, so we do not use any resources.
+    //
+    
+    if ([[UIApplication sharedApplication] isRunningTests])
+    {
+        return;
+    }
+    
     //
     // Activate triggers
     //

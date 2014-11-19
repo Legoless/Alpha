@@ -27,4 +27,11 @@
  */
 - (float)cpuUsage;
 
+/**
+ * Returns YES if application is currently running tests
+ *
+ *  @return YES when running tests
+ */
+- (BOOL)isRunningTests;
+
 @end
