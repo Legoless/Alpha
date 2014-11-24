@@ -18,8 +18,6 @@
 
 @property (nonatomic, readonly) UIWindow* keyWindow;
 
-//@property (nonatomic, readonly) FLEXWindow *explorerWindow;
-
 @property (nonatomic, readonly) UIViewController* rootViewController;
 
 /**
@@ -38,11 +36,6 @@
 - (void)addChildViewControllerToRootViewController:(UIViewController *)viewController animated:(BOOL)animated completion:(void (^)(void))completion;
 
 - (void)removeChildViewController:(UIViewController *)viewController;
-
-#pragma mark - Deprecated, use HIDDEN property
-
-- (void)showExplorer;
-- (void)hideExplorer;
 
 #pragma mark - Extensions
 

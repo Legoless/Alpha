@@ -18,7 +18,7 @@
 
 - (void)trigger:(id)sender
 {
-    [[FLEXManager sharedManager] showExplorer];
+    [[FLEXManager sharedManager] setHidden:NO];
 }
 
 @end

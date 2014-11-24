@@ -70,8 +70,9 @@
 {
     [super viewDidLoad];
 	
-    self.explorerMenu = [[FLEXExplorerMenu alloc] initWithFrame:CGRectMake(200.0, 300.0, 60.0, 60.0)];
+    self.explorerMenu = [[FLEXExplorerMenu alloc] initWithFrame:CGRectMake(0.0, 300.0, 60.0, 60.0)];
     self.explorerMenu.delegate = self;
+    self.explorerMenu.snapToBorder = YES;
     
     //
     // Disable touches for canvas view, we do not care about other shit

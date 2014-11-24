@@ -66,7 +66,7 @@
 - (void)flexButtonTapped:(id)sender
 {
 #if DEBUG
-    [[FLEXManager sharedManager] showExplorer];
+    [[FLEXManager sharedManager] setHidden:NO];
 #endif
 }
 

@@ -84,6 +84,12 @@
     [self addGestureRecognizer:self.longPressMenuRecognizer];
 }
 
+- (void)setSnapToBorder:(BOOL)snapToBorder
+{
+    _snapToBorder = snapToBorder;
+    
+    [self moveToLocationWithSnap];
+}
 
 - (void)handleMenuDrag:(UIGestureRecognizer *)recognizer
 {
@@ -127,7 +133,7 @@
         }
         
         self.center = location;
-        
+            
         [self updateContextPosition];
     }
     
@@ -136,6 +142,88 @@
         [self.circleMenuView closeMenu];
         self.circleMenuView = nil;
     }*/
+}
+
+- (void)moveToLocationWithSnap
+{
+    //
+    // Check for snap to border
+    //
+    if (!self.snapToBorder || CGRectIsEmpty(self.superview.bounds))
+    {
+        return;
+    }
+    
+    //
+    // Find closest border
+    //
+
+    int typeX = 0;
+    int typeY = 0;
+    
+    CGPoint min = CGPointZero;
+    
+    CGPoint location = self.center;
+    
+    CGFloat radius = self.bounds.size.width / 2.0;
+    
+    if (location.x < self.superview.bounds.size.width / 2.0)
+    {
+        // Left border
+        typeX = 0;
+        
+        min.x = location.x;
+    }
+    else
+    {
+        // Right border
+        typeX = 1;
+        
+        min.x = self.superview.bounds.size.width - location.x;
+    }
+    
+    //
+    // Check for height
+    //
+    
+    if (location.y < self.superview.bounds.size.height / 2.0)
+    {
+        // Top border
+        typeY = 0;
+        
+        min.y = location.y;
+    }
+    else
+    {
+        // Bottom border
+        typeY = 1;
+        
+        min.y = self.superview.bounds.size.height - location.y;
+    }
+    
+    //
+    // Decide axis
+    //
+    
+    if (min.x < min.y)
+    {
+        // Leave y axis in peace
+        min.y = location.y;
+        
+        min.x = typeX ? self.superview.bounds.size.width - radius : radius;
+    }
+    else
+    {
+        min.x = location.x;
+        
+        min.y = typeY ? self.superview.bounds.size.height - radius : radius;
+    }
+    
+    self.center = min;
+    
+    //NSLog(@"Moving to: %@", NSStringFromCGPoint(min));
+    
+    [self updateContextPosition];
 }
 
 - (void)handleMenuTap:(UIGestureRecognizer *)recognizer
@@ -177,6 +265,7 @@
         [UIView animateWithDuration:0.2 animations:^
         {
             self.centerView.transform = CGAffineTransformIdentity;
+            [self moveToLocationWithSnap];
         }];
     }
 }

@@ -39,7 +39,7 @@
 {
 #if DEBUG
     // This call shows the FLEX toolbar if it's not already shown.
-    [[FLEXManager sharedManager] showExplorer];
+    [[FLEXManager sharedManager] setHidden:NO];
 #endif
 }
 

@@ -68,7 +68,7 @@
         closeAction.title = @"Close";
         closeAction.image = [FLEXResources closeIcon];
         closeAction.action = ^(id sender){
-            [[FLEXManager sharedManager] hideExplorer];
+            [[FLEXManager sharedManager] setHidden:YES];
         };
         closeAction.enabled = YES;
         
@@ -103,7 +103,7 @@
 
 - (void)finish
 {
-    [[FLEXManager sharedManager] hideExplorer];
+    [[FLEXManager sharedManager] setHidden:YES];
 }
 
 @end
