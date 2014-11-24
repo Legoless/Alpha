@@ -15,15 +15,37 @@
 #import "FLEXObjectExplorerViewController.h"
 #import "FLEXObjectExplorerFactory.h"
 
+#import "FLEXActionItem.h"
+
+#import "FLEXPluginManager.h"
+#import "FLEXPlugin.h"
+
+#import "FLEXExplorerMenu.h"
+
 typedef NS_ENUM(NSUInteger, FLEXExplorerMode) {
     FLEXExplorerModeDefault,
     FLEXExplorerModeSelect,
     FLEXExplorerModeMove
 };
 
-@interface FLEXExplorerViewController () <FLEXHierarchyTableViewControllerDelegate, FLEXViewControllerDelegate>
+@interface FLEXExplorerViewController () <FLEXHierarchyTableViewControllerDelegate, FLEXViewControllerDelegate, FLEXExplorerMenuDelegate>
+
+//
+// New properties
+//
+
+@property (nonatomic, strong) FLEXExplorerMenu *explorerMenu;
+
+@property (nonatomic, strong) NSMutableArray *actions;
+
+@property (nonatomic, strong) NSMutableArray *actionImages;
+
+//
+// Previous properties, to refactor
+//
 
 @property (nonatomic, strong) FLEXExplorerToolbar *explorerToolbar;
+
 
 /// Tracks the currently active tool/mode
 @property (nonatomic, assign) FLEXExplorerMode currentMode;
@@ -71,18 +93,45 @@ typedef NS_ENUM(NSUInteger, FLEXExplorerMode) {
 
 @implementation FLEXExplorerViewController
 
+#pragma mark - Getters and Setters
+
+- (NSMutableArray *)actions
+{
+    if (!_actions)
+    {
+        _actions = [NSMutableArray array];
+    }
+    
+    return _actions;
+}
+
+- (NSMutableArray *)actionImages
+{
+    if (!_actionImages)
+    {
+        _actionImages = [NSMutableArray array];
+    }
+    
+    return _actionImages;
+}
+
+#pragma mark - UIViewController
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    
+    if (self)
+    {
         self.observedViews = [NSMutableSet set];
     }
     return self;
 }
 
--(void)dealloc
+- (void)dealloc
 {
-    for (UIView *view in _observedViews) {
+    for (UIView *view in _observedViews)
+    {
         [self stopObservingView:view];
     }
 }
@@ -110,6 +159,13 @@ typedef NS_ENUM(NSUInteger, FLEXExplorerMode) {
     self.movePanGR = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleMovePan:)];
     self.movePanGR.enabled = self.currentMode == FLEXExplorerModeMove;
     [self.view addGestureRecognizer:self.movePanGR];
+    
+    self.explorerMenu = [[FLEXExplorerMenu alloc] initWithFrame:CGRectMake(200.0, 300.0, 60.0, 60.0)];
+    self.explorerMenu.delegate = self;
+    
+    //self.explorerMenu.images = @[ [FLEXResources globeIcon], [FLEXResources closeIcon] ];
+    
+    [self.view addSubview:self.explorerMenu];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -117,8 +173,66 @@ typedef NS_ENUM(NSUInteger, FLEXExplorerMode) {
     [super viewWillAppear:animated];
     
     [self updateButtonStates];
+    
+    [self updateActions];
 }
 
+/**
+ *  Builds action list from plugins
+ */
+- (void)updateActions
+{
+    [self.actions removeAllObjects];
+    [self.actionImages removeAllObjects];
+    
+    NSArray* plugins = [FLEXPluginManager sharedManager].plugins;
+    
+    for (FLEXPlugin* plugin in plugins)
+    {
+        if (plugin.isEnabled)
+        {
+            for (FLEXActionItem* action in plugin.actions)
+            {
+                if (action.isEnabled && action.image)
+                {
+                    [self.actions addObject:action];
+                    [self.actionImages addObject:action.image];
+                }
+            }
+        }
+    }
+    
+    self.explorerMenu.images = [self.actionImages copy];
+}
+
+#pragma mark - FLEXExplorerMenuDelegate
+
+- (void)explorerMenu:(FLEXExplorerMenu *)explorerMenu didSelectImage:(UIImage *)image
+{
+    FLEXActionItem* action = [self actionForImage:image];
+    
+    //
+    // Run action with explorer menu as sender
+    //
+    
+    if (action.action)
+    {
+        action.action(explorerMenu);
+    }
+}
+
+- (FLEXActionItem *)actionForImage:(UIImage *)image
+{
+    for (FLEXActionItem *action in self.actions)
+    {
+        if (action.image == image)
+        {
+            return action;
+        }
+    }
+    
+    return nil;
+}
 
 #pragma mark - Status Bar Wrangling for iOS 7
 
@@ -485,12 +599,16 @@ typedef NS_ENUM(NSUInteger, FLEXExplorerMode) {
 {
     FLEXInfoTableViewController *globalsViewController = [[FLEXInfoTableViewController alloc] init];
     globalsViewController.delegate = self;
-    [FLEXInfoTableViewController setApplicationWindow:[[UIApplication sharedApplication] keyWindow]];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:globalsViewController];
     [self makeKeyAndPresentViewController:navigationController animated:YES completion:nil];
 }
 
 - (void)closeButtonTapped:(FLEXToolbarItem *)sender
+{
+    [self close];
+}
+
+- (void)close;
 {
     self.currentMode = FLEXExplorerModeDefault;
     [self.delegate explorerViewControllerDidFinish:self];
@@ -769,6 +887,11 @@ typedef NS_ENUM(NSUInteger, FLEXExplorerMode) {
     
     // Always if it's on the toolbar
     if (CGRectContainsPoint(self.explorerToolbar.frame, pointInLocalCoordinates)) {
+        shouldReceiveTouch = YES;
+    }
+    
+    if (CGRectContainsPoint(self.explorerMenu.frame, pointInLocalCoordinates))
+    {
         shouldReceiveTouch = YES;
     }
     

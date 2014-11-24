@@ -26,8 +26,6 @@
 
 #import "KZBootstrap+FLEXUtilities.h"
 
-static __weak UIWindow *s_applicationWindow = nil;
-
 @interface FLEXInfoTableViewController ()
 
 @property (nonatomic, strong) NSMutableArray *entries;
@@ -55,13 +53,6 @@ static __weak UIWindow *s_applicationWindow = nil;
         [self buildEntries];
     }
     return self;
-}
-
-#pragma mark - Public
-
-+ (void)setApplicationWindow:(UIWindow *)applicationWindow
-{
-    s_applicationWindow = applicationWindow;
 }
 
 #pragma mark - UIViewController
@@ -103,7 +94,7 @@ static __weak UIWindow *s_applicationWindow = nil;
                     return @"🌍  Global State";
                 };
                 viewControllerFuture = ^UIViewController *{
-                    [FLEXGlobalsTableViewController setApplicationWindow:s_applicationWindow];
+                    [FLEXGlobalsTableViewController setApplicationWindow:[FLEXManager sharedManager].keyWindow];
                     return [[FLEXGlobalsTableViewController alloc] init];
                 };
                 

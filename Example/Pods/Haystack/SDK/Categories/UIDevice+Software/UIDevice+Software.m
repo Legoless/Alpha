@@ -2,13 +2,164 @@
 //  UIDevice+Software.m
 //
 
-#include <sys/types.h>
-#include <sys/sysctl.h>
+@import Darwin.POSIX.sys.stat;
+@import Darwin.POSIX.pwd;
+@import Darwin.POSIX.grp;
+#import <sys/types.h>
+#import <sys/sysctl.h>
+#import <sys/utsname.h>
+
 #import <mach/mach.h>
 
 #import "UIDevice+Software.h"
 
+typedef enum : NSUInteger
+{
+    UIDeviceJailbreakResultNotJailbroken,
+    UIDeviceJailbreakResultPathExists,
+    UIDeviceJailbreakResultCydia,
+    UIDeviceJailbreakResultSandboxWrite,
+    UIDeviceJailbreakResultSymbolicLinkVerification,
+    UIDeviceJailbreakResultPrivateWrite,
+    UIDeviceJailbreakResultShellExists,
+} UIDeviceJailbreakResult;
+
 @implementation UIDevice (Software)
+
+- (BOOL)isJailbroken
+{
+    return [self jailbreakTest] != UIDeviceJailbreakResultNotJailbroken;
+}
+
+- (UIDeviceJailbreakResult)jailbreakTest
+{
+    #if !TARGET_IPHONE_SIMULATOR
+    
+    //
+    // Check if the application can open Cydia
+    //
+
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"cydia://"]])
+    {
+        return UIDeviceJailbreakResultCydia;
+    }
+    
+    BOOL isDirectory;
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@%@%@%@%@", @"App", @"lic",@"ati", @"ons/", @"Cyd", @"ia.a", @"pp"]]
+        || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@%@%@%@%@", @"App", @"lic",@"ati", @"ons/", @"bla", @"ckra1n.a", @"pp"]]
+        || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@%@%@%@%@", @"App", @"lic",@"ati", @"ons/", @"Fake", @"Carrier.a", @"pp"]]
+        || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@%@%@%@%@", @"App", @"lic",@"ati", @"ons/", @"Ic", @"y.a", @"pp"]]
+        || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@%@%@%@%@", @"App", @"lic",@"ati", @"ons/", @"Inte", @"lliScreen.a", @"pp"]]
+        || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@%@%@%@%@", @"App", @"lic",@"ati", @"ons/", @"MxT", @"ube.a", @"pp"]]
+        || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@%@%@%@%@", @"App", @"lic",@"ati", @"ons/", @"Roc", @"kApp.a", @"pp"]]
+        || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@%@%@%@%@", @"App", @"lic",@"ati", @"ons/", @"SBSet", @"ttings.a", @"pp"]]
+        || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@%@%@%@%@", @"App", @"lic",@"ati", @"ons/", @"Wint", @"erBoard.a", @"pp"]]
+        || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@%@%@%@", @"pr", @"iva",@"te/v", @"ar/l", @"ib/a", @"pt/"] isDirectory:&isDirectory]
+        || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@%@%@%@", @"pr", @"iva",@"te/v", @"ar/l", @"ib/c", @"ydia/"] isDirectory:&isDirectory]
+        || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@%@%@%@", @"pr", @"iva",@"te/v", @"ar/mobile", @"Library/SBSettings", @"Themes/"] isDirectory:&isDirectory]
+        || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@%@%@%@", @"pr", @"iva",@"te/v", @"ar/t", @"mp/cyd", @"ia.log"]]
+        || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@%@%@", @"pr", @"iva",@"te/v", @"ar/s", @"tash/"] isDirectory:&isDirectory]
+        || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@%@%@%@", @"us", @"r/l",@"ibe", @"xe", @"c/cy", @"dia/"] isDirectory:&isDirectory]
+        || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@%@%@", @"us", @"r/b",@"in", @"s", @"shd"]]
+        || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@%@%@", @"us", @"r/sb",@"in", @"s", @"shd"]]
+        || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@%@%@%@", @"us", @"r/l",@"ibe", @"xe", @"c/cy", @"dia/"] isDirectory:&isDirectory]
+        || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@%@%@%@", @"us", @"r/l",@"ibe", @"xe", @"c/sftp-", @"server"]]
+        || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@%@%@%@",@"/Syste",@"tem/Lib",@"rary/Lau",@"nchDae",@"mons/com.ike",@"y.bbot.plist"]]
+        || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@%@%@%@%@%@",@"/Sy",@"stem/Lib",@"rary/Laun",@"chDae",@"mons/com.saur",@"ik.Cy",@"@dia.Star",@"tup.plist"]]
+        || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@%@%@", @"/Libr",@"ary/Mo",@"bileSubstra",@"te/MobileSubs",@"trate.dylib"]]
+        || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@%@%@", @"/va",@"r/c",@"ach",@"e/a",@"pt/"] isDirectory:&isDirectory]
+        || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@%@", @"/va",@"r/l",@"ib",@"/apt/"] isDirectory:&isDirectory]
+        || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@%@", @"/va",@"r/l",@"ib/c",@"ydia/"] isDirectory:&isDirectory]
+        || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@%@", @"/va",@"r/l",@"og/s",@"yslog"]]
+        || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@", @"/bi",@"n/b",@"ash"]]
+        || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@", @"/b",@"in/",@"sh"]]
+        || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@", @"/et",@"c/a",@"pt/"]isDirectory:&isDirectory]
+        || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@", @"/etc/s",@"sh/s",@"shd_config"]]
+        || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@%@%@", @"/us",@"r/li",@"bexe",@"c/ssh-k",@"eysign"]])
+        
+    {
+        return UIDeviceJailbreakResultPathExists;
+    }
+    
+    
+    //
+    // For check
+    //
+    int pid = fork();
+    
+    if (!pid)
+    {
+        exit(0);
+    }
+    
+    if (pid >= 0)
+    {
+        return UIDeviceJailbreakResultSandboxWrite;
+    }
+    
+    //
+    // Symbolic link verification
+    //
+    struct stat s;
+    
+    if (lstat("/Applications", &s) || lstat("/var/stash/Library/Ringstones", &s) || lstat("/var/stash/Library/Wallpaper", &s)
+       || lstat("/var/stash/usr/include", &s) || lstat("/var/stash/usr/libexec", &s)  || lstat("/var/stash/usr/share", &s) || lstat("/var/stash/usr/arm-apple-darwin9", &s))
+    {
+        if (s.st_mode & S_IFLNK)
+        {
+            return UIDeviceJailbreakResultSymbolicLinkVerification;
+        }
+    }
+    
+    //
+    // Try to write file in private
+    //
+    NSError *error;
+    
+    [[NSString stringWithFormat:@"Jailbreak test string"] writeToFile:@"/private/test_jb.txt" atomically:YES encoding:NSUTF8StringEncoding error:&error];
+    
+    if (nil == error)
+    {
+        return UIDeviceJailbreakResultPrivateWrite;
+    }
+    else
+    {
+        [[NSFileManager defaultManager] removeItemAtPath:@"/private/test_jb.txt" error:nil];
+    }
+    
+    FILE *file = fopen("/bin/ssh", "r");
+    
+    if (file)
+    {
+        return UIDeviceJailbreakResultShellExists;
+    }
+    
+    #endif
+    return UIDeviceJailbreakResultNotJailbroken;
+}
+
+- (NSDate *)hs_systemBootDate
+{
+    const int MIB_SIZE = 2;
+    
+    int mib[MIB_SIZE];
+    size_t size;
+    struct timeval  boottime;
+    
+    mib[0] = CTL_KERN;
+    mib[1] = KERN_BOOTTIME;
+    size = sizeof(boottime);
+    
+    if (sysctl(mib, MIB_SIZE, &boottime, &size, NULL, 0) != -1)
+    {
+        NSDate* bootDate = [NSDate dateWithTimeIntervalSince1970:boottime.tv_sec + boottime.tv_usec / 1.e6];
+        
+        return bootDate;
+    }
+    
+    return nil;
+}
 
 - (NSUInteger)hs_processCount
 {
@@ -27,8 +178,8 @@
     struct kinfo_proc * process = NULL;
     struct kinfo_proc * newprocess = NULL;
     
-    do
-    {
+    do {
+        
         size += size / 10;
         newprocess = realloc(process, size);
         
@@ -43,27 +194,77 @@
         
         process = newprocess;
         st = sysctl(mib, miblen, process, &size, NULL, 0);
-    }
-    while (st == -1 && errno == ENOMEM);
+        
+    } while (st == -1 && errno == ENOMEM);
     
     if (st == 0)
     {
         if (size % sizeof(struct kinfo_proc) == 0)
         {
-            int nprocess = (int)(size / sizeof(struct kinfo_proc));
+            size_t nprocess = size / sizeof(struct kinfo_proc);
             
             if (nprocess)
             {
+                
                 NSMutableArray * array = [[NSMutableArray alloc] init];
                 
-                for (int i = nprocess - 1; i >= 0; i--)
+                for (int i = (int)nprocess - 1; i >= 0; i--)
                 {
                     
-                    NSString *processID = [[NSString alloc] initWithFormat:@"%d", process[i].kp_proc.p_pid];
-                    NSString *processName = [[NSString alloc] initWithFormat:@"%s", process[i].kp_proc.p_comm];
+                    NSString * processID = [NSString stringWithFormat:@"%d", process[i].kp_proc.p_pid];
+                    NSString * processName = [NSString stringWithFormat:@"%s", process[i].kp_proc.p_comm];
                     
-                    NSDictionary * dict = [[NSDictionary alloc] initWithObjects:[NSArray arrayWithObjects:processID, processName, nil] forKeys:[NSArray arrayWithObjects:@"ProcessID", @"ProcessName", nil]];
-
+                    NSString *processPriority = [NSString stringWithFormat:@"%d", process[i].kp_proc.p_priority];
+                    
+                    NSString * ruid = [NSString stringWithFormat:@"%d", process[i].kp_eproc.e_pcred.p_ruid];
+                    NSString * rgid = [NSString stringWithFormat:@"%d", process[i].kp_eproc.e_pcred.p_rgid];
+                    
+                    NSString * svgid = [NSString stringWithFormat:@"%d", process[i].kp_eproc.e_pcred.p_svgid];
+                    
+                    NSString * svuid = [NSString stringWithFormat:@"%d", process[i].kp_eproc.e_ucred.cr_uid];
+                    
+                    //
+                    // Start time
+                    //
+                    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+                    [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
+                    
+                    NSDate *date = [NSDate dateWithTimeIntervalSince1970:process[i].kp_proc.p_un.__p_starttime.tv_sec];
+                    
+                    NSTimeInterval timeIntervalSinceStart = [date timeIntervalSinceNow] * -1 * 1000;
+                    NSString *stringTimeInterval = [NSString stringWithFormat:@"%.0f", timeIntervalSinceStart];
+                    
+                    //
+                    // This causes crash on simulator
+                    //
+                    
+                    #if !(TARGET_IPHONE_SIMULATOR)
+                    
+                    struct passwd* pwd = getpwuid(process[i].kp_eproc.e_pcred.p_ruid);
+                    NSString *u = [NSString stringWithFormat:@"%s", pwd->pw_name];
+                    
+                    
+                    struct group* gwd = getgrgid(process[i].kp_eproc.e_pcred.p_rgid);
+                    NSString *g = [NSString stringWithFormat:@"%s", gwd->gr_name];
+                    
+                    #else
+                    NSString *u = @"simulator";
+                    NSString *g = @"simulator";
+                    #endif
+                    
+                    NSDictionary *dict = @{@"pid" : processID,
+                                           @"name" : processName,
+                                           @"priority" : processPriority,
+                                           @"ruid" : ruid,
+                                           @"rgid" : rgid,
+                                           @"svgid" : svgid,
+                                           @"svuid" : svuid,
+                                           @"uname" : u,
+                                           @"gname" : g,
+                                           @"IntervalSinceStart" : stringTimeInterval
+                                           };
+                    
                     [array addObject:dict];
                 }
                 
@@ -73,6 +274,7 @@
         }
     }
     
+    free(process);
     return nil;
 }
 

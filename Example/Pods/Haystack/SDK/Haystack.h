@@ -1,5 +1,6 @@
 #import "NSObject+Swizzle.h"
 #import "NSObject+PropertyList.h"
+#import "NSObject+Runtime.h"
 
 #import "NSArray+Class.h"
 #import "NSDate+Timestamp.h"
@@ -23,6 +24,7 @@
 #import "UIDevice+Capabilities.h"
 #import "UIDevice+DeviceInfo.h"
 #import "UIDevice+Hardware.h"
+#import "UIDevice+Network.h"
 #import "UIDevice+Software.h"
 
 #import "UIViewController+BackgroundImage.h"

@@ -9,6 +9,13 @@
  */
 @interface UIDevice (Hardware)
 
+/**
+ *  Returns current battery level of the device
+ *
+ *  @return battery level
+ */
+- (float)hs_batteryLevel;
+
 //
 // CPU Related
 //
@@ -65,18 +72,5 @@
 - (unsigned long long)hs_diskTotalSpace;
 
 - (unsigned long long)hs_diskFreeSpace;
-
-//
-// Network Related
-//
-
-
-/**
- *  Returns MAC address of network adapter
- *
- *  @return MAC address in formatted shape
- */
-- (NSString *)hs_macAddress;
-
 
 @end

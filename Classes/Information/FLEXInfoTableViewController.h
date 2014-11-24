@@ -16,9 +16,5 @@
 
 @property (nonatomic, weak) id <FLEXViewControllerDelegate> delegate;
 
-/// We pretend that one of the app's windows is still the key window, even though the explorer window may have become key.
-/// We want to display debug state about the application, not about this tool.
-+ (void)setApplicationWindow:(UIWindow *)applicationWindow;
-
 @end
 

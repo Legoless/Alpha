@@ -18,11 +18,21 @@
 @property (nonatomic, strong) FLEXWindow *explorerWindow;
 @property (nonatomic, strong) FLEXExplorerViewController *explorerViewController;
 
-@property (nonatomic, readonly, strong) NSMutableArray *userGlobalEntries;
+@property (nonatomic, strong, readwrite) UIWindow* keyWindow;
 
 @end
 
 @implementation FLEXManager
+
+- (UIWindow *)keyWindow
+{
+    if (!_keyWindow)
+    {
+        _keyWindow = [[UIApplication sharedApplication] keyWindow];
+    }
+    
+    return _keyWindow;
+}
 
 + (instancetype)sharedManager
 {
@@ -37,9 +47,12 @@
 - (instancetype)init
 {
     self = [super init];
-    if (self) {
-        _userGlobalEntries = [[NSMutableArray alloc] init];
+    
+    if (self)
+    {
+        
     }
+    
     return self;
 }
 
@@ -47,7 +60,13 @@
 {
     NSAssert([NSThread isMainThread], @"You must use %@ from the main thread only.", NSStringFromClass([self class]));
     
-    if (!_explorerWindow) {
+    if (!_explorerWindow)
+    {
+        if (!self.keyWindow)
+        {
+            self.keyWindow = [[UIApplication sharedApplication] keyWindow];
+        }
+        
         _explorerWindow = [[FLEXWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         _explorerWindow.eventDelegate = self;
         _explorerWindow.rootViewController = self.explorerViewController;
@@ -79,6 +98,11 @@
 - (BOOL)isHidden
 {
     return self.explorerWindow.isHidden;
+}
+
+- (void)setHidden:(BOOL)hidden
+{
+    self.explorerWindow.hidden = hidden;
 }
 
 
@@ -114,7 +138,7 @@
         return [FLEXObjectExplorerFactory explorerViewControllerForObject:objectFutureBlock()];
     }];
 
-    [self.userGlobalEntries addObject:entry];
+    //[self.userGlobalEntries addObject:entry];
 }
 
 @end
