@@ -8,6 +8,8 @@
 
 #import "FLEXInformationCollector.h"
 
+#import "FLEXActionItem.h"
+
 @interface FLEXPlugin : NSObject
 
 /**
@@ -37,5 +39,21 @@
  *  and pushed on top of view controller stack.
  */
 @property (nonatomic, readonly) UIViewController* mainInterface;
+
+/**
+ *  If returned YES, the view controller will take control of the touch.
+ *
+ *  @param pointInWindow point in window
+ *
+ *  @return YES if plugin will handle the touch.
+ */
+- (BOOL)shouldHandleTouchAtPoint:(CGPoint)pointInWindow;
+
+/**
+ *  Adds and registers action for plugin
+ *
+ *  @param action to register
+ */
+- (void)registerAction:(FLEXActionItem *)action;
 
 @end

@@ -1,5 +1,5 @@
 //
-//  FLEXViewHierarchyPlugin.h
+//  FLEXTouchPlugin.h
 //  UICatalog
 //
 //  Created by Dal Rupnik on 24/11/14.
@@ -8,9 +8,8 @@
 
 #import "FLEXPlugin.h"
 
-/**
- *  View hierarchy imported from original FLEX
- */
-@interface FLEXViewHierarchyPlugin : FLEXPlugin
+@interface FLEXTouchPlugin : FLEXPlugin
+
+@property (nonatomic, assign) BOOL shouldDisplayTouches;
 
 @end

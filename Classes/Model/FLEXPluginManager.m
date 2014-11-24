@@ -34,6 +34,19 @@
 
 #pragma mark - Getters and Setters
 
+- (FLEXBasePlugin *)basePlugin
+{
+    for (FLEXPlugin* plugin in self.plugins)
+    {
+        if ([plugin isKindOfClass:[FLEXBasePlugin class]])
+        {
+            return (FLEXBasePlugin *)plugin;
+        }
+    }
+    
+    return nil;
+}
+
 - (NSArray *)plugins
 {
     //

@@ -8,8 +8,6 @@
 
 #import "FLEXTrigger.h"
 
-extern NSString* const FLEXShakeMotionNotification;
-
 @interface FLEXShakeTrigger : FLEXTrigger
 
 @end

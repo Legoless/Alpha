@@ -8,28 +8,51 @@
 
 #import "FLEXManager.h"
 
+#import "FLEXExplorerViewController.h"
+#import "FLEXInfoTableViewController.h"
+
 #import "FLEXActionItem.h"
 #import "FLEXResources.h"
 
 #import "FLEXBasePlugin.h"
 
-@interface FLEXBasePlugin ()
+@interface FLEXBasePlugin () <FLEXViewControllerDelegate>
 
-@property (nonatomic, strong) NSArray* baseActions;
+@property (nonatomic, strong) FLEXExplorerViewController* explorerViewController;
 
 @end
 
 @implementation FLEXBasePlugin
 
-- (NSArray *)actions
+#pragma mark - Getters and Setters
+
+- (FLEXExplorerViewController *)explorerViewController
 {
-    return self.baseActions;
+    if (!_explorerViewController)
+    {
+        _explorerViewController = [[FLEXExplorerViewController alloc] init];
+        _explorerViewController.delegate = self;
+    }
+    
+    return _explorerViewController;
+}
+
+/**
+ *  Returns explorer view controller as the main interface
+ *
+ *  @return FLEX Explorer View Controller
+ */
+- (UIViewController *)mainInterface
+{
+    return self.explorerViewController;
 }
 
 - (BOOL)isEnabled
 {
     return YES;
 }
+
+#pragma mark - Initializers
 
 - (id)init
 {
@@ -49,11 +72,38 @@
         };
         closeAction.enabled = YES;
         
-        self.baseActions = @[ closeAction ];
+        FLEXActionItem *infoAction = [FLEXActionItem actionItemWithIdentifier:@"com.flex.info"];
+        infoAction.title = @"Info";
+        infoAction.image = [FLEXResources globeIcon];
+        infoAction.action = ^(id sender){
+            [self.explorerViewController displayInfoTable];
+        };
+        infoAction.enabled = YES;
+        
+        [self registerAction:infoAction];
+        [self registerAction:closeAction];
     }
     
     return self;
 }
 
+#pragma mark - FLEXPlugin
+
+- (BOOL)shouldHandleTouchAtPoint:(CGPoint)pointInWindow
+{
+    return [self.explorerViewController shouldReceiveTouchAtWindowPoint:pointInWindow];
+}
+
+#pragma mark - FLEXExplorerViewControllerDelegate
+
+- (void)viewControllerDidFinish:(UIViewController *)viewController
+{
+    [self finish];
+}
+
+- (void)finish
+{
+    [[FLEXManager sharedManager] hideExplorer];
+}
 
 @end

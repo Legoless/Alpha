@@ -1,18 +1,19 @@
 //
-//  UIApplication+ShakeMotion.m
+//  UIApplication+FLEXEvent.m
 //  UICatalog
 //
 //  Created by Dal Rupnik on 05/11/14.
 //  Copyright (c) 2014 f. All rights reserved.
 //
 
-#import "NSObject+Swizzle.h"
+#import <Haystack/Haystack.h>
 
-#import "FLEXShakeTrigger.h"
+#import "UIApplication+FLEXEvent.h"
 
-#import "UIApplication+ShakeMotion.h"
+NSString* const FLEXShakeMotionNotification = @"kFLEXShakeMotionNotification";
+NSString* const FLEXInterfaceEventNotification = @"kFLEXInterfaceEventNotification";
 
-@implementation UIApplication (ShakeMotion)
+@implementation UIApplication (FLEXEvent)
 
 + (void)load
 {
@@ -25,6 +26,12 @@
     {
         [[NSNotificationCenter defaultCenter] postNotificationName:FLEXShakeMotionNotification object:nil];
     }
+    
+    //
+    // Send notification of event
+    //
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:FLEXInterfaceEventNotification object:event];
     
     [self flex_sendEvent:event];
 }

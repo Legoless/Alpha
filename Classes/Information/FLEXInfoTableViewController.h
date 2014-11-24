@@ -6,11 +6,7 @@
 //  Copyright (c) 2014 f. All rights reserved.
 //
 
-@protocol FLEXViewControllerDelegate <NSObject>
-
-- (void)viewControllerDidFinish:(UIViewController *)viewController;
-
-@end
+#import "FLEXViewController.h"
 
 @interface FLEXInfoTableViewController : UITableViewController
 

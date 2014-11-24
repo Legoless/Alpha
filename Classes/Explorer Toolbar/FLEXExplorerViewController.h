@@ -6,20 +6,12 @@
 //  Copyright (c) 2014 Flipboard. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "FLEXViewController.h"
 
-@protocol FLEXExplorerViewControllerDelegate;
+@interface FLEXExplorerViewController : FLEXViewController <FLEXViewControllerResponder>
 
-@interface FLEXExplorerViewController : UIViewController
+@property (nonatomic, weak) id <FLEXViewControllerDelegate> delegate;
 
-@property (nonatomic, weak) id <FLEXExplorerViewControllerDelegate> delegate;
-
-- (BOOL)shouldReceiveTouchAtWindowPoint:(CGPoint)pointInWindowCoordinates;
-
-@end
-
-@protocol FLEXExplorerViewControllerDelegate <NSObject>
-
-- (void)explorerViewControllerDidFinish:(FLEXExplorerViewController *)explorerViewController;
+- (void)displayInfoTable;
 
 @end

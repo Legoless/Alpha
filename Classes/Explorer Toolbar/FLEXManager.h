@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Flipboard. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "FLEXWindow.h"
 
 #import "FLEXPlugin.h"
 
@@ -18,13 +18,34 @@
 
 @property (nonatomic, readonly) UIWindow* keyWindow;
 
-#pragma mark - Deprecated
+//@property (nonatomic, readonly) FLEXWindow *explorerWindow;
+
+@property (nonatomic, readonly) UIViewController* rootViewController;
+
+/**
+ *  Returns all windows
+ *
+ *  @return array of UIWindow objects
+ */
+- (NSArray *)allWindows;
+
+#pragma mark - Modal Presentation and Window Management
+
+- (void)makeKeyAndPresentViewController:(UIViewController *)viewController animated:(BOOL)animated completion:(void (^)(void))completion;
+
+- (void)resignKeyAndDismissViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion;
+
+- (void)addChildViewControllerToRootViewController:(UIViewController *)viewController animated:(BOOL)animated completion:(void (^)(void))completion;
+
+- (void)removeChildViewController:(UIViewController *)viewController;
+
+#pragma mark - Deprecated, use HIDDEN property
 
 - (void)showExplorer;
 - (void)hideExplorer;
 
 #pragma mark - Extensions
 
-- (void)registerPlugin:(FLEXPlugin *)plugin;
+//- (void)registerPlugin:(FLEXPlugin *)plugin;
 
 @end

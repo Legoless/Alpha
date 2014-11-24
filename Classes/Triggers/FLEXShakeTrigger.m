@@ -6,11 +6,9 @@
 //  Copyright (c) 2014 f. All rights reserved.
 //
 
-#import "NSObject+Swizzle.h"
+#import "UIApplication+FLEXEvent.h"
 
 #import "FLEXShakeTrigger.h"
-
-NSString* const FLEXShakeMotionNotification = @"kFLEXShakeMotionNotification";
 
 @interface FLEXShakeTrigger ()
 
