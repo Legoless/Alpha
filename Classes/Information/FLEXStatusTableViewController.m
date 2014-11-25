@@ -17,23 +17,23 @@
 // Application related information
 //
 
-/**
+/*!
  *  Application memory size
  */
 
 @property (nonatomic) long long applicationMemorySize;
 
-/**
+/*!
  *  Size of application, including documents
  */
 @property (nonatomic) long long applicationSandboxSize;
 
-/**
+/*!
  *  Size of user related documents
  */
 @property (nonatomic) long long applicationDocumentSize;
 
-/**
+/*!
  *  Currently active threads
  */
 @property (nonatomic) int threadCount;
@@ -42,7 +42,7 @@
 // System global
 //
 
-/**
+/*!
  *  Global available memory
  */
 @property (nonatomic) long long systemMemorySize;

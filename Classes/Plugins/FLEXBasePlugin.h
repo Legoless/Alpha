@@ -8,7 +8,7 @@
 
 #import "FLEXPlugin.h"
 
-/**
+/*!
  *  Contains main functionality such as close for FLEX, do not disable!
  */
 @interface FLEXBasePlugin : FLEXPlugin

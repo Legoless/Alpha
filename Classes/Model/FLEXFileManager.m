@@ -10,6 +10,17 @@
 
 @implementation FLEXFileManager
 
+- (NSDateFormatter *)fileDateFormatter
+{
+    if (!_fileDateFormatter)
+    {
+        _fileDateFormatter = [[NSDateFormatter alloc] init];
+        _fileDateFormatter.dateFormat = @"yyyy.MM.dd_HH.mm.ss";
+    }
+    
+    return _fileDateFormatter;
+}
+
 #pragma mark - Singleton
 
 + (instancetype)sharedManager
@@ -22,7 +33,7 @@
     return sharedManager;
 }
 
-/**
+/*!
  Returns the URL to the application's Documents directory.
  */
 - (NSURL *)documentsDirectory

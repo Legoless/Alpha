@@ -48,17 +48,16 @@
 
 - (id)init
 {
-    self = [super init];
+    self = [super initWithIdentifier:@"com.flex.plugin.touch"];
     
     if (self)
     {
-        FLEXActionItem *touchAction = [FLEXActionItem actionItemWithIdentifier:@"com.flex.touch.touches"];
+        FLEXActionItem *touchAction = [FLEXActionItem itemWithIdentifier:@"com.flex.plugin.touch.touches"];
         touchAction.title = @"Touches";
-        touchAction.image = [FLEXResources selectIcon];
+        touchAction.icon = [FLEXResources selectIcon];
         touchAction.action = ^(id sender){
             self.shouldDisplayTouches = !self.shouldDisplayTouches;
         };
-        touchAction.enabled = YES;
 
         [self registerAction:touchAction];
         

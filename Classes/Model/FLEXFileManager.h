@@ -10,6 +10,8 @@
 
 @property (nonatomic, readonly) NSURL* documentsDirectory;
 
+@property (nonatomic, strong) NSDateFormatter* fileDateFormatter;
+
 + (instancetype)sharedManager;
 
 @end

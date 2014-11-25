@@ -94,7 +94,7 @@
     //self.scrollView.contentInset = UIEdgeInsetsMake(verticalInset, horizontalInset, verticalInset, horizontalInset);
     self.scrollView.contentInset = insets;
     
-    NSLog(@"Insets: %@", NSStringFromUIEdgeInsets(self.scrollView.contentInset));
+    //NSLog(@"Insets: %@", NSStringFromUIEdgeInsets(self.scrollView.contentInset));
 }
 
 - (void)copyButtonPressed:(id)sender

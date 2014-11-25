@@ -137,7 +137,7 @@ NSString* const CIRCLE_MENU_BUTTON_BORDER_WIDTH = @"kCircleMenuButtonBorderWidth
     }
 }
 
-/**
+/*!
  * Convenience method that creates a circle button, consisting of
  * the image, a background and a border.
  * @param anImage image to be used as button's icon
@@ -174,7 +174,7 @@ NSString* const CIRCLE_MENU_BUTTON_BORDER_WIDTH = @"kCircleMenuButtonBorderWidth
     return tInnerView;
 }
 
-/**
+/*!
  * Does the math to put buttons on a circle.
  */
 - (void)calculateButtonPositions
@@ -223,7 +223,7 @@ NSString* const CIRCLE_MENU_BUTTON_BORDER_WIDTH = @"kCircleMenuButtonBorderWidth
     }
 }
 
-/**
+/*!
  * Climbs up the view hierarchy to find the first which has clipToBounds = YES.
  * Returns the topmost view if no view has clipsToBound set to YES.
  * @return UIView with clipToBounds = YES
@@ -270,7 +270,7 @@ NSString* const CIRCLE_MENU_BUTTON_BORDER_WIDTH = @"kCircleMenuButtonBorderWidth
     }
 }
 
-/**
+/*!
  * Performs the closing animation.
  */
 - (void)closeMenu
@@ -391,7 +391,7 @@ NSString* const CIRCLE_MENU_BUTTON_BORDER_WIDTH = @"kCircleMenuButtonBorderWidth
     aView.layer.affineTransform = CGAffineTransformMakeScale(0.985, 0.985);
 }
 
-/**
+/*!
  * Target action method that gets called when the gesture used to open
  * the CKCircleMenuView changes.
  */
@@ -414,7 +414,7 @@ NSString* const CIRCLE_MENU_BUTTON_BORDER_WIDTH = @"kCircleMenuButtonBorderWidth
     }
 }
 
-/**
+/*!
  * Return the 'virtual' tag of the button, no matter which of its components
  * (image, background, border) is passed as argument.
  * @param aView view to be examined

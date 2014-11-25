@@ -18,7 +18,7 @@
 
 @interface FLEXExplorerMenu : UIView
 
-/**
+/*!
  *  If set to YES, menu will snap to border, similar to accessiblity menu
  *  of iOS. Default: NO
  */

@@ -90,7 +90,7 @@
     [self updateActions];
 }
 
-/**
+/*!
  *  Builds action list from plugins
  */
 - (void)updateActions
@@ -106,10 +106,10 @@
         {
             for (FLEXActionItem* action in plugin.actions)
             {
-                if (action.isEnabled && action.image)
+                if (action.isEnabled && [action.icon isKindOfClass:[UIImage class]] && [action isMemberOfClass:[FLEXActionItem class]])
                 {
                     [self.actions addObject:action];
-                    [self.actionImages addObject:action.image];
+                    [self.actionImages addObject:action.icon];
                 }
             }
         }
@@ -141,7 +141,7 @@
 {
     for (FLEXActionItem *action in self.actions)
     {
-        if (action.image == image)
+        if (action.icon == image)
         {
             return action;
         }

@@ -8,7 +8,7 @@
 
 #import "FLEXCanvasView.h"
 
-/**
+/*!
  *  Protocol of a FLEXViewController, so finishing is properly handled
  */
 @protocol FLEXViewControllerDelegate <NSObject>
@@ -19,7 +19,7 @@
 
 @end
 
-/**
+/*!
  *  If View Controller responds to FLEX events, such as touches above all other windows
  */
 @protocol FLEXViewControllerResponder <NSObject>
@@ -32,7 +32,7 @@
 
 @property (nonatomic, weak) id<FLEXViewControllerDelegate> delegate;
 
-/**
+/*!
  *  Wrapper property for view property if it is a type of FLEX Canvas view
  */
 @property (nonatomic, readonly) FLEXCanvasView* canvasView;

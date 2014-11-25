@@ -88,7 +88,7 @@
     [trigger integrate];
 }
 
-/**
+/*!
  *  This is called when application finishes launching
  */
 - (void)activate

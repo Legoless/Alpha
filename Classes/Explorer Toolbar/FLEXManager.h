@@ -27,7 +27,7 @@
 
 @property (nonatomic, readonly) UIViewController* rootViewController;
 
-/**
+/*!
  *  Returns all windows
  *
  *  @return array of UIWindow objects

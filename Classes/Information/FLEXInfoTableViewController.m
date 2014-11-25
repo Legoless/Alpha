@@ -23,8 +23,8 @@
 #import "FLEXConsoleTableViewController.h"
 #import "FLEXScreenshotTableViewController.h"
 #import "FLEXNotificationTableViewController.h"
-
-#import "KZBootstrap+FLEXUtilities.h"
+#import "FLEXPluginManager.h"
+#import "FLEXMenuItem.h"
 
 @interface FLEXInfoTableViewController ()
 
@@ -47,8 +47,10 @@
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
-    if (self) {
-        self.title = @"Information";
+    
+    if (self)
+    {
+        self.title = @"Diagnostics";
         
         [self buildEntries];
     }
@@ -81,121 +83,61 @@
     
     [self.entries removeAllObjects];
     
-    FLEXGlobalsTableViewControllerEntryNameFuture titleFuture = nil;
-    FLEXGlobalsTableViewControllerViewControllerFuture viewControllerFuture = nil;
+    NSArray* plugins = [FLEXPluginManager sharedManager].plugins;
     
-    for (NSInteger rowIndex = 0; rowIndex < 8; rowIndex++)
+    for (FLEXPlugin* plugin in plugins)
     {
-        switch (rowIndex)
+        if (!plugin.isEnabled)
         {
-            case 0:
-                titleFuture = ^NSString *
-                {
-                    return @"🌍  Global State";
-                };
-                viewControllerFuture = ^UIViewController *{
-                    [FLEXGlobalsTableViewController setApplicationWindow:[FLEXManager sharedManager].keyWindow];
-                    return [[FLEXGlobalsTableViewController alloc] init];
-                };
-                
-                break;
-                
-            case 1:
-                titleFuture = ^NSString *{
-                    return @"💩  Heap Objects";
-                };
-                viewControllerFuture = ^UIViewController *{
-                    return [[FLEXLiveObjectsTableViewController alloc] init];
-                };
-                
-                break;
-                
-            case 2:
-                titleFuture = ^NSString *{
-                    return @"📁  File Browser";
-                };
-                viewControllerFuture = ^UIViewController *{
-                    return [[FLEXFileBrowserTableViewController alloc] init];
-                };
-                break;
-            case 3:
-                titleFuture = ^NSString *{
-                    return @"💬  Network";
-                };
-                viewControllerFuture = ^UIViewController *{
-                    return [[FLEXNetworkTableViewController alloc] init];
-                };
-                break;
-            case 4:
-                titleFuture = ^NSString *{
-                    return @"📊  Status";
-                };
-                viewControllerFuture = ^UIViewController *{
-                    return [[FLEXStatusTableViewController alloc] init];
-                };
-                break;
-            case 5:
-                titleFuture = ^NSString *{
-                    return @"⚠️  Console";
-                };
-                viewControllerFuture = ^UIViewController *{
-                    return [[FLEXConsoleTableViewController alloc] init];
-                };
-                
-                break;
-            case 6:
-                titleFuture = ^NSString *{
-                    return @"🔔  Notifications";
-                };
-                viewControllerFuture = ^UIViewController *{
-                    return [[FLEXNotificationTableViewController alloc] init];
-                };
-                
-                break;
-            case 7:
-                titleFuture = ^NSString *{
-                    return @"📱  Screenshots";
-                };
-                viewControllerFuture = ^UIViewController *{
-                    return [[FLEXScreenshotTableViewController alloc] init];
-                };
-
-            default:
-                break;
+            continue;
         }
         
-        [self.entries addObject:[FLEXGlobalsTableViewControllerEntry entryWithNameFuture:titleFuture viewControllerFuture:viewControllerFuture]];
+        for (FLEXActionItem* action in plugin.actions)
+        {
+            if ([action isKindOfClass:[FLEXMenuItem class]] && action.isEnabled)
+            {
+                FLEXMenuItem* menuAction = (FLEXMenuItem *)action;
+                
+                [self.entries addObject:menuAction];
+            }
+        }
     }
     
-    //
-    // Add KZBootstrap
-    //
+    NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES];
     
-    if ([KZBootstrap isReady])
-    {
-        titleFuture = ^NSString *{
-            return @"🎨  Environments";
-        };
-        viewControllerFuture = ^UIViewController *{
-            return [[FLEXEnvironmentTableViewController alloc] init];
-        };
-
-        [self.entries addObject:[FLEXGlobalsTableViewControllerEntry entryWithNameFuture:titleFuture viewControllerFuture:viewControllerFuture]];
-    }
+    self.entries = [[self.entries sortedArrayUsingDescriptors:@[ sortDescriptor ]] mutableCopy];
 }
 
 #pragma mark - Table Data Helpers
 
 - (FLEXGlobalsTableViewControllerEntry *)globalEntryAtIndexPath:(NSIndexPath *)indexPath
 {
-    return self.entries[indexPath.row];
+    FLEXMenuItem* menuAction = self.entries[indexPath.row];
+    
+    FLEXGlobalsTableViewControllerEntryNameFuture titleFuture = ^NSString *
+    {
+        return menuAction.title;
+    };
+    FLEXGlobalsTableViewControllerViewControllerFuture viewControllerFuture = ^UIViewController *
+    {
+        Class viewControllerClass = NSClassFromString(menuAction.viewControllerClass);
+        
+        return [[viewControllerClass alloc] init];
+    };
+    
+    return [FLEXGlobalsTableViewControllerEntry entryWithNameFuture:titleFuture viewControllerFuture:viewControllerFuture];
 }
 
 - (NSString *)titleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    FLEXGlobalsTableViewControllerEntry *entry = [self globalEntryAtIndexPath:indexPath];
+    FLEXMenuItem* menuAction = self.entries[indexPath.row];
     
-    return entry.entryNameFuture();
+    if ([menuAction.icon isKindOfClass:[NSString class]])
+    {
+        return [NSString stringWithFormat:@"%@  %@", menuAction.icon, menuAction.title];
+    }
+
+    return menuAction.title;
 }
 
 - (UIViewController *)viewControllerToPushForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -227,7 +169,18 @@
         cell.textLabel.font = [FLEXUtility defaultTableViewCellLabelFont];
     }
     
+    FLEXMenuItem* menuAction = self.entries[indexPath.row];
+    
     cell.textLabel.text = [self titleForRowAtIndexPath:indexPath];
+    
+    if ([menuAction.icon isKindOfClass:[UIImage class]])
+    {
+        cell.imageView.image = menuAction.icon;
+    }
+    else
+    {
+        cell.imageView.image = nil;
+    }
     
     return cell;
 }

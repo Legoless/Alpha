@@ -12,6 +12,7 @@
 #import "FLEXInfoTableViewController.h"
 
 #import "FLEXActionItem.h"
+#import "FLEXMenuItem.h"
 #import "FLEXResources.h"
 
 #import "FLEXBasePlugin.h"
@@ -37,7 +38,7 @@
     return _explorerViewController;
 }
 
-/**
+/*!
  *  Returns explorer view controller as the main interface
  *
  *  @return FLEX Explorer View Controller
@@ -47,6 +48,11 @@
     return self.explorerViewController;
 }
 
+/*!
+ *  Base plugin is the base of FLEX, cannot be disabled.
+ *
+ *  @return always YES
+ */
 - (BOOL)isEnabled
 {
     return YES;
@@ -56,7 +62,7 @@
 
 - (id)init
 {
-    self = [super init];
+    self = [super initWithIdentifier:@"com.flex.base"];
     
     if (self)
     {
@@ -64,27 +70,55 @@
         // Close action always present
         //
         
-        FLEXActionItem *closeAction = [FLEXActionItem actionItemWithIdentifier:@"com.flex.close"];
+        FLEXActionItem *closeAction = [FLEXActionItem itemWithIdentifier:@"com.flex.close"];
         closeAction.title = @"Close";
-        closeAction.image = [FLEXResources closeIcon];
+        closeAction.icon = [FLEXResources closeIcon];
         closeAction.action = ^(id sender){
             [[FLEXManager sharedManager] setHidden:YES];
         };
-        closeAction.enabled = YES;
         
-        FLEXActionItem *infoAction = [FLEXActionItem actionItemWithIdentifier:@"com.flex.info"];
+        FLEXActionItem *infoAction = [FLEXActionItem itemWithIdentifier:@"com.flex.info"];
         infoAction.title = @"Info";
-        infoAction.image = [FLEXResources globeIcon];
+        infoAction.icon = [FLEXResources globeIcon];
         infoAction.action = ^(id sender){
             [self.explorerViewController displayInfoTable];
         };
-        infoAction.enabled = YES;
         
         [self registerAction:infoAction];
         [self registerAction:closeAction];
+        
+        //
+        // Base view controllers
+        //
+        
+        [self registerMenuActions];
     }
     
     return self;
+}
+
+- (void)registerMenuActions
+{
+    //
+    // Those actions are basically legacy from vanilla FLEX version and should be refactored.
+    //
+    FLEXMenuItem* menuAction = [FLEXMenuItem itemWithIdentifier:@"com.flex.globalState"];
+    menuAction.title = @"Global State";
+    menuAction.icon = @"🌍";
+    menuAction.viewControllerClass = @"FLEXGlobalsTableViewController";
+    [self registerAction:menuAction];
+    
+    menuAction = [FLEXMenuItem itemWithIdentifier:@"com.flex.memoryHeap"];
+    menuAction.icon = @"💩";
+    menuAction.title = @"Heap Objects";
+    menuAction.viewControllerClass = @"FLEXLiveObjectsTableViewController";
+    [self registerAction:menuAction];
+    
+    menuAction = [FLEXMenuItem itemWithIdentifier:@"com.flex.fileBrowser"];
+    menuAction.icon = @"📁";
+    menuAction.title = @"File Browser";
+    menuAction.viewControllerClass = @"FLEXFileBrowserTableViewController";
+    [self registerAction:menuAction];
 }
 
 #pragma mark - FLEXPlugin

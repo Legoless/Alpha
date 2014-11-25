@@ -11,23 +11,23 @@
 
 @optional
 
-/**
+/*!
  * Gets called when the CircleMenu has shown up.
  */
 - (void)circleMenuOpened;
-/**
+/*!
  * Informs the delegate that the menu is going to be closed with
  * the button specified by the index being activated.
  */
 - (void)circleMenuActivatedButtonWithIndex:(int)anIndex;
 
-/**
+/*!
  *  Informs the delegate that the menu hovered on button with index.
  *
  *  @param anIndex index of button
  */
 - (void)circleMenuHoverOnButtonWithIndex:(int)anIndex;
-/**
+/*!
  * Gets called when the CircleMenu has been closed. This is usually
  * sent immediately after circleMenuActivatedButtonWithIndex:.
  */
@@ -58,7 +58,7 @@ typedef enum {
 
 @property (weak, nonatomic) id<CKCircleMenuDelegate> delegate;
 
-/**
+/*!
  * Initializes the CKCircleMenuView.
  * @param aPoint the center of the menu's circle
  * @param anOptionsDictionary optional configuration, may be nil
@@ -68,7 +68,7 @@ typedef enum {
  */
 - (id)initAtOrigin:(CGPoint)aPoint usingOptions:(NSDictionary*)anOptionsDictionary withImages:(UIImage*)anImage, ... NS_REQUIRES_NIL_TERMINATION;
 
-/**
+/*!
  * Initializes the CKCircleMenuView.
  * @param aPoint the center of the menu's circle
  * @param anOptionsDictionary optional configuration, may be nil
@@ -78,7 +78,7 @@ typedef enum {
  */
 - (id)initAtOrigin:(CGPoint)aPoint usingOptions:(NSDictionary*)anOptionsDictionary withImageArray:(NSArray*)anImageArray;
 
-/**
+/*!
  * Opens the menu with the buttons and settings specified in the
  * initializer.
  * @param aRecognizer the UILongPressGestureRecognizer that has been
@@ -89,7 +89,7 @@ typedef enum {
  */
 - (void)openMenuWithRecognizer:(UIGestureRecognizer*)aRecognizer;
 
-/**
+/*!
  * Offers the possibility to close the menu externally.
  */
 - (void)closeMenu;

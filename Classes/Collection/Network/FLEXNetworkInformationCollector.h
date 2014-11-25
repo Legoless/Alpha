@@ -8,7 +8,7 @@
 
 #import "FLEXInformationCollector.h"
 
-/**
+/*!
  *  Collects information about network
  */
 @interface FLEXNetworkInformationCollector : FLEXInformationCollector

@@ -10,7 +10,7 @@
 
 @property (nonatomic, getter = isEnabled) BOOL enabled;
 
-/**
+/*!
  *  Singleton access to specific information collector
  *
  *  @return shared instance of the collector
@@ -19,7 +19,7 @@
 
 + (NSArray *)informationCollectors;
 
-/**
+/*!
  *  Starts collecting information
  */
 - (void)activate;

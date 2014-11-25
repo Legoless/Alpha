@@ -8,7 +8,7 @@
 
 @interface FLEXStatusTableViewController : UITableViewController
 
-/**
+/*!
  *  Refresh rate in seconds, default 0.5
  */
 @property (nonatomic) NSTimeInterval refreshRate;

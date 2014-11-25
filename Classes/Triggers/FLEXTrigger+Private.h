@@ -8,7 +8,7 @@
 
 #import "FLEXTrigger.h"
 
-/**
+/*!
  *  Private utility methods for triggers
  */
 @interface FLEXTrigger (Private)

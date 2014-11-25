@@ -8,23 +8,35 @@
 
 typedef void (^FLEXActionItemAction)(id sender);
 
+/*!
+ *  Action item of FLEX Context Menu
+ */
 @interface FLEXActionItem : NSObject
 
 @property (nonatomic, getter = isEnabled) BOOL enabled;
 
-@property (nonatomic, copy) UIImage* image;
+/*!
+ *  Currently supports NSString with Emoji or UIImage
+ */
+@property (nonatomic, strong) id icon;
 @property (nonatomic, copy) NSString* title;
 @property (nonatomic, copy) NSString* identifier;
 
-
-/**
- * Action to be executed when blok is 
+/*!
+ * Action to be executed when block is called.
  */
 @property (nonatomic, copy) FLEXActionItemAction action;
 
-+ (instancetype)actionItemWithIdentifier:(NSString *)identifier;
+/*!
+ *  Convenience wrapper around alloc init
+ *
+ *  @param identifier
+ *
+ *  @return instance of action item
+ */
++ (instancetype)itemWithIdentifier:(NSString *)identifier;
 
-/**
+/*!
  *  Designated initializer
  *
  *  @param identifier Identifier of action, unique string

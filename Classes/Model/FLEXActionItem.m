@@ -10,9 +10,32 @@
 
 @implementation FLEXActionItem
 
-+ (instancetype)actionItemWithIdentifier:(NSString *)identifier
+#pragma mark - Getters and Setters
+
+- (void)setIcon:(id)icon
+{
+    if ([icon isKindOfClass:[UIImage class]] || [icon isKindOfClass:[NSString class]])
+    {
+        _icon = icon;
+    }
+    else
+    {
+        @throw [NSException exceptionWithName:@"Icon can be a string or UIImage" reason:@"Only NSString and UIImage is supported for icon." userInfo:@{ @"icon" : icon }];
+    }
+}
+
+#pragma mark - Static Methods
+
++ (instancetype)itemWithIdentifier:(NSString *)identifier
 {
     return [[self alloc] initWithIdentifier:identifier];
+}
+
+#pragma mark - Initializers
+
+- (instancetype)init
+{
+    @throw [NSException exceptionWithName:@"Action needs an identifier" reason:@"No identifier specified" userInfo:nil];
 }
 
 - (instancetype)initWithIdentifier:(NSString *)identifier
@@ -22,6 +45,7 @@
     if (self)
     {
         self.identifier = identifier;
+        self.enabled = YES;
     }
     
     return self;

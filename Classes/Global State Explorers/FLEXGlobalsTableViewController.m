@@ -16,8 +16,7 @@
 #import "FLEXFileBrowserTableViewController.h"
 #import "FLEXGlobalsTableViewControllerEntry.h"
 #import "FLEXManager+Private.h"
-
-static __weak UIWindow *s_applicationWindow = nil;
+#import "FLEXManager.h"
 
 @interface FLEXGlobalsTableViewController ()
 
@@ -76,10 +75,10 @@ static __weak UIWindow *s_applicationWindow = nil;
 
             case 3:
                 titleFuture = ^NSString *{
-                    return [NSString stringWithFormat:@"🌴  %@", [[s_applicationWindow rootViewController] class]];
+                    return [NSString stringWithFormat:@"🌴  %@", [[[FLEXManager sharedManager].keyWindow rootViewController] class]];
                 };
                 viewControllerFuture = ^UIViewController *{
-                    UIViewController *rootViewController = [s_applicationWindow rootViewController];
+                    UIViewController *rootViewController = [[FLEXManager sharedManager].keyWindow rootViewController];
                     return [FLEXObjectExplorerFactory explorerViewControllerForObject:rootViewController];
                 };
                 break;
@@ -109,7 +108,7 @@ static __weak UIWindow *s_applicationWindow = nil;
                     return @"🔑  -[UIApplication keyWindow]";
                 };
                 viewControllerFuture = ^UIViewController *{
-                    return [FLEXObjectExplorerFactory explorerViewControllerForObject:s_applicationWindow];
+                    return [FLEXObjectExplorerFactory explorerViewControllerForObject:[FLEXManager sharedManager].keyWindow];
                 };
                 break;
 
@@ -151,16 +150,9 @@ static __weak UIWindow *s_applicationWindow = nil;
     self = [super initWithStyle:style];
     if (self) {
         self.title = @"Global State";
-        _entries = [[[self class] defaultGlobalEntries] arrayByAddingObjectsFromArray:[FLEXManager sharedManager].userGlobalEntries];
+        _entries = [[self class] defaultGlobalEntries];
     }
     return self;
-}
-
-#pragma mark - Public
-
-+ (void)setApplicationWindow:(UIWindow *)applicationWindow
-{
-    s_applicationWindow = applicationWindow;
 }
 
 #pragma mark - UIViewController

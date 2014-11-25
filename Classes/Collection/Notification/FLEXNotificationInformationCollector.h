@@ -10,12 +10,12 @@
 
 @interface FLEXNotificationInformationCollector : FLEXInformationCollector
 
-/**
+/*!
  *  Contains string with enabled notification types
  */
 @property (nonatomic, readonly) NSString* enabledNotificationTypes;
 
-/**
+/*!
  *  Contains registered remote notification token
  */
 @property (nonatomic, readonly) NSString* remoteNotificationToken;

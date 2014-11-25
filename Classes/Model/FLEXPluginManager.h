@@ -11,19 +11,19 @@
 
 @interface FLEXPluginManager : NSObject
 
-/**
+/*!
  *  Loaded plugins in FLEX
  */
 @property (nonatomic, readonly) NSArray *plugins;
 
-/**
+/*!
  *  Always allocated because it manages entire FLEX functionality
  */
 @property (nonatomic, readonly) FLEXBasePlugin* basePlugin;
 
 + (instancetype)sharedManager;
 
-/**
+/*!
  *  Returns plugin instance of class
  *
  *  @param class plugin class

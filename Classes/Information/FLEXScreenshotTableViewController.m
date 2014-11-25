@@ -95,7 +95,7 @@
     filename = [filename stringByReplacingOccurrencesOfString:@"FLEX_SS_" withString:@""];
     filename = [filename stringByReplacingOccurrencesOfString:@".png" withString:@""];
     
-    NSDate *date = [self.fileDateFormatter dateFromString:filename];
+    NSDate *date = [[FLEXFileManager sharedManager].fileDateFormatter dateFromString:filename];
     
     NSString *text = [self.dateFormatter stringFromDate:date];
     

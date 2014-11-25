@@ -16,7 +16,7 @@
 @implementation FLEXTouchView
 @end
 
-/**
+/*!
  * Touch finger view from Touchpose
  */
 @interface FLEXTouchFingerView : UIView

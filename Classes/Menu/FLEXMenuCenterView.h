@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 f. All rights reserved.
 //
 
-/**
+/*!
  *  Usage: Private to explorer menu
  */
 @interface FLEXMenuCenterView : UIView

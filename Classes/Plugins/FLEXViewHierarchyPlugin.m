@@ -36,7 +36,7 @@
 
 - (id)init
 {
-    self = [super init];
+    self = [super initWithIdentifier:@"com.flex.plugin.view"];
     
     if (self)
     {
@@ -44,16 +44,16 @@
         // Close action always present
         //
         
-        FLEXActionItem *inspectAction = [FLEXActionItem actionItemWithIdentifier:@"com.flex.view.inspect"];
+        FLEXActionItem *inspectAction = [FLEXActionItem itemWithIdentifier:@"com.flex.plugin.view.inspect"];
         inspectAction.title = @"Inspect";
-        inspectAction.image = [FLEXResources listIcon];
-        inspectAction.action = ^(id sender){
+        inspectAction.icon = [FLEXResources listIcon];
+        inspectAction.action = ^(id sender)
+        {
             [[FLEXManager sharedManager] addChildViewControllerToRootViewController:self.viewHierarchyViewController animated:YES completion:nil];
             //[[FLEXManager sharedManager].explorerWindow addSubview:self.viewHierarchyViewController.view];
             
             //[self.viewHierarchyViewController displayHierarchyExplorer];
         };
-        inspectAction.enabled = YES;
 
         [self registerAction:inspectAction];
     }

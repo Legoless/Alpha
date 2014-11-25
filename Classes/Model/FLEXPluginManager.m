@@ -55,7 +55,7 @@
 
 #pragma mark - Helper methods
 
-/**
+/*!
  *  Generally this will only be called once, since plugins cannot be
  *  loaded at runtime. The concept here is that all plugins are loaded
  *  for the first time on start, even if the functionality is not
@@ -73,7 +73,14 @@
     {
         FLEXPlugin* plugin = [[class alloc] init];
         
-        [self.basePlugins addObject:plugin];
+        //
+        // Check if plugin has an identifier, so we at least know developer looked into documentation.
+        //
+        
+        if (plugin.identifier)
+        {
+            [self.basePlugins addObject:plugin];
+        }
     }
 }
 

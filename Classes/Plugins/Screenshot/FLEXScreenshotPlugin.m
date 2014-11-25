@@ -11,44 +11,38 @@
 #import "FLEXWindow.h"
 #import "FLEXResources.h"
 #import "FLEXFileManager.h"
+#import "FLEXMenuItem.h"
 
 #import "FLEXScreenshotPlugin.h"
 
 @interface FLEXScreenshotPlugin ()
 
-@property (nonatomic, strong) NSDateFormatter* fileDateFormatter;
-
 @end
 
 @implementation FLEXScreenshotPlugin
 
-- (NSDateFormatter *)fileDateFormatter
-{
-    if (!_fileDateFormatter)
-    {
-        _fileDateFormatter = [[NSDateFormatter alloc] init];
-        _fileDateFormatter.dateFormat = @"yyyy.MM.dd_HH.mm.ss";
-    }
-    
-    return _fileDateFormatter;
-}
-
 - (id)init
 {
-    self = [super init];
+    self = [super initWithIdentifier:@"com.flex.plugin.screenshot"];
     
     if (self)
     {
-        FLEXActionItem *touchAction = [FLEXActionItem actionItemWithIdentifier:@"com.flex.screenshot.make"];
+        FLEXActionItem *touchAction = [FLEXActionItem itemWithIdentifier:@"com.flex.plugin.screenshot.make"];
         touchAction.title = @"Screenshot";
-        touchAction.image = [FLEXResources dragHandle];
-        touchAction.action = ^(id sender){
+        touchAction.icon = [FLEXResources dragHandle];
+        touchAction.action = ^(id sender)
+        {
             [self saveScreenshot];
         };
-        touchAction.enabled = YES;
         
         [self registerAction:touchAction];
         
+        FLEXMenuItem* menuAction = [FLEXMenuItem itemWithIdentifier:@"com.flex.plugin.screenshot.main"];
+        menuAction.icon = @"📱";
+        menuAction.title = @"Screenshots";
+        menuAction.viewControllerClass = @"FLEXScreenshotTableViewController";
+        
+        [self registerAction:menuAction];
     }
     
     return self;
@@ -102,7 +96,7 @@
 
 - (NSString *)stringForFile
 {
-    return [NSString stringWithFormat:@"FLEX_SS_%@.png", [self.fileDateFormatter stringFromDate:[NSDate date]]];
+    return [NSString stringWithFormat:@"FLEX_SS_%@.png", [[FLEXFileManager sharedManager].fileDateFormatter stringFromDate:[NSDate date]]];
 }
 
 @end

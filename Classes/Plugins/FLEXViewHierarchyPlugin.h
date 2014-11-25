@@ -8,7 +8,7 @@
 
 #import "FLEXPlugin.h"
 
-/**
+/*!
  *  View hierarchy imported from original FLEX
  */
 @interface FLEXViewHierarchyPlugin : FLEXPlugin

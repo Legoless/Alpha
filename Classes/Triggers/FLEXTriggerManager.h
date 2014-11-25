@@ -8,7 +8,7 @@
 
 #import "FLEXTrigger.h"
 
-/**
+/*!
  *  Trigger manager handles different FLEX triggers
  */
 @interface FLEXTriggerManager : NSObject

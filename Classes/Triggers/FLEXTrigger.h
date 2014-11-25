@@ -8,12 +8,12 @@
 
 @interface FLEXTrigger : NSObject
 
-/**
+/*!
  *  Installs trigger to UIWindow
  */
 - (void)integrate;
 
-/**
+/*!
  *  Executes trigger, opens FLEX explorer
  *
  *  @param sender Trigger sender

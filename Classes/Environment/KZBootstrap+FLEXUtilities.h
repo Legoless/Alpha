@@ -10,7 +10,7 @@
 
 @interface KZBootstrap (FLEXUtilities)
 
-/**
+/*!
  *  Returns YES if KZBootstrap environments are available.
  *
  *  @return YES if KZBEnvironments.plist is available

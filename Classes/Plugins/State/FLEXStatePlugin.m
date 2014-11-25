@@ -7,6 +7,7 @@
 //
 
 #import "FLEXStatePlugin.h"
+#import "FLEXMenuItem.h"
 #import "FLEXApplicationDelegate.h"
 
 @interface FLEXStatePlugin ()
@@ -19,12 +20,10 @@
 
 - (instancetype)init
 {
-    self = [super init];
+    self = [super initWithIdentifier:@"com.flex.plugin.state"];
     
     if (self)
     {
-        self.enabled = YES;
-        
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleApplicationNotification:) name:UIApplicationDidEnterBackgroundNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleApplicationNotification:) name:UIApplicationWillEnterForegroundNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleApplicationNotification:) name:UIApplicationDidFinishLaunchingNotification object:nil];
@@ -43,6 +42,24 @@
         self.appDelegate.originalDelegate = [UIApplication sharedApplication].delegate;
         
         [UIApplication sharedApplication].delegate = self.appDelegate;
+        
+        //
+        // Menu items
+        //
+        
+        FLEXMenuItem* menuAction = [FLEXMenuItem itemWithIdentifier:@"com.flex.plugin.state.status"];
+        menuAction.icon = @"📊";
+        menuAction.title = @"Status";
+        menuAction.viewControllerClass = @"FLEXStatusTableViewController";
+        
+        [self registerAction:menuAction];
+        
+        menuAction = [FLEXMenuItem itemWithIdentifier:@"com.flex.plugin.state.notifications"];
+        menuAction.icon = @"🔔";
+        menuAction.title = @"Notifications";
+        menuAction.viewControllerClass = @"FLEXNotificationTableViewController";
+        
+        [self registerAction:menuAction];
     }
     
     return self;
@@ -58,7 +75,7 @@
 
 - (void)handleApplicationNotification:(NSNotification *)notification
 {
-    if (!self.enabled)
+    if (!self.isEnabled)
     {
         return;
     }

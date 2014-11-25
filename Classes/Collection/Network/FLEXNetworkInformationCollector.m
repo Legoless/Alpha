@@ -32,7 +32,7 @@
 
 @interface FLEXNetworkInformationCollector ()
 
-/**
+/*!
  *  Stores all requests
  */
 @property (nonatomic, strong) NSMutableDictionary *baseRequests;
@@ -82,7 +82,7 @@
 
 #pragma mark - Statics
 
-/**
+/*!
  *  Creates unique request ID as a string
  *
  *  @return unique request ID
@@ -765,7 +765,7 @@
     return networkConnection;
 }
 
-/**
+/*!
  *  Creates and returns network connection object, do NOT call directly,
  *  call networkConnectionForObject instead.
  *
@@ -789,7 +789,7 @@
     return self.baseRequests[requestID];
 }
 
-/**
+/*!
  *  Creates and returns network connection object, do NOT call directly,
  *  call networkConnectionForObject instead.
  *
