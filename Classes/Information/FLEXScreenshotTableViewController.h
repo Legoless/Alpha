@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 f. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 @interface FLEXScreenshotTableViewController : UITableViewController
 
 @end

@@ -36,15 +36,7 @@
 
 - (FLEXBasePlugin *)basePlugin
 {
-    for (FLEXPlugin* plugin in self.plugins)
-    {
-        if ([plugin isKindOfClass:[FLEXBasePlugin class]])
-        {
-            return (FLEXBasePlugin *)plugin;
-        }
-    }
-    
-    return nil;
+    return (FLEXBasePlugin *)[self enabledPluginOfClass:[FLEXBasePlugin class]];
 }
 
 - (NSArray *)plugins
@@ -83,6 +75,19 @@
         
         [self.basePlugins addObject:plugin];
     }
+}
+
+- (FLEXPlugin *)enabledPluginOfClass:(Class)class
+{
+    for (FLEXPlugin* plugin in self.plugins)
+    {
+        if ([plugin isKindOfClass:class] && plugin.isEnabled)
+        {
+            return (FLEXBasePlugin *)plugin;
+        }
+    }
+    
+    return nil;
 }
 
 @end

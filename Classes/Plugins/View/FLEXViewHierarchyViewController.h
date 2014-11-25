@@ -19,6 +19,4 @@ typedef NS_ENUM(NSUInteger, FLEXExplorerMode) {
 /// Tracks the currently active tool/mode
 @property (nonatomic, assign) FLEXExplorerMode currentMode;
 
-- (void)displayHierarchyExplorer;
-
 @end

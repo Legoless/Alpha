@@ -22,8 +22,6 @@
 
 @property (nonatomic, strong, readwrite) FLEXViewController* rootViewController;
 
-@property (nonatomic, strong) FLEXWindow *explorerWindow;
-
 @property (nonatomic, strong, readwrite) UIWindow* keyWindow;
 
 

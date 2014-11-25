@@ -7,6 +7,7 @@
 //
 
 #import "FLEXBasePlugin.h"
+#import "FLEXPlugin.h"
 
 @interface FLEXPluginManager : NSObject
 
@@ -21,5 +22,14 @@
 @property (nonatomic, readonly) FLEXBasePlugin* basePlugin;
 
 + (instancetype)sharedManager;
+
+/**
+ *  Returns plugin instance of class
+ *
+ *  @param class plugin class
+ *
+ *  @return plugin instance
+ */
+- (FLEXPlugin *)enabledPluginOfClass:(Class)class;
 
 @end

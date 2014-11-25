@@ -12,9 +12,16 @@
 
 @interface FLEXManager : NSObject
 
+/*!
+ *  Singleton access to FLEX Manager
+ *
+ *  @return instance of FLEX manager
+ */
 + (instancetype)sharedManager;
 
 @property (nonatomic, getter = isHidden) BOOL hidden;
+
+@property (nonatomic, strong) FLEXWindow *explorerWindow;
 
 @property (nonatomic, readonly) UIWindow* keyWindow;
 

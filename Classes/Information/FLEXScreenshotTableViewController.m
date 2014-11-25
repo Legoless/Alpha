@@ -12,6 +12,7 @@
 #import "FLEXImagePreviewViewController.h"
 #import "FLEXUtility.h"
 #import "FLEXWindow.h"
+#import "FLEXFileManager.h"
 
 @interface FLEXScreenshotTableViewController ()
 
@@ -23,17 +24,6 @@
 @end
 
 @implementation FLEXScreenshotTableViewController
-
-- (NSDateFormatter *)fileDateFormatter
-{
-    if (!_fileDateFormatter)
-    {
-        _fileDateFormatter = [[NSDateFormatter alloc] init];
-        _fileDateFormatter.dateFormat = @"yyyy.MM.dd_HH.mm.ss";
-    }
-    
-    return _fileDateFormatter;
-}
 
 - (NSDateFormatter *)dateFormatter
 {
@@ -61,8 +51,6 @@
 {
     [super viewDidLoad];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPressed:)];
-    
     [self loadScreenshots];
 }
 
@@ -70,73 +58,10 @@
 {
     NSError* error;
     
-    NSString *directory = [NSString stringWithFormat:@"%@FLEX/Screenshots", [self documentsDirectory].absoluteString];
+    NSString *directory = [NSString stringWithFormat:@"%@FLEX/Screenshots", [[FLEXFileManager sharedManager] documentsDirectory].absoluteString];
     self.screenshots = [[NSFileManager defaultManager] contentsOfDirectoryAtURL:[NSURL URLWithString:directory] includingPropertiesForKeys:@[] options:0 error:&error];
     
     [self.tableView reloadData];
-}
-
-#pragma mark - Actions
-
-- (void)addPressed:(id)sender
-{
-    NSArray *windows = [UIApplication sharedApplication].windows;
-    
-    NSMutableArray *excludedWindows = [NSMutableArray array];
-    
-    for (UIWindow *window in windows)
-    {
-        if ([window isKindOfClass:[FLEXWindow class]])
-        {
-            [excludedWindows addObject:window];
-        }
-    }
-    
-    UIImage *screenshot = [[UIApplication sharedApplication] screenshotExcludingWindows:excludedWindows ];
-
-    [self saveImage:screenshot];
-    
-    [self loadScreenshots];
-}
-
-- (void)saveImage:(UIImage *)image
-{
-    NSData *imageData = UIImagePNGRepresentation(image);
-    
-    NSString *directory = [NSString stringWithFormat:@"%@FLEX/Screenshots", [self documentsDirectory].absoluteString];
-    
-    NSString *filePath = [NSString stringWithFormat:@"%@/%@", directory, [self stringForFile]];
-    
-    NSURL *fileURL = [NSURL URLWithString:filePath];
-    
-    BOOL isDir;
-    BOOL exists = [[NSFileManager defaultManager] fileExistsAtPath:directory isDirectory:&isDir];
-    
-    if (!exists || !isDir)
-    {
-        NSError *error;
-        
-        [[NSFileManager defaultManager] createDirectoryAtURL:[NSURL URLWithString:directory] withIntermediateDirectories:YES attributes:nil error:&error];
-    }
-    
-    if (![[NSFileManager defaultManager] fileExistsAtPath:filePath])
-    {
-        NSError* error;
-        [imageData writeToURL:fileURL options:NSDataWritingAtomic error:&error];
-    }
-}
-
-- (NSString *)stringForFile
-{
-    return [NSString stringWithFormat:@"FLEX_SS_%@.png", [self.fileDateFormatter stringFromDate:[NSDate date]]];
-}
-
-/**
- Returns the URL to the application's Documents directory.
- */
-- (NSURL *)documentsDirectory
-{
-    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
 #pragma mark - Table View Data Source

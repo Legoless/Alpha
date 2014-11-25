@@ -52,7 +52,7 @@
     
     if (self)
     {
-        FLEXActionItem *touchAction = [FLEXActionItem actionItemWithIdentifier:@"com.flex.close"];
+        FLEXActionItem *touchAction = [FLEXActionItem actionItemWithIdentifier:@"com.flex.touch.touches"];
         touchAction.title = @"Touches";
         touchAction.image = [FLEXResources selectIcon];
         touchAction.action = ^(id sender){
