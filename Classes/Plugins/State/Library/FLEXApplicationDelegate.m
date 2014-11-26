@@ -79,7 +79,7 @@
         //
         // Get a dictionary
         //
-        NSDictionary* userInfo = [self argumentInInvocation:anInvocation atIndex:2];
+        NSDictionary* userInfo = [self argumentInInvocation:anInvocation atIndex:1];
         
         FLEXSystemNotification* notification = [FLEXSystemNotification systemNotificationWithRemoteNotification:[userInfo copy]];
         
@@ -114,7 +114,7 @@
 {
     id object;
     
-    [invocation getArgument:&object atIndex:index + 2];
+    [invocation getArgument:&object atIndex:index];
     
     if (object)
     {
