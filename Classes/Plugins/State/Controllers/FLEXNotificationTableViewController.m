@@ -181,7 +181,16 @@
 
 - (UIViewController *)viewControllerToPushForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    FLEXSystemNotification *systemNotification = self.localNotifications[indexPath.row];
+    FLEXSystemNotification *systemNotification = nil;
+    
+    if (indexPath.section == 1)
+    {
+        systemNotification = self.remoteNotifications[indexPath.row];
+    }
+    else
+    {
+        systemNotification = self.localNotifications[indexPath.row];
+    }
     
     return [FLEXObjectExplorerFactory explorerViewControllerForObject:systemNotification];
 }
