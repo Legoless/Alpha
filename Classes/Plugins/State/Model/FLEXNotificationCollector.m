@@ -8,9 +8,15 @@
 
 #import "FLEXSystemNotification.h"
 
-#import "FLEXNotificationInformationCollector.h"
+#import "FLEXNotificationCollector.h"
 
-@implementation FLEXNotificationInformationCollector
+@interface FLEXNotificationCollector ()
+
+@property
+
+@end
+
+@implementation FLEXNotificationCollector
 
 - (NSArray *)localNotifications
 {
@@ -87,5 +93,7 @@
     
     return types.count ? [types componentsJoinedByString:@", "] : @"none";
 }
+
+- (void)registerRemoteNotification:(FLEXSystemNotification *)notification
 
 @end

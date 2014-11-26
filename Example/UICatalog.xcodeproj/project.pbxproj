@@ -60,7 +60,7 @@
 		38E343481A237FB500CEE145 /* FLEXCanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E343471A237FB500CEE145 /* FLEXCanvasView.m */; };
 		38E3434F1A2387AD00CEE145 /* FLEXTouchPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E3434E1A2387AD00CEE145 /* FLEXTouchPlugin.m */; };
 		38E370B91A129451004E246F /* FLEXNotificationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E370B81A129451004E246F /* FLEXNotificationTableViewController.m */; };
-		38E370BD1A129984004E246F /* FLEXNotificationInformationCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E370BC1A129984004E246F /* FLEXNotificationInformationCollector.m */; };
+		38E370BD1A129984004E246F /* FLEXNotificationCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E370BC1A129984004E246F /* FLEXNotificationCollector.m */; };
 		38E370C01A1299DA004E246F /* FLEXSystemNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E370BF1A1299DA004E246F /* FLEXSystemNotification.m */; };
 		38FDFCB91A24A31D004E03CA /* FLEXScreenshotPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FDFCB81A24A31D004E03CA /* FLEXScreenshotPlugin.m */; };
 		38FDFCBE1A24A836004E03CA /* FLEXFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FDFCBD1A24A836004E03CA /* FLEXFileManager.m */; };
@@ -258,8 +258,8 @@
 		38E343511A2388E900CEE145 /* FLEXTouchWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXTouchWindow.m; sourceTree = "<group>"; };
 		38E370B71A129451004E246F /* FLEXNotificationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXNotificationTableViewController.h; sourceTree = "<group>"; };
 		38E370B81A129451004E246F /* FLEXNotificationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXNotificationTableViewController.m; sourceTree = "<group>"; };
-		38E370BB1A129984004E246F /* FLEXNotificationInformationCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXNotificationInformationCollector.h; sourceTree = "<group>"; };
-		38E370BC1A129984004E246F /* FLEXNotificationInformationCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXNotificationInformationCollector.m; sourceTree = "<group>"; };
+		38E370BB1A129984004E246F /* FLEXNotificationCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXNotificationCollector.h; sourceTree = "<group>"; };
+		38E370BC1A129984004E246F /* FLEXNotificationCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXNotificationCollector.m; sourceTree = "<group>"; };
 		38E370BE1A1299DA004E246F /* FLEXSystemNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXSystemNotification.h; sourceTree = "<group>"; };
 		38E370BF1A1299DA004E246F /* FLEXSystemNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXSystemNotification.m; sourceTree = "<group>"; };
 		38FDFCB71A24A31D004E03CA /* FLEXScreenshotPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXScreenshotPlugin.h; sourceTree = "<group>"; };
@@ -483,8 +483,8 @@
 		386E3F461A25094000E2BDCE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				38E370BB1A129984004E246F /* FLEXNotificationInformationCollector.h */,
-				38E370BC1A129984004E246F /* FLEXNotificationInformationCollector.m */,
+				38E370BB1A129984004E246F /* FLEXNotificationCollector.h */,
+				38E370BC1A129984004E246F /* FLEXNotificationCollector.m */,
 				38E370BE1A1299DA004E246F /* FLEXSystemNotification.h */,
 				38E370BF1A1299DA004E246F /* FLEXSystemNotification.m */,
 				3849902C1A23E13D00136B15 /* FLEXStateEvent.h */,
@@ -1229,7 +1229,7 @@
 				3849902E1A23E13D00136B15 /* FLEXStateEvent.m in Sources */,
 				386E3F451A25092F00E2BDCE /* FLEXConsolePlugin.m in Sources */,
 				944F74AD197B458C009AB039 /* FLEXWindow.m in Sources */,
-				38E370BD1A129984004E246F /* FLEXNotificationInformationCollector.m in Sources */,
+				38E370BD1A129984004E246F /* FLEXNotificationCollector.m in Sources */,
 				38E343361A233A7100CEE145 /* FLEXBasePlugin.m in Sources */,
 				944F749D197B458C009AB039 /* FLEXArgumentInputStringView.m in Sources */,
 				944F74A9197B458C009AB039 /* FLEXExplorerToolbar.m in Sources */,

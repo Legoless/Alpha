@@ -20,6 +20,18 @@
 @property (nonatomic, copy) NSDictionary *userInfo;
 @property (nonatomic, copy) NSString *category;
 
+/**
+ *  Set to YES if it is a remote notificaiton
+ */
+@property (nonatomic) BOOL isRemote;
+
+/**
+ *  Set to YES if called by fetch
+ */
+@property (nonatomic) BOOL isFetch;
+
 + (instancetype)systemNotificationWithLocalNotification:(UILocalNotification *)notification;
+
++ (instancetype)systemNotificationWithRemoteNotification:(NSDictionary *)dictionary;
 
 @end

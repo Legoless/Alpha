@@ -6,9 +6,11 @@
 //  Copyright (c) 2014 f. All rights reserved.
 //
 
+#import "FLEXSystemNotification.h"
+
 #import "FLEXInformationCollector.h"
 
-@interface FLEXNotificationInformationCollector : FLEXInformationCollector
+@interface FLEXNotificationCollector : FLEXInformationCollector
 
 /*!
  *  Contains string with enabled notification types
@@ -18,8 +20,13 @@
 /*!
  *  Contains registered remote notification token
  */
-@property (nonatomic, readonly) NSString* remoteNotificationToken;
+@property (nonatomic, strong) NSString* remoteNotificationToken;
+
+
+@property (nonatomic, readonly) NSArray* remoteNotifications;
 
 @property (nonatomic, readonly) NSArray* localNotifications;
+
+- (void)registerRemoteNotification:(FLEXSystemNotification *)notification;
 
 @end

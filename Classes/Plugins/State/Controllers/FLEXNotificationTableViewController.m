@@ -12,7 +12,7 @@
 
 #import "FLEXSystemNotification.h"
 
-#import "FLEXNotificationInformationCollector.h"
+#import "FLEXNotificationCollector.h"
 #import "FLEXNotificationTableViewController.h"
 
 @interface FLEXNotificationTableViewController ()

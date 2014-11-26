@@ -6,7 +6,9 @@
 //  Copyright (c) 2014 f. All rights reserved.
 //
 
-@interface FLEXInformationCollector : NSObject
+#import <JSONModel/JSONModel.h>
+
+@interface FLEXInformationCollector : JSONModel
 
 @property (nonatomic, getter = isEnabled) BOOL enabled;
 
@@ -20,8 +22,8 @@
 + (NSArray *)informationCollectors;
 
 /*!
- *  Starts collecting information
+ *  Starts collecting information, will be started by plugin, not itself
  */
-- (void)activate;
+- (void)activate __attribute__((deprecated));
 
 @end
