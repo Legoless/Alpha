@@ -29,6 +29,8 @@
 
 + (instancetype)systemNotificationWithRemoteNotification:(NSDictionary *)dictionary
 {
+    FLEXSystemNotification *systemNotification = [[FLEXSystemNotification alloc] init];
+    
     return nil;
 }
 

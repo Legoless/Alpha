@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 f. All rights reserved.
 //
 
-@interface FLEXApplicationDelegate : UIResponder <UIApplicationDelegate>
+@interface FLEXApplicationDelegate : NSObject <UIApplicationDelegate>
 
 @property (nonatomic, strong) id<UIApplicationDelegate> originalDelegate;
 

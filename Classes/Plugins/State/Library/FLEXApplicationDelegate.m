@@ -42,6 +42,8 @@
     
     NSString* selector = NSStringFromSelector(aSelector);
     
+    NSLog(@"Selector: %@", selector);
+    
     if ([super respondsToSelector:aSelector])
     {
         return YES;
@@ -66,7 +68,7 @@
     // Redirect message to original delegate and act the same as the original delegate
     //
     
-    //NSLog(@"DELEGATE MESSAGE: %@", NSStringFromSelector(anInvocation.selector));
+    NSLog(@"DELEGATE MESSAGE: %@", NSStringFromSelector(anInvocation.selector));
     
     //
     // Remote Push notifications
@@ -95,6 +97,18 @@
     {
         [anInvocation invokeWithTarget:self.originalDelegate];
     }
+}
+
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
+{
+    NSMethodSignature* signature = [super methodSignatureForSelector:aSelector];
+    
+    if (!signature && self.originalDelegate)
+    {
+        return [[self.originalDelegate class] instanceMethodSignatureForSelector:aSelector];
+    }
+    
+    return signature;
 }
 
 @end
