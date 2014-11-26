@@ -12,9 +12,26 @@
 
 @interface FLEXNotificationCollector ()
 
+@property (nonatomic, strong) NSMutableArray* baseRemoteNotifications;
+
 @end
 
 @implementation FLEXNotificationCollector
+
+- (NSArray *)remoteNotifications
+{
+    return [self.baseRemoteNotifications copy];
+}
+
+- (NSMutableArray *)baseRemoteNotifications
+{
+    if (!_baseRemoteNotifications)
+    {
+        _baseRemoteNotifications = [NSMutableArray array];
+    }
+    
+    return _baseRemoteNotifications;
+}
 
 - (NSArray *)localNotifications
 {
@@ -94,7 +111,7 @@
 
 - (void)registerRemoteNotification:(FLEXSystemNotification *)notification
 {
-    
+    [self.baseRemoteNotifications addObject:notification];
 }
 
 @end

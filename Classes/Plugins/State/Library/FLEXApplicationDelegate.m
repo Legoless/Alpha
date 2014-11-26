@@ -112,13 +112,16 @@
 
 - (id)argumentInInvocation:(NSInvocation *)invocation atIndex:(NSInteger)index
 {
-    void* object;
+    id object;
     
-    [invocation getArgument:&object atIndex:index];
+    [invocation getArgument:&object atIndex:index + 2];
     
-    id objcObject = (__bridge id)(object);
+    if (object)
+    {
+        return object;
+    }
     
-    return objcObject;
+    return nil;
 }
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector

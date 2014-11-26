@@ -31,7 +31,11 @@
 {
     FLEXSystemNotification *systemNotification = [[FLEXSystemNotification alloc] init];
     
-    return nil;
+    systemNotification.alertBody = @"Test";
+    systemNotification.fireDate = [NSDate date];
+    systemNotification.userInfo = dictionary;
+    
+    return systemNotification;
 }
 
 @end
