@@ -32,7 +32,7 @@
     if (self)
     {
         self.title = @"Notifications";
-        self.localNotifications = [FLEXNotificationInformationCollector sharedCollector].localNotifications;
+        self.localNotifications = [FLEXNotificationCollector sharedCollector].localNotifications;
     }
     
     return self;
@@ -90,7 +90,7 @@
     {
         case 0:
             cell.textLabel.text = @"Status";
-            cell.detailTextLabel.text = [FLEXNotificationInformationCollector sharedCollector].enabledNotificationTypes;
+            cell.detailTextLabel.text = [FLEXNotificationCollector sharedCollector].enabledNotificationTypes;
             
             break;
         /*case 1:

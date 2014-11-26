@@ -12,8 +12,6 @@
 
 @interface FLEXNotificationCollector ()
 
-@property
-
 @end
 
 @implementation FLEXNotificationCollector
@@ -95,5 +93,8 @@
 }
 
 - (void)registerRemoteNotification:(FLEXSystemNotification *)notification
+{
+    
+}
 
 @end

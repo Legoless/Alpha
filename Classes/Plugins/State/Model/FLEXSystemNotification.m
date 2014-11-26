@@ -27,5 +27,9 @@
     return systemNotification;
 }
 
++ (instancetype)systemNotificationWithRemoteNotification:(NSDictionary *)dictionary
+{
+    return nil;
+}
 
 @end
