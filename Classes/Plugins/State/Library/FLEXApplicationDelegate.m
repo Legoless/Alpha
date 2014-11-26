@@ -42,7 +42,7 @@
     
     NSString* selector = NSStringFromSelector(aSelector);
     
-    NSLog(@"Selector: %@", selector);
+    //NSLog(@"Selector: %@", selector);
     
     if ([super respondsToSelector:aSelector])
     {
@@ -68,7 +68,7 @@
     // Redirect message to original delegate and act the same as the original delegate
     //
     
-    NSLog(@"DELEGATE MESSAGE: %@", NSStringFromSelector(anInvocation.selector));
+    //NSLog(@"DELEGATE MESSAGE: %@", NSStringFromSelector(anInvocation.selector));
     
     //
     // Remote Push notifications
@@ -77,26 +77,48 @@
     if (anInvocation.selector == @selector(application:didReceiveRemoteNotification:) || anInvocation.selector == @selector(application:didReceiveRemoteNotification:fetchCompletionHandler:))
     {
         //
-        // Grab notification data from the invocation
-        //
-        void* object;
-        
-        [anInvocation getArgument:&object atIndex:1];
-        
-        //
         // Get a dictionary
         //
-        NSDictionary* userInfo = (__bridge NSDictionary *)object;
+        NSDictionary* userInfo = [self argumentInInvocation:anInvocation atIndex:1];
         
         FLEXSystemNotification* notification = [FLEXSystemNotification systemNotificationWithRemoteNotification:[userInfo copy]];
         
+        if (anInvocation.selector == @selector(application:didReceiveRemoteNotification:fetchCompletionHandler:))
+        {
+            notification.isFetch = YES;
+        }
+        
         [[FLEXNotificationCollector sharedCollector] registerRemoteNotification:notification];
+    }
+    
+    //
+    // Push notification token
+    //
+    
+    if (anInvocation.selector == @selector(application:didRegisterForRemoteNotificationsWithDeviceToken:))
+    {
+        NSData* deviceToken = [self argumentInInvocation:anInvocation atIndex:1];
+        
+        NSString* tokenString = [[NSString alloc] initWithData:deviceToken encoding:NSUTF8StringEncoding];
+        
+        [FLEXNotificationCollector sharedCollector].remoteNotificationToken = tokenString;
     }
     
     if ([self.originalDelegate respondsToSelector:[anInvocation selector]])
     {
         [anInvocation invokeWithTarget:self.originalDelegate];
     }
+}
+
+- (id)argumentInInvocation:(NSInvocation *)invocation atIndex:(NSInteger)index
+{
+    void* object;
+    
+    [invocation getArgument:&object atIndex:index];
+    
+    id objcObject = (__bridge id)(object);
+    
+    return objcObject;
 }
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector

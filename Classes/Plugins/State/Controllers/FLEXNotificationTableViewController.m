@@ -18,6 +18,7 @@
 @interface FLEXNotificationTableViewController ()
 
 @property (nonatomic, strong) NSArray *localNotifications;
+@property (nonatomic, strong) NSArray *remoteNotifications;
 
 @end
 
@@ -33,6 +34,8 @@
     {
         self.title = @"Notifications";
         self.localNotifications = [FLEXNotificationCollector sharedCollector].localNotifications;
+        self.remoteNotifications = [FLEXNotificationCollector sharedCollector].remoteNotifications;
+        
     }
     
     return self;
@@ -40,16 +43,20 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0)
     {
-        return 1;
+        return 2;
     }
     else if (section == 1)
+    {
+        return self.remoteNotifications.count;
+    }
+    else if (section == 2)
     {
         return self.localNotifications.count;
     }
@@ -59,32 +66,53 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (!cell)
-    {
-        UITableViewCellStyle style = (indexPath.section == 0) ? UITableViewCellStyleValue1 : UITableViewCellStyleSubtitle;
-        cell = [[UITableViewCell alloc] initWithStyle:style reuseIdentifier:CellIdentifier];
-        
-        cell.detailTextLabel.minimumScaleFactor = 0.5;
-        cell.detailTextLabel.adjustsFontSizeToFitWidth = YES;
-        cell.detailTextLabel.adjustsLetterSpacingToFitWidth = YES;
-    }
+    UITableViewCell *cell = nil;
     
     if (indexPath.section == 0)
     {
-        [self updateCell:cell forRemoteNotificationAtIndexPath:indexPath];
+        static NSString *CellIdentifier = @"Cell";
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        
+        if (!cell)
+        {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+            
+            cell.detailTextLabel.minimumScaleFactor = 0.5;
+            cell.detailTextLabel.adjustsFontSizeToFitWidth = YES;
+            cell.detailTextLabel.adjustsLetterSpacingToFitWidth = YES;
+        }
+        
+        [self updateCell:cell forSettingAtIndexPath:indexPath];
     }
-    else if (indexPath.section == 1)
+    else
     {
-        [self updateCell:cell forLocalNotificationAtIndexPath:indexPath];
+        
+        static NSString *CellIdentifier = @"CellSubtitle";
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        
+        if (!cell)
+        {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+            
+            cell.detailTextLabel.minimumScaleFactor = 0.5;
+            cell.detailTextLabel.adjustsFontSizeToFitWidth = YES;
+            cell.detailTextLabel.adjustsLetterSpacingToFitWidth = YES;
+        }
+        
+        if (indexPath.section == 1)
+        {
+            [self updateCell:cell forRemoteNotificationAtIndexPath:indexPath];
+        }
+        else
+        {
+            [self updateCell:cell forLocalNotificationAtIndexPath:indexPath];
+        }
     }
     
     return cell;
 }
 
-- (void)updateCell:(UITableViewCell *)cell forRemoteNotificationAtIndexPath:(NSIndexPath *)indexPath
+- (void)updateCell:(UITableViewCell *)cell forSettingAtIndexPath:(NSIndexPath *)indexPath
 {
     switch (indexPath.row)
     {
@@ -93,17 +121,36 @@
             cell.detailTextLabel.text = [FLEXNotificationCollector sharedCollector].enabledNotificationTypes;
             
             break;
-        /*case 1:
-            cell.textLabel.text = @"System Processes";
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%lu", [UIDevice currentDevice].hs_processCount];
+        case 1:
+        {
+            NSString *token = [FLEXNotificationCollector sharedCollector].remoteNotificationToken;
             
-            break;*/
+            cell.textLabel.text = @"Device Token";
             
+            if (token.length)
+            {
+                cell.detailTextLabel.text = token;
+            }
+            else
+            {
+                cell.detailTextLabel.text = @"<Not Registered>";
+            }
+             
+            break;
+        }
         default:
             break;
     }
+
 }
 
+- (void)updateCell:(UITableViewCell *)cell forRemoteNotificationAtIndexPath:(NSIndexPath *)indexPath
+{
+    FLEXSystemNotification *notification = self.remoteNotifications[indexPath.row];
+    
+    cell.textLabel.text = notification.alertBody.length ? notification.alertBody : [notification.fireDate description];
+    cell.detailTextLabel.text = notification.alertBody.length ? [notification.fireDate description] : @"";
+}
 
 - (void)updateCell:(UITableViewCell *)cell forLocalNotificationAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -118,9 +165,13 @@
 {
     if (section == 0)
     {
-        return @"Remote";
+        return @"Settings";
     }
     else if (section == 1)
+    {
+        return @"Remote";
+    }
+    else if (section == 2)
     {
         return @"Local";
     }
@@ -139,7 +190,7 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if (indexPath.section == 1)
+    if (indexPath.section > 0)
     {
         UIViewController *viewControllerToPush = [self viewControllerToPushForRowAtIndexPath:indexPath];
         
