@@ -34,6 +34,7 @@
     systemNotification.alertBody = @"Test";
     systemNotification.fireDate = [NSDate date];
     systemNotification.userInfo = dictionary;
+    systemNotification.isRemote = YES;
     
     return systemNotification;
 }
