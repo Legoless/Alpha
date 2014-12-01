@@ -9,6 +9,8 @@
 #import "FLEXToolbarItem.h"
 #import "FLEXUtility.h"
 
+#import "FLEXThemeManager.h"
+
 @interface FLEXToolbarItem ()
 
 @property (nonatomic, copy) NSAttributedString *attributedTitle;
@@ -22,9 +24,9 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [[self class] defaultBackgroundColor];
-        [self setTitleColor:[[self class] defaultTitleColor] forState:UIControlStateNormal];
-        [self setTitleColor:[[self class] disabledTitleColor] forState:UIControlStateDisabled];
+        self.backgroundColor = [FLEXThemeManager sharedManager].theme.defaultBackgroundColor;
+        [self setTitleColor:[FLEXThemeManager sharedManager].theme.defaultTitleColor forState:UIControlStateNormal];
+        [self setTitleColor:[FLEXThemeManager sharedManager].theme.disabledTitleColor forState:UIControlStateDisabled];
     }
     return self;
 }
@@ -32,50 +34,11 @@
 + (instancetype)toolbarItemWithTitle:(NSString *)title image:(UIImage *)image
 {
     FLEXToolbarItem *toolbarItem = [self buttonWithType:UIButtonTypeCustom];
-    NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:[self titleAttributes]];
+    NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:[FLEXThemeManager sharedManager].theme.titleAttributes];
     toolbarItem.attributedTitle = attributedTitle;
-    toolbarItem.image = image;
     [toolbarItem setAttributedTitle:attributedTitle forState:UIControlStateNormal];
     [toolbarItem setImage:image forState:UIControlStateNormal];
     return toolbarItem;
-}
-
-
-#pragma mark - Display Defaults
-
-+ (NSDictionary *)titleAttributes
-{
-    return @{NSFontAttributeName : [FLEXUtility defaultFontOfSize:12.0]};
-}
-
-+ (UIColor *)defaultTitleColor
-{
-    return [UIColor blackColor];
-}
-
-+ (UIColor *)disabledTitleColor
-{
-    return [UIColor colorWithWhite:121.0/255.0 alpha:1.0];
-}
-
-+ (UIColor *)highlightedBackgroundColor
-{
-    return [UIColor colorWithWhite:0.9 alpha:1.0];
-}
-
-+ (UIColor *)selectedBackgroundColor
-{
-    return [UIColor colorWithRed:199.0/255.0 green:199.0/255.0 blue:255.0/255.0 alpha:1.0];
-}
-
-+ (UIColor *)defaultBackgroundColor
-{
-    return [UIColor colorWithWhite:1.0 alpha:0.95];
-}
-
-+ (CGFloat)topMargin
-{
-    return 2.0;
 }
 
 
@@ -96,11 +59,11 @@
 - (void)updateBackgroundColor
 {
     if (self.highlighted) {
-        self.backgroundColor = [[self class] highlightedBackgroundColor];
+        self.backgroundColor = [FLEXThemeManager sharedManager].theme.highlightedBackgroundColor;
     } else if (self.selected) {
-        self.backgroundColor = [[self class] selectedBackgroundColor];
+        self.backgroundColor = [FLEXThemeManager sharedManager].theme.selectedBackgroundColor;
     } else {
-        self.backgroundColor = [[self class] defaultBackgroundColor];
+        self.backgroundColor = [FLEXThemeManager sharedManager].theme.defaultBackgroundColor;
     }
 }
 
@@ -121,10 +84,10 @@
 
 - (CGRect)imageRectForContentRect:(CGRect)contentRect
 {
-    CGSize imageSize = self.image.size;
+    CGSize imageSize = [self imageForState:UIControlStateNormal].size;
     CGRect titleRect = [self titleRectForContentRect:contentRect];
-    CGFloat availableHeight = contentRect.size.height - titleRect.size.height - [[self class] topMargin];
-    CGFloat originY = [[self class] topMargin] + FLEXFloor((availableHeight - imageSize.height) / 2.0);
+    CGFloat availableHeight = contentRect.size.height - titleRect.size.height - [FLEXThemeManager sharedManager].theme.topMargin;
+    CGFloat originY = [FLEXThemeManager sharedManager].theme.topMargin + FLEXFloor((availableHeight - imageSize.height) / 2.0);
     CGFloat originX = FLEXFloor((contentRect.size.width - imageSize.width) / 2.0);
     CGRect imageRect = CGRectMake(originX, originY, imageSize.width, imageSize.height);
     return imageRect;

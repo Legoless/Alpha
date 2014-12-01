@@ -7,6 +7,7 @@
 //
 
 #import "FLEXMenuCenterView.h"
+#import "FLEXThemeManager.h"
 
 @interface FLEXMenuCenterView ()
 
@@ -56,8 +57,8 @@
 
 - (void)setup
 {
-    self.mainColor = [[UIColor blackColor] colorWithAlphaComponent:0.8];
-    self.secondaryColor = [UIColor whiteColor];
+    self.mainColor = [FLEXThemeManager sharedManager].theme.defaultBackgroundColor;
+    self.secondaryColor = [FLEXThemeManager sharedManager].theme.defaultTitleColor;
     
     self.backgroundColor = [UIColor clearColor];
     

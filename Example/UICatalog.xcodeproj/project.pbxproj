@@ -46,6 +46,11 @@
 		38A2811B1A1BD84300168085 /* FLEXScreenshotTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A2811A1A1BD84300168085 /* FLEXScreenshotTableViewController.m */; };
 		38C0F1B41A1F428000B5AA1D /* CKCircleMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C0F1B31A1F428000B5AA1D /* CKCircleMenuView.m */; };
 		38C0F1B71A1F42D900B5AA1D /* FLEXExplorerMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C0F1B61A1F42D900B5AA1D /* FLEXExplorerMenu.m */; };
+		38D0A35F1A2CFC77001FF442 /* FLEXWidgetPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D0A35E1A2CFC77001FF442 /* FLEXWidgetPlugin.m */; };
+		38D0A3641A2D0122001FF442 /* FLEXTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D0A3631A2D0122001FF442 /* FLEXTheme.m */; };
+		38D0A3671A2D012F001FF442 /* FLEXThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D0A3661A2D012F001FF442 /* FLEXThemeManager.m */; };
+		38D0A36E1A2D0166001FF442 /* FLEXDarkTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D0A36D1A2D0166001FF442 /* FLEXDarkTheme.m */; };
+		38D0A3711A2D016F001FF442 /* FLEXLightTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D0A3701A2D016F001FF442 /* FLEXLightTheme.m */; };
 		38DE4A291A0B704100EB447A /* FLEXNetworkInformationCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DE4A281A0B704100EB447A /* FLEXNetworkInformationCollector.m */; };
 		38DE4A441A0B781400EB447A /* NSDate+PDDebugger.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DE4A431A0B781400EB447A /* NSDate+PDDebugger.m */; };
 		38DE4A471A0B783600EB447A /* NSData+PDDebugger.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DE4A461A0B783600EB447A /* NSData+PDDebugger.m */; };
@@ -229,6 +234,16 @@
 		38C0F1B31A1F428000B5AA1D /* CKCircleMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKCircleMenuView.m; sourceTree = "<group>"; };
 		38C0F1B51A1F42D900B5AA1D /* FLEXExplorerMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXExplorerMenu.h; sourceTree = "<group>"; };
 		38C0F1B61A1F42D900B5AA1D /* FLEXExplorerMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXExplorerMenu.m; sourceTree = "<group>"; };
+		38D0A35D1A2CFC77001FF442 /* FLEXWidgetPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXWidgetPlugin.h; sourceTree = "<group>"; };
+		38D0A35E1A2CFC77001FF442 /* FLEXWidgetPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXWidgetPlugin.m; sourceTree = "<group>"; };
+		38D0A3621A2D0122001FF442 /* FLEXTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXTheme.h; sourceTree = "<group>"; };
+		38D0A3631A2D0122001FF442 /* FLEXTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXTheme.m; sourceTree = "<group>"; };
+		38D0A3651A2D012F001FF442 /* FLEXThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXThemeManager.h; sourceTree = "<group>"; };
+		38D0A3661A2D012F001FF442 /* FLEXThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXThemeManager.m; sourceTree = "<group>"; };
+		38D0A36C1A2D0166001FF442 /* FLEXDarkTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXDarkTheme.h; sourceTree = "<group>"; };
+		38D0A36D1A2D0166001FF442 /* FLEXDarkTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXDarkTheme.m; sourceTree = "<group>"; };
+		38D0A36F1A2D016F001FF442 /* FLEXLightTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXLightTheme.h; sourceTree = "<group>"; };
+		38D0A3701A2D016F001FF442 /* FLEXLightTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXLightTheme.m; sourceTree = "<group>"; };
 		38DE4A271A0B704100EB447A /* FLEXNetworkInformationCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXNetworkInformationCollector.h; sourceTree = "<group>"; };
 		38DE4A281A0B704100EB447A /* FLEXNetworkInformationCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXNetworkInformationCollector.m; sourceTree = "<group>"; };
 		38DE4A421A0B781400EB447A /* NSDate+PDDebugger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+PDDebugger.h"; sourceTree = "<group>"; };
@@ -685,6 +700,47 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		38D0A35C1A2CFC54001FF442 /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				38D0A3601A2CFC7B001FF442 /* Controllers */,
+				38D0A35D1A2CFC77001FF442 /* FLEXWidgetPlugin.h */,
+				38D0A35E1A2CFC77001FF442 /* FLEXWidgetPlugin.m */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
+		38D0A3601A2CFC7B001FF442 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		38D0A3611A2D00E3001FF442 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				38D0A3681A2D013B001FF442 /* Default */,
+				38D0A3651A2D012F001FF442 /* FLEXThemeManager.h */,
+				38D0A3661A2D012F001FF442 /* FLEXThemeManager.m */,
+				38D0A3621A2D0122001FF442 /* FLEXTheme.h */,
+				38D0A3631A2D0122001FF442 /* FLEXTheme.m */,
+			);
+			name = Themes;
+			path = ../Classes/Themes;
+			sourceTree = "<group>";
+		};
+		38D0A3681A2D013B001FF442 /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				38D0A36C1A2D0166001FF442 /* FLEXDarkTheme.h */,
+				38D0A36D1A2D0166001FF442 /* FLEXDarkTheme.m */,
+				38D0A36F1A2D016F001FF442 /* FLEXLightTheme.h */,
+				38D0A3701A2D016F001FF442 /* FLEXLightTheme.m */,
+			);
+			path = Default;
+			sourceTree = "<group>";
+		};
 		38E3432A1A2325E000CEE145 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
@@ -696,6 +752,7 @@
 				384990251A23DEF100136B15 /* State */,
 				38E343491A23874000CEE145 /* Touch */,
 				38E3433C1A235B5A00CEE145 /* View */,
+				38D0A35C1A2CFC54001FF442 /* Widget */,
 			);
 			name = Plugins;
 			path = ../Classes/Plugins;
@@ -925,6 +982,7 @@
 				387191DE1A0A7A97004A1E7F /* Model */,
 				944F7424197B458C009AB039 /* Object Explorers */,
 				38E3432A1A2325E000CEE145 /* Plugins */,
+				38D0A3611A2D00E3001FF442 /* Themes */,
 				387191C01A0A2828004A1E7F /* Triggers */,
 				944F743B197B458C009AB039 /* Utility */,
 			);
@@ -1223,6 +1281,7 @@
 				943203FE1978F42F00E24DB3 /* AAPLCatalogTableTableViewController.m in Sources */,
 				944F748A197B458C009AB039 /* FLEXClassExplorerViewController.m in Sources */,
 				535682B318F3670300BAAD62 /* AAPLPageControlViewController.m in Sources */,
+				38D0A36E1A2D0166001FF442 /* FLEXDarkTheme.m in Sources */,
 				535682BA18F3670300BAAD62 /* AAPLSwitchViewController.m in Sources */,
 				535682AF18F3670300BAAD62 /* AAPLDefaultSearchBarViewController.m in Sources */,
 				944F74B5197B458C009AB039 /* FLEXHierarchyTableViewCell.m in Sources */,
@@ -1268,6 +1327,7 @@
 				38E343331A23395500CEE145 /* FLEXPluginManager.m in Sources */,
 				384517B21A0BB8E200399757 /* FLEXNetworkResourceTiming.m in Sources */,
 				944F74AB197B458C009AB039 /* FLEXManager.m in Sources */,
+				38D0A3641A2D0122001FF442 /* FLEXTheme.m in Sources */,
 				944F74B2197B458C009AB039 /* FLEXLibrariesTableViewController.m in Sources */,
 				535682BF18F3670300BAAD62 /* UIColor+AAPLApplicationSpecific.m in Sources */,
 				383156451A1215B00091216D /* FLEXConsoleLog.m in Sources */,
@@ -1278,10 +1338,12 @@
 				384B27B71A0CE87800601515 /* FLEXNetworkTableViewController.m in Sources */,
 				384517B81A0BB91800399757 /* FLEXNetworkResponse.m in Sources */,
 				38C0F1B71A1F42D900B5AA1D /* FLEXExplorerMenu.m in Sources */,
+				38D0A3671A2D012F001FF442 /* FLEXThemeManager.m in Sources */,
 				944F7498197B458C009AB039 /* FLEXArgumentInputColorView.m in Sources */,
 				944F74A0197B458C009AB039 /* FLEXArgumentInputTextView.m in Sources */,
 				387191D81A0A345A004A1E7F /* UIApplication+FLEXEvent.m in Sources */,
 				387191E41A0A7BB8004A1E7F /* FLEXInformationCollector.m in Sources */,
+				38D0A3711A2D016F001FF442 /* FLEXLightTheme.m in Sources */,
 				944F749C197B458C009AB039 /* FLEXArgumentInputNumberView.m in Sources */,
 				944F749A197B458C009AB039 /* FLEXArgumentInputJSONObjectView.m in Sources */,
 				386E3F531A25168A00E2BDCE /* FLEXBootstrapPlugin.m in Sources */,
@@ -1296,6 +1358,7 @@
 				535682AD18F3670300BAAD62 /* AAPLCustomToolbarViewController.m in Sources */,
 				944F748F197B458C009AB039 /* FLEXObjectExplorerFactory.m in Sources */,
 				38E343441A23621300CEE145 /* FLEXViewController.m in Sources */,
+				38D0A35F1A2CFC77001FF442 /* FLEXWidgetPlugin.m in Sources */,
 				944F748D197B458C009AB039 /* FLEXDictionaryExplorerViewController.m in Sources */,
 				535682A818F3670300BAAD62 /* AAPLActivityIndicatorViewController.m in Sources */,
 				944F74A4197B458C009AB039 /* FLEXFieldEditorView.m in Sources */,

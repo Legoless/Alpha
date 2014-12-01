@@ -14,6 +14,7 @@
 #import "CGVectorAdditions.h"
 
 #import "FLEXResources.h"
+#import "FLEXThemeManager.h"
 
 #import "FLEXExplorerMenu.h"
 
@@ -451,15 +452,14 @@
 
 - (NSDictionary *)optionsDictionary
 {
-    
     NSMutableDictionary* tOptions = [NSMutableDictionary new];
     [tOptions setValue:[NSDecimalNumber numberWithFloat:self.delay] forKey:CIRCLE_MENU_OPENING_DELAY];
     [tOptions setValue:[NSDecimalNumber numberWithFloat:self.angle] forKey:CIRCLE_MENU_MAX_ANGLE];
     [tOptions setValue:[NSDecimalNumber numberWithFloat:self.radius] forKey:CIRCLE_MENU_RADIUS];
     [tOptions setValue:[NSNumber numberWithInt:self.direction] forKey:CIRCLE_MENU_DIRECTION];
-    [tOptions setValue:[UIColor colorWithWhite:0.0 alpha:0.8] forKey:CIRCLE_MENU_BUTTON_BACKGROUND_NORMAL];
-    [tOptions setValue:[UIColor colorWithWhite:0.4 alpha:1.0] forKey:CIRCLE_MENU_BUTTON_BACKGROUND_ACTIVE];
-    [tOptions setValue:[UIColor whiteColor] forKey:CIRCLE_MENU_BUTTON_BORDER];
+    [tOptions setValue:[FLEXThemeManager sharedManager].theme.defaultBackgroundColor forKey:CIRCLE_MENU_BUTTON_BACKGROUND_NORMAL];
+    [tOptions setValue:[FLEXThemeManager sharedManager].theme.highlightedBackgroundColor forKey:CIRCLE_MENU_BUTTON_BACKGROUND_ACTIVE];
+    [tOptions setValue:[FLEXThemeManager sharedManager].theme.defaultTitleColor forKey:CIRCLE_MENU_BUTTON_BORDER];
     [tOptions setValue:[NSNumber numberWithInt:self.shadow] forKey:CIRCLE_MENU_DEPTH];
     [tOptions setValue:[NSDecimalNumber decimalNumberWithString:[NSString stringWithFormat:@"%f", self.buttonRadius]] forKey:CIRCLE_MENU_BUTTON_RADIUS];
     [tOptions setValue:[NSDecimalNumber decimalNumberWithString:@"2.5"] forKey:CIRCLE_MENU_BUTTON_BORDER_WIDTH];

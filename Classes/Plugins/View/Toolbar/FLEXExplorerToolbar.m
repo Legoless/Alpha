@@ -10,6 +10,7 @@
 #import "FLEXToolbarItem.h"
 #import "FLEXResources.h"
 #import "FLEXUtility.h"
+#import "FLEXThemeManager.h"
 
 @interface FLEXExplorerToolbar ()
 
@@ -36,14 +37,17 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.tintColor = [FLEXThemeManager sharedManager].theme.defaultTitleColor;
+        
         NSMutableArray *toolbarItems = [NSMutableArray array];
         
         self.dragHandle = [[UIView alloc] init];
-        self.dragHandle.backgroundColor = [FLEXToolbarItem defaultBackgroundColor];
+        self.dragHandle.backgroundColor = [FLEXThemeManager sharedManager].theme.defaultBackgroundColor;
         [self addSubview:self.dragHandle];
         
         UIImage *dragHandle = [FLEXResources dragHandle];
         self.dragHandleImageView = [[UIImageView alloc] initWithImage:dragHandle];
+        
         [self.dragHandle addSubview:self.dragHandleImageView];
         
         UIImage *globalsIcon = [FLEXResources globeIcon];
@@ -75,7 +79,7 @@
         self.backgroundColor = [UIColor clearColor];
         
         self.selectedViewDescriptionContainer = [[UIView alloc] init];
-        self.selectedViewDescriptionContainer.backgroundColor = [UIColor colorWithWhite:0.9 alpha:0.95];
+        self.selectedViewDescriptionContainer.backgroundColor = [FLEXThemeManager sharedManager].theme.highlightedBackgroundColor;
         self.selectedViewDescriptionContainer.hidden = YES;
         [self addSubview:self.selectedViewDescriptionContainer];
         
@@ -86,6 +90,7 @@
         self.selectedViewDescriptionLabel = [[UILabel alloc] init];
         self.selectedViewDescriptionLabel.backgroundColor = [UIColor clearColor];
         self.selectedViewDescriptionLabel.font = [[self class] descriptionLabelFont];
+        self.selectedViewDescriptionLabel.textColor = [FLEXThemeManager sharedManager].theme.defaultTitleColor;
         [self.selectedViewDescriptionContainer addSubview:self.selectedViewDescriptionLabel];
     }
     return self;
