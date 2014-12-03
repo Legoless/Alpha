@@ -13,6 +13,8 @@ It builds on top of original FLEX by adding many functionalities:
 - Application snapshot
 - Status widgets
 
+*It is currently a work in progress.*
+
 ![View Hierarchy Exploration](http://engineering.flipboard.com/assets/flex/basic-view-exploration.gif)
 
 
