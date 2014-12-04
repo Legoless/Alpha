@@ -12,6 +12,8 @@ It builds on top of original FLEX by adding many functionalities:
 - Screenshot management
 - Application snapshot
 - Status widgets
+- Recording touches
+- Touches displayed on screen
 
 *It is currently a work in progress.*
 
