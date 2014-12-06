@@ -13,7 +13,7 @@ It builds on top of original FLEX by adding many functionalities:
 - Application snapshot
 - Status widgets
 - Recording touches
-- Touches displayed on screen
+- Touches displayed on screen via Touchpose
 
 *It is currently a work in progress.*
 
