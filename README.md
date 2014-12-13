@@ -15,7 +15,7 @@ It builds on top of original FLEX by adding many functionalities:
 - Recording touches
 - Touches displayed on screen via Touchpose
 
-*It is currently a work in progress.*
+*It is currently a work in progress and might be too unstable.*
 
 ![View Hierarchy Exploration](http://engineering.flipboard.com/assets/flex/basic-view-exploration.gif)
 
