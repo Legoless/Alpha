@@ -12,6 +12,7 @@ Alpha is the next generation debugging tool for iOS applications. It started as 
 - Touches displayed on screen via Touchpose
 - Remote connection to app
 - Remote debugging
+- Bootstrap environmenta
 
 **This is an unofficial fork from the amazing Flipboard guys. It is a big rewrite of FLEX architecture, making it completely extensible.**
 
