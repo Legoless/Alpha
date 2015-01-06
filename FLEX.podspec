@@ -14,7 +14,7 @@ Pod::Spec.new do |spec|
                         - Dynamically view and modify `NSUserDefaults` values.
                         DESC
 
-  spec.homepage         = "https://github.com/Flipboard/FLEX"
+  spec.homepage         = "https://github.com/legoless/Alpha"
   spec.screenshots      = [ "http://engineering.flipboard.com/assets/flex/basic-view-exploration.gif",
                             "http://engineering.flipboard.com/assets/flex/advanced-view-editing.gif",
                             "http://engineering.flipboard.com/assets/flex/heap-browser.gif",
