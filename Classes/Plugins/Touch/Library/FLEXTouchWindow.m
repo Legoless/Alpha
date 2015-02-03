@@ -130,7 +130,7 @@ static NSString* kFLEXFingerViewAssociatedKey = @"kFingerViewForTouch";
     NSSet *touches = [event allTouches];
     
     for (UITouch *touch in touches)
-    {
+    {        
         if (touch.phase == UITouchPhaseCancelled || touch.phase == UITouchPhaseEnded)
         {
             [self removeFingerViewForTouch:touch];

@@ -46,6 +46,7 @@
 		38A2811B1A1BD84300168085 /* FLEXScreenshotTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A2811A1A1BD84300168085 /* FLEXScreenshotTableViewController.m */; };
 		38C0F1B41A1F428000B5AA1D /* CKCircleMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C0F1B31A1F428000B5AA1D /* CKCircleMenuView.m */; };
 		38C0F1B71A1F42D900B5AA1D /* FLEXExplorerMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C0F1B61A1F42D900B5AA1D /* FLEXExplorerMenu.m */; };
+		38C3B8B91A40CB0B00C09155 /* FLEXAppEventEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C3B8B81A40CB0B00C09155 /* FLEXAppEventEngine.m */; };
 		38D0A35F1A2CFC77001FF442 /* FLEXWidgetPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D0A35E1A2CFC77001FF442 /* FLEXWidgetPlugin.m */; };
 		38D0A3641A2D0122001FF442 /* FLEXTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D0A3631A2D0122001FF442 /* FLEXTheme.m */; };
 		38D0A3671A2D012F001FF442 /* FLEXThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D0A3661A2D012F001FF442 /* FLEXThemeManager.m */; };
@@ -234,6 +235,8 @@
 		38C0F1B31A1F428000B5AA1D /* CKCircleMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKCircleMenuView.m; sourceTree = "<group>"; };
 		38C0F1B51A1F42D900B5AA1D /* FLEXExplorerMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXExplorerMenu.h; sourceTree = "<group>"; };
 		38C0F1B61A1F42D900B5AA1D /* FLEXExplorerMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXExplorerMenu.m; sourceTree = "<group>"; };
+		38C3B8B71A40CB0B00C09155 /* FLEXAppEventEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXAppEventEngine.h; sourceTree = "<group>"; };
+		38C3B8B81A40CB0B00C09155 /* FLEXAppEventEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXAppEventEngine.m; sourceTree = "<group>"; };
 		38D0A35D1A2CFC77001FF442 /* FLEXWidgetPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXWidgetPlugin.h; sourceTree = "<group>"; };
 		38D0A35E1A2CFC77001FF442 /* FLEXWidgetPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXWidgetPlugin.m; sourceTree = "<group>"; };
 		38D0A3621A2D0122001FF442 /* FLEXTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXTheme.h; sourceTree = "<group>"; };
@@ -638,6 +641,8 @@
 			children = (
 				38E343501A2388E900CEE145 /* FLEXTouchWindow.h */,
 				38E343511A2388E900CEE145 /* FLEXTouchWindow.m */,
+				38C3B8B71A40CB0B00C09155 /* FLEXAppEventEngine.h */,
+				38C3B8B81A40CB0B00C09155 /* FLEXAppEventEngine.m */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -1366,6 +1371,7 @@
 				535682B818F3670300BAAD62 /* AAPLSplitViewControllerDelegate.m in Sources */,
 				D03647D919847248007D2A1B /* FLEXGlobalsTableViewControllerEntry.m in Sources */,
 				3890A7301A10CB0A001DE67B /* FLEXConsoleInformationCollector.m in Sources */,
+				38C3B8B91A40CB0B00C09155 /* FLEXAppEventEngine.m in Sources */,
 				535682AC18F3670300BAAD62 /* AAPLCustomSearchBarViewController.m in Sources */,
 				535682A718F3670300BAAD62 /* AAPLActionSheetViewController.m in Sources */,
 				384517B51A0BB8FF00399757 /* FLEXNetworkRequest.m in Sources */,
