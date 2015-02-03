@@ -1,13 +1,22 @@
-# FLEX
-FLEX (Flipboard Explorer) is a set of in-app debugging and exploration tools for iOS development. When presented, FLEX shows a toolbar that lives in a window above your application. From this toolbar, you can view and modify nearly every piece of state in your running application.
+# Alpha
 
-**This is an unofficial fork from the amazing Flipboard guys. It is a big rewrite of FLEX architecture, making it completely extensible.**
-
-It builds on top of original FLEX by adding many functionalities:
+Alpha is the next generation debugging tool for iOS applications. It started as an unofficial fork from FLEX (Flipboard Explorer), but continued to be actively developed. Many features were added on top of original FLEX:
 
 - Push Notification logging (independent of provider)
 - Console logging
 - Network logging (based on PonyDebugger)
+- Screenshot management
+- Application snapshot
+- Status information widgets
+- Recording touches and replaying
+- Touches displayed on screen via Touchpose
+- Remote connection to app
+- Remote debugging
+- Bootstrap environments (KZBootstrap)
+
+**This is an unofficial fork from the amazing Flipboard guys. It is a big rewrite of FLEX architecture, making it completely extensible, but sadly not backwards compatible with the original.**
+
+*It is currently a work in progress and might be too unstable to be used in real environment yet.*
 
 ![View Hierarchy Exploration](http://engineering.flipboard.com/assets/flex/basic-view-exploration.gif)
 
