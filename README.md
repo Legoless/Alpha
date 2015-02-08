@@ -142,8 +142,8 @@ We welcome pull requests for bug fixes, new features, and improvements to FLEX. 
 
 ## TODO
 - Swift runtime introspection (swift classes, swift objects on the heap, etc.)
-- Network request logging
+- Network request logging (NSURLHTTPSession)
 - Improved file type detection and display in the file browser
-- Add new NSUserDefault key/value pairs on the fly
+- Add new NSUserDefaults key/value pairs on the fly
 
 Have a question or suggestion for FLEX? Contact [@ryanolsonk](https://twitter.com/ryanolsonk) on twitter.
