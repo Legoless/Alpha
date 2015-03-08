@@ -14,7 +14,7 @@ Alpha is the next generation debugging tool for iOS applications. It started as 
 - Remote debugging
 - Bootstrap environments with [KZBootstrap](https://github.com/krzysztofzablocki/KZBootstrap)
 
-**This is an unofficial fork from the amazing Flipboard guys. It is a big rewrite of FLEX architecture, making it completely extensible, but sadly not backwards compatible with the original.**
+**This is an unofficial fork from the amazing Flipboard guys. It is a big rewrite of FLEX architecture, making it completely extensible, but sadly not backwards compatible with original code.**
 
 *It is currently a work in progress and might be too unstable to be used in real environment yet.*
 
