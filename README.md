@@ -1,6 +1,6 @@
 # Alpha
 
-Alpha is the next generation debugging tool for iOS applications. It started as an unofficial fork from FLEX (Flipboard Explorer), but continued to be actively developed. Many features were added on top of original FLEX:
+Alpha is the next generation debugging tool for iOS applications. It started as an unofficial fork from FLEX (Flipboard Explorer), but continued to be actively developed and grow exponentionally. Many features were added on top of original FLEX:
 
 - Push Notification logging (independent of provider)
 - Console logging
