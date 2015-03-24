@@ -16,7 +16,7 @@ Alpha is the next generation debugging tool for iOS applications. It started as 
 
 **This is an unofficial fork from the amazing Flipboard guys. It is a big rewrite of FLEX architecture, making it completely extensible, but sadly not backwards compatible with original code.**
 
-*It is currently a work in progress and might be too unstable to be used in real environment yet.*
+*It is currently a work in progress and might be too unstable to be used in real environment yet. Feel free to open GitHub issues.*
 
 ![View Hierarchy Exploration](http://engineering.flipboard.com/assets/flex/basic-view-exploration.gif)
 
