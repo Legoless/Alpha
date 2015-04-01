@@ -40,3 +40,8 @@ Unlike many other debugging tools, FLEX runs entirely inside your app, so you do
 - Rewrite network logging to support Async requests
 
 Have a question or suggestion for FLEX? Contact [@ryanolsonk](https://twitter.com/ryanolsonk) on twitter.
+
+LICENSE
+=======
+
+MIT License
