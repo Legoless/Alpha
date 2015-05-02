@@ -25,8 +25,8 @@ Pod::Spec.new do |spec|
                             "http://engineering.flipboard.com/assets/flex/flex-readme-reverse-2.png" ]
 
   spec.license          = { :type => "BSD", :file => "LICENSE" }
-  spec.author           = { "Ryan Olson" => "ryanolsonk@gmail.com", "Dal Rupnik" => "legoless@gmail.com" }
-  spec.social_media_url = "https://twitter.com/ryanolsonk"
+  spec.author           = { "Dal Rupnik" => "legoless@gmail.com", "Ryan Olson" => "ryanolsonk@gmail.com" }
+  spec.social_media_url = "https://twitter.com/thelegoless"
   spec.platform         = :ios, "6.0"
   spec.source           = { :git => "https://github.com/legoless/Alpha.git", :tag => "#{spec.version}" }
   spec.source_files     = "Classes/**/*.{h,m}"
