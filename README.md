@@ -5,7 +5,7 @@ Alpha is the next generation debugging tool for iOS applications. It started as 
 - Push Notification logging (independent of provider)
 - Console logging
 - Network logging (based on PonyDebugger)
-- Screenshotting
+- Screenshots
 - Entire Application State Snapshot
 - Status information widgets
 - Recording touches and replaying
