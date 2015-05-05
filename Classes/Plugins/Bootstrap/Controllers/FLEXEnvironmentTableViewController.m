@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 f. All rights reserved.
 //
 
-#import <KZBootstrap/KZBootstrap.h>
-
 #import "FLEXUtility.h"
 
 #import "FLEXEnvironmentTableViewController.h"
@@ -21,6 +19,11 @@
 
 @implementation FLEXEnvironmentTableViewController
 
+- (Class)bootstrap
+{
+    return NSClassFromString(@"KZBootstrap");
+}
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -29,8 +32,17 @@
     {
         self.title = @"Environments";
         
-        self.environments = [KZBootstrap environments];
-        self.currentEnvironment = [KZBootstrap currentEnvironment];
+        Class bootstrap = [self bootstrap];
+        
+        if (bootstrap)
+        {
+            SEL environments = NSSelectorFromString(@"environments");
+            SEL currentEnvironment = NSSelectorFromString(@"currentEnvironment");
+            
+            // TODO: Fix warnings
+            self.environments = [bootstrap performSelector:environments];
+            self.currentEnvironment = [bootstrap performSelector:currentEnvironment];
+        }
     }
     
     return self;
@@ -94,7 +106,9 @@
         [rows addObject:[NSIndexPath indexPathForRow:[self.environments indexOfObject:environment] inSection:0]];
         [rows addObject:[NSIndexPath indexPathForRow:[self.environments indexOfObject:self.currentEnvironment] inSection:0]];
         
-        [KZBootstrap setCurrentEnvironment:environment];
+        SEL setCurrentEnvironment = NSSelectorFromString(@"setCurrentEnvironment:");
+        
+        [[self bootstrap] performSelector:setCurrentEnvironment withObject:environment];
         self.currentEnvironment = environment;
         
         [self.tableView reloadRowsAtIndexPaths:rows withRowAnimation:UITableViewRowAnimationAutomatic];

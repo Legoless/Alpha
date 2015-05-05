@@ -40,7 +40,7 @@
 		387191E41A0A7BB8004A1E7F /* FLEXInformationCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 387191E31A0A7BB8004A1E7F /* FLEXInformationCollector.m */; };
 		3890A7271A10AF8E001DE67B /* FLEXNetworkError.m in Sources */ = {isa = PBXBuildFile; fileRef = 3890A7261A10AF8E001DE67B /* FLEXNetworkError.m */; };
 		3890A72A1A10B8AF001DE67B /* FLEXEnvironmentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3890A7291A10B8AF001DE67B /* FLEXEnvironmentTableViewController.m */; };
-		3890A72D1A10BB5A001DE67B /* KZBootstrap+FLEXUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 3890A72C1A10BB5A001DE67B /* KZBootstrap+FLEXUtilities.m */; };
+		3890A72D1A10BB5A001DE67B /* FLEXBootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 3890A72C1A10BB5A001DE67B /* FLEXBootstrap.m */; };
 		3890A7301A10CB0A001DE67B /* FLEXConsoleInformationCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 3890A72F1A10CB0A001DE67B /* FLEXConsoleInformationCollector.m */; };
 		3890A7331A10DE8D001DE67B /* FLEXStatusTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3890A7321A10DE8D001DE67B /* FLEXStatusTableViewController.m */; };
 		38A2811B1A1BD84300168085 /* FLEXScreenshotTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A2811A1A1BD84300168085 /* FLEXScreenshotTableViewController.m */; };
@@ -223,8 +223,8 @@
 		3890A7261A10AF8E001DE67B /* FLEXNetworkError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXNetworkError.m; sourceTree = "<group>"; };
 		3890A7281A10B8AF001DE67B /* FLEXEnvironmentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXEnvironmentTableViewController.h; sourceTree = "<group>"; };
 		3890A7291A10B8AF001DE67B /* FLEXEnvironmentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXEnvironmentTableViewController.m; sourceTree = "<group>"; };
-		3890A72B1A10BB5A001DE67B /* KZBootstrap+FLEXUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KZBootstrap+FLEXUtilities.h"; sourceTree = "<group>"; };
-		3890A72C1A10BB5A001DE67B /* KZBootstrap+FLEXUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KZBootstrap+FLEXUtilities.m"; sourceTree = "<group>"; };
+		3890A72B1A10BB5A001DE67B /* FLEXBootstrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXBootstrap.h; sourceTree = "<group>"; };
+		3890A72C1A10BB5A001DE67B /* FLEXBootstrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXBootstrap.m; sourceTree = "<group>"; };
 		3890A72E1A10CB0A001DE67B /* FLEXConsoleInformationCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXConsoleInformationCollector.h; sourceTree = "<group>"; };
 		3890A72F1A10CB0A001DE67B /* FLEXConsoleInformationCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXConsoleInformationCollector.m; sourceTree = "<group>"; };
 		3890A7311A10DE8D001DE67B /* FLEXStatusTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXStatusTableViewController.h; sourceTree = "<group>"; };
@@ -630,8 +630,8 @@
 		386E3F571A25170400E2BDCE /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				3890A72B1A10BB5A001DE67B /* KZBootstrap+FLEXUtilities.h */,
-				3890A72C1A10BB5A001DE67B /* KZBootstrap+FLEXUtilities.m */,
+				3890A72B1A10BB5A001DE67B /* FLEXBootstrap.h */,
+				3890A72C1A10BB5A001DE67B /* FLEXBootstrap.m */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -1190,7 +1190,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = f;
+				ORGANIZATIONNAME = "Unified Sense";
 			};
 			buildConfigurationList = 5356823518F3656900BAAD62 /* Build configuration list for PBXProject "UICatalog" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1312,7 +1312,7 @@
 				944F7489197B458C009AB039 /* FLEXArrayExplorerViewController.m in Sources */,
 				38A2811B1A1BD84300168085 /* FLEXScreenshotTableViewController.m in Sources */,
 				386E3F4C1A2509AD00E2BDCE /* FLEXMenuItem.m in Sources */,
-				3890A72D1A10BB5A001DE67B /* KZBootstrap+FLEXUtilities.m in Sources */,
+				3890A72D1A10BB5A001DE67B /* FLEXBootstrap.m in Sources */,
 				535682B418F3670300BAAD62 /* AAPLPickerViewController.m in Sources */,
 				387191CF1A0A2B9E004A1E7F /* FLEXTrigger+Private.m in Sources */,
 				535682BE18F3670300BAAD62 /* AAPLWebViewController.m in Sources */,

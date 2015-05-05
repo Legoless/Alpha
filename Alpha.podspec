@@ -32,7 +32,6 @@ Pod::Spec.new do |spec|
   spec.source_files     = "Classes/**/*.{h,m}"
   spec.frameworks       = "CoreGraphics"
 
-  spec.dependency 'KZBootstrap'
   spec.dependency 'Haystack'
   spec.dependency 'JSONModel'
 

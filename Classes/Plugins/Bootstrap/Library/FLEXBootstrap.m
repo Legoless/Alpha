@@ -1,14 +1,14 @@
 //
-//  KZBootstrap+FLEXUtilities.m
+//  FLEXBootstrap.m
 //  UICatalog
 //
 //  Created by Dal Rupnik on 10/11/14.
 //  Copyright (c) 2014 f. All rights reserved.
 //
 
-#import "KZBootstrap+FLEXUtilities.h"
+#import "FLEXBootstrap.h"
 
-@implementation KZBootstrap (FLEXUtilities)
+@implementation FLEXBootstrap
 
 + (BOOL)isReady
 {

@@ -1,0 +1,1 @@
+../../../Haystack/SDK/Categories/NSURL+Parameters/NSURL+Parameters.h

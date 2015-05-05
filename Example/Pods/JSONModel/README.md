@@ -1,16 +1,15 @@
 ## Magical Data Modelling Framework for JSON
 
-### Version 1.0.0
+### Version 1.0.2
 
-*New*: After 1.5 years of development JSONModel is now in version 1.0.0! 
-
-
-
-*New*: In version 0.13.0 automatic NSCopying/NSCoding support.
+#####NB: Swift works in a different way under the hood than Objective-C. Therefore I can't find a way to re-create JSONModel in Swift. JSONModel in Objective-C works in Swift apps through CocoaPods or as an imported Objective-C library.
 
 ---
-If you like JSONModel and use it can you please:
-1) star this repo 2) send me some feedback. Thanks!
+If you like JSONModel and use it, could you please:
+
+ * star this repo 
+
+ * send me some feedback. Thanks!
 
 ---
 
@@ -526,5 +525,3 @@ This code is distributed under the terms and conditions of the MIT license.
 
 **NB!** If you are fixing a bug you discovered, please add also a unit test so I know how exactly to reproduce the bug before merging.
 
--------
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/icanzilb/jsonmodel/trend.png)](https://bitdeli.com/free "Bitdeli Badge")

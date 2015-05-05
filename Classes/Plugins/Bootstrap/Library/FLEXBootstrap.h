@@ -1,14 +1,12 @@
 //
-//  KZBootstrap+FLEXUtilities.h
+//  FLEXUtilities.h
 //  UICatalog
 //
 //  Created by Dal Rupnik on 10/11/14.
 //  Copyright (c) 2014 f. All rights reserved.
 //
 
-#import "KZBootstrap.h"
-
-@interface KZBootstrap (FLEXUtilities)
+@interface FLEXBootstrap : NSObject
 
 /*!
  *  Returns YES if KZBootstrap environments are available.

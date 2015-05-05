@@ -1,7 +1,7 @@
 //
 //  JSONModel.m
 //
-//  @version 1.0.0
+//  @version 1.0.2
 //  @author Marin Todorov, http://www.touch-code-magazine.com
 //
 
@@ -114,13 +114,24 @@ static JSONKeyMapper* globalKeyMapper = nil;
 
 -(instancetype)initWithData:(NSData *)data error:(NSError *__autoreleasing *)err
 {
-    //turn nsdata to an nsstring
-    NSString* string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    if (!string) return nil;
-    
-    //create an instance
+    //check for nil input
+    if (!data) {
+        if (err) *err = [JSONModelError errorInputIsNil];
+        return nil;
+    }
+    //read the json
     JSONModelError* initError = nil;
-    id objModel = [self initWithString:string usingEncoding:NSUTF8StringEncoding error:&initError];
+    id obj = [NSJSONSerialization JSONObjectWithData:data
+                                             options:kNilOptions
+                                               error:&initError];
+    
+    if (initError) {
+        if (err) *err = [JSONModelError errorBadJSON];
+        return nil;
+    }
+    
+    //init with dictionary
+    id objModel = [self initWithDictionary:obj error:&initError];
     if (initError && err) *err = initError;
     return objModel;
 }
@@ -141,21 +152,11 @@ static JSONKeyMapper* globalKeyMapper = nil;
         return nil;
     }
     
-    //read the json
     JSONModelError* initError = nil;
-    id obj = [NSJSONSerialization JSONObjectWithData:[string dataUsingEncoding:encoding]
-                                             options:kNilOptions
-                                               error:&initError];
-
-    if (initError) {
-        if (err) *err = [JSONModelError errorBadJSON];
-        return nil;
-    }
-    
-    //init with dictionary
-    id objModel = [self initWithDictionary:obj error:&initError];
+    id objModel = [self initWithData:[string dataUsingEncoding:encoding] error:&initError];
     if (initError && err) *err = initError;
     return objModel;
+
 }
 
 -(id)initWithDictionary:(NSDictionary*)dict error:(NSError**)err
@@ -347,7 +348,9 @@ static JSONKeyMapper* globalKeyMapper = nil;
             if (property.type == nil && property.structName==nil) {
                 
                 //generic setter
-                [self setValue:jsonValue forKey: property.name];
+                if (jsonValue != [self valueForKey:property.name]) {
+                    [self setValue:jsonValue forKey: property.name];
+                }
                 
                 //skip directly to the next key
                 continue;
@@ -355,7 +358,9 @@ static JSONKeyMapper* globalKeyMapper = nil;
             
             // 0.5) handle nils
             if (isNull(jsonValue)) {
-                [self setValue:nil forKey: property.name];
+                if ([self valueForKey:property.name] != nil) {
+                    [self setValue:nil forKey: property.name];
+                }
                 continue;
             }
             
@@ -378,7 +383,9 @@ static JSONKeyMapper* globalKeyMapper = nil;
 					}
                     return NO;
                 }
-                [self setValue:value forKey: property.name];
+                if (![value isEqual:[self valueForKey:property.name]]) {
+                    [self setValue:value forKey: property.name];
+                }
                 
                 //for clarity, does the same without continue
                 continue;
@@ -410,7 +417,9 @@ static JSONKeyMapper* globalKeyMapper = nil;
                     }
                     
                     //set the property value
-                    [self setValue:jsonValue forKey: property.name];
+                    if (![jsonValue isEqual:[self valueForKey:property.name]]) {
+                        [self setValue:jsonValue forKey: property.name];
+                    }
                     continue;
                 }
                 
@@ -460,7 +469,9 @@ static JSONKeyMapper* globalKeyMapper = nil;
                         jsonValue = [valueTransformer performSelector:selector withObject:jsonValue];
 #pragma clang diagnostic pop
                         
-                        [self setValue:jsonValue forKey: property.name];
+                        if (![jsonValue isEqual:[self valueForKey:property.name]]) {
+                            [self setValue:jsonValue forKey: property.name];
+                        }
                         
                     } else {
                         
@@ -474,7 +485,9 @@ static JSONKeyMapper* globalKeyMapper = nil;
                     
                 } else {
                     // 3.4) handle "all other" cases (if any)
-                    [self setValue:jsonValue forKey: property.name];
+                    if (![jsonValue isEqual:[self valueForKey:property.name]]) {
+                        [self setValue:jsonValue forKey: property.name];
+                    }
                 }
             }
         }
@@ -670,7 +683,7 @@ static JSONKeyMapper* globalKeyMapper = nil;
             }
             
             //add the property object to the temp index
-            if (p) {
+            if (p && ![propertyIndex objectForKey:p.name]) {
                 [propertyIndex setValue:p forKey:p.name];
             }
         }
@@ -793,7 +806,7 @@ static JSONKeyMapper* globalKeyMapper = nil;
         //check if should export list of dictionaries
         if (property.type == [NSArray class] || property.type == [NSMutableArray class]) {
             NSMutableArray* tempArray = [NSMutableArray arrayWithCapacity: [(NSArray*)value count] ];
-            for (id<AbstractJSONModelProtocol> model in (NSArray*)value) {
+            for (NSObject<AbstractJSONModelProtocol>* model in (NSArray*)value) {
                 if ([model respondsToSelector:@selector(toDictionary)]) {
                     [tempArray addObject: [model toDictionary]];
                 } else
@@ -873,7 +886,7 @@ static JSONKeyMapper* globalKeyMapper = nil;
         //call the custom getter
         #pragma clang diagnostic push
         #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-        *value = [self performSelector:property.customGetter withObject:nil];
+        *value = [self performSelector:property.customGetter];
         #pragma clang diagnostic pop
         return YES;
     }
@@ -1079,22 +1092,32 @@ static JSONKeyMapper* globalKeyMapper = nil;
     //parse dictionaries to objects
     NSMutableArray* list = [NSMutableArray arrayWithCapacity: [array count]];
 
-    for (NSDictionary* d in array) {
+    for (id d in array)
+    {
+        if ([d isKindOfClass:NSDictionary.class])
+        {
+		    JSONModelError* initErr = nil;
+            id obj = [[self alloc] initWithDictionary:d error:&initErr];
+            if (obj == nil)
+            {
+                // Propagate the error, including the array index as the key-path component
+			    if((err != nil) && (initErr != nil))
+                {
+				    NSString* path = [NSString stringWithFormat:@"[%lu]", (unsigned long)list.count];
+                    *err = [initErr errorByPrependingKeyPathComponent:path];
+                }
+                return nil;
+            }
 
-		JSONModelError* initErr = nil;
-		id obj = [[self alloc] initWithDictionary:d error:&initErr];
-		if (obj == nil)
-		{
-			// Propagate the error, including the array index as the key-path component
-			if((err != nil) && (initErr != nil))
-			{
-				NSString* path = [NSString stringWithFormat:@"[%lu]", (unsigned long)list.count];
-				*err = [initErr errorByPrependingKeyPathComponent:path];
-			}
-			return nil;
-		}
+            [list addObject: obj];
+        } else if ([d isKindOfClass:NSArray.class])
+        {
+            [list addObjectsFromArray:[self arrayOfModelsFromDictionaries:d error:err]];
+        } else
+        {
+            // This is very bad
+        }
 
-        [list addObject: obj];
     }
 
     return list;

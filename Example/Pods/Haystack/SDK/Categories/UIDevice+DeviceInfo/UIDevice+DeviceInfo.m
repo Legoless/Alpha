@@ -404,4 +404,11 @@ int	sysctlbyname(const char *, void *, size_t *, void *, size_t);
     return UIDeviceFamilyUnknown;
 }
 
+- (BOOL)isRunningTests
+{
+    NSDictionary *environment = [[NSProcessInfo processInfo] environment];
+    NSString *injectBundle = environment[@"XCInjectBundle"];
+    return injectBundle.length;
+}
+
 @end

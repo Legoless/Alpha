@@ -22,14 +22,14 @@
     {
         imageView = self.view.subviews[0];
     }
-    else if ([self.view.subviews count])
+    else if ([self.view.subviews count] && image)
     {
         imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
         imageView.tag = BACKGROUND_IMAGEVIEW_TAG;
         
         [self.view insertSubview:imageView atIndex:0];
     }
-    else
+    else if (image)
     {
         imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
         imageView.tag = BACKGROUND_IMAGEVIEW_TAG;
@@ -37,17 +37,23 @@
         [self.view addSubview:imageView];
     }
     
-    if (animated)
+    if (image)
     {
-        [UIView transitionWithView:imageView duration:SWAP_DISSOLVE_ANIMATION_DURATION options:UIViewAnimationOptionTransitionCrossDissolve animations:^
-         {
-             imageView.image = image;
-         }
-                        completion:nil];
+        if (animated)
+        {
+            [UIView transitionWithView:imageView duration:SWAP_DISSOLVE_ANIMATION_DURATION options:UIViewAnimationOptionTransitionCrossDissolve animations:^
+             {
+                 imageView.image = image;
+             } completion:nil];
+        }
+        else
+        {
+            imageView.image = image;
+        }
     }
     else
     {
-        imageView.image = image;
+        [imageView removeFromSuperview];
     }
 }
 

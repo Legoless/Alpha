@@ -67,6 +67,11 @@ typedef NS_ENUM(NSUInteger, UIDeviceFamily)
  */
 - (NSString *)systemInfoByName:(NSString *)name;
 
-
+/*!
+ *  Returns YES if target is currently being tested
+ *
+ *  @return YES if running tests
+ */
+- (BOOL)isRunningTests;
 
 @end

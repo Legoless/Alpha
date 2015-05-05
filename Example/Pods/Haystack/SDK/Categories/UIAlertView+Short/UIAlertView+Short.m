@@ -28,11 +28,17 @@
     [alertView show];
 }
 
-+ (void)showWithTitle:(NSString *)title message:(NSString *)message delegate:(id<UIAlertViewDelegate>)delegate  cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wuninitialized"
+
++ (void)showWithTitle:(NSString *)title message:(NSString *)message delegate:(id<UIAlertViewDelegate>)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION
 {
     va_list args;
     
     UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:delegate cancelButtonTitle:cancelButtonTitle otherButtonTitles:otherButtonTitles, args, nil];
     [alertView show];
 }
+
+#pragma GCC diagnostic pop
+
 @end

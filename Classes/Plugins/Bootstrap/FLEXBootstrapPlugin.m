@@ -8,7 +8,7 @@
 
 #import "FLEXMenuItem.h"
 
-#import "KZBootstrap+FLEXUtilities.h"
+#import "FLEXBootstrap.h"
 
 #import "FLEXBootstrapPlugin.h"
 
@@ -20,7 +20,7 @@
     
     if (self)
     {
-        if ([KZBootstrap isReady])
+        if ([FLEXBootstrap isReady])
         {
             FLEXMenuItem* menuAction = [FLEXMenuItem itemWithIdentifier:@"com.flex.plugin.bootstrap.main"];
             menuAction.icon = @"🎨";

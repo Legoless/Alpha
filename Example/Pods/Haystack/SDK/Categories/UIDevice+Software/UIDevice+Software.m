@@ -13,25 +13,14 @@
 
 #import "UIDevice+Software.h"
 
-typedef enum : NSUInteger
-{
-    UIDeviceJailbreakResultNotJailbroken,
-    UIDeviceJailbreakResultPathExists,
-    UIDeviceJailbreakResultCydia,
-    UIDeviceJailbreakResultSandboxWrite,
-    UIDeviceJailbreakResultSymbolicLinkVerification,
-    UIDeviceJailbreakResultPrivateWrite,
-    UIDeviceJailbreakResultShellExists,
-} UIDeviceJailbreakResult;
-
 @implementation UIDevice (Software)
 
 - (BOOL)isJailbroken
 {
-    return [self jailbreakTest] != UIDeviceJailbreakResultNotJailbroken;
+    return [self hs_jailbreakStatus] != UIDeviceJailbreakStatusNotJailbroken;
 }
 
-- (UIDeviceJailbreakResult)jailbreakTest
+- (UIDeviceJailbreakStatus)hs_jailbreakStatus
 {
     #if !TARGET_IPHONE_SIMULATOR
     
@@ -41,7 +30,7 @@ typedef enum : NSUInteger
 
     if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"cydia://"]])
     {
-        return UIDeviceJailbreakResultCydia;
+        return UIDeviceJailbreakStatusCydia;
     }
     
     BOOL isDirectory;
@@ -79,7 +68,7 @@ typedef enum : NSUInteger
         || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@%@%@", @"/us",@"r/li",@"bexe",@"c/ssh-k",@"eysign"]])
         
     {
-        return UIDeviceJailbreakResultPathExists;
+        return UIDeviceJailbreakStatusPathExists;
     }
     
     
@@ -95,7 +84,7 @@ typedef enum : NSUInteger
     
     if (pid >= 0)
     {
-        return UIDeviceJailbreakResultSandboxWrite;
+        return UIDeviceJailbreakStatusSandboxWrite;
     }
     
     //
@@ -108,7 +97,7 @@ typedef enum : NSUInteger
     {
         if (s.st_mode & S_IFLNK)
         {
-            return UIDeviceJailbreakResultSymbolicLinkVerification;
+            return UIDeviceJailbreakStatusSymbolicLinkVerification;
         }
     }
     
@@ -121,7 +110,7 @@ typedef enum : NSUInteger
     
     if (nil == error)
     {
-        return UIDeviceJailbreakResultPrivateWrite;
+        return UIDeviceJailbreakStatusPrivateWrite;
     }
     else
     {
@@ -132,11 +121,11 @@ typedef enum : NSUInteger
     
     if (file)
     {
-        return UIDeviceJailbreakResultShellExists;
+        return UIDeviceJailbreakStatusShellExists;
     }
     
     #endif
-    return UIDeviceJailbreakResultNotJailbroken;
+    return UIDeviceJailbreakStatusNotJailbroken;
 }
 
 - (NSDate *)hs_systemBootDate

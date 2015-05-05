@@ -1,6 +1,6 @@
 PODS:
-  - Haystack (0.6.7)
-  - JSONModel (1.0.1)
+  - Haystack (0.8.2)
+  - JSONModel (1.0.2)
   - KZAsserts (1.0)
   - KZBootstrap (0.5.3):
     - KZBootstrap/Core (= 0.5.3)
@@ -13,9 +13,9 @@ DEPENDENCIES:
   - KZBootstrap
 
 SPEC CHECKSUMS:
-  Haystack: f0f5329be600779b2c499f381203ac9bf35f2932
-  JSONModel: 634100aaacbd89811bc8a03da209356e5989c569
-  KZAsserts: 008f2f37ba7dcb4ce87bb262a7f91406812a66e5
-  KZBootstrap: 353e1e3788dbbf18a173fdc20a744f3c39200b72
+  Haystack: 4e55cd99706c04f0c92ef5c61a9bf7f55fa5b1a0
+  JSONModel: 6ffcb4ffa3659c9e9a2e5d45d6c7705bab187c03
+  KZAsserts: 6e613b569a33582dc94cf7a1f34a2c6d870982a7
+  KZBootstrap: 11f5f8f34d0d0d5d1163447eb26eff1ac4715761
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.37.0
