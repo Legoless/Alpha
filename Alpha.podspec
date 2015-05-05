@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name             = "Alpha"
-  spec.version          = "0.1.1"
+  spec.version          = "0.1.2"
   spec.summary          = "A set of in-app debugging and exploration tools for iOS"
   spec.description      = <<-DESC
                         - Inspect and modify views in the hierarchy.
@@ -27,7 +27,7 @@ Pod::Spec.new do |spec|
   spec.license          = { :type => "BSD", :file => "LICENSE" }
   spec.author           = { "Dal Rupnik" => "legoless@gmail.com", "Ryan Olson" => "ryanolsonk@gmail.com" }
   spec.social_media_url = "https://twitter.com/thelegoless"
-  spec.platform         = :ios, "6.0"
+  spec.platform         = :ios, "7.0"
   spec.source           = { :git => "https://github.com/legoless/Alpha.git", :tag => "#{spec.version}" }
   spec.source_files     = "Classes/**/*.{h,m}"
   spec.frameworks       = "CoreGraphics"
