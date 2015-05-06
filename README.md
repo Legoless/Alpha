@@ -1,18 +1,24 @@
-# Alpha
+[![Stories in Ready](https://badge.waffle.io/legoless/alpha.svg?label=ready&title=Ready)](http://waffle.io/legoless/alpha)
+[![Build Status](https://travis-ci.org/Legoless/Alpha.svg)](https://travis-ci.org/legoless/Alpha)
+[![Pod Version](http://img.shields.io/cocoapods/v/Alpha.svg?style=flat)](http://cocoadocs.org/docsets/Alpha/)
+[![Pod Platform](http://img.shields.io/cocoapods/p/Alpha.svg?style=flat)](http://cocoadocs.org/docsets/Alpha/)
+[![Pod License](http://img.shields.io/cocoapods/l/Alpha.svg?style=flat)](http://opensource.org/licenses/MIT)
 
-Alpha is the next generation debugging tool for iOS applications. It started as an unofficial fork from FLEX (Flipboard Explorer), but continued to be actively developed and grow exponentionally. Many features were added on top of original FLEX:
+
+Alpha is the next generation debugging tool for iOS applications. It started as an unofficial fork from [FLEX](https://github.com/Flipboard/FLEX) (Flipboard Explorer), but continued to be actively developed and grew exponentionally. Many features were added on top of original FLEX:
 
 - Push Notification logging (independent of provider)
 - Console logging
 - Network logging (based on PonyDebugger)
+- Bootstrap environment change with [KZBootstrap](https://github.com/krzysztofzablocki/KZBootstrap)
 - Screenshots
+- Touches displayed on screen via Touchpose
+
 - Entire Application State Snapshot
 - Status information widgets
 - Recording touches and replaying
-- Touches displayed on screen via Touchpose
 - Remote connection to app
 - Remote debugging
-- Bootstrap environment change with [KZBootstrap](https://github.com/krzysztofzablocki/KZBootstrap)
 
 **This is an unofficial fork from the amazing Flipboard guys. It is a big rewrite of FLEX architecture, making it completely extensible, but sadly not backwards compatible with original code.**
 
