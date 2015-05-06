@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/Legoless/Alpha.svg)](https://travis-ci.org/legoless/Alpha)
 [![Pod Version](http://img.shields.io/cocoapods/v/Alpha.svg?style=flat)](http://cocoadocs.org/docsets/Alpha/)
 [![Pod Platform](http://img.shields.io/cocoapods/p/Alpha.svg?style=flat)](http://cocoadocs.org/docsets/Alpha/)
-[![Pod License](http://img.shields.io/cocoapods/l/Alpha.svg?style=flat)](http://opensource.org/licenses/MIT)
+[![Pod License](http://img.shields.io/cocoapods/l/Alpha.svg?style=flat)](http://opensource.org/licenses/BSD-3-Clause)
 
 
 Alpha is the next generation debugging tool for iOS applications. It started as an unofficial fork from [FLEX](https://github.com/Flipboard/FLEX) (Flipboard Explorer), but continued to be actively developed and grew exponentionally. Many features were added on top of original FLEX:
