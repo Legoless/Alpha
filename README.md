@@ -5,6 +5,7 @@
 [![Pod License](http://img.shields.io/cocoapods/l/Alpha.svg?style=flat)](http://opensource.org/licenses/BSD-3-Clause)
 
 
+
 Alpha is the next generation debugging tool for iOS applications. It started as an unofficial fork from [FLEX](https://github.com/Flipboard/FLEX) (Flipboard Explorer), but continued to be actively developed and grew exponentionally. Many features were added on top of original FLEX:
 
 - Push Notification logging (independent of provider)
@@ -38,16 +39,19 @@ Alpha is the next generation debugging tool for iOS applications. It started as 
 - Quickly access useful objects such as `[UIApplication sharedApplication]`, the app delegate, the root view controller on the key window, and more.
 - Dynamically view and modify `NSUserDefaults` values.
 
-Unlike many other debugging tools, FLEX runs entirely inside your app, so you don't need to be connected to LLDB/Xcode or a different remote debugging server. It works well in the simulator and on physical devices.
+Unlike many other debugging tools, Alpha runs entirely inside your app, so you don't need to be connected to LLDB/Xcode or a different remote debugging server. It works well in the simulator and on physical devices.
 
-## TODO
-- Improved file type detection and display in the file browser
-- Add new NSUserDefaults key/value pairs on the fly
-- Rewrite network logging to support Async requests
 
-Have a question or suggestion for FLEX? Contact [@ryanolsonk](https://twitter.com/ryanolsonk) on twitter.
+Contact
+======
 
-LICENSE
-=======
+Dal Rupnik
 
-MIT License
+- [legoless](https://github.com/legoless) on **GitHub**
+- [@thelegoless](https://twitter.com/thelegoless) on **Twitter**
+- [dal@unifiedsense.com](mailto:dal@unifiedsense.com)
+
+License
+======
+
+**Alpha** is released under the BSD license. See [LICENSE](https://github.com/Legoless/Alpha/blob/master/LICENSE) file for more information.
