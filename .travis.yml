@@ -1,0 +1,11 @@
+language: objective-c
+sudo: false
+script:
+- curl -fsSL https://raw.githubusercontent.com/legoless/Dominus/master/install.sh | sh
+env:
+  matrix:
+  - ACTION=build
+  - ACTION=test
+  global:
+  - SDK=8.1
+  - PLATFORM='iphone'
