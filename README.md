@@ -15,6 +15,7 @@ Alpha is the next generation debugging tool for iOS applications. It started as 
 - Screenshots
 - Touches displayed on screen via Touchpose
 
+Work in progress
 - Entire Application State Snapshot
 - Status information widgets
 - Recording touches and replaying
