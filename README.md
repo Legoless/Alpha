@@ -13,7 +13,7 @@ Alpha is the next generation debugging tool for iOS applications. It started as 
 
 - Push Notification logging (independent of provider)
 - Console logging
-- Network logging (based on PonyDebugger)
+- Network logging (based on [PonyDebugger](https://github.com/square/PonyDebugger))
 - Bootstrap environment change with [KZBootstrap](https://github.com/krzysztofzablocki/KZBootstrap)
 - Screenshots
 - Touches displayed on screen via Touchpose
