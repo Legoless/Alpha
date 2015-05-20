@@ -1,3 +1,6 @@
+Alpha
+======
+
 [![Stories in Ready](https://badge.waffle.io/legoless/alpha.svg?label=ready&title=Ready)](http://waffle.io/legoless/alpha)
 [![Build Status](https://travis-ci.org/Legoless/Alpha.svg)](https://travis-ci.org/legoless/Alpha)
 [![Pod Version](http://img.shields.io/cocoapods/v/Alpha.svg?style=flat)](http://cocoadocs.org/docsets/Alpha/)
@@ -10,11 +13,12 @@ Alpha is the next generation debugging tool for iOS applications. It started as 
 
 - Push Notification logging (independent of provider)
 - Console logging
-- Network logging (based on PonyDebugger)
+- Network logging (based on [PonyDebugger](https://github.com/square/PonyDebugger))
 - Bootstrap environment change with [KZBootstrap](https://github.com/krzysztofzablocki/KZBootstrap)
 - Screenshots
 - Touches displayed on screen via Touchpose
 
+Work in progress
 - Entire Application State Snapshot
 - Status information widgets
 - Recording touches and replaying
