@@ -22,8 +22,8 @@ Work in progress
 - Entire Application State Snapshot
 - Status information widgets
 - Recording touches and replaying
-- Remote connection to app
-- Remote debugging
+- Remote connection to app (state)
+- Remote debugger
 
 **This is an unofficial fork from the amazing Flipboard guys. It is a big rewrite of FLEX architecture, making it completely extensible, but sadly not backwards compatible with original code.**
 
