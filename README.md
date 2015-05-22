@@ -15,8 +15,8 @@ Alpha is the next generation debugging tool for iOS applications. It started as 
 - Console logging
 - Network logging (based on [PonyDebugger](https://github.com/square/PonyDebugger))
 - Bootstrap environment change with [KZBootstrap](https://github.com/krzysztofzablocki/KZBootstrap)
-- Screenshots
-- Touches displayed on screen via Touchpose
+- Screenshot system
+- Touches displayed on screen via [Touchpose](https://github.com/toddreed/Touchpose)
 
 Work in progress
 - Entire Application State Snapshot
