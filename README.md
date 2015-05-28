@@ -1,7 +1,7 @@
 Alpha
 ======
 
-[![Stories in Ready](https://badge.waffle.io/legoless/alpha.svg?label=ready&title=Ready)](http://waffle.io/legoless/alpha)
+[![Stories in Ready](https://img.shields.io/badge/Issues-Waffle-blue.svg)](http://waffle.io/legoless/alpha)
 [![Build Status](https://travis-ci.org/Legoless/Alpha.svg)](https://travis-ci.org/legoless/Alpha)
 [![Pod Version](http://img.shields.io/cocoapods/v/Alpha.svg?style=flat)](http://cocoadocs.org/docsets/Alpha/)
 [![Pod Platform](http://img.shields.io/cocoapods/p/Alpha.svg?style=flat)](http://cocoadocs.org/docsets/Alpha/)
