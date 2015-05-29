@@ -6,6 +6,34 @@
 
 @implementation NSArray (Class)
 
+- (id)firstObjectOfClass:(Class)objectClass
+{
+    for (id object in self)
+    {
+        if ([object isMemberOfClass:objectClass])
+        {
+            return object;
+        }
+    }
+    
+    return nil;
+}
+
+- (id)lastObjectOfClass:(Class)objectClass
+{
+    NSEnumerator *enumerator = self.reverseObjectEnumerator;
+    
+    for (id object in enumerator)
+    {
+        if ([object isMemberOfClass:objectClass])
+        {
+            return object;
+        }
+    }
+    
+    return nil;
+}
+
 - (BOOL)containsObjectOfClass:(Class)objectClass
 {
     for (id object in self)

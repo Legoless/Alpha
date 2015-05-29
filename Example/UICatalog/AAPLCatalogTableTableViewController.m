@@ -8,7 +8,7 @@
 
 #if DEBUG
 // FLEX should only be compiled and used in debug builds.
-#import "FLEXManager.h"
+#import "ALPHAManager.h"
 #endif
 
 @interface AAPLCatalogTableTableViewController ()
@@ -24,8 +24,12 @@
     [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:nil]];
     
 #if DEBUG
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"FLEX" style:UIBarButtonItemStylePlain target:self action:@selector(flexButtonTapped:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Alpha" style:UIBarButtonItemStylePlain target:self action:@selector(alphaButtonTapped:)];
 #endif
+    
+    //
+    // Local notification test
+    //
     
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
     localNotification.alertAction = @"Finish";
@@ -35,11 +39,11 @@
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
 }
 
-- (void)flexButtonTapped:(id)sender
+- (void)alphaButtonTapped:(id)sender
 {
 #if DEBUG
-    // This call shows the FLEX toolbar if it's not already shown.
-    [[FLEXManager sharedManager] setHidden:NO];
+    // This acts as a manual Alpha trigger
+    [ALPHAManager sharedManager].interfaceHidden = NO;
 #endif
 }
 

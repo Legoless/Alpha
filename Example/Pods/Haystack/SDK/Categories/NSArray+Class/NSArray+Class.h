@@ -7,6 +7,24 @@
 @interface NSArray (Class)
 
 /*!
+ *  Returns first object instance that matches specified class
+ *
+ *  @param objectClass class object
+ *
+ *  @return first instance of class, or nil
+ */
+- (id)firstObjectOfClass:(Class)objectClass;
+
+/*!
+ *  Returns last object instance that matches specified class
+ *
+ *  @param objectClass class object
+ *
+ *  @return last instance of class, or nil
+ */
+- (id)lastObjectOfClass:(Class)objectClass;
+
+/*!
  * Returns YES, if at least one object in array is member of provided class.
  *
  * @param objectClass class of object

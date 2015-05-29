@@ -211,7 +211,7 @@ static JSONKeyMapper* globalKeyMapper = nil;
 {
     //check if all required properties are present
     NSArray* incomingKeysArray = [dict allKeys];
-    NSMutableSet* requiredProperties = [self __requiredPropertyNames];
+    NSMutableSet* requiredProperties = [self __requiredPropertyNames].mutableCopy;
     NSSet* incomingKeys = [NSSet setWithArray: incomingKeysArray];
     
     //transform the key names, if neccessary
@@ -928,6 +928,11 @@ static JSONKeyMapper* globalKeyMapper = nil;
     return [self toJSONStringWithKeys:nil];
 }
 
+-(NSData*)toJSONData
+{
+	return [self toJSONDataWithKeys:nil];
+}
+
 //exports the model as a dictionary of JSON compliant objects
 -(NSDictionary*)toDictionaryWithKeys:(NSArray*)propertyNames
 {
@@ -1049,23 +1054,29 @@ static JSONKeyMapper* globalKeyMapper = nil;
 }
 
 //exports model to a dictionary and then to a JSON string
+-(NSData*)toJSONDataWithKeys:(NSArray*)propertyNames
+{
+	NSData* jsonData = nil;
+	NSError* jsonError = nil;
+	
+	@try {
+		NSDictionary* dict = [self toDictionaryWithKeys:propertyNames];
+		jsonData = [NSJSONSerialization dataWithJSONObject:dict options:kNilOptions error:&jsonError];
+	}
+	@catch (NSException *exception) {
+		//this should not happen in properly design JSONModel
+		//usually means there was no reverse transformer for a custom property
+		JMLog(@"EXCEPTION: %@", exception.description);
+		return nil;
+	}
+	
+	return jsonData;
+}
+
 -(NSString*)toJSONStringWithKeys:(NSArray*)propertyNames
 {
-    NSData* jsonData = nil;
-    NSError* jsonError = nil;
-    
-    @try {
-        NSDictionary* dict = [self toDictionaryWithKeys:propertyNames];
-        jsonData = [NSJSONSerialization dataWithJSONObject:dict options:kNilOptions error:&jsonError];
-    }
-    @catch (NSException *exception) {
-        //this should not happen in properly design JSONModel
-        //usually means there was no reverse transformer for a custom property
-        JMLog(@"EXCEPTION: %@", exception.description);
-        return nil;
-    }
-    
-    return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    return [[NSString alloc] initWithData: [self toJSONDataWithKeys: propertyNames]
+								 encoding: NSUTF8StringEncoding];
 }
 
 #pragma mark - import/export of lists
@@ -1277,7 +1288,11 @@ static JSONKeyMapper* globalKeyMapper = nil;
 {
     NSString* json = [decoder decodeObjectForKey:@"json"];
     
-    self = [self initWithString:json error:nil];
+    JSONModelError *error = nil;
+    self = [self initWithString:json error:&error];
+    if (error) {
+        JMLog(@"%@",[error localizedDescription]);
+    }
     return self;
 }
 

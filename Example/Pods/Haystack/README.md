@@ -2,6 +2,7 @@ Haystack
 ========
 
 [![Build Status](https://travis-ci.org/Legoless/Haystack.svg)](https://travis-ci.org/Legoless/Haystack) [![Version Badge](https://cocoapod-badges.herokuapp.com/v/Haystack/badge.png)](http://www.google.com)  [![Badge w/ Platform](https://cocoapod-badges.herokuapp.com/p/NSStringMask/badge.svg)](https://cocoadocs.org/docsets/NSStringMask)
+[![Pod License](http://img.shields.io/cocoapods/l/Haystack.svg?style=flat)](http://opensource.org/licenses/MIT)
 
 Haystack SDK contains a multiple resources for **iOS** developers, including a collection of simple Objective-C classes and categories that fit in almost every project. Most of these classes are not large or structured enough to fit in a special library or framework, but are regurarely needed throughout the most projects you are working on. Basically it is meant to fill the void of classes without entire libraries.
 
@@ -33,14 +34,16 @@ Haystack is **not limited only** to Objective-C code, but contains multiple reso
    - **[Categories](https://github.com/Legoless/Haystack/blob/master/Wiki/Categories.md)**
      - *Foundation*
         - NSArray+Class
+        - NSData+Base64
         - NSDate+Additional
         - NSDate+Timestamp
         - NSDictionary+Class
+        - NSObject+Property
         - NSObject+PropertyList
         - NSObject+Runtime
         - NSObject+Swizzle
-        - NSSet+Class
         - NSString+Additional
+        - NSString+Random
         - NSString+Validation
      - *UIKit*
         - UIAlertView+Short
@@ -50,13 +53,15 @@ Haystack is **not limited only** to Objective-C code, but contains multiple reso
         - UIButton+Position
         - UIColor+Create
         - UIColor+Flat
-        - UIFont+SmallCaps
         - UIDevice+Capabilities
         - UIDevice+DeviceInfo
         - UIDevice+Hardware
+        - UIDevice+Network
         - UIDevice+Software
+        - UIFont+SmallCaps
         - UIView+Cell
         - UIView+Debug
+        - UIView+Hierarchy
         - UIView+Snapshot
         - UIViewController+BackgroundImage
    - **[Classes](https://github.com/Legoless/Haystack/blob/master/Wiki/Classes.md)**

@@ -35,11 +35,6 @@ static NSURLRequestCachePolicy defaultCachePolicy = NSURLRequestReloadIgnoringLo
 static int defaultTimeoutInSeconds = 60;
 
 /**
- * Whether the iPhone net indicator automatically shows when making requests
- */
-static BOOL doesControlIndicator = YES;
-
-/**
  * Custom HTTP headers to send over with *each* request
  */
 static NSMutableDictionary* requestHeaders = nil;
@@ -81,11 +76,6 @@ static NSString* requestContentType = nil;
 +(void)setTimeoutInSeconds:(int)seconds
 {
     defaultTimeoutInSeconds = seconds;
-}
-
-+(void)setControlsNetworkIndicator:(BOOL)does
-{
-    doesControlIndicator = does;
 }
 
 +(void)setRequestContentType:(NSString*)contentTypeString
@@ -140,9 +130,6 @@ static NSString* requestContentType = nil;
 #pragma mark - networking worker methods
 +(NSData*)syncRequestDataFromURL:(NSURL*)url method:(NSString*)method requestBody:(NSData*)bodyData headers:(NSDictionary*)headers etag:(NSString**)etag error:(JSONModelError**)err
 {
-    //turn on network indicator
-    if (doesControlIndicator) dispatch_async(dispatch_get_main_queue(), ^{[self setNetworkIndicatorVisible:YES];});
-
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: url
                                                                 cachePolicy: defaultCachePolicy
                                                             timeoutInterval: defaultTimeoutInSeconds];
@@ -187,8 +174,13 @@ static NSString* requestContentType = nil;
         *err = [JSONModelError errorWithDomain:errObj.domain code:errObj.code userInfo:errObj.userInfo];
     }
     
-    //turn off network indicator
-    if (doesControlIndicator) dispatch_async(dispatch_get_main_queue(), ^{[self setNetworkIndicatorVisible:NO];});
+    //special case for http error code 401
+    if ([*err code] == kCFURLErrorUserCancelledAuthentication) {
+        response = [[NSHTTPURLResponse alloc] initWithURL:url
+                                               statusCode:401
+                                              HTTPVersion:@"HTTP/1.1"
+                                             headerFields:@{}];
+    }
     
     //if not OK status set the err to a JSONModelError instance
 	if (response.statusCode >= 300 || response.statusCode < 200) {
@@ -301,13 +293,13 @@ static NSString* requestContentType = nil;
         }
         
         //step 3: if there's no response so far, return a basic error
-        if (!responseData && !jsonObject) {
+        if (!responseData && !error) {
             //check for false response, but no network error
             error = [JSONModelError errorBadResponse];
         }
 
         //step 4: if there's a response at this and no errors, convert to object
-        if (error==nil && jsonObject==nil) {
+        if (error==nil) {
 			// Note: it is possible to have a valid response with empty response data (204 No Content).
 			// So only create the JSON object if there is some response data.
 			if(responseData.length > 0)
@@ -377,14 +369,6 @@ static NSString* requestContentType = nil;
                                  completion:^(id json, JSONModelError* e) {
                        if (completeBlock) completeBlock(json, e);
                    }];
-}
-
-#pragma mark - iOS UI helper
-+(void)setNetworkIndicatorVisible:(BOOL)isVisible
-{
-#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:isVisible];
-#endif
 }
 
 @end

@@ -1,11 +1,1 @@
-//
-//  UIView+Hierarchy.h
-//
-
-@import UIKit;
-
-@interface UIView (Hierarchy)
-
-- (UIView *)parentViewOfType:(Class)class;
-
-@end
+../../../Haystack/SDK/Categories/UIView+Hierarchy/UIView+Hierarchy.h

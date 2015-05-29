@@ -57,24 +57,6 @@ install_resource()
       ;;
   esac
 }
-if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "KZBootstrap/Pod/Assets/Scripts/bootstrap.sh"
-  install_resource "KZBootstrap/Pod/Assets/Scripts/buildNumber.sh"
-  install_resource "KZBootstrap/Pod/Assets/Scripts/iconVersioning.sh"
-  install_resource "KZBootstrap/Pod/Assets/Scripts/lines.sh"
-  install_resource "KZBootstrap/Pod/Assets/Scripts/processEnvironments.swift"
-  install_resource "KZBootstrap/Pod/Assets/Scripts/todo.sh"
-  install_resource "KZBootstrap/Pod/Assets/Scripts/user.sh"
-fi
-if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "KZBootstrap/Pod/Assets/Scripts/bootstrap.sh"
-  install_resource "KZBootstrap/Pod/Assets/Scripts/buildNumber.sh"
-  install_resource "KZBootstrap/Pod/Assets/Scripts/iconVersioning.sh"
-  install_resource "KZBootstrap/Pod/Assets/Scripts/lines.sh"
-  install_resource "KZBootstrap/Pod/Assets/Scripts/processEnvironments.swift"
-  install_resource "KZBootstrap/Pod/Assets/Scripts/todo.sh"
-  install_resource "KZBootstrap/Pod/Assets/Scripts/user.sh"
-fi
 
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 if [[ "${ACTION}" == "install" ]]; then

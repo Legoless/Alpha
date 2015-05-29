@@ -49,7 +49,7 @@
 
 #if DEBUG
 // FLEX should only be compiled and used in debug builds.
-#import "FLEXManager.h"
+#import "ALPHAManager.h"
 #endif
 
 @implementation AAPLMasterViewController
@@ -66,7 +66,7 @@
 - (void)flexButtonTapped:(id)sender
 {
 #if DEBUG
-    [[FLEXManager sharedManager] setHidden:NO];
+    [[ALPHAManager sharedManager] setHidden:NO];
 #endif
 }
 
