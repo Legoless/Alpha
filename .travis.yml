@@ -1,5 +1,6 @@
 language: objective-c
 sudo: false
+osx_image: beta-xcode6.3
 script:
 - curl -fsSL https://raw.githubusercontent.com/legoless/Dominus/master/install.sh | sh
 env:
@@ -7,5 +8,5 @@ env:
   - ACTION=build
   - ACTION=test
   global:
-  - SDK=8.1
+  - SDK=8.3
   - PLATFORM='iphone'
