@@ -117,12 +117,13 @@
         _alphaWindow = [[ALPHAWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         _alphaWindow.eventDelegate = self;
         _alphaWindow.rootViewController = self.rootViewController;
+        _alphaWindow.hidden = NO;
     }
     
     return _alphaWindow;
 }
 
-- (UIView *)mainInterface
+- (UIView *)mainInterfaceView
 {
     return self.interfacePlugin.mainInterface.view;
 }
@@ -136,6 +137,8 @@
     
     return _keyWindow;
 }
+
+#pragma mark - Singleton
 
 + (instancetype)sharedManager
 {
@@ -324,7 +327,7 @@
     // cancel other plugins.
     //
     
-    [self.rootViewController.view bringSubviewToFront:self.mainInterfaceView];
+    [self.rootViewController.view bringSubviewToFront:viewController.view];
     
     if (completion)
     {
