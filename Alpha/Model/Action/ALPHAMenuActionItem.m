@@ -1,22 +1,40 @@
 //
-//  FLEXMenuItem.m
+//  ALPHAMenuActionItem.m
 //  Alpha
 //
 //  Created by Dal Rupnik on 25/11/14.
-//  Copyright (c) 2014 f. All rights reserved.
+//  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
 #import "ALPHAMenuActionItem.h"
+#import "ALPHADataSink.h"
 
 @implementation ALPHAMenuActionItem
 
 - (UIViewController *)viewControllerInstance
 {
-    Class viewControllerClass = NSClassFromString(self.viewControllerClass);
+    NSString *viewControllerClassString = self.viewControllerClass;
     
-    if (viewControllerClass)
+    if (!viewControllerClassString && self.dataIdentifier)
     {
-        return [[viewControllerClass alloc] init];
+        viewControllerClassString = @"ALPHATableSinkViewController";
+    }
+    
+    if (viewControllerClassString)
+    {
+        Class viewControllerClass = NSClassFromString(viewControllerClassString);
+
+        if (viewControllerClass)
+        {
+            id viewController = [[viewControllerClass alloc] init];
+            
+            if ([viewController conformsToProtocol:@protocol(ALPHADataSink)] && self.dataIdentifier)
+            {
+                [viewController setDataIdentifier:self.dataIdentifier];
+            }
+            
+            return viewController;
+        }
     }
     
     return nil;

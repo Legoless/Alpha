@@ -13,10 +13,17 @@
 /*!
  *  Action that opens a view controller should have this property set.
  */
-@property (nonatomic, strong) NSString* viewControllerClass;
+@property (nonatomic, copy) NSString* viewControllerClass;
 
 /*!
- *  Returns new view controller instance for selected class
+ *  Target data identifier that opens table sink view controller
+ */
+@property (nonatomic, copy) NSString* dataIdentifier;
+
+/*!
+ *  Returns new view controller instance for selected class, if viewControllerClass is set it will
+ *  return a new instance of that view controller. If viewControllerClass is not set, but dataIdentifier
+ *  is set, it will return view controller with data identifier.
  *
  *  @return instance
  */

@@ -1,19 +1,20 @@
 //
-//  FLEXStatePlugin.m
-//  UICatalog
+//  ALPHAStatePlugin.m
+//  Alpha
 //
 //  Created by Dal Rupnik on 24/11/14.
-//  Copyright (c) 2014 f. All rights reserved.
+//  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
-#import "FLEXStatePlugin.h"
+#import "ALPHAStatePlugin.h"
 #import "ALPHAMenuActionItem.h"
+#import "ALPHADeviceStatusCollector.h"
 
-@interface FLEXStatePlugin ()
+@interface ALPHAStatePlugin ()
 
 @end
 
-@implementation FLEXStatePlugin
+@implementation ALPHAStatePlugin
 
 - (instancetype)init
 {
@@ -37,7 +38,7 @@
         ALPHAMenuActionItem* menuAction = [ALPHAMenuActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.state.status"];
         menuAction.icon = @"📊";
         menuAction.title = @"Status";
-        menuAction.viewControllerClass = @"FLEXStatusTableViewController";
+        menuAction.dataIdentifier = ALPHADeviceStatusDataIdentifier;
         
         [self registerAction:menuAction];
         
@@ -47,6 +48,12 @@
         menuAction.viewControllerClass = @"FLEXNotificationTableViewController";
         
         [self registerAction:menuAction];
+        
+        //
+        // Collectors
+        //
+        
+        [self registerCollector:[ALPHADeviceStatusCollector new]];
     }
     
     return self;

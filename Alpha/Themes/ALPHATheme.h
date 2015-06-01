@@ -68,6 +68,33 @@
 - (UIFont *)themeFontOfSize:(CGFloat)size;
 
 /*!
+ *  Returns italic font of specified family of correct size
+ *
+ *  @param size of font
+ *
+ *  @return font instance
+ */
+- (UIFont *)italicThemeFontOfSize:(CGFloat)size;
+
+/*!
+ *  Returns italic font of specified family of correct size
+ *
+ *  @param size of font
+ *
+ *  @return font instance
+ */
+- (UIFont *)boldThemeFontOfSize:(CGFloat)size;
+
+/*!
+ *  Returns italic font of specified family of correct size
+ *
+ *  @param size of font
+ *
+ *  @return font instance
+ */
+- (UIFont *)boldItalicThemeFontOfSize:(CGFloat)size;
+
+/*!
  *  Returns theme font with font-size taken from original font
  *
  *  @param font with size
@@ -75,5 +102,32 @@
  *  @return font instance
  */
 - (UIFont *)themeFontWithFont:(UIFont *)font;
+
+/*!
+ *  Returns theme font with font-size taken from original font
+ *
+ *  @param font with size
+ *
+ *  @return font instance
+ */
+- (UIFont *)italicThemeFontWithFont:(UIFont *)font;
+
+/*!
+ *  Returns theme font with font-size taken from original font
+ *
+ *  @param font with size
+ *
+ *  @return font instance
+ */
+- (UIFont *)boldThemeFontWithFont:(UIFont *)font;
+
+/*!
+ *  Returns theme font with font-size taken from original font
+ *
+ *  @param font with size
+ *
+ *  @return font instance
+ */
+- (UIFont *)boldItalicThemeFontWithFont:(UIFont *)font;
 
 @end

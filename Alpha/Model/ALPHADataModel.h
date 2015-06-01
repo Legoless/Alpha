@@ -1,12 +1,14 @@
 //
 //  ALPHADataModel.h
-//  UICatalog
+//  Alpha
 //
 //  Created by Dal Rupnik on 29/05/15.
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
 #import "ALPHASerializableItem.h"
+#import "ALPHADataSection.h"
+#import "ALPHADataItem.h"
 #import "ALPHAActionItem.h"
 
 @interface ALPHADataModel : NSObject <ALPHASerializableItem>

@@ -19,7 +19,7 @@ typedef NSInteger ALPHADataItemPriority;
  */
 @property (nonatomic, strong) id icon;
 @property (nonatomic, copy) NSString* title;
-@property (nonatomic, copy) NSString* detail;
+@property (nonatomic, copy) id detail;
 @property (nonatomic, assign) UITableViewCellStyle style;
 
 /*!

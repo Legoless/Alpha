@@ -38,19 +38,12 @@ NSString* const ALPHADisplayItemDetailkey = @"kALPHADisplayItemDetailkey";
 
 - (instancetype)init
 {
-    @throw [NSException exceptionWithName:@"Data needs an identifier" reason:@"No identifier specified" userInfo:nil];
+    return [self initWithIdentifier:@""];
 }
 
 - (instancetype)initWithIdentifier:(NSString *)identifier
 {
-    self = [super init];
-    
-    if (self)
-    {
-        self.identifier = identifier;
-    }
-    
-    return self;
+    return [self initWithIdentifier:identifier title:nil detail:nil];
 }
 
 - (NSString *)description
@@ -65,7 +58,7 @@ NSString* const ALPHADisplayItemDetailkey = @"kALPHADisplayItemDetailkey";
 
 - (instancetype)initWithIdentifier:(NSString *)identifier title:(NSString *)title detail:(NSString *)detail
 {
-    return [self initWithIdentifier:identifier title:title detail:detail style:UITableViewCellStyleDefault];
+    return [self initWithIdentifier:identifier title:title detail:detail style:UITableViewCellStyleValue1];
 }
 
 - (instancetype)initWithIdentifier:(NSString *)identifier title:(NSString *)title detail:(NSString *)detail style:(UITableViewCellStyle)style
@@ -74,6 +67,7 @@ NSString* const ALPHADisplayItemDetailkey = @"kALPHADisplayItemDetailkey";
     
     if (self)
     {
+        self.identifier = identifier;
         self.title = title;
         self.detail = detail;
         self.style = style;

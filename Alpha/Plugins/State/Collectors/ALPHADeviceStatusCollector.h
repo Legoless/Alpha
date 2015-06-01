@@ -8,6 +8,8 @@
 
 #import "ALPHADataCollector.h"
 
+extern NSString *const ALPHADeviceStatusDataIdentifier;
+
 @interface ALPHADeviceStatusCollector : ALPHADataCollector
 
 @end

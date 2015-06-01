@@ -15,7 +15,7 @@
 /*!
  *  Current identifier to load, if data not available
  */
-@property (nonatomic, copy) NSString *rootIdentifier;
+@property (nonatomic, copy) NSString *dataIdentifier;
 
 /*!
  *  Data source, where data model is requested

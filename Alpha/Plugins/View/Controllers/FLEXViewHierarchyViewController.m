@@ -11,14 +11,12 @@
 #import "FLEXToolbarItem.h"
 #import "FLEXUtility.h"
 #import "FLEXHierarchyTableViewController.h"
-#import "FLEXInfoTableViewController.h"
 #import "FLEXObjectExplorerViewController.h"
 #import "FLEXObjectExplorerFactory.h"
 
 #import "FLEXAutoFillEngine.h"
 
 #import "FLEXViewHierarchyViewController.h"
-#import "FLEXInfoTableViewController.h"
 
 #import "ALPHAManager.h"
 

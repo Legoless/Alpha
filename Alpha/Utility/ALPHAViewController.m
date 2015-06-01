@@ -18,7 +18,6 @@
 #import "FLEXToolbarItem.h"
 #import "FLEXUtility.h"
 #import "FLEXHierarchyTableViewController.h"
-#import "FLEXInfoTableViewController.h"
 #import "FLEXObjectExplorerViewController.h"
 #import "FLEXObjectExplorerFactory.h"
 

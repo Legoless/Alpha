@@ -29,6 +29,6 @@
  *
  *  @return instantiated section
  */
-+ (instancetype)displaySectionWithDictionary:(NSDictionary *)dictionary;
++ (instancetype)dataSectionWithDictionary:(NSDictionary *)dictionary;
 
 @end

@@ -14,6 +14,12 @@
 #import "ALPHABlockActionItem.h"
 #import "ALPHAManager.h"
 
+@interface ALPHATableSinkViewController ()
+
+@property (nonatomic, strong) NSTimer *refreshTimer;
+
+@end
+
 @implementation ALPHATableSinkViewController
 
 #pragma mark - Getters and Setters
@@ -34,18 +40,28 @@
     
     if ([data isKindOfClass:[ALPHADataModel class]])
     {
-        if (self.navigationItem.rightBarButtonItem)
-        {
-            self.navigationItem.rightBarButtonItem = nil;
-        }
-        
         if ([self.dataModel.rightAction.identifier isEqualToString:ALPHAActionCloseIdentifier])
         {
             self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStyleDone target:self action:@selector(donePressed:)];
-
         }
-        
+        else
+        {
+            self.navigationItem.rightBarButtonItem = nil;
+        }
+         
         self.title = self.dataModel.title;
+        
+        [self.tableView reloadData];
+        
+        if (self.dataModel.expiration > 0)
+        {
+            self.refreshTimer = [NSTimer scheduledTimerWithTimeInterval:self.dataModel.expiration target:self selector:@selector(refresh) userInfo:nil repeats:NO];
+        }
+        else
+        {
+            [self.refreshTimer invalidate];
+            self.refreshTimer = nil;
+        }
     }
 }
 
@@ -57,6 +73,16 @@
     
     self.view.backgroundColor = [ALPHAManager sharedManager].theme.backgroundColor;
     self.tableView.separatorColor = [ALPHAManager sharedManager].theme.highlightedBackgroundColor;
+    
+    //
+    // Refresh control
+    //
+    
+    UIRefreshControl* refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
+    refreshControl.tintColor = [[ALPHAManager sharedManager].theme.tintColor colorWithAlphaComponent:0.5];
+    
+    self.refreshControl = refreshControl;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -65,13 +91,7 @@
     
     if (!self.data)
     {
-        [self.source refreshWithIdentifier:self.rootIdentifier completion:^(ALPHADataModel *dataModel, NSError *error) {
-            self.data = dataModel;
-            
-            //
-            // TODO: Handle error and display it properly (this can happen with over network sources)
-            //
-        }];
+        [self refresh];
     }
 }
 
@@ -80,6 +100,8 @@
     [super viewWillDisappear:animated];
     
     //self.data = nil;
+    [self.refreshTimer invalidate];
+    self.refreshTimer = nil;
 }
 
 #pragma mark - Actions
@@ -92,33 +114,20 @@
     }
 }
 
-
-#pragma mark - Public
-
-/*
- - (void)refresh
- {
- NSMutableIndexSet* refreshSections = [NSMutableIndexSet indexSet];
- 
- NSUInteger index = 0;
- 
- for (ALPHADataSection* section in self.dataModel.sections)
- {
- BOOL refresh = [section refresh];
- 
- if (refresh)
- {
- [refreshSections addIndex:index];
- }
- 
- index++;
- }
- 
- if (refreshSections.count)
- {
- [self.tableView reloadSections:refreshSections withRowAnimation:UITableViewRowAnimationAutomatic];
- }
- }*/
+- (void)refresh
+{
+    [self.refreshControl beginRefreshing];
+    
+    [self.source refreshWithIdentifier:self.dataIdentifier completion:^(ALPHADataModel *dataModel, NSError *error) {
+        self.data = dataModel;
+        
+        [self.refreshControl endRefreshing];
+        
+        //
+        // TODO: Handle error and display it properly (this can happen with over network sources)
+        //
+    }];
+}
 
 #pragma mark - UITableViewDataSource
 
@@ -149,7 +158,7 @@
         cell.detailTextLabel.font = [theme themeFontWithFont:cell.detailTextLabel.font];
         
         cell.textLabel.textColor = theme.tintColor;
-        cell.detailTextLabel.textColor = theme.tintColor;
+        cell.detailTextLabel.textColor = [theme.tintColor colorWithAlphaComponent:0.5];
         
         cell.backgroundColor = theme.backgroundColor;
         cell.selectedBackgroundView = [UIView new];
@@ -188,12 +197,58 @@
     [text appendString:item.title];
     
     cell.textLabel.text = text;
-    cell.detailTextLabel.text = item.detail;
+    
+    NSString* detail = @"";
+    
+    if ([item.detail isKindOfClass:[NSString class]])
+    {
+        detail = item.detail;
+    }
+    else if ([item.detail isKindOfClass:[NSNumber class]])
+    {
+        //
+        // Check for boolean here
+        //
+        
+        NSNumber* detailNumber = item.detail;
+        
+        if (strcmp([detailNumber objCType], @encode(BOOL)) == 0)
+        {
+            BOOL detailData = detailNumber.boolValue;
+            
+            detail = detailData ? @"YES" : @"NO";
+        }
+        else
+        {
+            detail = [NSString stringWithFormat:@"%lld", detailNumber.longLongValue];
+        }
+    }
+    else
+    {
+        detail = [item.detail description];
+    }
+    
+    cell.detailTextLabel.text = detail;
     
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UILabel *label = [[UILabel alloc] init];
+    label.frame = CGRectMake(17.0, 8.0, self.view.bounds.size.width - 17.0, 12.0);
+    label.font = [[ALPHAManager sharedManager].theme themeFontOfSize:12.0];
+    label.textColor = [[ALPHAManager sharedManager].theme.tintColor colorWithAlphaComponent:0.6];
+    label.text = [self tableView:tableView titleForHeaderInSection:section];
+    
+    UIView *headerView = [[UIView alloc] init];
+    headerView.backgroundColor = [[ALPHAManager sharedManager].theme.highlightedBackgroundColor colorWithAlphaComponent:0.8];
+    [headerView addSubview:label];
+    
+    return headerView;
+}
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
@@ -214,9 +269,17 @@
     {
         ALPHAMenuActionItem* menuItem = item;
         
-        if (menuItem.viewControllerClass)
+        UIViewController* controller = menuItem.viewControllerInstance;
+        
+        if (controller)
         {
-            UIViewController* controller = menuItem.viewControllerInstance;
+            if ([controller conformsToProtocol:@protocol(ALPHADataSink)])
+            {
+                UIViewController<ALPHADataSink>* sinkController = (UIViewController<ALPHADataSink>*)controller;
+                
+                // Send data source
+                sinkController.source = self.source;
+            }
             
             [self.navigationController pushViewController:controller animated:YES];
         }

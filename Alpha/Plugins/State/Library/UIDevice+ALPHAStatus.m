@@ -31,7 +31,7 @@
         }
     }
     
-    return nil;
+    return @"Unavailable";
 }
 
 @end

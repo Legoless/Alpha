@@ -61,14 +61,58 @@
     //[statusBar performSelector:NSSelectorFromString(@"setForegroundColor:") withObject:self.tintColor];
 }
 
+- (UIFont *)italicThemeFontOfSize:(CGFloat)size
+{
+    return [self fontWithStyle:@"Italic" ofSize:size];
+}
+
+- (UIFont *)boldThemeFontOfSize:(CGFloat)size
+{
+    return [self fontWithStyle:@"Bold" ofSize:size];
+}
+
+- (UIFont *)boldItalicThemeFontOfSize:(CGFloat)size
+{
+    return [self fontWithStyle:@"BoldItalic" ofSize:size];
+}
+
 - (UIFont *)themeFontOfSize:(CGFloat)size
 {
-    return [UIFont fontWithName:self.fontFamily size:size - 2.0];
+    return [self fontWithStyle:nil ofSize:size];
 }
 
 - (UIFont *)themeFontWithFont:(UIFont *)font
 {
     return [self themeFontOfSize:font.pointSize];
+}
+
+- (UIFont *)italicThemeFontWithFont:(UIFont *)font
+{
+    return [self italicThemeFontOfSize:font.pointSize];
+}
+
+- (UIFont *)boldThemeFontWithFont:(UIFont *)font
+{
+    return [self boldThemeFontOfSize:font.pointSize];
+}
+
+- (UIFont *)boldItalicThemeFontWithFont:(UIFont *)font
+{
+    return [self boldItalicThemeFontOfSize:font.pointSize];
+}
+
+#pragma mark - Private methods
+
+- (UIFont *)fontWithStyle:(NSString *)fontStyle ofSize:(CGFloat)size
+{
+    NSString* fontFamily = self.fontFamily;
+    
+    if (fontStyle)
+    {
+        fontFamily = [NSString stringWithFormat:@"%@-%@", self.fontFamily, fontStyle];
+    }
+    
+    return [UIFont fontWithName:fontFamily size:size - 2.0];
 }
 
 @end

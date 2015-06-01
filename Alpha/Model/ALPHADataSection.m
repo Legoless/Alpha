@@ -11,29 +11,35 @@
 
 @implementation ALPHADataSection
 
-+ (instancetype)displaySectionWithDictionary:(NSDictionary *)dictionary
++ (instancetype)dataSectionWithDictionary:(NSDictionary *)dictionary
 {
     ALPHADataSection* section = [[ALPHADataSection alloc] init];
     
     for (NSString* key in dictionary)
     {
-        section.title = key;
-        
-        for (NSDictionary* item in dictionary[key])
+        if ([key isEqualToString:@"items"])
         {
             NSMutableArray* items = [NSMutableArray array];
             
-            ALPHADataItem* displayItem = [[ALPHADataItem alloc] init];
-            
-            for (NSString* keyItem in item)
+            for (NSDictionary* item in dictionary[key])
             {
-                displayItem.title = keyItem;
-                displayItem.detail = item[keyItem];
+                ALPHADataItem* displayItem = [[ALPHADataItem alloc] init];
+                
+                for (NSString* keyItem in item)
+                {
+                    displayItem.title = keyItem;
+                    displayItem.detail = [item[keyItem] description];
+                }
+                
+                [items addObject:displayItem];
             }
             
-            [items addObject:displayItem];
-            
             section.items = items;
+        }
+        else
+        {
+            // Sets title and identifier
+            [section setValue:dictionary[key] forKey:key];
         }
     }
     

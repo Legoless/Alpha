@@ -89,8 +89,6 @@
             }
         }
     }
-    
-    [self completeRefreshWithIdentifiers:identifiers data:data completion:completion];
 }
 
 - (void)completeRefreshWithIdentifiers:(NSArray *)identifiers data:(NSDictionary *)data completion:(ALPHADataSourceCompletion)completion

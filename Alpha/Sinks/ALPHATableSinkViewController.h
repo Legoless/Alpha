@@ -13,7 +13,7 @@
 
 @property (nonatomic, weak) id <FLEXViewControllerDelegate> delegate;
 
-@property (nonatomic, copy) NSString *rootIdentifier;
+@property (nonatomic, copy) NSString *dataIdentifier;
 @property (nonatomic, strong) id<ALPHADataSource> source;
 @property (nonatomic, strong) id<ALPHASerializableItem> data;
 

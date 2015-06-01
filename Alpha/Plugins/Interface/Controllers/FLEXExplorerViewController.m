@@ -11,7 +11,6 @@
 #import "FLEXToolbarItem.h"
 #import "FLEXUtility.h"
 #import "FLEXHierarchyTableViewController.h"
-#import "FLEXInfoTableViewController.h"
 #import "FLEXObjectExplorerViewController.h"
 #import "FLEXObjectExplorerFactory.h"
 
@@ -160,16 +159,10 @@
 
 - (void)displayInfoTable
 {
-    /*
-    FLEXInfoTableViewController *globalsViewController = [[FLEXInfoTableViewController alloc] init];
-    globalsViewController.delegate = self;
-    */
-    
-    
     ALPHATableSinkViewController* sinkTVC = [[ALPHATableSinkViewController alloc] init];
     sinkTVC.delegate = self;
     sinkTVC.source = [ALPHALocalSource new];
-    sinkTVC.rootIdentifier = ALPHAMenuDataIdentifier;
+    sinkTVC.dataIdentifier = ALPHAMenuDataIdentifier;
     
     UINavigationController *navigationController = [[ALPHANavigationController alloc] initWithRootViewController:sinkTVC];
     [[ALPHAManager sharedManager] displayViewController:navigationController animated:YES completion:nil];
@@ -182,14 +175,12 @@
 
 - (void)close;
 {
-    //self.currentMode = FLEXExplorerModeDefault;
-    //[self.delegate explorerViewControllerDidFinish:self];
-    
     if ([self.delegate respondsToSelector:@selector(viewControllerDidFinish:)])
     {
         [self.delegate viewControllerDidFinish:self];
     }
 }
+
 #pragma mark - Touch Handling
 
 - (BOOL)shouldReceiveTouchAtWindowPoint:(CGPoint)pointInWindowCoordinates
