@@ -27,6 +27,13 @@
         self.fontFamily = @"Menlo";
         
         self.topMargin = 2.0;
+        
+        self.tintColor = [UIColor blackColor];
+        
+        self.disabledTitleColor = [UIColor lightGrayColor];
+        self.highlightedBackgroundColor = [UIColor grayColor];
+        self.selectedBackgroundColor = [UIColor darkGrayColor];
+        self.backgroundColor = [UIColor whiteColor];
     }
     
     return self;

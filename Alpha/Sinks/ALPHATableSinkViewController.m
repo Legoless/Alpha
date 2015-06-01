@@ -56,7 +56,7 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [ALPHAManager sharedManager].theme.backgroundColor;
-    self.tableView.separatorColor = [UIColor colorWithWhite:0.1 alpha:1.0];
+    self.tableView.separatorColor = [ALPHAManager sharedManager].theme.highlightedBackgroundColor;
 }
 
 - (void)viewWillAppear:(BOOL)animated
