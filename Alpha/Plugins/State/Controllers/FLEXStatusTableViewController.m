@@ -7,7 +7,7 @@
 //
 
 #import <Haystack/Haystack.h>
-#import "UIDevice+Status.h"
+#import "UIDevice+ALPHAStatus.h"
 
 #import "FLEXUtility.h"
 #import "ALPHAModel.h"

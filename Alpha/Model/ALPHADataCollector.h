@@ -41,7 +41,6 @@
 // The methods below should not be used outside of subclasses and provide convenience methods
 // for subclasses.
 //
-
 - (void)addDataIdentifier:(NSString *)identifier;
 
 /*!
@@ -49,6 +48,6 @@
  *
  *  @return new instance
  */
-- (ALPHADataModel *)collectRootData;
+//- (ALPHADataModel *)collectRootData;
 
 @end

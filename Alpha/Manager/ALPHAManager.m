@@ -61,7 +61,20 @@
 
 @implementation ALPHAManager
 
+@synthesize interfacePlugin = _interfacePlugin;
+
 #pragma mark - Getters and Setters
+
+- (ALPHAPlugin *)interfacePlugin
+{
+    if (!_interfacePlugin)
+    {
+        _interfacePlugin = [self.plugins firstObjectOfClass:[ALPHAInterfacePlugin class]];
+        [self addOverlayViewController:_interfacePlugin.mainInterface animated:NO completion:nil];
+    }
+    
+    return _interfacePlugin;
+}
 
 - (void)setInterfacePlugin:(ALPHAPlugin *)interfacePlugin
 {
@@ -183,19 +196,6 @@
         return nil;
     }
     
-    if (self)
-    {
-        
-        [self load];
-        
-        //
-        // Add default plugin's interface to root view controller and hide it.
-        //
-        
-        self.interfacePlugin = [self.plugins firstObjectOfClass:[ALPHAInterfacePlugin class]];
-        self.interfaceHidden = YES;
-    }
-    
     return self;
 }
 
@@ -208,8 +208,16 @@
  *  Inactive triggers or plugins do not use any resources or modify any data,
  *  except for few bytes of data that keeps base objects in memory.
  */
-- (void)load
+- (void)integrate
 {
+    //
+    // Protect against multiple initialization
+    //
+    if (self.plugins.count || self.triggers.count)
+    {
+        return;
+    }
+    
     self.plugins = [self createInstancesOfClass:[ALPHAPlugin class]];
     self.triggers = [self createInstancesOfClass:[ALPHATrigger class]];
 }

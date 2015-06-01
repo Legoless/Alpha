@@ -8,11 +8,8 @@
 
 #import "FLEXStatePlugin.h"
 #import "ALPHAMenuActionItem.h"
-#import "FLEXApplicationDelegate.h"
 
 @interface FLEXStatePlugin ()
-
-@property (nonatomic, strong) FLEXApplicationDelegate* appDelegate;
 
 @end
 
@@ -32,16 +29,6 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleApplicationNotification:) name:UIApplicationDidReceiveMemoryWarningNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleApplicationNotification:) name:UIApplicationSignificantTimeChangeNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleApplicationNotification:) name:UIApplicationBackgroundRefreshStatusDidChangeNotification object:nil];
-
-        //
-        // Set application delegate, so we can track notifications
-        //
-        
-        self.appDelegate = [[FLEXApplicationDelegate alloc] init];
-        
-        self.appDelegate.originalDelegate = [UIApplication sharedApplication].delegate;
-        
-        [UIApplication sharedApplication].delegate = self.appDelegate;
         
         //
         // Menu items

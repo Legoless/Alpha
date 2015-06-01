@@ -57,6 +57,8 @@
 
 - (void)setup
 {
+    //ALPHAManager* manager = [ALPHAManager sharedManager];
+    
     self.mainColor = [ALPHAManager sharedManager].theme.defaultBackgroundColor;
     self.secondaryColor = [ALPHAManager sharedManager].theme.tintColor;
     

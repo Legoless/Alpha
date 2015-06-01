@@ -42,6 +42,11 @@
  */
 + (instancetype)sharedManager;
 
+/*!
+ *  Integrates Alpha system into the app (called automatically by iOS, do not call)
+ */
+- (void)integrate;
+
 #pragma mark - Triggers
 
 /*!
@@ -125,5 +130,7 @@
 - (void)removeOverlayViewController:(UIViewController *)viewController;
 
 #pragma mark - Status bar notification display
+
+#warning TODO: Add Status Bar Notification Overlay
 
 @end

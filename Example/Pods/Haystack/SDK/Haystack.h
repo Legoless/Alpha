@@ -3,6 +3,8 @@
 #import "NSObject+PropertyList.h"
 #import "NSObject+Runtime.h"
 
+#import "NSInvocation+Argument.h"
+
 #import "NSArray+Class.h"
 #import "NSData+Base64.h"
 #import "NSDate+Timestamp.h"

@@ -39,9 +39,13 @@
             SEL environments = NSSelectorFromString(@"environments");
             SEL currentEnvironment = NSSelectorFromString(@"currentEnvironment");
             
-            // TODO: Fix warnings
+            #pragma clang diagnostic push
+            #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+
             self.environments = [bootstrap performSelector:environments];
             self.currentEnvironment = [bootstrap performSelector:currentEnvironment];
+            
+            #pragma clang diagnostic pop
         }
     }
     
@@ -108,7 +112,12 @@
         
         SEL setCurrentEnvironment = NSSelectorFromString(@"setCurrentEnvironment:");
         
+        #pragma clang diagnostic push
+        #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         [[self bootstrap] performSelector:setCurrentEnvironment withObject:environment];
+        
+        #pragma clang diagnostic pop
+        
         self.currentEnvironment = environment;
         
         [self.tableView reloadRowsAtIndexPaths:rows withRowAnimation:UITableViewRowAnimationAutomatic];

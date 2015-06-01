@@ -171,6 +171,8 @@
 
 + (void)injectIntoAllNSURLConnectionDelegateClasses;
 {
+    return;
+    
     // Only allow swizzling once.
     static BOOL swizzled = NO;
     if (swizzled) {
@@ -225,6 +227,8 @@
 
 + (void)injectIntoDelegateClass:(Class)cls;
 {
+    return;
+    
     // Connections
     [self injectWillSendRequestIntoDelegateClass:cls];
     [self injectDidReceiveDataIntoDelegateClass:cls];
@@ -246,6 +250,8 @@
 
 + (void)injectWillSendRequestIntoDelegateClass:(Class)cls;
 {
+    return;
+    
     SEL selector = @selector(connection:willSendRequest:redirectResponse:);
     SEL swizzledSelector = [self swizzledSelectorForSelector:selector];
     

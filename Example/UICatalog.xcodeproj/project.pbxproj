@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		381E6EB91B1C56BE00A09D55 /* ALPHAMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 381E6EB81B1C56BE00A09D55 /* ALPHAMockObject.m */; };
+		381E6EC51B1C604B00A09D55 /* ALPHAApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 381E6EC21B1C604B00A09D55 /* ALPHAApplicationDelegate.m */; };
+		381E6EC61B1C604B00A09D55 /* UIApplication+ALPHADelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 381E6EC41B1C604B00A09D55 /* UIApplication+ALPHADelegate.m */; };
 		38254C081B18A12E008C0085 /* ALPHADeviceStatusCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 38254C071B18A12E008C0085 /* ALPHADeviceStatusCollector.m */; };
 		38254C131B18B03D008C0085 /* ALPHAActionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 38254C0E1B18B03D008C0085 /* ALPHAActionItem.m */; };
 		38254C141B18B03D008C0085 /* ALPHADataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 38254C101B18B03D008C0085 /* ALPHADataItem.m */; };
@@ -86,8 +89,7 @@
 		386993301B18962D005B1BEE /* FLEXNotificationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3869928B1B18962D005B1BEE /* FLEXNotificationTableViewController.m */; };
 		386993311B18962D005B1BEE /* FLEXStatusTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3869928D1B18962D005B1BEE /* FLEXStatusTableViewController.m */; };
 		386993321B18962D005B1BEE /* FLEXStatePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3869928F1B18962D005B1BEE /* FLEXStatePlugin.m */; };
-		386993331B18962D005B1BEE /* FLEXApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992921B18962D005B1BEE /* FLEXApplicationDelegate.m */; };
-		386993341B18962D005B1BEE /* UIDevice+Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992941B18962D005B1BEE /* UIDevice+Status.m */; };
+		386993341B18962D005B1BEE /* UIDevice+ALPHAStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992941B18962D005B1BEE /* UIDevice+ALPHAStatus.m */; };
 		386993351B18962D005B1BEE /* FLEXNotificationCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992971B18962D005B1BEE /* FLEXNotificationCollector.m */; };
 		386993361B18962D005B1BEE /* FLEXStateEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992991B18962D005B1BEE /* FLEXStateEvent.m */; };
 		386993371B18962D005B1BEE /* FLEXSystemNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 3869929B1B18962D005B1BEE /* FLEXSystemNotification.m */; };
@@ -167,6 +169,12 @@
 
 /* Begin PBXFileReference section */
 		0C6C81861F8DC133E5D85165 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		381E6EB71B1C56BE00A09D55 /* ALPHAMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAMockObject.h; sourceTree = "<group>"; };
+		381E6EB81B1C56BE00A09D55 /* ALPHAMockObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAMockObject.m; sourceTree = "<group>"; };
+		381E6EC11B1C604B00A09D55 /* ALPHAApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ALPHAApplicationDelegate.h; path = ../../../alpha/Alpha/Utility/ALPHAApplicationDelegate.h; sourceTree = "<group>"; };
+		381E6EC21B1C604B00A09D55 /* ALPHAApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ALPHAApplicationDelegate.m; path = ../../../alpha/Alpha/Utility/ALPHAApplicationDelegate.m; sourceTree = "<group>"; };
+		381E6EC31B1C604B00A09D55 /* UIApplication+ALPHADelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIApplication+ALPHADelegate.h"; path = "../../../alpha/Alpha/Utility/UIApplication+ALPHADelegate.h"; sourceTree = "<group>"; };
+		381E6EC41B1C604B00A09D55 /* UIApplication+ALPHADelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+ALPHADelegate.m"; path = "../../../alpha/Alpha/Utility/UIApplication+ALPHADelegate.m"; sourceTree = "<group>"; };
 		38254C061B18A12E008C0085 /* ALPHADeviceStatusCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHADeviceStatusCollector.h; sourceTree = "<group>"; };
 		38254C071B18A12E008C0085 /* ALPHADeviceStatusCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHADeviceStatusCollector.m; sourceTree = "<group>"; };
 		38254C091B18AD76008C0085 /* ALPHASerializableItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALPHASerializableItem.h; sourceTree = "<group>"; };
@@ -331,10 +339,8 @@
 		3869928D1B18962D005B1BEE /* FLEXStatusTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXStatusTableViewController.m; sourceTree = "<group>"; };
 		3869928E1B18962D005B1BEE /* FLEXStatePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXStatePlugin.h; sourceTree = "<group>"; };
 		3869928F1B18962D005B1BEE /* FLEXStatePlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXStatePlugin.m; sourceTree = "<group>"; };
-		386992911B18962D005B1BEE /* FLEXApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXApplicationDelegate.h; sourceTree = "<group>"; };
-		386992921B18962D005B1BEE /* FLEXApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXApplicationDelegate.m; sourceTree = "<group>"; };
-		386992931B18962D005B1BEE /* UIDevice+Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Status.h"; sourceTree = "<group>"; };
-		386992941B18962D005B1BEE /* UIDevice+Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Status.m"; sourceTree = "<group>"; };
+		386992931B18962D005B1BEE /* UIDevice+ALPHAStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+ALPHAStatus.h"; sourceTree = "<group>"; };
+		386992941B18962D005B1BEE /* UIDevice+ALPHAStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+ALPHAStatus.m"; sourceTree = "<group>"; };
 		386992961B18962D005B1BEE /* FLEXNotificationCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXNotificationCollector.h; sourceTree = "<group>"; };
 		386992971B18962D005B1BEE /* FLEXNotificationCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXNotificationCollector.m; sourceTree = "<group>"; };
 		386992981B18962D005B1BEE /* FLEXStateEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXStateEvent.h; sourceTree = "<group>"; };
@@ -912,10 +918,8 @@
 		386992901B18962D005B1BEE /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				386992911B18962D005B1BEE /* FLEXApplicationDelegate.h */,
-				386992921B18962D005B1BEE /* FLEXApplicationDelegate.m */,
-				386992931B18962D005B1BEE /* UIDevice+Status.h */,
-				386992941B18962D005B1BEE /* UIDevice+Status.m */,
+				386992931B18962D005B1BEE /* UIDevice+ALPHAStatus.h */,
+				386992941B18962D005B1BEE /* UIDevice+ALPHAStatus.m */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -1059,6 +1063,10 @@
 		386992CF1B18962D005B1BEE /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				381E6EC11B1C604B00A09D55 /* ALPHAApplicationDelegate.h */,
+				381E6EC21B1C604B00A09D55 /* ALPHAApplicationDelegate.m */,
+				381E6EC31B1C604B00A09D55 /* UIApplication+ALPHADelegate.h */,
+				381E6EC41B1C604B00A09D55 /* UIApplication+ALPHADelegate.m */,
 				386992D01B18962D005B1BEE /* ALPHAViewController.h */,
 				386992D11B18962D005B1BEE /* ALPHAViewController.m */,
 				386992D21B18962D005B1BEE /* CGVectorAdditions.h */,
@@ -1080,6 +1088,8 @@
 				386992E21B18962D005B1BEE /* UIApplication+ALPHAEvent.m */,
 				386992E31B18962D005B1BEE /* UIWindow+FLEXUtility.h */,
 				386992E41B18962D005B1BEE /* UIWindow+FLEXUtility.m */,
+				381E6EB71B1C56BE00A09D55 /* ALPHAMockObject.h */,
+				381E6EB81B1C56BE00A09D55 /* ALPHAMockObject.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -1337,6 +1347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				381E6EC51B1C604B00A09D55 /* ALPHAApplicationDelegate.m in Sources */,
 				386993371B18962D005B1BEE /* FLEXSystemNotification.m in Sources */,
 				386992E91B18962D005B1BEE /* FLEXArgumentInputNotSupportedView.m in Sources */,
 				535682AE18F3670300BAAD62 /* AAPLDatePickerController.m in Sources */,
@@ -1406,14 +1417,13 @@
 				386992EB1B18962D005B1BEE /* FLEXArgumentInputStringView.m in Sources */,
 				535682B918F3670300BAAD62 /* AAPLStepperViewController.m in Sources */,
 				3869930D1B18962D005B1BEE /* FLEXClassExplorerViewController.m in Sources */,
-				386993331B18962D005B1BEE /* FLEXApplicationDelegate.m in Sources */,
 				386993131B18962D005B1BEE /* FLEXObjectExplorerFactory.m in Sources */,
 				3869933E1B18962D005B1BEE /* FLEXImagePreviewViewController.m in Sources */,
 				386993121B18962D005B1BEE /* FLEXImageExplorerViewController.m in Sources */,
 				535682AA18F3670300BAAD62 /* AAPLAppDelegate.m in Sources */,
 				386992FF1B18962D005B1BEE /* FLEXWebViewController.m in Sources */,
 				38254C081B18A12E008C0085 /* ALPHADeviceStatusCollector.m in Sources */,
-				386993341B18962D005B1BEE /* UIDevice+Status.m in Sources */,
+				386993341B18962D005B1BEE /* UIDevice+ALPHAStatus.m in Sources */,
 				386992EA1B18962D005B1BEE /* FLEXArgumentInputNumberView.m in Sources */,
 				386992FA1B18962D005B1BEE /* FLEXFileBrowserTableViewController.m in Sources */,
 				38D8EB581B18BD6A00D612FD /* ALPHAMenuDataCollector.m in Sources */,
@@ -1435,8 +1445,10 @@
 				386993181B18962D005B1BEE /* FLEXEnvironmentTableViewController.m in Sources */,
 				38254C141B18B03D008C0085 /* ALPHADataItem.m in Sources */,
 				386993201B18962D005B1BEE /* FLEXExplorerViewController.m in Sources */,
+				381E6EC61B1C604B00A09D55 /* UIApplication+ALPHADelegate.m in Sources */,
 				386993151B18962D005B1BEE /* FLEXSetExplorerViewController.m in Sources */,
 				386993071B18962D005B1BEE /* ALPHADataSection.m in Sources */,
+				381E6EB91B1C56BE00A09D55 /* ALPHAMockObject.m in Sources */,
 				386993541B18962D005B1BEE /* UIApplication+ALPHAEvent.m in Sources */,
 				3869931B1B18962D005B1BEE /* FLEXConsoleTableViewController.m in Sources */,
 				535682A818F3670300BAAD62 /* AAPLActivityIndicatorViewController.m in Sources */,

@@ -42,4 +42,12 @@
     }
 }
 
+- (void)performActionsWithIdentifiers:(NSArray *)identifiers completion:(ALPHADataSourceCompletion)completion
+{
+    if (completion)
+    {
+        completion(nil, nil);
+    }
+}
+
 @end
