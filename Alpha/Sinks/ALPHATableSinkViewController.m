@@ -41,7 +41,7 @@
         
         if ([self.dataModel.rightAction.identifier isEqualToString:ALPHAActionCloseIdentifier])
         {
-            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(donePressed:)];
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStyleDone target:self action:@selector(donePressed:)];
 
         }
         
@@ -79,7 +79,7 @@
 {
     [super viewWillDisappear:animated];
     
-    self.data = nil;
+    //self.data = nil;
 }
 
 #pragma mark - Actions

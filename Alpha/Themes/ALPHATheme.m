@@ -63,7 +63,7 @@
 
 - (UIFont *)themeFontOfSize:(CGFloat)size
 {
-    return [UIFont fontWithName:self.fontFamily size:size];
+    return [UIFont fontWithName:self.fontFamily size:size - 2.0];
 }
 
 - (UIFont *)themeFontWithFont:(UIFont *)font
