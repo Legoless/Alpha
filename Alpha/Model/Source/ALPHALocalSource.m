@@ -48,6 +48,25 @@
 {
     NSMutableDictionary *data = [NSMutableDictionary dictionary];
     
+    //
+    // First find collectors
+    //
+    
+    for (NSString *identifier in identifiers)
+    {
+        for (ALPHADataCollector *collector in self.collectors)
+        {
+            if ([collector hasDataForIdentifier:identifier])
+            {
+                data[identifier] = [NSNull null];
+            }
+        }
+    }
+    
+    //
+    // Then collect data from all collectors
+    //
+    
     for (NSString *identifier in identifiers)
     {
         for (ALPHADataCollector *collector in self.collectors)
@@ -70,11 +89,45 @@
             }
         }
     }
+    
+    [self completeRefreshWithIdentifiers:identifiers data:data completion:completion];
 }
 
 - (void)completeRefreshWithIdentifiers:(NSArray *)identifiers data:(NSDictionary *)data completion:(ALPHADataSourceCompletion)completion
 {
-    if (identifiers.count == data.count && completion)
+    //
+    // We have three states of the refresh
+    //
+    // - Data was not found for collectors
+    // - Data is still loading for collectors
+    // - Data has finished loading for all collectors
+    //
+    
+    //
+    // Check if any identifiers are still pending
+    //
+    
+    BOOL pending = NO;
+    
+    for (id object in data)
+    {
+        if ([object isKindOfClass:[NSNull class]])
+        {
+            pending = YES;
+            break;
+        }
+    }
+    
+    if (pending)
+    {
+        return;
+    }
+    
+    //
+    // Once completed return
+    //
+    
+    if (completion)
     {
         completion(data.allValues.firstObject, nil);
     }

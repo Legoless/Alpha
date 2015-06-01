@@ -125,12 +125,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.dataModel.sections[section] count];
+    return [[self.dataModel.sections[section] items] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ALPHADataItem *item = self.dataModel.sections[indexPath.section][indexPath.row];
+    ALPHADataItem *item = [self.dataModel.sections[indexPath.section] items][indexPath.row];
     
     NSString *cellIdentifier = [self cellIdentifierForStyle:item.style];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
@@ -171,7 +171,7 @@
     
     [text appendString:item.title];
     
-    cell.textLabel.text = item.title;
+    cell.textLabel.text = text;
     cell.detailTextLabel.text = item.detail;
     
     return cell;
@@ -192,7 +192,7 @@
     // Action mechanic
     //
     
-    id item = self.dataModel.sections[indexPath.section][indexPath.row];
+    id item = [self.dataModel.sections[indexPath.section] items][indexPath.row];
     
     if ([item isKindOfClass:[ALPHAMenuActionItem class]])
     {

@@ -18,7 +18,7 @@
 
 - (NSMutableOrderedSet *)identifiers
 {
-    if (_identifiers)
+    if (!_identifiers)
     {
         _identifiers = [NSMutableOrderedSet orderedSet];
     }
