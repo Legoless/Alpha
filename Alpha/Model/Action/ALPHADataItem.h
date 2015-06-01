@@ -35,7 +35,9 @@ typedef NSInteger ALPHADataItemPriority;
  *  @return instance of data item
  */
 + (instancetype)itemWithIdentifier:(NSString *)identifier;
+
 - (instancetype)initWithIdentifier:(NSString *)identifier style:(UITableViewCellStyle)style;
 - (instancetype)initWithIdentifier:(NSString *)identifier title:(NSString *)title detail:(NSString *)detail;
 - (instancetype)initWithIdentifier:(NSString *)identifier title:(NSString *)title detail:(NSString *)detail style:(UITableViewCellStyle)style;
+
 @end

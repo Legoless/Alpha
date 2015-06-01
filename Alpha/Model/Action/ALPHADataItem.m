@@ -31,7 +31,7 @@ NSString* const ALPHADisplayItemDetailkey = @"kALPHADisplayItemDetailkey";
 
 + (instancetype)itemWithIdentifier:(NSString *)identifier
 {
-    return [[self alloc] initWithIdentifier:identifier];
+    return [[[self class] alloc] initWithIdentifier:identifier title:nil detail:nil style:UITableViewCellStyleDefault];
 }
 
 #pragma mark - Initializers
@@ -55,7 +55,7 @@ NSString* const ALPHADisplayItemDetailkey = @"kALPHADisplayItemDetailkey";
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"ALPHADataItem: %@", self.identifier];
+    return [NSString stringWithFormat:@"%@: %@", NSStringFromClass(self.class), self.identifier];
 }
 
 - (instancetype)initWithIdentifier:(NSString *)identifier style:(UITableViewCellStyle)style;
@@ -65,7 +65,7 @@ NSString* const ALPHADisplayItemDetailkey = @"kALPHADisplayItemDetailkey";
 
 - (instancetype)initWithIdentifier:(NSString *)identifier title:(NSString *)title detail:(NSString *)detail
 {
-    return [self initWithIdentifier:identifier title:title detail:detail style:UITableViewCellStyleValue1];
+    return [self initWithIdentifier:identifier title:title detail:detail style:UITableViewCellStyleDefault];
 }
 
 - (instancetype)initWithIdentifier:(NSString *)identifier title:(NSString *)title detail:(NSString *)detail style:(UITableViewCellStyle)style

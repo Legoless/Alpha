@@ -110,7 +110,7 @@
         {
             for (ALPHAActionItem* action in plugin.actions)
             {
-                if (action.isEnabled && [action.icon isKindOfClass:[UIImage class]] && [action isMemberOfClass:[ALPHAActionItem class]])
+                if (action.isEnabled && [action.icon isKindOfClass:[UIImage class]] && [action isKindOfClass:[ALPHABlockActionItem class]])
                 {
                     [self.actions addObject:action];
                     [self.actionImages addObject:action.icon];
@@ -159,15 +159,16 @@
     /*
     FLEXInfoTableViewController *globalsViewController = [[FLEXInfoTableViewController alloc] init];
     globalsViewController.delegate = self;
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:globalsViewController];
-    [[ALPHAManager sharedManager] displayViewController:navigationController animated:YES completion:nil];*/
+    */
+    
     
     ALPHATableSinkViewController* sinkTVC = [[ALPHATableSinkViewController alloc] init];
     sinkTVC.delegate = self;
     sinkTVC.source = [ALPHALocalSource new];
     sinkTVC.rootIdentifier = ALPHAMenuDataIdentifier;
     
-    [[ALPHAManager sharedManager] displayViewController:sinkTVC animated:YES completion:nil];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:sinkTVC];
+    [[ALPHAManager sharedManager] displayViewController:navigationController animated:YES completion:nil];
 }
 
 - (void)closeButtonTapped:(FLEXToolbarItem *)sender
