@@ -6,10 +6,12 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
+#import "UIApplication+ALPHAPrivate.h"
 #import "UIDevice+ALPHAStatus.h"
 
 @implementation UIDevice (ALPHAStatus)
 
+/*
 - (NSString *)alpha_carrierName
 {
     NSString* className = @"VVCarrierParameters";
@@ -30,6 +32,46 @@
             return (NSString *)value;
         }
     }
+    
+    return @"Unavailable";
+}*/
+
+- (NSString *)alpha_carrierName
+{
+    UIView* statusBar = [[UIApplication sharedApplication] statusBar];
+    
+    UIView* statusBarForegroundView = nil;
+    
+    for (UIView* view in statusBar.subviews)
+    {
+        if ([view isKindOfClass:NSClassFromString(@"UIStatusBarForegroundView")])
+        {
+            statusBarForegroundView = view;
+            break;
+        }
+    }
+    
+    UIView* statusBarServiceItem = nil;
+    
+    for (UIView* view in statusBarForegroundView.subviews)
+    {
+        if ([view isKindOfClass:NSClassFromString(@"UIStatusBarServiceItemView")])
+        {
+            statusBarServiceItem = view;
+            break;
+        }
+    }
+    
+    if (statusBarServiceItem)
+    {
+        id value = [statusBarServiceItem valueForKey:@"_serviceString"];
+        
+        if ([value isKindOfClass:[NSString class]])
+        {
+            return (NSString *)value;
+        }
+    }
+
     
     return @"Unavailable";
 }

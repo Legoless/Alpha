@@ -20,6 +20,7 @@
 		38254C191B18B1B8008C0085 /* ALPHALocalSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 38254C181B18B1B8008C0085 /* ALPHALocalSource.m */; };
 		38254C1C1B18B246008C0085 /* ALPHABaseSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 38254C1B1B18B246008C0085 /* ALPHABaseSource.m */; };
 		38254C1F1B18B731008C0085 /* ALPHABlockActionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 38254C1E1B18B731008C0085 /* ALPHABlockActionItem.m */; };
+		384DDDA61B1CBB78003DCDAE /* VisualVoicemail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38525D7E1B0C91E4006644A1 /* VisualVoicemail.framework */; };
 		386992E51B18962D005B1BEE /* FLEXArgumentInputColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386991DC1B18962D005B1BEE /* FLEXArgumentInputColorView.m */; };
 		386992E61B18962D005B1BEE /* FLEXArgumentInputFontsPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386991DE1B18962D005B1BEE /* FLEXArgumentInputFontsPickerView.m */; };
 		386992E71B18962D005B1BEE /* FLEXArgumentInputFontView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386991E01B18962D005B1BEE /* FLEXArgumentInputFontView.m */; };
@@ -496,6 +497,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				384DDDA61B1CBB78003DCDAE /* VisualVoicemail.framework in Frameworks */,
 				5356824018F3656900BAAD62 /* CoreGraphics.framework in Frameworks */,
 				5356824218F3656900BAAD62 /* UIKit.framework in Frameworks */,
 				5356823E18F3656900BAAD62 /* Foundation.framework in Frameworks */,
