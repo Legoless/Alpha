@@ -8,9 +8,11 @@
 
 #import "ALPHAManager.h"
 
-@interface ALPHAManager ()
+@interface ALPHAManager (Private)
 
 /// An array of FLEXGlobalsTableViewControllerEntry objects that have been registered by the user.
 @property (nonatomic, readonly, strong) NSArray *userGlobalEntries;
+
+
 
 @end

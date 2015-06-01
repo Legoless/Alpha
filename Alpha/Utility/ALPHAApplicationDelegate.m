@@ -21,7 +21,18 @@
     
     if (self)
     {
-        NSMutableArray* selectors = [@[ NSStringFromSelector(@selector(application:didFinishLaunchingWithOptions:)), NSStringFromSelector(@selector(applicationDidBecomeActive:)), NSStringFromSelector(@selector(applicationWillResignActive:)), NSStringFromSelector(@selector(applicationDidReceiveMemoryWarning:)), NSStringFromSelector(@selector(application:didRegisterForRemoteNotificationsWithDeviceToken:)), NSStringFromSelector(@selector(application:didFailToRegisterForRemoteNotificationsWithError:)), NSStringFromSelector(@selector(application:didReceiveRemoteNotification:)), NSStringFromSelector(@selector(application:didReceiveLocalNotification:)),  NSStringFromSelector(@selector(applicationDidEnterBackground:)), NSStringFromSelector(@selector(applicationWillEnterForeground:)) ] mutableCopy];
+        NSMutableArray* selectors = [@[
+                                       NSStringFromSelector(@selector(application:didFinishLaunchingWithOptions:)),
+                                       NSStringFromSelector(@selector(applicationDidBecomeActive:)),
+                                       NSStringFromSelector(@selector(applicationWillResignActive:)),
+                                       NSStringFromSelector(@selector(applicationDidReceiveMemoryWarning:)),
+                                       NSStringFromSelector(@selector(application:didRegisterForRemoteNotificationsWithDeviceToken:)),
+                                       NSStringFromSelector(@selector(application:didFailToRegisterForRemoteNotificationsWithError:)),
+                                       NSStringFromSelector(@selector(application:didReceiveRemoteNotification:)),
+                                       NSStringFromSelector(@selector(application:didReceiveLocalNotification:)),
+                                       NSStringFromSelector(@selector(applicationDidEnterBackground:)),
+                                       NSStringFromSelector(@selector(applicationWillEnterForeground:))
+                                    ] mutableCopy];
         
         //
         // Apple print's out a nasty error warning for remote notifications in background, so we will not track this selector

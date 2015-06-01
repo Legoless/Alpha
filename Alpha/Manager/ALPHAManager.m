@@ -8,6 +8,8 @@
 
 #import <Haystack/Haystack.h>
 
+#import "UIApplication+ALPHAPrivate.h"
+
 #import "ALPHAManager.h"
 #import "ALPHAWindow.h"
 
@@ -157,6 +159,7 @@
     if (!_theme)
     {
         _theme = [ALPHAMainTheme theme];
+        [_theme applyInWindow:self.alphaWindow];
     }
     
     return _theme;
@@ -284,16 +287,10 @@
 
 #pragma mark - Windows
 
-- (UIWindow *)statusWindow
-{
-    NSString *statusBarString = [NSString stringWithFormat:@"%@arWindow", @"_statusB"];
-    return [[UIApplication sharedApplication] valueForKey:statusBarString];
-}
-
 - (NSArray *)allWindows
 {
     NSMutableArray *windows = [[[UIApplication sharedApplication] windows] mutableCopy];
-    UIWindow *statusWindow = [self statusWindow];
+    UIWindow *statusWindow = [[UIApplication sharedApplication] statusWindow];
     if (statusWindow) {
         // The windows are ordered back to front, so default to inserting the status bar at the end.
         // However, it there are windows at status bar level, insert the status bar before them.
@@ -310,6 +307,8 @@
     }
     return windows;
 }
+   
+#pragma mark - UIStatusBar
 
 #pragma mark - Modal Presentation and Window Management
 
@@ -351,7 +350,7 @@
     [self.rootViewController.view.window makeKeyWindow];
     
     // Move the status bar on top of FLEX so we can get scroll to top behavior for taps.
-    [[self statusWindow] setWindowLevel:self.rootViewController.view.window.windowLevel + 1.0];
+    [[[UIApplication sharedApplication] statusWindow] setWindowLevel:self.rootViewController.view.window.windowLevel + 1.0];
     
     // If this app doesn't use view controller based status bar management and we're on iOS 7+,
     // make sure the status bar style is UIStatusBarStyleDefault. We don't actully have to check
@@ -374,7 +373,7 @@
     
     // Restore the status bar window's normal window level.
     // We want it above FLEX while a modal is presented for scroll to top, but below FLEX otherwise for exploration.
-    [[self statusWindow] setWindowLevel:UIWindowLevelStatusBar];
+    [[[UIApplication sharedApplication] statusWindow] setWindowLevel:UIWindowLevelStatusBar];
     
     // Restore the stauts bar style if the app is using global status bar management.
     // Only for iOS 7+

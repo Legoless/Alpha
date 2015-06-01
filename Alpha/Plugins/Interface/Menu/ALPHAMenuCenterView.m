@@ -59,7 +59,7 @@
 {
     //ALPHAManager* manager = [ALPHAManager sharedManager];
     
-    self.mainColor = [ALPHAManager sharedManager].theme.defaultBackgroundColor;
+    self.mainColor = [ALPHAManager sharedManager].theme.backgroundColor;
     self.secondaryColor = [ALPHAManager sharedManager].theme.tintColor;
     
     self.backgroundColor = [UIColor clearColor];

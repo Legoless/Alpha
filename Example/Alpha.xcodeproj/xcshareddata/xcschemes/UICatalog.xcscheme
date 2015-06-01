@@ -17,7 +17,7 @@
                BlueprintIdentifier = "5356823918F3656900BAAD62"
                BuildableName = "UICatalog.app"
                BlueprintName = "UICatalog"
-               ReferencedContainer = "container:UICatalog.xcodeproj">
+               ReferencedContainer = "container:Alpha.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
             BlueprintIdentifier = "5356823918F3656900BAAD62"
             BuildableName = "UICatalog.app"
             BlueprintName = "UICatalog"
-            ReferencedContainer = "container:UICatalog.xcodeproj">
+            ReferencedContainer = "container:Alpha.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -55,7 +55,7 @@
             BlueprintIdentifier = "5356823918F3656900BAAD62"
             BuildableName = "UICatalog.app"
             BlueprintName = "UICatalog"
-            ReferencedContainer = "container:UICatalog.xcodeproj">
+            ReferencedContainer = "container:Alpha.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,7 +74,7 @@
             BlueprintIdentifier = "5356823918F3656900BAAD62"
             BuildableName = "UICatalog.app"
             BlueprintName = "UICatalog"
-            ReferencedContainer = "container:UICatalog.xcodeproj">
+            ReferencedContainer = "container:Alpha.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

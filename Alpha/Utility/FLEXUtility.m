@@ -113,7 +113,7 @@
 
 + (UIFont *)defaultFontOfSize:(CGFloat)size
 {
-    return [UIFont fontWithName:@"HelveticaNeue" size:size];
+    return [UIFont fontWithName:@"Menlo" size:size];
 }
 
 + (UIFont *)defaultTableViewCellLabelFont

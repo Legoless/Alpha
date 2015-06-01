@@ -42,7 +42,7 @@
         NSMutableArray *toolbarItems = [NSMutableArray array];
         
         self.dragHandle = [[UIView alloc] init];
-        self.dragHandle.backgroundColor = [ALPHAManager sharedManager].theme.defaultBackgroundColor;
+        self.dragHandle.backgroundColor = [ALPHAManager sharedManager].theme.backgroundColor;
         [self addSubview:self.dragHandle];
         
         UIImage *dragHandle = [FLEXResources dragHandle];

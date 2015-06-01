@@ -15,8 +15,6 @@
 
 #import "FLEXResources.h"
 
-#import "ALPHAManager.h"
-
 #import "ALPHAExplorerMenu.h"
 
 @interface ALPHAExplorerMenu () <CKCircleMenuDelegate>
@@ -33,7 +31,6 @@
 
 @property (nonatomic, strong) ALPHAMenuCenterView* centerView;
 
-
 @property (nonatomic) CGFloat angle;
 @property (nonatomic) CGFloat delay;
 @property (nonatomic) int shadow;
@@ -47,6 +44,30 @@
 
 
 @implementation ALPHAExplorerMenu
+
+#pragma mark - Getters and Setters
+
+- (UIColor *)circleBackgroundColor
+{
+    if (!_circleBackgroundColor)
+    {
+        return [UIColor blackColor];
+    }
+    
+    return _circleBackgroundColor;
+}
+
+- (UIColor *)circleActiveBackgroundColor
+{
+    if (!_circleActiveBackgroundColor)
+    {
+        return [UIColor colorWithWhite:0.6 alpha:1.0];
+    }
+    
+    return _circleActiveBackgroundColor;
+}
+
+#pragma mark - UIView
 
 - (void)awakeFromNib
 {
@@ -458,9 +479,11 @@
     [tOptions setValue:[NSDecimalNumber numberWithFloat:self.angle] forKey:CIRCLE_MENU_MAX_ANGLE];
     [tOptions setValue:[NSDecimalNumber numberWithFloat:self.radius] forKey:CIRCLE_MENU_RADIUS];
     [tOptions setValue:[NSNumber numberWithInt:self.direction] forKey:CIRCLE_MENU_DIRECTION];
-    [tOptions setValue:[ALPHAManager sharedManager].theme.defaultBackgroundColor forKey:CIRCLE_MENU_BUTTON_BACKGROUND_NORMAL];
-    [tOptions setValue:[ALPHAManager sharedManager].theme.highlightedBackgroundColor forKey:CIRCLE_MENU_BUTTON_BACKGROUND_ACTIVE];
-    [tOptions setValue:[ALPHAManager sharedManager].theme.tintColor forKey:CIRCLE_MENU_BUTTON_BORDER];
+    
+    [tOptions setValue:self.circleBackgroundColor forKey:CIRCLE_MENU_BUTTON_BACKGROUND_NORMAL];
+    [tOptions setValue:self.circleActiveBackgroundColor forKey:CIRCLE_MENU_BUTTON_BACKGROUND_ACTIVE];
+    [tOptions setValue:self.tintColor forKey:CIRCLE_MENU_BUTTON_BORDER];
+    
     [tOptions setValue:[NSNumber numberWithInt:self.shadow] forKey:CIRCLE_MENU_DEPTH];
     [tOptions setValue:[NSDecimalNumber decimalNumberWithString:[NSString stringWithFormat:@"%f", self.buttonRadius]] forKey:CIRCLE_MENU_BUTTON_RADIUS];
     [tOptions setValue:[NSDecimalNumber decimalNumberWithString:@"2.5"] forKey:CIRCLE_MENU_BUTTON_BORDER_WIDTH];

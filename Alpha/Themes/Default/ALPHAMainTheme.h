@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHATheme.h"
+#import "ALPHADarkTheme.h"
 
-@interface ALPHAMainTheme : ALPHATheme
+@interface ALPHAMainTheme : ALPHADarkTheme
 
 @end

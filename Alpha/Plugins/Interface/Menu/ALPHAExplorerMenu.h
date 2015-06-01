@@ -18,6 +18,9 @@
 
 @interface ALPHAExplorerMenu : UIView
 
+@property (nonatomic, strong) UIColor *circleBackgroundColor;
+@property (nonatomic, strong) UIColor *circleActiveBackgroundColor;
+
 /*!
  *  If set to YES, menu will snap to border, similar to accessiblity menu
  *  of iOS. Default: NO

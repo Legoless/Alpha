@@ -10,6 +10,9 @@
 		381E6EB91B1C56BE00A09D55 /* ALPHAMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 381E6EB81B1C56BE00A09D55 /* ALPHAMockObject.m */; };
 		381E6EC51B1C604B00A09D55 /* ALPHAApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 381E6EC21B1C604B00A09D55 /* ALPHAApplicationDelegate.m */; };
 		381E6EC61B1C604B00A09D55 /* UIApplication+ALPHADelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 381E6EC41B1C604B00A09D55 /* UIApplication+ALPHADelegate.m */; };
+		381E6ECA1B1C856000A09D55 /* UIApplication+ALPHAPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 381E6EC91B1C856000A09D55 /* UIApplication+ALPHAPrivate.m */; };
+		381E6ECD1B1C86A200A09D55 /* ALPHANavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381E6ECC1B1C86A200A09D55 /* ALPHANavigationController.m */; };
+		381E6ED01B1C913A00A09D55 /* UIImage+Creation.m in Sources */ = {isa = PBXBuildFile; fileRef = 381E6ECF1B1C913A00A09D55 /* UIImage+Creation.m */; };
 		38254C081B18A12E008C0085 /* ALPHADeviceStatusCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 38254C071B18A12E008C0085 /* ALPHADeviceStatusCollector.m */; };
 		38254C131B18B03D008C0085 /* ALPHAActionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 38254C0E1B18B03D008C0085 /* ALPHAActionItem.m */; };
 		38254C141B18B03D008C0085 /* ALPHADataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 38254C101B18B03D008C0085 /* ALPHADataItem.m */; };
@@ -175,6 +178,12 @@
 		381E6EC21B1C604B00A09D55 /* ALPHAApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ALPHAApplicationDelegate.m; path = ../../../alpha/Alpha/Utility/ALPHAApplicationDelegate.m; sourceTree = "<group>"; };
 		381E6EC31B1C604B00A09D55 /* UIApplication+ALPHADelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIApplication+ALPHADelegate.h"; path = "../../../alpha/Alpha/Utility/UIApplication+ALPHADelegate.h"; sourceTree = "<group>"; };
 		381E6EC41B1C604B00A09D55 /* UIApplication+ALPHADelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+ALPHADelegate.m"; path = "../../../alpha/Alpha/Utility/UIApplication+ALPHADelegate.m"; sourceTree = "<group>"; };
+		381E6EC81B1C856000A09D55 /* UIApplication+ALPHAPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+ALPHAPrivate.h"; sourceTree = "<group>"; };
+		381E6EC91B1C856000A09D55 /* UIApplication+ALPHAPrivate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+ALPHAPrivate.m"; sourceTree = "<group>"; };
+		381E6ECB1B1C86A200A09D55 /* ALPHANavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHANavigationController.h; sourceTree = "<group>"; };
+		381E6ECC1B1C86A200A09D55 /* ALPHANavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHANavigationController.m; sourceTree = "<group>"; };
+		381E6ECE1B1C913A00A09D55 /* UIImage+Creation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Creation.h"; sourceTree = "<group>"; };
+		381E6ECF1B1C913A00A09D55 /* UIImage+Creation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Creation.m"; sourceTree = "<group>"; };
 		38254C061B18A12E008C0085 /* ALPHADeviceStatusCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHADeviceStatusCollector.h; sourceTree = "<group>"; };
 		38254C071B18A12E008C0085 /* ALPHADeviceStatusCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHADeviceStatusCollector.m; sourceTree = "<group>"; };
 		38254C091B18AD76008C0085 /* ALPHASerializableItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALPHASerializableItem.h; sourceTree = "<group>"; };
@@ -512,6 +521,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		381E6EC71B1C854500A09D55 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				381E6EC81B1C856000A09D55 /* UIApplication+ALPHAPrivate.h */,
+				381E6EC91B1C856000A09D55 /* UIApplication+ALPHAPrivate.m */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
 		38254C051B18A111008C0085 /* Collectors */ = {
 			isa = PBXGroup;
 			children = (
@@ -569,6 +587,7 @@
 				386992121B18962D005B1BEE /* Manager */,
 				386992181B18962D005B1BEE /* Model */,
 				386992301B18962D005B1BEE /* Object Explorers */,
+				381E6EC71B1C854500A09D55 /* Private */,
 				386992491B18962D005B1BEE /* Plugins */,
 				38D8EB591B18C48E00D612FD /* Sinks */,
 				386992BC1B18962D005B1BEE /* Themes */,
@@ -1090,6 +1109,10 @@
 				386992E41B18962D005B1BEE /* UIWindow+FLEXUtility.m */,
 				381E6EB71B1C56BE00A09D55 /* ALPHAMockObject.h */,
 				381E6EB81B1C56BE00A09D55 /* ALPHAMockObject.m */,
+				381E6ECB1B1C86A200A09D55 /* ALPHANavigationController.h */,
+				381E6ECC1B1C86A200A09D55 /* ALPHANavigationController.m */,
+				381E6ECE1B1C913A00A09D55 /* UIImage+Creation.h */,
+				381E6ECF1B1C913A00A09D55 /* UIImage+Creation.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -1275,7 +1298,7 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Unified Sense";
 			};
-			buildConfigurationList = 5356823518F3656900BAAD62 /* Build configuration list for PBXProject "UICatalog" */;
+			buildConfigurationList = 5356823518F3656900BAAD62 /* Build configuration list for PBXProject "Alpha" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1409,6 +1432,7 @@
 				3869930F1B18962D005B1BEE /* FLEXDescriptionTableViewCell.m in Sources */,
 				386993051B18962D005B1BEE /* ALPHADataModel.m in Sources */,
 				38254C1F1B18B731008C0085 /* ALPHABlockActionItem.m in Sources */,
+				381E6ECA1B1C856000A09D55 /* UIApplication+ALPHAPrivate.m in Sources */,
 				535682BF18F3670300BAAD62 /* UIColor+AAPLApplicationSpecific.m in Sources */,
 				386992ED1B18962D005B1BEE /* FLEXArgumentInputSwitchView.m in Sources */,
 				386993031B18962D005B1BEE /* ALPHADataCollector.m in Sources */,
@@ -1428,6 +1452,7 @@
 				386992FA1B18962D005B1BEE /* FLEXFileBrowserTableViewController.m in Sources */,
 				38D8EB581B18BD6A00D612FD /* ALPHAMenuDataCollector.m in Sources */,
 				386992F91B18962D005B1BEE /* FLEXFileBrowserSearchOperation.m in Sources */,
+				381E6ED01B1C913A00A09D55 /* UIImage+Creation.m in Sources */,
 				535682B518F3670300BAAD62 /* AAPLProgressViewController.m in Sources */,
 				3869932C1B18962D005B1BEE /* FLEXNetworkResourceTiming.m in Sources */,
 				535682AD18F3670300BAAD62 /* AAPLCustomToolbarViewController.m in Sources */,
@@ -1472,6 +1497,7 @@
 				3869932F1B18962D005B1BEE /* FLEXScreenshotPlugin.m in Sources */,
 				38D8EB5C1B18C4B700D612FD /* ALPHATableSinkViewController.m in Sources */,
 				3869934D1B18962D005B1BEE /* FLEXCanvasView.m in Sources */,
+				381E6ECD1B1C86A200A09D55 /* ALPHANavigationController.m in Sources */,
 				535682AC18F3670300BAAD62 /* AAPLCustomSearchBarViewController.m in Sources */,
 				535682A718F3670300BAAD62 /* AAPLActionSheetViewController.m in Sources */,
 				5356824A18F3656900BAAD62 /* main.m in Sources */,
@@ -1641,7 +1667,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5356823518F3656900BAAD62 /* Build configuration list for PBXProject "UICatalog" */ = {
+		5356823518F3656900BAAD62 /* Build configuration list for PBXProject "Alpha" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5356826D18F3656900BAAD62 /* Debug */,

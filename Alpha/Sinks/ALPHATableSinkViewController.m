@@ -12,6 +12,7 @@
 #import "ALPHADataItem.h"
 #import "ALPHAMenuActionItem.h"
 #import "ALPHABlockActionItem.h"
+#import "ALPHAManager.h"
 
 @implementation ALPHATableSinkViewController
 
@@ -53,6 +54,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = [ALPHAManager sharedManager].theme.backgroundColor;
+    self.tableView.separatorColor = [UIColor colorWithWhite:0.1 alpha:1.0];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -138,6 +142,18 @@
     if (!cell)
     {
         cell = [[UITableViewCell alloc] initWithStyle:item.style reuseIdentifier:cellIdentifier];
+        
+        ALPHATheme* theme = [ALPHAManager sharedManager].theme;
+        
+        cell.textLabel.font = [theme themeFontWithFont:cell.textLabel.font];
+        cell.detailTextLabel.font = [theme themeFontWithFont:cell.detailTextLabel.font];
+        
+        cell.textLabel.textColor = theme.tintColor;
+        cell.detailTextLabel.textColor = theme.tintColor;
+        
+        cell.backgroundColor = theme.backgroundColor;
+        cell.selectedBackgroundView = [UIView new];
+        cell.selectedBackgroundView.backgroundColor = theme.highlightedBackgroundColor;
     }
         
     cell.detailTextLabel.minimumScaleFactor = 0.5;

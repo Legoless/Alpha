@@ -17,6 +17,7 @@
 
 #import "ALPHAMenuDataCollector.h"
 #import "ALPHABlockActionItem.h"
+#import "ALPHANavigationController.h"
 
 #import "FLEXCanvasView.h"
 
@@ -76,6 +77,9 @@
     self.explorerMenu = [[ALPHAExplorerMenu alloc] initWithFrame:CGRectMake(0.0, 300.0, 60.0, 60.0)];
     self.explorerMenu.delegate = self;
     self.explorerMenu.snapToBorder = YES;
+    
+    self.explorerMenu.circleBackgroundColor = [[ALPHAManager sharedManager].theme.backgroundColor colorWithAlphaComponent:0.8];
+    self.explorerMenu.circleActiveBackgroundColor = [ALPHAManager sharedManager].theme.highlightedBackgroundColor;
     
     //
     // Disable touches for canvas view, we do not care about other shit
@@ -167,7 +171,7 @@
     sinkTVC.source = [ALPHALocalSource new];
     sinkTVC.rootIdentifier = ALPHAMenuDataIdentifier;
     
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:sinkTVC];
+    UINavigationController *navigationController = [[ALPHANavigationController alloc] initWithRootViewController:sinkTVC];
     [[ALPHAManager sharedManager] displayViewController:navigationController animated:YES completion:nil];
 }
 

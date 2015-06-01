@@ -10,29 +10,22 @@
 
 @implementation ALPHADarkTheme
 
-- (UIColor *)tintColor
+- (instancetype)init
 {
-    return [UIColor whiteColor];
-}
-
-- (UIColor *)disabledTitleColor
-{
-    return [UIColor colorWithWhite:0.8 alpha:1.0];
-}
-
-- (UIColor *)highlightedBackgroundColor
-{
-    return [UIColor colorWithWhite:0.4 alpha:1.0];
-}
-
-- (UIColor *)selectedBackgroundColor
-{
-    return [UIColor colorWithWhite:0.6 alpha:1.0];
-}
-
-- (UIColor *)defaultBackgroundColor
-{
-    return [UIColor colorWithWhite:0.0 alpha:0.8];
+    self = [super init];
+    
+    if (self)
+    {
+        self.tintColor = [UIColor whiteColor];
+        self.statusBarStyle = UIStatusBarStyleLightContent;
+        
+        self.disabledTitleColor = [UIColor colorWithWhite:0.8 alpha:1.0];
+        self.highlightedBackgroundColor = [UIColor colorWithWhite:0.1 alpha:1.0];
+        self.selectedBackgroundColor = [UIColor colorWithWhite:0.2 alpha:1.0];
+        self.backgroundColor = [UIColor colorWithWhite:0.0 alpha:1.0];
+    }
+    
+    return self;
 }
 
 @end
