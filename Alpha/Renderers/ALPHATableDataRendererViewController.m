@@ -1,37 +1,73 @@
 //
-//  ALPHATableSinkViewController.m
+//  ALPHATableDataRendererViewController.m
 //  Alpha
 //
 //  Created by Dal Rupnik on 29/05/15.
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHATableSinkViewController.h"
+#import "ALPHATableDataRendererViewController.h"
+
+#import "ALPHADataConverter.h"
 
 #import "ALPHAGlobalActions.h"
 #import "ALPHAScreenItem.h"
 #import "ALPHAMenuActionItem.h"
 #import "ALPHABlockActionItem.h"
 #import "ALPHAManager.h"
+#import "ALPHAModel.h"
+#import "ALPHAScreenModel.h"
 
-@interface ALPHATableSinkViewController ()
+#import "FLEXObjectExplorerFactory.h"
+
+@interface ALPHATableDataRendererViewController ()
 
 @property (nonatomic, strong) NSTimer *refreshTimer;
+@property (nonatomic, strong) ALPHAScreenModel* screenModel;
 
 @end
 
-@implementation ALPHATableSinkViewController
+@implementation ALPHATableDataRendererViewController
 
 #pragma mark - Getters and Setters
 
-- (ALPHAScreenModel *)dataModel
+- (void)setScreenModel:(ALPHAScreenModel *)screenModel
 {
-    if ([self.data isKindOfClass:[ALPHAScreenModel class]])
+    _screenModel = screenModel;
+    
+    if ([screenModel.rightAction.identifier isEqualToString:ALPHAActionCloseIdentifier])
     {
-        return (ALPHAScreenModel *)self.data;
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStyleDone target:self action:@selector(donePressed:)];
+    }
+    else
+    {
+        self.navigationItem.rightBarButtonItem = nil;
     }
     
-    return nil;
+    self.title = screenModel.title;
+    
+    if (screenModel.expiration > 0)
+    {
+        if (!self.refreshControl)
+        {
+            self.refreshControl = [self createRefreshControl];
+        }
+        
+        self.refreshTimer = [NSTimer scheduledTimerWithTimeInterval:self.screenModel.expiration target:self selector:@selector(refresh) userInfo:nil repeats:NO];
+    }
+    else
+    {
+        if (self.refreshControl)
+        {
+            [self.refreshControl endRefreshing];
+            self.refreshControl = nil;
+        }
+        
+        [self.refreshTimer invalidate];
+        self.refreshTimer = nil;
+    }
+    
+    [self.tableView reloadData];
 }
 
 - (void)setData:(id<ALPHASerializableItem>)data
@@ -40,38 +76,17 @@
     
     if ([data isKindOfClass:[ALPHAScreenModel class]])
     {
-        if ([self.dataModel.rightAction.identifier isEqualToString:ALPHAActionCloseIdentifier])
-        {
-            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStyleDone target:self action:@selector(donePressed:)];
-        }
-        else
-        {
-            self.navigationItem.rightBarButtonItem = nil;
-        }
-         
-        self.title = self.dataModel.title;
+        self.screenModel = data;
+    }
+    else
+    {
+        //
+        // Use a data converter to get screen model
+        //
         
-        [self.tableView reloadData];
-        
-        if (self.dataModel.expiration > 0)
+        if ([[ALPHADataConverter sharedConverter] canConvertModel:data])
         {
-            if (!self.refreshControl)
-            {
-                self.refreshControl = [self createRefreshControl];
-            }
-            
-            self.refreshTimer = [NSTimer scheduledTimerWithTimeInterval:self.dataModel.expiration target:self selector:@selector(refresh) userInfo:nil repeats:NO];
-        }
-        else
-        {
-            if (self.refreshControl)
-            {
-                [self.refreshControl endRefreshing];
-                self.refreshControl = nil;
-            }
-            
-            [self.refreshTimer invalidate];
-            self.refreshTimer = nil;
+            self.screenModel = [[ALPHADataConverter sharedConverter] screenModelForModel:data];
         }
     }
 }
@@ -119,7 +134,7 @@
 {
     [self.refreshControl beginRefreshing];
     
-    [self.source refreshWithIdentifier:self.dataIdentifier completion:^(ALPHAScreenModel *dataModel, NSError *error) {
+    [self.source refreshWithIdentifier:self.dataIdentifier completion:^(ALPHAModel *dataModel, NSError *error) {
         self.data = dataModel;
         
         [self.refreshControl endRefreshing];
@@ -134,17 +149,17 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return self.dataModel.sections.count;
+    return self.screenModel.sections.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[self.dataModel.sections[section] items] count];
+    return [[self.screenModel.sections[section] items] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ALPHAScreenItem *item = [self.dataModel.sections[indexPath.section] items][indexPath.row];
+    ALPHAScreenItem *item = [self.screenModel.sections[indexPath.section] items][indexPath.row];
     
     NSString *cellIdentifier = [self cellIdentifierForDefaultStyle:item.style];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
@@ -253,7 +268,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return [self.dataModel.sections[section] title];
+    return [self.screenModel.sections[section] title];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -264,7 +279,7 @@
     // Action mechanic
     //
     
-    id item = [self.dataModel.sections[indexPath.section] items][indexPath.row];
+    id item = [self.screenModel.sections[indexPath.section] items][indexPath.row];
     
     if ([item isKindOfClass:[ALPHAMenuActionItem class]])
     {
@@ -274,12 +289,12 @@
         
         if (controller)
         {
-            if ([controller conformsToProtocol:@protocol(ALPHADataSink)])
+            if ([controller conformsToProtocol:@protocol(ALPHADataRenderer)])
             {
-                UIViewController<ALPHADataSink>* sinkController = (UIViewController<ALPHADataSink>*)controller;
+                UIViewController<ALPHADataRenderer>* renderer = (UIViewController<ALPHADataRenderer>*)controller;
                 
                 // Send data source
-                sinkController.source = self.source;
+                renderer.source = self.source;
             }
             
             [self.navigationController pushViewController:controller animated:YES];
@@ -293,6 +308,16 @@
         {
             blockItem.actionBlock([tableView cellForRowAtIndexPath:indexPath]);
         }
+    }
+    else if ([item model])
+    {
+        //
+        // For data models that send data directly, we will display object view controller explorer
+        //
+    
+        
+        UIViewController* controller = [FLEXObjectExplorerFactory explorerViewControllerForObject:[item model]];
+        [self.navigationController pushViewController:controller animated:YES];
     }
 }
 

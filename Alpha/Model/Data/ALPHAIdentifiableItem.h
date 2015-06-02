@@ -1,16 +1,14 @@
 //
-//  ALPHAModel.h
+//  ALPHAIdentifiableItem.h
 //  Alpha
 //
 //  Created by Dal Rupnik on 02/06/15.
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHASerializableItem.h"
+@protocol ALPHAIdentifiableItem <NSObject>
 
-@interface ALPHAModel : NSObject <ALPHASerializableItem>
-
-@property (nonatomic, copy) NSString* identifier;
+@property (nonatomic, copy) NSString *identifier;
 
 - (instancetype)initWithIdentifier:(NSString *)identifier;
 

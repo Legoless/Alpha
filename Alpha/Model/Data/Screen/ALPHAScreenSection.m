@@ -23,17 +23,29 @@
         {
             NSMutableArray* items = [NSMutableArray array];
             
-            for (NSDictionary* item in dictionary[key])
+            for (id item in dictionary[key])
             {
-                ALPHAScreenItem* displayItem = [[ALPHAScreenItem alloc] init];
+                ALPHAScreenItem* displayItem = nil;
                 
-                for (NSString* keyItem in item)
+                if ([item isKindOfClass:[ALPHAScreenItem class]])
                 {
-                    displayItem.title = keyItem;
-                    displayItem.detail = [item[keyItem] description];
+                    displayItem = item;
+                }
+                else if ([item isKindOfClass:[NSDictionary class]])
+                {
+                    displayItem = [[ALPHAScreenItem alloc] init];
+                
+                    for (NSString* keyItem in item)
+                    {
+                        displayItem.title = keyItem;
+                        displayItem.detail = [item[keyItem] description];
+                    }
                 }
                 
-                [items addObject:displayItem];
+                if (displayItem)
+                {
+                    [items addObject:displayItem];
+                }
             }
             
             section.items = items;

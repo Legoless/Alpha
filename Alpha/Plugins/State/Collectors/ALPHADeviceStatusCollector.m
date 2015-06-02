@@ -11,6 +11,7 @@
 
 #import "UIDevice+ALPHAStatus.h"
 #import "ALPHADeviceStatusCollector.h"
+#import "ALPHAModel.h"
 #import "ALPHAScreenModel.h"
 
 NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.status";
@@ -74,15 +75,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     return self;
 }
 
-- (void)collectDataForIdentifier:(NSString *)identifier completion:(void (^)(ALPHAScreenModel *, NSError *))completion
-{
-    if (completion)
-    {
-        completion([self collectRootData], nil);
-    }
-}
-
-- (ALPHAScreenModel *)collectRootData
+- (ALPHAModel *)model
 {
     //
     // Application section
@@ -97,6 +90,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
                                          @{ @"Bundle ID" : [[NSBundle mainBundle] bundleIdentifier] },
                                          @{ @"Badge Number" : @([UIApplication sharedApplication].applicationIconBadgeNumber) }
                                    ],
+                                   @"style" : @(UITableViewCellStyleValue1),
                                    @"title" : @"Application" };
     
     ALPHAScreenSection* applicationSection = [ALPHAScreenSection dataSectionWithDictionary:sectionData];
@@ -111,6 +105,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
                              @{ @"Thread Count" : [NSString stringWithFormat:@"%lu", (unsigned long)[UIApplication sharedApplication].threadCount] },
                              @{ @"CPU Usage" : [NSString stringWithFormat:@"%lu%%", (unsigned long)([UIApplication sharedApplication].cpuUsage * 100.0)] }
                      ],
+                     @"style" : @(UITableViewCellStyleValue1),
                      @"title" : @"Usage" };
 
     
@@ -132,9 +127,32 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
                              @{ @"Region" : [[NSLocale currentLocale] displayNameForKey:NSLocaleIdentifier value:region] },
                              @{ @"Calendar" : [[[[NSLocale currentLocale] objectForKey:NSLocaleCalendar] calendarIdentifier] capitalizedString] }
                      ],
+                     @"style" : @(UITableViewCellStyleValue1),
                      @"title" : @"System" };
     
     ALPHAScreenSection* systemSection = [ALPHAScreenSection dataSectionWithDictionary:sectionData];
+    
+    //
+    // Locale section
+    //
+    
+    /*NSString* region = [[NSLocale currentLocale] objectForKey:NSLocaleIdentifier];
+    
+    sectionData = @{ @"identifier" : @"com.unifiedsense.alpha.data.status.system",
+                     @"items" : @[
+                             @{ @"System Version" : [NSString stringWithFormat:@"%@ %@", [UIDevice currentDevice].systemName, [UIDevice currentDevice].systemVersion] },
+                             @{ @"Process Count" : [NSString stringWithFormat:@"%lu", [UIDevice currentDevice].hs_processCount] },
+                             @{ @"System Time" : [self.dateFormatter stringFromDate:[NSDate date]] },
+                             @{ @"User Languages" : [[NSLocale preferredLanguages] componentsJoinedByString:@", "] },
+                             @{ @"Timezone" : [NSTimeZone localTimeZone].name },
+                             @{ @"Region" : [[NSLocale currentLocale] displayNameForKey:NSLocaleIdentifier value:region] },
+                             @{ @"Calendar" : [[[[NSLocale currentLocale] objectForKey:NSLocaleCalendar] calendarIdentifier] capitalizedString] }
+                             ],
+                     @"style" : @(UITableViewCellStyleValue1),
+                     @"title" : @"System" };
+    
+    ALPHAScreenSection* systemSection = [ALPHAScreenSection dataSectionWithDictionary:sectionData];*/
+
     
     //
     // Device section
@@ -154,6 +172,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
                              @{ @"Free Capacity" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].hs_diskFreeSpace countStyle:NSByteCountFormatterCountStyleBinary] },
                              @{ @"Jailbroken" : @([UIDevice currentDevice].hs_jailbreakStatus != UIDeviceJailbreakStatusNotJailbroken) }
                      ],
+                     @"style" : @(UITableViewCellStyleValue1),
                      @"title" : @"Device" };
     
     
@@ -184,6 +203,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     
     sectionData = @{ @"identifier" : @"com.unifiedsense.alpha.data.status.network",
                      @"items" : items.copy,
+                     @"style" : @(UITableViewCellStyleValue1),
                      @"title" : @"Network" };
     
     
@@ -195,6 +215,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
                      @"items" : @[
                              @{ @"Carrier" : [UIDevice currentDevice].alpha_carrierName }
                      ],
+                     @"style" : @(UITableViewCellStyleValue1),
                      @"title" : @"Cellular" };
     
     
@@ -213,7 +234,5 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     
     return dataModel;
 }
-
-#pragma mark - Private methods
 
 @end

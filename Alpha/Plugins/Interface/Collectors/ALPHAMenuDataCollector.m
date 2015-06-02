@@ -10,7 +10,8 @@
 #import "ALPHAManager.h"
 #import "ALPHAMenuActionItem.h"
 #import "ALPHAGlobalActions.h"
-#import "ALPHAScreenSection.h"
+#import "ALPHAModel.h"
+#import "ALPHAScreenModel.h"
 
 NSString* const ALPHAMenuDataIdentifier = @"com.unifiedsense.alpha.data.menu";
 
@@ -28,15 +29,8 @@ NSString* const ALPHAMenuDataIdentifier = @"com.unifiedsense.alpha.data.menu";
     return self;
 }
 
-- (void)collectDataForIdentifier:(NSString *)identifier completion:(void (^)(ALPHAScreenModel *, NSError *))completion
-{
-    if (completion)
-    {
-        completion([self collectRootData], nil);
-    }
-}
 
-- (ALPHAScreenModel *)collectRootData
+- (ALPHAModel *)model
 {
     NSArray* plugins = [ALPHAManager sharedManager].plugins;
     

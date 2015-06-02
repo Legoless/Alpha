@@ -12,10 +12,13 @@ typedef NSInteger ALPHAScreenItemPriority;
 
 @interface ALPHAScreenItem : NSObject <ALPHASerializableItem>
 
-@property (nonatomic, copy) NSString* identifier;
+/*!
+ *  Back-Reference for model if created from a model
+ */
+@property (nonatomic, weak) id model;
 
 /*!
- *  Currently supports NSString with Emoji or UIImage
+ *  NSString with Emoji or UIImage
  */
 @property (nonatomic, strong) id icon;
 @property (nonatomic, copy) NSString* title;
@@ -26,18 +29,5 @@ typedef NSInteger ALPHAScreenItemPriority;
  *  Specified priority of the action item so the item is placed correctly in menus or table or collection
  */
 @property (nonatomic, assign) ALPHAScreenItemPriority priority;
-
-/*!
- *  Convenience wrapper around alloc init
- *
- *  @param identifier
- *
- *  @return instance of data item
- */
-+ (instancetype)itemWithIdentifier:(NSString *)identifier;
-
-- (instancetype)initWithIdentifier:(NSString *)identifier style:(UITableViewCellStyle)style;
-- (instancetype)initWithIdentifier:(NSString *)identifier title:(NSString *)title detail:(NSString *)detail;
-- (instancetype)initWithIdentifier:(NSString *)identifier title:(NSString *)title detail:(NSString *)detail style:(UITableViewCellStyle)style;
 
 @end

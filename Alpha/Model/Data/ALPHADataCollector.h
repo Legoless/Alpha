@@ -6,14 +6,9 @@
 //  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
-#import "ALPHAScreenModel.h"
+#import "ALPHADataSource.h"
 
 @interface ALPHADataCollector : NSObject
-
-/*!
- *  Returns root data that was collected last
- */
-@property (nonatomic, readonly) ALPHAScreenModel *latestRootData;
 
 /*!
  *  Enable or disable specific collector
@@ -26,7 +21,7 @@
  *  @param identifier of data
  *  @param completion called upon completion
  */
-- (void)collectDataForIdentifier:(NSString *)identifier completion:(void (^)(ALPHAScreenModel *model, NSError *error))completion;
+- (void)collectDataForIdentifier:(NSString *)identifier completion:(ALPHADataSourceCompletion)completion;
 
 /*!
  *  Returns yes, if data collectors has data for specific identifier
@@ -44,10 +39,10 @@
 - (void)addDataIdentifier:(NSString *)identifier;
 
 /*!
- *  Returns root data model
+ *  Returns new instance of data model (to be overriden)
  *
  *  @return new instance
  */
-//- (ALPHADataModel *)collectRootData;
+- (ALPHAModel *)model;
 
 @end

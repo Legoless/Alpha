@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHAScreenModel.h"
+#import "ALPHAModel.h"
 
-typedef void (^ALPHADataSourceCompletion)(ALPHAScreenModel *dataModel, NSError *error);
+typedef void (^ALPHADataSourceCompletion)(ALPHAModel *model, NSError *error);
 
 @protocol ALPHADataSource <NSObject>
 

@@ -7,12 +7,27 @@
 //
 
 #import "ALPHAScreenItem.h"
+#import "ALPHAIdentifiableItem.h"
 
 /*!
  *  Action item
  */
-@interface ALPHAActionItem : ALPHAScreenItem
+@interface ALPHAActionItem : ALPHAScreenItem <ALPHAIdentifiableItem>
+
+@property (nonatomic, copy) NSString* identifier;
 
 @property (nonatomic, getter = isEnabled) BOOL enabled;
+
+/*!
+ *  Convenience wrapper around alloc init
+ *
+ *  @param identifier
+ *
+ *  @return instance of data item
+ */
++ (instancetype)itemWithIdentifier:(NSString *)identifier;
+- (instancetype)initWithIdentifier:(NSString *)identifier style:(UITableViewCellStyle)style;
+- (instancetype)initWithIdentifier:(NSString *)identifier title:(NSString *)title detail:(NSString *)detail;
+- (instancetype)initWithIdentifier:(NSString *)identifier title:(NSString *)title detail:(NSString *)detail style:(UITableViewCellStyle)style;
 
 @end

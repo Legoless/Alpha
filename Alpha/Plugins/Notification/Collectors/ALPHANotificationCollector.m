@@ -11,6 +11,8 @@
 
 #import "ALPHANotification.h"
 
+#import "ALPHANotificationModel.h"
+
 #import "ALPHANotificationCollector.h"
 
 NSString *const ALPHANotificationDataIdentifier = @"com.unifiedsense.alpha.data.notification";
@@ -128,93 +130,18 @@ NSString *const ALPHANotificationDataIdentifier = @"com.unifiedsense.alpha.data.
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)collectDataForIdentifier:(NSString *)identifier completion:(void (^)(ALPHAScreenModel *, NSError *))completion
+- (ALPHAModel *)model
 {
-    if (completion)
-    {
-        completion([self collectRootData], nil);
-    }
+    ALPHANotificationModel *model = [[ALPHANotificationModel alloc] initWithIdentifier:ALPHANotificationDataIdentifier];
+    model.enabledNotificationTypes = self.enabledNotificationTypes;
+    model.remoteNotificationToken = self.remoteNotificationToken;
+    model.remoteRegistrationDescription = self.remoteRegistrationDescription;
+    model.remoteNotifications = self.remoteNotifications;
+    model.scheduledLocalNotifications = self.scheduledLocalNotifications;
+    model.firedLocalNotifications = self.firedLocalNotifications;
+    
+    return model;
 }
-
-- (ALPHAScreenModel *)collectRootData
-{
-    NSMutableArray* sections = [NSMutableArray array];
-    
-    //
-    // Settings section
-    //
-    
-    NSDictionary* sectionData = @{ @"identifier" : @"com.unifiedsense.alpha.data.notification.settings",
-                                   @"items" : @[
-                                           @{ @"Status" : [[self enabledNotificationTypes] capitalizedString] },
-                                           @{ @"APNS" : self.remoteRegistrationDescription },
-                                           @{ @"Token" : self.remoteNotificationToken }
-                                   ],
-                                   @"title" : @"Settings" };
-    
-    [sections addObject:[ALPHAScreenSection dataSectionWithDictionary:sectionData]];
-    
-    //
-    // Remote notification section
-    //
-    
-    if (self.remoteNotifications.count)
-    {
-        sectionData = @{ @"identifier" : @"com.unifiedsense.alpha.data.notification.remote",
-                         @"items" : [self screenItemsForNotificationArray:self.remoteNotifications],
-                         @"style" : @(UITableViewCellStyleSubtitle),
-                         @"title" : @"Remote" };
-        
-        
-        [sections addObject:[ALPHAScreenSection dataSectionWithDictionary:sectionData]];
-    }
-    
-    
-    //
-    // Scheduled Local notification section
-    //
-    
-    if (self.firedLocalNotifications.count)
-    {
-    
-        sectionData = @{ @"identifier" : @"com.unifiedsense.alpha.data.notification.local.fired",
-                         @"items" : [self screenItemsForNotificationArray:self.firedLocalNotifications],
-                         @"style" : @(UITableViewCellStyleSubtitle),
-                         @"title" : @"Local Fired" };
-    
-    
-        [sections addObject:[ALPHAScreenSection dataSectionWithDictionary:sectionData]];
-    }
-    
-    //
-    // Scheduled Local notification section
-    //
-    
-    NSArray *localNotifications = self.scheduledLocalNotifications;
-    
-    if (localNotifications.count)
-    {
-    
-        sectionData = @{ @"identifier" : @"com.unifiedsense.alpha.data.notification.local.scheduled",
-                         @"items" : [self screenItemsForNotificationArray:localNotifications],
-                         @"style" : @(UITableViewCellStyleSubtitle),
-                         @"title" : @"Local Scheduled" };
-    
-    
-        [sections addObject:[ALPHAScreenSection dataSectionWithDictionary:sectionData]];
-    }
-    
-    //
-    // Data model
-    //
-    
-    ALPHAScreenModel* dataModel = [[ALPHAScreenModel alloc] initWithIdentifier:ALPHANotificationDataIdentifier];
-    dataModel.title = @"Notifications";
-    dataModel.sections = sections.copy;
-    
-    return dataModel;
-}
-
 
 #pragma mark - Private Methods
 
@@ -301,22 +228,6 @@ NSString *const ALPHANotificationDataIdentifier = @"com.unifiedsense.alpha.data.
     }
 }
 
-- (NSArray *)screenItemsForNotificationArray:(NSArray *)notifications
-{
-    NSMutableArray* items = [NSMutableArray array];
-    
-    for (ALPHANotification* notification in notifications)
-    {
-        NSString *text = notification.alertBody.length ? notification.alertBody : [notification.fireDate description];
-        NSString *detail = notification.alertBody.length ? [notification.fireDate description] : @"";
-        
-        [items addObject:@{ text : detail }];
-    }
-    
-    return items.copy;
-}
-
-
 - (NSString *)enabledNotificationTypes
 {
     if ([[UIApplication sharedApplication] respondsToSelector:@selector(currentUserNotificationSettings)])
@@ -328,7 +239,6 @@ NSString *const ALPHANotificationDataIdentifier = @"com.unifiedsense.alpha.data.
         return [self stringForEnabledRemoteNotificationTypes:[UIApplication sharedApplication].enabledRemoteNotificationTypes];
     }
 }
-
 
 - (NSString *)stringForEnabledRemoteNotificationTypes:(UIRemoteNotificationType)notificationType
 {

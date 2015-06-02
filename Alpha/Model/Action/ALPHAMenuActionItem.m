@@ -7,7 +7,8 @@
 //
 
 #import "ALPHAMenuActionItem.h"
-#import "ALPHADataSink.h"
+#import "ALPHADataRenderer.h"
+#import "ALPHATableDataRendererViewController.h"
 
 @implementation ALPHAMenuActionItem
 
@@ -17,7 +18,7 @@
     
     if (!viewControllerClassString && self.dataIdentifier)
     {
-        viewControllerClassString = @"ALPHATableSinkViewController";
+        viewControllerClassString = NSStringFromClass([ALPHATableDataRendererViewController class]);
     }
     
     if (viewControllerClassString)
@@ -28,7 +29,7 @@
         {
             id viewController = [[viewControllerClass alloc] init];
             
-            if ([viewController conformsToProtocol:@protocol(ALPHADataSink)] && self.dataIdentifier)
+            if ([viewController conformsToProtocol:@protocol(ALPHADataRenderer)] && self.dataIdentifier)
             {
                 [viewController setDataIdentifier:self.dataIdentifier];
             }

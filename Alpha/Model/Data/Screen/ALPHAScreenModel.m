@@ -10,16 +10,4 @@
 
 @implementation ALPHAScreenModel
 
-- (instancetype)initWithIdentifier:(NSString *)identifier
-{
-    self = [super init];
-    
-    if (self)
-    {
-        self.identifier = identifier;
-    }
-    
-    return self;
-}
-
 @end

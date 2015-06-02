@@ -36,9 +36,17 @@
     return [self.identifiers containsObject:identifier];
 }
 
-- (void)collectDataForIdentifier:(NSString *)identifier completion:(void (^)(ALPHAScreenModel *, NSError *))completion
+- (void)collectDataForIdentifier:(NSString *)identifier completion:(void (^)(ALPHAModel *, NSError *))completion
 {
-    
+    if (completion)
+    {
+        completion([self model], nil);
+    }
+}
+
+- (ALPHAModel *)model
+{
+    return nil;
 }
 
 @end

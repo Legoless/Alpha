@@ -10,16 +10,12 @@
 #import "ALPHAScreenSection.h"
 #import "ALPHAScreenItem.h"
 #import "ALPHAActionItem.h"
+#import "ALPHAModel.h"
 
 /*!
  *  Data Model wraps data displayed on a single screen
  */
-@interface ALPHAScreenModel : NSObject <ALPHASerializableItem>
-
-/*!
- *  Unique identifier by which to identify the model
- */
-@property (nonatomic, copy) NSString *identifier;
+@interface ALPHAScreenModel : ALPHAModel
 
 /*!
  *  Specify expiration rate (default: 0 - no expiration) that model expires and 
@@ -35,13 +31,16 @@
 /*!
  *  Action item that is usually displayed on top right of navigation bar
  */
+@property (nonatomic, strong) ALPHAActionItem *leftAction;
+
+/*!
+ *  Action item that is usually displayed on top right of navigation bar
+ */
 @property (nonatomic, strong) ALPHAActionItem *rightAction;
 
 /*!
  *  Array of display section objects objects
  */
 @property (nonatomic, copy) NSArray *sections;
-
-- (instancetype)initWithIdentifier:(NSString *)identifier;
 
 @end

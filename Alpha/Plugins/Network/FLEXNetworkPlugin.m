@@ -21,7 +21,7 @@
         ALPHAMenuActionItem* menuAction = [ALPHAMenuActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.network.main"];
         menuAction.icon = @"💬";
         menuAction.title = @"Network";
-        menuAction.viewControllerClass = @"FLEXNetworkTableViewController";
+        //menuAction.viewControllerClass = @"FLEXNetworkTableViewController";
         
         [self registerAction:menuAction];
     }

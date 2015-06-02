@@ -8,6 +8,7 @@
 
 #import "ALPHALocalSource.h"
 #import "ALPHAManager.h"
+#import "ALPHAModel.H"
 
 @interface ALPHALocalSource ()
 
@@ -73,7 +74,7 @@
         {
             if ([collector hasDataForIdentifier:identifier])
             {
-                [collector collectDataForIdentifier:identifier completion:^(ALPHAScreenModel *model, NSError *error) {
+                [collector collectDataForIdentifier:identifier completion:^(ALPHAModel *model, NSError *error) {
                     
                     if (model)
                     {

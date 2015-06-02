@@ -23,9 +23,10 @@
 - (instancetype)initWithIdentifier:(NSString *)identifier title:(NSString *)title;
 
 /*!
- *  Dictionary should be structured with a special DSL (see example)
+ *  Dictionary should be structured with a special DSL (see example). Supports NSDictionary
+ *  for items or already created screen item objects - dictionary will be converted into objects.
  *
- *  @param dictionary of items
+ *  @param dictionary of described data section
  *
  *  @return instantiated section
  */

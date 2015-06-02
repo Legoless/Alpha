@@ -20,7 +20,7 @@
 
 #import "ALPHACanvasView.h"
 
-#import "ALPHATableSinkViewController.h"
+#import "ALPHATableDataRendererViewController.h"
 #import "ALPHAManager.h"
 #import "ALPHAPlugin.h"
 
@@ -159,7 +159,7 @@
 
 - (void)displayInfoTable
 {
-    ALPHATableSinkViewController* sinkTVC = [[ALPHATableSinkViewController alloc] init];
+    ALPHATableDataRendererViewController* sinkTVC = [[ALPHATableDataRendererViewController alloc] init];
     sinkTVC.delegate = self;
     sinkTVC.source = [ALPHALocalSource new];
     sinkTVC.dataIdentifier = ALPHAMenuDataIdentifier;

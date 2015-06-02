@@ -1,30 +1,20 @@
 //
-//  ALPHADataSink.h
-//  Alpha
+//  ALPHATableDataRendererViewController.h
+//  UICatalog
 //
 //  Created by Dal Rupnik on 29/05/15.
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHADataSource.h"
+#import "ALPHADataRenderer.h"
+#import "ALPHAViewController.h"
 
-@class ALPHAScreenModel;
+@interface ALPHATableDataRendererViewController : UITableViewController <ALPHADataRenderer>
 
-@protocol ALPHADataSink <NSObject>
+@property (nonatomic, weak) id <ALPHAViewControllerDelegate> delegate;
 
-/*!
- *  Current identifier to load, if data not available
- */
 @property (nonatomic, copy) NSString *dataIdentifier;
-
-/*!
- *  Data source, where data model is requested
- */
 @property (nonatomic, strong) id<ALPHADataSource> source;
-
-/*!
- *  Data if available
- */
 @property (nonatomic, strong) id<ALPHASerializableItem> data;
 
 @end

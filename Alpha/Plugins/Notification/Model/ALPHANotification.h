@@ -7,6 +7,7 @@
 //
 
 #import "ALPHASerializableItem.h"
+#import "ALPHAScreenRenderableItem.h"
 
 @interface ALPHANotification : NSObject <ALPHASerializableItem>
 
@@ -34,5 +35,7 @@
 + (instancetype)notificationWithLocalNotification:(UILocalNotification *)localNotification;
 
 + (instancetype)notificationWithRemoteNotification:(NSDictionary *)userInfo;
+
+- (ALPHAScreenItem *)screenItem;
 
 @end
