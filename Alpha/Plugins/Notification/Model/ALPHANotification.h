@@ -31,8 +31,8 @@
  */
 @property (nonatomic) BOOL isFetch;
 
-+ (instancetype)notificationWithLocalNotification:(UILocalNotification *)notification;
++ (instancetype)notificationWithLocalNotification:(UILocalNotification *)localNotification;
 
-+ (instancetype)notificationWithRemoteNotification:(NSDictionary *)dictionary;
++ (instancetype)notificationWithRemoteNotification:(NSDictionary *)userInfo;
 
 @end

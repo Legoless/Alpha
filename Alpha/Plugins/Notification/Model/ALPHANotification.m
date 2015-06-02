@@ -10,33 +10,35 @@
 
 @implementation ALPHANotification
 
-+ (instancetype)notificationWithLocalNotification:(UILocalNotification *)notification
++ (instancetype)notificationWithLocalNotification:(UILocalNotification *)localNotification
 {
-    ALPHANotification *systemNotification = [[ALPHANotification alloc] init];
+    ALPHANotification *notification = [[ALPHANotification alloc] init];
     
-    systemNotification.fireDate = notification.fireDate;
-    systemNotification.alertBody = notification.alertBody;
-    systemNotification.hasAction = notification.hasAction;
-    systemNotification.alertAction = notification.alertAction;
-    systemNotification.alertLaunchImage = notification.alertLaunchImage;
-    systemNotification.soundName = notification.soundName;
-    systemNotification.applicationIconBadgeNumber = notification.applicationIconBadgeNumber;
-    systemNotification.userInfo = notification.userInfo;
-    systemNotification.category = notification.category;
+    notification.fireDate = localNotification.fireDate;
+    notification.alertBody = localNotification.alertBody;
+    notification.hasAction = localNotification.hasAction;
+    notification.alertAction = localNotification.alertAction;
+    notification.alertLaunchImage = localNotification.alertLaunchImage;
+    notification.soundName = localNotification.soundName;
+    notification.applicationIconBadgeNumber = localNotification.applicationIconBadgeNumber;
+    notification.userInfo = localNotification.userInfo;
+    notification.category = localNotification.category;
     
-    return systemNotification;
+    return notification;
 }
 
-+ (instancetype)notificationWithRemoteNotification:(NSDictionary *)dictionary
++ (instancetype)notificationWithRemoteNotification:(NSDictionary *)userInfo
 {
-    ALPHANotification *systemNotification = [[ALPHANotification alloc] init];
+    ALPHANotification *notification = [[ALPHANotification alloc] init];
     
-    systemNotification.alertBody = @"Test";
-    systemNotification.receivedDate = [NSDate date];
-    systemNotification.userInfo = dictionary;
-    systemNotification.isRemote = YES;
+    notification.alertBody = userInfo[@"alert"];
+    notification.receivedDate = [NSDate date];
+    notification.userInfo = userInfo;
+    notification.isRemote = YES;
+    notification.soundName = userInfo[@"sound"];
+    notification.applicationIconBadgeNumber = [userInfo[@"badge"] integerValue];
     
-    return systemNotification;
+    return notification;
 }
 
 @end
