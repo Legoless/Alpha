@@ -326,7 +326,7 @@
     BOOL supported = (type && (strcmp(type, @encode(CGColorRef)) == 0 || strcmp(type, FLEXEncodeClass(UIColor)) == 0)) || [value isKindOfClass:[UIColor class]];
     
     //
-    // Optional protocols because of JSONModel
+    // Optional protocols because of NSObject <ALPHASerializableItem>
     //
     
     supported = supported || (type && (strcmp(type, FLEXEncodeClass(UIColor<Optional>)) == 0));

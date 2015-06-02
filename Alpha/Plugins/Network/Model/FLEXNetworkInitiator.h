@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 f. All rights reserved.
 //
 
-#import "JSONModel.h"
+#import "ALPHASerializableItem.h"
 
-@interface FLEXNetworkInitiator : JSONModel
+@interface FLEXNetworkInitiator : NSObject <ALPHASerializableItem>
 
 // Type of this initiator.
 // Type: string

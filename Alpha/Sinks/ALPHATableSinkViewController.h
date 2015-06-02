@@ -11,7 +11,7 @@
 
 @interface ALPHATableSinkViewController : UITableViewController <ALPHADataSink>
 
-@property (nonatomic, weak) id <FLEXViewControllerDelegate> delegate;
+@property (nonatomic, weak) id <ALPHAViewControllerDelegate> delegate;
 
 @property (nonatomic, copy) NSString *dataIdentifier;
 @property (nonatomic, strong) id<ALPHADataSource> source;

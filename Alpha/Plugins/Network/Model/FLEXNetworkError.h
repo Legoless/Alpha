@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 f. All rights reserved.
 //
 
-#import "JSONModel.h"
+#import "ALPHASerializableItem.h"
 
-@interface FLEXNetworkError : JSONModel
+@interface FLEXNetworkError : NSObject <ALPHASerializableItem>
 
 @property (nonatomic, copy) NSString *domain;
 @property (nonatomic) NSInteger code;

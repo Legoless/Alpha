@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 f. All rights reserved.
 //
 
-#import "JSONModel.h"
+#import "ALPHASerializableItem.h"
 
 #import "FLEXNetworkResourceTiming.h"
 
-@interface FLEXNetworkResponse : JSONModel
+@interface FLEXNetworkResponse : NSObject <ALPHASerializableItem>
 
 // Response URL.
 // Type: string

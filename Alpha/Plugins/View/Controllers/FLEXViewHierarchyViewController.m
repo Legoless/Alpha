@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 f. All rights reserved.
 //
 
-#import "FLEXExplorerViewController.h"
+#import "ALPHAMainViewController.h"
 #import "FLEXExplorerToolbar.h"
 #import "FLEXToolbarItem.h"
 #import "FLEXUtility.h"
@@ -20,7 +20,7 @@
 
 #import "ALPHAManager.h"
 
-@interface FLEXViewHierarchyViewController ()  <FLEXHierarchyTableViewControllerDelegate, FLEXViewControllerDelegate>
+@interface FLEXViewHierarchyViewController ()  <FLEXHierarchyTableViewControllerDelegate, ALPHAViewControllerDelegate>
 
 //
 // Previous properties, to refactor
@@ -735,7 +735,7 @@
 }
 
 
-#pragma mark - FLEXViewControllerDelegate
+#pragma mark - ALPHAViewControllerDelegate
 
 - (void)viewControllerDidFinish:(UIViewController *)viewController
 {

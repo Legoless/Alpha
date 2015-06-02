@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 f. All rights reserved.
 //
 
-#import "JSONModel.h"
+#import "ALPHASerializableItem.h"
 
 #import "FLEXNetworkRequest.h"
 #import "FLEXNetworkResponse.h"
@@ -18,7 +18,7 @@ typedef enum : NSUInteger {
     FLEXNetworkConnectionTypeConnection,
 } FLEXNetworkConnectionType;
 
-@interface FLEXNetworkConnection : JSONModel
+@interface FLEXNetworkConnection : NSObject <ALPHASerializableItem>
 
 @property (nonatomic, copy) NSString *requestID;
 

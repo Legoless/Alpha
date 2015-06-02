@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 f. All rights reserved.
 //
 
-#import "JSONModel.h"
+#import "ALPHASerializableItem.h"
 
-@interface FLEXNetworkResourceTiming : JSONModel
+@interface FLEXNetworkResourceTiming : NSObject <ALPHASerializableItem>
 
 // Timing's requestTime is a baseline in seconds, while the other numbers are ticks in milliseconds relatively to this requestTime.
 // Type: number

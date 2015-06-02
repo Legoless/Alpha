@@ -117,7 +117,7 @@
     supported = supported || (value && [value isKindOfClass:[UIFont class]]);
     
     //
-    // Optional protocols because of JSONModel
+    // Optional protocols because of NSObject <ALPHASerializableItem>
     //
     
     supported = supported || (type && (strcmp(type, FLEXEncodeClass(UIFont<Optional>)) == 0));

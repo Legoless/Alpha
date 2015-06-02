@@ -10,7 +10,7 @@
 #import "ALPHAManager.h"
 #import "ALPHAMenuActionItem.h"
 #import "ALPHAGlobalActions.h"
-#import "ALPHADataSection.h"
+#import "ALPHAScreenSection.h"
 
 NSString* const ALPHAMenuDataIdentifier = @"com.unifiedsense.alpha.data.menu";
 
@@ -28,7 +28,7 @@ NSString* const ALPHAMenuDataIdentifier = @"com.unifiedsense.alpha.data.menu";
     return self;
 }
 
-- (void)collectDataForIdentifier:(NSString *)identifier completion:(void (^)(ALPHADataModel *, NSError *))completion
+- (void)collectDataForIdentifier:(NSString *)identifier completion:(void (^)(ALPHAScreenModel *, NSError *))completion
 {
     if (completion)
     {
@@ -36,7 +36,7 @@ NSString* const ALPHAMenuDataIdentifier = @"com.unifiedsense.alpha.data.menu";
     }
 }
 
-- (ALPHADataModel *)collectRootData
+- (ALPHAScreenModel *)collectRootData
 {
     NSArray* plugins = [ALPHAManager sharedManager].plugins;
     
@@ -61,10 +61,10 @@ NSString* const ALPHAMenuDataIdentifier = @"com.unifiedsense.alpha.data.menu";
     NSSortDescriptor* prioritySortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"priority" ascending:YES];
     NSSortDescriptor* titleSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES];
     
-    ALPHADataSection* section = [[ALPHADataSection alloc] initWithIdentifier:ALPHAMenuDataIdentifier];
+    ALPHAScreenSection* section = [[ALPHAScreenSection alloc] initWithIdentifier:ALPHAMenuDataIdentifier];
     section.items = [items sortedArrayUsingDescriptors:@[ prioritySortDescriptor, titleSortDescriptor ]];;
     
-    ALPHADataModel* dataModel = [[ALPHADataModel alloc] initWithIdentifier:ALPHAMenuDataIdentifier];
+    ALPHAScreenModel* dataModel = [[ALPHAScreenModel alloc] initWithIdentifier:ALPHAMenuDataIdentifier];
     dataModel.title = @"Alpha";
     dataModel.sections = @[ section ];
     

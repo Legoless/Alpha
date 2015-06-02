@@ -8,7 +8,7 @@
 
 #import "ALPHAManager.h"
 
-#import "FLEXExplorerViewController.h"
+#import "ALPHAMainViewController.h"
 
 #import "ALPHABlockActionItem.h"
 #import "ALPHAMenuActionItem.h"
@@ -19,9 +19,9 @@
 
 #import "ALPHAInterfacePlugin.h"
 
-@interface ALPHAInterfacePlugin () <FLEXViewControllerDelegate>
+@interface ALPHAInterfacePlugin () <ALPHAViewControllerDelegate>
 
-@property (nonatomic, strong) FLEXExplorerViewController* explorerViewController;
+@property (nonatomic, strong) ALPHAMainViewController* explorerViewController;
 
 @end
 
@@ -29,11 +29,11 @@
 
 #pragma mark - Getters and Setters
 
-- (FLEXExplorerViewController *)explorerViewController
+- (ALPHAMainViewController *)explorerViewController
 {
     if (!_explorerViewController)
     {
-        _explorerViewController = [[FLEXExplorerViewController alloc] init];
+        _explorerViewController = [[ALPHAMainViewController alloc] init];
         _explorerViewController.delegate = self;
     }
     

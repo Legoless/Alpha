@@ -1,13 +1,10 @@
 PODS:
   - Haystack (0.8.4)
-  - JSONModel (1.1.0)
 
 DEPENDENCIES:
   - Haystack
-  - JSONModel
 
 SPEC CHECKSUMS:
   Haystack: 41bf1f4b2b5479330ea4d7b60d3dc10c59b752ee
-  JSONModel: ec77e9865236a7a09d9cf7668df6b4b328d9ec1d
 
 COCOAPODS: 0.37.2

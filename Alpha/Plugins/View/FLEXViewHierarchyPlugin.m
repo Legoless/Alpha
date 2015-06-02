@@ -15,7 +15,7 @@
 
 #import "FLEXViewHierarchyViewController.h"
 
-@interface FLEXViewHierarchyPlugin () <FLEXViewControllerDelegate>
+@interface FLEXViewHierarchyPlugin () <ALPHAViewControllerDelegate>
 
 @property (nonatomic, strong) FLEXViewHierarchyViewController* viewHierarchyViewController;
 

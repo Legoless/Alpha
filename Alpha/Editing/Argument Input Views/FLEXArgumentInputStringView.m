@@ -41,7 +41,7 @@
     supported = supported || (value && [value isKindOfClass:[NSString class]]);
     
     //
-    // Optional protocols because of JSONModel
+    // Optional protocols because of NSObject <ALPHASerializableItem>
     //
     
     supported = supported || (type && (strcmp(type, FLEXEncodeClass(NSString<Optional>)) == 0));

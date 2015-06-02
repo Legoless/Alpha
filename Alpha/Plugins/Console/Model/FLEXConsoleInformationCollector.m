@@ -51,7 +51,8 @@
             [tmpDict setObject:string forKey:keyString];
         }
         
-        FLEXConsoleLog* log = [[FLEXConsoleLog alloc] initWithDictionary:tmpDict error:nil];
+        //FLEXConsoleLog* log = [[FLEXConsoleLog alloc] initWithDictionary:@{} error:nil];
+        FLEXConsoleLog* log = [[FLEXConsoleLog alloc] init];
         
         if (log)
         {

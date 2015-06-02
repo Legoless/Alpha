@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
   spec.name             = "Alpha"
-  spec.version          = "0.1.2"
-  spec.summary          = "A set of in-app debugging and exploration tools for iOS"
+  spec.version          = "0.2.0"
+  spec.summary          = "Next generation debugging system for iOS"
   spec.description      = <<-DESC
                         - Inspect and modify views in the hierarchy.
                         - See the properties and ivars on any object.
@@ -29,11 +29,10 @@ Pod::Spec.new do |spec|
   spec.social_media_url = "https://twitter.com/thelegoless"
   spec.platform         = :ios, "7.0"
   spec.source           = { :git => "https://github.com/legoless/Alpha.git", :tag => "#{spec.version}" }
-  spec.source_files     = "Classes/**/*.{h,m}"
+  spec.source_files     = "Alpha/**/*.{h,m}"
   spec.frameworks       = "CoreGraphics"
 
   spec.dependency 'Haystack'
-  spec.dependency 'JSONModel'
 
   spec.requires_arc     = true
 end

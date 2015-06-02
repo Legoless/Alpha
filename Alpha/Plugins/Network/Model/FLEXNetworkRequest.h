@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 f. All rights reserved.
 //
 
-#import "JSONModel.h"
+#import "ALPHASerializableItem.h"
 
-@interface FLEXNetworkRequest : JSONModel
+@interface FLEXNetworkRequest : NSObject <ALPHASerializableItem>
 
 // Request URL.
 // Type: string

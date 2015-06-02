@@ -29,7 +29,7 @@
     dictionary[@"thread"] = dictionary[@"CFLog Thread"];
     dictionary[@"localTime"] = dictionary[@"CFLog Local Time"];
     
-    return [super initWithDictionary:dictionary error:err];
+    return [super init];
 }
 
 @end

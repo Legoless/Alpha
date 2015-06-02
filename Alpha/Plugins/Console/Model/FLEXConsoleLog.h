@@ -6,24 +6,24 @@
 //  Copyright (c) 2014 f. All rights reserved.
 //
 
-#import "JSONModel.h"
+#import "ALPHASerializableItem.h"
 
-@interface FLEXConsoleLog : JSONModel
+@interface FLEXConsoleLog : NSObject <ALPHASerializableItem>
 
-@property (nonatomic, copy) NSNumber<Optional> *ASLMessageID;
-@property (nonatomic, copy) NSString<Optional> *facility;
-@property (nonatomic, copy) NSNumber<Optional> *GID;
-@property (nonatomic, copy) NSString<Optional> *host;
+@property (nonatomic, copy) NSNumber *ASLMessageID;
+@property (nonatomic, copy) NSString *facility;
+@property (nonatomic, copy) NSNumber *GID;
+@property (nonatomic, copy) NSString *host;
 @property (nonatomic) NSInteger level;
-@property (nonatomic, copy) NSString<Optional> *message;
-@property (nonatomic, copy) NSNumber<Optional> *PID;
-@property (nonatomic, copy) NSNumber<Optional> *readUID;
-@property (nonatomic, copy) NSString<Optional> *sender;
-@property (nonatomic, copy) NSString<Optional> *senderMachUUID;
-@property (nonatomic, copy) NSString<Optional> *localTime;
-@property (nonatomic, copy) NSNumber<Optional> *time;
-@property (nonatomic, copy) NSNumber<Optional>* timeNanoSec;
-@property (nonatomic, copy) NSNumber<Optional>* thread;
-@property (nonatomic, copy) NSNumber<Optional>* UID;
+@property (nonatomic, copy) NSString *message;
+@property (nonatomic, copy) NSNumber *PID;
+@property (nonatomic, copy) NSNumber *readUID;
+@property (nonatomic, copy) NSString *sender;
+@property (nonatomic, copy) NSString *senderMachUUID;
+@property (nonatomic, copy) NSString *localTime;
+@property (nonatomic, copy) NSNumber *time;
+@property (nonatomic, copy) NSNumber *timeNanoSec;
+@property (nonatomic, copy) NSNumber *thread;
+@property (nonatomic, copy) NSNumber *UID;
 
 @end

@@ -6,12 +6,12 @@
 //  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
-#import "ALPHADataItem.h"
+#import "ALPHAScreenItem.h"
 
 /*!
  *  Action item
  */
-@interface ALPHAActionItem : ALPHADataItem
+@interface ALPHAActionItem : ALPHAScreenItem
 
 @property (nonatomic, getter = isEnabled) BOOL enabled;
 

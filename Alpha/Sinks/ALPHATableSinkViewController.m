@@ -9,7 +9,7 @@
 #import "ALPHATableSinkViewController.h"
 
 #import "ALPHAGlobalActions.h"
-#import "ALPHADataItem.h"
+#import "ALPHAScreenItem.h"
 #import "ALPHAMenuActionItem.h"
 #import "ALPHABlockActionItem.h"
 #import "ALPHAManager.h"
@@ -24,11 +24,11 @@
 
 #pragma mark - Getters and Setters
 
-- (ALPHADataModel *)dataModel
+- (ALPHAScreenModel *)dataModel
 {
-    if ([self.data isKindOfClass:[ALPHADataModel class]])
+    if ([self.data isKindOfClass:[ALPHAScreenModel class]])
     {
-        return (ALPHADataModel *)self.data;
+        return (ALPHAScreenModel *)self.data;
     }
     
     return nil;
@@ -38,7 +38,7 @@
 {
     _data = data;
     
-    if ([data isKindOfClass:[ALPHADataModel class]])
+    if ([data isKindOfClass:[ALPHAScreenModel class]])
     {
         if ([self.dataModel.rightAction.identifier isEqualToString:ALPHAActionCloseIdentifier])
         {
@@ -55,10 +55,21 @@
         
         if (self.dataModel.expiration > 0)
         {
+            if (!self.refreshControl)
+            {
+                self.refreshControl = [self createRefreshControl];
+            }
+            
             self.refreshTimer = [NSTimer scheduledTimerWithTimeInterval:self.dataModel.expiration target:self selector:@selector(refresh) userInfo:nil repeats:NO];
         }
         else
         {
+            if (self.refreshControl)
+            {
+                [self.refreshControl endRefreshing];
+                self.refreshControl = nil;
+            }
+            
             [self.refreshTimer invalidate];
             self.refreshTimer = nil;
         }
@@ -73,16 +84,6 @@
     
     self.view.backgroundColor = [ALPHAManager sharedManager].theme.backgroundColor;
     self.tableView.separatorColor = [ALPHAManager sharedManager].theme.highlightedBackgroundColor;
-    
-    //
-    // Refresh control
-    //
-    
-    UIRefreshControl* refreshControl = [[UIRefreshControl alloc] init];
-    [refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
-    refreshControl.tintColor = [[ALPHAManager sharedManager].theme.tintColor colorWithAlphaComponent:0.5];
-    
-    self.refreshControl = refreshControl;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -118,7 +119,7 @@
 {
     [self.refreshControl beginRefreshing];
     
-    [self.source refreshWithIdentifier:self.dataIdentifier completion:^(ALPHADataModel *dataModel, NSError *error) {
+    [self.source refreshWithIdentifier:self.dataIdentifier completion:^(ALPHAScreenModel *dataModel, NSError *error) {
         self.data = dataModel;
         
         [self.refreshControl endRefreshing];
@@ -143,9 +144,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ALPHADataItem *item = [self.dataModel.sections[indexPath.section] items][indexPath.row];
+    ALPHAScreenItem *item = [self.dataModel.sections[indexPath.section] items][indexPath.row];
     
-    NSString *cellIdentifier = [self cellIdentifierForStyle:item.style];
+    NSString *cellIdentifier = [self cellIdentifierForDefaultStyle:item.style];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if (!cell)
@@ -297,7 +298,20 @@
 
 #pragma mark - Helper methods
 
-- (NSString *)cellIdentifierForStyle:(UITableViewCellStyle)style
+- (UIRefreshControl *)createRefreshControl
+{
+    //
+    // Refresh control
+    //
+    
+    UIRefreshControl* refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
+    refreshControl.tintColor = [[ALPHAManager sharedManager].theme.tintColor colorWithAlphaComponent:0.5];
+    
+    return refreshControl;
+}
+
+- (NSString *)cellIdentifierForDefaultStyle:(UITableViewCellStyle)style
 {
     switch (style)
     {

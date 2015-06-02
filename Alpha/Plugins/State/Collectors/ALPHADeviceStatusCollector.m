@@ -11,11 +11,13 @@
 
 #import "UIDevice+ALPHAStatus.h"
 #import "ALPHADeviceStatusCollector.h"
-#import "ALPHADataModel.h"
+#import "ALPHAScreenModel.h"
 
 NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.status";
 
 @interface ALPHADeviceStatusCollector ()
+
+#warning Implement and check those properties
 
 /*!
  *  Application memory size
@@ -72,7 +74,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     return self;
 }
 
-- (void)collectDataForIdentifier:(NSString *)identifier completion:(void (^)(ALPHADataModel *, NSError *))completion
+- (void)collectDataForIdentifier:(NSString *)identifier completion:(void (^)(ALPHAScreenModel *, NSError *))completion
 {
     if (completion)
     {
@@ -80,7 +82,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     }
 }
 
-- (ALPHADataModel *)collectRootData
+- (ALPHAScreenModel *)collectRootData
 {
     //
     // Application section
@@ -97,7 +99,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
                                    ],
                                    @"title" : @"Application" };
     
-    ALPHADataSection* applicationSection = [ALPHADataSection dataSectionWithDictionary:sectionData];
+    ALPHAScreenSection* applicationSection = [ALPHAScreenSection dataSectionWithDictionary:sectionData];
     
     //
     // Usage section
@@ -112,7 +114,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
                      @"title" : @"Usage" };
 
     
-    ALPHADataSection* usageSection = [ALPHADataSection dataSectionWithDictionary:sectionData];
+    ALPHAScreenSection* usageSection = [ALPHAScreenSection dataSectionWithDictionary:sectionData];
     
     //
     // System section
@@ -125,14 +127,14 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
                              @{ @"System Version" : [NSString stringWithFormat:@"%@ %@", [UIDevice currentDevice].systemName, [UIDevice currentDevice].systemVersion] },
                              @{ @"Process Count" : [NSString stringWithFormat:@"%lu", [UIDevice currentDevice].hs_processCount] },
                              @{ @"System Time" : [self.dateFormatter stringFromDate:[NSDate date]] },
-                             @{ @"Timezone" : [NSTimeZone localTimeZone].name },
                              @{ @"User Languages" : [[NSLocale preferredLanguages] componentsJoinedByString:@", "] },
+                             @{ @"Timezone" : [NSTimeZone localTimeZone].name },
                              @{ @"Region" : [[NSLocale currentLocale] displayNameForKey:NSLocaleIdentifier value:region] },
                              @{ @"Calendar" : [[[[NSLocale currentLocale] objectForKey:NSLocaleCalendar] calendarIdentifier] capitalizedString] }
                      ],
                      @"title" : @"System" };
     
-    ALPHADataSection* systemSection = [ALPHADataSection dataSectionWithDictionary:sectionData];
+    ALPHAScreenSection* systemSection = [ALPHAScreenSection dataSectionWithDictionary:sectionData];
     
     //
     // Device section
@@ -155,7 +157,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
                      @"title" : @"Device" };
     
     
-    ALPHADataSection* deviceSection = [ALPHADataSection dataSectionWithDictionary:sectionData];
+    ALPHAScreenSection* deviceSection = [ALPHAScreenSection dataSectionWithDictionary:sectionData];
     
     //
     // Network section
@@ -185,7 +187,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
                      @"title" : @"Network" };
     
     
-    ALPHADataSection* networkSection = [ALPHADataSection dataSectionWithDictionary:sectionData];
+    ALPHAScreenSection* networkSection = [ALPHAScreenSection dataSectionWithDictionary:sectionData];
     
     #warning Add other data from Core Telephony (phone number, etc, ...)
     
@@ -196,13 +198,13 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
                      @"title" : @"Cellular" };
     
     
-    ALPHADataSection* cellularSection = [ALPHADataSection dataSectionWithDictionary:sectionData];
+    ALPHAScreenSection* cellularSection = [ALPHAScreenSection dataSectionWithDictionary:sectionData];
     
     //
     // Data model
     //
     
-    ALPHADataModel* dataModel = [[ALPHADataModel alloc] initWithIdentifier:ALPHADeviceStatusDataIdentifier];
+    ALPHAScreenModel* dataModel = [[ALPHAScreenModel alloc] initWithIdentifier:ALPHADeviceStatusDataIdentifier];
     dataModel.title = @"Status";
     dataModel.sections = @[ applicationSection, usageSection, systemSection, deviceSection, networkSection, cellularSection ];
     

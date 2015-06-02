@@ -22,15 +22,6 @@
     
     if (self)
     {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleApplicationNotification:) name:UIApplicationDidEnterBackgroundNotification object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleApplicationNotification:) name:UIApplicationWillEnterForegroundNotification object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleApplicationNotification:) name:UIApplicationDidFinishLaunchingNotification object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleApplicationNotification:) name:UIApplicationDidBecomeActiveNotification object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleApplicationNotification:) name:UIApplicationWillResignActiveNotification object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleApplicationNotification:) name:UIApplicationDidReceiveMemoryWarningNotification object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleApplicationNotification:) name:UIApplicationSignificantTimeChangeNotification object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleApplicationNotification:) name:UIApplicationBackgroundRefreshStatusDidChangeNotification object:nil];
-        
         //
         // Menu items
         //
@@ -42,13 +33,6 @@
         
         [self registerAction:menuAction];
         
-        menuAction = [ALPHAMenuActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.state.notifications"];
-        menuAction.icon = @"🔔";
-        menuAction.title = @"Notifications";
-        menuAction.viewControllerClass = @"FLEXNotificationTableViewController";
-        
-        [self registerAction:menuAction];
-        
         //
         // Collectors
         //
@@ -57,22 +41,6 @@
     }
     
     return self;
-}
-
-- (void)dealloc
-{
-    //
-    // Cleaning up the house
-    //
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
-- (void)handleApplicationNotification:(NSNotification *)notification
-{
-    if (!self.isEnabled)
-    {
-        return;
-    }
 }
 
 @end

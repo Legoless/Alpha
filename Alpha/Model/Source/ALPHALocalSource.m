@@ -73,7 +73,7 @@
         {
             if ([collector hasDataForIdentifier:identifier])
             {
-                [collector collectDataForIdentifier:identifier completion:^(ALPHADataModel *model, NSError *error) {
+                [collector collectDataForIdentifier:identifier completion:^(ALPHAScreenModel *model, NSError *error) {
                     
                     if (model)
                     {
