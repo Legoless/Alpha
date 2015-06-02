@@ -103,6 +103,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
                      @"items" : @[
                              @{ @"Memory Size" : [NSByteCountFormatter stringFromByteCount:[UIApplication sharedApplication].memorySize countStyle:NSByteCountFormatterCountStyleBinary] },
                              @{ @"Thread Count" : [NSString stringWithFormat:@"%lu", (unsigned long)[UIApplication sharedApplication].threadCount] },
+                             @{ @"Process Count" : [NSString stringWithFormat:@"%lu", [UIDevice currentDevice].hs_processCount] },
                              @{ @"CPU Usage" : [NSString stringWithFormat:@"%lu%%", (unsigned long)([UIApplication sharedApplication].cpuUsage * 100.0)] }
                      ],
                      @"style" : @(UITableViewCellStyleValue1),
@@ -115,17 +116,11 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     // System section
     //
     
-    NSString* region = [[NSLocale currentLocale] objectForKey:NSLocaleIdentifier];
-    
     sectionData = @{ @"identifier" : @"com.unifiedsense.alpha.data.status.system",
                      @"items" : @[
                              @{ @"System Version" : [NSString stringWithFormat:@"%@ %@", [UIDevice currentDevice].systemName, [UIDevice currentDevice].systemVersion] },
-                             @{ @"Process Count" : [NSString stringWithFormat:@"%lu", [UIDevice currentDevice].hs_processCount] },
-                             @{ @"System Time" : [self.dateFormatter stringFromDate:[NSDate date]] },
-                             @{ @"User Languages" : [[NSLocale preferredLanguages] componentsJoinedByString:@", "] },
-                             @{ @"Timezone" : [NSTimeZone localTimeZone].name },
-                             @{ @"Region" : [[NSLocale currentLocale] displayNameForKey:NSLocaleIdentifier value:region] },
-                             @{ @"Calendar" : [[[[NSLocale currentLocale] objectForKey:NSLocaleCalendar] calendarIdentifier] capitalizedString] }
+
+                             @{ @"System Time" : [self.dateFormatter stringFromDate:[NSDate date]] }
                      ],
                      @"style" : @(UITableViewCellStyleValue1),
                      @"title" : @"System" };
@@ -136,22 +131,38 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     // Locale section
     //
     
-    /*NSString* region = [[NSLocale currentLocale] objectForKey:NSLocaleIdentifier];
+    NSMutableArray* items = [NSMutableArray array];
+    
+    NSArray* languages = [NSLocale preferredLanguages];
+    
+    for (NSString* language in languages)
+    {
+        NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en"];
+        
+        NSString* title = @"";
+        
+        if (!items.count)
+        {
+            title = @"User Languages";
+        }
+        
+        [items addObject:@{ title : [locale displayNameForKey:NSLocaleIdentifier value:language] }];
+    }
+    
+    NSString* region = [[NSLocale currentLocale] objectForKey:NSLocaleIdentifier];
+    
+    [items addObjectsFromArray:@[
+        @{ @"Timezone" : [NSTimeZone localTimeZone].name },
+        @{ @"Region" : [[NSLocale currentLocale] displayNameForKey:NSLocaleIdentifier value:region] },
+        @{ @"Calendar" : [[[[NSLocale currentLocale] objectForKey:NSLocaleCalendar] calendarIdentifier] capitalizedString] }
+    ]];
     
     sectionData = @{ @"identifier" : @"com.unifiedsense.alpha.data.status.system",
-                     @"items" : @[
-                             @{ @"System Version" : [NSString stringWithFormat:@"%@ %@", [UIDevice currentDevice].systemName, [UIDevice currentDevice].systemVersion] },
-                             @{ @"Process Count" : [NSString stringWithFormat:@"%lu", [UIDevice currentDevice].hs_processCount] },
-                             @{ @"System Time" : [self.dateFormatter stringFromDate:[NSDate date]] },
-                             @{ @"User Languages" : [[NSLocale preferredLanguages] componentsJoinedByString:@", "] },
-                             @{ @"Timezone" : [NSTimeZone localTimeZone].name },
-                             @{ @"Region" : [[NSLocale currentLocale] displayNameForKey:NSLocaleIdentifier value:region] },
-                             @{ @"Calendar" : [[[[NSLocale currentLocale] objectForKey:NSLocaleCalendar] calendarIdentifier] capitalizedString] }
-                             ],
+                     @"items" : items.copy,
                      @"style" : @(UITableViewCellStyleValue1),
-                     @"title" : @"System" };
+                     @"title" : @"Locale" };
     
-    ALPHAScreenSection* systemSection = [ALPHAScreenSection dataSectionWithDictionary:sectionData];*/
+    ALPHAScreenSection* localeSection = [ALPHAScreenSection dataSectionWithDictionary:sectionData];
 
     
     //
@@ -179,10 +190,10 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     ALPHAScreenSection* deviceSection = [ALPHAScreenSection dataSectionWithDictionary:sectionData];
     
     //
-    // Network section
+    // IP Addresses section
     //
     
-    NSMutableArray* items = [NSMutableArray array];
+    items = [NSMutableArray array];
     
     NSDictionary* ipInfo = [UIDevice currentDevice].hs_localIPAddresses;
     
@@ -191,18 +202,28 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
         [items addObject:@{ [NSString stringWithFormat:@"IP (%@)", key] : ipInfo[key] }];
     }
     
-    [items addObjectsFromArray:@[
-        @{ @"MAC Address" : [UIDevice currentDevice].hs_macAddress },
-        @{ @"SSID" : [UIDevice currentDevice].hs_SSID },
-        @{ @"BSSDID" : [UIDevice currentDevice].hs_BSSID },
-        @{ @"Received Wi-Fi" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].hs_receivedWiFi.longLongValue countStyle:NSByteCountFormatterCountStyleBinary] },
-        @{ @"Sent Wi-Fi" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].hs_sentWifi.longLongValue countStyle:NSByteCountFormatterCountStyleBinary] },
-        @{ @"Received Cellular" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].hs_receivedCellular.longLongValue countStyle:NSByteCountFormatterCountStyleBinary] },
-        @{ @"Sent Cellular" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].hs_sentCellular.longLongValue countStyle:NSByteCountFormatterCountStyleBinary] }
-    ]];
-    
     sectionData = @{ @"identifier" : @"com.unifiedsense.alpha.data.status.network",
                      @"items" : items.copy,
+                     @"style" : @(UITableViewCellStyleValue1),
+                     @"title" : @"Local IP Addresses" };
+    
+    
+    ALPHAScreenSection* ipSection = [ALPHAScreenSection dataSectionWithDictionary:sectionData];
+    
+    //
+    // Network section
+    //
+    
+    sectionData = @{ @"identifier" : @"com.unifiedsense.alpha.data.status.network",
+                     @"items" : @[
+                             @{ @"MAC Address" : [UIDevice currentDevice].hs_macAddress },
+                             @{ @"SSID" : [UIDevice currentDevice].hs_SSID },
+                             @{ @"BSSDID" : [UIDevice currentDevice].hs_BSSID },
+                             @{ @"Received Wi-Fi" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].hs_receivedWiFi.longLongValue countStyle:NSByteCountFormatterCountStyleBinary] },
+                             @{ @"Sent Wi-Fi" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].hs_sentWifi.longLongValue countStyle:NSByteCountFormatterCountStyleBinary] },
+                             @{ @"Received Cellular" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].hs_receivedCellular.longLongValue countStyle:NSByteCountFormatterCountStyleBinary] },
+                             @{ @"Sent Cellular" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].hs_sentCellular.longLongValue countStyle:NSByteCountFormatterCountStyleBinary] }
+                     ],
                      @"style" : @(UITableViewCellStyleValue1),
                      @"title" : @"Network" };
     
@@ -227,7 +248,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     
     ALPHAScreenModel* dataModel = [[ALPHAScreenModel alloc] initWithIdentifier:ALPHADeviceStatusDataIdentifier];
     dataModel.title = @"Status";
-    dataModel.sections = @[ applicationSection, usageSection, systemSection, deviceSection, networkSection, cellularSection ];
+    dataModel.sections = @[ applicationSection, usageSection, systemSection, localeSection, deviceSection, ipSection, networkSection, cellularSection ];
     
     // Data model expires in 0.5 seconds
     dataModel.expiration = 0.5;
