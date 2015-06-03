@@ -20,10 +20,4 @@
 
 - (void)registerConverterSource:(id<ALPHADataConverterSource>)converterSource;
 
-#pragma mark - ALPHADataConverterSource
-
-- (BOOL)canConvertModel:(ALPHAModel *)model;
-
-- (ALPHAScreenModel *)screenModelForModel:(ALPHAModel *)model;
-
 @end

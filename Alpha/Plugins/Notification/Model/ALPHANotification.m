@@ -45,8 +45,8 @@
 {
     ALPHAScreenItem *item = [[ALPHAScreenItem alloc] init];
     
-    item.title = self.alertBody.length ? self.alertBody : [self.fireDate description];
-    item.detail = self.alertBody.length ? [self.fireDate description] : @"";
+    item.titleText = self.alertBody.length ? self.alertBody : [self.fireDate description];
+    item.detailText = self.alertBody.length ? [self.fireDate description] : @"";
     item.model = self;
     
     return item;

@@ -10,7 +10,7 @@
 #import "ALPHANotificationConverter.h"
 #import "ALPHANotification.h"
 
-@interface ALPHANotificationConverter () <ALPHADataConverterSource>
+@interface ALPHANotificationConverter ()
 
 @end
 

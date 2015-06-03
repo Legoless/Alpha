@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHAConverterManager.h"
+#import "ALPHADataConverterSource.h"
 
-@interface ALPHANotificationConverter : NSObject
+@interface ALPHANotificationConverter : NSObject <ALPHADataConverterSource>
 
 @end

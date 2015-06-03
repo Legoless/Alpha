@@ -35,17 +35,40 @@
                 {
                     displayItem = [[ALPHAScreenItem alloc] init];
                 
-                    for (NSString* keyItem in item)
+                    for (id keyItem in item)
                     {
-                        displayItem.title = keyItem;
-                        displayItem.detail = [item[keyItem] description];
+                        if ([keyItem isKindOfClass:[NSString class]])
+                        {
+                            displayItem.titleText = keyItem;
+                        }
+                        else if ([keyItem isKindOfClass:[NSAttributedString class]])
+                        {
+                            displayItem.attributedTitleText = keyItem;
+                        }
+                        else
+                        {
+                            displayItem.title = keyItem;
+                        }
+                        
+                        if ([item[keyItem] isKindOfClass:[NSString class]])
+                        {
+                            displayItem.detailText = [item[keyItem] description];
+                        }
+                        else if ([keyItem isKindOfClass:[NSAttributedString class]])
+                        {
+                            displayItem.attributedTitleText = item[keyItem];
+                        }
+                        else
+                        {
+                            displayItem.detail = item[keyItem];
+                        }
                     }
                 }
                 else
                 {
                     displayItem = [[ALPHAScreenItem alloc] init];
-                    displayItem.title = NSStringFromClass([item class]);
-                    displayItem.detail = [item description];
+                    displayItem.titleText = NSStringFromClass([item class]);
+                    displayItem.detailText = [item description];
                     displayItem.model = item;
                 }
                 

@@ -21,8 +21,17 @@ typedef NSInteger ALPHAScreenItemPriority;
  *  NSString with Emoji or UIImage
  */
 @property (nonatomic, strong) id icon;
-@property (nonatomic, copy) NSString* title;
-@property (nonatomic, copy) id detail;
+
+@property (nonatomic, strong) id title;
+
+@property (nonatomic, copy) NSString *titleText;
+@property (nonatomic, copy) NSAttributedString *attributedTitleText;
+
+@property (nonatomic, strong) id detail;
+
+@property (nonatomic, copy) NSString* detailText;
+@property (nonatomic, copy) NSAttributedString* attributedDetailText;
+
 @property (nonatomic, assign) UITableViewCellStyle style;
 
 /*!

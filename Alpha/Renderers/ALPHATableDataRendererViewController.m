@@ -170,21 +170,35 @@
         
         ALPHATheme* theme = [ALPHAManager sharedManager].theme;
         
-        cell.textLabel.font = [theme themeFontWithFont:cell.textLabel.font];
-        cell.detailTextLabel.font = [theme themeFontWithFont:cell.detailTextLabel.font];
-        
-        cell.textLabel.textColor = theme.tintColor;
-        cell.detailTextLabel.textColor = [theme.tintColor colorWithAlphaComponent:0.5];
-        
-        cell.backgroundColor = theme.backgroundColor;
-        cell.selectedBackgroundView = [UIView new];
-        cell.selectedBackgroundView.backgroundColor = theme.highlightedBackgroundColor;
+        [self cell:cell applyTheme:theme];
     }
-        
+    
+    [self cell:cell applyItem:item];
+    
+    return cell;
+}
+
+#pragma mark - Cell Configuration
+
+- (void)cell:(UITableViewCell *)cell applyTheme:(ALPHATheme *)theme
+{
+    cell.textLabel.font = [theme themeFontWithFont:cell.textLabel.font];
+    cell.detailTextLabel.font = [theme themeFontWithFont:cell.detailTextLabel.font];
+    
+    cell.textLabel.textColor = theme.tintColor;
+    cell.detailTextLabel.textColor = [theme.tintColor colorWithAlphaComponent:0.5];
+    
+    cell.backgroundColor = theme.backgroundColor;
+    cell.selectedBackgroundView = [UIView new];
+    cell.selectedBackgroundView.backgroundColor = theme.highlightedBackgroundColor;
+    
     cell.detailTextLabel.minimumScaleFactor = 0.5;
     cell.detailTextLabel.adjustsFontSizeToFitWidth = YES;
     cell.detailTextLabel.adjustsLetterSpacingToFitWidth = YES;
-    
+}
+
+- (void)cell:(UITableViewCell *)cell applyItem:(ALPHAScreenItem *)item
+{
     if ([item isKindOfClass:[ALPHAActionItem class]] || [item model])
     {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -194,14 +208,7 @@
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
     
-    NSMutableString* text = [NSMutableString string];
-    
-    if ([item.icon isKindOfClass:[NSString class]])
-    {
-        [text appendString:item.icon];
-        [text appendString:@"  "];
-    }
-    else if ([item.icon isKindOfClass:[UIImage class]])
+    if ([item.icon isKindOfClass:[UIImage class]])
     {
         cell.imageView.image = item.icon;
     }
@@ -210,20 +217,47 @@
         cell.imageView.image = nil;
     }
     
-    if (item.title.length)
+    [self applyStringObject:[self titleForItem:item] toLabel:cell.textLabel];
+    [self applyStringObject:[self detailForItem:item] toLabel:cell.detailTextLabel];
+}
+
+- (id)titleForItem:(ALPHAScreenItem *)item
+{
+    if (item.attributedTitleText)
     {
-        [text appendString:item.title];
+        return item.attributedTitleText;
     }
     
-    cell.textLabel.text = text;
+    NSMutableString* text = [NSMutableString string];
+    
+    if ([item.icon isKindOfClass:[NSString class]])
+    {
+        [text appendString:item.icon];
+        [text appendString:@"  "];
+    }
+    
+    if (item.titleText.length)
+    {
+        [text appendString:item.titleText];
+    }
+    else if (item.title)
+    {
+        [text appendString:[item.title description]];
+    }
+
+    return text.copy;
+}
+
+- (id)detailForItem:(ALPHAScreenItem *)item
+{
+    if (item.attributedDetailText)
+    {
+        return item.attributedDetailText;
+    }
     
     NSString* detail = @"";
     
-    if ([item.detail isKindOfClass:[NSString class]])
-    {
-        detail = item.detail;
-    }
-    else if ([item.detail isKindOfClass:[NSNumber class]])
+    if ([item.detail isKindOfClass:[NSNumber class]])
     {
         //
         // Check for boolean here
@@ -242,14 +276,16 @@
             detail = [NSString stringWithFormat:@"%lld", detailNumber.longLongValue];
         }
     }
+    else if (item.detailText.length)
+    {
+        detail = item.detailText;
+    }
     else
     {
         detail = [item.detail description];
     }
     
-    cell.detailTextLabel.text = detail;
-    
-    return cell;
+    return detail;
 }
 
 #pragma mark - UITableViewDelegate
@@ -324,7 +360,7 @@
     }
 }
 
-#pragma mark - Helper methods
+#pragma mark - Private Methods
 
 - (UIRefreshControl *)createRefreshControl
 {
@@ -351,6 +387,18 @@
             return @"Value1Cell";
         case UITableViewCellStyleValue2:
             return @"Value2Cell";
+    }
+}
+
+- (void)applyStringObject:(id)object toLabel:(UILabel *)label
+{
+    if ([object isKindOfClass:[NSString class]])
+    {
+        label.text = object;
+    }
+    else if ([object isKindOfClass:[NSAttributedString class]])
+    {
+        label.attributedText = object;
     }
 }
 

@@ -15,6 +15,20 @@ NSString* const ALPHADisplayItemDetailkey = @"kALPHADisplayItemDetailkey";
 
 #pragma mark - Getters and Setters
 
+- (void)setTitle:(id)title
+{
+    _title = title;
+    
+    if ([title isKindOfClass:[NSString class]])
+    {
+        self.titleText = title;
+    }
+    else if ([title isKindOfClass:[NSAttributedString class]])
+    {
+        self.attributedTitleText = title;
+    }
+}
+
 - (void)setIcon:(id)icon
 {
     if ([icon isKindOfClass:[UIImage class]] || [icon isKindOfClass:[NSString class]])

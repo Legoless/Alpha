@@ -54,6 +54,8 @@
 		385BB4AE1B1F36AF00443539 /* ALPHAJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 385BB4AD1B1F36AF00443539 /* ALPHAJSONSerializer.m */; };
 		385BB4B51B1F4A9600443539 /* ALPHAGenericConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 385BB4B41B1F4A9600443539 /* ALPHAGenericConverter.m */; };
 		385BB4B81B1F4DF500443539 /* ALPHAGenericModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 385BB4B71B1F4DF500443539 /* ALPHAGenericModel.m */; };
+		385BB4BC1B1F63AC00443539 /* ALPHAConsoleConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 385BB4BB1B1F63AC00443539 /* ALPHAConsoleConverter.m */; };
+		385BB4BF1B1F65D100443539 /* ALPHAConsoleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 385BB4BE1B1F65D100443539 /* ALPHAConsoleModel.m */; };
 		386992E51B18962D005B1BEE /* FLEXArgumentInputColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386991DC1B18962D005B1BEE /* FLEXArgumentInputColorView.m */; };
 		386992E61B18962D005B1BEE /* FLEXArgumentInputFontsPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386991DE1B18962D005B1BEE /* FLEXArgumentInputFontsPickerView.m */; };
 		386992E71B18962D005B1BEE /* FLEXArgumentInputFontView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386991E01B18962D005B1BEE /* FLEXArgumentInputFontView.m */; };
@@ -97,7 +99,6 @@
 		386993181B18962D005B1BEE /* FLEXEnvironmentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3869924D1B18962D005B1BEE /* FLEXEnvironmentTableViewController.m */; };
 		386993191B18962D005B1BEE /* FLEXBootstrapPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3869924F1B18962D005B1BEE /* FLEXBootstrapPlugin.m */; };
 		3869931A1B18962D005B1BEE /* FLEXBootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992521B18962D005B1BEE /* FLEXBootstrap.m */; };
-		3869931B1B18962D005B1BEE /* FLEXConsoleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992561B18962D005B1BEE /* FLEXConsoleTableViewController.m */; };
 		3869931C1B18962D005B1BEE /* ALPHAConsolePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992581B18962D005B1BEE /* ALPHAConsolePlugin.m */; };
 		3869931D1B18962D005B1BEE /* ALPHAConsoleCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 3869925B1B18962D005B1BEE /* ALPHAConsoleCollector.m */; };
 		3869931E1B18962D005B1BEE /* ALPHAConsoleLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 3869925D1B18962D005B1BEE /* ALPHAConsoleLog.m */; };
@@ -282,6 +283,10 @@
 		385BB4B41B1F4A9600443539 /* ALPHAGenericConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAGenericConverter.m; sourceTree = "<group>"; };
 		385BB4B61B1F4DF500443539 /* ALPHAGenericModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAGenericModel.h; sourceTree = "<group>"; };
 		385BB4B71B1F4DF500443539 /* ALPHAGenericModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAGenericModel.m; sourceTree = "<group>"; };
+		385BB4BA1B1F63AC00443539 /* ALPHAConsoleConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAConsoleConverter.h; sourceTree = "<group>"; };
+		385BB4BB1B1F63AC00443539 /* ALPHAConsoleConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAConsoleConverter.m; sourceTree = "<group>"; };
+		385BB4BD1B1F65D100443539 /* ALPHAConsoleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAConsoleModel.h; sourceTree = "<group>"; };
+		385BB4BE1B1F65D100443539 /* ALPHAConsoleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAConsoleModel.m; sourceTree = "<group>"; };
 		386991DB1B18962D005B1BEE /* FLEXArgumentInputColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXArgumentInputColorView.h; sourceTree = "<group>"; };
 		386991DC1B18962D005B1BEE /* FLEXArgumentInputColorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXArgumentInputColorView.m; sourceTree = "<group>"; };
 		386991DD1B18962D005B1BEE /* FLEXArgumentInputFontsPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXArgumentInputFontsPickerView.h; sourceTree = "<group>"; };
@@ -369,8 +374,6 @@
 		3869924F1B18962D005B1BEE /* FLEXBootstrapPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXBootstrapPlugin.m; sourceTree = "<group>"; };
 		386992511B18962D005B1BEE /* FLEXBootstrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXBootstrap.h; sourceTree = "<group>"; };
 		386992521B18962D005B1BEE /* FLEXBootstrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXBootstrap.m; sourceTree = "<group>"; };
-		386992551B18962D005B1BEE /* FLEXConsoleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXConsoleTableViewController.h; sourceTree = "<group>"; };
-		386992561B18962D005B1BEE /* FLEXConsoleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXConsoleTableViewController.m; sourceTree = "<group>"; };
 		386992571B18962D005B1BEE /* ALPHAConsolePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAConsolePlugin.h; sourceTree = "<group>"; };
 		386992581B18962D005B1BEE /* ALPHAConsolePlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAConsolePlugin.m; sourceTree = "<group>"; };
 		3869925A1B18962D005B1BEE /* ALPHAConsoleCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAConsoleCollector.h; sourceTree = "<group>"; };
@@ -792,6 +795,15 @@
 			path = Serialization;
 			sourceTree = "<group>";
 		};
+		385BB4B91B1F638600443539 /* Converters */ = {
+			isa = PBXGroup;
+			children = (
+				385BB4BA1B1F63AC00443539 /* ALPHAConsoleConverter.h */,
+				385BB4BB1B1F63AC00443539 /* ALPHAConsoleConverter.m */,
+			);
+			path = Converters;
+			sourceTree = "<group>";
+		};
 		386991D81B18962D005B1BEE /* Alpha */ = {
 			isa = PBXGroup;
 			children = (
@@ -990,21 +1002,12 @@
 		386992531B18962D005B1BEE /* Console */ = {
 			isa = PBXGroup;
 			children = (
-				386992541B18962D005B1BEE /* Controllers */,
+				385BB4B91B1F638600443539 /* Converters */,
 				386992571B18962D005B1BEE /* ALPHAConsolePlugin.h */,
 				386992581B18962D005B1BEE /* ALPHAConsolePlugin.m */,
 				386992591B18962D005B1BEE /* Model */,
 			);
 			path = Console;
-			sourceTree = "<group>";
-		};
-		386992541B18962D005B1BEE /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				386992551B18962D005B1BEE /* FLEXConsoleTableViewController.h */,
-				386992561B18962D005B1BEE /* FLEXConsoleTableViewController.m */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		386992591B18962D005B1BEE /* Model */ = {
@@ -1014,6 +1017,8 @@
 				3869925B1B18962D005B1BEE /* ALPHAConsoleCollector.m */,
 				3869925C1B18962D005B1BEE /* ALPHAConsoleLog.h */,
 				3869925D1B18962D005B1BEE /* ALPHAConsoleLog.m */,
+				385BB4BD1B1F65D100443539 /* ALPHAConsoleModel.h */,
+				385BB4BE1B1F65D100443539 /* ALPHAConsoleModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1589,6 +1594,7 @@
 				38353E891B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m in Sources */,
 				386992F01B18962D005B1BEE /* FLEXArgumentInputViewFactory.m in Sources */,
 				3869932D1B18962D005B1BEE /* FLEXNetworkResponse.m in Sources */,
+				385BB4BC1B1F63AC00443539 /* ALPHAConsoleConverter.m in Sources */,
 				386993461B18962D005B1BEE /* ALPHALightTheme.m in Sources */,
 				38353EE11B1DEDE9009E4ACF /* ALPHATableDataRendererViewController.m in Sources */,
 				3869931C1B18962D005B1BEE /* ALPHAConsolePlugin.m in Sources */,
@@ -1599,7 +1605,6 @@
 				386993181B18962D005B1BEE /* FLEXEnvironmentTableViewController.m in Sources */,
 				386993201B18962D005B1BEE /* ALPHAMainViewController.m in Sources */,
 				386993151B18962D005B1BEE /* FLEXSetExplorerViewController.m in Sources */,
-				3869931B1B18962D005B1BEE /* FLEXConsoleTableViewController.m in Sources */,
 				38353EB11B1DAEA1009E4ACF /* ALPHABlockActionItem.m in Sources */,
 				38353EDC1B1DECD5009E4ACF /* ALPHANotificationModel.m in Sources */,
 				535682A818F3670300BAAD62 /* AAPLActivityIndicatorViewController.m in Sources */,
@@ -1634,6 +1639,7 @@
 				535682B118F3670300BAAD62 /* AAPLImageViewController.m in Sources */,
 				3869931E1B18962D005B1BEE /* ALPHAConsoleLog.m in Sources */,
 				386992F51B18962D005B1BEE /* FLEXMethodCallingViewController.m in Sources */,
+				385BB4BF1B1F65D100443539 /* ALPHAConsoleModel.m in Sources */,
 				38353EE41B1DEE18009E4ACF /* ALPHANotificationConverter.m in Sources */,
 				535682A918F3670300BAAD62 /* AAPLAlertViewController.m in Sources */,
 				386992E81B18962D005B1BEE /* FLEXArgumentInputJSONObjectView.m in Sources */,

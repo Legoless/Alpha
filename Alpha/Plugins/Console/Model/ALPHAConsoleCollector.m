@@ -9,7 +9,7 @@
 #import <asl.h>
 
 #import "ALPHAConsoleLog.h"
-#import "ALPHAGenericModel.h"
+#import "ALPHAConsoleModel.h"
 
 #import "ALPHAConsoleCollector.h"
 
@@ -77,12 +77,8 @@ NSString *const ALPHAConsoleDataIdentifier = @"com.unifiedsense.alpha.data.conso
 
 - (ALPHAModel *)model
 {
-    ALPHAGenericModel* model = [[ALPHAGenericModel alloc] initWithIdentifier:ALPHAConsoleDataIdentifier];
-    model.data = @{
-                     @"title" : @"Console",
-                     @"items" : [self systemLogs],
-                     @"style" : @(UITableViewCellStyleSubtitle)
-    };
+    ALPHAConsoleModel* model = [[ALPHAConsoleModel alloc] initWithIdentifier:ALPHAConsoleDataIdentifier];
+    model.logs = [self systemLogs];
     
     return model;
 }
