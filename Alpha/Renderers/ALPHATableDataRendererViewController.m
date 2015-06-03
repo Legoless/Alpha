@@ -8,7 +8,7 @@
 
 #import "ALPHATableDataRendererViewController.h"
 
-#import "ALPHADataConverter.h"
+#import "ALPHAConverterManager.h"
 
 #import "ALPHAGlobalActions.h"
 #import "ALPHAScreenItem.h"
@@ -84,9 +84,9 @@
         // Use a data converter to get screen model
         //
         
-        if ([[ALPHADataConverter sharedConverter] canConvertModel:data])
+        if ([[ALPHAConverterManager sharedManager] canConvertModel:data])
         {
-            self.screenModel = [[ALPHADataConverter sharedConverter] screenModelForModel:data];
+            self.screenModel = [[ALPHAConverterManager sharedManager] screenModelForModel:data];
         }
     }
 }
@@ -185,7 +185,7 @@
     cell.detailTextLabel.adjustsFontSizeToFitWidth = YES;
     cell.detailTextLabel.adjustsLetterSpacingToFitWidth = YES;
     
-    if ([item isKindOfClass:[ALPHAActionItem class]])
+    if ([item isKindOfClass:[ALPHAActionItem class]] || [item model])
     {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
@@ -210,7 +210,10 @@
         cell.imageView.image = nil;
     }
     
-    [text appendString:item.title];
+    if (item.title.length)
+    {
+        [text appendString:item.title];
+    }
     
     cell.textLabel.text = text;
     

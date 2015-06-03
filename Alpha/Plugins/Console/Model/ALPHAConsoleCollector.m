@@ -9,6 +9,7 @@
 #import <asl.h>
 
 #import "ALPHAConsoleLog.h"
+#import "ALPHAGenericModel.h"
 
 #import "ALPHAConsoleCollector.h"
 
@@ -44,7 +45,7 @@ NSString *const ALPHAConsoleDataIdentifier = @"com.unifiedsense.alpha.data.conso
             
             val = asl_get(m, key);
             
-            NSString *string = val?[NSString stringWithUTF8String:val]:@"";
+            NSString *string = val ? [NSString stringWithUTF8String:val] : @"";
             [tmpDict setObject:string forKey:keyString];
         }
         
@@ -68,7 +69,7 @@ NSString *const ALPHAConsoleDataIdentifier = @"com.unifiedsense.alpha.data.conso
     {
         [self addDataIdentifier:ALPHAConsoleDataIdentifier];
         
-        [self redirectConsoleOutput];
+        //[self redirectConsoleOutput];
     }
     
     return self;
@@ -76,7 +77,14 @@ NSString *const ALPHAConsoleDataIdentifier = @"com.unifiedsense.alpha.data.conso
 
 - (ALPHAModel *)model
 {
-    return nil;
+    ALPHAGenericModel* model = [[ALPHAGenericModel alloc] initWithIdentifier:ALPHAConsoleDataIdentifier];
+    model.data = @{
+                     @"title" : @"Console",
+                     @"items" : [self systemLogs],
+                     @"style" : @(UITableViewCellStyleSubtitle)
+    };
+    
+    return model;
 }
 
 - (void)redirectConsoleOutput

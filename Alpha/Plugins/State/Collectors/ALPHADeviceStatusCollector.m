@@ -93,7 +93,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
                                    @"style" : @(UITableViewCellStyleValue1),
                                    @"title" : @"Application" };
     
-    ALPHAScreenSection* applicationSection = [ALPHAScreenSection dataSectionWithDictionary:sectionData];
+    ALPHAScreenSection* applicationSection = [ALPHAScreenSection screenSectionWithDictionary:sectionData];
     
     //
     // Usage section
@@ -110,7 +110,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
                      @"title" : @"Usage" };
 
     
-    ALPHAScreenSection* usageSection = [ALPHAScreenSection dataSectionWithDictionary:sectionData];
+    ALPHAScreenSection* usageSection = [ALPHAScreenSection screenSectionWithDictionary:sectionData];
     
     //
     // System section
@@ -125,7 +125,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
                      @"style" : @(UITableViewCellStyleValue1),
                      @"title" : @"System" };
     
-    ALPHAScreenSection* systemSection = [ALPHAScreenSection dataSectionWithDictionary:sectionData];
+    ALPHAScreenSection* systemSection = [ALPHAScreenSection screenSectionWithDictionary:sectionData];
     
     //
     // Locale section
@@ -162,7 +162,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
                      @"style" : @(UITableViewCellStyleValue1),
                      @"title" : @"Locale" };
     
-    ALPHAScreenSection* localeSection = [ALPHAScreenSection dataSectionWithDictionary:sectionData];
+    ALPHAScreenSection* localeSection = [ALPHAScreenSection screenSectionWithDictionary:sectionData];
 
     
     //
@@ -187,7 +187,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
                      @"title" : @"Device" };
     
     
-    ALPHAScreenSection* deviceSection = [ALPHAScreenSection dataSectionWithDictionary:sectionData];
+    ALPHAScreenSection* deviceSection = [ALPHAScreenSection screenSectionWithDictionary:sectionData];
     
     //
     // IP Addresses section
@@ -208,7 +208,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
                      @"title" : @"Local IP Addresses" };
     
     
-    ALPHAScreenSection* ipSection = [ALPHAScreenSection dataSectionWithDictionary:sectionData];
+    ALPHAScreenSection* ipSection = [ALPHAScreenSection screenSectionWithDictionary:sectionData];
     
     //
     // Network section
@@ -228,7 +228,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
                      @"title" : @"Network" };
     
     
-    ALPHAScreenSection* networkSection = [ALPHAScreenSection dataSectionWithDictionary:sectionData];
+    ALPHAScreenSection* networkSection = [ALPHAScreenSection screenSectionWithDictionary:sectionData];
     
     #warning Add other data from Core Telephony (phone number, etc, ...)
     
@@ -240,7 +240,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
                      @"title" : @"Cellular" };
     
     
-    ALPHAScreenSection* cellularSection = [ALPHAScreenSection dataSectionWithDictionary:sectionData];
+    ALPHAScreenSection* cellularSection = [ALPHAScreenSection screenSectionWithDictionary:sectionData];
     
     //
     // Data model

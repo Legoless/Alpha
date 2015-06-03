@@ -30,6 +30,6 @@
  *
  *  @return instantiated section
  */
-+ (instancetype)dataSectionWithDictionary:(NSDictionary *)dictionary;
++ (instancetype)screenSectionWithDictionary:(NSDictionary *)dictionary;
 
 @end

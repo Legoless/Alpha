@@ -11,7 +11,7 @@
 
 @implementation ALPHAScreenSection
 
-+ (instancetype)dataSectionWithDictionary:(NSDictionary *)dictionary
++ (instancetype)screenSectionWithDictionary:(NSDictionary *)dictionary
 {
     ALPHAScreenSection* section = [[ALPHAScreenSection alloc] init];
     
@@ -40,6 +40,13 @@
                         displayItem.title = keyItem;
                         displayItem.detail = [item[keyItem] description];
                     }
+                }
+                else
+                {
+                    displayItem = [[ALPHAScreenItem alloc] init];
+                    displayItem.title = NSStringFromClass([item class]);
+                    displayItem.detail = [item description];
+                    displayItem.model = item;
                 }
                 
                 if (displayItem)

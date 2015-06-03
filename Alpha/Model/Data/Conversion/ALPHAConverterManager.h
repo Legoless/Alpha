@@ -1,5 +1,5 @@
 //
-//  ALPHADataConverter.h
+//  ALPHAConverterManager.h
 //  Alpha
 //
 //  Created by Dal Rupnik on 02/06/15.
@@ -12,11 +12,11 @@
  *  Object can convert Alpha Data Model to Screen Model that can be convertred using one of
  *  the child data converter sources.
  */
-@interface ALPHADataConverter : NSObject <ALPHADataConverterSource>
+@interface ALPHAConverterManager : NSObject <ALPHADataConverterSource>
 
 @property (nonatomic, readonly) NSArray *converterSources;
 
-+ (instancetype)sharedConverter;
++ (instancetype)sharedManager;
 
 - (void)registerConverterSource:(id<ALPHADataConverterSource>)converterSource;
 

@@ -25,6 +25,8 @@
         menuAction.dataIdentifier = ALPHAConsoleDataIdentifier;
         
         [self registerAction:menuAction];
+        
+        [self registerCollector:[ALPHAConsoleCollector new]];
     }
     
     return self;

@@ -1,5 +1,5 @@
 //
-//  ALPHADataConverter.m
+//  ALPHAConverterManager.m
 //  Alpha
 //
 //  Created by Dal Rupnik on 02/06/15.
@@ -8,15 +8,21 @@
 
 #import <objc/runtime.h>
 
-#import "ALPHADataConverter.h"
+#import "ALPHAConverterManager.h"
+#import "ALPHAGenericConverter.h"
 
-@interface ALPHADataConverter ()
+@interface ALPHAConverterManager ()
 
 @property (nonatomic, strong) NSMutableOrderedSet *baseConverters;
 
+/*!
+ *  We keep a separate instance of generic converter which we use if we cannot find any other converter
+ */
+@property (nonatomic, strong) ALPHAGenericConverter *genericConverter;
+
 @end
 
-@implementation ALPHADataConverter
+@implementation ALPHAConverterManager
 
 - (NSMutableOrderedSet *)baseConverters
 {
@@ -28,19 +34,29 @@
     return _baseConverters;
 }
 
+- (ALPHAGenericConverter *)genericConverter
+{
+    if (!_genericConverter)
+    {
+        _genericConverter = [[ALPHAGenericConverter alloc] init];
+    }
+    
+    return _genericConverter;
+}
+
 - (NSArray *)converterSources
 {
     return self.baseConverters.array;
 }
 
-+ (instancetype)sharedConverter
++ (instancetype)sharedManager
 {
-    static ALPHADataConverter *sharedConverter = nil;
+    static ALPHAConverterManager *sharedManager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedConverter = [[[self class] alloc] init];
+        sharedManager = [[[self class] alloc] init];
     });
-    return sharedConverter;
+    return sharedManager;
 }
 
 - (instancetype)init
@@ -87,7 +103,7 @@
         }
     }
     
-    return NO;
+    return [self.genericConverter canConvertModel:model];
 }
 
 - (ALPHAScreenModel *)screenModelForModel:(ALPHAModel *)model
@@ -100,7 +116,7 @@
         }
     }
     
-    return nil;
+    return [self.genericConverter screenModelForModel:model];
 }
 
 #pragma mark - Private methods
@@ -117,10 +133,11 @@
         classes = (__unsafe_unretained Class *)malloc(sizeof(Class) * numClasses);
         numClasses = objc_getClassList(classes, numClasses);
         
-        for (int index = 0; index < numClasses; index++) {
+        for (int index = 0; index < numClasses; index++)
+        {
             Class nextClass = classes[index];
             
-            if (class_conformsToProtocol(nextClass, @protocol(ALPHADataConverterSource)) && nextClass != [self class])
+            if (class_conformsToProtocol(nextClass, @protocol(ALPHADataConverterSource)) && nextClass != [self class] && nextClass != [ALPHAGenericConverter class])
             {
                 [sourceClasses addObject:nextClass];
             }

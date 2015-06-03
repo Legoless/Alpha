@@ -40,7 +40,7 @@
                                    @"style" : @(UITableViewCellStyleValue1),
                                    @"title" : @"Settings" };
     
-    [sections addObject:[ALPHAScreenSection dataSectionWithDictionary:sectionData]];
+    [sections addObject:[ALPHAScreenSection screenSectionWithDictionary:sectionData]];
     
     //
     // Remote notification section
@@ -54,7 +54,7 @@
                          @"title" : @"Remote" };
         
         
-        [sections addObject:[ALPHAScreenSection dataSectionWithDictionary:sectionData]];
+        [sections addObject:[ALPHAScreenSection screenSectionWithDictionary:sectionData]];
     }
     
     
@@ -71,7 +71,7 @@
                          @"title" : @"Local Fired" };
         
         
-        [sections addObject:[ALPHAScreenSection dataSectionWithDictionary:sectionData]];
+        [sections addObject:[ALPHAScreenSection screenSectionWithDictionary:sectionData]];
     }
     
     //
@@ -89,7 +89,7 @@
                          @"title" : @"Local Scheduled" };
         
         
-        [sections addObject:[ALPHAScreenSection dataSectionWithDictionary:sectionData]];
+        [sections addObject:[ALPHAScreenSection screenSectionWithDictionary:sectionData]];
     }
     
     //

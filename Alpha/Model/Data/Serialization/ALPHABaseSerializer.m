@@ -72,11 +72,17 @@
 
 - (id)serializeCustomObject:(id)object
 {
+    if (NSStringFromClass([object class]) == NULL)
+    {
+        return object;
+    }
+    
     if ([self classIsFinal:[object class]])
     {
         return [object copy];
     }
-    else if ([object isKindOfClass:[UIImage class]])
+    
+    if ([object isKindOfClass:[UIImage class]])
     {
         return UIImagePNGRepresentation(object);
     }
@@ -168,7 +174,7 @@
     
     id newObject = [[objectClass alloc] init];
     
-    NSDictionary *mapDictionary = [newObject propertyDictionaryOfClass:objectClass];
+    NSDictionary *mapDictionary = [self propertyDictionaryOfClass:objectClass];
     
     for (NSString *key in [object allKeys])
     {
@@ -188,8 +194,15 @@
         
         NSString *propertyType = [self classOfPropertyNamed:propertyName inClass:[newObject class]];
         
+        //
+        // Handlge property values
+        //
+        if (NSClassFromString(propertyType) == NULL)
+        {
+            [newObject setValue:[object objectForKey:key] forKey:propertyName];
+        }
         // If it's an array, check for each object in array -> make into object/id
-        if ([[object objectForKey:key] isKindOfClass:[NSArray class]])
+        else if ([[object objectForKey:key] isKindOfClass:[NSArray class]])
         {
             NSArray *nestedArray = [object objectForKey:key];
             
