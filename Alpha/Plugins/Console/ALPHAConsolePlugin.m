@@ -1,16 +1,17 @@
 //
-//  FLEXConsolePlugin.m
-//  UICatalog
+//  ALPHAConsolePlugin.m
+//  Alpha
 //
 //  Created by Dal Rupnik on 25/11/14.
-//  Copyright (c) 2014 f. All rights reserved.
+//  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
 #import "ALPHAMenuActionItem.h"
 
-#import "FLEXConsolePlugin.h"
+#import "ALPHAConsoleCollector.h"
+#import "ALPHAConsolePlugin.h"
 
-@implementation FLEXConsolePlugin
+@implementation ALPHAConsolePlugin
 
 - (instancetype)init
 {
@@ -21,7 +22,7 @@
         ALPHAMenuActionItem* menuAction = [ALPHAMenuActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.console.main"];
         menuAction.icon = @"⚠️";
         menuAction.title = @"Console";
-        menuAction.viewControllerClass = @"FLEXConsoleTableViewController";
+        menuAction.dataIdentifier = ALPHAConsoleDataIdentifier;
         
         [self registerAction:menuAction];
     }

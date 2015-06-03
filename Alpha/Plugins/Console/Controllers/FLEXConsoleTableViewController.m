@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 f. All rights reserved.
 //
 
-#import "FLEXConsoleInformationCollector.h"
+#import "ALPHAConsoleCollector.h"
 #import "FLEXObjectExplorerFactory.h"
 #import "FLEXObjectExplorerViewController.h"
-#import "FLEXConsoleLog.h"
+#import "ALPHAConsoleLog.h"
 #import "FLEXUtility.h"
 
 #import "FLEXConsoleTableViewController.h"
@@ -45,7 +45,7 @@
 
 - (NSAttributedString *)titleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    FLEXConsoleLog *consoleLog = self.logs[indexPath.row];
+    ALPHAConsoleLog *consoleLog = self.logs[indexPath.row];
     
     NSString *string = [NSString stringWithFormat:@"● %@", consoleLog.message];
     
@@ -82,7 +82,7 @@
 
 - (NSAttributedString *)subtitleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    FLEXConsoleLog *consoleLog = self.logs[indexPath.row];
+    ALPHAConsoleLog *consoleLog = self.logs[indexPath.row];
     
     NSMutableString *detailString = [[NSMutableString alloc] init];
     
@@ -119,7 +119,7 @@
 
 - (UIViewController *)viewControllerToPushForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    FLEXConsoleLog *consoleLog = self.logs[indexPath.row];
+    ALPHAConsoleLog *consoleLog = self.logs[indexPath.row];
     
     return [FLEXObjectExplorerFactory explorerViewControllerForObject:consoleLog];
 }

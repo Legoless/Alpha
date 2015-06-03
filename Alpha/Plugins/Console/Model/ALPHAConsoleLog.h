@@ -1,14 +1,14 @@
 //
-//  FLEXConsoleLog.h
-//  UICatalog
+//  ALPHAConsoleLog.h
+//  Alpha
 //
 //  Created by Dal Rupnik on 11/11/14.
-//  Copyright (c) 2014 f. All rights reserved.
+//  Copyright (c) 2014 Unifed Sense. All rights reserved.
 //
 
 #import "ALPHASerializableItem.h"
 
-@interface FLEXConsoleLog : NSObject <ALPHASerializableItem>
+@interface ALPHAConsoleLog : NSObject <ALPHASerializableItem>
 
 @property (nonatomic, copy) NSNumber *ASLMessageID;
 @property (nonatomic, copy) NSString *facility;
