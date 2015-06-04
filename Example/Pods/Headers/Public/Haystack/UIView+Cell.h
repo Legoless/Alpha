@@ -1,13 +1,1 @@
-//
-//  UIView+Cell.h
-//
-
-@import UIKit;
-
-@interface UIView (Cell)
-
-- (UITableViewCell *)parentTableViewCell;
-
-- (UICollectionViewCell *)parentCollectionViewCell;
-
-@end
+../../../Haystack/SDK/Categories/UIView+Cell/UIView+Cell.h
