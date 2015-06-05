@@ -7,8 +7,9 @@
 //
 
 #import "ALPHASerializableItem.h"
+#import "ALPHAIdentifiableItem.h"
 
-@interface ALPHAModel : NSObject <ALPHASerializableItem>
+@interface ALPHAModel : NSObject <ALPHASerializableItem, ALPHAIdentifiableItem>
 
 @property (nonatomic, copy) NSString* identifier;
 

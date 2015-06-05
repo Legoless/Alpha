@@ -12,7 +12,7 @@
 #import "UIDevice+ALPHAStatus.h"
 #import "ALPHADeviceStatusCollector.h"
 #import "ALPHAModel.h"
-#import "ALPHAScreenModel.h"
+#import "ALPHATableScreenModel.h"
 
 NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.status";
 
@@ -246,7 +246,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     // Data model
     //
     
-    ALPHAScreenModel* dataModel = [[ALPHAScreenModel alloc] initWithIdentifier:ALPHADeviceStatusDataIdentifier];
+    ALPHATableScreenModel* dataModel = [[ALPHATableScreenModel alloc] initWithIdentifier:ALPHADeviceStatusDataIdentifier];
     dataModel.title = @"Status";
     dataModel.sections = @[ applicationSection, usageSection, systemSection, localeSection, deviceSection, ipSection, networkSection, cellularSection ];
     

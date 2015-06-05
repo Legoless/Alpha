@@ -35,4 +35,9 @@
     
 }
 
+- (void)fileWithURL:(NSURL *)url completion:(ALPHADataSourceCompletion)completion
+{
+    
+}
+
 @end

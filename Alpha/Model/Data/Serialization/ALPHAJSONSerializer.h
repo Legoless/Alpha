@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHABaseSerializer.h"
+#import "ALPHAObjectSerializer.h"
 
-@interface ALPHAJSONSerializer : ALPHABaseSerializer
+@interface ALPHAJSONSerializer : ALPHAObjectSerializer
 
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
 

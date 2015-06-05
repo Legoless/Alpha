@@ -9,6 +9,7 @@
 #import "ALPHATableDataRendererViewController.h"
 
 #import "ALPHAConverterManager.h"
+#import "ALPHASerializerManager.h"
 
 #import "ALPHAGlobalActionIdentifiers.h"
 #import "ALPHAScreenItem.h"
@@ -18,13 +19,12 @@
 #import "ALPHAManager.h"
 #import "ALPHAModel.h"
 #import "ALPHAScreenModel.h"
-
-#import "FLEXObjectExplorerFactory.h"
+#import "ALPHATableScreenModel.h"
 
 @interface ALPHATableDataRendererViewController ()
 
 @property (nonatomic, strong) NSTimer *refreshTimer;
-@property (nonatomic, strong) ALPHAScreenModel* screenModel;
+
 
 @end
 
@@ -71,13 +71,18 @@
     [self.tableView reloadData];
 }
 
-- (void)setData:(id<ALPHASerializableItem>)data
+- (ALPHATableScreenModel *)tableScreenModel
 {
-    _data = data;
+    return (ALPHATableScreenModel *)self.screenModel;
+}
+
+- (void)setObject:(id<ALPHASerializableItem>)object
+{
+    _object = object;
     
-    if ([data isKindOfClass:[ALPHAScreenModel class]])
+    if ([object isKindOfClass:[ALPHAScreenModel class]])
     {
-        self.screenModel = data;
+        self.screenModel = (ALPHAScreenModel *)object;
     }
     else
     {
@@ -85,9 +90,9 @@
         // Use a data converter to get screen model
         //
         
-        if ([[ALPHAConverterManager sharedManager] canConvertModel:data])
+        if ([[ALPHAConverterManager sharedManager] canConvertObject:object])
         {
-            self.screenModel = [[ALPHAConverterManager sharedManager] screenModelForModel:data];
+            self.screenModel = [[ALPHAConverterManager sharedManager] screenModelForObject:object];
         }
     }
 }
@@ -106,7 +111,7 @@
 {
     [super viewWillAppear:animated];
     
-    if (!self.data)
+    if (!self.object)
     {
         [self refresh];
     }
@@ -136,7 +141,7 @@
     [self.refreshControl beginRefreshing];
     
     [self.source refreshWithIdentifier:self.dataIdentifier completion:^(ALPHAModel *dataModel, NSError *error) {
-        self.data = dataModel;
+        self.object = dataModel;
         
         [self.refreshControl endRefreshing];
         
@@ -150,17 +155,17 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return self.screenModel.sections.count;
+    return self.tableScreenModel.sections.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[self.screenModel.sections[section] items] count];
+    return [[self.tableScreenModel.sections[section] items] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ALPHAScreenItem *item = [self.screenModel.sections[indexPath.section] items][indexPath.row];
+    ALPHAScreenItem *item = [self.tableScreenModel.sections[indexPath.section] items][indexPath.row];
     
     NSString *cellIdentifier = [self cellIdentifierForDefaultStyle:item.style];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
@@ -204,7 +209,7 @@
     {
         cell.accessoryType = item.accessory;
     }
-    else if ( ([item isKindOfClass:[ALPHAActionItem class]] || [item model]) && ![item isKindOfClass:[ALPHASelectorActionItem class]])
+    else if ( ([item isKindOfClass:[ALPHAActionItem class]] || [item object]) && ![item isKindOfClass:[ALPHASelectorActionItem class]])
     {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
@@ -312,7 +317,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return [self.screenModel.sections[section] title];
+    return [self.tableScreenModel.sections[section] title];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -323,30 +328,11 @@
     // Action mechanic
     //
     
-    id item = [self.screenModel.sections[indexPath.section] items][indexPath.row];
+    ALPHAScreenItem *item = [self.tableScreenModel.sections[indexPath.section] items][indexPath.row];
     
-    if ([item isKindOfClass:[ALPHAMenuActionItem class]])
+    if ([item isKindOfClass:[ALPHABlockActionItem class]])
     {
-        ALPHAMenuActionItem* menuItem = item;
-        
-        UIViewController* controller = menuItem.viewControllerInstance;
-        
-        if (controller)
-        {
-            if ([controller conformsToProtocol:@protocol(ALPHADataRenderer)])
-            {
-                UIViewController<ALPHADataRenderer>* renderer = (UIViewController<ALPHADataRenderer>*)controller;
-                
-                // Send data source
-                renderer.source = self.source;
-            }
-            
-            [self.navigationController pushViewController:controller animated:YES];
-        }
-    }
-    else if ([item isKindOfClass:[ALPHABlockActionItem class]])
-    {
-        ALPHABlockActionItem* blockItem = item;
+        ALPHABlockActionItem* blockItem = (ALPHABlockActionItem *)item;
         
         if (blockItem.actionBlock)
         {
@@ -355,21 +341,93 @@
     }
     else if ([item isKindOfClass:[ALPHASelectorActionItem class]])
     {
-        [self.source performAction:item completion:^(ALPHAModel *model, NSError *error) {
+        ALPHASelectorActionItem* selectorAction = (ALPHASelectorActionItem *)item;
+        
+        [self.source performAction:selectorAction completion:^(ALPHAModel *model, NSError *error) {
             if (!error)
             {
                 [self refresh];
             }
         }];
     }
-    else if ([item model])
+    else if ([[item file] isKindOfClass:[NSURL class]] && [item fileClass])
+    {
+        [self.source fileWithURL:[item file] completion:^(NSData *data, NSError *error)
+        {
+            id object = [[ALPHASerializerManager sharedManager].serializer deserializeObject:data toClass:[item fileClass]];
+            
+            [self pushObject:object];
+        }];
+    }
+    else
     {
         //
         // For data models that send data directly, we will display object view controller explorer
         //
     
+        [self pushObject:item];
+    }
+}
+
+/*!
+ *  Pushes object by creating a new view controller, 
+ *
+ *  @param object to push
+ */
+- (void)pushObject:(id)object
+{
+    id controller = nil;
+    
+    //
+    // This is the model we are displaying, we will not display screen items as models
+    //
+    id modelObject = nil;
+    
+    if ([object isKindOfClass:[ALPHAMenuActionItem class]])
+    {
+        ALPHAMenuActionItem* menuItem = (ALPHAMenuActionItem *)object;
         
-        UIViewController* controller = [FLEXObjectExplorerFactory explorerViewControllerForObject:[item model]];
+        controller = menuItem.viewControllerInstance;
+        
+        if ([controller conformsToProtocol:@protocol(ALPHADataRenderer)])
+        {
+            UIViewController<ALPHADataRenderer>* renderer = (UIViewController<ALPHADataRenderer>*)controller;
+            
+            // Send data source
+            renderer.source = self.source;
+        }
+    }
+    else if ([object isKindOfClass:[ALPHAScreenItem class]])
+    {
+        modelObject = [object model];
+        
+    }
+    else
+    {
+        modelObject = object;
+    }
+    
+    //
+    // Handle custom objects
+    //
+    
+    if (modelObject && !controller)
+    {
+        Class class = [[ALPHAConverterManager sharedManager] renderClassForObject:modelObject];
+        
+        if (class)
+        {
+            controller = [[class alloc] init];
+            
+            if ([controller respondsToSelector:@selector(setObject:)])
+            {
+                [controller setObject:modelObject];
+            }
+        }
+    }
+    
+    if (controller)
+    {
         [self.navigationController pushViewController:controller animated:YES];
     }
 }

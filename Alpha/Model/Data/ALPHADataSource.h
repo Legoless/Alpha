@@ -9,7 +9,7 @@
 #import "ALPHAModel.h"
 #import "ALPHAIdentifiableItem.h"
 
-typedef void (^ALPHADataSourceCompletion)(ALPHAModel *model, NSError *error);
+typedef void (^ALPHADataSourceCompletion)(id model, NSError *error);
 
 @protocol ALPHADataSource <NSObject>
 
@@ -28,6 +28,14 @@ typedef void (^ALPHADataSourceCompletion)(ALPHAModel *model, NSError *error);
  *  @param completion  called upon completion
  */
 - (void)performAction:(id<ALPHAIdentifiableItem>)action completion:(ALPHADataSourceCompletion)completion;
+
+/*!
+ *  Retrieves file with URL (to transfer files)
+ *
+ *  @param url        url
+ *  @param completion called upon completion
+ */
+- (void)fileWithURL:(NSURL *)url completion:(ALPHADataSourceCompletion)completion;
 
 @optional
 

@@ -1,5 +1,5 @@
 //
-//  ALPHABaseSerializer.h
+//  ALPHAObjectSerializer.h
 //  Alpha
 //
 //  Created by Dal Rupnik on 03/06/15.
@@ -7,14 +7,21 @@
 //
 
 #import "ALPHASerializer.h"
+#import "ALPHATypeSerializer.h"
 
-@interface ALPHABaseSerializer : NSObject <ALPHASerializer>
+@interface ALPHAObjectSerializer : NSObject <ALPHASerializer>
 
-#pragma mark - ALPHASerializer
+/*!
+ *  Array holds pointers to specific data serializers, such as UIImage, Video, etc.
+ */
+@property (nonatomic, readonly) NSArray* typeSerializers;
 
-- (id)serializeObject:(id)object;
-
-- (id)deserializeObject:(id)object toClass:(Class)objectClass;
+/*!
+ *  Adds new type serializer
+ *
+ *  @param typeSerializer to add
+ */
+- (void)addTypeSerializer:(id<ALPHATypeSerializer>)typeSerializer;
 
 #pragma mark - Custom object serialization
 

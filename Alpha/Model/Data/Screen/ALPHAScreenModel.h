@@ -38,9 +38,4 @@
  */
 @property (nonatomic, strong) ALPHAActionItem *rightAction;
 
-/*!
- *  Array of display section objects objects
- */
-@property (nonatomic, copy) NSArray *sections;
-
 @end

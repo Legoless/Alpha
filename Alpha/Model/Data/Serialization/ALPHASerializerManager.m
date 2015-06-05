@@ -9,6 +9,9 @@
 #import "ALPHASerializerManager.h"
 #import "ALPHAJSONSerializer.h"
 
+#import "ALPHAImageSerializer.h"
+#import "ALPHAURLSerializer.h"
+
 @implementation ALPHASerializerManager
 
 #pragma mark - Singleton
@@ -29,7 +32,12 @@
     
     if (self)
     {
-        self.serializer = [[ALPHAJSONSerializer alloc] init];
+        ALPHAObjectSerializer* serializer = [[ALPHAJSONSerializer alloc] init];
+        
+        [serializer addTypeSerializer:[ALPHAImageSerializer new]];
+        [serializer addTypeSerializer:[ALPHAURLSerializer new]];
+        
+        self.serializer = serializer;
     }
     
     return self;

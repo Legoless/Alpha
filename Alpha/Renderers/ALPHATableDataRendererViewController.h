@@ -8,13 +8,18 @@
 
 #import "ALPHADataRenderer.h"
 #import "ALPHAViewController.h"
+#import "ALPHAScreenModel.h"
 
 @interface ALPHATableDataRendererViewController : UITableViewController <ALPHADataRenderer>
 
 @property (nonatomic, weak) id <ALPHAViewControllerDelegate> delegate;
 
+#pragma mark - ALPHADataRenderer
+
+@property (nonatomic, strong) ALPHAScreenModel* screenModel;
+
 @property (nonatomic, copy) NSString *dataIdentifier;
 @property (nonatomic, strong) id<ALPHADataSource> source;
-@property (nonatomic, strong) id<ALPHASerializableItem> data;
+@property (nonatomic, strong) id<ALPHASerializableItem> object;
 
 @end

@@ -65,7 +65,7 @@
     return [self.identifiers containsObject:identifier];
 }
 
-- (void)collectDataForIdentifier:(NSString *)identifier completion:(void (^)(ALPHAModel *, NSError *))completion
+- (void)collectDataForIdentifier:(NSString *)identifier completion:(void (^)(id, NSError *))completion
 {
     if (completion)
     {
@@ -109,11 +109,11 @@
             
             if (strcmp(retType, @encode(id)) == 0)
             {
-                object = [self performSelector:selector withObject:selectorAction.model];
+                object = [self performSelector:selector withObject:selectorAction.object];
             }
             else if (strcmp(retType, @encode(void)) == 0)
             {
-                [self performSelector:selector withObject:selectorAction.model];
+                [self performSelector:selector withObject:selectorAction.object];
             }
             
             #pragma clang diagnostic pop

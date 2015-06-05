@@ -34,6 +34,7 @@
  *   - double    -> (NSNumber)
  *   - BOOL      -> (NSNumber)
  *   - UIImage   -> (NSData PNG)
+ *   - NSURL     -> (NSString)
  *   - Enums     -> (NSNumber)
  *   - Bitmasks  -> (NSNumber)
  *

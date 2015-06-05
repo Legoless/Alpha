@@ -10,17 +10,18 @@
 #import "ALPHAConsoleModel.h"
 #import "ALPHAConsoleLog.h"
 #import "ALPHAManager.h"
+#import "ALPHATableScreenModel.h"
 
 @implementation ALPHAConsoleConverter
 
-- (BOOL)canConvertModel:(ALPHAModel *)model
+- (BOOL)canConvertObject:(ALPHAModel *)model
 {
     return [model isKindOfClass:[ALPHAConsoleModel class]];
 }
 
-- (ALPHAScreenModel *)screenModelForModel:(ALPHAConsoleModel *)model
+- (ALPHAScreenModel *)screenModelForObject:(ALPHAConsoleModel *)model
 {
-    ALPHAScreenModel* screenModel = [[ALPHAScreenModel alloc] initWithIdentifier:model.identifier];
+    ALPHATableScreenModel* screenModel = [[ALPHATableScreenModel alloc] initWithIdentifier:model.identifier];
     screenModel.title = @"Console";
     
     ALPHAScreenSection* section = [[ALPHAScreenSection alloc] init];
@@ -30,7 +31,7 @@
     for (ALPHAConsoleLog* log in model.logs)
     {
         ALPHAScreenItem* item = [[ALPHAScreenItem alloc] init];
-        item.model = log;
+        item.object = log;
         item.attributedTitleText = [self titleForLog:log];
         item.attributedDetailText = [self subtitleForLog:log];
         item.style = UITableViewCellStyleSubtitle;

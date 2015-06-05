@@ -1,5 +1,5 @@
 //
-//  ALPHABaseSerializer.m
+//  ALPHAObjectSerializer.m
 //  Alpha
 //
 //  Created by Dal Rupnik on 03/06/15.
@@ -39,11 +39,37 @@
 
 #import <objc/runtime.h>
 
-#import "ALPHABaseSerializer.h"
+#import "ALPHAObjectSerializer.h"
 
-@implementation ALPHABaseSerializer
+@interface ALPHAObjectSerializer ()
+
+@property (nonatomic, strong) NSMutableArray *baseTypeSerializers;
+
+@end
+
+@implementation ALPHAObjectSerializer
 
 #pragma mark - Getters and Setters
+
+- (NSArray *)typeSerializers
+{
+    return self.baseTypeSerializers.copy;
+}
+
+- (NSMutableArray *)baseTypeSerializers
+{
+    if (!_baseTypeSerializers)
+    {
+        _baseTypeSerializers = [NSMutableArray array];
+    }
+    
+    return _baseTypeSerializers;
+}
+
+- (void)addTypeSerializer:(id<ALPHATypeSerializer>)typeSerializer
+{
+    [self.baseTypeSerializers addObject:typeSerializer];
+}
 
 #pragma mark - Object -> Dictionary serialization
 
@@ -82,9 +108,16 @@
         return [object copy];
     }
     
-    if ([object isKindOfClass:[UIImage class]])
+    //
+    // Loop through type serializers
+    //
+    
+    for (id<ALPHATypeSerializer, ALPHASerializer> serializer in self.baseTypeSerializers)
     {
-        return UIImagePNGRepresentation(object);
+        if ([[object class] isKindOfClass:serializer.type])
+        {
+            return [serializer serializeObject:object];
+        }
     }
     
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
@@ -162,10 +195,18 @@
     {
         return [object copy];
     }
-    // Just return the type directly
-    else if ([object isKindOfClass:[NSData class]] && objectClass == [UIImage class])
+    
+    for (id<ALPHATypeSerializer, ALPHASerializer> serializer in self.baseTypeSerializers)
     {
-        return [UIImage imageWithData:object];
+        if (objectClass == serializer.type || [objectClass isSubclassOfClass:serializer.type])
+        {
+            id deserialized = [serializer deserializeObject:object toClass:objectClass];
+            
+            if (deserialized)
+            {
+                return deserialized;
+            }
+        }
     }
     
     //

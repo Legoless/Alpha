@@ -7,13 +7,9 @@
 //
 
 #import "ALPHADataSource.h"
+#import "ALPHAScreenModel.h"
 
 @protocol ALPHADataRenderer <NSObject>
-
-/*!
- *  Current identifier to load, if data not available
- */
-@property (nonatomic, copy) NSString *dataIdentifier;
 
 /*!
  *  Data source, where data model is requested from
@@ -23,6 +19,18 @@
 /*!
  *  Data model if available
  */
-@property (nonatomic, strong) id<ALPHASerializableItem> data;
+@property (nonatomic, strong) id<ALPHASerializableItem> object;
+
+/*!
+ *  Screen model when available
+ */
+@property (nonatomic, strong) ALPHAScreenModel* screenModel;
+
+@optional
+
+/*!
+ *  Current identifier to load, if data not available
+ */
+@property (nonatomic, copy) NSString *dataIdentifier;
 
 @end

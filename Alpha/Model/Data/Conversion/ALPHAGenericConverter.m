@@ -6,39 +6,106 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
+#import <objc/runtime.h>
 #import <Haystack/Haystack.h>
+
+#import "FLEXObjectExplorerViewController.h"
+#import "FLEXArrayExplorerViewController.h"
+#import "FLEXSetExplorerViewController.h"
+#import "FLEXDictionaryExplorerViewController.h"
+#import "FLEXDefaultsExplorerViewController.h"
+#import "FLEXViewControllerExplorerViewController.h"
+#import "FLEXViewExplorerViewController.h"
+#import "FLEXImageExplorerViewController.h"
+#import "FLEXImagePreviewViewController.h"
+#import "FLEXClassExplorerViewController.h"
 
 #import "ALPHAGenericConverter.h"
 #import "ALPHAGenericModel.h"
+#import "ALPHATableScreenModel.h"
+#import "ALPHATableDataRendererViewController.h"
 
 @implementation ALPHAGenericConverter
 
-- (BOOL)canConvertModel:(ALPHAModel *)model
+#pragma mark - ALPHADataConverterSource
+
+- (BOOL)canConvertObject:(id)object
 {
-    return [model isKindOfClass:[ALPHAModel class]];
+    return [object isKindOfClass:[ALPHAModel class]] || [object isKindOfClass:[UIImage class]];
 }
 
-- (ALPHAScreenModel *)screenModelForModel:(ALPHAModel *)model
+- (ALPHAScreenModel *)screenModelForObject:(id)object
 {
     //
     // Heuristics to use data property in generic model
     //
     
-    if ([model isKindOfClass:[ALPHAGenericModel class]])
+    if ([object isKindOfClass:[ALPHAGenericModel class]])
     {
-        return [self convertGenericModel:(ALPHAGenericModel *)model];
+        return [self convertGenericModel:(ALPHAGenericModel *)object];
     }
-    
+    else if ([object isKindOfClass:[ALPHAModel class]])
+    {
+        return [self convertCustomModel:object];
+    }
     //
     // Attempt to convert to screen model using class info
     //
     
-    return [self convertCustomModel:model];
+    return [self convertCustomObject:object];
 }
+
+- (Class)renderClassForObject:(id)object
+{
+    if ([object isKindOfClass:[ALPHAModel class]])
+    {
+        return [ALPHATableDataRendererViewController class];
+    }
+    //
+    // Map custom objects
+    //
+    
+    NSDictionary *explorerSubclassesForObjectTypeStrings = @{
+         NSStringFromClass([NSArray class])          : [FLEXArrayExplorerViewController class],
+         NSStringFromClass([NSSet class])            : [FLEXSetExplorerViewController class],
+         NSStringFromClass([NSDictionary class])     : [FLEXDictionaryExplorerViewController class],
+         NSStringFromClass([NSUserDefaults class])   : [FLEXDefaultsExplorerViewController class],
+         NSStringFromClass([UIViewController class]) : [FLEXViewControllerExplorerViewController class],
+         NSStringFromClass([UIView class])           : [FLEXViewExplorerViewController class],
+         NSStringFromClass([UIImage class])          : [FLEXImageExplorerViewController class]
+    };
+
+    Class explorerClass = nil;
+    
+    BOOL objectIsClass = class_isMetaClass(object_getClass(object));
+    if (objectIsClass)
+    {
+        explorerClass = [FLEXClassExplorerViewController class];
+    }
+    else
+    {
+        explorerClass = [FLEXObjectExplorerViewController class];
+        
+        for (NSString *objectTypeString in explorerSubclassesForObjectTypeStrings)
+        {
+            Class objectClass = NSClassFromString(objectTypeString);
+            
+            if ([object isKindOfClass:objectClass])
+            {
+                explorerClass = [explorerSubclassesForObjectTypeStrings objectForKey:objectTypeString];
+                break;
+            }
+        }
+    }
+    
+    return explorerClass;
+}
+
+#pragma mark - Generic model conversion
 
 - (ALPHAScreenModel *)convertGenericModel:(ALPHAGenericModel *)model
 {
-    ALPHAScreenModel* screenModel = [[ALPHAScreenModel alloc] initWithIdentifier:model.identifier];
+    ALPHATableScreenModel* screenModel = [[ALPHATableScreenModel alloc] initWithIdentifier:model.identifier];
     screenModel.title = model.data[@"title"];
     
     if ([model.data[@"items"] isKindOfClass:[NSArray class]])
@@ -85,7 +152,7 @@
     // other properties will be placed in a single section
     //
     
-    ALPHAScreenModel* screenModel = [[ALPHAScreenModel alloc] initWithIdentifier:model.identifier];
+    ALPHATableScreenModel* screenModel = [[ALPHATableScreenModel alloc] initWithIdentifier:model.identifier];
     screenModel.title = [self cleanCodeIdentifierString:NSStringFromClass([model class])];
     
     ALPHAScreenSection* mainSection = [[ALPHAScreenSection alloc] init];
@@ -107,7 +174,7 @@
             for (id item in [model valueForKey:propertyName])
             {
                 ALPHAScreenItem* screenItem = [[ALPHAScreenItem alloc] init];
-                screenItem.model = item;
+                screenItem.object = item;
                 
                 screenItem.title = [self cleanCodeIdentifierString:NSStringFromClass([item class])];
                 screenItem.detail = [item description];
@@ -122,7 +189,7 @@
         else
         {
             ALPHAScreenItem* item = [[ALPHAScreenItem alloc] init];
-            item.model = [model valueForKey:propertyName];
+            item.object = [model valueForKey:propertyName];
             item.title = [propertyName description];
             item.detail = [[model valueForKey:propertyName] description];
             
@@ -135,6 +202,13 @@
     screenModel.sections = sections.copy;
     
     return screenModel;
+}
+
+#pragma mark - Custom objects
+
+- (ALPHAScreenModel *)convertCustomObject:(id)object
+{
+    return [ALPHAScreenModel new];
 }
 
 #pragma mark - Private methods

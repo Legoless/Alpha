@@ -98,6 +98,17 @@
     }
 }
 
+- (void)fileWithURL:(NSURL *)url completion:(ALPHADataSourceCompletion)completion
+{
+    NSError *error = nil;
+    
+    NSData *data = [NSData dataWithContentsOfURL:url options:NSDataReadingMappedIfSafe error:&error];
+    
+    if (completion)
+    {
+        completion(data, error);
+    }
+}
 
 #pragma mark - Actions
 

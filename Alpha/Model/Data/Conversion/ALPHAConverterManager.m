@@ -93,30 +93,43 @@
 
 #pragma mark - ALPHADataConverterSource
 
-- (BOOL)canConvertModel:(ALPHAModel *)model
+- (BOOL)canConvertObject:(id)object
 {
     for (id<ALPHADataConverterSource> source in self.baseConverters)
     {
-        if ([source canConvertModel:model])
+        if ([source canConvertObject:object])
         {
             return YES;
         }
     }
     
-    return [self.genericConverter canConvertModel:model];
+    return [self.genericConverter canConvertObject:object];
 }
 
-- (ALPHAScreenModel *)screenModelForModel:(ALPHAModel *)model
+- (ALPHAScreenModel *)screenModelForObject:(id)object
 {
     for (id<ALPHADataConverterSource> source in self.baseConverters)
     {
-        if ([source canConvertModel:model])
+        if ([source canConvertObject:object])
         {
-            return [source screenModelForModel:model];
+            return [source screenModelForObject:object];
         }
     }
     
-    return [self.genericConverter screenModelForModel:model];
+    return [self.genericConverter screenModelForObject:object];
+}
+
+- (Class)renderClassForObject:(id)object
+{
+    for (id<ALPHADataConverterSource> source in self.baseConverters)
+    {
+        if ([source canConvertObject:object] && [source respondsToSelector:@selector(renderClassForObject:)])
+        {
+            return [source renderClassForObject:object];
+        }
+    }
+    
+    return [self.genericConverter renderClassForObject:object];
 }
 
 #pragma mark - Private methods

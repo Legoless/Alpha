@@ -12,6 +12,7 @@
 #import "ALPHAGlobalActionIdentifiers.h"
 #import "ALPHAModel.h"
 #import "ALPHAScreenModel.h"
+#import "ALPHATableScreenModel.h"
 
 NSString* const ALPHAMenuDataIdentifier = @"com.unifiedsense.alpha.data.menu";
 
@@ -58,7 +59,7 @@ NSString* const ALPHAMenuDataIdentifier = @"com.unifiedsense.alpha.data.menu";
     ALPHAScreenSection* section = [[ALPHAScreenSection alloc] initWithIdentifier:ALPHAMenuDataIdentifier];
     section.items = [items sortedArrayUsingDescriptors:@[ prioritySortDescriptor, titleSortDescriptor ]];;
     
-    ALPHAScreenModel* dataModel = [[ALPHAScreenModel alloc] initWithIdentifier:ALPHAMenuDataIdentifier];
+    ALPHATableScreenModel* dataModel = [[ALPHATableScreenModel alloc] initWithIdentifier:ALPHAMenuDataIdentifier];
     dataModel.title = @"Alpha";
     dataModel.sections = @[ section ];
     

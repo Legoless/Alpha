@@ -47,7 +47,7 @@
     
     item.titleText = self.alertBody.length ? self.alertBody : [self.fireDate description];
     item.detailText = self.alertBody.length ? [self.fireDate description] : @"";
-    item.model = self;
+    item.object = self;
     
     return item;
 }

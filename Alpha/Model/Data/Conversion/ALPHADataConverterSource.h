@@ -15,13 +15,14 @@
 @protocol ALPHADataConverterSource <NSObject>
 
 /*!
- *  Each source is asked if model can be converted
+ *  Each source is asked if object can be converted, no other calls are made if this call returns NO, to save
+ *  the resources required to convert some objects.
  *
  *  @param model of data
  *
  *  @return YES if conversion is possible
  */
-- (BOOL)canConvertModel:(ALPHAModel *)model;
+- (BOOL)canConvertObject:(id)object;
 
 /*!
  *  Method converts data model into screen model to be rendered
@@ -30,6 +31,17 @@
  *
  *  @return screen model if successful, nil otherwise
  */
-- (ALPHAScreenModel *)screenModelForModel:(ALPHAModel *)model;
+- (ALPHAScreenModel *)screenModelForObject:(id)object;
+
+@optional
+
+/*!
+ *  Returns renderer class for an object. Only called if source can convert object.
+ *
+ *  @param object to be rendered
+ *
+ *  @return class that can render the object
+ */
+- (Class)renderClassForObject:(id)object;
 
 @end

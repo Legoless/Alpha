@@ -12,10 +12,20 @@ typedef NSInteger ALPHAScreenItemPriority;
 
 @interface ALPHAScreenItem : NSObject <ALPHASerializableItem>
 
+#pragma mark - Model
+
 /*!
  *  Back-Reference for model if created from a model
  */
-@property (nonatomic, weak) id model;
+@property (nonatomic, strong) id object;
+
+/*!
+ *  File URL if item represents a file resource
+ */
+@property (nonatomic, copy) NSURL *file;
+@property (nonatomic, strong) Class fileClass;
+
+#pragma mark - Screen
 
 /*!
  *  NSString with Emoji or UIImage

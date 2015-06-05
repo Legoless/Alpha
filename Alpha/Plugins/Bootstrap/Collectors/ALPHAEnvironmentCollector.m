@@ -9,6 +9,7 @@
 #import "ALPHAEnvironmentCollector.h"
 #import "ALPHAScreenModel.h"
 #import "ALPHAActions.h"
+#import "ALPHATableScreenModel.h"
 
 NSString *const ALPHAEnvironmentDataIdentifier = @"com.unifiedsense.alpha.data.environment";
 
@@ -110,7 +111,7 @@ NSString *const ALPHAEnvironmentDataIdentifier = @"com.unifiedsense.alpha.data.e
 
 - (ALPHAModel *)model
 {
-    ALPHAScreenModel* screenModel = [[ALPHAScreenModel alloc] initWithIdentifier:ALPHAEnvironmentDataIdentifier];
+    ALPHATableScreenModel* screenModel = [[ALPHATableScreenModel alloc] initWithIdentifier:ALPHAEnvironmentDataIdentifier];
     screenModel.title = @"Environments";
     
     ALPHAScreenSection* section = [[ALPHAScreenSection alloc] init];
@@ -121,7 +122,7 @@ NSString *const ALPHAEnvironmentDataIdentifier = @"com.unifiedsense.alpha.data.e
     {
         ALPHASelectorActionItem* item = [[ALPHASelectorActionItem alloc] initWithIdentifier:[ALPHAEnvironmentDataIdentifier stringByAppendingString:@".setEnvironment"]];
         item.title = environment;
-        item.model = environment;
+        item.object = environment;
         item.selector = NSStringFromSelector(@selector(setEnvironment:));
         
         if ([environment isEqualToString:self.currentEnvironment])

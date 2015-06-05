@@ -9,6 +9,7 @@
 #import "ALPHANotificationModel.h"
 #import "ALPHANotificationConverter.h"
 #import "ALPHANotification.h"
+#import "ALPHATableScreenModel.h"
 
 @interface ALPHANotificationConverter ()
 
@@ -16,12 +17,12 @@
 
 @implementation ALPHANotificationConverter
 
-- (BOOL)canConvertModel:(ALPHAModel *)model
+- (BOOL)canConvertObject:(ALPHAModel *)model
 {
     return [model isKindOfClass:[ALPHANotificationModel class]];
 }
 
-- (ALPHAScreenModel *)screenModelForModel:(ALPHAModel *)model
+- (ALPHAScreenModel *)screenModelForObject:(ALPHAModel *)model
 {
     ALPHANotificationModel* notificationModel = (ALPHANotificationModel *)model;
     
@@ -96,7 +97,7 @@
     // Data model
     //
     
-    ALPHAScreenModel* dataModel = [[ALPHAScreenModel alloc] initWithIdentifier:model.identifier];
+    ALPHATableScreenModel* dataModel = [[ALPHATableScreenModel alloc] initWithIdentifier:model.identifier];
     dataModel.title = @"Notifications";
     dataModel.sections = sections.copy;
     

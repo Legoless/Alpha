@@ -69,7 +69,7 @@
                     displayItem = [[ALPHAScreenItem alloc] init];
                     displayItem.titleText = NSStringFromClass([item class]);
                     displayItem.detailText = [item description];
-                    displayItem.model = item;
+                    displayItem.object = item;
                 }
                 
                 if (displayItem)

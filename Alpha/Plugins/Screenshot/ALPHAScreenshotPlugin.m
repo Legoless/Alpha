@@ -1,9 +1,9 @@
 //
-//  FLEXScreenshotPlugin.m
-//  UICatalog
+//  ALPHAScreenshotPlugin.m
+//  Alpha
 //
 //  Created by Dal Rupnik on 25/11/14.
-//  Copyright (c) 2014 f. All rights reserved.
+//  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
 #import <Haystack/Haystack.h>
@@ -11,15 +11,16 @@
 #import "ALPHAWindow.h"
 #import "FLEXResources.h"
 #import "ALPHAFileManager.h"
+#import "ALPHAScreenshotCollector.h"
 #import "ALPHAActions.h"
 
-#import "FLEXScreenshotPlugin.h"
+#import "ALPHAScreenshotPlugin.h"
 
-@interface FLEXScreenshotPlugin ()
+@interface ALPHAScreenshotPlugin ()
 
 @end
 
-@implementation FLEXScreenshotPlugin
+@implementation ALPHAScreenshotPlugin
 
 - (id)init
 {
@@ -42,9 +43,11 @@
         ALPHAMenuActionItem* menuAction = [ALPHAMenuActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.screenshot.main"];
         menuAction.icon = @"📱";
         menuAction.title = @"Screenshots";
-        menuAction.viewControllerClass = @"FLEXScreenshotTableViewController";
+        menuAction.dataIdentifier = ALPHAScreenshotDataIdentifier;
         
         [self registerAction:menuAction];
+        
+        [self registerCollector:[ALPHAScreenshotCollector new]];
     }
     
     return self;
@@ -64,7 +67,7 @@
         }
     }
     
-    UIImage *screenshot = [[UIApplication sharedApplication] screenshotExcludingWindows:excludedWindows ];
+    UIImage *screenshot = [[UIApplication sharedApplication] screenshotExcludingWindows:excludedWindows];
     
     [self saveImage:screenshot];
 }
@@ -73,7 +76,7 @@
 {
     NSData *imageData = UIImagePNGRepresentation(image);
     
-    NSString *directory = [NSString stringWithFormat:@"%@FLEX/Screenshots", [[ALPHAFileManager sharedManager] documentsDirectory].absoluteString];
+    NSString *directory = [NSString stringWithFormat:@"%@Alpha/Screenshots", [[ALPHAFileManager sharedManager] documentsDirectory].absoluteString];
     
     NSString *filePath = [NSString stringWithFormat:@"%@/%@", directory, [self stringForFile]];
     
@@ -98,7 +101,7 @@
 
 - (NSString *)stringForFile
 {
-    return [NSString stringWithFormat:@"FLEX_SS_%@.png", [[ALPHAFileManager sharedManager].fileDateFormatter stringFromDate:[NSDate date]]];
+    return [NSString stringWithFormat:@"ALPHA_SS_%@.png", [[ALPHAFileManager sharedManager].fileDateFormatter stringFromDate:[NSDate date]]];
 }
 
 @end

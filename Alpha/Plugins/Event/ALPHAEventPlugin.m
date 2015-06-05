@@ -33,7 +33,7 @@
         ALPHAMenuActionItem *menuAction = [ALPHAMenuActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.event.events"];
         menuAction.icon = @"📅";
         menuAction.title = @"Events";
-        menuAction.viewControllerClass = @"FLEXNotificationTableViewController";
+        //menuAction.viewControllerClass = @"FLEXNotificationTableViewController";
         
         [self registerAction:menuAction];
         
