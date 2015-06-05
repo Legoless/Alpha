@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
+#import <objc/runtime.h>
+
 #import "ALPHADataCollector.h"
 #import "ALPHAActions.h"
 
@@ -101,7 +103,18 @@
             #pragma clang diagnostic push
             #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
             
-            object = [self performSelector:selector withObject:selectorAction.model];
+            NSMethodSignature* methodSig = [self methodSignatureForSelector:selector];
+            
+            const char* retType = [methodSig methodReturnType];
+            
+            if (strcmp(retType, @encode(id)) == 0 || strcmp(retType, @encode(void)) == 0)
+            {
+                object = [self performSelector:selector withObject:selectorAction.model];
+            }
+            else if (strcmp(retType, @encode(void)) == 0)
+            {
+                [self performSelector:selector withObject:selectorAction.model];
+            }
             
             #pragma clang diagnostic pop
         }

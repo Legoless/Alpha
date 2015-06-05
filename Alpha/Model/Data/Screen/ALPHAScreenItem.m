@@ -45,7 +45,7 @@ NSString* const ALPHADisplayItemDetailkey = @"kALPHADisplayItemDetailkey";
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"%@: %@", NSStringFromClass(self.class), self.title];
+    return [NSString stringWithFormat:@"%@: %@, Model: %@", NSStringFromClass(self.class), self.title, self.model];
 }
 
 @end

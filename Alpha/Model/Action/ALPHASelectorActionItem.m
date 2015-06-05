@@ -10,4 +10,9 @@
 
 @implementation ALPHASelectorActionItem
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@: Sel: %@", [super description], self.selector];
+}
+
 @end
