@@ -107,7 +107,7 @@
             
             const char* retType = [methodSig methodReturnType];
             
-            if (strcmp(retType, @encode(id)) == 0 || strcmp(retType, @encode(void)) == 0)
+            if (strcmp(retType, @encode(id)) == 0)
             {
                 object = [self performSelector:selector withObject:selectorAction.model];
             }
