@@ -17,6 +17,7 @@
 #import "FLEXGlobalsTableViewControllerEntry.h"
 #import "ALPHAManager+Private.h"
 #import "ALPHAManager.h"
+#import "ALPHAApplicationDelegate.h"
 
 @interface FLEXGlobalsTableViewController ()
 
@@ -64,15 +65,23 @@
             }
 
             case 2:
+            {
+                id delegate = [[UIApplication sharedApplication] delegate];
+                
+                if ([delegate isKindOfClass:[ALPHAApplicationDelegate class]])
+                {
+                    delegate = [delegate object];
+                }
+                
                 titleFuture = ^NSString *{
-                    return [NSString stringWithFormat:@"👉  %@", [[[UIApplication sharedApplication] delegate] class]];
+                    return [NSString stringWithFormat:@"👉  %@", [delegate class]];
                 };
                 viewControllerFuture = ^UIViewController *{
-                    id <UIApplicationDelegate> appDelegate = [[UIApplication sharedApplication] delegate];
-                    return [FLEXObjectExplorerFactory explorerViewControllerForObject:appDelegate];
+                    return [FLEXObjectExplorerFactory explorerViewControllerForObject:delegate];
                 };
+                
                 break;
-
+            }
             case 3:
                 titleFuture = ^NSString *{
                     return [NSString stringWithFormat:@"🌴  %@", [[[ALPHAManager sharedManager].keyWindow rootViewController] class]];
