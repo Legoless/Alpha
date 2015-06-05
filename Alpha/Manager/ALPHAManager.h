@@ -131,6 +131,6 @@
 
 #pragma mark - Status bar notification display
 
-#warning TODO: Add Status Bar Notification Overlay
+//#warning TODO: Add Status Bar Notification Overlay
 
 @end

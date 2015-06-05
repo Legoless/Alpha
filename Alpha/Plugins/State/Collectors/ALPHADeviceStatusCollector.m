@@ -18,7 +18,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
 
 @interface ALPHADeviceStatusCollector ()
 
-#warning Implement and check those properties
+//#warning Implement and check those properties
 
 /*!
  *  Application memory size
@@ -230,7 +230,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     
     ALPHAScreenSection* networkSection = [ALPHAScreenSection screenSectionWithDictionary:sectionData];
     
-    #warning Add other data from Core Telephony (phone number, etc, ...)
+    //#warning Add other data from Core Telephony (phone number, etc, ...)
     
     sectionData = @{ @"identifier" : @"com.unifiedsense.alpha.data.status.cellular",
                      @"items" : @[
