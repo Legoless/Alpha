@@ -47,9 +47,11 @@
         ALPHABlockActionItem *inspectAction = [ALPHABlockActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.view.inspect"];
         inspectAction.title = @"Inspect";
         inspectAction.icon = [FLEXResources listIcon];
-        inspectAction.actionBlock = ^(id sender)
+        inspectAction.actionBlock = ^id(id sender)
         {
             [[ALPHAManager sharedManager] addOverlayViewController:self.viewHierarchyViewController animated:YES completion:nil];
+            
+            return nil;
             //[[FLEXManager sharedManager].explorerWindow addSubview:self.viewHierarchyViewController.view];
             
             //[self.viewHierarchyViewController displayHierarchyExplorer];

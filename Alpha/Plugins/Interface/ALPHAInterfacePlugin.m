@@ -75,15 +75,19 @@
         ALPHABlockActionItem *closeAction = [ALPHABlockActionItem itemWithIdentifier:ALPHAActionCloseIdentifier];
         closeAction.title = @"Close";
         closeAction.icon = [FLEXResources closeIcon];
-        closeAction.actionBlock = ^(id sender){
+        closeAction.actionBlock = ^id(id sender){
             [[ALPHAManager sharedManager] setInterfaceHidden:YES];
+            
+            return nil;
         };
         
         ALPHABlockActionItem *infoAction = [ALPHABlockActionItem itemWithIdentifier:@"com.unifiedsense.alpha.info"];
         infoAction.title = @"Info";
         infoAction.icon = [FLEXResources globeIcon];
-        infoAction.actionBlock = ^(id sender){
+        infoAction.actionBlock = ^id(id sender){
             [self.explorerViewController displayInfoTable];
+            
+            return nil;
         };
         
         [self registerAction:infoAction];

@@ -8,7 +8,7 @@
 
 #import "ALPHAActionItem.h"
 
-typedef void (^ALPHABlockActionItemAction)(id sender);
+typedef id (^ALPHABlockActionItemAction)(id sender);
 
 /*!
  *  Action that wraps a block of code to be executed. For use locally, cannot be transferred over network.

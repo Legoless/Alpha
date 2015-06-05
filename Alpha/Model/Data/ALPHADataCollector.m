@@ -53,7 +53,7 @@
     return [self.actions containsObject:identifier];
 }
 
-- (BOOL)canPerformAction:(ALPHAActionItem *)action
+- (BOOL)canPerformAction:(id<ALPHAIdentifiableItem>)action
 {
     return [self canPerformActionForIdentifier:action.identifier];
 }
@@ -71,11 +71,15 @@
     }
 }
 
-- (void)performAction:(ALPHAActionItem *)action completion:(ALPHADataSourceCompletion)completion
+- (void)performAction:(id<ALPHAIdentifiableItem>)action completion:(ALPHADataSourceCompletion)completion
 {
     //
     // Default heuristics for executing actions
     //
+    
+    id object = nil;
+    
+    NSError* error = nil;
     
     if ([action isKindOfClass:[ALPHABlockActionItem class]])
     {
@@ -83,7 +87,7 @@
         
         if (blockAction.actionBlock)
         {
-            blockAction.actionBlock(self);
+            object = blockAction.actionBlock(self);
         }
     }
     else if ([action isKindOfClass:[ALPHASelectorActionItem class]])
@@ -97,10 +101,19 @@
             #pragma clang diagnostic push
             #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
             
-            [self performSelector:selector withObject:selectorAction.model];
+            object = [self performSelector:selector withObject:selectorAction.model];
             
             #pragma clang diagnostic pop
         }
+    }
+    else
+    {
+        error = [NSError errorWithDomain:@"com.unifiedsense.alpha.action.notimplemented" code:1 userInfo:@{ @"action" : action }];
+    }
+    
+    if (completion)
+    {
+        completion (object, error);
     }
 }
 

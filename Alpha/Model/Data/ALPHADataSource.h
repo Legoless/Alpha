@@ -7,6 +7,7 @@
 //
 
 #import "ALPHAModel.h"
+#import "ALPHAIdentifiableItem.h"
 
 typedef void (^ALPHADataSourceCompletion)(ALPHAModel *model, NSError *error);
 
@@ -26,7 +27,7 @@ typedef void (^ALPHADataSourceCompletion)(ALPHAModel *model, NSError *error);
  *  @param identifiers to be performed
  *  @param completion  called upon completion
  */
-- (void)performActionsWithIdentifiers:(NSArray *)identifiers completion:(ALPHADataSourceCompletion)completion;
+- (void)performAction:(id<ALPHAIdentifiableItem>)action completion:(ALPHADataSourceCompletion)completion;
 
 @optional
 
@@ -37,7 +38,5 @@ typedef void (^ALPHADataSourceCompletion)(ALPHAModel *model, NSError *error);
  *  @param completion called upon completion
  */
 - (void)refreshWithIdentifier:(NSString *)identifier completion:(ALPHADataSourceCompletion)completion;
-
-- (void)performActionWithIdentifier:(NSString *)identifier completion:(ALPHADataSourceCompletion)completion;
 
 @end

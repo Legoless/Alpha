@@ -57,8 +57,10 @@
         ALPHABlockActionItem *touchAction = [ALPHABlockActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.touch.touches"];
         touchAction.title = @"Touches";
         touchAction.icon = [FLEXResources selectIcon];
-        touchAction.actionBlock = ^(id sender){
+        touchAction.actionBlock = ^id(id sender){
             self.shouldDisplayTouches = !self.shouldDisplayTouches;
+            
+            return nil;
         };
 
         [self registerAction:touchAction];

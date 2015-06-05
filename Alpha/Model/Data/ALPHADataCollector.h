@@ -7,7 +7,7 @@
 //
 
 #import "ALPHADataSource.h"
-#import "ALPHAActionItem.h"
+#import "ALPHAIdentifiableItem.h"
 
 @interface ALPHADataCollector : NSObject
 
@@ -35,11 +35,11 @@
 
 #pragma mark - Action
 
-- (BOOL)canPerformAction:(ALPHAActionItem *)action;
+- (BOOL)canPerformAction:(id<ALPHAIdentifiableItem>)action;
 
 - (BOOL)canPerformActionForIdentifier:(NSString *)identifier;
 
-- (void)performAction:(ALPHAActionItem *)action completion:(ALPHADataSourceCompletion)completion;
+- (void)performAction:(id<ALPHAIdentifiableItem>)action completion:(ALPHADataSourceCompletion)completion;
 
 - (void)performActionWithIdentifier:(NSString *)identifier completion:(ALPHADataSourceCompletion)completion;
 

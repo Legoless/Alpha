@@ -29,6 +29,8 @@
             menuAction.dataIdentifier = ALPHAEnvironmentDataIdentifier;
             
             [self registerAction:menuAction];
+            
+            [self registerCollector:[ALPHAEnvironmentCollector new]];
         }
     }
     

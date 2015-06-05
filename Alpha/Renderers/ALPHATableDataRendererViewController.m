@@ -14,6 +14,7 @@
 #import "ALPHAScreenItem.h"
 #import "ALPHAMenuActionItem.h"
 #import "ALPHABlockActionItem.h"
+#import "ALPHASelectorActionItem.h"
 #import "ALPHAManager.h"
 #import "ALPHAModel.h"
 #import "ALPHAScreenModel.h"
@@ -203,7 +204,7 @@
     {
         cell.accessoryType = item.accessory;
     }
-    else if ([item isKindOfClass:[ALPHAActionItem class]] || [item model])
+    else if ( ([item isKindOfClass:[ALPHAActionItem class]] || [item model]) && ![item isKindOfClass:[ALPHASelectorActionItem class]])
     {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
@@ -351,6 +352,15 @@
         {
             blockItem.actionBlock([tableView cellForRowAtIndexPath:indexPath]);
         }
+    }
+    else if ([item isKindOfClass:[ALPHASelectorActionItem class]])
+    {
+        [self.source performAction:item completion:^(ALPHAModel *model, NSError *error) {
+            if (!error)
+            {
+                [self refresh];
+            }
+        }];
     }
     else if ([item model])
     {

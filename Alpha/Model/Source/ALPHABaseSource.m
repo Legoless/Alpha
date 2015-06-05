@@ -30,24 +30,9 @@
     }
 }
 
-- (void)performActionWithIdentifier:(NSString *)identifier completion:(ALPHADataSourceCompletion)completion
+- (void)performAction:(id<ALPHAIdentifiableItem>)action completion:(ALPHADataSourceCompletion)completion
 {
-    if (identifier.length)
-    {
-        [self performActionsWithIdentifiers:@[ identifier ] completion:completion];
-    }
-    else
-    {
-        [self performActionsWithIdentifiers:nil completion:completion];
-    }
-}
-
-- (void)performActionsWithIdentifiers:(NSArray *)identifiers completion:(ALPHADataSourceCompletion)completion
-{
-    if (completion)
-    {
-        completion(nil, nil);
-    }
+    
 }
 
 @end

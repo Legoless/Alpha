@@ -30,9 +30,11 @@
         ALPHABlockActionItem *touchAction = [ALPHABlockActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.screenshot.make"];
         touchAction.title = @"Screenshot";
         touchAction.icon = [FLEXResources dragHandle];
-        touchAction.actionBlock = ^(id sender)
+        touchAction.actionBlock = ^id(id sender)
         {
             [self saveScreenshot];
+            
+            return nil;
         };
         
         [self registerAction:touchAction];
