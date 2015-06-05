@@ -1,9 +1,9 @@
 //
-//  FLEXViewHierarchyPlugin.m
-//  UICatalog
+//  ALPHAViewHierarchyPlugin.m
+//  Alpha
 //
 //  Created by Dal Rupnik on 24/11/14.
-//  Copyright (c) 2014 f. All rights reserved.
+//  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
 #import "ALPHAActions.h"
@@ -11,17 +11,17 @@
 
 #import "ALPHAManager.h"
 
-#import "FLEXViewHierarchyPlugin.h"
+#import "ALPHAViewHierarchyPlugin.h"
 
 #import "FLEXViewHierarchyViewController.h"
 
-@interface FLEXViewHierarchyPlugin () <ALPHAViewControllerDelegate>
+@interface ALPHAViewHierarchyPlugin () <ALPHAViewControllerDelegate>
 
 @property (nonatomic, strong) FLEXViewHierarchyViewController* viewHierarchyViewController;
 
 @end
 
-@implementation FLEXViewHierarchyPlugin
+@implementation ALPHAViewHierarchyPlugin
 
 - (FLEXViewHierarchyViewController *)viewHierarchyViewController
 {

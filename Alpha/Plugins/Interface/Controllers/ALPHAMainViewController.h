@@ -8,7 +8,7 @@
 
 #import "ALPHAViewController.h"
 
-@interface ALPHAMainViewController : ALPHAViewController <ALPHAViewControllerResponder>
+@interface ALPHAMainViewController : ALPHAViewController
 
 - (void)displayInfoTable;
 

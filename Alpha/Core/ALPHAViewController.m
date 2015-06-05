@@ -52,7 +52,7 @@
     return nil;
 }
 
-#pragma mark - FLEXCanvasView to ignore touches
+#pragma mark - ALPHACanvasView to ignore touches
 
 /*
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

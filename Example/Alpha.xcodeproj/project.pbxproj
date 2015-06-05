@@ -126,10 +126,9 @@
 		3869933D1B18962D005B1BEE /* FLEXHierarchyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992AC1B18962D005B1BEE /* FLEXHierarchyTableViewController.m */; };
 		3869933E1B18962D005B1BEE /* FLEXImagePreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992AE1B18962D005B1BEE /* FLEXImagePreviewViewController.m */; };
 		3869933F1B18962D005B1BEE /* FLEXViewHierarchyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992B01B18962D005B1BEE /* FLEXViewHierarchyViewController.m */; };
-		386993401B18962D005B1BEE /* FLEXViewHierarchyPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992B21B18962D005B1BEE /* FLEXViewHierarchyPlugin.m */; };
+		386993401B18962D005B1BEE /* ALPHAViewHierarchyPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992B21B18962D005B1BEE /* ALPHAViewHierarchyPlugin.m */; };
 		386993411B18962D005B1BEE /* FLEXExplorerToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992B51B18962D005B1BEE /* FLEXExplorerToolbar.m */; };
 		386993421B18962D005B1BEE /* FLEXToolbarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992B71B18962D005B1BEE /* FLEXToolbarItem.m */; };
-		386993431B18962D005B1BEE /* FLEXWidgetPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992BB1B18962D005B1BEE /* FLEXWidgetPlugin.m */; };
 		386993441B18962D005B1BEE /* ALPHATheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992BE1B18962D005B1BEE /* ALPHATheme.m */; };
 		386993451B18962D005B1BEE /* ALPHADarkTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992C11B18962D005B1BEE /* ALPHADarkTheme.m */; };
 		386993461B18962D005B1BEE /* ALPHALightTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992C31B18962D005B1BEE /* ALPHALightTheme.m */; };
@@ -432,14 +431,12 @@
 		386992AE1B18962D005B1BEE /* FLEXImagePreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXImagePreviewViewController.m; sourceTree = "<group>"; };
 		386992AF1B18962D005B1BEE /* FLEXViewHierarchyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXViewHierarchyViewController.h; sourceTree = "<group>"; };
 		386992B01B18962D005B1BEE /* FLEXViewHierarchyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXViewHierarchyViewController.m; sourceTree = "<group>"; };
-		386992B11B18962D005B1BEE /* FLEXViewHierarchyPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXViewHierarchyPlugin.h; sourceTree = "<group>"; };
-		386992B21B18962D005B1BEE /* FLEXViewHierarchyPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXViewHierarchyPlugin.m; sourceTree = "<group>"; };
+		386992B11B18962D005B1BEE /* ALPHAViewHierarchyPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAViewHierarchyPlugin.h; sourceTree = "<group>"; };
+		386992B21B18962D005B1BEE /* ALPHAViewHierarchyPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAViewHierarchyPlugin.m; sourceTree = "<group>"; };
 		386992B41B18962D005B1BEE /* FLEXExplorerToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXExplorerToolbar.h; sourceTree = "<group>"; };
 		386992B51B18962D005B1BEE /* FLEXExplorerToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXExplorerToolbar.m; sourceTree = "<group>"; };
 		386992B61B18962D005B1BEE /* FLEXToolbarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXToolbarItem.h; sourceTree = "<group>"; };
 		386992B71B18962D005B1BEE /* FLEXToolbarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXToolbarItem.m; sourceTree = "<group>"; };
-		386992BA1B18962D005B1BEE /* FLEXWidgetPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXWidgetPlugin.h; sourceTree = "<group>"; };
-		386992BB1B18962D005B1BEE /* FLEXWidgetPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXWidgetPlugin.m; sourceTree = "<group>"; };
 		386992BD1B18962D005B1BEE /* ALPHATheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHATheme.h; sourceTree = "<group>"; };
 		386992BE1B18962D005B1BEE /* ALPHATheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHATheme.m; sourceTree = "<group>"; };
 		386992C01B18962D005B1BEE /* ALPHADarkTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHADarkTheme.h; sourceTree = "<group>"; };
@@ -985,7 +982,6 @@
 				386992881B18962D005B1BEE /* State */,
 				3869929C1B18962D005B1BEE /* Touch */,
 				386992A41B18962D005B1BEE /* View */,
-				386992B81B18962D005B1BEE /* Widget */,
 			);
 			path = Plugins;
 			sourceTree = "<group>";
@@ -1162,8 +1158,8 @@
 			children = (
 				386992A51B18962D005B1BEE /* AutoFill */,
 				386992A81B18962D005B1BEE /* Controllers */,
-				386992B11B18962D005B1BEE /* FLEXViewHierarchyPlugin.h */,
-				386992B21B18962D005B1BEE /* FLEXViewHierarchyPlugin.m */,
+				386992B11B18962D005B1BEE /* ALPHAViewHierarchyPlugin.h */,
+				386992B21B18962D005B1BEE /* ALPHAViewHierarchyPlugin.m */,
 				386992B31B18962D005B1BEE /* Toolbar */,
 			);
 			path = View;
@@ -1202,23 +1198,6 @@
 				386992B71B18962D005B1BEE /* FLEXToolbarItem.m */,
 			);
 			path = Toolbar;
-			sourceTree = "<group>";
-		};
-		386992B81B18962D005B1BEE /* Widget */ = {
-			isa = PBXGroup;
-			children = (
-				386992B91B18962D005B1BEE /* Controllers */,
-				386992BA1B18962D005B1BEE /* FLEXWidgetPlugin.h */,
-				386992BB1B18962D005B1BEE /* FLEXWidgetPlugin.m */,
-			);
-			path = Widget;
-			sourceTree = "<group>";
-		};
-		386992B91B18962D005B1BEE /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		386992BC1B18962D005B1BEE /* Themes */ = {
@@ -1637,7 +1616,6 @@
 				38353EDC1B1DECD5009E4ACF /* ALPHANotificationModel.m in Sources */,
 				535682A818F3670300BAAD62 /* AAPLActivityIndicatorViewController.m in Sources */,
 				386993011B18962D005B1BEE /* ALPHAWindow.m in Sources */,
-				386993431B18962D005B1BEE /* FLEXWidgetPlugin.m in Sources */,
 				3869934A1B18962D005B1BEE /* ALPHATrigger+Private.m in Sources */,
 				38353EBB1B1DAEA1009E4ACF /* ALPHABaseSource.m in Sources */,
 				386993451B18962D005B1BEE /* ALPHADarkTheme.m in Sources */,
@@ -1677,7 +1655,7 @@
 				3869933B1B18962D005B1BEE /* FLEXAutoFillEngine.m in Sources */,
 				386993101B18962D005B1BEE /* FLEXDictionaryExplorerViewController.m in Sources */,
 				38B4256E1B2194EA00D72819 /* ALPHAConsoleCollector.m in Sources */,
-				386993401B18962D005B1BEE /* FLEXViewHierarchyPlugin.m in Sources */,
+				386993401B18962D005B1BEE /* ALPHAViewHierarchyPlugin.m in Sources */,
 				38353E801B1DAC38009E4ACF /* NSData+PDDebugger.m in Sources */,
 				535682B218F3670300BAAD62 /* AAPLMasterViewController.m in Sources */,
 				3869933D1B18962D005B1BEE /* FLEXHierarchyTableViewController.m in Sources */,

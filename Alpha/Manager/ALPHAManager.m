@@ -326,7 +326,7 @@
     // cancel other plugins.
     //
     
-    [self.rootViewController.view bringSubviewToFront:viewController.view];
+    [self.rootViewController.view bringSubviewToFront:self.mainInterfaceView];
     
     if (completion)
     {
