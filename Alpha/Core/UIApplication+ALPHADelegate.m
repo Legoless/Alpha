@@ -22,7 +22,7 @@
     //
     
     [UIApplication swizzleInstanceMethod:@selector(setDelegate:) withMethod:@selector(alpha_setDelegate:)];
-    [UIApplication swizzleInstanceMethod:@selector(delegate) withMethod:@selector(alpha_delegate)];
+    //[UIApplication swizzleInstanceMethod:@selector(delegate) withMethod:@selector(alpha_delegate)];
 }
 
 - (id)injectedDelegate
@@ -35,6 +35,7 @@
     objc_setAssociatedObject(self, @selector(injectedDelegate), injectedDelegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+/*
 - (id<UIApplicationDelegate>)alpha_delegate
 {
     id<UIApplicationDelegate> delegate = [self alpha_delegate];
@@ -49,7 +50,7 @@
     {
         return delegate;
     }
-}
+}*/
 
 - (void)alpha_setDelegate:(id<UIApplicationDelegate>)delegate
 {

@@ -209,7 +209,7 @@ NSString *const ALPHANotificationDataIdentifier = @"com.unifiedsense.alpha.data.
     {
         NSData* deviceToken = [anInvocation hs_argumentAtIndex:1];
         
-        NSString* tokenString = [[NSString alloc] initWithData:deviceToken encoding:NSUTF8StringEncoding];
+        NSString* tokenString = [self deviceTokenFromData:deviceToken];
         
         self.remoteNotificationToken = tokenString;
         self.remoteRegistrationDescription = @"Registered";
@@ -288,6 +288,19 @@ NSString *const ALPHANotificationDataIdentifier = @"com.unifiedsense.alpha.data.
     }
     
     return types.count ? [types componentsJoinedByString:@", "] : @"none";
+}
+
+- (NSString *)deviceTokenFromData:(NSData *)data
+{
+    // Convert device deviceToken to a hex string
+    NSMutableString *deviceToken = [NSMutableString stringWithCapacity:([data length] * 2)];
+    const unsigned char *bytes = (const unsigned char *)[data bytes];
+    
+    for (NSUInteger i = 0; i < [data length]; i++) {
+        [deviceToken appendFormat:@"%02X", bytes[i]];
+    }
+    
+    return [deviceToken lowercaseString];
 }
 
 @end
