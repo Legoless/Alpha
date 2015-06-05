@@ -8,15 +8,25 @@
 
 @implementation NSInvocation (Argument)
 
-- (id)hs_argumentAtIndex:(NSInteger)index
+- (id)hs_objectAtIndex:(NSInteger)index
 {
-    id object;
+    //
+    // Protect against arguments out of bounds
+    //
+    NSMethodSignature * sig = [self methodSignatureForSelector:self.selector];
     
-    [self getArgument:&object atIndex:index];
-    
-    if (object)
+    if (index < [sig numberOfArguments])
     {
-        return object;
+        return nil;
+    }
+    
+    void *tempPointer;
+    
+    [self getArgument:&tempPointer atIndex:index];
+    
+    if (tempPointer)
+    {
+        return (__bridge id)tempPointer;
     }
     
     return nil;

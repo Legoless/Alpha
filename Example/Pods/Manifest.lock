@@ -1,10 +1,10 @@
 PODS:
-  - Haystack (0.8.4)
+  - Haystack (0.8.5)
 
 DEPENDENCIES:
   - Haystack
 
 SPEC CHECKSUMS:
-  Haystack: 41bf1f4b2b5479330ea4d7b60d3dc10c59b752ee
+  Haystack: a095f43efeddfb54183144bf06028a888b5f79b4
 
 COCOAPODS: 0.37.2

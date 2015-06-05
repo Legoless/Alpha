@@ -13,6 +13,6 @@
  *
  *  @return object
  */
-- (id)hs_argumentAtIndex:(NSInteger)index;
+- (id)hs_objectAtIndex:(NSInteger)index;
 
 @end
