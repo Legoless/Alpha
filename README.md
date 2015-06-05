@@ -27,6 +27,7 @@ Currently work in progress:
 - *Recording touches and replaying actions*
 - *Remote connection to app (state)*
 - *Remote debugger*
+- *Specify features in podfile*
 
 **This is an unofficial fork from the amazing Flipboard guys. It is a big rewrite of FLEX architecture, making it completely extensible, but sadly not backwards compatible with original code.**
 
