@@ -164,7 +164,7 @@ NSString *const ALPHANotificationDataIdentifier = @"com.unifiedsense.alpha.data.
         //
         // Get a dictionary
         //
-        NSDictionary* userInfo = [anInvocation hs_argumentAtIndex:1];
+        NSDictionary* userInfo = [anInvocation hs_argumentAtIndex:3];
         
         ALPHANotification* notification = [ALPHANotification notificationWithRemoteNotification:[userInfo copy]];
         
@@ -182,7 +182,7 @@ NSString *const ALPHANotificationDataIdentifier = @"com.unifiedsense.alpha.data.
     
     else if (anInvocation.selector == @selector(application:didFinishLaunchingWithOptions:))
     {
-        NSDictionary *launchOptions = [anInvocation hs_argumentAtIndex:1];
+        NSDictionary *launchOptions = [anInvocation hs_argumentAtIndex:3];
         
         //
         // Remote Notifications
@@ -207,7 +207,7 @@ NSString *const ALPHANotificationDataIdentifier = @"com.unifiedsense.alpha.data.
     
     else if (anInvocation.selector == @selector(application:didRegisterForRemoteNotificationsWithDeviceToken:))
     {
-        NSData* deviceToken = [anInvocation hs_argumentAtIndex:1];
+        NSData* deviceToken = [anInvocation hs_argumentAtIndex:3];
         
         NSString* tokenString = [self deviceTokenFromData:deviceToken];
         
@@ -216,12 +216,12 @@ NSString *const ALPHANotificationDataIdentifier = @"com.unifiedsense.alpha.data.
     }
     else if (anInvocation.selector == @selector(application:didFailToRegisterForRemoteNotificationsWithError:))
     {
-        NSError *error = [anInvocation hs_argumentAtIndex:1];
+        NSError *error = [anInvocation hs_argumentAtIndex:3];
         self.remoteRegistrationDescription = error.localizedDescription;
     }
     else if (anInvocation.selector == @selector(application:didReceiveLocalNotification:))
     {
-        UILocalNotification *localNotifiation = [anInvocation hs_argumentAtIndex:1];
+        UILocalNotification *localNotifiation = [anInvocation hs_argumentAtIndex:3];
         
         ALPHANotification *notification = [ALPHANotification notificationWithLocalNotification:localNotifiation];
         
