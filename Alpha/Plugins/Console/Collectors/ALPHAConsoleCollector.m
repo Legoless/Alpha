@@ -68,8 +68,6 @@ NSString *const ALPHAConsoleDataIdentifier = @"com.unifiedsense.alpha.data.conso
     if (self)
     {
         [self addDataIdentifier:ALPHAConsoleDataIdentifier];
-        
-        //[self redirectConsoleOutput];
     }
     
     return self;
@@ -81,16 +79,6 @@ NSString *const ALPHAConsoleDataIdentifier = @"com.unifiedsense.alpha.data.conso
     model.logs = [self systemLogs];
     
     return model;
-}
-
-- (void)redirectConsoleOutput
-{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *logPath = [documentsDirectory stringByAppendingPathComponent:@"console.log"];
-    freopen([logPath fileSystemRepresentation],"a+",stderr);
-
-    //dup2(fileno(stdout), fileno(stderr));
 }
 
 - (NSDictionary *)updateKeysWithOriginalDictionary:(NSDictionary *)dict

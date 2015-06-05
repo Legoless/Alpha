@@ -15,7 +15,7 @@
 #import "ALPHAMenuDataCollector.h"
 #import "FLEXResources.h"
 
-#import "ALPHAGlobalActions.h"
+#import "ALPHAGlobalActionIdentifiers.h"
 
 #import "ALPHAInterfacePlugin.h"
 

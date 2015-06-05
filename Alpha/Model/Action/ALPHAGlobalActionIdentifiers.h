@@ -1,5 +1,5 @@
 //
-//  ALPHAGlobalActions.h
+//  ALPHAGlobalActionIdentifiers.h
 //  Alpha
 //
 //  Created by Dal Rupnik on 29/05/15.

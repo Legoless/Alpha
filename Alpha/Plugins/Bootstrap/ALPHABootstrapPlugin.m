@@ -1,18 +1,19 @@
 //
-//  FLEXBootstrapPlugin.m
-//  UICatalog
+//  ALPHABootstrapPlugin.h
+//  Alpha
 //
 //  Created by Dal Rupnik on 25/11/14.
-//  Copyright (c) 2014 f. All rights reserved.
+//  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
-
 #import "ALPHAMenuActionItem.h"
 
-#import "FLEXBootstrap.h"
+#import "ALPHABootstrap.h"
 
-#import "FLEXBootstrapPlugin.h"
+#import "ALPHAEnvironmentCollector.h"
 
-@implementation FLEXBootstrapPlugin
+#import "ALPHABootstrapPlugin.h"
+
+@implementation ALPHABootstrapPlugin
 
 - (instancetype)init
 {
@@ -20,12 +21,12 @@
     
     if (self)
     {
-        if ([FLEXBootstrap isReady])
+        if ([ALPHABootstrap hasEnvironments])
         {
             ALPHAMenuActionItem* menuAction = [ALPHAMenuActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.bootstrap.main"];
             menuAction.icon = @"🎨";
             menuAction.title = @"Environments";
-            menuAction.viewControllerClass = @"FLEXEnvironmentTableViewController";
+            menuAction.dataIdentifier = ALPHAEnvironmentDataIdentifier;
             
             [self registerAction:menuAction];
         }

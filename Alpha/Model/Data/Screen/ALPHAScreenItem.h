@@ -34,6 +34,8 @@ typedef NSInteger ALPHAScreenItemPriority;
 
 @property (nonatomic, assign) UITableViewCellStyle style;
 
+@property (nonatomic, assign) UITableViewCellAccessoryType accessory;
+
 /*!
  *  Specified priority of the action item so the item is placed correctly in menus or table or collection
  */

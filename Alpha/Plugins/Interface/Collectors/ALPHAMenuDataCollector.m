@@ -9,7 +9,7 @@
 #import "ALPHAMenuDataCollector.h"
 #import "ALPHAManager.h"
 #import "ALPHAMenuActionItem.h"
-#import "ALPHAGlobalActions.h"
+#import "ALPHAGlobalActionIdentifiers.h"
 #import "ALPHAModel.h"
 #import "ALPHAScreenModel.h"
 

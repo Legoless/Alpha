@@ -45,6 +45,8 @@
     return [collectors copy];
 }
 
+#pragma mark - Refresh
+
 - (void)refreshWithIdentifiers:(NSArray *)identifiers completion:(ALPHADataSourceCompletion)completion
 {
     NSMutableDictionary *data = [NSMutableDictionary dictionary];
@@ -131,6 +133,8 @@
         completion(data.allValues.firstObject, nil);
     }
 }
+
+#pragma mark - Actions
 
 - (void)performActionsWithIdentifiers:(NSArray *)identifiers completion:(ALPHADataSourceCompletion)completion
 {

@@ -1,16 +1,16 @@
 //
-//  FLEXBootstrap.m
-//  UICatalog
+//  ALPHABootstrap.h
+//  Alpha
 //
 //  Created by Dal Rupnik on 10/11/14.
-//  Copyright (c) 2014 f. All rights reserved.
+//  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
-#import "FLEXBootstrap.h"
+#import "ALPHABootstrap.h"
 
-@implementation FLEXBootstrap
+@implementation ALPHABootstrap
 
-+ (BOOL)isReady
++ (BOOL)hasEnvironments
 {
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"KZBEnvironments" withExtension:@"plist"];
     

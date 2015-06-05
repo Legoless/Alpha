@@ -10,6 +10,9 @@
 
 typedef void (^ALPHABlockActionItemAction)(id sender);
 
+/*!
+ *  Action that wraps a block of code to be executed. For use locally, cannot be transferred over network.
+ */
 @interface ALPHABlockActionItem : ALPHAActionItem
 
 /*!

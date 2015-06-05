@@ -10,7 +10,7 @@
 
 #import "ALPHAConverterManager.h"
 
-#import "ALPHAGlobalActions.h"
+#import "ALPHAGlobalActionIdentifiers.h"
 #import "ALPHAScreenItem.h"
 #import "ALPHAMenuActionItem.h"
 #import "ALPHABlockActionItem.h"
@@ -199,7 +199,11 @@
 
 - (void)cell:(UITableViewCell *)cell applyItem:(ALPHAScreenItem *)item
 {
-    if ([item isKindOfClass:[ALPHAActionItem class]] || [item model])
+    if (item.accessory != UITableViewCellAccessoryNone)
+    {
+        cell.accessoryType = item.accessory;
+    }
+    else if ([item isKindOfClass:[ALPHAActionItem class]] || [item model])
     {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
