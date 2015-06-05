@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3812766A1B222A3D002C1174 /* ALPHAConsoleCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 381276691B222A3D002C1174 /* ALPHAConsoleCollector.m */; };
 		381E6ECA1B1C856000A09D55 /* UIApplication+ALPHAPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 381E6EC91B1C856000A09D55 /* UIApplication+ALPHAPrivate.m */; };
 		38254C081B18A12E008C0085 /* ALPHADeviceStatusCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 38254C071B18A12E008C0085 /* ALPHADeviceStatusCollector.m */; };
 		38353E771B1DAC38009E4ACF /* ALPHAApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 38353E591B1DAC38009E4ACF /* ALPHAApplicationDelegate.m */; };
@@ -138,7 +139,6 @@
 		3869934A1B18962D005B1BEE /* ALPHATrigger+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992CC1B18962D005B1BEE /* ALPHATrigger+Private.m */; };
 		3869934B1B18962D005B1BEE /* ALPHATrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992CE1B18962D005B1BEE /* ALPHATrigger.m */; };
 		38B425691B2193D300D72819 /* ALPHAEnvironmentCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B425681B2193D300D72819 /* ALPHAEnvironmentCollector.m */; };
-		38B4256E1B2194EA00D72819 /* ALPHAConsoleCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B4256D1B2194EA00D72819 /* ALPHAConsoleCollector.m */; };
 		38B425731B21F59F00D72819 /* ALPHAScreenshotCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B425721B21F59F00D72819 /* ALPHAScreenshotCollector.m */; };
 		38D8EB581B18BD6A00D612FD /* ALPHAMenuDataCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D8EB571B18BD6A00D612FD /* ALPHAMenuDataCollector.m */; };
 		38DE4A491A0B78BC00EB447A /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38DE4A481A0B78BC00EB447A /* Launch.xib */; };
@@ -182,6 +182,8 @@
 
 /* Begin PBXFileReference section */
 		0C6C81861F8DC133E5D85165 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		381276681B222A3D002C1174 /* ALPHAConsoleCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAConsoleCollector.h; sourceTree = "<group>"; };
+		381276691B222A3D002C1174 /* ALPHAConsoleCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAConsoleCollector.m; sourceTree = "<group>"; };
 		381E6EC81B1C856000A09D55 /* UIApplication+ALPHAPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+ALPHAPrivate.h"; sourceTree = "<group>"; };
 		381E6EC91B1C856000A09D55 /* UIApplication+ALPHAPrivate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+ALPHAPrivate.m"; sourceTree = "<group>"; };
 		38254C061B18A12E008C0085 /* ALPHADeviceStatusCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHADeviceStatusCollector.h; sourceTree = "<group>"; };
@@ -455,8 +457,6 @@
 		386992CE1B18962D005B1BEE /* ALPHATrigger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHATrigger.m; sourceTree = "<group>"; };
 		38B425671B2193D300D72819 /* ALPHAEnvironmentCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAEnvironmentCollector.h; sourceTree = "<group>"; };
 		38B425681B2193D300D72819 /* ALPHAEnvironmentCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAEnvironmentCollector.m; sourceTree = "<group>"; };
-		38B4256C1B2194EA00D72819 /* ALPHAConsoleCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ALPHAConsoleCollector.h; path = ../../../../../../library/alpha/Alpha/Plugins/Console/Collectors/ALPHAConsoleCollector.h; sourceTree = "<group>"; };
-		38B4256D1B2194EA00D72819 /* ALPHAConsoleCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ALPHAConsoleCollector.m; path = ../../../../../../library/alpha/Alpha/Plugins/Console/Collectors/ALPHAConsoleCollector.m; sourceTree = "<group>"; };
 		38B425711B21F59F00D72819 /* ALPHAScreenshotCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAScreenshotCollector.h; sourceTree = "<group>"; };
 		38B425721B21F59F00D72819 /* ALPHAScreenshotCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAScreenshotCollector.m; sourceTree = "<group>"; };
 		38D8EB561B18BD6A00D612FD /* ALPHAMenuDataCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAMenuDataCollector.h; sourceTree = "<group>"; };
@@ -553,6 +553,15 @@
 				8EFDBC5D9C946F8E17E67DBC /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		381276671B222A3D002C1174 /* Collectors */ = {
+			isa = PBXGroup;
+			children = (
+				381276681B222A3D002C1174 /* ALPHAConsoleCollector.h */,
+				381276691B222A3D002C1174 /* ALPHAConsoleCollector.m */,
+			);
+			path = Collectors;
 			sourceTree = "<group>";
 		};
 		381E6EC71B1C854500A09D55 /* Private */ = {
@@ -1009,11 +1018,11 @@
 		386992531B18962D005B1BEE /* Console */ = {
 			isa = PBXGroup;
 			children = (
-				38B4256B1B2194C100D72819 /* Collectors */,
+				381276671B222A3D002C1174 /* Collectors */,
 				385BB4B91B1F638600443539 /* Converters */,
+				386992591B18962D005B1BEE /* Model */,
 				386992571B18962D005B1BEE /* ALPHAConsolePlugin.h */,
 				386992581B18962D005B1BEE /* ALPHAConsolePlugin.m */,
-				386992591B18962D005B1BEE /* Model */,
 			);
 			path = Console;
 			sourceTree = "<group>";
@@ -1243,15 +1252,6 @@
 			children = (
 				38B425671B2193D300D72819 /* ALPHAEnvironmentCollector.h */,
 				38B425681B2193D300D72819 /* ALPHAEnvironmentCollector.m */,
-			);
-			path = Collectors;
-			sourceTree = "<group>";
-		};
-		38B4256B1B2194C100D72819 /* Collectors */ = {
-			isa = PBXGroup;
-			children = (
-				38B4256C1B2194EA00D72819 /* ALPHAConsoleCollector.h */,
-				38B4256D1B2194EA00D72819 /* ALPHAConsoleCollector.m */,
 			);
 			path = Collectors;
 			sourceTree = "<group>";
@@ -1654,7 +1654,7 @@
 				386993391B18962D005B1BEE /* ALPHATouchWindow.m in Sources */,
 				3869933B1B18962D005B1BEE /* FLEXAutoFillEngine.m in Sources */,
 				386993101B18962D005B1BEE /* FLEXDictionaryExplorerViewController.m in Sources */,
-				38B4256E1B2194EA00D72819 /* ALPHAConsoleCollector.m in Sources */,
+				3812766A1B222A3D002C1174 /* ALPHAConsoleCollector.m in Sources */,
 				386993401B18962D005B1BEE /* ALPHAViewHierarchyPlugin.m in Sources */,
 				38353E801B1DAC38009E4ACF /* NSData+PDDebugger.m in Sources */,
 				535682B218F3670300BAAD62 /* AAPLMasterViewController.m in Sources */,
