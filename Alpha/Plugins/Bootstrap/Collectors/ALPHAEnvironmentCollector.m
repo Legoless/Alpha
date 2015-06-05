@@ -122,6 +122,7 @@ NSString *const ALPHAEnvironmentDataIdentifier = @"com.unifiedsense.alpha.data.e
         ALPHASelectorActionItem* item = [[ALPHASelectorActionItem alloc] initWithIdentifier:[ALPHAEnvironmentDataIdentifier stringByAppendingString:@".setEnvironment"]];
         item.title = environment;
         item.model = environment;
+        item.selector = NSStringFromSelector(@selector(setEnvironment:));
         
         if ([environment isEqualToString:self.currentEnvironment])
         {
@@ -137,6 +138,11 @@ NSString *const ALPHAEnvironmentDataIdentifier = @"com.unifiedsense.alpha.data.e
     
     return screenModel;
 
+}
+
+- (void)setEnvironment:(NSString *)environment
+{
+    self.currentEnvironment = environment;
 }
 
 @end
