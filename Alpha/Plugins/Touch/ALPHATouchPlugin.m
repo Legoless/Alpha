@@ -1,12 +1,12 @@
 //
-//  FLEXTouchPlugin.m
-//  UICatalog
+//  ALPHATouchPlugin.m
+//  Alpha
 //
 //  Created by Dal Rupnik on 24/11/14.
-//  Copyright (c) 2014 f. All rights reserved.
+//  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
-#import "FLEXTouchPlugin.h"
+#import "ALPHATouchPlugin.h"
 
 #import "FLEXResources.h"
 #import "UIApplication+ALPHAEvent.h"
@@ -14,13 +14,13 @@
 #import "ALPHATouchWindow.h"
 #import "ALPHABlockActionItem.h"
 
-@interface FLEXTouchPlugin ()
+@interface ALPHATouchPlugin ()
 
 @property (nonatomic, strong) ALPHATouchWindow *touchWindow;
 
 @end
 
-@implementation FLEXTouchPlugin
+@implementation ALPHATouchPlugin
 
 - (ALPHATouchWindow *)touchWindow
 {

@@ -119,9 +119,8 @@
 		3869932F1B18962D005B1BEE /* ALPHAScreenshotPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992871B18962D005B1BEE /* ALPHAScreenshotPlugin.m */; };
 		386993321B18962D005B1BEE /* ALPHAStatePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3869928F1B18962D005B1BEE /* ALPHAStatePlugin.m */; };
 		386993341B18962D005B1BEE /* UIDevice+ALPHAStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992941B18962D005B1BEE /* UIDevice+ALPHAStatus.m */; };
-		386993381B18962D005B1BEE /* FLEXTouchPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3869929E1B18962D005B1BEE /* FLEXTouchPlugin.m */; };
+		386993381B18962D005B1BEE /* ALPHATouchPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3869929E1B18962D005B1BEE /* ALPHATouchPlugin.m */; };
 		386993391B18962D005B1BEE /* ALPHATouchWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992A11B18962D005B1BEE /* ALPHATouchWindow.m */; };
-		3869933A1B18962D005B1BEE /* FLEXAppEventEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992A31B18962D005B1BEE /* FLEXAppEventEngine.m */; };
 		3869933B1B18962D005B1BEE /* FLEXAutoFillEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992A71B18962D005B1BEE /* FLEXAutoFillEngine.m */; };
 		3869933C1B18962D005B1BEE /* FLEXHierarchyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992AA1B18962D005B1BEE /* FLEXHierarchyTableViewCell.m */; };
 		3869933D1B18962D005B1BEE /* FLEXHierarchyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992AC1B18962D005B1BEE /* FLEXHierarchyTableViewController.m */; };
@@ -419,12 +418,10 @@
 		3869928F1B18962D005B1BEE /* ALPHAStatePlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAStatePlugin.m; sourceTree = "<group>"; };
 		386992931B18962D005B1BEE /* UIDevice+ALPHAStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+ALPHAStatus.h"; sourceTree = "<group>"; };
 		386992941B18962D005B1BEE /* UIDevice+ALPHAStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+ALPHAStatus.m"; sourceTree = "<group>"; };
-		3869929D1B18962D005B1BEE /* FLEXTouchPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXTouchPlugin.h; sourceTree = "<group>"; };
-		3869929E1B18962D005B1BEE /* FLEXTouchPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXTouchPlugin.m; sourceTree = "<group>"; };
+		3869929D1B18962D005B1BEE /* ALPHATouchPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHATouchPlugin.h; sourceTree = "<group>"; };
+		3869929E1B18962D005B1BEE /* ALPHATouchPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHATouchPlugin.m; sourceTree = "<group>"; };
 		386992A01B18962D005B1BEE /* ALPHATouchWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHATouchWindow.h; sourceTree = "<group>"; };
 		386992A11B18962D005B1BEE /* ALPHATouchWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHATouchWindow.m; sourceTree = "<group>"; };
-		386992A21B18962D005B1BEE /* FLEXAppEventEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXAppEventEngine.h; sourceTree = "<group>"; };
-		386992A31B18962D005B1BEE /* FLEXAppEventEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXAppEventEngine.m; sourceTree = "<group>"; };
 		386992A61B18962D005B1BEE /* FLEXAutoFillEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXAutoFillEngine.h; sourceTree = "<group>"; };
 		386992A71B18962D005B1BEE /* FLEXAutoFillEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXAutoFillEngine.m; sourceTree = "<group>"; };
 		386992A91B18962D005B1BEE /* FLEXHierarchyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXHierarchyTableViewCell.h; sourceTree = "<group>"; };
@@ -1144,8 +1141,8 @@
 		3869929C1B18962D005B1BEE /* Touch */ = {
 			isa = PBXGroup;
 			children = (
-				3869929D1B18962D005B1BEE /* FLEXTouchPlugin.h */,
-				3869929E1B18962D005B1BEE /* FLEXTouchPlugin.m */,
+				3869929D1B18962D005B1BEE /* ALPHATouchPlugin.h */,
+				3869929E1B18962D005B1BEE /* ALPHATouchPlugin.m */,
 				3869929F1B18962D005B1BEE /* Library */,
 			);
 			path = Touch;
@@ -1156,8 +1153,6 @@
 			children = (
 				386992A01B18962D005B1BEE /* ALPHATouchWindow.h */,
 				386992A11B18962D005B1BEE /* ALPHATouchWindow.m */,
-				386992A21B18962D005B1BEE /* FLEXAppEventEngine.h */,
-				386992A31B18962D005B1BEE /* FLEXAppEventEngine.m */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -1578,7 +1573,6 @@
 				38353ECC1B1DAFC2009E4ACF /* ALPHAScreenItem.m in Sources */,
 				386993171B18962D005B1BEE /* FLEXViewExplorerViewController.m in Sources */,
 				385BB4B51B1F4A9600443539 /* ALPHAGenericConverter.m in Sources */,
-				3869933A1B18962D005B1BEE /* FLEXAppEventEngine.m in Sources */,
 				386992EF1B18962D005B1BEE /* FLEXArgumentInputView.m in Sources */,
 				386993321B18962D005B1BEE /* ALPHAStatePlugin.m in Sources */,
 				386993111B18962D005B1BEE /* FLEXGlobalsTableViewControllerEntry.m in Sources */,
@@ -1636,7 +1630,7 @@
 				38353E7C1B1DAC38009E4ACF /* FLEXHeapEnumerator.m in Sources */,
 				3869931A1B18962D005B1BEE /* ALPHABootstrap.m in Sources */,
 				386993481B18962D005B1BEE /* ALPHAShakeTrigger.m in Sources */,
-				386993381B18962D005B1BEE /* FLEXTouchPlugin.m in Sources */,
+				386993381B18962D005B1BEE /* ALPHATouchPlugin.m in Sources */,
 				386993201B18962D005B1BEE /* ALPHAMainViewController.m in Sources */,
 				386993151B18962D005B1BEE /* FLEXSetExplorerViewController.m in Sources */,
 				38353EB11B1DAEA1009E4ACF /* ALPHABlockActionItem.m in Sources */,
