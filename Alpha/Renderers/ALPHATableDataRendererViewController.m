@@ -397,7 +397,8 @@
             renderer.source = self.source;
         }
     }
-    else if ([object isKindOfClass:[ALPHAScreenItem class]])
+    
+    if ([object isKindOfClass:[ALPHAScreenItem class]])
     {
         modelObject = [object object];
         

@@ -111,16 +111,8 @@
 
 - (void)registerMenuActions
 {
-    //
-    // Those actions are basically legacy from vanilla FLEX version and should be refactored.
-    //
-    ALPHAMenuActionItem* menuAction = [ALPHAMenuActionItem itemWithIdentifier:@"com.unifiedsense.alpha.globalState"];
-    menuAction.title = @"Global State";
-    menuAction.icon = @"🌍";
-    menuAction.viewControllerClass = @"FLEXGlobalsTableViewController";
-    [self registerAction:menuAction];
     
-    menuAction = [ALPHAMenuActionItem itemWithIdentifier:@"com.unifiedsense.alpha.memoryHeap"];
+    ALPHAMenuActionItem *menuAction = [ALPHAMenuActionItem itemWithIdentifier:@"com.unifiedsense.alpha.memoryHeap"];
     menuAction.icon = @"💩";
     menuAction.title = @"Heap Objects";
     menuAction.viewControllerClass = @"FLEXLiveObjectsTableViewController";

@@ -11,6 +11,16 @@
 @interface ALPHAMenuActionItem : ALPHAActionItem
 
 /*!
+ *  Set to NO, if option should not appear in main menu
+ */
+@property (nonatomic, assign) BOOL isMain;
+
+/*!
+ *  Set to NO, if option is not available remotely
+ */
+@property (nonatomic, assign) BOOL isRemote;
+
+/*!
  *  Action that opens a view controller should have this property set.
  */
 @property (nonatomic, copy) NSString* viewControllerClass;

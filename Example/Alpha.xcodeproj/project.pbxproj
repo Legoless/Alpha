@@ -52,6 +52,9 @@
 		38424A2B1B25B94500C07B7B /* ALPHAApplicationEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 38424A2A1B25B94500C07B7B /* ALPHAApplicationEvent.m */; };
 		38424A2F1B25C15700C07B7B /* UIViewController+ALPHAEventLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 38424A2E1B25C15700C07B7B /* UIViewController+ALPHAEventLog.m */; };
 		38424A321B25C66400C07B7B /* NSString+ALPHAAdditional.m in Sources */ = {isa = PBXBuildFile; fileRef = 38424A311B25C66400C07B7B /* NSString+ALPHAAdditional.m */; };
+		38424A361B25CF2400C07B7B /* ALPHAFilePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 38424A351B25CF2400C07B7B /* ALPHAFilePlugin.m */; };
+		38424A3B1B25CFF300C07B7B /* ALPHAGlobalPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 38424A3A1B25CFF300C07B7B /* ALPHAGlobalPlugin.m */; };
+		38424A3F1B25D01400C07B7B /* ALPHAGlobalCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 38424A3E1B25D01400C07B7B /* ALPHAGlobalCollector.m */; };
 		38482CDF1B21FD1C003E541A /* ALPHATableScreenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38482CDE1B21FD1C003E541A /* ALPHATableScreenModel.m */; };
 		38482CEA1B2212A7003E541A /* ALPHAImageSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 38482CE91B2212A7003E541A /* ALPHAImageSerializer.m */; };
 		38482CED1B221379003E541A /* ALPHAURLSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 38482CEC1B221379003E541A /* ALPHAURLSerializer.m */; };
@@ -284,6 +287,12 @@
 		38424A2E1B25C15700C07B7B /* UIViewController+ALPHAEventLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ALPHAEventLog.m"; sourceTree = "<group>"; };
 		38424A301B25C66400C07B7B /* NSString+ALPHAAdditional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ALPHAAdditional.h"; sourceTree = "<group>"; };
 		38424A311B25C66400C07B7B /* NSString+ALPHAAdditional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ALPHAAdditional.m"; sourceTree = "<group>"; };
+		38424A341B25CF2400C07B7B /* ALPHAFilePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAFilePlugin.h; sourceTree = "<group>"; };
+		38424A351B25CF2400C07B7B /* ALPHAFilePlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAFilePlugin.m; sourceTree = "<group>"; };
+		38424A391B25CFF300C07B7B /* ALPHAGlobalPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAGlobalPlugin.h; sourceTree = "<group>"; };
+		38424A3A1B25CFF300C07B7B /* ALPHAGlobalPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAGlobalPlugin.m; sourceTree = "<group>"; };
+		38424A3D1B25D01400C07B7B /* ALPHAGlobalCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAGlobalCollector.h; sourceTree = "<group>"; };
+		38424A3E1B25D01400C07B7B /* ALPHAGlobalCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAGlobalCollector.m; sourceTree = "<group>"; };
 		38482CDD1B21FD1C003E541A /* ALPHATableScreenModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHATableScreenModel.h; sourceTree = "<group>"; };
 		38482CDE1B21FD1C003E541A /* ALPHATableScreenModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHATableScreenModel.m; sourceTree = "<group>"; };
 		38482CE81B2212A7003E541A /* ALPHAImageSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAImageSerializer.h; sourceTree = "<group>"; };
@@ -826,6 +835,42 @@
 			path = Library;
 			sourceTree = "<group>";
 		};
+		38424A331B25CEF500C07B7B /* File */ = {
+			isa = PBXGroup;
+			children = (
+				38424A371B25CF3000C07B7B /* Library */,
+				38424A341B25CF2400C07B7B /* ALPHAFilePlugin.h */,
+				38424A351B25CF2400C07B7B /* ALPHAFilePlugin.m */,
+			);
+			path = File;
+			sourceTree = "<group>";
+		};
+		38424A371B25CF3000C07B7B /* Library */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		38424A381B25CFD800C07B7B /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				38424A3C1B25CFFA00C07B7B /* Collectors */,
+				38424A391B25CFF300C07B7B /* ALPHAGlobalPlugin.h */,
+				38424A3A1B25CFF300C07B7B /* ALPHAGlobalPlugin.m */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		38424A3C1B25CFFA00C07B7B /* Collectors */ = {
+			isa = PBXGroup;
+			children = (
+				38424A3D1B25D01400C07B7B /* ALPHAGlobalCollector.h */,
+				38424A3E1B25D01400C07B7B /* ALPHAGlobalCollector.m */,
+			);
+			path = Collectors;
+			sourceTree = "<group>";
+		};
 		38482CE71B22127F003E541A /* Type */ = {
 			isa = PBXGroup;
 			children = (
@@ -1051,6 +1096,8 @@
 				3869924A1B18962D005B1BEE /* Bootstrap */,
 				386992531B18962D005B1BEE /* Console */,
 				38353ECF1B1DB221009E4ACF /* Event */,
+				38424A331B25CEF500C07B7B /* File */,
+				38424A381B25CFD800C07B7B /* Global */,
 				3869925E1B18962D005B1BEE /* Interface */,
 				3869926D1B18962D005B1BEE /* Network */,
 				384DDDA71B1DA622003DCDAE /* Notification */,
@@ -1613,6 +1660,7 @@
 				3869934B1B18962D005B1BEE /* ALPHATrigger.m in Sources */,
 				386993231B18962D005B1BEE /* ALPHAExplorerMenu.m in Sources */,
 				38353E7F1B1DAC38009E4ACF /* FLEXUtility.m in Sources */,
+				38424A3B1B25CFF300C07B7B /* ALPHAGlobalPlugin.m in Sources */,
 				3869932B1B18962D005B1BEE /* ALPHANetworkRequest.m in Sources */,
 				535682B318F3670300BAAD62 /* AAPLPageControlViewController.m in Sources */,
 				386992FE1B18962D005B1BEE /* FLEXLiveObjectsTableViewController.m in Sources */,
@@ -1644,6 +1692,7 @@
 				3869930F1B18962D005B1BEE /* FLEXDescriptionTableViewCell.m in Sources */,
 				38353E841B1DAC38009E4ACF /* UIImage+ALPHACreation.m in Sources */,
 				381E6ECA1B1C856000A09D55 /* UIApplication+ALPHAPrivate.m in Sources */,
+				38424A3F1B25D01400C07B7B /* ALPHAGlobalCollector.m in Sources */,
 				38424A221B25B84500C07B7B /* ALPHAEventCollector.m in Sources */,
 				535682BF18F3670300BAAD62 /* UIColor+AAPLApplicationSpecific.m in Sources */,
 				386992ED1B18962D005B1BEE /* FLEXArgumentInputSwitchView.m in Sources */,
@@ -1715,6 +1764,7 @@
 				3869931F1B18962D005B1BEE /* ALPHAInterfacePlugin.m in Sources */,
 				3869930C1B18962D005B1BEE /* FLEXArrayExplorerViewController.m in Sources */,
 				3869932F1B18962D005B1BEE /* ALPHAScreenshotPlugin.m in Sources */,
+				38424A361B25CF2400C07B7B /* ALPHAFilePlugin.m in Sources */,
 				38424A251B25B86600C07B7B /* ALPHAEventConverter.m in Sources */,
 				38353E791B1DAC38009E4ACF /* ALPHANavigationController.m in Sources */,
 				384DDDBC1B1DA856003DCDAE /* ALPHANotificationCollector.m in Sources */,

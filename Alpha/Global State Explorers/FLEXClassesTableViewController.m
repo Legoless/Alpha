@@ -22,6 +22,18 @@
 
 @implementation FLEXClassesTableViewController
 
+- (instancetype)init
+{
+    self = [super init];
+    
+    if (self)
+    {
+        self.binaryImageName = [FLEXUtility applicationImageName];
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
