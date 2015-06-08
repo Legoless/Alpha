@@ -1,14 +1,14 @@
 //
-//  FLEXNetworkError.h
-//  UICatalog
+//  ALPHANetworkError.h
+//  Alpha
 //
 //  Created by Dal Rupnik on 10/11/14.
-//  Copyright (c) 2014 f. All rights reserved.
+//  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
 #import "ALPHASerializableItem.h"
 
-@interface FLEXNetworkError : NSObject <ALPHASerializableItem>
+@interface ALPHANetworkError : NSObject <ALPHASerializableItem>
 
 @property (nonatomic, copy) NSString *domain;
 @property (nonatomic) NSInteger code;

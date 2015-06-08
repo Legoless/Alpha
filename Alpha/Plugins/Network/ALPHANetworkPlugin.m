@@ -1,16 +1,18 @@
 //
-//  FLEXNetworkPlugin.m
-//  UICatalog
+//  ALPHANetworkPlugin.m
+//  Alpha
 //
 //  Created by Dal Rupnik on 25/11/14.
-//  Copyright (c) 2014 f. All rights reserved.
+//  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
+
+#import "ALPHANetworkCollector.h"
 
 #import "ALPHAMenuActionItem.h"
 
-#import "FLEXNetworkPlugin.h"
+#import "ALPHANetworkPlugin.h"
 
-@implementation FLEXNetworkPlugin
+@implementation ALPHANetworkPlugin
 
 - (instancetype)init
 {
@@ -21,9 +23,11 @@
         ALPHAMenuActionItem* menuAction = [ALPHAMenuActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.network.main"];
         menuAction.icon = @"💬";
         menuAction.title = @"Network";
-        //menuAction.viewControllerClass = @"FLEXNetworkTableViewController";
+        menuAction.dataIdentifier = ALPHANetworkDataIdentifier;
         
         [self registerAction:menuAction];
+        
+        [self registerCollector:[ALPHANetworkCollector sharedCollector]];
     }
     
     return self;

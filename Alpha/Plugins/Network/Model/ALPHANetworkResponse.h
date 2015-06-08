@@ -1,16 +1,16 @@
 //
-//  FLEXNetworkResponse.h
-//  UICatalog
+//  ALPHANetworkResponse.h
+//  Alpha
 //
 //  Created by Dal Rupnik on 06/11/14.
-//  Copyright (c) 2014 f. All rights reserved.
+//  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
 #import "ALPHASerializableItem.h"
 
-#import "FLEXNetworkResourceTiming.h"
+#import "ALPHANetworkConnectionTiming.h"
 
-@interface FLEXNetworkResponse : NSObject <ALPHASerializableItem>
+@interface ALPHANetworkResponse : NSObject <ALPHASerializableItem>
 
 // Response URL.
 // Type: string
@@ -55,6 +55,6 @@
 @property (nonatomic, strong) NSNumber *fromDiskCache;
 
 - (id)initWithURLResponse:(NSURLResponse *)response request:(NSURLRequest *)request;
-+ (FLEXNetworkResponse *)networkResponseWithURLResponse:(NSURLResponse *)response request:(NSURLRequest *)request;
++ (ALPHANetworkResponse *)networkResponseWithURLResponse:(NSURLResponse *)response request:(NSURLRequest *)request;
 
 @end

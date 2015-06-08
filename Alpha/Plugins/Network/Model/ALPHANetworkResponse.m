@@ -6,14 +6,19 @@
 //  Copyright (c) 2014 f. All rights reserved.
 //
 
-#import "FLEXNetworkResponse.h"
+#import "ALPHANetworkResponse.h"
 
-@implementation FLEXNetworkResponse
+@implementation ALPHANetworkResponse
 
 - (id)initWithURLResponse:(NSURLResponse *)response request:(NSURLRequest *)request
 {
     self = [super init];
     if (!self) {
+        return nil;
+    }
+    
+    if (!response)
+    {
         return nil;
     }
     
@@ -35,7 +40,7 @@
     return self;
 }
 
-+ (FLEXNetworkResponse *)networkResponseWithURLResponse:(NSURLResponse *)response request:(NSURLRequest *)request;
++ (ALPHANetworkResponse *)networkResponseWithURLResponse:(NSURLResponse *)response request:(NSURLRequest *)request;
 {
     return [[[self class] alloc] initWithURLResponse:response request:request];
 }

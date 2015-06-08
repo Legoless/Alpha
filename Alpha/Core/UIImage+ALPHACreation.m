@@ -1,14 +1,14 @@
 //
-//  UIImage+Creation.m
+//  UIImage+ALPHACreation.m
 //  Alpha
 //
 //  Created by Dal Rupnik on 01/06/15.
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "UIImage+Creation.h"
+#import "UIImage+ALPHACreation.h"
 
-@implementation UIImage (Creation)
+@implementation UIImage (ALPHACreation)
 
 + (UIImage *)alpha_imageWithColor:(UIColor *)color
 {

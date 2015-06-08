@@ -8,7 +8,7 @@
 
 #import "ALPHANavigationController.h"
 
-#import "UIImage+Creation.h"
+#import "UIImage+ALPHACreation.h"
 
 #import "UIApplication+ALPHAPrivate.h"
 

@@ -1,5 +1,5 @@
 //
-//  UIImage+Creation.h
+//  UIImage+ALPHACreation.h
 //  Alpha
 //
 //  Created by Dal Rupnik on 01/06/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIImage (Creation)
+@interface UIImage (ALPHACreation)
 
 /*!
  *  Returns 1x1 pt UIImage with color background

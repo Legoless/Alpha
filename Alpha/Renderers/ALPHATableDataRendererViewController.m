@@ -399,7 +399,7 @@
     }
     else if ([object isKindOfClass:[ALPHAScreenItem class]])
     {
-        modelObject = [object model];
+        modelObject = [object object];
         
     }
     else

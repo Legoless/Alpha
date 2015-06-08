@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad
 {
-    self.urlTextField.text = @"http://www.arvystate.net";
+    self.urlTextField.text = @"http://unifiedsense.com";
     self.methodSegmentedControl.selectedSegmentIndex = 0;
 }
 

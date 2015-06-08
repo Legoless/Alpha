@@ -1,14 +1,14 @@
 //
-//  FLEXNetworkRequest.m
-//  UICatalog
+//  ALPHANetworkRequest.m
+//  Alpha
 //
 //  Created by Dal Rupnik on 06/11/14.
-//  Copyright (c) 2014 f. All rights reserved.
+//  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
-#import "FLEXNetworkRequest.h"
+#import "ALPHANetworkRequest.h"
 
-@implementation FLEXNetworkRequest
+@implementation ALPHANetworkRequest
 
 - (id)initWithURLRequest:(NSURLRequest *)request
 {
@@ -29,7 +29,7 @@
     return self;
 }
 
-+ (FLEXNetworkRequest *)networkRequestWithURLRequest:(NSURLRequest *)request;
++ (ALPHANetworkRequest *)networkRequestWithURLRequest:(NSURLRequest *)request;
 {
     return [[[self class] alloc] initWithURLRequest:request];
 }

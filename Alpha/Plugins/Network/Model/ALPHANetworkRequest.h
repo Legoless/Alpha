@@ -1,14 +1,14 @@
 //
-//  FLEXNetworkRequest.h
-//  UICatalog
+//  ALPHANetworkRequest.h
+//  Alpha
 //
 //  Created by Dal Rupnik on 06/11/14.
-//  Copyright (c) 2014 f. All rights reserved.
+//  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
 #import "ALPHASerializableItem.h"
 
-@interface FLEXNetworkRequest : NSObject <ALPHASerializableItem>
+@interface ALPHANetworkRequest : NSObject <ALPHASerializableItem>
 
 // Request URL.
 // Type: string
@@ -26,6 +26,6 @@
 @property (nonatomic, strong) NSString *postData;
 
 - (id)initWithURLRequest:(NSURLRequest *)request;
-+ (FLEXNetworkRequest *)networkRequestWithURLRequest:(NSURLRequest *)request;
++ (ALPHANetworkRequest *)networkRequestWithURLRequest:(NSURLRequest *)request;
 
 @end

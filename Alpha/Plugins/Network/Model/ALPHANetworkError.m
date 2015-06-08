@@ -1,18 +1,23 @@
 //
-//  FLEXNetworkError.m
-//  UICatalog
+//  ALPHANetworkError.m
+//  Alpha
 //
 //  Created by Dal Rupnik on 10/11/14.
-//  Copyright (c) 2014 f. All rights reserved.
+//  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
-#import "FLEXNetworkError.h"
+#import "ALPHANetworkError.h"
 
-@implementation FLEXNetworkError
+@implementation ALPHANetworkError
 
 + (instancetype)networkErrorWithError:(NSError *)error
 {
-    FLEXNetworkError *networkError = [[FLEXNetworkError alloc] init];
+    if (!error)
+    {
+        return nil;
+    }
+    
+    ALPHANetworkError *networkError = [[ALPHANetworkError alloc] init];
     
     networkError.domain = error.domain;
     networkError.code = error.code;
