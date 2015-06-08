@@ -9,6 +9,8 @@
 #import <objc/runtime.h>
 #import <Haystack/Haystack.h>
 
+#import "NSString+ALPHAAdditional.h"
+
 #import "FLEXObjectExplorerViewController.h"
 #import "FLEXArrayExplorerViewController.h"
 #import "FLEXSetExplorerViewController.h"
@@ -153,7 +155,7 @@
     //
     
     ALPHATableScreenModel* screenModel = [[ALPHATableScreenModel alloc] initWithIdentifier:model.identifier];
-    screenModel.title = [self cleanCodeIdentifierString:NSStringFromClass([model class])];
+    screenModel.title = [NSStringFromClass([model class]) alpha_cleanCodeIdentifier];
     
     ALPHAScreenSection* mainSection = [[ALPHAScreenSection alloc] init];
     
@@ -167,7 +169,7 @@
         if ([[model valueForKey:propertyName] isKindOfClass:[NSArray class]])
         {
             ALPHAScreenSection* section = [[ALPHAScreenSection alloc] init];
-            section.title = [self cleanCodeIdentifierString:propertyName];
+            section.title = [propertyName alpha_cleanCodeIdentifier];
             
             NSMutableArray* sectionItems = [NSMutableArray array];
             
@@ -176,7 +178,7 @@
                 ALPHAScreenItem* screenItem = [[ALPHAScreenItem alloc] init];
                 screenItem.object = item;
                 
-                screenItem.title = [self cleanCodeIdentifierString:NSStringFromClass([item class])];
+                screenItem.title = [NSStringFromClass([item class]) alpha_cleanCodeIdentifier];
                 screenItem.detail = [item description];
                 
                 [sectionItems addObject:screenItem];
@@ -210,56 +212,5 @@
 {
     return [ALPHAScreenModel new];
 }
-
-#pragma mark - Private methods
-
-- (NSString *)cleanCodeIdentifierString:(NSString *)string
-{
-    return [self titleCaseForCamelCaseString:[self removeNamespacePrefixFromString:string]];
-}
-
-- (NSString *)removeNamespacePrefixFromString:(NSString *)string
-{
-    NSInteger location = 0;
-    
-    for (NSInteger i = 0; i < string.length; i++)
-    {
-        NSString *chr = [string substringWithRange:NSMakeRange(i, 1)];
-        
-        if ([chr rangeOfCharacterFromSet:[NSCharacterSet uppercaseLetterCharacterSet]].location != NSNotFound)
-        {
-            location = i - 1;
-            break;
-        }
-    }
-    
-    if (location < 0)
-    {
-        location = 0;
-    }
-    
-    return [string substringFromIndex:location];
-
-}
-
-- (NSString *)titleCaseForCamelCaseString:(NSString *)camelCaseString
-{
-    NSMutableString *titleCase = [NSMutableString string];
-    
-    for (NSInteger i = 0; i < camelCaseString.length; i++)
-    {
-        NSString *chr = [camelCaseString substringWithRange:NSMakeRange(i, 1)];
-        
-        if ([chr rangeOfCharacterFromSet:[NSCharacterSet uppercaseLetterCharacterSet]].location != NSNotFound)
-        {
-            [titleCase appendString:@" "];
-        }
-        
-        [titleCase appendString:chr];
-    }
-    
-    return titleCase;
-}
-
 
 @end

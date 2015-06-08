@@ -140,7 +140,6 @@ NSString *const ALPHANotificationDataIdentifier = @"com.unifiedsense.alpha.data.
     model.scheduledLocalNotifications = self.scheduledLocalNotifications;
     model.firedLocalNotifications = self.firedLocalNotifications;
     
-    
     return model;
 }
 

@@ -91,7 +91,7 @@ NSString *const ALPHANetworkDataIdentifier = @"com.unifiedsense.alpha.data.netwo
 
 + (instancetype)sharedCollector
 {
-    static ALPHANetworkCollector *sharedCollector = nil;
+    static id sharedCollector = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedCollector = [[[self class] alloc] init];

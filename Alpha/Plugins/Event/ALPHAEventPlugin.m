@@ -8,6 +8,7 @@
 
 #import "ALPHAEventPlugin.h"
 #import "ALPHAMenuActionItem.h"
+#import "ALPHAEventCollector.h"
 
 @implementation ALPHAEventPlugin
 
@@ -33,7 +34,7 @@
         ALPHAMenuActionItem *menuAction = [ALPHAMenuActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.event.events"];
         menuAction.icon = @"📅";
         menuAction.title = @"Events";
-        //menuAction.viewControllerClass = @"FLEXNotificationTableViewController";
+        menuAction.dataIdentifier = ALPHAEventDataIdentifier;
         
         [self registerAction:menuAction];
         
@@ -41,7 +42,7 @@
         // Collectors
         //
         
-        //[self registerCollector:[ALPHADeviceStatusCollector new]];
+        [self registerCollector:[ALPHAEventCollector sharedCollector]];
     }
     
     return self;

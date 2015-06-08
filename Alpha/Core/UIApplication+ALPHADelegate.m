@@ -67,9 +67,9 @@
         // Run Alpha integration, only integrates once anyway
         //
         
-        dispatch_async(dispatch_get_main_queue(), ^{
+        //dispatch_async(dispatch_get_main_queue(), ^{
             [[ALPHAManager sharedManager] integrate];
-        });
+        //});
         
         //
         // Target delegate is not Alpha delegate, we check if we already have it set (maybe someone else wants to change the delegate class). In that case we will set it as Alpha's delegate
