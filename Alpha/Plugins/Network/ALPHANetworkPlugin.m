@@ -24,6 +24,7 @@
         menuAction.icon = @"💬";
         menuAction.title = @"Network";
         menuAction.dataIdentifier = ALPHANetworkDataIdentifier;
+        menuAction.isMain = YES;
         
         [self registerAction:menuAction];
         

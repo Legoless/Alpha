@@ -27,6 +27,7 @@
             menuAction.icon = @"🎨";
             menuAction.title = @"Environments";
             menuAction.dataIdentifier = ALPHAEnvironmentDataIdentifier;
+            menuAction.isMain = YES;
             
             [self registerAction:menuAction];
             

@@ -116,12 +116,14 @@
     menuAction.icon = @"💩";
     menuAction.title = @"Heap Objects";
     menuAction.viewControllerClass = @"FLEXLiveObjectsTableViewController";
+    menuAction.isMain = YES;
     [self registerAction:menuAction];
     
     menuAction = [ALPHAMenuActionItem itemWithIdentifier:@"com.unifiedsense.alpha.fileBrowser"];
     menuAction.icon = @"📁";
     menuAction.title = @"File Browser";
     menuAction.viewControllerClass = @"FLEXFileBrowserTableViewController";
+    menuAction.isMain = YES;
     [self registerAction:menuAction];
 }
 

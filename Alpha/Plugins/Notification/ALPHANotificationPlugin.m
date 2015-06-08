@@ -30,6 +30,7 @@
         menuAction.icon = @"🔔";
         menuAction.title = @"Notifications";
         menuAction.dataIdentifier = ALPHANotificationDataIdentifier;
+        menuAction.isMain = YES;
         
         [self registerAction:menuAction];
         

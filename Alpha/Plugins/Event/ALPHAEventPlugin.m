@@ -35,6 +35,7 @@
         menuAction.icon = @"📅";
         menuAction.title = @"Events";
         menuAction.dataIdentifier = ALPHAEventDataIdentifier;
+        menuAction.isMain = YES;
         
         [self registerAction:menuAction];
         

@@ -44,6 +44,7 @@
         menuAction.icon = @"📱";
         menuAction.title = @"Screenshots";
         menuAction.dataIdentifier = ALPHAScreenshotDataIdentifier;
+        menuAction.isMain = YES;
         
         [self registerAction:menuAction];
         

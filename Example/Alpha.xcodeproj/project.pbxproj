@@ -90,7 +90,6 @@
 		386992F71B18962D005B1BEE /* FLEXClassesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992011B18962D005B1BEE /* FLEXClassesTableViewController.m */; };
 		386992F91B18962D005B1BEE /* FLEXFileBrowserSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992051B18962D005B1BEE /* FLEXFileBrowserSearchOperation.m */; };
 		386992FA1B18962D005B1BEE /* FLEXFileBrowserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992071B18962D005B1BEE /* FLEXFileBrowserTableViewController.m */; };
-		386992FB1B18962D005B1BEE /* FLEXGlobalsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992091B18962D005B1BEE /* FLEXGlobalsTableViewController.m */; };
 		386992FC1B18962D005B1BEE /* FLEXInstancesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3869920B1B18962D005B1BEE /* FLEXInstancesTableViewController.m */; };
 		386992FD1B18962D005B1BEE /* FLEXLibrariesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3869920D1B18962D005B1BEE /* FLEXLibrariesTableViewController.m */; };
 		386992FE1B18962D005B1BEE /* FLEXLiveObjectsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3869920F1B18962D005B1BEE /* FLEXLiveObjectsTableViewController.m */; };
@@ -367,8 +366,6 @@
 		386992051B18962D005B1BEE /* FLEXFileBrowserSearchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXFileBrowserSearchOperation.m; sourceTree = "<group>"; };
 		386992061B18962D005B1BEE /* FLEXFileBrowserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXFileBrowserTableViewController.h; sourceTree = "<group>"; };
 		386992071B18962D005B1BEE /* FLEXFileBrowserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXFileBrowserTableViewController.m; sourceTree = "<group>"; };
-		386992081B18962D005B1BEE /* FLEXGlobalsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXGlobalsTableViewController.h; sourceTree = "<group>"; };
-		386992091B18962D005B1BEE /* FLEXGlobalsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXGlobalsTableViewController.m; sourceTree = "<group>"; };
 		3869920A1B18962D005B1BEE /* FLEXInstancesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXInstancesTableViewController.h; sourceTree = "<group>"; };
 		3869920B1B18962D005B1BEE /* FLEXInstancesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXInstancesTableViewController.m; sourceTree = "<group>"; };
 		3869920C1B18962D005B1BEE /* FLEXLibrariesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXLibrariesTableViewController.h; sourceTree = "<group>"; };
@@ -1021,8 +1018,6 @@
 				386992051B18962D005B1BEE /* FLEXFileBrowserSearchOperation.m */,
 				386992061B18962D005B1BEE /* FLEXFileBrowserTableViewController.h */,
 				386992071B18962D005B1BEE /* FLEXFileBrowserTableViewController.m */,
-				386992081B18962D005B1BEE /* FLEXGlobalsTableViewController.h */,
-				386992091B18962D005B1BEE /* FLEXGlobalsTableViewController.m */,
 				3869920A1B18962D005B1BEE /* FLEXInstancesTableViewController.h */,
 				3869920B1B18962D005B1BEE /* FLEXInstancesTableViewController.m */,
 				3869920C1B18962D005B1BEE /* FLEXLibrariesTableViewController.h */,
@@ -1640,7 +1635,6 @@
 				38482CEA1B2212A7003E541A /* ALPHAImageSerializer.m in Sources */,
 				535682B018F3670300BAAD62 /* AAPLDefaultToolbarViewController.m in Sources */,
 				38353E821B1DAC38009E4ACF /* UIApplication+ALPHADelegate.m in Sources */,
-				386992FB1B18962D005B1BEE /* FLEXGlobalsTableViewController.m in Sources */,
 				386992E61B18962D005B1BEE /* FLEXArgumentInputFontsPickerView.m in Sources */,
 				38353EB21B1DAEA1009E4ACF /* ALPHAGlobalActionIdentifiers.m in Sources */,
 				386992FD1B18962D005B1BEE /* FLEXLibrariesTableViewController.m in Sources */,

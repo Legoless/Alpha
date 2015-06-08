@@ -23,6 +23,7 @@
         menuAction.icon = @"⚠️";
         menuAction.title = @"Console";
         menuAction.dataIdentifier = ALPHAConsoleDataIdentifier;
+        menuAction.isMain = YES;
         
         [self registerAction:menuAction];
         

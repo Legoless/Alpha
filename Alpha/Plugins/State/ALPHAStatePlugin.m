@@ -30,6 +30,7 @@
         menuAction.icon = @"📊";
         menuAction.title = @"Status";
         menuAction.dataIdentifier = ALPHADeviceStatusDataIdentifier;
+        menuAction.isMain = YES;
         
         [self registerAction:menuAction];
         
