@@ -14,7 +14,7 @@ Alpha
 Alpha is the next generation debugging system for iOS applications. It started as an unofficial fork from [FLEX](https://github.com/Flipboard/FLEX) (Flipboard Explorer), but continued to be actively developed and grew exponentionally. Many features were added on top of original FLEX:
 
 - Push Notification logging (independent of provider)
-- Console logging
+- Console logging (ASL)
 - Network logging (based on [PonyDebugger](https://github.com/square/PonyDebugger))
 - Bootstrap environment change with [KZBootstrap](https://github.com/krzysztofzablocki/KZBootstrap)
 - Screenshot system
@@ -27,7 +27,7 @@ Currently work in progress:
 - *Recording touches and replaying actions*
 - *Remote connection to app (state)*
 - *Remote debugger*
-- *Specify features in podfile*
+- *Specify features in podfile using subspecs*
 
 **This is an unofficial fork from the amazing Flipboard guys. It is a big rewrite of FLEX architecture, making it completely extensible, but sadly not backwards compatible with original code.**
 
