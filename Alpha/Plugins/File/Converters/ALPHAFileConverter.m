@@ -37,7 +37,12 @@
             item.object = [ALPHARequest requestWithIdentifier:model.request.identifier parameters:@{ ALPHAFileURLParameterKey : file.path }];
         }
         
-        item.icon = file.previewImage;
+        if (file.previewImage)
+        {
+            item.icon = file.previewImage;
+            item.object = file.previewImage;
+        }
+        
         item.title = [file.path lastPathComponent];
         item.detail = [self subtitleForFileObject:file];
         
