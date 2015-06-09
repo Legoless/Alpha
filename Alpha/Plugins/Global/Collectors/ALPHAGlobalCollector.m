@@ -7,6 +7,7 @@
 //
 
 #import "ALPHAGlobalCollector.h"
+#import "ALPHAClassCollector.h"
 
 #import "FLEXUtility.h"
 
@@ -40,7 +41,7 @@ NSString* const ALPHAGlobalDataIdentifier = @"com.unifiedsense.alpha.data.global
     ALPHAMenuActionItem* menuAction = [ALPHAMenuActionItem itemWithIdentifier:@"com.unifiedsense.alpha.global.classes"];
     menuAction.title = [NSString stringWithFormat:@"%@ Classes", [FLEXUtility applicationName]];
     menuAction.icon = @"📕";
-    menuAction.viewControllerClass = @"FLEXClassesTableViewController";
+    menuAction.dataIdentifier = ALPHAClassDataIdentifier;
     
     [items addObject:menuAction];
     

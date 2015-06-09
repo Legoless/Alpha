@@ -151,6 +151,7 @@
 		38D8EB581B18BD6A00D612FD /* ALPHAMenuDataCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D8EB571B18BD6A00D612FD /* ALPHAMenuDataCollector.m */; };
 		38DE4A491A0B78BC00EB447A /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38DE4A481A0B78BC00EB447A /* Launch.xib */; };
 		38DE4A4C1A0B7DB000EB447A /* AAPLNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DE4A4B1A0B7DB000EB447A /* AAPLNetworkViewController.m */; };
+		38E0D9801B2738FF00A2D8B8 /* ALPHAClassCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E0D97F1B2738FF00A2D8B8 /* ALPHAClassCollector.m */; };
 		3EC6487318FF8A5000024205 /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3EC6487218FF8A5000024205 /* ReadMe.txt */; };
 		5356823E18F3656900BAAD62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5356823D18F3656900BAAD62 /* Foundation.framework */; };
 		5356824018F3656900BAAD62 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5356823F18F3656900BAAD62 /* CoreGraphics.framework */; };
@@ -488,6 +489,8 @@
 		38DE4A481A0B78BC00EB447A /* Launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
 		38DE4A4A1A0B7DB000EB447A /* AAPLNetworkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLNetworkViewController.h; sourceTree = "<group>"; };
 		38DE4A4B1A0B7DB000EB447A /* AAPLNetworkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLNetworkViewController.m; sourceTree = "<group>"; };
+		38E0D97E1B2738FF00A2D8B8 /* ALPHAClassCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAClassCollector.h; sourceTree = "<group>"; };
+		38E0D97F1B2738FF00A2D8B8 /* ALPHAClassCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAClassCollector.m; sourceTree = "<group>"; };
 		38E3D8271B1DFFE8000103A9 /* ALPHAIdentifiableItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALPHAIdentifiableItem.h; sourceTree = "<group>"; };
 		3EC6487218FF8A5000024205 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = SOURCE_ROOT; };
 		5356823A18F3656900BAAD62 /* UICatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UICatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -864,6 +867,8 @@
 			children = (
 				38424A3D1B25D01400C07B7B /* ALPHAGlobalCollector.h */,
 				38424A3E1B25D01400C07B7B /* ALPHAGlobalCollector.m */,
+				38E0D97E1B2738FF00A2D8B8 /* ALPHAClassCollector.h */,
+				38E0D97F1B2738FF00A2D8B8 /* ALPHAClassCollector.m */,
 			);
 			path = Collectors;
 			sourceTree = "<group>";
@@ -1679,6 +1684,7 @@
 				386993321B18962D005B1BEE /* ALPHAStatePlugin.m in Sources */,
 				386993111B18962D005B1BEE /* FLEXGlobalsTableViewControllerEntry.m in Sources */,
 				38353EB41B1DAEA1009E4ACF /* ALPHASelectorActionItem.m in Sources */,
+				38E0D9801B2738FF00A2D8B8 /* ALPHAClassCollector.m in Sources */,
 				386992E71B18962D005B1BEE /* FLEXArgumentInputFontView.m in Sources */,
 				535682BB18F3670300BAAD62 /* AAPLTextFieldViewController.m in Sources */,
 				3869932A1B18962D005B1BEE /* ALPHANetworkInitiator.m in Sources */,

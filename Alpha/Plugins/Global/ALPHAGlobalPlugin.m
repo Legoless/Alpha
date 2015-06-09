@@ -13,6 +13,7 @@
 #import "ALPHAGlobalPlugin.h"
 #import "ALPHAActions.h"
 #import "ALPHAGlobalCollector.h"
+#import "ALPHAClassCollector.h"
 
 @implementation ALPHAGlobalPlugin
 
@@ -37,6 +38,7 @@
         //
         
         [self registerCollector:[ALPHAGlobalCollector new]];
+        [self registerCollector:[ALPHAClassCollector new]];
     }
     
     return self;
