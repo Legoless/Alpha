@@ -12,7 +12,7 @@
 
 #import "ALPHABlockActionItem.h"
 #import "ALPHAMenuActionItem.h"
-#import "ALPHAMenuDataCollector.h"
+#import "ALPHAMenuSource.h"
 #import "FLEXResources.h"
 
 #import "ALPHAGlobalActionIdentifiers.h"
@@ -100,10 +100,10 @@
         [self registerMenuActions];
         
         //
-        // Data Collectors
+        // Data Sources
         //
         
-        [self registerCollector:[ALPHAMenuDataCollector new]];
+        [self registerSource:[ALPHAMenuSource new]];
     }
     
     return self;

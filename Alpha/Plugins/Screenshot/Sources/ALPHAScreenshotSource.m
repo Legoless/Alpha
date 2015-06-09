@@ -1,5 +1,5 @@
 //
-//  ALPHAScreenshotCollector.m
+//  ALPHAScreenshotSource.m
 //  Alpha
 //
 //  Created by Dal Rupnik on 05/06/15.
@@ -7,12 +7,12 @@
 //
 
 #import "ALPHAFileManager.h"
-#import "ALPHAScreenshotCollector.h"
+#import "ALPHAScreenshotSource.h"
 #import "ALPHATableScreenModel.h"
 
 NSString *const ALPHAScreenshotDataIdentifier = @"com.unifiedsense.alpha.data.screenshot";
 
-@interface ALPHAScreenshotCollector ()
+@interface ALPHAScreenshotSource ()
 
 @property (nonatomic, copy) NSArray *screenshots;
 
@@ -20,7 +20,7 @@ NSString *const ALPHAScreenshotDataIdentifier = @"com.unifiedsense.alpha.data.sc
 
 @end
 
-@implementation ALPHAScreenshotCollector
+@implementation ALPHAScreenshotSource
 
 - (NSDateFormatter *)dateFormatter
 {
@@ -54,7 +54,7 @@ NSString *const ALPHAScreenshotDataIdentifier = @"com.unifiedsense.alpha.data.sc
     self.screenshots = [[NSFileManager defaultManager] contentsOfDirectoryAtURL:[NSURL URLWithString:directory] includingPropertiesForKeys:@[] options:0 error:&error];
 }
 
-- (ALPHAModel *)model
+- (ALPHAModel *)modelForRequest:(ALPHARequest *)request
 {
     [self loadScreenshots];
     

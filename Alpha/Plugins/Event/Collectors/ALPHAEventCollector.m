@@ -75,9 +75,9 @@ NSString *const ALPHAEventDataIdentifier = @"com.unifiedsense.alpha.data.event";
     }
 }
 
-#pragma mark - ALPHADataCollector
+#pragma mark - ALPHABaseDataSource
 
-- (ALPHAModel *)model
+- (ALPHAModel *)modelForRequest:(ALPHARequest *)request
 {
     ALPHAEventModel *model = [[ALPHAEventModel alloc] initWithIdentifier:ALPHAEventDataIdentifier];
     model.events = self.events.copy;

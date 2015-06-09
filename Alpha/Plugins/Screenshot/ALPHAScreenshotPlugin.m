@@ -11,7 +11,7 @@
 #import "ALPHAWindow.h"
 #import "FLEXResources.h"
 #import "ALPHAFileManager.h"
-#import "ALPHAScreenshotCollector.h"
+#import "ALPHAScreenshotSource.h"
 #import "ALPHAActions.h"
 
 #import "ALPHAScreenshotPlugin.h"
@@ -48,7 +48,7 @@
         
         [self registerAction:menuAction];
         
-        [self registerCollector:[ALPHAScreenshotCollector new]];
+        [self registerSource:[ALPHAScreenshotSource new]];
     }
     
     return self;

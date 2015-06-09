@@ -20,7 +20,7 @@
 
 - (ALPHAScreenModel *)screenModelForObject:(ALPHAEventModel *)model
 {
-    ALPHATableScreenModel* screenModel = [[ALPHATableScreenModel alloc] initWithIdentifier:model.identifier];
+    ALPHATableScreenModel* screenModel = [[ALPHATableScreenModel alloc] initWithIdentifier:model.request.identifier];
     screenModel.title = @"Events";
     
     ALPHAScreenSection* section = [[ALPHAScreenSection alloc] init];

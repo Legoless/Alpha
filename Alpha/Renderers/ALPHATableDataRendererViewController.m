@@ -36,7 +36,7 @@
 {
     _screenModel = screenModel;
     
-    if ([screenModel.rightAction.identifier isEqualToString:ALPHAActionCloseIdentifier])
+    if ([screenModel.rightAction.request.identifier isEqualToString:ALPHAActionCloseIdentifier])
     {
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStyleDone target:self action:@selector(donePressed:)];
     }
@@ -47,7 +47,7 @@
     
     self.title = screenModel.title;
     
-    if (screenModel.expiration > 0)
+    if (screenModel.expiration > 0 && self.source)
     {
         if (!self.refreshControl)
         {
@@ -66,6 +66,11 @@
         
         [self.refreshTimer invalidate];
         self.refreshTimer = nil;
+    }
+    
+    if (screenModel.request)
+    {
+        self.request = screenModel.request;
     }
     
     [self.tableView reloadData];
@@ -140,7 +145,7 @@
 {
     [self.refreshControl beginRefreshing];
     
-    [self.source refreshWithIdentifier:self.dataIdentifier completion:^(ALPHAModel *dataModel, NSError *error) {
+    [self.source dataForRequest:self.request completion:^(ALPHAModel *dataModel, NSError *error) {
         self.object = dataModel;
         
         [self.refreshControl endRefreshing];
@@ -330,20 +335,10 @@
     
     ALPHAScreenItem *item = [self.tableScreenModel.sections[indexPath.section] items][indexPath.row];
     
-    if ([item isKindOfClass:[ALPHABlockActionItem class]])
+    if ([item isKindOfClass:[ALPHAActionItem class]] && ![item isKindOfClass:[ALPHAMenuActionItem class]])
     {
-        ALPHABlockActionItem* blockItem = (ALPHABlockActionItem *)item;
-        
-        if (blockItem.actionBlock)
+        [self.source performAction:(ALPHAActionItem *)item completion:^(ALPHAModel *model, NSError *error)
         {
-            blockItem.actionBlock([tableView cellForRowAtIndexPath:indexPath]);
-        }
-    }
-    else if ([item isKindOfClass:[ALPHASelectorActionItem class]])
-    {
-        ALPHASelectorActionItem* selectorAction = (ALPHASelectorActionItem *)item;
-        
-        [self.source performAction:selectorAction completion:^(ALPHAModel *model, NSError *error) {
             if (!error)
             {
                 [self refresh];
@@ -352,7 +347,9 @@
     }
     else if ([[item file] isKindOfClass:[NSURL class]] && [item fileClass])
     {
-        [self.source fileWithURL:[item file] completion:^(NSData *data, NSError *error)
+        ALPHARequest *fileRequest = [ALPHARequest requestForFile:[item file].absoluteString];
+        
+        [self.source dataForRequest:fileRequest completion:^(NSData *data, NSError *error)
         {
             id object = [[ALPHASerializerManager sharedManager].serializer deserializeObject:data toClass:[item fileClass]];
             
@@ -388,20 +385,11 @@
         ALPHAMenuActionItem* menuItem = (ALPHAMenuActionItem *)object;
         
         controller = menuItem.viewControllerInstance;
-        
-        if ([controller conformsToProtocol:@protocol(ALPHADataRenderer)])
-        {
-            UIViewController<ALPHADataRenderer>* renderer = (UIViewController<ALPHADataRenderer>*)controller;
-            
-            // Send data source
-            renderer.source = self.source;
-        }
     }
     
     if ([object isKindOfClass:[ALPHAScreenItem class]])
     {
         modelObject = [object object];
-        
     }
     else
     {
@@ -425,6 +413,12 @@
                 [controller setObject:modelObject];
             }
         }
+    }
+    
+    if ([controller respondsToSelector:@selector(setSource:)])
+    {
+        // Send data source
+        [controller setSource:self.source];
     }
     
     if (controller)

@@ -1,12 +1,12 @@
 //
-//  ALPHAMenuDataCollector.m
-//  UICatalog
+//  ALPHAMenuSource.m
+//  Alpha
 //
 //  Created by Dal Rupnik on 29/05/15.
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHAMenuDataCollector.h"
+#import "ALPHAMenuSource.h"
 #import "ALPHAManager.h"
 #import "ALPHAMenuActionItem.h"
 #import "ALPHAGlobalActionIdentifiers.h"
@@ -16,7 +16,7 @@
 
 NSString* const ALPHAMenuDataIdentifier = @"com.unifiedsense.alpha.data.menu";
 
-@implementation ALPHAMenuDataCollector
+@implementation ALPHAMenuSource
 
 - (instancetype)init
 {
@@ -31,7 +31,7 @@ NSString* const ALPHAMenuDataIdentifier = @"com.unifiedsense.alpha.data.menu";
 }
 
 
-- (ALPHAModel *)model
+- (ALPHAModel *)modelForRequest:(ALPHARequest *)request
 {
     NSArray* plugins = [ALPHAManager sharedManager].plugins;
     

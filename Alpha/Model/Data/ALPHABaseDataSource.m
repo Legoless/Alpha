@@ -1,5 +1,5 @@
 //
-//  ALPHADataCollector.m
+//  ALPHABaseDataSource.m
 //  Alpha
 //
 //  Created by Dal Rupnik on 05/11/14.
@@ -8,17 +8,20 @@
 
 #import <objc/runtime.h>
 
-#import "ALPHADataCollector.h"
+#import "ALPHABaseDataSource.h"
 #import "ALPHAActions.h"
 
-@interface ALPHADataCollector ()
+@interface ALPHABaseDataSource ()
 
 @property (nonatomic, strong) NSMutableOrderedSet *identifiers;
 
 @property (nonatomic, strong) NSMutableOrderedSet *actions;
+
 @end
 
-@implementation ALPHADataCollector
+@implementation ALPHABaseDataSource
+
+#pragma mark - Getters and Setters
 
 - (NSMutableOrderedSet *)actions
 {
@@ -40,6 +43,22 @@
     return _identifiers;
 }
 
+#pragma mark - Initialization
+
+- (instancetype)init
+{
+    self = [super init];
+    
+    if (self)
+    {
+        self.enabled = YES;
+    }
+    
+    return self;
+}
+
+#pragma mark - Subclass convenience
+
 - (void)addDataIdentifier:(NSString *)identifier
 {
     [self.identifiers addObject:identifier];
@@ -50,26 +69,35 @@
     [self.actions addObject:identifier];
 }
 
-- (BOOL)canPerformActionForIdentifier:(NSString *)identifier
-{
-    return [self.actions containsObject:identifier];
-}
+#pragma mark - ALPHADataSource
 
 - (BOOL)canPerformAction:(id<ALPHAIdentifiableItem>)action
 {
-    return [self canPerformActionForIdentifier:action.identifier];
+    if (!self.isEnabled)
+    {
+        return NO;
+    }
+    
+    return [self.actions containsObject:action.request.identifier];
 }
 
-- (BOOL)hasDataForIdentifier:(NSString *)identifier
+- (BOOL)hasDataForRequest:(ALPHARequest *)request
 {
-    return [self.identifiers containsObject:identifier];
+    if (!self.isEnabled)
+    {
+        return NO;
+    }
+    
+    return [self.identifiers containsObject:request.identifier];
 }
 
-- (void)collectDataForIdentifier:(NSString *)identifier completion:(void (^)(id, NSError *))completion
+- (void)dataForRequest:(ALPHARequest *)request completion:(ALPHADataSourceCompletion)completion
 {
+    ALPHAModel *model = [self modelForRequest:request];
+    
     if (completion)
     {
-        completion([self model], nil);
+        completion (model, nil);
     }
 }
 
@@ -130,12 +158,7 @@
     }
 }
 
-- (void)performActionWithIdentifier:(NSString *)identifier completion:(ALPHADataSourceCompletion)completion
-{
-    
-}
-
-- (ALPHAModel *)model
+- (ALPHAModel *)modelForRequest:(ALPHARequest *)request
 {
     return nil;
 }

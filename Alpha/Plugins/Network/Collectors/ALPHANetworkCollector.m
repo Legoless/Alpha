@@ -561,7 +561,7 @@ NSString *const ALPHANetworkDataIdentifier = @"com.unifiedsense.alpha.data.netwo
 
 #pragma mark - ALPHADataCollector
 
-- (ALPHAModel *)model
+- (ALPHAModel *)modelForRequest:(ALPHARequest *)request
 {
     ALPHANetworkModel *model = [[ALPHANetworkModel alloc] initWithIdentifier:ALPHANetworkDataIdentifier];
     model.requests = self.requests;

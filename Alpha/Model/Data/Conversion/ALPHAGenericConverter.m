@@ -107,7 +107,7 @@
 
 - (ALPHAScreenModel *)convertGenericModel:(ALPHAGenericModel *)model
 {
-    ALPHATableScreenModel* screenModel = [[ALPHATableScreenModel alloc] initWithIdentifier:model.identifier];
+    ALPHATableScreenModel* screenModel = [[ALPHATableScreenModel alloc] initWithIdentifier:model.request.identifier];
     screenModel.title = model.data[@"title"];
     
     if ([model.data[@"items"] isKindOfClass:[NSArray class]])
@@ -154,7 +154,7 @@
     // other properties will be placed in a single section
     //
     
-    ALPHATableScreenModel* screenModel = [[ALPHATableScreenModel alloc] initWithIdentifier:model.identifier];
+    ALPHATableScreenModel* screenModel = [[ALPHATableScreenModel alloc] initWithIdentifier:model.request.identifier];
     screenModel.title = [NSStringFromClass([model class]) alpha_cleanCodeIdentifier];
     
     ALPHAScreenSection* mainSection = [[ALPHAScreenSection alloc] init];

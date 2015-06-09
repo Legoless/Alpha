@@ -130,7 +130,7 @@ NSString *const ALPHANotificationDataIdentifier = @"com.unifiedsense.alpha.data.
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (ALPHAModel *)model
+- (ALPHAModel *)modelForRequest:(ALPHARequest *)request
 {
     ALPHANotificationModel *model = [[ALPHANotificationModel alloc] initWithIdentifier:ALPHANotificationDataIdentifier];
     model.enabledNotificationTypes = self.enabledNotificationTypes;

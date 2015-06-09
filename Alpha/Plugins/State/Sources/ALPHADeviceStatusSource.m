@@ -10,13 +10,13 @@
 #import "FLEXUtility.h"
 
 #import "UIDevice+ALPHAStatus.h"
-#import "ALPHADeviceStatusCollector.h"
+#import "ALPHADeviceStatusSource.h"
 #import "ALPHAModel.h"
 #import "ALPHATableScreenModel.h"
 
 NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.status";
 
-@interface ALPHADeviceStatusCollector ()
+@interface ALPHADeviceStatusSource ()
 
 //#warning Implement and check those properties
 
@@ -50,7 +50,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
 
 @end
 
-@implementation ALPHADeviceStatusCollector
+@implementation ALPHADeviceStatusSource
 
 - (NSDateFormatter *)dateFormatter
 {
@@ -75,7 +75,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     return self;
 }
 
-- (ALPHAModel *)model
+- (ALPHAModel *)modelForRequest:(ALPHARequest *)request
 {
     //
     // Application section

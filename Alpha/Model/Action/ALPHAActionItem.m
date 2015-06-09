@@ -19,6 +19,19 @@
 
 #pragma mark - Initializers
 
+- (instancetype)initWithRequest:(ALPHARequest *)request
+{
+    self = [super init];
+    
+    if (self)
+    {
+        self.request = request;
+        self.enabled = YES;
+    }
+    
+    return self;
+}
+
 - (instancetype)initWithIdentifier:(NSString *)identifier
 {
     return [self initWithIdentifier:identifier title:nil detail:nil];
@@ -36,19 +49,18 @@
 
 - (instancetype)initWithIdentifier:(NSString *)identifier title:(NSString *)title detail:(NSString *)detail style:(UITableViewCellStyle)style
 {
-    self = [super init];
+    ALPHARequest* request = [ALPHARequest requestWithIdentifier:identifier];
     
-    if (self)
+    ALPHAActionItem *object = [self initWithRequest:request];
+    
+    if (object)
     {
-        self.identifier = identifier;
-        self.title = title;
-        self.detail = detail;
-        self.style = style;
-
-        self.enabled = YES;
+        object.title = title;
+        object.detail = detail;
+        object.style = style;
     }
     
-    return self;
+    return object;
 }
 
 @end

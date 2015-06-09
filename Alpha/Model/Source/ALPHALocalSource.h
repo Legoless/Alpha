@@ -6,13 +6,19 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHABaseSource.h"
+#import "ALPHADataSource.h"
 
-@interface ALPHALocalSource : ALPHABaseSource
+/*!
+ *  Local data source, looks into locally installed plugins for data sources and delegates
+ *  requests to sources in enabled plugins.
+ *
+ *  Final class, should not be subclassed.
+ */
+@interface ALPHALocalSource : NSObject <ALPHADataSource>
 
 /*!
  *  Source collectors that provide data to the source
  */
-@property (nonatomic, copy) NSArray *collectors;
+@property (nonatomic, copy) NSArray *sources;
 
 @end

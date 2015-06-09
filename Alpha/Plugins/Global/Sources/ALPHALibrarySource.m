@@ -1,5 +1,5 @@
 //
-//  ALPHALibraryCollector.m
+//  ALPHALibrarySource.m
 //  Alpha
 //
 //  Created by Dal Rupnik on 09/06/15.
@@ -10,19 +10,19 @@
 
 #import "FLEXUtility.h"
 
-#import "ALPHALibraryCollector.h"
+#import "ALPHALibrarySource.h"
 
 #import "ALPHATableScreenModel.h"
 
 NSString* const ALPHALibraryDataIdentifier = @"com.unifiedsense.alpha.data.library";
 
-@interface ALPHALibraryCollector ()
+@interface ALPHALibrarySource ()
 
 @property (nonatomic, copy) NSArray *imageNames;
 
 @end
 
-@implementation ALPHALibraryCollector
+@implementation ALPHALibrarySource
 
 - (instancetype)init
 {
@@ -40,7 +40,7 @@ NSString* const ALPHALibraryDataIdentifier = @"com.unifiedsense.alpha.data.libra
 
 #pragma mark - ALPHADataCollector
 
-- (ALPHAModel *)model
+- (ALPHAModel *)modelForRequest:(ALPHARequest *)request
 {
     
     NSMutableArray *items = [NSMutableArray array];

@@ -10,9 +10,9 @@
 
 #import "ALPHAGlobalPlugin.h"
 #import "ALPHAActions.h"
-#import "ALPHAGlobalCollector.h"
-#import "ALPHAClassCollector.h"
-#import "ALPHALibraryCollector.h"
+#import "ALPHAGlobalSource.h"
+#import "ALPHAClassSource.h"
+#import "ALPHALibrarySource.h"
 
 @implementation ALPHAGlobalPlugin
 
@@ -34,9 +34,9 @@
         // Collectors
         //
         
-        [self registerCollector:[ALPHAGlobalCollector new]];
-        [self registerCollector:[ALPHAClassCollector new]];
-        [self registerCollector:[ALPHALibraryCollector new]];
+        [self registerSource:[ALPHAGlobalSource new]];
+        [self registerSource:[ALPHAClassSource new]];
+        [self registerSource:[ALPHALibrarySource new]];
     }
     
     return self;

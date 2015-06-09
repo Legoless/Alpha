@@ -11,8 +11,10 @@
 
 @interface ALPHAModel : NSObject <ALPHASerializableItem, ALPHAIdentifiableItem>
 
-@property (nonatomic, copy) NSString* identifier;
+@property (nonatomic, copy) ALPHARequest* request;
 
 - (instancetype)initWithIdentifier:(NSString *)identifier;
+
+- (instancetype)initWithRequest:(ALPHARequest *)request;
 
 @end

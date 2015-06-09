@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
-#import "ALPHADataCollector.h"
+#import "ALPHABaseDataSource.h"
 
 #import "ALPHAActionItem.h"
 
@@ -29,15 +29,15 @@
 
 /*!
  *  Array of action item objects that plugin displays
- *  in the explorer menu or main diagnostic menu
+ *  in the explorer menu or main diagnostic menu.
  */
 @property (nonatomic, readonly) NSArray *actions;
 
 /*!
- *  Array of collector objects that plugin initializes
- *  when loaded
+ *  Array of data source objects that plugin initializes when loaded.
+ *  Objects in array conform to protocol ALPHADataSource.
  */
-@property (nonatomic, readonly) NSArray *collectors;
+@property (nonatomic, readonly) NSArray *sources;
 
 /*!
  *  Main UIViewController of the plugin, it is linked to the Global Table
@@ -71,10 +71,10 @@
 - (void)registerAction:(ALPHAActionItem *)action;
 
 /*!
- *  Registers data collectors and enables it
+ *  Registers data collector source to plugin.
  *
  *  @param collector data
  */
-- (void)registerCollector:(ALPHADataCollector *)collector;
+- (void)registerSource:(id<ALPHADataSource>)source;
 
 @end

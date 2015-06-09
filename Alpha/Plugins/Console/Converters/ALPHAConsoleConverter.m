@@ -21,7 +21,7 @@
 
 - (ALPHAScreenModel *)screenModelForObject:(ALPHAConsoleModel *)model
 {
-    ALPHATableScreenModel* screenModel = [[ALPHATableScreenModel alloc] initWithIdentifier:model.identifier];
+    ALPHATableScreenModel* screenModel = [[ALPHATableScreenModel alloc] initWithIdentifier:model.request.identifier];
     screenModel.title = @"Console";
     
     ALPHAScreenSection* section = [[ALPHAScreenSection alloc] init];

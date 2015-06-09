@@ -27,7 +27,7 @@
         
         [self registerAction:menuAction];
         
-        [self registerCollector:[ALPHAConsoleCollector new]];
+        [self registerSource:[ALPHAConsoleCollector new]];
     }
     
     return self;

@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong, readwrite) NSString* identifier;
 @property (nonatomic, strong) NSMutableOrderedSet* baseActions;
-@property (nonatomic, strong) NSMutableOrderedSet* baseCollectors;
+@property (nonatomic, strong) NSMutableOrderedSet* baseSources;
 
 @end
 
@@ -43,14 +43,14 @@
     return _baseActions;
 }
 
-- (NSMutableOrderedSet *)baseCollectors
+- (NSMutableOrderedSet *)baseSources
 {
-    if (!_baseCollectors)
+    if (!_baseSources)
     {
-        _baseCollectors = [NSMutableOrderedSet orderedSet];
+        _baseSources = [NSMutableOrderedSet orderedSet];
     }
     
-    return _baseCollectors;
+    return _baseSources;
 }
 
 - (NSArray *)actions
@@ -58,9 +58,9 @@
     return [self.baseActions array];
 }
 
-- (NSArray *)collectors
+- (NSArray *)sources
 {
-    return [self.baseCollectors array];
+    return [self.baseSources array];
 }
 
 - (void)setEnabled:(BOOL)enabled
@@ -71,9 +71,12 @@
     // If plugin is disabled, all collectors will be disabled too
     //
     
-    for (ALPHADataCollector* collector in self.baseCollectors)
+    for (id<ALPHADataSource> source in self.sources)
     {
-        collector.enabled = enabled;
+        if ([source respondsToSelector:@selector(setEnabled:)])
+        {
+            source.enabled = enabled;
+        }
     }
 }
 
@@ -106,7 +109,7 @@
 {
     for (ALPHAActionItem* actionItem in self.baseActions)
     {
-        if ([actionItem.identifier isEqualToString:action.identifier])
+        if ([actionItem.request.identifier isEqualToString:action.request.identifier])
         {
             @throw [NSException exceptionWithName:@"Action equal identifiers" reason:@"Actions must have unique identifiers" userInfo:@{ @"action" : action }];
         }
@@ -115,9 +118,9 @@
     [self.baseActions addObject:action];
 }
 
-- (void)registerCollector:(ALPHADataCollector *)collector
+- (void)registerSource:(id<ALPHADataSource>)source
 {
-    [self.baseCollectors addObject:collector];
+    [self.baseSources addObject:source];
 }
 
 @end

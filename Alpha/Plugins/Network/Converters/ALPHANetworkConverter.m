@@ -20,7 +20,7 @@
 
 - (ALPHAScreenModel *)screenModelForObject:(ALPHANetworkModel *)model
 {
-    ALPHATableScreenModel* screenModel = [[ALPHATableScreenModel alloc] initWithIdentifier:model.identifier];
+    ALPHATableScreenModel* screenModel = [[ALPHATableScreenModel alloc] initWithIdentifier:model.request.identifier];
     screenModel.title = @"Network";
     
     ALPHAScreenSection* section = [[ALPHAScreenSection alloc] init];

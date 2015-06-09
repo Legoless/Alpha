@@ -97,7 +97,7 @@
     // Data model
     //
     
-    ALPHATableScreenModel* dataModel = [[ALPHATableScreenModel alloc] initWithIdentifier:model.identifier];
+    ALPHATableScreenModel* dataModel = [[ALPHATableScreenModel alloc] initWithIdentifier:model.request.identifier];
     dataModel.title = @"Notifications";
     dataModel.sections = sections.copy;
     

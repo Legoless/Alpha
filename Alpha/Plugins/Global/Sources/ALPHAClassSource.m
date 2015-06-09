@@ -1,5 +1,5 @@
 //
-//  ALPHAClassCollector.m
+//  ALPHAClassSource.m
 //  Alpha
 //
 //  Created by Dal Rupnik on 09/06/15.
@@ -12,11 +12,11 @@
 
 #import "FLEXUtility.h"
 
-#import "ALPHAClassCollector.h"
+#import "ALPHAClassSource.h"
 
 NSString* const ALPHAClassDataIdentifier = @"com.unifiedsense.alpha.data.class";
 
-@interface ALPHAClassCollector ()
+@interface ALPHAClassSource ()
 
 @property (nonatomic, copy) NSArray *classNames;
 @property (nonatomic, copy) NSString *binaryImageName;
@@ -24,7 +24,7 @@ NSString* const ALPHAClassDataIdentifier = @"com.unifiedsense.alpha.data.class";
 @end
 
 
-@implementation ALPHAClassCollector
+@implementation ALPHAClassSource
 
 #pragma mark - Getters and Setters
 
@@ -54,7 +54,7 @@ NSString* const ALPHAClassDataIdentifier = @"com.unifiedsense.alpha.data.class";
     return self;
 }
 
-- (ALPHAModel *)model
+- (ALPHAModel *)modelForRequest:(ALPHARequest *)request
 {
     
     NSMutableArray *items = [NSMutableArray array];

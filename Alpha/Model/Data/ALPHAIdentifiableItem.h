@@ -6,10 +6,12 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
+#import "ALPHARequest.h"
+
 @protocol ALPHAIdentifiableItem <NSObject>
 
-@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) ALPHARequest *request;
 
-- (instancetype)initWithIdentifier:(NSString *)identifier;
+- (instancetype)initWithRequest:(ALPHARequest *)request;
 
 @end

@@ -29,9 +29,9 @@
         {
             id viewController = [[viewControllerClass alloc] init];
             
-            if ([viewController conformsToProtocol:@protocol(ALPHADataRenderer)] && self.dataIdentifier)
+            if ([viewController respondsToSelector:@selector(setRequest:)] && self.dataIdentifier)
             {
-                [viewController setDataIdentifier:self.dataIdentifier];
+                [viewController setRequest:[ALPHARequest requestWithIdentifier:self.dataIdentifier]];
             }
             
             return viewController;

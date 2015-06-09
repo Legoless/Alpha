@@ -73,7 +73,7 @@ NSString *const ALPHAConsoleDataIdentifier = @"com.unifiedsense.alpha.data.conso
     return self;
 }
 
-- (ALPHAModel *)model
+- (ALPHAModel *)modelForRequest:(ALPHARequest *)request
 {
     ALPHAConsoleModel* model = [[ALPHAConsoleModel alloc] initWithIdentifier:ALPHAConsoleDataIdentifier];
     model.logs = [self systemLogs];

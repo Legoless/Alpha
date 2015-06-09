@@ -12,11 +12,18 @@
 
 - (instancetype)initWithIdentifier:(NSString *)identifier
 {
+    ALPHARequest* request = [ALPHARequest requestWithIdentifier:identifier];
+    
+    return [self initWithRequest:request];
+}
+
+- (instancetype)initWithRequest:(ALPHARequest *)request
+{
     self = [super init];
     
     if (self)
     {
-        self.identifier = identifier;
+        self.request = request;
     }
     
     return self;

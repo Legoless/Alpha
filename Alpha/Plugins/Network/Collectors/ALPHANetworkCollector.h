@@ -6,11 +6,11 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHADataCollector.h"
+#import "ALPHABaseDataSource.h"
 
 extern NSString *const ALPHANetworkDataIdentifier;
 
-@interface ALPHANetworkCollector : ALPHADataCollector
+@interface ALPHANetworkCollector : ALPHABaseDataSource
 
 /*!
  *  Network collector can only be one, so we use singleton approach, to add access to it.

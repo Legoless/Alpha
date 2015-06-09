@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Unifed Sense. All rights reserved.
 //
 
-#import "ALPHADataCollector.h"
+#import "ALPHABaseDataSource.h"
 
 extern NSString *const ALPHAConsoleDataIdentifier;
 
-@interface ALPHAConsoleCollector : ALPHADataCollector
+@interface ALPHAConsoleCollector : ALPHABaseDataSource
 
 @end

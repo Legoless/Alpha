@@ -1,14 +1,14 @@
 //
-//  ALPHAGlobalCollector.m
+//  ALPHAGlobalSource.m
 //  Alpha
 //
 //  Created by Dal Rupnik on 08/06/15.
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHAGlobalCollector.h"
-#import "ALPHAClassCollector.h"
-#import "ALPHALibraryCollector.h"
+#import "ALPHAGlobalSource.h"
+#import "ALPHAClassSource.h"
+#import "ALPHALibrarySource.h"
 
 #import "FLEXUtility.h"
 
@@ -20,7 +20,7 @@
 
 NSString* const ALPHAGlobalDataIdentifier = @"com.unifiedsense.alpha.data.global";
 
-@implementation ALPHAGlobalCollector
+@implementation ALPHAGlobalSource
 
 - (instancetype)init
 {
@@ -34,7 +34,7 @@ NSString* const ALPHAGlobalDataIdentifier = @"com.unifiedsense.alpha.data.global
     return self;
 }
 
-- (ALPHAModel *)model
+- (ALPHAModel *)modelForRequest:(ALPHARequest *)request
 {
     
     NSMutableArray *items = [NSMutableArray array];

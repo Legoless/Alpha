@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHADataCollector.h"
+#import "ALPHABaseDataSource.h"
 
 extern NSString *const ALPHADeviceStatusDataIdentifier;
 
-@interface ALPHADeviceStatusCollector : ALPHADataCollector
+@interface ALPHADeviceStatusSource : ALPHABaseDataSource
 
 @end

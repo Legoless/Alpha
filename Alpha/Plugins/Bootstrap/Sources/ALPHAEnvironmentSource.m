@@ -1,26 +1,26 @@
 //
-//  ALPHAEnvironmentCollector.m
+//  ALPHAEnvironmentSource.m
 //  Alpha
 //
 //  Created by Dal Rupnik on 05/06/15.
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHAEnvironmentCollector.h"
+#import "ALPHAEnvironmentSource.h"
 #import "ALPHAScreenModel.h"
 #import "ALPHAActions.h"
 #import "ALPHATableScreenModel.h"
 
 NSString *const ALPHAEnvironmentDataIdentifier = @"com.unifiedsense.alpha.data.environment";
 
-@interface ALPHAEnvironmentCollector ()
+@interface ALPHAEnvironmentSource ()
 
 @property (nonatomic, copy) NSString *currentEnvironment;
 @property (nonatomic, copy) NSArray *environments;
 
 @end
 
-@implementation ALPHAEnvironmentCollector
+@implementation ALPHAEnvironmentSource
 
 #pragma mark - Getters and Setters
 
@@ -109,7 +109,7 @@ NSString *const ALPHAEnvironmentDataIdentifier = @"com.unifiedsense.alpha.data.e
     return self;
 }
 
-- (ALPHAModel *)model
+- (ALPHAModel *)modelForRequest:(ALPHARequest *)request
 {
     ALPHATableScreenModel* screenModel = [[ALPHATableScreenModel alloc] initWithIdentifier:ALPHAEnvironmentDataIdentifier];
     screenModel.title = @"Environments";

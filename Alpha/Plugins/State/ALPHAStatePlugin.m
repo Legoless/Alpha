@@ -8,7 +8,7 @@
 
 #import "ALPHAStatePlugin.h"
 #import "ALPHAMenuActionItem.h"
-#import "ALPHADeviceStatusCollector.h"
+#import "ALPHADeviceStatusSource.h"
 
 @interface ALPHAStatePlugin ()
 
@@ -38,7 +38,7 @@
         // Collectors
         //
         
-        [self registerCollector:[ALPHADeviceStatusCollector new]];
+        [self registerSource:[ALPHADeviceStatusSource new]];
     }
     
     return self;

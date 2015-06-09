@@ -7,6 +7,7 @@
 //
 
 #import "ALPHALocalSource.h"
+#import "ALPHALocalFileSource.h"
 #import "ALPHAManager.h"
 #import "ALPHAModel.H"
 
@@ -22,205 +23,114 @@
     
     if (self)
     {
-        self.collectors = [self loadCollectors];
+        self.sources = [self loadSources];
     }
     
     return self;
 }
 
-- (NSArray *)loadCollectors
+- (NSArray *)loadSources
 {
     NSArray* plugins = [ALPHAManager sharedManager].plugins;
     
-    NSMutableArray *collectors = [NSMutableArray array];
+    NSMutableArray *sources = [NSMutableArray array];
     
     for (ALPHAPlugin *plugin in plugins)
     {
-        for (ALPHADataCollector *collector in plugin.collectors)
+        for (id<ALPHADataSource> source in plugin.sources)
         {
-            [collectors addObject:collector];
+            [sources addObject:source];
         }
     }
     
-    return [collectors copy];
+    //
+    // Insert file source
+    //
+    [sources addObject:[ALPHALocalFileSource new]];
+    
+    return [sources copy];
 }
 
-#pragma mark - Refresh
+#pragma mark - ALPHADataSource
 
-- (void)refreshWithIdentifiers:(NSArray *)identifiers completion:(ALPHADataSourceCompletion)completion
+- (BOOL)hasDataForRequest:(ALPHARequest *)request
 {
-    NSMutableDictionary *data = [NSMutableDictionary dictionary];
-    
-    //
-    // First find collectors
-    //
-    
-    for (NSString *identifier in identifiers)
-    {
-        for (ALPHADataCollector *collector in self.collectors)
-        {
-            if ([collector hasDataForIdentifier:identifier])
-            {
-                data[identifier] = [NSNull null];
-            }
-        }
-    }
-    
-    //
-    // Then collect data from all collectors
-    //
-    
-    for (NSString *identifier in identifiers)
-    {
-        for (ALPHADataCollector *collector in self.collectors)
-        {
-            if ([collector hasDataForIdentifier:identifier])
-            {
-                [collector collectDataForIdentifier:identifier completion:^(ALPHAModel *model, NSError *error) {
-                    
-                    if (model)
-                    {
-                        data[identifier] = model;
-                    }
-                    else if (error)
-                    {
-                        data[identifier] = error;
-                    }
-                    else
-                    {
-                        [data removeObjectForKey:identifier];
-                    }
-                    
-                    [self finishWithData:data completion:completion];
-                }];
-            }
-        }
-    }
+    return ([self sourceForRequest:request] != nil);
 }
 
-- (void)fileWithURL:(NSURL *)url completion:(ALPHADataSourceCompletion)completion
+- (void)dataForRequest:(ALPHARequest *)request completion:(ALPHADataSourceCompletion)completion
 {
-    NSError *error = nil;
+    id<ALPHADataSource> source = [self sourceForRequest:request];
     
-    NSData *data = [NSData dataWithContentsOfURL:url options:NSDataReadingMappedIfSafe error:&error];
-    
-    if (completion)
+    [source dataForRequest:request completion:^(ALPHAModel *model, NSError *error)
     {
-        completion(data, error);
-    }
+        if (completion)
+        {
+            completion(model, error);
+        }
+    }];
 }
 
-#pragma mark - Actions
+- (BOOL)canPerformAction:(id<ALPHAIdentifiableItem>)action
+{
+    return ([self sourceForAction:action] != nil);
+}
 
 - (void)performAction:(id<ALPHAIdentifiableItem>)action completion:(ALPHADataSourceCompletion)completion
 {
-    NSMutableDictionary *data = [NSMutableDictionary dictionary];
+    id<ALPHADataSource> source = [self sourceForAction:action];
     
-    //
-    // First find collectors
-    //
-    
-    for (ALPHADataCollector *collector in self.collectors)
+    [source performAction:action completion:^(ALPHAModel *model, NSError *error)
     {
-        if ([collector canPerformAction:action])
+        if (completion)
         {
-            data[action.identifier] = [NSNull null];
+            completion(model, error);
         }
-    }
-    
-    for (ALPHADataCollector *collector in self.collectors)
-    {
-        if ([collector canPerformAction:action])
-        {
-            [collector performAction:action completion:^(ALPHAModel *model, NSError *error)
-            {
-                if (model)
-                {
-                    data[action.identifier] = model;
-                }
-                else if (error)
-                {
-                    data[action.identifier] = error;
-                }
-                else
-                {
-                    [data removeObjectForKey:action.identifier];
-                }
-                
-                [self finishWithData:data completion:completion];
-            }];
-        }
-    }
+    }];
 }
 
-- (void)completeData:(NSDictionary *)data completion:(ALPHADataSourceCompletion)completion
+- (id<ALPHADataSource>)sourceForRequest:(ALPHARequest *)request
 {
-    if (!completion)
+    id foundSource = nil;
+    
+    for (id<ALPHADataSource> source in self.sources)
     {
-        return;
-    }
-    
-    //
-    // Find error
-    //
-    
-    NSError* error = nil;
-    id value = nil;
-    
-    for (id key in data)
-    {
-        if ([data[key] isKindOfClass:[NSError class]] && !error)
+        if ([source hasDataForRequest:request])
         {
-            error = data[key];
-        }
-        else if (!value)
-        {
-            value = data[key];
-        }
-        else
-        {
+            foundSource = source;
+            
             break;
         }
     }
     
-    completion (value, error);
+    if ([foundSource respondsToSelector:@selector(isEnabled)])
+    {
+        foundSource = [foundSource isEnabled] ? foundSource : nil;
+    }
+    
+    return foundSource;
 }
 
-- (void)finishWithData:(NSDictionary *)data completion:(ALPHADataSourceCompletion)completion
+- (id<ALPHADataSource>)sourceForAction:(id<ALPHAIdentifiableItem>)action
 {
-    //
-    // We have three states of the refresh
-    //
-    // - Data was not found for collectors
-    // - Data is still loading for collectors
-    // - Data has finished loading for all collectors
-    //
+    id foundSource = nil;
     
-    //
-    // Check if any identifiers are still pending
-    //
-    
-    BOOL pending = NO;
-    
-    for (id object in data)
+    for (id<ALPHADataSource> source in self.sources)
     {
-        if ([object isKindOfClass:[NSNull class]])
+        if ([source respondsToSelector:@selector(canPerformAction:)] && [source canPerformAction:action] && [source respondsToSelector:@selector(performAction:completion:)])
         {
-            pending = YES;
+            foundSource = source;
+            
             break;
         }
     }
     
-    if (pending)
+    if ([foundSource respondsToSelector:@selector(isEnabled)])
     {
-        return;
+        foundSource = [foundSource isEnabled] ? foundSource : nil;
     }
     
-    //
-    // Once completed return
-    //
-    
-    [self completeData:data completion:completion];
+    return foundSource;
 }
 
 @end

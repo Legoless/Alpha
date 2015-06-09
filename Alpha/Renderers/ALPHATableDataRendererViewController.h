@@ -18,8 +18,9 @@
 
 @property (nonatomic, strong) ALPHAScreenModel* screenModel;
 
-@property (nonatomic, copy) NSString *dataIdentifier;
-@property (nonatomic, strong) id<ALPHADataSource> source;
 @property (nonatomic, strong) id<ALPHASerializableItem> object;
+
+@property (nonatomic, copy) ALPHARequest *request;
+@property (nonatomic, strong) id<ALPHADataSource> source;
 
 @end

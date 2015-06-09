@@ -8,10 +8,10 @@
 
 #import "ALPHANotification.h"
 
-#import "ALPHADataCollector.h"
+#import "ALPHABaseDataSource.h"
 
 extern NSString *const ALPHANotificationDataIdentifier;
 
-@interface ALPHANotificationCollector : ALPHADataCollector
+@interface ALPHANotificationCollector : ALPHABaseDataSource
 
 @end

@@ -38,7 +38,7 @@
         // Collectors
         //
         
-        [self registerCollector:[ALPHANotificationCollector new]];
+        [self registerSource:[ALPHANotificationCollector new]];
     }
     
     return self;

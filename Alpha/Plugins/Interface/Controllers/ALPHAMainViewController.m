@@ -14,7 +14,7 @@
 #import "FLEXObjectExplorerViewController.h"
 #import "FLEXObjectExplorerFactory.h"
 
-#import "ALPHAMenuDataCollector.h"
+#import "ALPHAMenuSource.h"
 #import "ALPHABlockActionItem.h"
 #import "ALPHANavigationController.h"
 
@@ -162,7 +162,7 @@
     ALPHATableDataRendererViewController* sinkTVC = [[ALPHATableDataRendererViewController alloc] init];
     sinkTVC.delegate = self;
     sinkTVC.source = [ALPHALocalSource new];
-    sinkTVC.dataIdentifier = ALPHAMenuDataIdentifier;
+    sinkTVC.request = [ALPHARequest requestWithIdentifier:ALPHAMenuDataIdentifier];
     
     UINavigationController *navigationController = [[ALPHANavigationController alloc] initWithRootViewController:sinkTVC];
     [[ALPHAManager sharedManager] displayViewController:navigationController animated:YES completion:nil];

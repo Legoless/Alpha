@@ -1,15 +1,15 @@
 //
-//  ALPHAEnvironmentCollector.h
+//  ALPHAEnvironmentSource.h
 //  Alpha
 //
 //  Created by Dal Rupnik on 05/06/15.
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHADataCollector.h"
+#import "ALPHABaseDataSource.h"
 
 extern NSString *const ALPHAEnvironmentDataIdentifier;
 
-@interface ALPHAEnvironmentCollector : ALPHADataCollector
+@interface ALPHAEnvironmentSource : ALPHABaseDataSource
 
 @end

@@ -8,11 +8,11 @@
 
 #import "ALPHAApplicationEvent.h"
 
-#import "ALPHADataCollector.h"
+#import "ALPHABaseDataSource.h"
 
 extern NSString *const ALPHAEventDataIdentifier;
 
-@interface ALPHAEventCollector : ALPHADataCollector
+@interface ALPHAEventCollector : ALPHABaseDataSource
 
 + (instancetype)sharedCollector;
 

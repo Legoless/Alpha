@@ -1,15 +1,15 @@
 //
-//  ALPHAClassCollector.h
+//  ALPHAClassSource.h
 //  Alpha
 //
 //  Created by Dal Rupnik on 09/06/15.
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHADataCollector.h"
+#import "ALPHABaseDataSource.h"
 
 extern NSString* const ALPHAClassDataIdentifier;
 
-@interface ALPHAClassCollector : ALPHADataCollector
+@interface ALPHAClassSource : ALPHABaseDataSource
 
 @end

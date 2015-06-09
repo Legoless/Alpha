@@ -9,7 +9,7 @@
 
 #import "ALPHABootstrap.h"
 
-#import "ALPHAEnvironmentCollector.h"
+#import "ALPHAEnvironmentSource.h"
 
 #import "ALPHABootstrapPlugin.h"
 
@@ -31,7 +31,7 @@
             
             [self registerAction:menuAction];
             
-            [self registerCollector:[ALPHAEnvironmentCollector new]];
+            [self registerSource:[ALPHAEnvironmentSource new]];
         }
     }
     
