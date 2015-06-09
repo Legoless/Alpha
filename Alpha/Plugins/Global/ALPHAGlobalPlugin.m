@@ -6,14 +6,13 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHAManager.h"
-#import "FLEXUtility.h"
 #import "ALPHAApplicationDelegate.h"
 
 #import "ALPHAGlobalPlugin.h"
 #import "ALPHAActions.h"
 #import "ALPHAGlobalCollector.h"
 #import "ALPHAClassCollector.h"
+#import "ALPHALibraryCollector.h"
 
 @implementation ALPHAGlobalPlugin
 
@@ -29,8 +28,6 @@
         menuAction.dataIdentifier = ALPHAGlobalDataIdentifier;
         menuAction.isMain = YES;
         
-        //menuAction.viewControllerClass = @"FLEXGlobalsTableViewController";
-        
         [self registerAction:menuAction];
         
         //
@@ -39,6 +36,7 @@
         
         [self registerCollector:[ALPHAGlobalCollector new]];
         [self registerCollector:[ALPHAClassCollector new]];
+        [self registerCollector:[ALPHALibraryCollector new]];
     }
     
     return self;

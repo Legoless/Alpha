@@ -87,7 +87,6 @@
 		386992F41B18962D005B1BEE /* FLEXIvarEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386991FA1B18962D005B1BEE /* FLEXIvarEditorViewController.m */; };
 		386992F51B18962D005B1BEE /* FLEXMethodCallingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386991FC1B18962D005B1BEE /* FLEXMethodCallingViewController.m */; };
 		386992F61B18962D005B1BEE /* FLEXPropertyEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386991FE1B18962D005B1BEE /* FLEXPropertyEditorViewController.m */; };
-		386992F71B18962D005B1BEE /* FLEXClassesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992011B18962D005B1BEE /* FLEXClassesTableViewController.m */; };
 		386992F91B18962D005B1BEE /* FLEXFileBrowserSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992051B18962D005B1BEE /* FLEXFileBrowserSearchOperation.m */; };
 		386992FA1B18962D005B1BEE /* FLEXFileBrowserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992071B18962D005B1BEE /* FLEXFileBrowserTableViewController.m */; };
 		386992FC1B18962D005B1BEE /* FLEXInstancesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3869920B1B18962D005B1BEE /* FLEXInstancesTableViewController.m */; };
@@ -152,6 +151,7 @@
 		38DE4A491A0B78BC00EB447A /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38DE4A481A0B78BC00EB447A /* Launch.xib */; };
 		38DE4A4C1A0B7DB000EB447A /* AAPLNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DE4A4B1A0B7DB000EB447A /* AAPLNetworkViewController.m */; };
 		38E0D9801B2738FF00A2D8B8 /* ALPHAClassCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E0D97F1B2738FF00A2D8B8 /* ALPHAClassCollector.m */; };
+		38E0D9831B273C9C00A2D8B8 /* ALPHALibraryCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E0D9821B273C9C00A2D8B8 /* ALPHALibraryCollector.m */; };
 		3EC6487318FF8A5000024205 /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3EC6487218FF8A5000024205 /* ReadMe.txt */; };
 		5356823E18F3656900BAAD62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5356823D18F3656900BAAD62 /* Foundation.framework */; };
 		5356824018F3656900BAAD62 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5356823F18F3656900BAAD62 /* CoreGraphics.framework */; };
@@ -361,8 +361,6 @@
 		386991FC1B18962D005B1BEE /* FLEXMethodCallingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXMethodCallingViewController.m; sourceTree = "<group>"; };
 		386991FD1B18962D005B1BEE /* FLEXPropertyEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXPropertyEditorViewController.h; sourceTree = "<group>"; };
 		386991FE1B18962D005B1BEE /* FLEXPropertyEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXPropertyEditorViewController.m; sourceTree = "<group>"; };
-		386992001B18962D005B1BEE /* FLEXClassesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXClassesTableViewController.h; sourceTree = "<group>"; };
-		386992011B18962D005B1BEE /* FLEXClassesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXClassesTableViewController.m; sourceTree = "<group>"; };
 		386992041B18962D005B1BEE /* FLEXFileBrowserSearchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXFileBrowserSearchOperation.h; sourceTree = "<group>"; };
 		386992051B18962D005B1BEE /* FLEXFileBrowserSearchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXFileBrowserSearchOperation.m; sourceTree = "<group>"; };
 		386992061B18962D005B1BEE /* FLEXFileBrowserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXFileBrowserTableViewController.h; sourceTree = "<group>"; };
@@ -491,6 +489,8 @@
 		38DE4A4B1A0B7DB000EB447A /* AAPLNetworkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLNetworkViewController.m; sourceTree = "<group>"; };
 		38E0D97E1B2738FF00A2D8B8 /* ALPHAClassCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAClassCollector.h; sourceTree = "<group>"; };
 		38E0D97F1B2738FF00A2D8B8 /* ALPHAClassCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAClassCollector.m; sourceTree = "<group>"; };
+		38E0D9811B273C9C00A2D8B8 /* ALPHALibraryCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHALibraryCollector.h; sourceTree = "<group>"; };
+		38E0D9821B273C9C00A2D8B8 /* ALPHALibraryCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHALibraryCollector.m; sourceTree = "<group>"; };
 		38E3D8271B1DFFE8000103A9 /* ALPHAIdentifiableItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALPHAIdentifiableItem.h; sourceTree = "<group>"; };
 		3EC6487218FF8A5000024205 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = SOURCE_ROOT; };
 		5356823A18F3656900BAAD62 /* UICatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UICatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -869,6 +869,8 @@
 				38424A3E1B25D01400C07B7B /* ALPHAGlobalCollector.m */,
 				38E0D97E1B2738FF00A2D8B8 /* ALPHAClassCollector.h */,
 				38E0D97F1B2738FF00A2D8B8 /* ALPHAClassCollector.m */,
+				38E0D9811B273C9C00A2D8B8 /* ALPHALibraryCollector.h */,
+				38E0D9821B273C9C00A2D8B8 /* ALPHALibraryCollector.m */,
 			);
 			path = Collectors;
 			sourceTree = "<group>";
@@ -1017,8 +1019,6 @@
 		386991FF1B18962D005B1BEE /* Global State Explorers */ = {
 			isa = PBXGroup;
 			children = (
-				386992001B18962D005B1BEE /* FLEXClassesTableViewController.h */,
-				386992011B18962D005B1BEE /* FLEXClassesTableViewController.m */,
 				386992041B18962D005B1BEE /* FLEXFileBrowserSearchOperation.h */,
 				386992051B18962D005B1BEE /* FLEXFileBrowserSearchOperation.m */,
 				386992061B18962D005B1BEE /* FLEXFileBrowserTableViewController.h */,
@@ -1669,7 +1669,6 @@
 				386992F41B18962D005B1BEE /* FLEXIvarEditorViewController.m in Sources */,
 				535682AF18F3670300BAAD62 /* AAPLDefaultSearchBarViewController.m in Sources */,
 				384DDDB41B1DA6B3003DCDAE /* ALPHANotificationPlugin.m in Sources */,
-				386992F71B18962D005B1BEE /* FLEXClassesTableViewController.m in Sources */,
 				38DE4A4C1A0B7DB000EB447A /* AAPLNetworkViewController.m in Sources */,
 				386992F61B18962D005B1BEE /* FLEXPropertyEditorViewController.m in Sources */,
 				385BB4A71B1EFCC300443539 /* ALPHAObjectSerializer.m in Sources */,
@@ -1734,6 +1733,7 @@
 				38424A281B25B87800C07B7B /* ALPHAEventModel.m in Sources */,
 				3869932D1B18962D005B1BEE /* ALPHANetworkResponse.m in Sources */,
 				385BB4BC1B1F63AC00443539 /* ALPHAConsoleConverter.m in Sources */,
+				38E0D9831B273C9C00A2D8B8 /* ALPHALibraryCollector.m in Sources */,
 				386993461B18962D005B1BEE /* ALPHALightTheme.m in Sources */,
 				38353EE11B1DEDE9009E4ACF /* ALPHATableDataRendererViewController.m in Sources */,
 				3869931C1B18962D005B1BEE /* ALPHAConsolePlugin.m in Sources */,

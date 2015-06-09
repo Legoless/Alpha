@@ -8,6 +8,7 @@
 
 #import "ALPHAGlobalCollector.h"
 #import "ALPHAClassCollector.h"
+#import "ALPHALibraryCollector.h"
 
 #import "FLEXUtility.h"
 
@@ -48,7 +49,7 @@ NSString* const ALPHAGlobalDataIdentifier = @"com.unifiedsense.alpha.data.global
     menuAction = [ALPHAMenuActionItem itemWithIdentifier:@"com.unifiedsense.alpha.global.system.libraries"];
     menuAction.title = @"System Libraries";
     menuAction.icon = @"📚";
-    menuAction.viewControllerClass = @"FLEXLibrariesTableViewController";
+    menuAction.dataIdentifier = ALPHALibraryDataIdentifier;
     
     [items addObject:menuAction];
     

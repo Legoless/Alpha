@@ -8,7 +8,6 @@
 
 #import "FLEXLibrariesTableViewController.h"
 #import "FLEXUtility.h"
-#import "FLEXClassesTableViewController.h"
 #import <objc/runtime.h>
 
 @interface FLEXLibrariesTableViewController () <UISearchBarDelegate>
@@ -151,9 +150,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    FLEXClassesTableViewController *classesViewController = [[FLEXClassesTableViewController alloc] init];
+    /*FLEXClassesTableViewController *classesViewController = [[FLEXClassesTableViewController alloc] init];
     classesViewController.binaryImageName = self.filteredImageNames[indexPath.row];
-    [self.navigationController pushViewController:classesViewController animated:YES];
+    [self.navigationController pushViewController:classesViewController animated:YES];*/
 }
 
 @end
