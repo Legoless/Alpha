@@ -226,6 +226,7 @@
     if ([item.icon isKindOfClass:[UIImage class]])
     {
         cell.imageView.image = item.icon;
+        cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
     }
     else
     {

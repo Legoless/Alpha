@@ -20,6 +20,10 @@
 		382DF2BC1B2762D000FA01EF /* ALPHAScreenshotSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 382DF2BB1B2762D000FA01EF /* ALPHAScreenshotSource.m */; };
 		382DF2C01B2762FE00FA01EF /* ALPHADeviceStatusSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 382DF2BF1B2762FE00FA01EF /* ALPHADeviceStatusSource.m */; };
 		382DF2C61B27698600FA01EF /* ALPHARendererManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 382DF2C51B27698600FA01EF /* ALPHARendererManager.m */; };
+		382DF2CC1B279BA200FA01EF /* ALPHAFileSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 382DF2CB1B279BA200FA01EF /* ALPHAFileSource.m */; };
+		382DF2D11B27A13D00FA01EF /* ALPHAFileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 382DF2D01B27A13D00FA01EF /* ALPHAFileModel.m */; };
+		382DF2D41B27A16C00FA01EF /* ALPHAFileConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 382DF2D31B27A16C00FA01EF /* ALPHAFileConverter.m */; };
+		382DF2D71B27A1F000FA01EF /* ALPHAFileObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 382DF2D61B27A1F000FA01EF /* ALPHAFileObject.m */; };
 		38353E771B1DAC38009E4ACF /* ALPHAApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 38353E591B1DAC38009E4ACF /* ALPHAApplicationDelegate.m */; };
 		38353E781B1DAC38009E4ACF /* ALPHAMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 38353E5B1B1DAC38009E4ACF /* ALPHAMockObject.m */; };
 		38353E791B1DAC38009E4ACF /* ALPHANavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38353E5D1B1DAC38009E4ACF /* ALPHANavigationController.m */; };
@@ -220,6 +224,14 @@
 		382DF2C51B27698600FA01EF /* ALPHARendererManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHARendererManager.m; sourceTree = "<group>"; };
 		382DF2C71B276C4D00FA01EF /* ALPHASerialization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALPHASerialization.h; sourceTree = "<group>"; };
 		382DF2C81B276CAF00FA01EF /* ALPHAConversion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALPHAConversion.h; sourceTree = "<group>"; };
+		382DF2CA1B279BA200FA01EF /* ALPHAFileSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAFileSource.h; sourceTree = "<group>"; };
+		382DF2CB1B279BA200FA01EF /* ALPHAFileSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAFileSource.m; sourceTree = "<group>"; };
+		382DF2CF1B27A13D00FA01EF /* ALPHAFileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAFileModel.h; sourceTree = "<group>"; };
+		382DF2D01B27A13D00FA01EF /* ALPHAFileModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAFileModel.m; sourceTree = "<group>"; };
+		382DF2D21B27A16C00FA01EF /* ALPHAFileConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAFileConverter.h; sourceTree = "<group>"; };
+		382DF2D31B27A16C00FA01EF /* ALPHAFileConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAFileConverter.m; sourceTree = "<group>"; };
+		382DF2D51B27A1F000FA01EF /* ALPHAFileObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAFileObject.h; sourceTree = "<group>"; };
+		382DF2D61B27A1F000FA01EF /* ALPHAFileObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAFileObject.m; sourceTree = "<group>"; };
 		38353E581B1DAC38009E4ACF /* ALPHAApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAApplicationDelegate.h; sourceTree = "<group>"; };
 		38353E591B1DAC38009E4ACF /* ALPHAApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAApplicationDelegate.m; sourceTree = "<group>"; };
 		38353E5A1B1DAC38009E4ACF /* ALPHAMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAMockObject.h; sourceTree = "<group>"; };
@@ -663,6 +675,35 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
+		382DF2C91B279B6900FA01EF /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				382DF2CA1B279BA200FA01EF /* ALPHAFileSource.h */,
+				382DF2CB1B279BA200FA01EF /* ALPHAFileSource.m */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		382DF2CD1B27A0F100FA01EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				382DF2CF1B27A13D00FA01EF /* ALPHAFileModel.h */,
+				382DF2D01B27A13D00FA01EF /* ALPHAFileModel.m */,
+				382DF2D51B27A1F000FA01EF /* ALPHAFileObject.h */,
+				382DF2D61B27A1F000FA01EF /* ALPHAFileObject.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		382DF2CE1B27A0F900FA01EF /* Converters */ = {
+			isa = PBXGroup;
+			children = (
+				382DF2D21B27A16C00FA01EF /* ALPHAFileConverter.h */,
+				382DF2D31B27A16C00FA01EF /* ALPHAFileConverter.m */,
+			);
+			path = Converters;
+			sourceTree = "<group>";
+		};
 		38353E571B1DAC38009E4ACF /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -879,7 +920,10 @@
 		38424A331B25CEF500C07B7B /* File */ = {
 			isa = PBXGroup;
 			children = (
+				382DF2CE1B27A0F900FA01EF /* Converters */,
 				38424A371B25CF3000C07B7B /* Library */,
+				382DF2CD1B27A0F100FA01EF /* Model */,
+				382DF2C91B279B6900FA01EF /* Sources */,
 				38424A341B25CF2400C07B7B /* ALPHAFilePlugin.h */,
 				38424A351B25CF2400C07B7B /* ALPHAFilePlugin.m */,
 			);
@@ -1653,6 +1697,7 @@
 				385BB4AE1B1F36AF00443539 /* ALPHAJSONSerializer.m in Sources */,
 				386992EC1B18962D005B1BEE /* FLEXArgumentInputStructView.m in Sources */,
 				386993491B18962D005B1BEE /* ALPHATapTrigger.m in Sources */,
+				382DF2CC1B279BA200FA01EF /* ALPHAFileSource.m in Sources */,
 				535682BD18F3670300BAAD62 /* AAPLTintedToolbarViewController.m in Sources */,
 				38353E781B1DAC38009E4ACF /* ALPHAMockObject.m in Sources */,
 				38424A321B25C66400C07B7B /* NSString+ALPHAAdditional.m in Sources */,
@@ -1775,6 +1820,7 @@
 				3869930C1B18962D005B1BEE /* FLEXArrayExplorerViewController.m in Sources */,
 				3869932F1B18962D005B1BEE /* ALPHAScreenshotPlugin.m in Sources */,
 				38424A361B25CF2400C07B7B /* ALPHAFilePlugin.m in Sources */,
+				382DF2D71B27A1F000FA01EF /* ALPHAFileObject.m in Sources */,
 				38424A251B25B86600C07B7B /* ALPHAEventConverter.m in Sources */,
 				38353E791B1DAC38009E4ACF /* ALPHANavigationController.m in Sources */,
 				384DDDBC1B1DA856003DCDAE /* ALPHANotificationCollector.m in Sources */,
@@ -1782,6 +1828,7 @@
 				535682A718F3670300BAAD62 /* AAPLActionSheetViewController.m in Sources */,
 				5356824A18F3656900BAAD62 /* main.m in Sources */,
 				38353E7E1B1DAC38009E4ACF /* FLEXRuntimeUtility.m in Sources */,
+				382DF2D11B27A13D00FA01EF /* ALPHAFileModel.m in Sources */,
 				38353E7D1B1DAC38009E4ACF /* FLEXResources.m in Sources */,
 				38353ECD1B1DAFC2009E4ACF /* ALPHAScreenModel.m in Sources */,
 				386993001B18962D005B1BEE /* ALPHAManager.m in Sources */,
@@ -1799,6 +1846,7 @@
 				386993391B18962D005B1BEE /* ALPHATouchWindow.m in Sources */,
 				3869933B1B18962D005B1BEE /* FLEXAutoFillEngine.m in Sources */,
 				386993101B18962D005B1BEE /* FLEXDictionaryExplorerViewController.m in Sources */,
+				382DF2D41B27A16C00FA01EF /* ALPHAFileConverter.m in Sources */,
 				3812766A1B222A3D002C1174 /* ALPHAConsoleCollector.m in Sources */,
 				386993401B18962D005B1BEE /* ALPHAViewHierarchyPlugin.m in Sources */,
 				535682B218F3670300BAAD62 /* AAPLMasterViewController.m in Sources */,

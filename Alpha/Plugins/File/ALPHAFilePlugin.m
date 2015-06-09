@@ -6,7 +6,9 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
+#import "ALPHAMenuActionItem.h"
 #import "ALPHAFilePlugin.h"
+#import "ALPHAFileSource.h"
 
 @implementation ALPHAFilePlugin
 
@@ -16,21 +18,16 @@
     
     if (self)
     {
-        /*ALPHAMenuActionItem* menuAction = [ALPHAMenuActionItem itemWithIdentifier:@"com.unifiedsense.alpha.globalState"];
-        menuAction.title = @"Global State";
-        menuAction.icon = @"🌍";
-        menuAction.dataIdentifier = ALPHAGlobalDataIdentifier;
+        ALPHAMenuActionItem* menuAction = [ALPHAMenuActionItem itemWithIdentifier:@"com.unifiedsense.alpha.fileBrowser"];
+        menuAction.icon = @"📁";
+        menuAction.title = @"File Browser";
+        menuAction.dataIdentifier = ALPHAFileDataIdentifier;
+        //menuAction.viewControllerClass = @"FLEXFileBrowserTableViewController";
         menuAction.isMain = YES;
-        
-        //menuAction.viewControllerClass = @"FLEXGlobalsTableViewController";
-        
+
         [self registerAction:menuAction];
         
-        //
-        // Collectors
-        //
-        
-        [self registerCollector:[ALPHAGlobalCollector new]];*/
+        [self registerSource:[ALPHAFileSource new]];
     }
     
     return self;

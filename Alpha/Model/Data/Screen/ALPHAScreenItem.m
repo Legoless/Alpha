@@ -31,7 +31,7 @@ NSString* const ALPHADisplayItemDetailkey = @"kALPHADisplayItemDetailkey";
 
 - (void)setIcon:(id)icon
 {
-    if ([icon isKindOfClass:[UIImage class]] || [icon isKindOfClass:[NSString class]])
+    if ([icon isKindOfClass:[UIImage class]] || [icon isKindOfClass:[NSString class]] || !icon)
     {
         _icon = icon;
     }

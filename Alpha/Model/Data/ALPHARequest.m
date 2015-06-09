@@ -8,7 +8,7 @@
 
 #import "ALPHARequest.h"
 
-NSString *const ALPHAFileRequestIdentifier = @"com.unifiedsense.alpha.data.file";
+NSString *const ALPHAFileRequestIdentifier = @"com.unifiedsense.alpha.data.file.request";
 NSString *const ALPHAFileURLParameterKey   = @"kALPHAFileURLParameterKey";
 
 @interface ALPHARequest ()
