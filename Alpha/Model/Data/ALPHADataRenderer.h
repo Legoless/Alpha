@@ -43,4 +43,9 @@
  */
 @property (nonatomic, strong) id<ALPHADataSource> source;
 
+/*!
+ *  Refreshes the data rendered screen, by sending request to source
+ */
+- (void)refresh;
+
 @end

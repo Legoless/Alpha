@@ -9,6 +9,7 @@
 #import "ALPHABaseDataSource.h"
 
 extern NSString* const ALPHAClassDataIdentifier;
+extern NSString* const ALPHAClassBinaryParameterKey;
 
 @interface ALPHAClassSource : ALPHABaseDataSource
 

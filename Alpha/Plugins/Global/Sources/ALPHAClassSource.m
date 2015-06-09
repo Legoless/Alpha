@@ -15,11 +15,9 @@
 #import "ALPHAClassSource.h"
 
 NSString* const ALPHAClassDataIdentifier = @"com.unifiedsense.alpha.data.class";
+NSString* const ALPHAClassBinaryParameterKey = @"kALPHAClassBinaryParameterKey";
 
 @interface ALPHAClassSource ()
-
-@property (nonatomic, copy) NSArray *classNames;
-@property (nonatomic, copy) NSString *binaryImageName;
 
 @end
 
@@ -27,16 +25,6 @@ NSString* const ALPHAClassDataIdentifier = @"com.unifiedsense.alpha.data.class";
 @implementation ALPHAClassSource
 
 #pragma mark - Getters and Setters
-
-- (void)setBinaryImageName:(NSString *)binaryImageName
-{
-    if (![_binaryImageName isEqual:binaryImageName])
-    {
-        _binaryImageName = binaryImageName;
-        
-        self.classNames = [self classNamesForBinaryImageName:binaryImageName];
-    }
-}
 
 #pragma mark - Initialization
 
@@ -47,8 +35,6 @@ NSString* const ALPHAClassDataIdentifier = @"com.unifiedsense.alpha.data.class";
     if (self)
     {
         [self addDataIdentifier:ALPHAClassDataIdentifier];
-        
-        self.binaryImageName = [FLEXUtility applicationImageName];
     }
     
     return self;
@@ -56,10 +42,18 @@ NSString* const ALPHAClassDataIdentifier = @"com.unifiedsense.alpha.data.class";
 
 - (ALPHAModel *)modelForRequest:(ALPHARequest *)request
 {
+    NSString* binaryImageName = [FLEXUtility applicationImageName];
+    
+    if (request.parameters[ALPHAClassBinaryParameterKey])
+    {
+        binaryImageName = request.parameters[ALPHAClassBinaryParameterKey];
+    }
     
     NSMutableArray *items = [NSMutableArray array];
     
-    for (NSString* class in self.classNames)
+    NSArray *classNames = [self classNamesForBinaryImageName:binaryImageName];
+    
+    for (NSString* class in classNames)
     {
         ALPHAScreenItem* item = [[ALPHAScreenItem alloc] init];
         item.title = class;
@@ -76,8 +70,8 @@ NSString* const ALPHAClassDataIdentifier = @"com.unifiedsense.alpha.data.class";
     section.items = items.copy;
     
     ALPHATableScreenModel* model = [[ALPHATableScreenModel alloc] initWithIdentifier:ALPHAClassDataIdentifier];
-    NSString *shortImageName = [[self.binaryImageName componentsSeparatedByString:@"/"] lastObject];
-    model.title = [NSString stringWithFormat:@"%@ Classes (%lu)", shortImageName, (unsigned long)[self.classNames count]];;
+    NSString *shortImageName = [[binaryImageName componentsSeparatedByString:@"/"] lastObject];
+    model.title = [NSString stringWithFormat:@"%@ Classes (%lu)", shortImageName, (unsigned long)[classNames count]];;
     
     model.sections = @[ section ];
     

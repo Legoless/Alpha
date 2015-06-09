@@ -20,11 +20,11 @@
 #import "ALPHAModel.h"
 #import "ALPHAScreenModel.h"
 #import "ALPHATableScreenModel.h"
+#import "ALPHARendererManager.h"
 
 @interface ALPHATableDataRendererViewController ()
 
 @property (nonatomic, strong) NSTimer *refreshTimer;
-
 
 @end
 
@@ -335,96 +335,7 @@
     
     ALPHAScreenItem *item = [self.tableScreenModel.sections[indexPath.section] items][indexPath.row];
     
-    if ([item isKindOfClass:[ALPHAActionItem class]] && ![item isKindOfClass:[ALPHAMenuActionItem class]])
-    {
-        [self.source performAction:(ALPHAActionItem *)item completion:^(ALPHAModel *model, NSError *error)
-        {
-            if (!error)
-            {
-                [self refresh];
-            }
-        }];
-    }
-    else if ([[item file] isKindOfClass:[NSURL class]] && [item fileClass])
-    {
-        ALPHARequest *fileRequest = [ALPHARequest requestForFile:[item file].absoluteString];
-        
-        [self.source dataForRequest:fileRequest completion:^(NSData *data, NSError *error)
-        {
-            id object = [[ALPHASerializerManager sharedManager].serializer deserializeObject:data toClass:[item fileClass]];
-            
-            [self pushObject:object];
-        }];
-    }
-    else
-    {
-        //
-        // For data models that send data directly, we will display object view controller explorer
-        //
-    
-        [self pushObject:item];
-    }
-}
-
-/*!
- *  Pushes object by creating a new view controller, 
- *
- *  @param object to push
- */
-- (void)pushObject:(id)object
-{
-    id controller = nil;
-    
-    //
-    // This is the model we are displaying, we will not display screen items as models
-    //
-    id modelObject = nil;
-    
-    if ([object isKindOfClass:[ALPHAMenuActionItem class]])
-    {
-        ALPHAMenuActionItem* menuItem = (ALPHAMenuActionItem *)object;
-        
-        controller = menuItem.viewControllerInstance;
-    }
-    
-    if ([object isKindOfClass:[ALPHAScreenItem class]])
-    {
-        modelObject = [object object];
-    }
-    else
-    {
-        modelObject = object;
-    }
-    
-    //
-    // Handle custom objects
-    //
-    
-    if (modelObject && !controller)
-    {
-        Class class = [[ALPHAConverterManager sharedManager] renderClassForObject:modelObject];
-        
-        if (class)
-        {
-            controller = [[class alloc] init];
-            
-            if ([controller respondsToSelector:@selector(setObject:)])
-            {
-                [controller setObject:modelObject];
-            }
-        }
-    }
-    
-    if ([controller respondsToSelector:@selector(setSource:)])
-    {
-        // Send data source
-        [controller setSource:self.source];
-    }
-    
-    if (controller)
-    {
-        [self.navigationController pushViewController:controller animated:YES];
-    }
+    [[ALPHARendererManager sharedManager] renderer:self didSelectItem:item];
 }
 
 #pragma mark - Private Methods

@@ -11,6 +11,7 @@
 #import "FLEXUtility.h"
 
 #import "ALPHALibrarySource.h"
+#import "ALPHAClassSource.h"
 
 #import "ALPHATableScreenModel.h"
 
@@ -42,7 +43,6 @@ NSString* const ALPHALibraryDataIdentifier = @"com.unifiedsense.alpha.data.libra
 
 - (ALPHAModel *)modelForRequest:(ALPHARequest *)request
 {
-    
     NSMutableArray *items = [NSMutableArray array];
     
     for (NSString* fullImageName in self.imageNames)
@@ -50,6 +50,7 @@ NSString* const ALPHALibraryDataIdentifier = @"com.unifiedsense.alpha.data.libra
         ALPHAScreenItem *item = [[ALPHAScreenItem alloc] init];
         
         item.title = [self shortNameForImageName:fullImageName];
+        item.object = [ALPHARequest requestWithIdentifier:ALPHAClassDataIdentifier parameters:@{ ALPHAClassBinaryParameterKey : fullImageName }];
         
         [items addObject:item];
     }
@@ -68,7 +69,6 @@ NSString* const ALPHALibraryDataIdentifier = @"com.unifiedsense.alpha.data.libra
     
     return model;
 }
-
 
 #pragma mark - Binary Images
 

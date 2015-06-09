@@ -43,4 +43,14 @@
     return self;
 }
 
+- (id)serializeObject:(id)object
+{
+    return [self.serializer serializeObject:object];
+}
+
+- (id)deserializeObject:(id)object toClass:(Class)objectClass
+{
+    return [self.serializer deserializeObject:object toClass:objectClass];
+}
+
 @end

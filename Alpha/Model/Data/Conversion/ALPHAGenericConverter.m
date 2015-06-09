@@ -74,7 +74,8 @@
          NSStringFromClass([NSUserDefaults class])   : [FLEXDefaultsExplorerViewController class],
          NSStringFromClass([UIViewController class]) : [FLEXViewControllerExplorerViewController class],
          NSStringFromClass([UIView class])           : [FLEXViewExplorerViewController class],
-         NSStringFromClass([UIImage class])          : [FLEXImageExplorerViewController class]
+         NSStringFromClass([UIImage class])          : [FLEXImageExplorerViewController class],
+         NSStringFromClass([ALPHARequest class])     : [ALPHATableDataRendererViewController class]
     };
 
     Class explorerClass = nil;

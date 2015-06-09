@@ -8,7 +8,7 @@
 
 #import "ALPHASerializer.h"
 
-@interface ALPHASerializerManager : NSObject
+@interface ALPHASerializerManager : NSObject <ALPHASerializer>
 
 @property (nonatomic, strong) id<ALPHASerializer> serializer;
 
