@@ -9,8 +9,19 @@
 #import "ALPHASerializableItem.h"
 
 extern NSString *const ALPHAFileRequestIdentifier;
+
+//
+// File requests
+//
 extern NSString *const ALPHAFileURLParameterKey;
 extern NSString *const ALPHAFileClassParameterKey;
+
+//
+// Search requests
+//
+
+extern NSString *const ALPHASearchTextParameterKey;
+extern NSString *const ALPHASearchScopeParameterKey;
 
 /*!
  *  Data request wraps a special data request that data collectors can respond to.
@@ -50,5 +61,19 @@ extern NSString *const ALPHAFileClassParameterKey;
 
 - (instancetype)initWithIdentifier:(NSString *)identifier;
 - (instancetype)initWithIdentifier:(NSString *)identifier parameters:(NSDictionary *)parameters;
+
+#pragma mark - Search requests
+
+- (instancetype)searchRequestWithText:(NSString *)text;
+- (instancetype)searchRequestWithScope:(NSNumber *)scope;
+
+/*!
+ *  Copies the request and adds search parameters (leaving other parameters intact)
+ *
+ *  @param text search
+ *
+ *  @return new instance of request
+ */
+- (instancetype)searchRequestWithText:(NSString *)text scope:(NSNumber *)scope;
 
 @end

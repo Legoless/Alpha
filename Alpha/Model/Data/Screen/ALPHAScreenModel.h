@@ -38,4 +38,17 @@
  */
 @property (nonatomic, strong) ALPHAActionItem *rightAction;
 
+#pragma mark - Search
+
+/*!
+ *  If search is available, set this property and data renderer will render a search and send
+ *  search requests.
+ */
+@property (nonatomic, copy) NSString *searchBarPlaceholder;
+
+/*!
+ *  Scopes are displayed under search bar as segmented control that allows user to set specific filters
+ */
+@property (nonatomic, copy) NSArray *scopes;
+
 @end

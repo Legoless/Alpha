@@ -200,14 +200,9 @@
         controller = [[class alloc] init];
     }
     
-    if ([controller respondsToSelector:@selector(setRequest:)] && request)
+    if ([controller respondsToSelector:@selector(setTheme:)])
     {
-        [controller setRequest:request];
-    }
-    
-    if ([controller respondsToSelector:@selector(setObject:)] && ![object isKindOfClass:[ALPHARequest class]])
-    {
-        [controller setObject:object];
+        [controller setTheme:self.theme];
     }
     
     //
@@ -218,9 +213,14 @@
         [controller setSource:source];
     }
     
-    if ([controller respondsToSelector:@selector(setTheme:)])
+    if ([controller respondsToSelector:@selector(setRequest:)] && request)
     {
-        [controller setTheme:self.theme];
+        [controller setRequest:request];
+    }
+    
+    if ([controller respondsToSelector:@selector(setObject:)] && ![object isKindOfClass:[ALPHARequest class]])
+    {
+        [controller setObject:object];
     }
     
     if (controller)

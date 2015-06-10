@@ -8,6 +8,8 @@
 
 #import "ALPHATableRendererViewController.h"
 
+#import "UIImage+ALPHACreation.h"
+
 #import "ALPHAConverterManager.h"
 #import "ALPHASerializerManager.h"
 
@@ -22,9 +24,13 @@
 #import "ALPHATableScreenModel.h"
 #import "ALPHAScreenManager.h"
 
-@interface ALPHATableRendererViewController ()
+#import "ALPHASearchScopeView.h"
+
+@interface ALPHATableRendererViewController () <UISearchBarDelegate>
 
 @property (nonatomic, strong) NSTimer *refreshTimer;
+
+@property (nonatomic, strong) ALPHASearchScopeView *detailView;
 
 @end
 
@@ -47,26 +53,17 @@
     
     self.title = screenModel.title;
     
-    if (screenModel.expiration > 0 && self.source)
-    {
-        if (!self.refreshControl)
-        {
-            self.refreshControl = [self createRefreshControl];
-        }
-        
-        self.refreshTimer = [NSTimer scheduledTimerWithTimeInterval:self.screenModel.expiration target:self selector:@selector(refresh) userInfo:nil repeats:NO];
-    }
-    else
-    {
-        if (self.refreshControl)
-        {
-            [self.refreshControl endRefreshing];
-            self.refreshControl = nil;
-        }
-        
-        [self.refreshTimer invalidate];
-        self.refreshTimer = nil;
-    }
+    //
+    // Refresh timer
+    //
+    
+    [self createRefreshTimerWithModel:screenModel];
+    
+    //
+    // Search support
+    //
+    
+    [self createSearchBarWithModel:screenModel];
     
     if (screenModel.request)
     {
@@ -377,6 +374,36 @@
     }
 }
 
+#pragma mark - UISearchBarDelegate
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    [self updateTableDataForSearchFilter];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope
+{
+    [self updateTableDataForSearchFilter];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    // Dismiss the keyboard when interacting with filtered results.
+    [self.detailView.searchBar endEditing:YES];
+}
+
+- (void)updateTableDataForSearchFilter
+{
+    self.request = [self.request searchRequestWithText:self.detailView.searchBar.text scope:@(self.detailView.segmentedControl.selectedSegmentIndex)];
+    
+    [self refresh];
+}
+
 #pragma mark - Private Methods
 
 - (UIRefreshControl *)createRefreshControl
@@ -390,6 +417,64 @@
     refreshControl.tintColor = [self.theme.tintColor colorWithAlphaComponent:0.5];
     
     return refreshControl;
+}
+
+- (void)createRefreshTimerWithModel:(ALPHAScreenModel *)screenModel
+{
+    if (screenModel.expiration > 0 && self.source)
+    {
+        if (!self.refreshControl)
+        {
+            self.refreshControl = [self createRefreshControl];
+        }
+        
+        self.refreshTimer = [NSTimer scheduledTimerWithTimeInterval:self.screenModel.expiration target:self selector:@selector(refresh) userInfo:nil repeats:NO];
+    }
+    else
+    {
+        if (self.refreshControl)
+        {
+            [self.refreshControl endRefreshing];
+            self.refreshControl = nil;
+        }
+        
+        [self.refreshTimer invalidate];
+        self.refreshTimer = nil;
+    }
+}
+
+- (void)createSearchBarWithModel:(ALPHAScreenModel *)screenModel
+{
+    if ( (screenModel.searchBarPlaceholder || screenModel.scopes.count) && !self.detailView)
+    {
+        ALPHASearchScopeView *scopeView = [[ALPHASearchScopeView alloc] init];
+        scopeView.delegate = self;
+        
+        scopeView.tintColor = self.theme.tintColor;
+        //scopeView.backgroundColor = self.theme.highlightedBackgroundColor;
+        scopeView.backgroundColor = [UIColor colorWithWhite:0.08 alpha:1.0];
+        
+        scopeView.placeholder = screenModel.searchBarPlaceholder;
+        
+        scopeView.showsSearchBar = (screenModel.searchBarPlaceholder != nil) ? YES : NO;
+        
+        scopeView.scopeButtonTitles = screenModel.scopes;
+
+        scopeView.showsScopeBar = (screenModel.scopes != nil) ? YES : NO;
+
+        [scopeView sizeToFit];
+        
+        self.detailView = scopeView;
+        
+        self.tableView.tableHeaderView = self.detailView;
+    }
+    else if (!(screenModel.searchBarPlaceholder || screenModel.scopes.count) && self.detailView)
+    {
+        [self.detailView removeFromSuperview];
+        self.tableView.tableHeaderView = nil;
+        
+        self.detailView = nil;
+    }
 }
 
 - (NSString *)cellIdentifierForDefaultStyle:(UITableViewCellStyle)style

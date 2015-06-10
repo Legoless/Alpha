@@ -10,9 +10,12 @@
 
 #import "ALPHARequest.h"
 
-NSString *const ALPHAFileRequestIdentifier  = @"com.unifiedsense.alpha.data.file.request";
-NSString *const ALPHAFileURLParameterKey    = @"kALPHAFileURLParameterKey";
-NSString *const ALPHAFileClassParameterKey  = @"kALPHAFileClassParameterKey";
+NSString *const ALPHAFileRequestIdentifier      = @"com.unifiedsense.alpha.data.file.request";
+NSString *const ALPHAFileURLParameterKey        = @"kALPHAFileURLParameterKey";
+NSString *const ALPHAFileClassParameterKey      = @"kALPHAFileClassParameterKey";
+
+NSString *const ALPHASearchTextParameterKey     = @"kALPHASearchTextParameterKey";
+NSString *const ALPHASearchScopeParameterKey    = @"kALPHASearchScopeParameterKey";
 
 @interface ALPHARequest ()
 
@@ -96,6 +99,35 @@ NSString *const ALPHAFileClassParameterKey  = @"kALPHAFileClassParameterKey";
 - (NSUInteger)hash
 {
     return self.identifier.hash;
+}
+
+- (instancetype)searchRequestWithText:(NSString *)text
+{
+    return [self searchRequestWithText:text scope:nil];
+}
+
+- (instancetype)searchRequestWithScope:(NSNumber *)scope
+{
+    return [self searchRequestWithText:nil scope:scope];
+}
+
+- (instancetype)searchRequestWithText:(NSString *)text scope:(NSNumber *)scope
+{
+    NSMutableDictionary *parameters = [@{} mutableCopy];
+    
+    [parameters addEntriesFromDictionary:self.parameters];
+    
+    if (text)
+    {
+        parameters[ALPHASearchTextParameterKey] = text;
+    }
+    
+    if (scope)
+    {
+        parameters[ALPHASearchScopeParameterKey] = scope;
+    }
+    
+    return [[[self class] alloc] initWithIdentifier:self.identifier parameters:parameters];
 }
 
 @end

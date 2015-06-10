@@ -56,6 +56,9 @@
     
     [[UIBarButtonItem appearanceWhenContainedIn:[ALPHANavigationController class], nil] setTitleTextAttributes:@{ NSFontAttributeName : [UIFont fontWithName:self.fontFamily size:14.0] } forState:UIControlStateNormal];
     
+    [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setDefaultTextAttributes:@{ NSFontAttributeName : [UIFont fontWithName:self.fontFamily size:12.0], NSForegroundColorAttributeName : self.tintColor }];
+    
+    [[UISegmentedControl appearanceWhenContainedIn:[ALPHANavigationController class], nil] setTitleTextAttributes:@{ NSFontAttributeName : [UIFont fontWithName:self.fontFamily size:12.0], NSForegroundColorAttributeName : self.tintColor } forState:UIControlStateNormal];
     //id statusBar = [[UIApplication sharedApplication] statusBar];
     
     //[statusBar performSelector:NSSelectorFromString(@"setForegroundColor:") withObject:self.tintColor];

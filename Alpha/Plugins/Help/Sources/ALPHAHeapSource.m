@@ -40,7 +40,41 @@ NSString* const ALPHAHeapDataIdentifier = @"com.unifiedsense.alpha.data.heap";
     
     NSUInteger totalCount = 0;
     
-    for (NSString *className in classes.allKeys)
+    NSArray *classNames = nil;
+    
+    NSUInteger sortIndex = 0;
+    
+    if (request.parameters[ALPHASearchScopeParameterKey])
+    {
+        sortIndex = [request.parameters[ALPHASearchScopeParameterKey] unsignedIntegerValue];
+    }
+    
+    if ([request.parameters[ALPHASearchTextParameterKey] length] > 0)
+    {
+        NSPredicate *searchPredicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[cd] %@", request.parameters[ALPHASearchTextParameterKey]];
+        classNames = [classes.allKeys filteredArrayUsingPredicate:searchPredicate];
+    }
+    else
+    {
+        classNames = classes.allKeys;
+    }
+    
+    if (sortIndex == 0)
+    {
+        classNames = [classNames sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
+    }
+    else
+    {
+        classNames = [classNames sortedArrayUsingComparator:^NSComparisonResult(NSString *className1, NSString *className2)
+        {
+            NSNumber *count1 = [classes objectForKey:className1];
+            NSNumber *count2 = [classes objectForKey:className2];
+
+            return [count2 compare:count1];
+        }];
+    }
+    
+    for (NSString *className in classNames)
     {
         ALPHAScreenItem* item = [[ALPHAScreenItem alloc] init];
         
@@ -62,7 +96,11 @@ NSString* const ALPHAHeapDataIdentifier = @"com.unifiedsense.alpha.data.heap";
     ALPHATableScreenModel* model = [[ALPHATableScreenModel alloc] initWithIdentifier:ALPHAHeapDataIdentifier];
     model.title = [NSString stringWithFormat:@"Live Objects (%lu)", (unsigned long)totalCount];
     
+    model.searchBarPlaceholder = @"Filter";
+    model.scopes = @[ @"Sort Alphabetically", @"Sort by Count" ];
+    
     model.sections = @[ section ];
+    model.expiration = 60;
     
     return model;
 }

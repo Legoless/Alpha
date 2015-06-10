@@ -27,6 +27,7 @@
 		382DF2DD1B28694C00FA01EF /* ALPHAImageRendererViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382DF2DC1B28694C00FA01EF /* ALPHAImageRendererViewController.m */; };
 		382DF2E11B287D3200FA01EF /* ALPHAHeapPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 382DF2E01B287D3200FA01EF /* ALPHAHeapPlugin.m */; };
 		382DF2E51B287D5200FA01EF /* ALPHAHeapSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 382DF2E41B287D5200FA01EF /* ALPHAHeapSource.m */; };
+		382DF2E91B28ADE200FA01EF /* ALPHASearchScopeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 382DF2E81B28ADE200FA01EF /* ALPHASearchScopeView.m */; };
 		38353E771B1DAC38009E4ACF /* ALPHAApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 38353E591B1DAC38009E4ACF /* ALPHAApplicationDelegate.m */; };
 		38353E781B1DAC38009E4ACF /* ALPHAMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 38353E5B1B1DAC38009E4ACF /* ALPHAMockObject.m */; };
 		38353E791B1DAC38009E4ACF /* ALPHANavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38353E5D1B1DAC38009E4ACF /* ALPHANavigationController.m */; };
@@ -238,6 +239,8 @@
 		382DF2E01B287D3200FA01EF /* ALPHAHeapPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAHeapPlugin.m; sourceTree = "<group>"; };
 		382DF2E31B287D5200FA01EF /* ALPHAHeapSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAHeapSource.h; sourceTree = "<group>"; };
 		382DF2E41B287D5200FA01EF /* ALPHAHeapSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAHeapSource.m; sourceTree = "<group>"; };
+		382DF2E71B28ADE200FA01EF /* ALPHASearchScopeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHASearchScopeView.h; sourceTree = "<group>"; };
+		382DF2E81B28ADE200FA01EF /* ALPHASearchScopeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHASearchScopeView.m; sourceTree = "<group>"; };
 		38353E581B1DAC38009E4ACF /* ALPHAApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAApplicationDelegate.h; sourceTree = "<group>"; };
 		38353E591B1DAC38009E4ACF /* ALPHAApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAApplicationDelegate.m; sourceTree = "<group>"; };
 		38353E5A1B1DAC38009E4ACF /* ALPHAMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAMockObject.h; sourceTree = "<group>"; };
@@ -724,6 +727,15 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
+		382DF2E61B28ADA900FA01EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				382DF2E71B28ADE200FA01EF /* ALPHASearchScopeView.h */,
+				382DF2E81B28ADE200FA01EF /* ALPHASearchScopeView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		38353E571B1DAC38009E4ACF /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -1055,6 +1067,7 @@
 				38353EDE1B1DEDE9009E4ACF /* Renderers */,
 				386992BC1B18962D005B1BEE /* Themes */,
 				386992C61B18962D005B1BEE /* Triggers */,
+				382DF2E61B28ADA900FA01EF /* View */,
 			);
 			name = Alpha;
 			path = ../Alpha;
@@ -1815,6 +1828,7 @@
 				386993201B18962D005B1BEE /* ALPHAMainViewController.m in Sources */,
 				386993151B18962D005B1BEE /* FLEXSetExplorerViewController.m in Sources */,
 				38353EB11B1DAEA1009E4ACF /* ALPHABlockActionItem.m in Sources */,
+				382DF2E91B28ADE200FA01EF /* ALPHASearchScopeView.m in Sources */,
 				38353EDC1B1DECD5009E4ACF /* ALPHANotificationModel.m in Sources */,
 				3808FA7B1B2597AF006A6F73 /* ALPHANetworkModel.m in Sources */,
 				535682A818F3670300BAAD62 /* AAPLActivityIndicatorViewController.m in Sources */,

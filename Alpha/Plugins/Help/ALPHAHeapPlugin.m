@@ -24,6 +24,7 @@
         menuAction.title = @"Heap Objects";
         menuAction.dataIdentifier = ALPHAHeapDataIdentifier;
         menuAction.isMain = YES;
+        
         [self registerAction:menuAction];
         
         //
