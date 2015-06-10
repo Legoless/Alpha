@@ -339,7 +339,10 @@
     
     ALPHAScreenItem *item = [self.tableScreenModel.sections[indexPath.section] items][indexPath.row];
     
-    [[ALPHAScreenManager defaultManager] renderer:self didSelectItem:item];
+    if ([item isKindOfClass:[ALPHAActionItem class]] || [item object])
+    {
+        [[ALPHAScreenManager defaultManager] renderer:self didSelectItem:item];
+    }
 }
 
 #pragma mark - Private Methods

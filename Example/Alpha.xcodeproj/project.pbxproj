@@ -25,6 +25,8 @@
 		382DF2D71B27A1F000FA01EF /* ALPHAFileObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 382DF2D61B27A1F000FA01EF /* ALPHAFileObject.m */; };
 		382DF2DA1B282EC700FA01EF /* ALPHAScreenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 382DF2D91B282EC700FA01EF /* ALPHAScreenManager.m */; };
 		382DF2DD1B28694C00FA01EF /* ALPHAImageRendererViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382DF2DC1B28694C00FA01EF /* ALPHAImageRendererViewController.m */; };
+		382DF2E11B287D3200FA01EF /* ALPHAHeapPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 382DF2E01B287D3200FA01EF /* ALPHAHeapPlugin.m */; };
+		382DF2E51B287D5200FA01EF /* ALPHAHeapSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 382DF2E41B287D5200FA01EF /* ALPHAHeapSource.m */; };
 		38353E771B1DAC38009E4ACF /* ALPHAApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 38353E591B1DAC38009E4ACF /* ALPHAApplicationDelegate.m */; };
 		38353E781B1DAC38009E4ACF /* ALPHAMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 38353E5B1B1DAC38009E4ACF /* ALPHAMockObject.m */; };
 		38353E791B1DAC38009E4ACF /* ALPHANavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38353E5D1B1DAC38009E4ACF /* ALPHANavigationController.m */; };
@@ -97,10 +99,7 @@
 		386992F41B18962D005B1BEE /* FLEXIvarEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386991FA1B18962D005B1BEE /* FLEXIvarEditorViewController.m */; };
 		386992F51B18962D005B1BEE /* FLEXMethodCallingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386991FC1B18962D005B1BEE /* FLEXMethodCallingViewController.m */; };
 		386992F61B18962D005B1BEE /* FLEXPropertyEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386991FE1B18962D005B1BEE /* FLEXPropertyEditorViewController.m */; };
-		386992F91B18962D005B1BEE /* FLEXFileBrowserSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992051B18962D005B1BEE /* FLEXFileBrowserSearchOperation.m */; };
-		386992FA1B18962D005B1BEE /* FLEXFileBrowserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992071B18962D005B1BEE /* FLEXFileBrowserTableViewController.m */; };
 		386992FC1B18962D005B1BEE /* FLEXInstancesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3869920B1B18962D005B1BEE /* FLEXInstancesTableViewController.m */; };
-		386992FE1B18962D005B1BEE /* FLEXLiveObjectsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3869920F1B18962D005B1BEE /* FLEXLiveObjectsTableViewController.m */; };
 		386992FF1B18962D005B1BEE /* FLEXWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992111B18962D005B1BEE /* FLEXWebViewController.m */; };
 		386993001B18962D005B1BEE /* ALPHAManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992151B18962D005B1BEE /* ALPHAManager.m */; };
 		386993011B18962D005B1BEE /* ALPHAWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992171B18962D005B1BEE /* ALPHAWindow.m */; };
@@ -235,6 +234,10 @@
 		382DF2D91B282EC700FA01EF /* ALPHAScreenManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAScreenManager.m; sourceTree = "<group>"; };
 		382DF2DB1B28694C00FA01EF /* ALPHAImageRendererViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAImageRendererViewController.h; sourceTree = "<group>"; };
 		382DF2DC1B28694C00FA01EF /* ALPHAImageRendererViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAImageRendererViewController.m; sourceTree = "<group>"; };
+		382DF2DF1B287D3200FA01EF /* ALPHAHeapPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAHeapPlugin.h; sourceTree = "<group>"; };
+		382DF2E01B287D3200FA01EF /* ALPHAHeapPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAHeapPlugin.m; sourceTree = "<group>"; };
+		382DF2E31B287D5200FA01EF /* ALPHAHeapSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAHeapSource.h; sourceTree = "<group>"; };
+		382DF2E41B287D5200FA01EF /* ALPHAHeapSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAHeapSource.m; sourceTree = "<group>"; };
 		38353E581B1DAC38009E4ACF /* ALPHAApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAApplicationDelegate.h; sourceTree = "<group>"; };
 		38353E591B1DAC38009E4ACF /* ALPHAApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAApplicationDelegate.m; sourceTree = "<group>"; };
 		38353E5A1B1DAC38009E4ACF /* ALPHAMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAMockObject.h; sourceTree = "<group>"; };
@@ -389,14 +392,8 @@
 		386991FC1B18962D005B1BEE /* FLEXMethodCallingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXMethodCallingViewController.m; sourceTree = "<group>"; };
 		386991FD1B18962D005B1BEE /* FLEXPropertyEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXPropertyEditorViewController.h; sourceTree = "<group>"; };
 		386991FE1B18962D005B1BEE /* FLEXPropertyEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXPropertyEditorViewController.m; sourceTree = "<group>"; };
-		386992041B18962D005B1BEE /* FLEXFileBrowserSearchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXFileBrowserSearchOperation.h; sourceTree = "<group>"; };
-		386992051B18962D005B1BEE /* FLEXFileBrowserSearchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXFileBrowserSearchOperation.m; sourceTree = "<group>"; };
-		386992061B18962D005B1BEE /* FLEXFileBrowserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXFileBrowserTableViewController.h; sourceTree = "<group>"; };
-		386992071B18962D005B1BEE /* FLEXFileBrowserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXFileBrowserTableViewController.m; sourceTree = "<group>"; };
 		3869920A1B18962D005B1BEE /* FLEXInstancesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXInstancesTableViewController.h; sourceTree = "<group>"; };
 		3869920B1B18962D005B1BEE /* FLEXInstancesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXInstancesTableViewController.m; sourceTree = "<group>"; };
-		3869920E1B18962D005B1BEE /* FLEXLiveObjectsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXLiveObjectsTableViewController.h; sourceTree = "<group>"; };
-		3869920F1B18962D005B1BEE /* FLEXLiveObjectsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXLiveObjectsTableViewController.m; sourceTree = "<group>"; };
 		386992101B18962D005B1BEE /* FLEXWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXWebViewController.h; sourceTree = "<group>"; };
 		386992111B18962D005B1BEE /* FLEXWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXWebViewController.m; sourceTree = "<group>"; };
 		386992131B18962D005B1BEE /* ALPHAManager+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALPHAManager+Private.h"; sourceTree = "<group>"; };
@@ -705,6 +702,26 @@
 				382DF2D31B27A16C00FA01EF /* ALPHAFileConverter.m */,
 			);
 			path = Converters;
+			sourceTree = "<group>";
+		};
+		382DF2DE1B287D1200FA01EF /* Heap */ = {
+			isa = PBXGroup;
+			children = (
+				382DF2E21B287D3F00FA01EF /* Sources */,
+				382DF2DF1B287D3200FA01EF /* ALPHAHeapPlugin.h */,
+				382DF2E01B287D3200FA01EF /* ALPHAHeapPlugin.m */,
+			);
+			name = Heap;
+			path = Help;
+			sourceTree = "<group>";
+		};
+		382DF2E21B287D3F00FA01EF /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				382DF2E31B287D5200FA01EF /* ALPHAHeapSource.h */,
+				382DF2E41B287D5200FA01EF /* ALPHAHeapSource.m */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		38353E571B1DAC38009E4ACF /* Core */ = {
@@ -1097,14 +1114,8 @@
 		386991FF1B18962D005B1BEE /* Global State Explorers */ = {
 			isa = PBXGroup;
 			children = (
-				386992041B18962D005B1BEE /* FLEXFileBrowserSearchOperation.h */,
-				386992051B18962D005B1BEE /* FLEXFileBrowserSearchOperation.m */,
-				386992061B18962D005B1BEE /* FLEXFileBrowserTableViewController.h */,
-				386992071B18962D005B1BEE /* FLEXFileBrowserTableViewController.m */,
 				3869920A1B18962D005B1BEE /* FLEXInstancesTableViewController.h */,
 				3869920B1B18962D005B1BEE /* FLEXInstancesTableViewController.m */,
-				3869920E1B18962D005B1BEE /* FLEXLiveObjectsTableViewController.h */,
-				3869920F1B18962D005B1BEE /* FLEXLiveObjectsTableViewController.m */,
 				386992101B18962D005B1BEE /* FLEXWebViewController.h */,
 				386992111B18962D005B1BEE /* FLEXWebViewController.m */,
 			);
@@ -1174,6 +1185,7 @@
 				38353ECF1B1DB221009E4ACF /* Event */,
 				38424A331B25CEF500C07B7B /* File */,
 				38424A381B25CFD800C07B7B /* Global */,
+				382DF2DE1B287D1200FA01EF /* Heap */,
 				3869925E1B18962D005B1BEE /* Interface */,
 				3869926D1B18962D005B1BEE /* Network */,
 				384DDDA71B1DA622003DCDAE /* Notification */,
@@ -1694,6 +1706,7 @@
 				535682B618F3670300BAAD62 /* AAPLSegmentedControlViewController.m in Sources */,
 				386993441B18962D005B1BEE /* ALPHATheme.m in Sources */,
 				38353E771B1DAC38009E4ACF /* ALPHAApplicationDelegate.m in Sources */,
+				382DF2E51B287D5200FA01EF /* ALPHAHeapSource.m in Sources */,
 				38482CEA1B2212A7003E541A /* ALPHAImageSerializer.m in Sources */,
 				535682B018F3670300BAAD62 /* AAPLDefaultToolbarViewController.m in Sources */,
 				38353E821B1DAC38009E4ACF /* UIApplication+ALPHADelegate.m in Sources */,
@@ -1721,7 +1734,6 @@
 				38424A3B1B25CFF300C07B7B /* ALPHAGlobalPlugin.m in Sources */,
 				3869932B1B18962D005B1BEE /* ALPHANetworkRequest.m in Sources */,
 				535682B318F3670300BAAD62 /* AAPLPageControlViewController.m in Sources */,
-				386992FE1B18962D005B1BEE /* FLEXLiveObjectsTableViewController.m in Sources */,
 				535682BA18F3670300BAAD62 /* AAPLSwitchViewController.m in Sources */,
 				385BB4A41B1EFC5800443539 /* NSObject+ALPHASerialization.m in Sources */,
 				386993191B18962D005B1BEE /* ALPHABootstrapPlugin.m in Sources */,
@@ -1774,8 +1786,6 @@
 				386993341B18962D005B1BEE /* UIDevice+ALPHAStatus.m in Sources */,
 				38353ECB1B1DAFC2009E4ACF /* ALPHABaseDataSource.m in Sources */,
 				386992EA1B18962D005B1BEE /* FLEXArgumentInputNumberView.m in Sources */,
-				386992FA1B18962D005B1BEE /* FLEXFileBrowserTableViewController.m in Sources */,
-				386992F91B18962D005B1BEE /* FLEXFileBrowserSearchOperation.m in Sources */,
 				535682B518F3670300BAAD62 /* AAPLProgressViewController.m in Sources */,
 				382DF2B41B27621300FA01EF /* ALPHALibrarySource.m in Sources */,
 				38353E7A1B1DAC38009E4ACF /* ALPHAViewController.m in Sources */,
@@ -1828,6 +1838,7 @@
 				38424A361B25CF2400C07B7B /* ALPHAFilePlugin.m in Sources */,
 				382DF2D71B27A1F000FA01EF /* ALPHAFileObject.m in Sources */,
 				38424A251B25B86600C07B7B /* ALPHAEventConverter.m in Sources */,
+				382DF2E11B287D3200FA01EF /* ALPHAHeapPlugin.m in Sources */,
 				38353E791B1DAC38009E4ACF /* ALPHANavigationController.m in Sources */,
 				384DDDBC1B1DA856003DCDAE /* ALPHANotificationCollector.m in Sources */,
 				535682AC18F3670300BAAD62 /* AAPLCustomSearchBarViewController.m in Sources */,

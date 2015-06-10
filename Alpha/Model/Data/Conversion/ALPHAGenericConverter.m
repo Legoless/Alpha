@@ -9,6 +9,8 @@
 #import <objc/runtime.h>
 #import <Haystack/Haystack.h>
 
+#import "FLEXWebViewController.h"
+
 #import "NSString+ALPHAAdditional.h"
 
 #import "FLEXObjectExplorerViewController.h"
@@ -108,6 +110,8 @@
     NSDictionary *explorerSubclassesForObjectTypeStrings = @{
          NSStringFromClass([NSArray class])          : [FLEXArrayExplorerViewController class],
          NSStringFromClass([NSSet class])            : [FLEXSetExplorerViewController class],
+         NSStringFromClass([NSString class])         : [FLEXWebViewController class],
+         NSStringFromClass([NSURL class])            : [FLEXWebViewController class],
          NSStringFromClass([NSDictionary class])     : [FLEXDictionaryExplorerViewController class],
          NSStringFromClass([NSUserDefaults class])   : [FLEXDefaultsExplorerViewController class],
          NSStringFromClass([UIViewController class]) : [FLEXViewControllerExplorerViewController class],

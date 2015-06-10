@@ -94,12 +94,6 @@
         [self registerAction:closeAction];
         
         //
-        // Base view controllers
-        //
-        
-        [self registerMenuActions];
-        
-        //
         // Data Sources
         //
         
@@ -107,16 +101,6 @@
     }
     
     return self;
-}
-
-- (void)registerMenuActions
-{    
-    ALPHAScreenActionItem *menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.memoryHeap"];
-    menuAction.icon = @"💩";
-    menuAction.title = @"Heap Objects";
-    menuAction.viewControllerClass = @"FLEXLiveObjectsTableViewController";
-    menuAction.isMain = YES;
-    [self registerAction:menuAction];
 }
 
 #pragma mark - FLEXPlugin
