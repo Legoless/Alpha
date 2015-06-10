@@ -27,7 +27,8 @@
 #import "ALPHAGenericConverter.h"
 #import "ALPHAGenericModel.h"
 #import "ALPHATableScreenModel.h"
-#import "ALPHATableDataRendererViewController.h"
+#import "ALPHATableRendererViewController.h"
+#import "ALPHAImageRendererViewController.h"
 
 @implementation ALPHAGenericConverter
 
@@ -73,7 +74,7 @@
     //
     if ([object isKindOfClass:[ALPHAModel class]])
     {
-        return [ALPHATableDataRendererViewController class];
+        return [ALPHATableRendererViewController class];
     }
     
     //
@@ -111,7 +112,7 @@
          NSStringFromClass([NSUserDefaults class])   : [FLEXDefaultsExplorerViewController class],
          NSStringFromClass([UIViewController class]) : [FLEXViewControllerExplorerViewController class],
          NSStringFromClass([UIView class])           : [FLEXViewExplorerViewController class],
-         NSStringFromClass([UIImage class])          : [FLEXImagePreviewViewController class]
+         NSStringFromClass([UIImage class])          : [ALPHAImageRendererViewController class]
     };
 
     Class explorerClass = nil;

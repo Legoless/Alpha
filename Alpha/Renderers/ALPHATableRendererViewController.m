@@ -1,12 +1,12 @@
 //
-//  ALPHATableDataRendererViewController.m
+//  ALPHATableRendererViewController.m
 //  Alpha
 //
 //  Created by Dal Rupnik on 29/05/15.
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHATableDataRendererViewController.h"
+#import "ALPHATableRendererViewController.h"
 
 #import "ALPHAConverterManager.h"
 #import "ALPHASerializerManager.h"
@@ -22,13 +22,13 @@
 #import "ALPHATableScreenModel.h"
 #import "ALPHAScreenManager.h"
 
-@interface ALPHATableDataRendererViewController ()
+@interface ALPHATableRendererViewController ()
 
 @property (nonatomic, strong) NSTimer *refreshTimer;
 
 @end
 
-@implementation ALPHATableDataRendererViewController
+@implementation ALPHATableRendererViewController
 
 #pragma mark - Getters and Setters
 
@@ -102,14 +102,19 @@
     }
 }
 
+- (void)setTheme:(ALPHATheme *)theme
+{
+    _theme = theme;
+    
+    self.view.backgroundColor = theme.backgroundColor;
+    self.tableView.separatorColor = theme.highlightedBackgroundColor;
+}
+
 #pragma mark - UIViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.view.backgroundColor = [ALPHAManager sharedManager].theme.backgroundColor;
-    self.tableView.separatorColor = [ALPHAManager sharedManager].theme.highlightedBackgroundColor;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -179,9 +184,7 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:item.style reuseIdentifier:cellIdentifier];
         
-        ALPHATheme* theme = [ALPHAManager sharedManager].theme;
-        
-        [self cell:cell applyTheme:theme];
+        [self cell:cell applyTheme:self.theme];
     }
     
     [self cell:cell applyItem:item];
@@ -310,12 +313,12 @@
 {
     UILabel *label = [[UILabel alloc] init];
     label.frame = CGRectMake(17.0, 8.0, self.view.bounds.size.width - 17.0, 12.0);
-    label.font = [[ALPHAManager sharedManager].theme themeFontOfSize:12.0];
-    label.textColor = [[ALPHAManager sharedManager].theme.tintColor colorWithAlphaComponent:0.6];
+    label.font = [self.theme themeFontOfSize:12.0];
+    label.textColor = [self.theme.tintColor colorWithAlphaComponent:0.6];
     label.text = [self tableView:tableView titleForHeaderInSection:section];
     
     UIView *headerView = [[UIView alloc] init];
-    headerView.backgroundColor = [[ALPHAManager sharedManager].theme.highlightedBackgroundColor colorWithAlphaComponent:0.8];
+    headerView.backgroundColor = [self.theme.highlightedBackgroundColor colorWithAlphaComponent:0.8];
     [headerView addSubview:label];
     
     return headerView;
@@ -349,7 +352,7 @@
     
     UIRefreshControl* refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
-    refreshControl.tintColor = [[ALPHAManager sharedManager].theme.tintColor colorWithAlphaComponent:0.5];
+    refreshControl.tintColor = [self.theme.tintColor colorWithAlphaComponent:0.5];
     
     return refreshControl;
 }

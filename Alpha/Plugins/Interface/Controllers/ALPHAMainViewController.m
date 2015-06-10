@@ -20,7 +20,7 @@
 
 #import "ALPHACanvasView.h"
 
-#import "ALPHATableDataRendererViewController.h"
+#import "ALPHATableRendererViewController.h"
 #import "ALPHAManager.h"
 #import "ALPHAPlugin.h"
 

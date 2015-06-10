@@ -1,5 +1,5 @@
 //
-//  ALPHATableDataRendererViewController.h
+//  ALPHATableRendererViewController.h
 //  UICatalog
 //
 //  Created by Dal Rupnik on 29/05/15.
@@ -10,7 +10,7 @@
 #import "ALPHAViewController.h"
 #import "ALPHAScreenModel.h"
 
-@interface ALPHATableDataRendererViewController : UITableViewController <ALPHADataRenderer>
+@interface ALPHATableRendererViewController : UITableViewController <ALPHADataRenderer>
 
 #pragma mark - ALPHADataRenderer
 
@@ -21,6 +21,9 @@
 @property (nonatomic, strong) id<ALPHASerializableItem> object;
 
 @property (nonatomic, copy) ALPHARequest *request;
+
 @property (nonatomic, strong) id<ALPHADataSource> source;
+
+@property (nonatomic, strong) ALPHATheme *theme;
 
 @end

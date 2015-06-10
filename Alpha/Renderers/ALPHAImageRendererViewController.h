@@ -6,8 +6,21 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ALPHADataRenderer.h"
 
-@interface ALPHAImageRendererViewController : UIViewController
+@interface ALPHAImageRendererViewController : UIViewController <ALPHADataRenderer>
+
+#pragma mark - ALPHADataRenderer
+
+@property (nonatomic, weak) id <ALPHAViewControllerDelegate> delegate;
+
+@property (nonatomic, strong) ALPHAScreenModel* screenModel;
+
+@property (nonatomic, strong) id<ALPHASerializableItem> object;
+
+@property (nonatomic, copy) ALPHARequest *request;
+@property (nonatomic, strong) id<ALPHADataSource> source;
+
+@property (nonatomic, strong) ALPHATheme *theme;
 
 @end

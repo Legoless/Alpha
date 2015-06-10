@@ -26,12 +26,7 @@
 
 - (ALPHATheme *)theme
 {
-    if (!_theme)
-    {
-        _theme = self.manager.theme;
-    }
-    
-    return _theme;
+    return self.manager.theme;
 }
 
 - (ALPHAManager *)manager
@@ -212,6 +207,11 @@
     if ([controller respondsToSelector:@selector(setSource:)])
     {
         [controller setSource:source];
+    }
+    
+    if ([controller respondsToSelector:@selector(setTheme:)])
+    {
+        [controller setTheme:self.theme];
     }
     
     if (controller)
