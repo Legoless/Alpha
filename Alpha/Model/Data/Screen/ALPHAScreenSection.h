@@ -12,7 +12,8 @@
 
 @property (nonatomic, copy) NSString* identifier;
 
-@property (nonatomic, copy) NSString* title;
+@property (nonatomic, copy) NSString* headerText;
+@property (nonatomic, copy) NSString* footerText;
 
 //
 // Array of Display Item objects

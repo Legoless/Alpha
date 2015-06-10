@@ -120,7 +120,7 @@
     if (self)
     {
         self.identifier = identifier;
-        self.title = title;
+        self.headerText = title;
     }
     
     return self;

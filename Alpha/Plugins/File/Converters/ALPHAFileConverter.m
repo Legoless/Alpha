@@ -24,7 +24,7 @@
     screenModel.title = [model.currentFile.path lastPathComponent];
     
     ALPHAScreenSection* section = [[ALPHAScreenSection alloc] init];
-    section.title = [NSString stringWithFormat:@"%lu files (%@)", (unsigned long)[model.files count], [NSByteCountFormatter stringFromByteCount:model.currentFile.size.longLongValue countStyle:NSByteCountFormatterCountStyleFile]];
+    section.headerText = [NSString stringWithFormat:@"%lu files (%@)", (unsigned long)[model.files count], [NSByteCountFormatter stringFromByteCount:model.currentFile.size.longLongValue countStyle:NSByteCountFormatterCountStyleFile]];
     
     NSMutableArray* items = [NSMutableArray array];
     

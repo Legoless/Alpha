@@ -211,7 +211,7 @@
         if ([[model valueForKey:propertyName] isKindOfClass:[NSArray class]])
         {
             ALPHAScreenSection* section = [[ALPHAScreenSection alloc] init];
-            section.title = [propertyName alpha_cleanCodeIdentifier];
+            section.headerText = [propertyName alpha_cleanCodeIdentifier];
             
             NSMutableArray* sectionItems = [NSMutableArray array];
             

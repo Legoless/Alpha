@@ -19,9 +19,19 @@
  *  - If only screen model is provided to the renderer, it will render it as it is.
  *  - If object is provided to the data renderer, converter manager will be asked to convert data into
  *  screen model. If successful, new screen model should be rendered.
- *  - If request is provided, source will be asked to render scre
+ *  - If request is provided, source will be asked to provide data for screen.
  */
 @protocol ALPHADataRenderer <NSObject>
+
+/*!
+ *  Designated initializer to allow initializing the data renderer with object, which might contain additional parameters.
+ *  to initialize the renderer.
+ *
+ *  @param object any object, including screen models
+ *
+ *  @return instance of data renderer
+ */
+- (instancetype)initWithObject:(id)object;
 
 /*!
  *  Screen model must be supported to be rendered

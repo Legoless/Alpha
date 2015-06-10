@@ -110,6 +110,18 @@
     self.tableView.separatorColor = theme.highlightedBackgroundColor;
 }
 
+#pragma mark - Initialization
+
+- (instancetype)initWithObject:(id)object
+{
+    if ([object isKindOfClass:[ALPHATableScreenModel class]])
+    {
+        return [self initWithStyle:[(ALPHATableScreenModel *)object tableViewStyle]];
+    }
+    
+    return [self init];
+}
+
 #pragma mark - UIViewController
 
 - (void)viewDidLoad
@@ -324,9 +336,29 @@
     return headerView;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UILabel *label = [[UILabel alloc] init];
+    label.frame = CGRectMake(17.0, 8.0, self.view.bounds.size.width - 17.0, 12.0);
+    label.font = [self.theme themeFontOfSize:12.0];
+    label.textColor = [self.theme.tintColor colorWithAlphaComponent:0.6];
+    label.text = [self tableView:tableView titleForFooterInSection:section];
+    
+    UIView *footerView = [[UIView alloc] init];
+    footerView.backgroundColor = [self.theme.highlightedBackgroundColor colorWithAlphaComponent:0.8];
+    [footerView addSubview:label];
+    
+    return footerView;
+}
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return [self.tableScreenModel.sections[section] title];
+    return [self.tableScreenModel.sections[section] headerText];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    return [self.tableScreenModel.sections[section] footerText];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

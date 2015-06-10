@@ -91,7 +91,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
                                          @{ @"Badge Number" : @([UIApplication sharedApplication].applicationIconBadgeNumber) }
                                    ],
                                    @"style" : @(UITableViewCellStyleValue1),
-                                   @"title" : @"Application" };
+                                   @"headerText" : @"Application" };
     
     ALPHAScreenSection* applicationSection = [ALPHAScreenSection screenSectionWithDictionary:sectionData];
     
@@ -107,7 +107,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
                              @{ @"CPU Usage" : [NSString stringWithFormat:@"%lu%%", (unsigned long)([UIApplication sharedApplication].cpuUsage * 100.0)] }
                      ],
                      @"style" : @(UITableViewCellStyleValue1),
-                     @"title" : @"Usage" };
+                     @"headerText" : @"Usage" };
 
     
     ALPHAScreenSection* usageSection = [ALPHAScreenSection screenSectionWithDictionary:sectionData];
@@ -123,7 +123,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
                              @{ @"System Time" : [self.dateFormatter stringFromDate:[NSDate date]] }
                      ],
                      @"style" : @(UITableViewCellStyleValue1),
-                     @"title" : @"System" };
+                     @"headerText" : @"System" };
     
     ALPHAScreenSection* systemSection = [ALPHAScreenSection screenSectionWithDictionary:sectionData];
     
@@ -160,7 +160,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     sectionData = @{ @"identifier" : @"com.unifiedsense.alpha.data.status.system",
                      @"items" : items.copy,
                      @"style" : @(UITableViewCellStyleValue1),
-                     @"title" : @"Locale" };
+                     @"headerText" : @"Locale" };
     
     ALPHAScreenSection* localeSection = [ALPHAScreenSection screenSectionWithDictionary:sectionData];
 
@@ -184,7 +184,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
                              @{ @"Jailbroken" : @([UIDevice currentDevice].hs_jailbreakStatus != UIDeviceJailbreakStatusNotJailbroken) }
                      ],
                      @"style" : @(UITableViewCellStyleValue1),
-                     @"title" : @"Device" };
+                     @"headerText" : @"Device" };
     
     
     ALPHAScreenSection* deviceSection = [ALPHAScreenSection screenSectionWithDictionary:sectionData];
@@ -205,7 +205,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     sectionData = @{ @"identifier" : @"com.unifiedsense.alpha.data.status.network",
                      @"items" : items.copy,
                      @"style" : @(UITableViewCellStyleValue1),
-                     @"title" : @"Local IP Addresses" };
+                     @"headerText" : @"Local IP Addresses" };
     
     
     ALPHAScreenSection* ipSection = [ALPHAScreenSection screenSectionWithDictionary:sectionData];
@@ -225,7 +225,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
                              @{ @"Sent Cellular" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].hs_sentCellular.longLongValue countStyle:NSByteCountFormatterCountStyleBinary] }
                      ],
                      @"style" : @(UITableViewCellStyleValue1),
-                     @"title" : @"Network" };
+                     @"headerText" : @"Network" };
     
     
     ALPHAScreenSection* networkSection = [ALPHAScreenSection screenSectionWithDictionary:sectionData];
@@ -237,7 +237,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
                              @{ @"Carrier" : [UIDevice currentDevice].alpha_carrierName }
                      ],
                      @"style" : @(UITableViewCellStyleValue1),
-                     @"title" : @"Cellular" };
+                     @"headerText" : @"Cellular" };
     
     
     ALPHAScreenSection* cellularSection = [ALPHAScreenSection screenSectionWithDictionary:sectionData];
@@ -248,6 +248,8 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     
     ALPHATableScreenModel* dataModel = [[ALPHATableScreenModel alloc] initWithIdentifier:ALPHADeviceStatusDataIdentifier];
     dataModel.title = @"Status";
+    //dataModel.tableViewStyle = UITableViewStyleGrouped;
+    
     dataModel.sections = @[ applicationSection, usageSection, systemSection, localeSection, deviceSection, ipSection, networkSection, cellularSection ];
     
     // Data model expires in 0.5 seconds

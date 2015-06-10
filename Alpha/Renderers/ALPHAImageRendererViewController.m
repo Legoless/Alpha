@@ -98,6 +98,11 @@
 
 #pragma mark - Initialization
 
+- (instancetype)initWithObject:(id)object
+{
+    return [self init];
+}
+
 - (id)init
 {
     self = [super initWithNibName:nil bundle:nil];

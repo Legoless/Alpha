@@ -39,7 +39,7 @@
                                            @{ @"Token" : notificationModel.remoteNotificationToken }
                                            ],
                                    @"style" : @(UITableViewCellStyleValue1),
-                                   @"title" : @"Settings" };
+                                   @"headerText" : @"Settings" };
     
     [sections addObject:[ALPHAScreenSection screenSectionWithDictionary:sectionData]];
     
@@ -52,7 +52,7 @@
         sectionData = @{ @"identifier" : @"com.unifiedsense.alpha.data.notification.remote",
                          @"items" : [self screenItemsForNotifications:notificationModel.remoteNotifications],
                          @"style" : @(UITableViewCellStyleSubtitle),
-                         @"title" : @"Remote" };
+                         @"headerText" : @"Remote" };
         
         
         [sections addObject:[ALPHAScreenSection screenSectionWithDictionary:sectionData]];
@@ -69,7 +69,7 @@
         sectionData = @{ @"identifier" : @"com.unifiedsense.alpha.data.notification.local.fired",
                          @"items" : [self screenItemsForNotifications:notificationModel.firedLocalNotifications],
                          @"style" : @(UITableViewCellStyleSubtitle),
-                         @"title" : @"Local Fired" };
+                         @"headerText" : @"Local Fired" };
         
         
         [sections addObject:[ALPHAScreenSection screenSectionWithDictionary:sectionData]];
@@ -87,7 +87,7 @@
         sectionData = @{ @"identifier" : @"com.unifiedsense.alpha.data.notification.local.scheduled",
                          @"items" : [self screenItemsForNotifications:localNotifications],
                          @"style" : @(UITableViewCellStyleSubtitle),
-                         @"title" : @"Local Scheduled" };
+                         @"headerText" : @"Local Scheduled" };
         
         
         [sections addObject:[ALPHAScreenSection screenSectionWithDictionary:sectionData]];

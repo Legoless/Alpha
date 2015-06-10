@@ -189,7 +189,16 @@
         }
     }
     
-    id controller = [[class alloc] init];
+    id controller = nil;
+    
+    if ([class instancesRespondToSelector:@selector(initWithObject:)])
+    {
+        controller = [[class alloc] initWithObject:object];
+    }
+    else
+    {
+        controller = [[class alloc] init];
+    }
     
     if ([controller respondsToSelector:@selector(setRequest:)] && request)
     {

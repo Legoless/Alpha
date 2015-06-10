@@ -11,6 +11,11 @@
 @interface ALPHATableScreenModel : ALPHAScreenModel
 
 /*!
+ *  Set table view style, default is plain
+ */
+@property (nonatomic, assign) UITableViewStyle tableViewStyle;
+
+/*!
  *  Array of display section objects objects
  */
 @property (nonatomic, copy) NSArray *sections;
