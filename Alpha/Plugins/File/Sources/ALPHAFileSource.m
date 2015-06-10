@@ -121,6 +121,10 @@ NSString* const ALPHAFileDataIdentifier = @"com.unifiedsense.alpha.data.file";
     object.size = @(totalSize);
     object.modificationDate = [attributes fileModificationDate];
     
+    //
+    // Preview images
+    //
+    
     if ([FLEXUtility isImagePathExtension:[path pathExtension]])
     {
         object.previewImage = [UIImage imageWithContentsOfFile:path];

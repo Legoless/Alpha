@@ -40,7 +40,7 @@
         
         [self registerAction:touchAction];
         
-        ALPHAMenuActionItem* menuAction = [ALPHAMenuActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.screenshot.main"];
+        ALPHAScreenActionItem* menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.screenshot.main"];
         menuAction.icon = @"📱";
         menuAction.title = @"Screenshots";
         menuAction.dataIdentifier = ALPHAScreenshotDataIdentifier;

@@ -8,7 +8,7 @@
 
 #import "ALPHAMenuSource.h"
 #import "ALPHAManager.h"
-#import "ALPHAMenuActionItem.h"
+#import "ALPHAScreenActionItem.h"
 #import "ALPHAGlobalActionIdentifiers.h"
 #import "ALPHAModel.h"
 #import "ALPHAScreenModel.h"
@@ -46,9 +46,9 @@ NSString* const ALPHAMenuDataIdentifier = @"com.unifiedsense.alpha.data.menu";
         
         for (ALPHAActionItem* action in plugin.actions)
         {
-            if ([action isKindOfClass:[ALPHAMenuActionItem class]] && action.isEnabled)
+            if ([action isKindOfClass:[ALPHAScreenActionItem class]] && action.isEnabled)
             {
-                ALPHAMenuActionItem *menuAction = (ALPHAMenuActionItem *)action;
+                ALPHAScreenActionItem *menuAction = (ALPHAScreenActionItem *)action;
                 
                 if (menuAction.isMain)
                 {

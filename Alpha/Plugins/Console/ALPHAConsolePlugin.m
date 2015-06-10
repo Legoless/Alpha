@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
-#import "ALPHAMenuActionItem.h"
+#import "ALPHAScreenActionItem.h"
 
 #import "ALPHAConsoleCollector.h"
 #import "ALPHAConsolePlugin.h"
@@ -19,7 +19,7 @@
     
     if (self)
     {
-        ALPHAMenuActionItem* menuAction = [ALPHAMenuActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.console.main"];
+        ALPHAScreenActionItem* menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.console.main"];
         menuAction.icon = @"⚠️";
         menuAction.title = @"Console";
         menuAction.dataIdentifier = ALPHAConsoleDataIdentifier;

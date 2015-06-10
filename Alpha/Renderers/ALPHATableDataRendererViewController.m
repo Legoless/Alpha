@@ -13,14 +13,14 @@
 
 #import "ALPHAGlobalActionIdentifiers.h"
 #import "ALPHAScreenItem.h"
-#import "ALPHAMenuActionItem.h"
+#import "ALPHAScreenActionItem.h"
 #import "ALPHABlockActionItem.h"
 #import "ALPHASelectorActionItem.h"
 #import "ALPHAManager.h"
 #import "ALPHAModel.h"
 #import "ALPHAScreenModel.h"
 #import "ALPHATableScreenModel.h"
-#import "ALPHARendererManager.h"
+#import "ALPHAScreenManager.h"
 
 @interface ALPHATableDataRendererViewController ()
 
@@ -336,7 +336,7 @@
     
     ALPHAScreenItem *item = [self.tableScreenModel.sections[indexPath.section] items][indexPath.row];
     
-    [[ALPHARendererManager sharedManager] renderer:self didSelectItem:item];
+    [[ALPHAScreenManager defaultManager] renderer:self didSelectItem:item];
 }
 
 #pragma mark - Private Methods

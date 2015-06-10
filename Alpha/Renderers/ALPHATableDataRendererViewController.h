@@ -12,9 +12,9 @@
 
 @interface ALPHATableDataRendererViewController : UITableViewController <ALPHADataRenderer>
 
-@property (nonatomic, weak) id <ALPHAViewControllerDelegate> delegate;
-
 #pragma mark - ALPHADataRenderer
+
+@property (nonatomic, weak) id <ALPHAViewControllerDelegate> delegate;
 
 @property (nonatomic, strong) ALPHAScreenModel* screenModel;
 

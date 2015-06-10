@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHAMenuActionItem.h"
+#import "ALPHAScreenActionItem.h"
 #import "ALPHAFilePlugin.h"
 #import "ALPHAFileSource.h"
 
@@ -18,7 +18,7 @@
     
     if (self)
     {
-        ALPHAMenuActionItem* menuAction = [ALPHAMenuActionItem itemWithIdentifier:@"com.unifiedsense.alpha.fileBrowser"];
+        ALPHAScreenActionItem* menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.fileBrowser"];
         menuAction.icon = @"📁";
         menuAction.title = @"File Browser";
         menuAction.dataIdentifier = ALPHAFileDataIdentifier;

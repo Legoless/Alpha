@@ -7,7 +7,7 @@
 //
 
 #import "ALPHAStatePlugin.h"
-#import "ALPHAMenuActionItem.h"
+#import "ALPHAScreenActionItem.h"
 #import "ALPHADeviceStatusSource.h"
 
 @interface ALPHAStatePlugin ()
@@ -26,7 +26,7 @@
         // Menu items
         //
         
-        ALPHAMenuActionItem* menuAction = [ALPHAMenuActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.state.status"];
+        ALPHAScreenActionItem* menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.state.status"];
         menuAction.icon = @"📊";
         menuAction.title = @"Status";
         menuAction.dataIdentifier = ALPHADeviceStatusDataIdentifier;

@@ -22,6 +22,8 @@
 #import "FLEXImagePreviewViewController.h"
 #import "FLEXClassExplorerViewController.h"
 
+#import "ALPHAScreenActionItem.h"
+
 #import "ALPHAGenericConverter.h"
 #import "ALPHAGenericModel.h"
 #import "ALPHATableScreenModel.h"
@@ -33,7 +35,7 @@
 
 - (BOOL)canConvertObject:(id)object
 {
-    return [object isKindOfClass:[ALPHAModel class]] || [object isKindOfClass:[UIImage class]];
+    return [object isKindOfClass:[ALPHAModel class]];
 }
 
 - (ALPHAScreenModel *)screenModelForObject:(id)object
@@ -46,10 +48,7 @@
     {
         return [self convertGenericModel:(ALPHAGenericModel *)object];
     }
-    else if ([object isKindOfClass:[ALPHAModel class]])
-    {
-        return [self convertCustomModel:object];
-    }
+
     //
     // Attempt to convert to screen model using class info
     //
@@ -59,10 +58,48 @@
 
 - (Class)renderClassForObject:(id)object
 {
+    //
+    // If Alpha request is provided, we must first execute the request, because we do not know
+    // which class can render it. Return nil here, so it can be properly handled.
+    //
+    
+    if ([object isKindOfClass:[ALPHARequest class]])
+    {
+        return nil;
+    }
+    
+    //
+    // If we already have a table screen model, we return table data renderer.
+    //
     if ([object isKindOfClass:[ALPHAModel class]])
     {
         return [ALPHATableDataRendererViewController class];
     }
+    
+    //
+    // If we have a screen action item, the action item probably has information about what class
+    // should be rendered.
+    //
+    if ([object isKindOfClass:[ALPHAScreenActionItem class]])
+    {
+        ALPHAScreenActionItem *screenAction = (ALPHAScreenActionItem *)object;
+        
+        if (screenAction.viewControllerClass)
+        {
+            Class screenClass = NSClassFromString(screenAction.viewControllerClass);
+            
+            if (screenClass)
+            {
+                return screenClass;
+            }
+        }
+        
+        if (screenAction.request)
+        {
+            return [self renderClassForObject:screenAction.request];
+        }
+    }
+    
     //
     // Map custom objects
     //
@@ -74,8 +111,7 @@
          NSStringFromClass([NSUserDefaults class])   : [FLEXDefaultsExplorerViewController class],
          NSStringFromClass([UIViewController class]) : [FLEXViewControllerExplorerViewController class],
          NSStringFromClass([UIView class])           : [FLEXViewExplorerViewController class],
-         NSStringFromClass([UIImage class])          : [FLEXImageExplorerViewController class],
-         NSStringFromClass([ALPHARequest class])     : [ALPHATableDataRendererViewController class]
+         NSStringFromClass([UIImage class])          : [FLEXImagePreviewViewController class]
     };
 
     Class explorerClass = nil;

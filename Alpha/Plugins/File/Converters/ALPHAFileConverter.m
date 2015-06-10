@@ -32,9 +32,19 @@
     {
         ALPHAScreenItem* item = [[ALPHAScreenItem alloc] init];
         
+        //
+        // If this is a directory, we ask our own file source for another file model, so we identify ourselves with directory
+        // identifier. If this is a file, then we create file request and file is displayed on view controller that handles
+        // the file.
+        //
+        
         if (file.contents)
         {
             item.object = [ALPHARequest requestWithIdentifier:model.request.identifier parameters:@{ ALPHAFileURLParameterKey : file.path }];
+        }
+        else
+        {
+            item.object = [ALPHARequest requestForFile:file.path];
         }
         
         if (file.previewImage)
@@ -68,7 +78,6 @@
     {
         return [NSString stringWithFormat:@"%@ - %@", [NSByteCountFormatter stringFromByteCount:fileObject.size.longLongValue countStyle:NSByteCountFormatterCountStyleFile], fileObject.modificationDate];
     }
-
 }
 
 @end

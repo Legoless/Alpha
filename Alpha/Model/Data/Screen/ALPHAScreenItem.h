@@ -19,12 +19,6 @@ typedef NSInteger ALPHAScreenItemPriority;
  */
 @property (nonatomic, strong) id object;
 
-/*!
- *  File URL if item represents a file resource
- */
-@property (nonatomic, copy) NSURL *file;
-@property (nonatomic, strong) Class fileClass;
-
 #pragma mark - Screen
 
 /*!

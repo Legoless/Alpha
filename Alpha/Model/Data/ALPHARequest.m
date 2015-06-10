@@ -6,10 +6,13 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
+#import "FLEXUtility.h"
+
 #import "ALPHARequest.h"
 
-NSString *const ALPHAFileRequestIdentifier = @"com.unifiedsense.alpha.data.file.request";
-NSString *const ALPHAFileURLParameterKey   = @"kALPHAFileURLParameterKey";
+NSString *const ALPHAFileRequestIdentifier  = @"com.unifiedsense.alpha.data.file.request";
+NSString *const ALPHAFileURLParameterKey    = @"kALPHAFileURLParameterKey";
+NSString *const ALPHAFileClassParameterKey  = @"kALPHAFileClassParameterKey";
 
 @interface ALPHARequest ()
 
@@ -28,8 +31,23 @@ NSString *const ALPHAFileURLParameterKey   = @"kALPHAFileURLParameterKey";
 }
 
 + (instancetype)requestForFile:(NSString *)fileURL
+{  
+    return [self requestForFile:fileURL fileClass:nil];
+}
+
++ (instancetype)requestForFile:(NSString *)fileURL fileClass:(NSString *)fileClass
 {
-    return [self requestWithIdentifier:ALPHAFileRequestIdentifier parameters:@{ ALPHAFileURLParameterKey : fileURL }];
+    NSAssert(fileURL != nil, @"File URL must not be nil.");
+    
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    parameters[ALPHAFileURLParameterKey] = fileURL;
+    
+    if (fileClass.length)
+    {
+        parameters[ALPHAFileClassParameterKey] = fileClass;
+    }
+    
+    return [self requestWithIdentifier:ALPHAFileRequestIdentifier parameters:parameters.copy];
 }
 
 - (instancetype)initWithIdentifier:(NSString *)identifier

@@ -22,7 +22,7 @@
     
     if (self)
     {
-        ALPHAMenuActionItem* menuAction = [ALPHAMenuActionItem itemWithIdentifier:@"com.unifiedsense.alpha.globalState"];
+        ALPHAScreenActionItem* menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.globalState"];
         menuAction.title = @"Global State";
         menuAction.icon = @"🌍";
         menuAction.dataIdentifier = ALPHAGlobalDataIdentifier;

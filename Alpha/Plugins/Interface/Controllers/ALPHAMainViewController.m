@@ -29,6 +29,8 @@
 #import "ALPHAViewController.h"
 #import "ALPHALocalSource.h"
 
+#import "ALPHAScreenManager.h"
+
 @interface ALPHAMainViewController () <ALPHAViewControllerDelegate, ALPHAExplorerMenuDelegate>
 
 //
@@ -159,13 +161,7 @@
 
 - (void)displayInfoTable
 {
-    ALPHATableDataRendererViewController* sinkTVC = [[ALPHATableDataRendererViewController alloc] init];
-    sinkTVC.delegate = self;
-    sinkTVC.source = [ALPHALocalSource new];
-    sinkTVC.request = [ALPHARequest requestWithIdentifier:ALPHAMenuDataIdentifier];
-    
-    UINavigationController *navigationController = [[ALPHANavigationController alloc] initWithRootViewController:sinkTVC];
-    [[ALPHAManager sharedManager] displayViewController:navigationController animated:YES completion:nil];
+    [[ALPHAScreenManager defaultManager] pushObject:[ALPHARequest requestWithIdentifier:ALPHAMenuDataIdentifier]];
 }
 
 - (void)closeButtonTapped:(FLEXToolbarItem *)sender
@@ -201,22 +197,6 @@
     }
     
     return shouldReceiveTouch;
-}
-
-#pragma mark - ALPHAViewControllerDelegate
-
-- (void)viewControllerDidFinish:(UIViewController *)viewController
-{
-    /*if ([self.delegate respondsToSelector:@selector(viewControllerDidFinish:)])
-    {
-        [self.delegate viewControllerDidFinish:self];
-    }*/
-    
-    //
-    // A child view controller has finished, remove it.
-    //
-    
-    [[ALPHAManager sharedManager] removeViewControllerAnimated:YES completion:nil];
 }
 
 @end

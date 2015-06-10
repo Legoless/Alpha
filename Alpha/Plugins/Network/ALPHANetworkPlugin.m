@@ -8,7 +8,7 @@
 
 #import "ALPHANetworkCollector.h"
 
-#import "ALPHAMenuActionItem.h"
+#import "ALPHAScreenActionItem.h"
 
 #import "ALPHANetworkPlugin.h"
 
@@ -20,7 +20,7 @@
     
     if (self)
     {
-        ALPHAMenuActionItem* menuAction = [ALPHAMenuActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.network.main"];
+        ALPHAScreenActionItem* menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.network.main"];
         menuAction.icon = @"💬";
         menuAction.title = @"Network";
         menuAction.dataIdentifier = ALPHANetworkDataIdentifier;

@@ -10,6 +10,7 @@
 
 extern NSString *const ALPHAFileRequestIdentifier;
 extern NSString *const ALPHAFileURLParameterKey;
+extern NSString *const ALPHAFileClassParameterKey;
 
 /*!
  *  Data request wraps a special data request that data collectors can respond to.
@@ -33,6 +34,8 @@ extern NSString *const ALPHAFileURLParameterKey;
 + (instancetype)requestWithIdentifier:(NSString *)identifier;
 + (instancetype)requestWithIdentifier:(NSString *)identifier parameters:(NSDictionary *)parameters;
 
+#pragma mark - File requests
+
 /*!
  *  Creates request for file with URL. Identifier used for file is 
  *
@@ -41,6 +44,7 @@ extern NSString *const ALPHAFileURLParameterKey;
  *  @return request instance
  */
 + (instancetype)requestForFile:(NSString *)fileURL;
++ (instancetype)requestForFile:(NSString *)fileURL fileClass:(NSString *)fileClass;
 
 #pragma mark - Initialization
 

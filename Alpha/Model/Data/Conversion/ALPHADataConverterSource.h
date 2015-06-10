@@ -36,7 +36,7 @@
 @optional
 
 /*!
- *  Returns renderer class for an object. Only called if source can convert object.
+ *  Returns renderer class for an object. If class is returned, object will be rendered using that class.
  *
  *  @param object to be rendered
  *

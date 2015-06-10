@@ -11,7 +11,7 @@
 #import "ALPHAMainViewController.h"
 
 #import "ALPHABlockActionItem.h"
-#import "ALPHAMenuActionItem.h"
+#import "ALPHAScreenActionItem.h"
 #import "ALPHAMenuSource.h"
 #import "FLEXResources.h"
 
@@ -111,7 +111,7 @@
 
 - (void)registerMenuActions
 {    
-    ALPHAMenuActionItem *menuAction = [ALPHAMenuActionItem itemWithIdentifier:@"com.unifiedsense.alpha.memoryHeap"];
+    ALPHAScreenActionItem *menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.memoryHeap"];
     menuAction.icon = @"💩";
     menuAction.title = @"Heap Objects";
     menuAction.viewControllerClass = @"FLEXLiveObjectsTableViewController";

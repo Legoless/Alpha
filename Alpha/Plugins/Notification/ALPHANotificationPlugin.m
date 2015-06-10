@@ -7,7 +7,7 @@
 //
 
 #import "ALPHANotificationPlugin.h"
-#import "ALPHAMenuActionItem.h"
+#import "ALPHAScreenActionItem.h"
 #import "ALPHANotificationCollector.h"
 
 @interface ALPHANotificationPlugin ()
@@ -26,7 +26,7 @@
         // Menu items
         //
         
-        ALPHAMenuActionItem *menuAction = [ALPHAMenuActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.notification.notifications"];
+        ALPHAScreenActionItem *menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.notification.notifications"];
         menuAction.icon = @"🔔";
         menuAction.title = @"Notifications";
         menuAction.dataIdentifier = ALPHANotificationDataIdentifier;

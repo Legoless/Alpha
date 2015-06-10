@@ -9,6 +9,8 @@
 #import "ALPHADataSource.h"
 #import "ALPHAScreenModel.h"
 #import "ALPHARequest.h"
+#import "ALPHATheme.h"
+#import "ALPHAViewController.h"
 
 /*!
  *  Data renderer protocol is made to support rendering of objects. Each data renderer must be able to render
@@ -22,12 +24,13 @@
 @protocol ALPHADataRenderer <NSObject>
 
 /*!
- *  Screen model
+ *  Screen model must be supported to be rendered
  */
 @property (nonatomic, strong) ALPHAScreenModel* screenModel;
 
 @optional
 
+#pragma mark - Data loading
 /*!
  *  Data model if available
  */
@@ -42,6 +45,19 @@
  *  Data source, where data model is requested from
  */
 @property (nonatomic, strong) id<ALPHADataSource> source;
+
+#pragma mark - UI Actions
+
+@property (nonatomic, weak) id <ALPHAViewControllerDelegate> delegate;
+
+//
+// Add transition here
+//
+
+/*!
+ *  Theme reference for data renderer
+ */
+@property (nonatomic, strong) ALPHATheme *theme;
 
 /*!
  *  Refreshes the data rendered screen, by sending request to source

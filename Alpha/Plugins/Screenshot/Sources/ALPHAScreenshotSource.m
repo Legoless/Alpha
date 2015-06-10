@@ -69,8 +69,7 @@ NSString *const ALPHAScreenshotDataIdentifier = @"com.unifiedsense.alpha.data.sc
     {
         ALPHAScreenItem* item = [[ALPHAScreenItem alloc] init];
         item.title = [self titleForScreenshot:screenshot];
-        item.file = screenshot;
-        item.fileClass = [UIImage class];
+        item.object = [ALPHARequest requestForFile:screenshot.absoluteString];
 
         [items addObject:item];
     }

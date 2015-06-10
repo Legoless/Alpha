@@ -7,7 +7,7 @@
 //
 
 #import "ALPHAEventPlugin.h"
-#import "ALPHAMenuActionItem.h"
+#import "ALPHAScreenActionItem.h"
 #import "ALPHAEventCollector.h"
 
 @implementation ALPHAEventPlugin
@@ -31,7 +31,7 @@
         // Menu items
         //
         
-        ALPHAMenuActionItem *menuAction = [ALPHAMenuActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.event.events"];
+        ALPHAScreenActionItem *menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.event.events"];
         menuAction.icon = @"📅";
         menuAction.title = @"Events";
         menuAction.dataIdentifier = ALPHAEventDataIdentifier;

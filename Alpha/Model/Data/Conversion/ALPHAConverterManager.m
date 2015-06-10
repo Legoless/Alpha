@@ -121,11 +121,21 @@
 
 - (Class)renderClassForObject:(id)object
 {
+    if ([object isKindOfClass:[ALPHAScreenItem class]] && [object object])
+    {
+        return [self renderClassForObject:[(ALPHAScreenItem *)object object]];
+    }
+    
     for (id<ALPHADataConverterSource> source in self.baseConverters)
     {
-        if ([source canConvertObject:object] && [source respondsToSelector:@selector(renderClassForObject:)])
+        if ([source respondsToSelector:@selector(renderClassForObject:)])
         {
-            return [source renderClassForObject:object];
+            Class class = [source renderClassForObject:object];
+            
+            if (class)
+            {
+                return class;
+            }
         }
     }
     

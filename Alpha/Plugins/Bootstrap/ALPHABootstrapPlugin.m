@@ -5,7 +5,7 @@
 //  Created by Dal Rupnik on 25/11/14.
 //  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
-#import "ALPHAMenuActionItem.h"
+#import "ALPHAScreenActionItem.h"
 
 #import "ALPHABootstrap.h"
 
@@ -23,7 +23,7 @@
     {
         if ([ALPHABootstrap hasEnvironments])
         {
-            ALPHAMenuActionItem* menuAction = [ALPHAMenuActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.bootstrap.main"];
+            ALPHAScreenActionItem* menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.bootstrap.main"];
             menuAction.icon = @"🎨";
             menuAction.title = @"Environments";
             menuAction.dataIdentifier = ALPHAEnvironmentDataIdentifier;
