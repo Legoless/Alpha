@@ -9,12 +9,12 @@
 #import "FLEXObjectExplorerViewController.h"
 #import "FLEXUtility.h"
 #import "FLEXRuntimeUtility.h"
-#import "FLEXDescriptionTableViewCell.h"
+#import "FLEXMultilineTableViewCell.h"
 #import "FLEXObjectExplorerFactory.h"
 #import "FLEXPropertyEditorViewController.h"
 #import "FLEXIvarEditorViewController.h"
 #import "FLEXMethodCallingViewController.h"
-
+#import "FLEXInstancesTableViewController.h"
 #import <objc/runtime.h>
 
 // Convenience boxes to keep runtime properties, ivars, and methods in foundation collections.
@@ -708,6 +708,21 @@ static const NSInteger kFLEXObjectExplorerScopeIncludeInheritanceIndex = 1;
     return canDrillIn;
 }
 
+- (BOOL)canCopyRow:(NSInteger)row inExplorerSection:(FLEXObjectExplorerSection)section
+{
+    BOOL canCopy = NO;
+    
+    switch (section) {
+        case FLEXObjectExplorerSectionDescription:
+            canCopy = YES;
+            break;
+            
+        default:
+            break;
+    }
+    return canCopy;
+}
+
 - (NSString *)titleForExplorerSection:(FLEXObjectExplorerSection)section
 {
     NSString *title = nil;
@@ -814,7 +829,7 @@ static const NSInteger kFLEXObjectExplorerScopeIncludeInheritanceIndex = 1;
         } break;
             
         case FLEXObjectExplorerSectionReferencingInstances: {
-            //viewController = [FLEXInstancesTableViewController instancesTableViewControllerForInstancesReferencingObject:self.object];
+            viewController = [FLEXInstancesTableViewController instancesTableViewControllerForInstancesReferencingObject:self.object];
         } break;
     }
     return viewController;
@@ -845,11 +860,12 @@ static const NSInteger kFLEXObjectExplorerScopeIncludeInheritanceIndex = 1;
     FLEXObjectExplorerSection explorerSection = [self explorerSectionAtIndex:indexPath.section];
     
     BOOL useDescriptionCell = explorerSection == FLEXObjectExplorerSectionDescription;
-    NSString *cellIdentifier = useDescriptionCell ? @"descriptionCell" : @"cell";
+    NSString *cellIdentifier = useDescriptionCell ? kFLEXMultilineTableViewCellIdentifier : @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
         if (useDescriptionCell) {
-            cell = [[FLEXDescriptionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+            cell = [[FLEXMultilineTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+            cell.textLabel.font = [FLEXUtility defaultTableViewCellLabelFont];
         } else {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
             UIFont *cellFont = [FLEXUtility defaultTableViewCellLabelFont];
@@ -872,7 +888,8 @@ static const NSInteger kFLEXObjectExplorerScopeIncludeInheritanceIndex = 1;
     CGFloat height = self.tableView.rowHeight;
     if (explorerSection == FLEXObjectExplorerSectionDescription) {
         NSString *text = [self titleForRow:indexPath.row inExplorerSection:explorerSection];
-        CGFloat preferredHeight = [FLEXDescriptionTableViewCell preferredHeightWithText:text inTableViewWidth:self.tableView.frame.size.width];
+        NSAttributedString *attributedText = [[NSAttributedString alloc] initWithString:text attributes:@{ NSFontAttributeName : [FLEXUtility defaultTableViewCellLabelFont] }];
+        CGFloat preferredHeight = [FLEXMultilineTableViewCell preferredHeightWithAttributedText:attributedText inTableViewWidth:self.tableView.frame.size.width style:tableView.style showsAccessory:NO];
         height = MAX(height, preferredHeight);
     }
     return height;
@@ -895,6 +912,49 @@ static const NSInteger kFLEXObjectExplorerScopeIncludeInheritanceIndex = 1;
         [self.navigationController pushViewController:detailViewController animated:YES];
     } else {
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
+}
+
+- (BOOL)tableView:(UITableView *)tableView shouldShowMenuForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    FLEXObjectExplorerSection explorerSection = [self explorerSectionAtIndex:indexPath.section];
+    BOOL canCopy = [self canCopyRow:indexPath.row inExplorerSection:explorerSection];
+    return canCopy;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canPerformAction:(SEL)action forRowAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender
+{
+    BOOL canPerformAction = NO;
+    
+    if (action == @selector(copy:)) {
+        FLEXObjectExplorerSection explorerSection = [self explorerSectionAtIndex:indexPath.section];
+        BOOL canCopy = [self canCopyRow:indexPath.row inExplorerSection:explorerSection];
+        canPerformAction = canCopy;
+    }
+    
+    return canPerformAction;
+}
+
+- (void)tableView:(UITableView *)tableView performAction:(SEL)action forRowAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender
+{
+    if (action == @selector(copy:)) {
+        FLEXObjectExplorerSection explorerSection = [self explorerSectionAtIndex:indexPath.section];
+        NSString *stringToCopy = @"";
+        
+        NSString *title = [self titleForRow:indexPath.row inExplorerSection:explorerSection];
+        if ([title length] > 0) {
+            stringToCopy = [stringToCopy stringByAppendingString:title];
+        }
+        
+        NSString *subtitle = [self subtitleForRow:indexPath.row inExplorerSection:explorerSection];
+        if ([subtitle length] > 0) {
+            if ([stringToCopy length] > 0) {
+                stringToCopy = [stringToCopy stringByAppendingString:@"\n\n"];
+            }
+            stringToCopy = [stringToCopy stringByAppendingString:subtitle];
+        }
+        
+        [[UIPasteboard generalPasteboard] setString:stringToCopy];
     }
 }
 

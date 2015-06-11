@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "FLEXObjectExplorerViewController.h"
+@class FLEXObjectExplorerViewController;
 
 @interface FLEXObjectExplorerFactory : NSObject
 

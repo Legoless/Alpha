@@ -8,6 +8,7 @@
 
 #import "FLEXClassExplorerViewController.h"
 #import "FLEXMethodCallingViewController.h"
+#import "FLEXInstancesTableViewController.h"
 
 typedef NS_ENUM(NSUInteger, FLEXClassExplorerRow) {
     FLEXClassExplorerRowNew,
@@ -106,7 +107,7 @@ typedef NS_ENUM(NSUInteger, FLEXClassExplorerRow) {
             break;
             
         case FLEXClassExplorerRowLiveInstances:
-            //drillInViewController = [FLEXInstancesTableViewController instancesTableViewControllerForClassName:NSStringFromClass(self.theClass)];
+            drillInViewController = [FLEXInstancesTableViewController instancesTableViewControllerForClassName:NSStringFromClass(self.theClass)];
             break;
     }
     return drillInViewController;
