@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
+#import "ALPHARequest.h"
+
 #import "ALPHANotification.h"
 
 @implementation ALPHANotification
@@ -47,7 +49,7 @@
     
     item.titleText = self.alertBody.length ? self.alertBody : [self.fireDate description];
     item.detailText = self.alertBody.length ? [self.fireDate description] : @"";
-    item.object = self;
+    item.object = [ALPHARequest requestForObject:self];
     
     return item;
 }

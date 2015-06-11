@@ -125,10 +125,14 @@
     if (objectIsClass)
     {
         explorerClass = [FLEXClassExplorerViewController class];
+        
+        //explorerClass = [ALPHATableRendererViewController class];
     }
     else
     {
         explorerClass = [FLEXObjectExplorerViewController class];
+        
+        //explorerClass = [ALPHATableRendererViewController class];
         
         for (NSString *objectTypeString in explorerSubclassesForObjectTypeStrings)
         {

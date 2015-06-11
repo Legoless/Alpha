@@ -88,6 +88,8 @@
     }
     else
     {
+        
+        
         //
         // Use a data converter to get screen model
         //
@@ -120,11 +122,6 @@
 }
 
 #pragma mark - UIViewController
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -159,7 +156,8 @@
 {
     [self.refreshControl beginRefreshing];
     
-    [self.source dataForRequest:self.request completion:^(ALPHAModel *dataModel, NSError *error) {
+    [self.source dataForRequest:self.request completion:^(ALPHAModel *dataModel, NSError *error)
+    {
         self.object = dataModel;
         
         [self.refreshControl endRefreshing];
@@ -283,7 +281,7 @@
         return item.attributedDetailText;
     }
     
-    NSString* detail = @"";
+    NSString* detail = nil;
     
     if ([item.detail isKindOfClass:[NSNumber class]])
     {
@@ -494,13 +492,13 @@
 
 - (void)applyStringObject:(id)object toLabel:(UILabel *)label
 {
-    if ([object isKindOfClass:[NSString class]])
-    {
-        label.text = object;
-    }
-    else if ([object isKindOfClass:[NSAttributedString class]])
+    if ([object isKindOfClass:[NSAttributedString class]])
     {
         label.attributedText = object;
+    }
+    else
+    {
+        label.text = object;
     }
 }
 

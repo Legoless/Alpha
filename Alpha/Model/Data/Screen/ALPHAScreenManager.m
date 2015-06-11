@@ -229,6 +229,9 @@
     }
 }
 
+//
+// TODO: Add this as data renderer
+//
 /*
 - (void)openFileController:(NSString *)fullPath
 {

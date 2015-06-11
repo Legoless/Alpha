@@ -23,6 +23,13 @@ extern NSString *const ALPHAFileClassParameterKey;
 extern NSString *const ALPHASearchTextParameterKey;
 extern NSString *const ALPHASearchScopeParameterKey;
 
+//
+// Object requests
+//
+
+extern NSString* const ALPHAObjectDataPointerIdentifier;
+extern NSString* const ALPHAObjectDataClassNameIdentifier;
+
 /*!
  *  Data request wraps a special data request that data collectors can respond to.
  *  This is considered immutable object, although we allow changing of the properties.
@@ -75,5 +82,16 @@ extern NSString *const ALPHASearchScopeParameterKey;
  *  @return new instance of request
  */
 - (instancetype)searchRequestWithText:(NSString *)text scope:(NSNumber *)scope;
+
+#pragma mark - Object requests
+
+/*!
+ *  Returns request with reference pointer value to be sent to object source.
+ *
+ *  @param object to reference
+ *
+ *  @return request instance
+ */
++ (instancetype)requestForObject:(id)object;
 
 @end

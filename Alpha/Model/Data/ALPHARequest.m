@@ -10,12 +10,16 @@
 
 #import "ALPHARequest.h"
 
-NSString *const ALPHAFileRequestIdentifier      = @"com.unifiedsense.alpha.data.file.request";
-NSString *const ALPHAFileURLParameterKey        = @"kALPHAFileURLParameterKey";
-NSString *const ALPHAFileClassParameterKey      = @"kALPHAFileClassParameterKey";
+NSString *const ALPHAFileRequestIdentifier          = @"com.unifiedsense.alpha.data.file.request";
+NSString *const ALPHAFileURLParameterKey            = @"kALPHAFileURLParameterKey";
+NSString *const ALPHAFileClassParameterKey          = @"kALPHAFileClassParameterKey";
 
-NSString *const ALPHASearchTextParameterKey     = @"kALPHASearchTextParameterKey";
-NSString *const ALPHASearchScopeParameterKey    = @"kALPHASearchScopeParameterKey";
+NSString *const ALPHASearchTextParameterKey         = @"kALPHASearchTextParameterKey";
+NSString *const ALPHASearchScopeParameterKey        = @"kALPHASearchScopeParameterKey";
+
+
+NSString *const ALPHAObjectDataPointerIdentifier    = @"kALPHAObjectDataPointerIdentifierKey";
+NSString *const ALPHAObjectDataClassNameIdentifier  = @"kALPHAObjectDataClassNameIdentifierKey";
 
 @interface ALPHARequest ()
 
@@ -129,5 +133,20 @@ NSString *const ALPHASearchScopeParameterKey    = @"kALPHASearchScopeParameterKe
     
     return [[[self class] alloc] initWithIdentifier:self.identifier parameters:parameters];
 }
+
+
++ (instancetype)requestForObject:(id)object
+{
+    NSString *pointer = [NSString stringWithFormat:@"%p", object];
+    
+    NSString *className = NSStringFromClass([object class]);
+    
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    parameters[ALPHAObjectDataPointerIdentifier] = pointer;
+    parameters[ALPHAObjectDataClassNameIdentifier] = className;
+    
+    return [self requestWithIdentifier:@"com.unifiedsense.alpha.data.object" parameters:parameters.copy];
+}
+
 
 @end

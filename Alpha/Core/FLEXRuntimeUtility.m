@@ -35,8 +35,13 @@ const unsigned int kFLEXNumberOfImplicitArgs = 2;
 
 @implementation FLEXRuntimeUtility
 
-
 #pragma mark - Property Helpers (Public)
+
++ (NSString *)prettyTypeForProperty:(objc_property_t)property
+{
+    NSString *encoding = [self typeEncodingForProperty:property];
+    return [self readableTypeForEncoding:encoding];
+}
 
 + (NSString *)prettyNameForProperty:(objc_property_t)property
 {
@@ -202,6 +207,13 @@ const unsigned int kFLEXNumberOfImplicitArgs = 2;
     return [self appendName:name toType:readableType];
 }
 
++ (NSString *)prettyTypeForIvar:(Ivar)ivar
+{
+    const char *encodingCString = ivar_getTypeEncoding(ivar);
+    NSString *encoding = encodingCString ? @(encodingCString) : nil;
+    return [self readableTypeForEncoding:encoding];
+}
+
 + (id)valueForIvar:(Ivar)ivar onObject:(id)object
 {
     id value = nil;
@@ -246,6 +258,12 @@ const unsigned int kFLEXNumberOfImplicitArgs = 2;
 
 
 #pragma mark - Method Helpers (Public)
+
++ (NSString *)prettyReturnTypeForMethod:(Method)method
+{
+    char *returnType = method_copyReturnType(method);
+    return [self readableTypeForEncoding:@(returnType)];
+}
 
 + (NSString *)prettyNameForMethod:(Method)method isClassMethod:(BOOL)isClassMethod
 {

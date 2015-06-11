@@ -29,8 +29,12 @@ extern NSString *const kFLEXUtilityAttributeOldStyleTypeEncoding;
 
 @interface FLEXRuntimeUtility : NSObject
 
+// Global Helpers
++ (NSString *)appendName:(NSString *)name toType:(NSString *)type;
+
 // Property Helpers
 + (NSString *)prettyNameForProperty:(objc_property_t)property;
++ (NSString *)prettyTypeForProperty:(objc_property_t)property;
 + (NSString *)typeEncodingForProperty:(objc_property_t)property;
 + (BOOL)isReadonlyProperty:(objc_property_t)property;
 + (SEL)setterSelectorForProperty:(objc_property_t)property;
@@ -41,10 +45,12 @@ extern NSString *const kFLEXUtilityAttributeOldStyleTypeEncoding;
 
 // Ivar Helpers
 + (NSString *)prettyNameForIvar:(Ivar)ivar;
++ (NSString *)prettyTypeForIvar:(Ivar)ivar;
 + (id)valueForIvar:(Ivar)ivar onObject:(id)object;
 + (void)setValue:(id)value forIvar:(Ivar)ivar onObject:(id)object;
 
 // Method Helpers
++ (NSString *)prettyReturnTypeForMethod:(Method)method;
 + (NSString *)prettyNameForMethod:(Method)method isClassMethod:(BOOL)isClassMethod;
 + (NSArray *)prettyArgumentComponentsForMethod:(Method)method;
 

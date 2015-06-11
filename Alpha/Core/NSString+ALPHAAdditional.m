@@ -54,7 +54,7 @@
         [titleCase appendString:chr];
     }
     
-    return [titleCase stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    return [[titleCase stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] capitalizedString];
 }
 
 @end
