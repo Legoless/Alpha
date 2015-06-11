@@ -13,6 +13,7 @@
 #import "ALPHAGlobalSource.h"
 #import "ALPHAClassSource.h"
 #import "ALPHALibrarySource.h"
+#import "ALPHAInstanceSource.h"
 
 @implementation ALPHAGlobalPlugin
 
@@ -37,6 +38,7 @@
         [self registerSource:[ALPHAGlobalSource new]];
         [self registerSource:[ALPHAClassSource new]];
         [self registerSource:[ALPHALibrarySource new]];
+        [self registerSource:[ALPHAInstanceSource new]];
     }
     
     return self;

@@ -41,11 +41,4 @@ NSString* const ALPHADisplayItemDetailkey = @"kALPHADisplayItemDetailkey";
     }
 }
 
-#pragma mark - Screen Item
-
-- (NSString *)description
-{
-    return [NSString stringWithFormat:@"%@: %@, Model: %@", NSStringFromClass(self.class), self.title, self.object];
-}
-
 @end

@@ -11,6 +11,8 @@
 #import "FLEXUtility.h"
 #import <objc/runtime.h>
 
+#import "ALPHAInstanceSource.h"
+
 #import "ALPHAHeapSource.h"
 
 #import "ALPHAScreenModel.h"
@@ -80,6 +82,7 @@ NSString* const ALPHAHeapDataIdentifier = @"com.unifiedsense.alpha.data.heap";
         
         NSNumber *count = classes[className];
         item.title = [NSString stringWithFormat:@"%@ (%ld)", className, (long)[count longValue]];
+        item.object = [ALPHARequest requestWithIdentifier:ALPHAInstanceDataIdentifier parameters:@{ ALPHAInstanceDataClassNameIdentifier : className }];
         
         totalCount += [count unsignedIntegerValue];
         
