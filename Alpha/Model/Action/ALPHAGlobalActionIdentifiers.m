@@ -9,3 +9,4 @@
 #import "ALPHAGlobalActionIdentifiers.h"
 
 NSString* const ALPHAActionCloseIdentifier = @"com.unifiedsense.alpha.action.close";
+NSString* const ALPHAActionCopyIdentifier = @"com.unifiedsense.alpha.action.copy";

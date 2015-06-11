@@ -7,3 +7,4 @@
 //
 
 extern NSString* const ALPHAActionCloseIdentifier;
+extern NSString* const ALPHAActionCopyIdentifier;

@@ -9,8 +9,6 @@
 #import <objc/runtime.h>
 #import <Haystack/Haystack.h>
 
-#import "FLEXWebViewController.h"
-
 #import "NSString+ALPHAAdditional.h"
 
 #import "FLEXObjectExplorerViewController.h"
@@ -24,6 +22,7 @@
 #import "FLEXImagePreviewViewController.h"
 #import "FLEXClassExplorerViewController.h"
 
+#import "ALPHAWebRendererViewController.h"
 #import "ALPHAScreenActionItem.h"
 
 #import "ALPHAGenericConverter.h"
@@ -72,7 +71,8 @@
     }
     
     //
-    // If we already have a table screen model, we return table data renderer.
+    // If we have a model, but no other converter has a render class, we return table data renderer.
+    // Here, because we know how to convert both Generic and any model.
     //
     if ([object isKindOfClass:[ALPHAModel class]])
     {
@@ -110,8 +110,8 @@
     NSDictionary *explorerSubclassesForObjectTypeStrings = @{
          NSStringFromClass([NSArray class])          : [FLEXArrayExplorerViewController class],
          NSStringFromClass([NSSet class])            : [FLEXSetExplorerViewController class],
-         NSStringFromClass([NSString class])         : [FLEXWebViewController class],
-         NSStringFromClass([NSURL class])            : [FLEXWebViewController class],
+         NSStringFromClass([NSString class])         : [ALPHAWebRendererViewController class],
+         NSStringFromClass([NSURL class])            : [ALPHAWebRendererViewController class],
          NSStringFromClass([NSDictionary class])     : [FLEXDictionaryExplorerViewController class],
          NSStringFromClass([NSUserDefaults class])   : [FLEXDefaultsExplorerViewController class],
          NSStringFromClass([UIViewController class]) : [FLEXViewControllerExplorerViewController class],

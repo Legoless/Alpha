@@ -34,22 +34,18 @@
     {
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStyleDone target:self action:@selector(donePressed:)];
     }
-    else
+    else if ([screenModel.rightAction.request.identifier isEqualToString:ALPHAActionCopyIdentifier])
     {
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Copy" style:UIBarButtonItemStylePlain target:self action:@selector(copyButtonPressed:)];
+    }
+    else
+    {
+        self.navigationItem.rightBarButtonItem = nil;
     }
     
     self.title = screenModel.title;
     
-    if (screenModel.expiration > 0 && self.source)
-    {
-        self.refreshTimer = [NSTimer scheduledTimerWithTimeInterval:self.screenModel.expiration target:self selector:@selector(refresh) userInfo:nil repeats:NO];
-    }
-    else
-    {
-        [self.refreshTimer invalidate];
-        self.refreshTimer = nil;
-    }
+    [self createRefreshTimerWithModel:screenModel];
     
     if (screenModel.request)
     {
@@ -210,6 +206,19 @@
 }
 
 #pragma mark - Private methods
+
+- (void)createRefreshTimerWithModel:(ALPHAScreenModel *)screenModel
+{
+    if (screenModel.expiration > 0 && self.source)
+    {
+        self.refreshTimer = [NSTimer scheduledTimerWithTimeInterval:self.screenModel.expiration target:self selector:@selector(refresh) userInfo:nil repeats:NO];
+    }
+    else
+    {
+        [self.refreshTimer invalidate];
+        self.refreshTimer = nil;
+    }
+}
 
 - (void)centerContentInScrollViewIfNeeded
 {

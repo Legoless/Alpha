@@ -14,7 +14,7 @@
 #import "FLEXPropertyEditorViewController.h"
 #import "FLEXIvarEditorViewController.h"
 #import "FLEXMethodCallingViewController.h"
-#import "FLEXInstancesTableViewController.h"
+
 #import <objc/runtime.h>
 
 // Convenience boxes to keep runtime properties, ivars, and methods in foundation collections.
@@ -814,7 +814,7 @@ static const NSInteger kFLEXObjectExplorerScopeIncludeInheritanceIndex = 1;
         } break;
             
         case FLEXObjectExplorerSectionReferencingInstances: {
-            viewController = [FLEXInstancesTableViewController instancesTableViewControllerForInstancesReferencingObject:self.object];
+            //viewController = [FLEXInstancesTableViewController instancesTableViewControllerForInstancesReferencingObject:self.object];
         } break;
     }
     return viewController;

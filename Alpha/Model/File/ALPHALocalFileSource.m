@@ -81,6 +81,11 @@
         }
     }
     
+    if (!data)
+    {
+        data = [NSURL URLWithString:url];
+    }
+    
     if (completion)
     {
         completion (data, error);

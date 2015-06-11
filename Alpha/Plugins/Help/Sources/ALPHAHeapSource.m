@@ -7,7 +7,6 @@
 //
 
 #import "FLEXHeapEnumerator.h"
-#import "FLEXInstancesTableViewController.h"
 #import "FLEXUtility.h"
 #import <objc/runtime.h>
 

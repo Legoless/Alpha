@@ -22,7 +22,7 @@
 @property (nonatomic, strong) id<ALPHADataConverterSource> converter;
 @property (nonatomic, strong) ALPHAManager *manager;
 
-@property (nonatomic, readonly) ALPHATheme * theme;
+@property (nonatomic, readonly) ALPHATheme *theme;
 
 + (instancetype)defaultManager;
 
