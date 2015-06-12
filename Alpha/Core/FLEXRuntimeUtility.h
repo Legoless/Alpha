@@ -31,6 +31,7 @@ extern NSString *const kFLEXUtilityAttributeOldStyleTypeEncoding;
 
 // Global Helpers
 + (NSString *)appendName:(NSString *)name toType:(NSString *)type;
++ (NSString *)prefixOfClassName:(NSString *)className;
 
 // Property Helpers
 + (NSString *)prettyNameForProperty:(objc_property_t)property;

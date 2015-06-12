@@ -141,6 +141,11 @@ NSString *const ALPHAObjectDataClassNameIdentifier  = @"kALPHAObjectDataClassNam
     
     NSString *className = NSStringFromClass([object class]);
     
+    return [self requestForObjectPointer:pointer className:className];
+}
+
++ (instancetype)requestForObjectPointer:(NSString *)pointer className:(NSString *)className
+{
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[ALPHAObjectDataPointerIdentifier] = pointer;
     parameters[ALPHAObjectDataClassNameIdentifier] = className;

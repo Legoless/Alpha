@@ -93,5 +93,6 @@ extern NSString* const ALPHAObjectDataClassNameIdentifier;
  *  @return request instance
  */
 + (instancetype)requestForObject:(id)object;
++ (instancetype)requestForObjectPointer:(NSString *)pointer className:(NSString *)className;
 
 @end

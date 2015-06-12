@@ -70,6 +70,10 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     
     model.objectClass = NSStringFromClass([object class]);
     model.objectDescription = [FLEXUtility safeDescriptionForObject:object];
+    
+    model.objectContent = [self contentWithObject:object];
+    model.objectMainSuperclass = [self mainSuperclassForObject:object];
+    
     model.properties = [self propertiesWithObject:object search:search inheritance:includeInheritance];
     model.ivars = [self ivarsWithObject:object search:search inheritance:includeInheritance];
     model.methods = [self methodsWithObject:object search:search inheritance:includeInheritance];
@@ -77,6 +81,74 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     model.superclasses = [self superclassesWithObject:object search:search];
     
     return model;
+}
+
+#pragma mark - Object content
+
+- (ALPHAObjectContent *)contentWithObject:(id)object
+{
+    //
+    // Currently handled specific Foundation objects
+    // - NSArray
+    // - NSUserDefaults
+    // - NSDictionary
+    // - NSSet
+    // - NSOrderedSet
+    // - UIViewController
+    // - UIView
+    // - CALayer
+    // - Class
+    //
+    
+    if ([object isKindOfClass:[NSArray class]])
+    {
+        return [ALPHAObjectContent objectContentForArray:object];
+    }
+    else if ([object isKindOfClass:[NSSet class]])
+    {
+        return [ALPHAObjectContent objectContentForSet:object];
+    }
+    else if ([object isKindOfClass:[NSDictionary class]])
+    {
+        return [ALPHAObjectContent objectContentForDictionary:object];
+    }
+    else if ([object isKindOfClass:[NSOrderedSet class]])
+    {
+        return [ALPHAObjectContent objectContentForOrderedSet:object];
+    }
+    else if ([object isKindOfClass:[NSUserDefaults class]])
+    {
+        return [ALPHAObjectContent objectContentForUserDefaults:object];
+    }
+    
+    return nil;
+}
+
+- (NSString *)mainSuperclassForObject:(id)object
+{
+    //
+    // If object is a class object, we return specific value
+    //
+    if (class_isMetaClass(object_getClass(object)) || class_isMetaClass(object))
+    {
+        return nil;
+    }
+    
+    NSArray *mainSuperclassPrefixes = @[ @"NS", @"UI", @"CA" ];
+    
+    Class class = [object superclass];
+    
+    while (![mainSuperclassPrefixes containsObject:[FLEXRuntimeUtility prefixOfClassName: NSStringFromClass(class)]])
+    {
+        class = [class superclass];
+    }
+    
+    if (class)
+    {
+        return NSStringFromClass(class);
+    }
+    
+    return nil;
 }
 
 #pragma mark - Properties

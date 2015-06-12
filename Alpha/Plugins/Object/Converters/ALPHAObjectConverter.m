@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
+#import <objc/runtime.h>
+
 #import "NSString+ALPHAAdditional.h"
 
 #import "FLEXRuntimeUtility.h"
@@ -136,10 +138,147 @@
 - (ALPHAScreenSection *)sectionForObjectTypeWithModel:(ALPHAObjectModel *)model
 {
     //
-    // TODO: This represents specific object types and can add a special section, such as Array, Set, View,
-    // Layer, etc.
+    // If we have object content, build section from it.
     //
+    
+    NSMutableArray *items = [NSMutableArray array];
+    
+    Class class = NSClassFromString(model.objectMainSuperclass);
+    
+    ALPHAScreenSection *section = [[ALPHAScreenSection alloc] init];
+    
+    section.headerText = [self headerStringForClass:class];
+    
+    if (model.objectContent)
+    {
+        for (ALPHAObjectItem *item in model.objectContent.items)
+        {
+            ALPHAScreenItem *screenItem = [[ALPHAScreenItem alloc] init];
+            
+            screenItem.title = item.key;
+            screenItem.detail = item.className;
+            
+            screenItem.object = [ALPHARequest requestForObjectPointer:item.pointer className:item.className];
+        }
+        
+        section.items = items.copy;
+        
+        return section;
+    }
+    
+    //
+    // This represents specific object types and can add a special section, such as Array, Set, View,
+    // Layer, etc. Equals to custom section on FLEXObjectExplorerViewController
+    //
+    
+    //
+    // Currently handled specific Foundation objects to add shortcuts that FLEX had.
+    // - UIViewController
+    // - UIView
+    // - CALayer
+    // - Class
+    //
+    
+    NSArray *shortcuts = [self shortcutsForClass:class];
+    
+    if (shortcuts)
+    {
+        [items addObjectsFromArray:shortcuts];
+    }
+    
+    //
+    // Return section if we have a title
+    //
+    
+    if (section.headerText)
+    {
+        section.items = items.copy;
+        
+        return section;
+    }
+    
     return nil;
+}
+
+- (NSString *)headerStringForClass:(Class)class
+{
+    if (class == [NSObject class])
+    {
+        return nil;
+    }
+    
+    if (class == [NSArray class] || class == [NSMutableArray class])
+    {
+        return @"Array Indices";
+    }
+    
+    if (class == [NSDictionary class] || class == [NSMutableDictionary class])
+    {
+        return @"Dictionary Objects";
+    }
+    
+    if (class == [NSUserDefaults class])
+    {
+        return @"Defaults";
+    }
+    
+    // Class instances, UIViewController, UIView, CALayer have shortcuts
+    return @"Shortcuts";
+}
+
+- (NSArray *)shortcutsForClass:(Class)class
+{
+    if (class == [NSObject class])
+    {
+        return nil;
+    }
+    
+    NSMutableArray *items = [NSMutableArray array];
+    
+    ALPHAScreenItem *item = nil;
+    
+    if (class == [UIViewController class])
+    {
+        item = [[ALPHAScreenItem alloc] init];
+        item.title = @"Push View Controller";
+        
+        [items addObject:item];
+        
+        item = [[ALPHAScreenItem alloc] init];
+        item.title = @"@property UIView *view";
+        
+        [items addObject:item];
+    }
+    else if (class == [UIView class])
+    {
+        
+    }
+    else if (class == [CALayer class])
+    {
+        item = [[ALPHAScreenItem alloc] init];
+        item.title = @"Preview Image";
+        
+        [items addObject:item];
+    }
+    else
+    {
+        item = [[ALPHAScreenItem alloc] init];
+        item.title = @"+ (id)new";
+        
+        [items addObject:item];
+        
+        item = [[ALPHAScreenItem alloc] init];
+        item.title = @"+ (id)alloc";
+        
+        [items addObject:item];
+        
+        item = [[ALPHAScreenItem alloc] init];
+        item.title = @"Live Instances";
+        
+        [items addObject:item];
+    }
+
+    return items.copy;
 }
 
 - (ALPHAScreenSection *)sectionForObjectGraph

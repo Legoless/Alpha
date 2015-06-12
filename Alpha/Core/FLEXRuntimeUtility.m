@@ -35,6 +35,31 @@ const unsigned int kFLEXNumberOfImplicitArgs = 2;
 
 @implementation FLEXRuntimeUtility
 
+#pragma mark - Global Helpers (Public)
+
++ (NSString *)prefixOfClassName:(NSString *)className
+{
+    NSInteger location = 0;
+    
+    for (NSInteger i = 0; i < className.length; i++)
+    {
+        NSString *chr = [className substringWithRange:NSMakeRange(i, 1)];
+        
+        if ([chr rangeOfCharacterFromSet:[NSCharacterSet uppercaseLetterCharacterSet]].location == NSNotFound)
+        {
+            location = i;
+            break;
+        }
+    }
+    
+    if (location < 0)
+    {
+        location = 0;
+    }
+    
+    return [[className substringToIndex:location] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+}
+
 #pragma mark - Property Helpers (Public)
 
 + (NSString *)prettyTypeForProperty:(objc_property_t)property

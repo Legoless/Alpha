@@ -11,17 +11,6 @@
 
 #import "NSString+ALPHAAdditional.h"
 
-#import "FLEXObjectExplorerViewController.h"
-#import "FLEXArrayExplorerViewController.h"
-#import "FLEXSetExplorerViewController.h"
-#import "FLEXDictionaryExplorerViewController.h"
-#import "FLEXDefaultsExplorerViewController.h"
-#import "FLEXViewControllerExplorerViewController.h"
-#import "FLEXViewExplorerViewController.h"
-#import "FLEXImageExplorerViewController.h"
-#import "FLEXImagePreviewViewController.h"
-#import "FLEXClassExplorerViewController.h"
-
 #import "ALPHAWebRendererViewController.h"
 #import "ALPHAScreenActionItem.h"
 
@@ -108,31 +97,26 @@
     //
     
     NSDictionary *explorerSubclassesForObjectTypeStrings = @{
-         NSStringFromClass([NSArray class])          : [FLEXArrayExplorerViewController class],
-         NSStringFromClass([NSSet class])            : [FLEXSetExplorerViewController class],
          NSStringFromClass([NSString class])         : [ALPHAWebRendererViewController class],
          NSStringFromClass([NSURL class])            : [ALPHAWebRendererViewController class],
-         NSStringFromClass([NSDictionary class])     : [FLEXDictionaryExplorerViewController class],
-         NSStringFromClass([NSUserDefaults class])   : [FLEXDefaultsExplorerViewController class],
-         NSStringFromClass([UIViewController class]) : [FLEXViewControllerExplorerViewController class],
-         NSStringFromClass([UIView class])           : [FLEXViewExplorerViewController class],
          NSStringFromClass([UIImage class])          : [ALPHAImageRendererViewController class]
     };
 
     Class explorerClass = nil;
     
     BOOL objectIsClass = class_isMetaClass(object_getClass(object));
+    
     if (objectIsClass)
     {
-        explorerClass = [FLEXClassExplorerViewController class];
+        //explorerClass = [FLEXClassExplorerViewController class];
         
-        //explorerClass = [ALPHATableRendererViewController class];
+        explorerClass = [ALPHATableRendererViewController class];
     }
     else
     {
-        explorerClass = [FLEXObjectExplorerViewController class];
+        //explorerClass = [FLEXObjectExplorerViewController class];
         
-        //explorerClass = [ALPHATableRendererViewController class];
+        explorerClass = [ALPHATableRendererViewController class];
         
         for (NSString *objectTypeString in explorerSubclassesForObjectTypeStrings)
         {
