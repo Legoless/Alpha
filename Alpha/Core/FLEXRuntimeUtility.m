@@ -47,7 +47,7 @@ const unsigned int kFLEXNumberOfImplicitArgs = 2;
         
         if ([chr rangeOfCharacterFromSet:[NSCharacterSet uppercaseLetterCharacterSet]].location == NSNotFound)
         {
-            location = i;
+            location = i - 1;
             break;
         }
     }

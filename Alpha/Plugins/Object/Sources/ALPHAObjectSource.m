@@ -94,10 +94,6 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     // - NSDictionary
     // - NSSet
     // - NSOrderedSet
-    // - UIViewController
-    // - UIView
-    // - CALayer
-    // - Class
     //
     
     if ([object isKindOfClass:[NSArray class]])
@@ -129,7 +125,12 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     //
     // If object is a class object, we return specific value
     //
-    if (class_isMetaClass(object_getClass(object)) || class_isMetaClass(object))
+    if (class_isMetaClass(object_getClass(object)))
+    {
+        return nil;
+    }
+    
+    if (object_isClass(object))
     {
         return nil;
     }
