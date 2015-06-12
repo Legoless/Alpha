@@ -10,9 +10,9 @@
 
 #import "FLEXRuntimeUtility.h"
 
-#import "ALPHAPropertyBox.h"
-#import "ALPHAIvarBox.h"
-#import "ALPHAMethodBox.h"
+#import "ALPHAObjectProperty.h"
+#import "ALPHAObjectIvar.h"
+#import "ALPHAObjectMethod.h"
 
 #import "ALPHAObjectModel.h"
 
@@ -92,17 +92,17 @@
         ALPHAScreenItem* item = [[ALPHAScreenItem alloc] init];
         item.style = UITableViewCellStyleSubtitle;
         
-        if ([object isKindOfClass:[ALPHAPropertyBox class]])
+        if ([object isKindOfClass:[ALPHAObjectProperty class]])
         {
             item.title = [FLEXRuntimeUtility appendName:[object propertyName] toType:[object propertyType]];
             item.detail = [object propertyValue];
         }
-        else if ([object isKindOfClass:[ALPHAIvarBox class]])
+        else if ([object isKindOfClass:[ALPHAObjectIvar class]])
         {
             item.title = [FLEXRuntimeUtility appendName:[object ivarName] toType:[object ivarType]];
             item.detail = [object ivarValue];
         }
-        else if ([object isKindOfClass:[ALPHAMethodBox class]])
+        else if ([object isKindOfClass:[ALPHAObjectMethod class]])
         {
             item.title = [object prettyDescription];
         }

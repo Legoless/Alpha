@@ -1,5 +1,5 @@
 //
-//  ALPHAIvarBox.h
+//  ALPHAObjectIvar.h
 //  Alpha
 //
 //  Created by Dal Rupnik on 11/06/15.
@@ -8,7 +8,7 @@
 
 #import "ALPHASerialization.h"
 
-@interface ALPHAIvarBox : NSObject <ALPHASerializableItem>
+@interface ALPHAObjectIvar : NSObject <ALPHASerializableItem>
 
 @property (nonatomic, copy) NSString* ivarName;
 @property (nonatomic, copy) NSString* ivarType;

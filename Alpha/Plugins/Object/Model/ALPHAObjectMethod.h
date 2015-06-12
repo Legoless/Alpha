@@ -1,5 +1,5 @@
 //
-//  ALPHAMethodBox.h
+//  ALPHAObjectMethod.h
 //  Alpha
 //
 //  Created by Dal Rupnik on 11/06/15.
@@ -8,7 +8,7 @@
 
 #import "ALPHASerialization.h"
 
-@interface ALPHAMethodBox : NSObject <ALPHASerializableItem>
+@interface ALPHAObjectMethod : NSObject <ALPHASerializableItem>
 
 @property (nonatomic, copy) NSString *methodName;
 @property (nonatomic, copy) NSString *methodReturnType;

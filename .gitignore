@@ -1,5 +1,7 @@
+# OS X
+.DS_Store
+
 # Xcode
-#
 build/
 *.pbxuser
 !default.pbxuser
@@ -11,9 +13,20 @@ build/
 !default.perspectivev3
 xcuserdata
 *.xccheckout
+profile
 *.moved-aside
 DerivedData
 *.hmap
 *.ipa
-*.xcuserstate
-.DS_Store
+
+# AppCode
+.idea/
+
+# Dominus
+dominus.cfg
+
+# CocoaPods
+#Pods
+
+# KZBootstrap
+KZBootstrapUserMacros.h

@@ -8,9 +8,9 @@
 
 #import <objc/runtime.h>
 
-#import "ALPHAPropertyBox.h"
-#import "ALPHAIvarBox.h"
-#import "ALPHAMethodBox.h"
+#import "ALPHAObjectProperty.h"
+#import "ALPHAObjectIvar.h"
+#import "ALPHAObjectMethod.h"
 
 #import "FLEXUtility.h"
 #import "FLEXRuntimeUtility.h"
@@ -96,7 +96,7 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     {
         NSMutableArray *mutableUnsortedFilteredProperties = [NSMutableArray array];
         
-        for (ALPHAPropertyBox *propertyBox in properties)
+        for (ALPHAObjectProperty *propertyBox in properties)
         {
             if ([propertyBox.propertyName rangeOfString:search options:NSCaseInsensitiveSearch].location != NSNotFound)
             {
@@ -107,7 +107,7 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
         properties = mutableUnsortedFilteredProperties;
     }
     
-    return [properties sortedArrayUsingComparator:^NSComparisonResult(ALPHAPropertyBox *propertyBox1, ALPHAPropertyBox *propertyBox2)
+    return [properties sortedArrayUsingComparator:^NSComparisonResult(ALPHAObjectProperty *propertyBox1, ALPHAObjectProperty *propertyBox2)
     {
         NSString *name1 = propertyBox1.propertyName;
         NSString *name2 = propertyBox2.propertyName;
@@ -125,7 +125,7 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     {
         for (unsigned int i = 0; i < propertyCount; i++)
         {
-            ALPHAPropertyBox *propertyBox = [[ALPHAPropertyBox alloc] init];
+            ALPHAObjectProperty *propertyBox = [[ALPHAObjectProperty alloc] init];
             propertyBox.propertyName = [NSString stringWithUTF8String:property_getName(propertyList[i])];
             propertyBox.propertyType = [FLEXRuntimeUtility prettyTypeForProperty:propertyList[i]];
             
@@ -172,7 +172,7 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     {
         NSMutableArray *mutableUnsortedFilteredIvars = [NSMutableArray array];
         
-        for (ALPHAIvarBox *ivarBox in ivars)
+        for (ALPHAObjectIvar *ivarBox in ivars)
         {
             if ([ivarBox.ivarName rangeOfString:search options:NSCaseInsensitiveSearch].location != NSNotFound)
             {
@@ -183,7 +183,7 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
         ivars = mutableUnsortedFilteredIvars;
     }
     
-    return [ivars sortedArrayUsingComparator:^NSComparisonResult(ALPHAIvarBox *ivarBox1, ALPHAIvarBox *ivarBox2)
+    return [ivars sortedArrayUsingComparator:^NSComparisonResult(ALPHAObjectIvar *ivarBox1, ALPHAObjectIvar *ivarBox2)
     {
         NSString *name1 = ivarBox1.ivarName;
         NSString *name2 = ivarBox2.ivarName;
@@ -201,7 +201,7 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     {
         for (unsigned int i = 0; i < ivarCount; i++)
         {
-            ALPHAIvarBox *ivarBox = [[ALPHAIvarBox alloc] init];
+            ALPHAObjectIvar *ivarBox = [[ALPHAObjectIvar alloc] init];
             ivarBox.ivarName = [NSString stringWithUTF8String:ivar_getName(ivarList[i])];
             ivarBox.ivarType = [FLEXRuntimeUtility prettyTypeForIvar:ivarList[i]];
             
@@ -266,7 +266,7 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     {
         NSMutableArray *mutableUnsortedFilteredMethods = [NSMutableArray array];
         
-        for (ALPHAMethodBox *methodBox in candidateMethods)
+        for (ALPHAObjectMethod *methodBox in candidateMethods)
         {
             if ([methodBox.methodName rangeOfString:search options:NSCaseInsensitiveSearch].location != NSNotFound)
             {
@@ -277,7 +277,7 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
         candidateMethods = mutableUnsortedFilteredMethods;
     }
     
-    return [candidateMethods sortedArrayUsingComparator:^NSComparisonResult(ALPHAMethodBox *methodBox1, ALPHAMethodBox *methodBox2)
+    return [candidateMethods sortedArrayUsingComparator:^NSComparisonResult(ALPHAObjectMethod *methodBox1, ALPHAObjectMethod *methodBox2)
     {
         NSString *name1 = methodBox1.methodName;
         NSString *name2 = methodBox2.methodName;
@@ -296,7 +296,7 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     {
         for (unsigned int i = 0; i < methodCount; i++)
         {
-            ALPHAMethodBox *methodBox = [[ALPHAMethodBox alloc] init];
+            ALPHAObjectMethod *methodBox = [[ALPHAObjectMethod alloc] init];
             methodBox.methodName = NSStringFromSelector(method_getName(methodList[i]));
             methodBox.methodReturnType = [FLEXRuntimeUtility prettyReturnTypeForMethod:methodList[i]];
             methodBox.arguments = [FLEXRuntimeUtility prettyArgumentComponentsForMethod:methodList[i]];

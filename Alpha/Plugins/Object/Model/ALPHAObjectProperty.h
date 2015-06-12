@@ -1,5 +1,5 @@
 //
-//  ALPHAPropertyBox.h
+//  ALPHAObjectProperty.h
 //  Alpha
 //
 //  Created by Dal Rupnik on 11/06/15.
@@ -8,7 +8,7 @@
 
 #import "ALPHASerialization.h"
 
-@interface ALPHAPropertyBox : NSObject <ALPHASerializableItem>
+@interface ALPHAObjectProperty : NSObject <ALPHASerializableItem>
 
 @property (nonatomic, copy) NSString* propertyName;
 @property (nonatomic, copy) NSString* propertyType;
