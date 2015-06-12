@@ -9,7 +9,7 @@
 #import "FLEXDefaultsExplorerViewController.h"
 #import "FLEXObjectExplorerFactory.h"
 #import "FLEXRuntimeUtility.h"
-#import "FLEXDefaultEditorViewController.h"
+#import "ALPHADefaultEditorViewController.h"
 
 @interface FLEXDefaultsExplorerViewController ()
 
@@ -57,8 +57,8 @@
     UIViewController *drillInViewController = nil;
     NSString *key = rowCookie;
     id drillInObject = [self.defaults objectForKey:key];
-    if ([FLEXDefaultEditorViewController canEditDefaultWithValue:drillInObject]) {
-        drillInViewController = [[FLEXDefaultEditorViewController alloc] initWithDefaults:self.defaults key:key];
+    if ([ALPHADefaultEditorViewController canEditDefaultWithValue:drillInObject]) {
+        drillInViewController = [[ALPHADefaultEditorViewController alloc] initWithDefaults:self.defaults key:key];
     } else {
         drillInViewController = [FLEXObjectExplorerFactory explorerViewControllerForObject:drillInObject];
     }

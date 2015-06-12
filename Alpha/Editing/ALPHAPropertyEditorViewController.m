@@ -1,25 +1,23 @@
 //
-//  FLEXPropertyEditorViewController.m
-//  Flipboard
+//  ALPHAPropertyEditorViewController.h
+//  Alpha
 //
-//  Created by Ryan Olson on 5/20/14.
-//  Copyright (c) 2014 Flipboard. All rights reserved.
+//  Created by Dal Rupnik on 12/6/15.
+//  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "FLEXPropertyEditorViewController.h"
+#import "ALPHAPropertyEditorViewController.h"
 #import "FLEXRuntimeUtility.h"
 #import "FLEXFieldEditorView.h"
 #import "FLEXArgumentInputView.h"
 #import "FLEXArgumentInputViewFactory.h"
 #import "FLEXArgumentInputSwitchView.h"
 
-@interface FLEXPropertyEditorViewController () <FLEXArgumentInputViewDelegate>
-
-@property (nonatomic, assign) objc_property_t property;
+@interface ALPHAPropertyEditorViewController () <FLEXArgumentInputViewDelegate>
 
 @end
 
-@implementation FLEXPropertyEditorViewController
+@implementation ALPHAPropertyEditorViewController
 
 - (id)initWithTarget:(id)target property:(objc_property_t)property
 {

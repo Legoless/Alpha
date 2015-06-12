@@ -11,7 +11,7 @@
 #import "FLEXUtility.h"
 #import "FLEXObjectExplorerFactory.h"
 #import "FLEXImagePreviewViewController.h"
-#import "FLEXPropertyEditorViewController.h"
+#import "ALPHAPropertyEditorViewController.h"
 
 typedef NS_ENUM(NSUInteger, FLEXViewExplorerRow) {
     FLEXViewExplorerRowViewController,
@@ -146,8 +146,8 @@ typedef NS_ENUM(NSUInteger, FLEXViewExplorerRow) {
         objc_property_t property = [self viewPropertyForName:rowCookie];
         if (property) {
             id currentValue = [FLEXRuntimeUtility valueForProperty:property onObject:self.viewToExplore];
-            if ([FLEXPropertyEditorViewController canEditProperty:property currentValue:currentValue]) {
-                drillInViewController = [[FLEXPropertyEditorViewController alloc] initWithTarget:self.object property:property];
+            if ([ALPHAPropertyEditorViewController canEditProperty:property currentValue:currentValue]) {
+                drillInViewController = [[ALPHAPropertyEditorViewController alloc] initWithTarget:self.object property:property];
             } else {
                 drillInViewController = [FLEXObjectExplorerFactory explorerViewControllerForObject:currentValue];
             }

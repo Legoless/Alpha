@@ -47,6 +47,7 @@ extern NSString *const kFLEXUtilityAttributeOldStyleTypeEncoding;
 // Ivar Helpers
 + (NSString *)prettyNameForIvar:(Ivar)ivar;
 + (NSString *)prettyTypeForIvar:(Ivar)ivar;
++ (NSString *)typeEncodingForIvar:(Ivar)ivar;
 + (id)valueForIvar:(Ivar)ivar onObject:(id)object;
 + (void)setValue:(id)value forIvar:(Ivar)ivar onObject:(id)object;
 

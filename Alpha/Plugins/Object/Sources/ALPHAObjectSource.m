@@ -200,6 +200,7 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
         {
             ALPHAObjectProperty *propertyBox = [[ALPHAObjectProperty alloc] init];
             propertyBox.propertyName = [NSString stringWithUTF8String:property_getName(propertyList[i])];
+            propertyBox.propertyCType = [FLEXRuntimeUtility typeEncodingForProperty:propertyList[i]];
             propertyBox.propertyType = [FLEXRuntimeUtility prettyTypeForProperty:propertyList[i]];
             
             if (!class_isMetaClass(object_getClass(object)))
@@ -277,6 +278,7 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
             ALPHAObjectIvar *ivarBox = [[ALPHAObjectIvar alloc] init];
             ivarBox.ivarName = [NSString stringWithUTF8String:ivar_getName(ivarList[i])];
             ivarBox.ivarType = [FLEXRuntimeUtility prettyTypeForIvar:ivarList[i]];
+            ivarBox.ivarCType = [FLEXRuntimeUtility typeEncodingForIvar:ivarList[i]];
             
             if (!class_isMetaClass(object_getClass(object)) && ![ivarBox.ivarType isEqualToString:@"Class"])
             {

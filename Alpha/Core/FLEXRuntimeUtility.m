@@ -239,6 +239,14 @@ const unsigned int kFLEXNumberOfImplicitArgs = 2;
     return [self readableTypeForEncoding:encoding];
 }
 
++ (NSString *)typeEncodingForIvar:(Ivar)ivar
+{
+    const char *encodingCString = ivar_getTypeEncoding(ivar);
+    NSString *encoding = encodingCString ? @(encodingCString) : nil;
+    
+    return encoding;
+}
+
 + (id)valueForIvar:(Ivar)ivar onObject:(id)object
 {
     id value = nil;

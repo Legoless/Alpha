@@ -1,12 +1,12 @@
 //
-//  FLEXMethodCallingViewController.m
-//  Flipboard
+//  ALPHAMethodCallingViewController.m
+//  Alpha
 //
-//  Created by Ryan Olson on 5/23/14.
-//  Copyright (c) 2014 Flipboard. All rights reserved.
+//  Created by Dal Rupnik on 12/6/15.
+//  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "FLEXMethodCallingViewController.h"
+#import "ALPHAMethodCallingViewController.h"
 #import "FLEXRuntimeUtility.h"
 #import "FLEXFieldEditorView.h"
 #import "FLEXObjectExplorerFactory.h"
@@ -14,34 +14,31 @@
 #import "FLEXArgumentInputView.h"
 #import "FLEXArgumentInputViewFactory.h"
 
-@interface FLEXMethodCallingViewController ()
-
-@property (nonatomic, assign) Method method;
+@interface ALPHAMethodCallingViewController ()
 
 @end
 
-@implementation FLEXMethodCallingViewController
+@implementation ALPHAMethodCallingViewController
 
-- (id)initWithTarget:(id)target method:(Method)method
+- (void)setMethod:(ALPHAObjectMethod *)method
 {
-    self = [super initWithTarget:target];
-    if (self) {
-        self.method = method;
-        self.title = [self isClassMethod] ? @"Class Method" : @"Method";
-    }
-    return self;
+    _method = method;
+    
+    self.title = method.isClassMethod ? @"Class Method" : @"Method";
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.fieldEditorView.fieldDescription = [FLEXRuntimeUtility prettyNameForMethod:self.method isClassMethod:[self isClassMethod]];
+    self.fieldEditorView.fieldDescription = [self.method prettyDescription];
     
-    NSArray *methodComponents = [FLEXRuntimeUtility prettyArgumentComponentsForMethod:self.method];
     NSMutableArray *argumentInputViews = [NSMutableArray array];
+    
     unsigned int argumentIndex = kFLEXNumberOfImplicitArgs;
-    for (NSString *methodComponent in methodComponents) {
+    
+    for (ALPHAObjectMethod *methodComponent in self.method.arguments)
+    {
         char *argumentTypeEncoding = method_copyArgumentType(self.method, argumentIndex);
         FLEXArgumentInputView *inputView = [FLEXArgumentInputViewFactory argumentInputViewForTypeEncoding:argumentTypeEncoding];
         free(argumentTypeEncoding);
@@ -51,12 +48,8 @@
         [argumentInputViews addObject:inputView];
         argumentIndex++;
     }
+    
     self.fieldEditorView.argumentInputViews = argumentInputViews;
-}
-
-- (BOOL)isClassMethod
-{
-    return self.target && self.target == [self.target class];
 }
 
 - (NSString *)titleForActionButton

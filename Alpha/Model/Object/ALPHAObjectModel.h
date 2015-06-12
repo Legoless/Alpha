@@ -8,6 +8,10 @@
 
 #import "ALPHAModel.h"
 #import "ALPHAObjectContent.h"
+#import "ALPHAObjectItem.h"
+#import "ALPHAObjectIvar.h"
+#import "ALPHAObjectMethod.h"
+#import "ALPHAObjectProperty.h"
 
 /*!
  *  Object model that is displayable as a model

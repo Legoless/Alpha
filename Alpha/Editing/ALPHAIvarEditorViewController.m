@@ -1,33 +1,35 @@
 //
-//  FLEXIvarEditorViewController.m
-//  Flipboard
+//  ALPHAIvarEditorViewController.m
+//  Alpha
 //
-//  Created by Ryan Olson on 5/23/14.
-//  Copyright (c) 2014 Flipboard. All rights reserved.
+//  Created by Dal Rupnik on 12/6/15.
+//  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
-#import "FLEXIvarEditorViewController.h"
+#import "ALPHAIvarEditorViewController.h"
 #import "FLEXFieldEditorView.h"
 #import "FLEXRuntimeUtility.h"
 #import "FLEXArgumentInputView.h"
 #import "FLEXArgumentInputViewFactory.h"
 #import "FLEXArgumentInputSwitchView.h"
 
-@interface FLEXIvarEditorViewController () <FLEXArgumentInputViewDelegate>
+@interface ALPHAIvarEditorViewController () <FLEXArgumentInputViewDelegate>
 
 @property (nonatomic, assign) Ivar ivar;
 
 @end
 
-@implementation FLEXIvarEditorViewController
+@implementation ALPHAIvarEditorViewController
 
-- (id)initWithTarget:(id)target ivar:(Ivar)ivar
+- (id)initWithSource:(id<ALPHADataSource>)source objectTarget:(ALPHAObjectModel *)target
 {
-    self = [super initWithTarget:target];
-    if (self) {
-        self.ivar = ivar;
+    self = [super initWithSource:source objectTarget:target];
+    
+    if (self)
+    {
         self.title = @"Instance Variable";
     }
+    
     return self;
 }
 

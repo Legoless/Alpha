@@ -39,13 +39,6 @@
 {
     BOOL supported = type && strcmp(type, FLEXEncodeClass(NSString)) == 0;
     supported = supported || (value && [value isKindOfClass:[NSString class]]);
-    
-    //
-    // Optional protocols because of NSObject <ALPHASerializableItem>
-    //
-    
-    supported = supported || (type && (strcmp(type, FLEXEncodeClass(NSString<Optional>)) == 0));
-    
     return supported;
 }
 

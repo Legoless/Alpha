@@ -1,35 +1,40 @@
 //
-//  FLEXFieldEditorViewController.m
-//  Flipboard
+//  ALPHAFieldEditorViewController.m
+//  Alpha
 //
-//  Created by Ryan Olson on 5/16/14.
-//  Copyright (c) 2014 Flipboard. All rights reserved.
+//  Created by Dal Rupnik on 12/6/15.
+//  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "FLEXFieldEditorViewController.h"
+#import "ALPHAFieldEditorViewController.h"
 #import "FLEXFieldEditorView.h"
 #import "FLEXRuntimeUtility.h"
 #import "FLEXUtility.h"
 #import "FLEXArgumentInputView.h"
 #import "FLEXArgumentInputViewFactory.h"
 
-@interface FLEXFieldEditorViewController () <UIScrollViewDelegate>
+@interface ALPHAFieldEditorViewController () <UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 
-@property (nonatomic, strong, readwrite) id target;
+@property (nonatomic, strong, readwrite) id<ALPHADataSource> source;
+@property (nonatomic, strong, readwrite) ALPHAObjectModel *target;
 @property (nonatomic, strong, readwrite) FLEXFieldEditorView *fieldEditorView;
 @property (nonatomic, strong, readwrite) UIBarButtonItem *setterButton;
 
 @end
 
-@implementation FLEXFieldEditorViewController
+@implementation ALPHAFieldEditorViewController
 
-- (id)initWithTarget:(id)target
+- (id)initWithSource:(id<ALPHADataSource>)source objectTarget:(ALPHAObjectModel *)target
 {
     self = [super initWithNibName:nil bundle:nil];
-    if (self) {
+    
+    if (self)
+    {
+        self.source = source;
         self.target = target;
+        
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     }
@@ -51,8 +56,10 @@
     self.scrollView.scrollIndicatorInsets = scrollInsets;
     
     // Find the active input view and scroll to make sure it's visible.
-    for (FLEXArgumentInputView *argumentInputView in self.fieldEditorView.argumentInputViews) {
-        if (argumentInputView.inputViewIsFirstResponder) {
+    for (FLEXArgumentInputView *argumentInputView in self.fieldEditorView.argumentInputViews)
+    {
+        if (argumentInputView.inputViewIsFirstResponder)
+        {
             CGRect scrollToVisibleRect = [self.scrollView convertRect:argumentInputView.bounds fromView:argumentInputView];
             [self.scrollView scrollRectToVisible:scrollToVisibleRect animated:YES];
             break;
@@ -82,7 +89,7 @@
     
     self.fieldEditorView = [[FLEXFieldEditorView alloc] init];
     self.fieldEditorView.backgroundColor = self.view.backgroundColor;
-    self.fieldEditorView.targetDescription = [NSString stringWithFormat:@"%@ %p", [self.target class], self.target];
+    self.fieldEditorView.targetDescription = [NSString stringWithFormat:@"%@ %p", [self.source class], self.source];
     [self.scrollView addSubview:self.fieldEditorView];
     
     self.setterButton = [[UIBarButtonItem alloc] initWithTitle:[self titleForActionButton] style:UIBarButtonItemStyleDone target:self action:@selector(actionButtonPressed:)];

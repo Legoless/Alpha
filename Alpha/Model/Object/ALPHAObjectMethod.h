@@ -8,14 +8,20 @@
 
 #import "ALPHASerialization.h"
 
+#import "ALPHAObjectArgument.h"
+
+@protocol ALPHAObjectMethod <NSObject>
+
+@end
+
 @interface ALPHAObjectMethod : NSObject <ALPHASerializableItem>
 
 @property (nonatomic, copy) NSString *methodName;
-@property (nonatomic, copy) NSString *methodReturnType;
+@property (nonatomic, strong) ALPHAObjectType *returnType;
 
 @property (nonatomic, assign) BOOL isClassMethod;
 
-@property (nonatomic, copy) NSArray *arguments;
+@property (nonatomic, copy) NSArray<ALPHAObjectArgument> *arguments;
 
 - (NSString *)prettyDescription;
 

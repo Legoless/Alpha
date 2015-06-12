@@ -11,9 +11,9 @@
 #import "FLEXRuntimeUtility.h"
 #import "FLEXMultilineTableViewCell.h"
 #import "FLEXObjectExplorerFactory.h"
-#import "FLEXPropertyEditorViewController.h"
-#import "FLEXIvarEditorViewController.h"
-#import "FLEXMethodCallingViewController.h"
+#import "ALPHAPropertyEditorViewController.h"
+#import "ALPHAIvarEditorViewController.h"
+#import "ALPHAMethodCallingViewController.h"
 #import "FLEXInstancesTableViewController.h"
 #import <objc/runtime.h>
 
@@ -672,7 +672,7 @@ static const NSInteger kFLEXObjectExplorerScopeIncludeInheritanceIndex = 1;
                 FLEXPropertyBox *propertyBox = [self.filteredProperties objectAtIndex:row];
                 objc_property_t property = propertyBox.property;
                 id currentValue = [self valueForPropertyAtIndex:row];
-                BOOL canEdit = [FLEXPropertyEditorViewController canEditProperty:property currentValue:currentValue];
+                BOOL canEdit = [ALPHAPropertyEditorViewController canEditProperty:property currentValue:currentValue];
                 BOOL canExplore = currentValue != nil;
                 canDrillIn = canEdit || canExplore;
             }
@@ -683,7 +683,7 @@ static const NSInteger kFLEXObjectExplorerScopeIncludeInheritanceIndex = 1;
                 FLEXIvarBox *ivarBox = [self.filteredIvars objectAtIndex:row];
                 Ivar ivar = ivarBox.ivar;
                 id currentValue = [self valueForIvarAtIndex:row];
-                BOOL canEdit = [FLEXIvarEditorViewController canEditIvar:ivar currentValue:currentValue];
+                BOOL canEdit = [ALPHAIvarEditorViewController canEditIvar:ivar currentValue:currentValue];
                 BOOL canExplore = currentValue != nil;
                 canDrillIn = canEdit || canExplore;
             }
@@ -793,8 +793,8 @@ static const NSInteger kFLEXObjectExplorerScopeIncludeInheritanceIndex = 1;
             FLEXPropertyBox *propertyBox = [self.filteredProperties objectAtIndex:row];
             objc_property_t property = propertyBox.property;
             id currentValue = [self valueForPropertyAtIndex:row];
-            if ([FLEXPropertyEditorViewController canEditProperty:property currentValue:currentValue]) {
-                viewController = [[FLEXPropertyEditorViewController alloc] initWithTarget:self.object property:property];
+            if ([ALPHAPropertyEditorViewController canEditProperty:property currentValue:currentValue]) {
+                viewController = [[ALPHAPropertyEditorViewController alloc] initWithTarget:self.object property:property];
             } else if (currentValue) {
                 viewController = [FLEXObjectExplorerFactory explorerViewControllerForObject:currentValue];
             }
@@ -804,8 +804,8 @@ static const NSInteger kFLEXObjectExplorerScopeIncludeInheritanceIndex = 1;
             FLEXIvarBox *ivarBox = [self.filteredIvars objectAtIndex:row];
             Ivar ivar = ivarBox.ivar;
             id currentValue = [self valueForIvarAtIndex:row];
-            if ([FLEXIvarEditorViewController canEditIvar:ivar currentValue:currentValue]) {
-                viewController = [[FLEXIvarEditorViewController alloc] initWithTarget:self.object ivar:ivar];
+            if ([ALPHAIvarEditorViewController canEditIvar:ivar currentValue:currentValue]) {
+                viewController = [[ALPHAIvarEditorViewController alloc] initWithTarget:self.object ivar:ivar];
             } else if (currentValue) {
                 viewController = [FLEXObjectExplorerFactory explorerViewControllerForObject:currentValue];
             }
@@ -814,13 +814,13 @@ static const NSInteger kFLEXObjectExplorerScopeIncludeInheritanceIndex = 1;
         case FLEXObjectExplorerSectionMethods: {
             FLEXMethodBox *methodBox = [self.filteredMethods objectAtIndex:row];
             Method method = methodBox.method;
-            viewController = [[FLEXMethodCallingViewController alloc] initWithTarget:self.object method:method];
+            viewController = [[ALPHAMethodCallingViewController alloc] initWithTarget:self.object method:method];
         } break;
             
         case FLEXObjectExplorerSectionClassMethods: {
             FLEXMethodBox *methodBox = [self.filteredClassMethods objectAtIndex:row];
             Method method = methodBox.method;
-            viewController = [[FLEXMethodCallingViewController alloc] initWithTarget:[self.object class] method:method];
+            viewController = [[ALPHAMethodCallingViewController alloc] initWithTarget:[self.object class] method:method];
         } break;
             
         case FLEXObjectExplorerSectionSuperclasses: {
