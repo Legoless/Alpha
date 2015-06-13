@@ -22,12 +22,17 @@ Alpha is the next generation debugging system for iOS applications. It started a
 - Theme system
 
 Currently work in progress:
+
+** 0.2.0 **
 - *Entire Application State Snapshot*
 - *Status information widgets*
-- *Recording touches and replaying actions*
 - *Remote connection to app (state, debug)*
-- *In-app debugger*
 - *Specify features in podfile using subspecs*
+
+** 0.3.0 **
+- *Recording touches and replaying actions*
+- *In-app debugger*
+
 
 **This is an unofficial fork from the amazing Flipboard guys. It is a big rewrite of FLEX architecture, making it completely extensible, but sadly not backwards compatible with original code.**
 
