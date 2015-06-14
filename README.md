@@ -23,13 +23,13 @@ Alpha is the next generation debugging system for iOS applications. It started a
 
 Currently work in progress:
 
-** 0.2.0 **
+**0.2.0**
 - *Entire Application State Snapshot*
 - *Status information widgets*
 - *Remote connection to app (state, debug)*
 - *Specify features in podfile using subspecs*
 
-** 0.3.0 **
+**0.3.0**
 - *Recording touches and replaying actions*
 - *In-app debugger*
 
