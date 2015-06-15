@@ -8,9 +8,9 @@
 
 #import <objc/runtime.h>
 
-#import "ALPHAIvarEditorViewController.h"
-#import "ALPHAMethodCallingViewController.h"
-#import "ALPHAPropertyEditorViewController.h"
+#import "ALPHAIvarRendererViewController.h"
+#import "ALPHAMethodRendererViewController.h"
+#import "ALPHAPropertyRendererViewController.h"
 
 #import "NSString+ALPHAAdditional.h"
 
@@ -308,15 +308,15 @@
 {
     if ([object isKindOfClass:[ALPHAObjectMethod class]])
     {
-        return [ALPHAMethodCallingViewController class];
+        return [ALPHAMethodRendererViewController class];
     }
     else if ([object isKindOfClass:[ALPHAObjectProperty class]])
     {
-        return [ALPHAPropertyEditorViewController class];
+        return [ALPHAPropertyRendererViewController class];
     }
     else if ([object isKindOfClass:[ALPHAObjectIvar class]])
     {
-        return [ALPHAIvarEditorViewController class];
+        return [ALPHAIvarRendererViewController class];
     }
     
     return nil;

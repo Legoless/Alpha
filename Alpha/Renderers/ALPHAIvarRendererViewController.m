@@ -1,13 +1,13 @@
 //
-//  ALPHAIvarEditorViewController.m
+//  ALPHAIvarRendererViewController.m
 //  Alpha
 //
 //  Created by Dal Rupnik on 12/6/15.
 //  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
-#import "ALPHAIvarEditorViewController.h"
-#import "FLEXFieldEditorView.h"
+#import "ALPHAIvarRendererViewController.h"
+#import "ALPHAFieldEditorView.h"
 #import "FLEXRuntimeUtility.h"
 #import "FLEXArgumentInputView.h"
 #import "FLEXArgumentInputViewFactory.h"
@@ -15,11 +15,11 @@
 
 #import "ALPHAObjectActionItem.h"
 
-@interface ALPHAIvarEditorViewController () <FLEXArgumentInputViewDelegate>
+@interface ALPHAIvarRendererViewController () <FLEXArgumentInputViewDelegate>
 
 @end
 
-@implementation ALPHAIvarEditorViewController
+@implementation ALPHAIvarRendererViewController
 
 #pragma mark - Getters and Setters
 

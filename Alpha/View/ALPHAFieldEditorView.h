@@ -1,14 +1,14 @@
 //
-//  FLEXFieldEditorView.h
-//  Flipboard
+//  ALPHAFieldEditorView.h
+//  Alpha
 //
-//  Created by Ryan Olson on 5/16/14.
-//  Copyright (c) 2014 Flipboard. All rights reserved.
+//  Created by Dal Rupnik on 15/6/15.
+//  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-@import UIKit;
+@import UIKit.h;
 
-@interface FLEXFieldEditorView : UIView
+@interface ALPHAFieldEditorView : UIView
 
 @property (nonatomic, copy) UIColor *separatorColor;
 

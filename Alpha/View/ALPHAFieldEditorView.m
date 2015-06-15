@@ -1,16 +1,16 @@
 //
-//  FLEXFieldEditorView.m
-//  Flipboard
+//  ALPHAFieldEditorView.h
+//  Alpha
 //
-//  Created by Ryan Olson on 5/16/14.
-//  Copyright (c) 2014 Flipboard. All rights reserved.
+//  Created by Dal Rupnik on 15/6/15.
+//  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "FLEXFieldEditorView.h"
+#import "ALPHAFieldEditorView.h"
 #import "FLEXArgumentInputView.h"
 #import "FLEXUtility.h"
 
-@interface FLEXFieldEditorView ()
+@interface ALPHAFieldEditorView ()
 
 @property (nonatomic, strong) UILabel *targetDescriptionLabel;
 @property (nonatomic, strong) UIView *targetDescriptionDivider;
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation FLEXFieldEditorView
+@implementation ALPHAFieldEditorView
 
 #pragma mark - Getters and Setters
 

@@ -1,25 +1,25 @@
 //
-//  ALPHAPropertyEditorViewController.h
+//  ALPHAPropertyRendererViewController.h
 //  Alpha
 //
 //  Created by Dal Rupnik on 12/6/15.
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHAPropertyEditorViewController.h"
+#import "ALPHAPropertyRendererViewController.h"
 #import "FLEXRuntimeUtility.h"
-#import "FLEXFieldEditorView.h"
+#import "ALPHAFieldEditorView.h"
 #import "FLEXArgumentInputView.h"
 #import "FLEXArgumentInputViewFactory.h"
 #import "FLEXArgumentInputSwitchView.h"
 
 #import "ALPHAObjectActionItem.h"
 
-@interface ALPHAPropertyEditorViewController () <FLEXArgumentInputViewDelegate>
+@interface ALPHAPropertyRendererViewController () <FLEXArgumentInputViewDelegate>
 
 @end
 
-@implementation ALPHAPropertyEditorViewController
+@implementation ALPHAPropertyRendererViewController
 
 #pragma mark - Getters and Setters
 

@@ -9,7 +9,7 @@
 #import <objc/runtime.h>
 
 #import "FLEXClassExplorerViewController.h"
-#import "ALPHAMethodCallingViewController.h"
+#import "ALPHAMethodRendererViewController.h"
 #import "FLEXInstancesTableViewController.h"
 
 typedef NS_ENUM(NSUInteger, FLEXClassExplorerRow) {
@@ -101,11 +101,11 @@ typedef NS_ENUM(NSUInteger, FLEXClassExplorerRow) {
     /*FLEXClassExplorerRow row = [rowCookie unsignedIntegerValue];
     switch (row) {
         case FLEXClassExplorerRowNew:
-            drillInViewController = [[ALPHAMethodCallingViewController alloc] initWithTarget:self.theClass method:class_getClassMethod(self.theClass, @selector(new))];
+            drillInViewController = [[ALPHAMethodRendererViewController alloc] initWithTarget:self.theClass method:class_getClassMethod(self.theClass, @selector(new))];
             break;
             
         case FLEXClassExplorerRowAlloc:
-            drillInViewController = [[ALPHAMethodCallingViewController alloc] initWithTarget:self.theClass method:class_getClassMethod(self.theClass, @selector(alloc))];
+            drillInViewController = [[ALPHAMethodRendererViewController alloc] initWithTarget:self.theClass method:class_getClassMethod(self.theClass, @selector(alloc))];
             break;
             
         case FLEXClassExplorerRowLiveInstances:

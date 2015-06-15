@@ -1,25 +1,25 @@
 //
-//  ALPHADefaultEditorViewController.m
+//  ALPHADefaultsRendererViewController.m
 //  Alpha
 //
 //  Created by Dal Rupnik on 12/6/15.
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHADefaultEditorViewController.h"
-#import "FLEXFieldEditorView.h"
+#import "ALPHADefaultsRendererViewController.h"
+#import "ALPHAFieldEditorView.h"
 #import "FLEXRuntimeUtility.h"
 #import "FLEXArgumentInputView.h"
 #import "FLEXArgumentInputViewFactory.h"
 
-@interface ALPHADefaultEditorViewController ()
+@interface ALPHADefaultsRendererViewController ()
 
 @property (nonatomic, readonly) NSUserDefaults *defaults;
 @property (nonatomic, strong) NSString *key;
 
 @end
 
-@implementation ALPHADefaultEditorViewController
+@implementation ALPHADefaultsRendererViewController
 
 - (id)init
 {

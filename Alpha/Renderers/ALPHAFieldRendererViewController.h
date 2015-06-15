@@ -1,5 +1,5 @@
 //
-//  ALPHAFieldEditorViewController.h
+//  ALPHAFieldRendererViewController.h
 //  Alpha
 //
 //  Created by Dal Rupnik on 12/6/15.
@@ -11,10 +11,10 @@
 
 #import "ALPHADataRenderer.h"
 
-@class FLEXFieldEditorView;
+@class ALPHAFieldEditorView;
 @class FLEXArgumentInputView;
 
-@interface ALPHAFieldEditorViewController : UIViewController <ALPHADataRenderer>
+@interface ALPHAFieldRendererViewController : UIViewController <ALPHADataRenderer>
 
 #pragma mark - ALPHADataRenderer
 
@@ -51,7 +51,7 @@
 //
 // For subclass use only.
 //
-@property (nonatomic, strong, readonly) FLEXFieldEditorView *fieldEditorView;
+@property (nonatomic, strong, readonly) ALPHAFieldEditorView *fieldEditorView;
 @property (nonatomic, strong, readonly) UIBarButtonItem *setterButton;
 
 - (void)actionButtonPressed:(id)sender;

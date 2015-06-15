@@ -1,28 +1,28 @@
 //
-//  ALPHAFieldEditorViewController.m
+//  ALPHAFieldRendererViewController.m
 //  Alpha
 //
 //  Created by Dal Rupnik on 12/6/15.
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHAFieldEditorViewController.h"
-#import "FLEXFieldEditorView.h"
+#import "ALPHAFieldRendererViewController.h"
+#import "ALPHAFieldEditorView.h"
 #import "FLEXRuntimeUtility.h"
 #import "FLEXUtility.h"
 #import "FLEXArgumentInputView.h"
 #import "FLEXArgumentInputViewFactory.h"
 
-@interface ALPHAFieldEditorViewController () <UIScrollViewDelegate>
+@interface ALPHAFieldRendererViewController () <UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 
-@property (nonatomic, strong, readwrite) FLEXFieldEditorView *fieldEditorView;
+@property (nonatomic, strong, readwrite) ALPHAFieldEditorView *fieldEditorView;
 @property (nonatomic, strong, readwrite) UIBarButtonItem *setterButton;
 
 @end
 
-@implementation ALPHAFieldEditorViewController
+@implementation ALPHAFieldRendererViewController
 
 #pragma mark - Getters and Setters
 
@@ -81,7 +81,7 @@
     self.scrollView.delegate = self;
     [self.view addSubview:self.scrollView];
     
-    self.fieldEditorView = [[FLEXFieldEditorView alloc] init];
+    self.fieldEditorView = [[ALPHAFieldEditorView alloc] init];
     self.fieldEditorView.backgroundColor = self.theme.backgroundColor;
     self.fieldEditorView.separatorColor = self.theme.highlightedBackgroundColor;
     self.fieldEditorView.tintColor = self.theme.tintColor;
