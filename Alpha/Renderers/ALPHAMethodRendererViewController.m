@@ -9,8 +9,6 @@
 #import "ALPHAMethodRendererViewController.h"
 #import "FLEXRuntimeUtility.h"
 #import "ALPHAFieldEditorView.h"
-#import "FLEXObjectExplorerFactory.h"
-#import "FLEXObjectExplorerViewController.h"
 #import "FLEXArgumentInputView.h"
 #import "FLEXArgumentInputViewFactory.h"
 #import "ALPHAObjectActionItem.h"

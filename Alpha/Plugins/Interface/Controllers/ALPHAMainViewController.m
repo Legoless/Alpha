@@ -7,12 +7,6 @@
 //
 
 #import "ALPHAMainViewController.h"
-#import "FLEXExplorerToolbar.h"
-#import "FLEXToolbarItem.h"
-#import "FLEXUtility.h"
-#import "FLEXHierarchyTableViewController.h"
-#import "FLEXObjectExplorerViewController.h"
-#import "FLEXObjectExplorerFactory.h"
 
 #import "ALPHAMenuSource.h"
 #import "ALPHABlockActionItem.h"
@@ -23,6 +17,8 @@
 #import "ALPHATableRendererViewController.h"
 #import "ALPHAManager.h"
 #import "ALPHAPlugin.h"
+
+#import "FLEXToolbarItem.h"
 
 #import "ALPHAExplorerMenu.h"
 

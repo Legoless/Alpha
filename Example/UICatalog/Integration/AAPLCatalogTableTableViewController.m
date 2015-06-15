@@ -20,16 +20,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:nil]];
-    
-#if DEBUG
+
+    #if DEBUG
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Alpha" style:UIBarButtonItemStylePlain target:self action:@selector(alphaButtonTapped:)];
-#endif
+    #endif
     
     //
     // Local notification test
     //
+    
+    [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:nil]];
     
     if ([[UIApplication sharedApplication] scheduledLocalNotifications].count < 5)
     {
@@ -39,6 +39,10 @@
         localNotification.fireDate = [[NSDate date] dateByAddingTimeInterval:86400.0 * 4.0];
         
         [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    }
+    else if ([[UIApplication sharedApplication] scheduledLocalNotifications].count > 5)
+    {
+        [[UIApplication sharedApplication] setScheduledLocalNotifications:nil];
     }
     
     [self performSelector:@selector(alphaButtonTapped:) withObject:self afterDelay:1.0];

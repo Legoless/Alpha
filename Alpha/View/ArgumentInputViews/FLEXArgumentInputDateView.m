@@ -26,6 +26,7 @@
         // Using UTC, because that's what the NSDate description prints
         self.datePicker.calendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
         self.datePicker.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"UTC"];
+        self.datePicker.backgroundColor = [UIColor whiteColor];
         [self addSubview:self.datePicker];
     }
     return self;

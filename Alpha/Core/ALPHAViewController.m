@@ -6,22 +6,11 @@
 //  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
-#import "ALPHAMainViewController.h"
-#import "FLEXExplorerToolbar.h"
-#import "FLEXToolbarItem.h"
-#import "FLEXUtility.h"
-#import "FLEXHierarchyTableViewController.h"
-#import "FLEXObjectExplorerViewController.h"
-#import "FLEXObjectExplorerFactory.h"
-
 #import "ALPHAActionItem.h"
 
 #import "ALPHAManager.h"
-#import "ALPHAPlugin.h"
 
 #import "ALPHACanvasView.h"
-
-#import "ALPHAExplorerMenu.h"
 
 #import "ALPHAViewController.h"
 

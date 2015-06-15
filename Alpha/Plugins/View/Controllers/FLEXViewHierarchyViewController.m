@@ -11,8 +11,6 @@
 #import "FLEXToolbarItem.h"
 #import "FLEXUtility.h"
 #import "FLEXHierarchyTableViewController.h"
-#import "FLEXObjectExplorerViewController.h"
-#import "FLEXObjectExplorerFactory.h"
 
 #import "FLEXAutoFillEngine.h"
 
@@ -497,11 +495,13 @@
 
 - (void)handleToolbarDetailsTapGesture:(UITapGestureRecognizer *)tapGR
 {
-    if (tapGR.state == UIGestureRecognizerStateRecognized && self.selectedView) {
+    if (tapGR.state == UIGestureRecognizerStateRecognized && self.selectedView)
+    {
+        /*
         FLEXObjectExplorerViewController *selectedViewExplorer = [FLEXObjectExplorerFactory explorerViewControllerForObject:self.selectedView];
         selectedViewExplorer.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(selectedViewExplorerFinished:)];
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:selectedViewExplorer];
-        [[ALPHAManager sharedManager] displayViewController:navigationController animated:YES completion:nil];
+        [[ALPHAManager sharedManager] displayViewController:navigationController animated:YES completion:nil];*/
     }
 }
 

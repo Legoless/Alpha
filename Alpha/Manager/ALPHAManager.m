@@ -19,9 +19,6 @@
 
 #import "ALPHAViewController.h"
 
-#import "FLEXObjectExplorerFactory.h"
-#import "FLEXObjectExplorerViewController.h"
-
 @interface ALPHAManager () <FLEXWindowEventDelegate>
 
 /*!

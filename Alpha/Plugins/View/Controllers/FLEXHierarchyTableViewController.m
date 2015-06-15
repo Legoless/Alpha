@@ -9,8 +9,7 @@
 #import "FLEXHierarchyTableViewController.h"
 #import "FLEXUtility.h"
 #import "FLEXHierarchyTableViewCell.h"
-#import "FLEXObjectExplorerViewController.h"
-#import "FLEXObjectExplorerFactory.h"
+#import "ALPHAScreenManager.h"
 
 static const NSInteger kFLEXHierarchyScopeViewsAtTapIndex = 0;
 static const NSInteger kFLEXHierarchyScopeFullHierarchyIndex = 1;
@@ -188,12 +187,13 @@ static const NSInteger kFLEXHierarchyScopeFullHierarchyIndex = 1;
     [self.delegate hierarchyViewController:self didFinishWithSelectedView:self.selectedView];
 }
 
+/*
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
     UIView *drillInView = [self.displayedViews objectAtIndex:indexPath.row];
-    FLEXObjectExplorerViewController *viewExplorer = [FLEXObjectExplorerFactory explorerViewControllerForObject:drillInView];
-    [self.navigationController pushViewController:viewExplorer animated:YES];
-}
+    
+    [[ALPHAScreenManager defaultManager] pushObject:drillInView];
+}*/
 
 
 #pragma mark - Button Actions
