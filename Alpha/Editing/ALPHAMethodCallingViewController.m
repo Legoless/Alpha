@@ -57,7 +57,7 @@
         const char *typeEncoding = [self.method.returnType.cType UTF8String];
         FLEXArgumentInputView *inputView = [FLEXArgumentInputViewFactory argumentInputViewForTypeEncoding:typeEncoding];
         
-        inputView.backgroundColor = self.view.backgroundColor;
+        inputView.backgroundColor = self.theme.backgroundColor;
         inputView.title = methodComponent.prettyDescription;
         
         [argumentInputViews addObject:inputView];

@@ -37,12 +37,14 @@
 {
     [super updateView];
     
+    self.title = @"Instance Variable";
+    
     [self updateViewWithIvar:self.ivar];
 }
 
 - (void)updateViewWithIvar:(ALPHAObjectIvar *)ivar
 {
-    self.fieldEditorView.fieldDescription = [self.ivar description];
+    self.fieldEditorView.fieldDescription = [self.ivar prettyDescription];
     
     const char *typeEncoding = [ivar.type.cType UTF8String];
     

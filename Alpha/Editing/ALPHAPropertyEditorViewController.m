@@ -37,6 +37,8 @@
 {
     [super updateView];
     
+    self.title = @"Property";
+    
     [self updateViewWithProperty:self.property];
 }
 
@@ -59,8 +61,6 @@
     {
         self.navigationItem.rightBarButtonItem = nil;
     }
-    
-    self.title = @"Property";
 }
 
 #pragma mark - UIViewController
