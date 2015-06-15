@@ -8,14 +8,14 @@
 
 #import "ALPHASerializableItem.h"
 
-#import "ALPHAObjectItem.h"
+#import "ALPHAObjectElement.h"
 
 /*!
  *  Carries pointers to internal objects in case of arrays or sets
  */
 @interface ALPHAObjectContent : NSObject <ALPHASerializableItem>
 
-@property (nonatomic, copy) NSArray<ALPHAObjectItem> *items;
+@property (nonatomic, copy) NSArray<ALPHAObjectElement> *items;
 
 + (instancetype)objectContentForArray:(NSArray *)array;
 + (instancetype)objectContentForDictionary:(NSDictionary *)dictionary;

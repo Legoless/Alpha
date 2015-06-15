@@ -6,20 +6,15 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHAObjectReference.h"
+#import "ALPHAObjectElement.h"
 #import "ALPHAObjectArgument.h"
 
 @protocol ALPHAObjectMethod <NSObject>
 
 @end
 
-@interface ALPHAObjectMethod : ALPHAObjectReference <ALPHAObjectPrintable>
+@interface ALPHAObjectMethod : ALPHAObjectElement <ALPHAObjectPrintable>
 
-//
-// Method info
-//
-
-@property (nonatomic, copy) NSString *name;
 @property (nonatomic, strong) ALPHAObjectType *returnType;
 
 @property (nonatomic, assign) BOOL isClassMethod;

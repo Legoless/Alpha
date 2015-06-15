@@ -148,9 +148,9 @@
 
 - (void)updateView
 {
-    if ([self.object isKindOfClass:[ALPHAObjectReference class]])
+    if ([self.object isKindOfClass:[ALPHAObjectElement class]])
     {
-        ALPHAObjectReference* reference = self.object;
+        ALPHAObjectElement * reference = self.object;
         
         self.fieldEditorView.targetDescription = [NSString stringWithFormat:@"%@ %@", reference.objectClass, reference.objectPointer];
     }

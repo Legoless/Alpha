@@ -7,23 +7,15 @@
 //
 
 #import "ALPHAObjectType.h"
-#import "ALPHAObjectReference.h"
+#import "ALPHAObjectElement.h"
 
 @protocol ALPHAObjectIvar <NSObject>
 
 @end
 
-@interface ALPHAObjectIvar : ALPHAObjectReference <ALPHAObjectPrintable>
-
-//
-// Ivar info
-//
-
-@property (nonatomic, copy) NSString* name;
+@interface ALPHAObjectIvar : ALPHAObjectElement <ALPHAObjectPrintable>
 
 @property (nonatomic, strong) ALPHAObjectType* type;
-@property (nonatomic, strong) NSString *value;
-
-- (id)convertedValue;
+@property (nonatomic, strong) id value;
 
 @end

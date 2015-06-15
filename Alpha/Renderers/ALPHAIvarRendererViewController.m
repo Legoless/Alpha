@@ -50,7 +50,7 @@
     
     FLEXArgumentInputView *inputView = [FLEXArgumentInputViewFactory argumentInputViewForTypeEncoding:typeEncoding];
     inputView.backgroundColor = self.view.backgroundColor;
-    inputView.inputValue = ivar.convertedValue;
+    inputView.inputValue = ivar.value;
     inputView.delegate = self;
     
     self.fieldEditorView.argumentInputViews = @[ inputView ];

@@ -1,5 +1,5 @@
 //
-//  ALPHAObjectReference.h
+//  ALPHAObjectElement.h
 //  Alpha
 //
 //  Created by Dal Rupnik on 15/06/15.
@@ -8,7 +8,11 @@
 
 #import "ALPHASerialization.h"
 
-@interface ALPHAObjectReference : NSObject <ALPHASerializableItem>
+@protocol ALPHAObjectElement <NSObject>
+
+@end
+
+@interface ALPHAObjectElement : NSObject <ALPHASerializableItem>
 
 //
 // References to original object
@@ -16,5 +20,6 @@
 @property (nonatomic, copy) NSString* objectClass;
 @property (nonatomic, copy) NSString* objectPointer;
 
+@property (nonatomic, copy) NSString *name;
 
 @end

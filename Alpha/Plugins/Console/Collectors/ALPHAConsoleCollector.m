@@ -35,7 +35,7 @@ NSString *const ALPHAConsoleDataIdentifier = @"com.unifiedsense.alpha.data.conso
     q = asl_new(ASL_TYPE_QUERY);
     
     aslresponse r = asl_search(NULL, q);
-    while (NULL != (m = aslresponse_next(r)))
+    while (NULL != (m = asl_next(r)))
     {
         NSMutableDictionary *tmpDict = [NSMutableDictionary dictionary];
         
@@ -56,7 +56,7 @@ NSString *const ALPHAConsoleDataIdentifier = @"com.unifiedsense.alpha.data.conso
             [logs addObject:log];
         }
     }
-    aslresponse_free(r);
+    asl_release(r);
     
     return [logs copy];
 }

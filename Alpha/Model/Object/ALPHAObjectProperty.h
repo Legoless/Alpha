@@ -8,7 +8,7 @@
 
 #import "ALPHAObjectType.h"
 
-#import "ALPHAObjectReference.h"
+#import "ALPHAObjectElement.h"
 
 #import "ALPHAObjectPrintable.h"
 
@@ -16,17 +16,15 @@
 
 @end
 
-@interface ALPHAObjectProperty : ALPHAObjectReference <ALPHAObjectPrintable>
+@interface ALPHAObjectProperty : ALPHAObjectElement <ALPHAObjectPrintable>
 
 //
 // Property info
 //
 
-@property (nonatomic, copy) NSString *name;
-
 @property (nonatomic, strong) ALPHAObjectType* type;
 
-@property (nonatomic, copy) NSString *value;
+@property (nonatomic, strong) id value;
 
 /*!
  *  Attributes from runtime inspection
@@ -40,12 +38,5 @@
 
 - (NSString *)setter;
 - (NSString *)getter;
-
-/*!
- *  Converts string value back to value
- *
- *  @return converted value
- */
-- (id)convertedValue;
 
 @end

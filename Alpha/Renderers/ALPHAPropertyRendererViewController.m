@@ -50,7 +50,7 @@
     const char *typeEncoding = [property.type.cType UTF8String];
     FLEXArgumentInputView *inputView = [FLEXArgumentInputViewFactory argumentInputViewForTypeEncoding:typeEncoding];
     inputView.backgroundColor = self.view.backgroundColor;
-    inputView.inputValue = property.convertedValue;
+    inputView.inputValue = property.value;
     inputView.delegate = self;
     
     self.fieldEditorView.argumentInputViews = @[ inputView ];

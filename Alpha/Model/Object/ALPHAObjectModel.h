@@ -8,7 +8,7 @@
 
 #import "ALPHAModel.h"
 #import "ALPHAObjectContent.h"
-#import "ALPHAObjectItem.h"
+#import "ALPHAObjectElement.h"
 #import "ALPHAObjectIvar.h"
 #import "ALPHAObjectMethod.h"
 #import "ALPHAObjectProperty.h"

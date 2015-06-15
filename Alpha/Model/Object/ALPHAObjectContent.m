@@ -20,10 +20,10 @@
     
     for (id object in array)
     {
-        ALPHAObjectItem *item = [[ALPHAObjectItem alloc] init];
-        item.key = [NSString stringWithFormat:@"%lu", counter];
-        item.className = NSStringFromClass([object class]);
-        item.pointer = [NSString stringWithFormat:@"%p", object];
+        ALPHAObjectElement *item = [[ALPHAObjectElement alloc] init];
+        item.name = [NSString stringWithFormat:@"%lu", counter];
+        item.objectClass = NSStringFromClass([object class]);
+        item.objectPointer = [NSString stringWithFormat:@"%p", object];
         
         [items addObject:item];
         
@@ -47,10 +47,10 @@
     {
         id value = dictionary[key];
         
-        ALPHAObjectItem *item = [[ALPHAObjectItem alloc] init];
-        item.key = [key description];
-        item.className = NSStringFromClass([value class]);
-        item.pointer = [NSString stringWithFormat:@"%p", value];
+        ALPHAObjectElement *item = [[ALPHAObjectElement alloc] init];
+        item.name = [key description];
+        item.objectClass = NSStringFromClass([value class]);
+        item.objectPointer = [NSString stringWithFormat:@"%p", value];
         
         [items addObject:item];
         

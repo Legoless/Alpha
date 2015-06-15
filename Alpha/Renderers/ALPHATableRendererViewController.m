@@ -215,7 +215,7 @@
     
     cell.detailTextLabel.minimumScaleFactor = 0.5;
     cell.detailTextLabel.adjustsFontSizeToFitWidth = YES;
-    cell.detailTextLabel.adjustsLetterSpacingToFitWidth = YES;
+    //cell.detailTextLabel.adjustsLetterSpacingToFitWidth = YES;
 }
 
 - (void)cell:(UITableViewCell *)cell applyItem:(ALPHAScreenItem *)item

@@ -102,13 +102,13 @@
         if ([object isKindOfClass:[ALPHAObjectProperty class]])
         {
             item.title = [object description];
-            item.detail = [(ALPHAObjectProperty *)object value];
+            item.detail = [FLEXRuntimeUtility descriptionForIvarOrPropertyValue:[(ALPHAObjectProperty *)object value]];
 
         }
         else if ([object isKindOfClass:[ALPHAObjectIvar class]])
         {
             item.title = [object prettyDescription];
-            item.detail = [(ALPHAObjectProperty *)object value];
+            item.detail = [FLEXRuntimeUtility descriptionForIvarOrPropertyValue:[(ALPHAObjectIvar *)object value]];
         }
         else if ([object isKindOfClass:[ALPHAObjectMethod class]])
         {
@@ -159,14 +159,14 @@
     
     if (model.objectContent)
     {
-        for (ALPHAObjectItem *item in model.objectContent.items)
+        for (ALPHAObjectElement *item in model.objectContent.items)
         {
             ALPHAScreenItem *screenItem = [[ALPHAScreenItem alloc] init];
             
-            screenItem.title = item.key;
-            screenItem.detail = item.className;
+            screenItem.title = item.name;
+            screenItem.detail = item.objectClass;
             
-            screenItem.object = [ALPHARequest requestForObjectPointer:item.pointer className:item.className];
+            screenItem.object = [ALPHARequest requestForObjectPointer:item.objectPointer className:item.objectClass];
         }
         
         section.items = items.copy;
