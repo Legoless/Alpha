@@ -6,21 +6,14 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHASerialization.h"
-
+#import "ALPHAObjectReference.h"
 #import "ALPHAObjectArgument.h"
 
 @protocol ALPHAObjectMethod <NSObject>
 
 @end
 
-@interface ALPHAObjectMethod : NSObject <ALPHASerializableItem, ALPHAObjectPrintable>
-
-//
-// References to original object
-//
-@property (nonatomic, copy) NSString* objectClass;
-@property (nonatomic, copy) NSString* objectPointer;
+@interface ALPHAObjectMethod : ALPHAObjectReference <ALPHAObjectPrintable>
 
 //
 // Method info

@@ -37,6 +37,8 @@
 
 - (void)updateView
 {
+    [super updateView];
+    
     [self updateViewWithMethod:self.method];
 }
 

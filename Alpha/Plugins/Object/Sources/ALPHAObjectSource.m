@@ -205,6 +205,7 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
             property.name = [NSString stringWithUTF8String:property_getName(propertyList[i])];
             property.type.cType = [FLEXRuntimeUtility typeEncodingForProperty:propertyList[i]];
             property.type.name = [FLEXRuntimeUtility prettyTypeForProperty:propertyList[i]];
+            property.attributes = [FLEXRuntimeUtility attributesDictionaryForProperty:propertyList[i]];
             
             if (!class_isMetaClass(object_getClass(object)))
             {

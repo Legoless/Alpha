@@ -77,6 +77,8 @@
     
     model.sections = sections.copy;
     
+    model.expiration = 60.0;
+    
     return model;
 }
 

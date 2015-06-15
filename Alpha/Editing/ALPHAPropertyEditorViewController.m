@@ -35,6 +35,8 @@
 
 - (void)updateView
 {
+    [super updateView];
+    
     [self updateViewWithProperty:self.property];
 }
 

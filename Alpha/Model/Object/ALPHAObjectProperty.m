@@ -88,7 +88,7 @@
     
     NSString *attributesString = [attributesStrings componentsJoinedByString:@", "];
     
-    return [NSString stringWithFormat:@"@property (%@) %@ %@", attributesString, self.type, self.name];
+    return [NSString stringWithFormat:@"@property (%@) %@ %@", attributesString, self.type.prettyDescription, self.name];
 }
 
 - (NSString *)setter

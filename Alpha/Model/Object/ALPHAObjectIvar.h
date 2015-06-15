@@ -7,18 +7,13 @@
 //
 
 #import "ALPHAObjectType.h"
+#import "ALPHAObjectReference.h"
 
 @protocol ALPHAObjectIvar <NSObject>
 
 @end
 
-@interface ALPHAObjectIvar : NSObject <ALPHASerializableItem, ALPHAObjectPrintable>
-
-//
-// References to original object
-//
-@property (nonatomic, copy) NSString* objectClass;
-@property (nonatomic, copy) NSString* objectPointer;
+@interface ALPHAObjectIvar : ALPHAObjectReference <ALPHAObjectPrintable>
 
 //
 // Ivar info

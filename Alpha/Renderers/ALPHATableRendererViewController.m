@@ -127,7 +127,7 @@
 {
     [super viewWillAppear:animated];
     
-    if (!self.object)
+    if (!self.object || self.screenModel.expiration > 0)
     {
         [self refresh];
     }

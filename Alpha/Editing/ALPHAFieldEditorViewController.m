@@ -83,7 +83,7 @@
     
     self.fieldEditorView = [[FLEXFieldEditorView alloc] init];
     self.fieldEditorView.backgroundColor = self.view.backgroundColor;
-    self.fieldEditorView.targetDescription = [NSString stringWithFormat:@"%@ %p", [self.source class], self.source];
+    
     [self.scrollView addSubview:self.fieldEditorView];
     
     self.setterButton = [[UIBarButtonItem alloc] initWithTitle:[self titleForActionButton] style:UIBarButtonItemStyleDone target:self action:@selector(actionButtonPressed:)];
@@ -146,9 +146,17 @@
 
 - (void)updateView
 {
-    //
-    // Override
-    //
+    if ([self.object isKindOfClass:[ALPHAObjectReference class]])
+    {
+        ALPHAObjectReference* reference = self.object;
+        
+        self.fieldEditorView.targetDescription = [NSString stringWithFormat:@"%@ %@", reference.objectClass, reference.objectPointer];
+    }
+    else
+    {
+        self.fieldEditorView.targetDescription = [NSString stringWithFormat:@"%@ %p", [self.object class], self.object];
+    }
+    
 }
 
 - (void)refresh
