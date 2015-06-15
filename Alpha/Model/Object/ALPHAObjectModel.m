@@ -10,4 +10,71 @@
 
 @implementation ALPHAObjectModel
 
+- (void)setObjectPointer:(NSString *)objectPointer
+{
+    _objectPointer = objectPointer;
+    
+    [self updateReferencesWithObjectPointer:objectPointer objectClass:nil];
+}
+
+- (void)setObjectClass:(NSString *)objectClass
+{
+    _objectClass = objectClass;
+    
+    [self updateReferencesWithObjectPointer:nil objectClass:objectClass];
+}
+
+- (void)setProperties:(NSArray *)properties
+{
+    _properties = properties;
+    
+    [self updateReferences:_properties withObjectPointer:self.objectPointer objectClass:self.objectClass];
+}
+
+- (void)setIvars:(NSArray *)ivars
+{
+    _ivars = ivars;
+    
+    [self updateReferences:_ivars withObjectPointer:self.objectPointer objectClass:self.objectClass];
+}
+
+- (void)setMethods:(NSArray *)methods
+{
+    _methods = methods;
+    
+    [self updateReferences:_methods withObjectPointer:self.objectPointer objectClass:self.objectClass];
+}
+
+- (void)setClassMethods:(NSArray *)classMethods
+{
+    _classMethods = classMethods;
+    
+    [self updateReferences:_classMethods withObjectPointer:self.objectPointer objectClass:self.objectClass];
+}
+
+- (void)updateReferencesWithObjectPointer:(NSString *)objectPointer objectClass:(NSString *)className
+{
+    [self updateReferences:self.properties withObjectPointer:objectPointer objectClass:className];
+    [self updateReferences:self.ivars withObjectPointer:objectPointer objectClass:className];
+    [self updateReferences:self.methods withObjectPointer:objectPointer objectClass:className];
+    [self updateReferences:self.classMethods withObjectPointer:objectPointer objectClass:className];
+    [self updateReferences:self.properties withObjectPointer:objectPointer objectClass:className];
+}
+
+- (void)updateReferences:(NSArray *)array withObjectPointer:(NSString *)objectPointer objectClass:(NSString *)className
+{
+    for (id object in array)
+    {
+        if ([object respondsToSelector:@selector(setObjectClass:)] && objectPointer)
+        {
+            [object setObjectClass:className];
+        }
+        
+        if ([object respondsToSelector:@selector(setObjectPointer:)] && className)
+        {
+            [object setObjectPointer:objectPointer];
+        }
+    }
+}
+
 @end

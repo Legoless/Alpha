@@ -25,14 +25,19 @@
 
 #pragma mark - Getters and Setters
 
-- (void)setMethod:(ALPHAObjectMethod *)method
+- (ALPHAObjectMethod *)method
 {
-    _method = method;
-    
-    if (self.isViewLoaded)
+    if ([self.object isKindOfClass:[ALPHAObjectMethod class]])
     {
-        [self updateViewWithMethod:method];
+        return (ALPHAObjectMethod *)self.object;
     }
+    
+    return nil;
+}
+
+- (void)updateView
+{
+    [self updateViewWithMethod:self.method];
 }
 
 - (void)updateViewWithMethod:(ALPHAObjectMethod *)method
@@ -62,16 +67,6 @@
 
 #pragma mark - UIViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    if (self.method)
-    {
-        [self updateViewWithMethod:self.method];
-    }
-}
-
 #pragma mark - ALPHAFieldEditorViewController
 
 - (NSString *)titleForActionButton
@@ -98,7 +93,9 @@
         [arguments addObject:argumentValue];
     }
     
-    ALPHAObjectActionItem *action = [[ALPHAObjectActionItem alloc] initWithObjectModel:self.target];
+    ALPHAObjectActionItem *action = [[ALPHAObjectActionItem alloc] init];
+    action.objectClass = self.method.objectClass;
+    action.objectPointer = self.method.objectPointer;
     action.selector = self.method.name;
     action.arguments = arguments;
     

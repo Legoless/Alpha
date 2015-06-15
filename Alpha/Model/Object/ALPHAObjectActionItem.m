@@ -10,22 +10,4 @@
 
 @implementation ALPHAObjectActionItem
 
-- (instancetype)initWithObjectModel:(ALPHAObjectModel *)model
-{
-    if (!model)
-    {
-        return nil;
-    }
-    
-    self = [super initWithIdentifier:@"com.unifiedsense.alpha.action.object"];
-    
-    if (self)
-    {
-        self.objectPointer = model.objectPointer;
-        self.objectClass = model.objectClass;
-    }
-    
-    return self;
-}
-
 @end

@@ -23,14 +23,19 @@
 
 #pragma mark - Getters and Setters
 
-- (void)setIvar:(ALPHAObjectIvar *)ivar
+- (ALPHAObjectIvar *)ivar
 {
-    _ivar = ivar;
-    
-    if (self.isViewLoaded)
+    if ([self.object isKindOfClass:[ALPHAObjectIvar class]])
     {
-        [self updateViewWithIvar:ivar];
+        return (ALPHAObjectIvar *)self.object;
     }
+    
+    return nil;
+}
+
+- (void)updateView
+{
+    [self updateViewWithIvar:self.ivar];
 }
 
 - (void)updateViewWithIvar:(ALPHAObjectIvar *)ivar
@@ -55,21 +60,14 @@
 
 #pragma mark - UIViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    if (self.ivar)
-    {
-        [self updateViewWithIvar:self.ivar];
-    }
-}
-
 - (void)actionButtonPressed:(id)sender
 {
     [super actionButtonPressed:sender];
     
-    ALPHAObjectActionItem *action = [[ALPHAObjectActionItem alloc] initWithObjectModel:self.target];
+    ALPHAObjectActionItem *action = [[ALPHAObjectActionItem alloc] init];
+    action.objectClass = self.ivar.objectClass;
+    action.objectPointer = self.ivar.objectPointer;
+    
     action.ivar = self.ivar.name;
     action.arguments = self.firstInputView.inputValue ? @[ self.firstInputView.inputValue ] : nil;
     

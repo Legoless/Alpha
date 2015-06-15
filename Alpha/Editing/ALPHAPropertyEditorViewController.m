@@ -23,14 +23,19 @@
 
 #pragma mark - Getters and Setters
 
-- (void)setProperty:(ALPHAObjectProperty *)property
+- (ALPHAObjectProperty *)property
 {
-    _property = property;
-    
-    if (self.isViewLoaded)
+    if ([self.object isKindOfClass:[ALPHAObjectProperty class]])
     {
-        [self updateViewWithProperty:property];
+        return (ALPHAObjectProperty *)self.object;
     }
+    
+    return nil;
+}
+
+- (void)updateView
+{
+    [self updateViewWithProperty:self.property];
 }
 
 - (void)updateViewWithProperty:(ALPHAObjectProperty *)property
@@ -58,16 +63,6 @@
 
 #pragma mark - UIViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-
-    if (self.property)
-    {
-        [self updateViewWithProperty:self.property];
-    }
-}
-
 #pragma mark - ALPHAFieldEditorViewController
 
 - (void)actionButtonPressed:(id)sender
@@ -80,7 +75,9 @@
     // Create object action
     //
     
-    ALPHAObjectActionItem *action = [[ALPHAObjectActionItem alloc] initWithObjectModel:self.target];
+    ALPHAObjectActionItem *action = [[ALPHAObjectActionItem alloc] init];
+    action.objectClass = self.property.objectClass;
+    action.objectPointer = self.property.objectPointer;
     action.selector = self.property.setter;
     action.arguments = userInputObject ? @[ userInputObject ] : nil;
     

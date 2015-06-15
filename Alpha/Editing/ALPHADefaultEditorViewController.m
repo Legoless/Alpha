@@ -21,9 +21,9 @@
 
 @implementation ALPHADefaultEditorViewController
 
-- (id)initWithSource:(id<ALPHADataSource>)source objectTarget:(ALPHAObjectModel *)target
+- (id)init
 {
-    self = [super initWithSource:source objectTarget:target];
+    self = [super init];
     
     if (self)
     {

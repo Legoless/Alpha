@@ -12,8 +12,6 @@
 
 @interface ALPHAIvarEditorViewController : ALPHAFieldEditorViewController
 
-@property (nonatomic, strong) ALPHAObjectIvar *ivar;
-
 + (BOOL)canEditIvar:(ALPHAObjectIvar *)ivar;
 
 @end

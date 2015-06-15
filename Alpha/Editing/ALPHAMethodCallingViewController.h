@@ -12,6 +12,4 @@
 
 @interface ALPHAMethodCallingViewController : ALPHAFieldEditorViewController
 
-@property (nonatomic, strong) ALPHAObjectMethod* method;
-
 @end

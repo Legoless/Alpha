@@ -8,6 +8,10 @@
 
 #import <objc/runtime.h>
 
+#import "ALPHAIvarEditorViewController.h"
+#import "ALPHAMethodCallingViewController.h"
+#import "ALPHAPropertyEditorViewController.h"
+
 #import "NSString+ALPHAAdditional.h"
 
 #import "FLEXRuntimeUtility.h"
@@ -82,7 +86,6 @@
 {
     ALPHAScreenSection *section = [[ALPHAScreenSection alloc] init];
     
-    
     NSMutableArray *items = [NSMutableArray array];
     
     NSArray* array = [model valueForKey:property];
@@ -98,6 +101,7 @@
         {
             item.title = [object description];
             item.detail = [(ALPHAObjectProperty *)object value];
+
         }
         else if ([object isKindOfClass:[ALPHAObjectIvar class]])
         {
@@ -112,6 +116,8 @@
         {
             item.title = [object description];
         }
+        
+        item.object = object;
         
         [items addObject:item];
     }
@@ -292,6 +298,26 @@
     section.items = @[ item ];
     
     return section;
+}
+
+#pragma mark - Render class
+
+- (Class)renderClassForObject:(id)object
+{
+    if ([object isKindOfClass:[ALPHAObjectMethod class]])
+    {
+        return [ALPHAMethodCallingViewController class];
+    }
+    else if ([object isKindOfClass:[ALPHAObjectProperty class]])
+    {
+        return [ALPHAPropertyEditorViewController class];
+    }
+    else if ([object isKindOfClass:[ALPHAObjectIvar class]])
+    {
+        return [ALPHAIvarEditorViewController class];
+    }
+    
+    return nil;
 }
 
 @end

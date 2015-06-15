@@ -1,4 +1,4 @@
-//
+ //
 //  ALPHAObjectActionItem.h
 //  Alpha
 //
@@ -36,14 +36,5 @@
 @property (nonatomic, copy) NSString* ivar;
 
 @property (nonatomic, copy) NSArray *arguments;
-
-/*!
- *  Designated initializer (need object model reference to create action)
- *
- *  @param model to reference
- *
- *  @return new instance
- */
-- (instancetype)initWithObjectModel:(ALPHAObjectModel *)model;
 
 @end

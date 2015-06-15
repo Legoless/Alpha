@@ -70,6 +70,7 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     
     model.request = request;
     
+    model.objectPointer = request.parameters[ALPHAObjectDataPointerIdentifier];
     model.objectClass = NSStringFromClass([object class]);
     model.objectDescription = [FLEXUtility safeDescriptionForObject:object];
     

@@ -45,7 +45,6 @@
  */
 @property (nonatomic, copy) ALPHAObjectContent *objectContent;
 
-
 //
 // Object model
 //

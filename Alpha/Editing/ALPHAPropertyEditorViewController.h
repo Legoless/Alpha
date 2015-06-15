@@ -11,8 +11,6 @@
 
 @interface ALPHAPropertyEditorViewController : ALPHAFieldEditorViewController
 
-@property (nonatomic, strong) ALPHAObjectProperty* property;
-
 + (BOOL)canEditProperty:(ALPHAObjectProperty *)property;
 
 @end

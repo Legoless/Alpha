@@ -16,6 +16,16 @@
 
 @interface ALPHAObjectProperty : NSObject <ALPHASerializableItem, ALPHAObjectPrintable>
 
+//
+// References to original object
+//
+@property (nonatomic, copy) NSString* objectClass;
+@property (nonatomic, copy) NSString* objectPointer;
+
+//
+// Property info
+//
+
 @property (nonatomic, copy) NSString *name;
 
 @property (nonatomic, strong) ALPHAObjectType* type;

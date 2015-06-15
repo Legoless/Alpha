@@ -39,6 +39,8 @@
 
 #import <objc/runtime.h>
 
+#import "FLEXRuntimeUtility.h"
+
 #import "ALPHAObjectSerializer.h"
 
 @interface ALPHAObjectSerializer ()
@@ -298,7 +300,29 @@
     {
         NSString *key = [NSString stringWithUTF8String:property_getName(properties[i])];
         
-        dict[key] = key;
+        //
+        // Ignore proprety if read-only or weak
+        //
+        NSString *attributes = @(property_getAttributes(properties[i]));
+        // Thanks to MAObjcRuntime for inspiration here.
+        NSArray *attributePairs = [attributes componentsSeparatedByString:@","];
+        
+        BOOL shouldSerialize = YES;
+        
+        for (NSString *attributePair in attributePairs)
+        {
+            if ([[attributePair substringToIndex:1] isEqualToString:kFLEXUtilityAttributeReadOnly] || [[attributePair substringToIndex:1] isEqualToString:kFLEXUtilityAttributeWeak])
+            {
+                shouldSerialize = NO;
+                
+                break;
+            }
+        }
+
+        if (shouldSerialize)
+        {
+            dict[key] = key;
+        }
     }
     
     free (properties);
