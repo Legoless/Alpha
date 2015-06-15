@@ -55,13 +55,13 @@
 - (UIViewController *)customSectionDrillInViewControllerForRowCookie:(id)rowCookie
 {
     UIViewController *drillInViewController = nil;
-    NSString *key = rowCookie;
+    /*NSString *key = rowCookie;
     id drillInObject = [self.defaults objectForKey:key];
     if ([ALPHADefaultEditorViewController canEditDefaultWithValue:drillInObject]) {
         drillInViewController = [[ALPHADefaultEditorViewController alloc] initWithDefaults:self.defaults key:key];
     } else {
         drillInViewController = [FLEXObjectExplorerFactory explorerViewControllerForObject:drillInObject];
-    }
+    }*/
     return drillInViewController;
 }
 

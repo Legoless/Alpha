@@ -8,6 +8,9 @@
 
 #import <objc/runtime.h>
 
+#import "ALPHAActions.h"
+
+#import "ALPHAObjectActionItem.h"
 #import "ALPHAObjectProperty.h"
 #import "ALPHAObjectIvar.h"
 #import "ALPHAObjectMethod.h"
@@ -17,6 +20,7 @@
 
 #import "ALPHAObjectModel.h"
 #import "ALPHAObjectSource.h"
+
 
 NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object";
 
@@ -42,20 +46,6 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
 
 - (ALPHAModel *)modelForRequest:(ALPHARequest *)request
 {
-    id object = nil;
-    
-    //
-    // First find the referenced object
-    //
-    if (request.parameters[ALPHAObjectDataPointerIdentifier] && request.parameters[ALPHAObjectDataClassNameIdentifier])
-    {
-        object = [self objectForPointerString:request.parameters[ALPHAObjectDataPointerIdentifier] className:request.parameters[ALPHAObjectDataClassNameIdentifier]];
-    }
-    
-    if (!object)
-    {
-        return nil;
-    }
     
     NSString *search = request.parameters[ALPHASearchTextParameterKey];
     BOOL includeInheritance = [request.parameters[ALPHASearchScopeParameterKey] boolValue];
@@ -63,6 +53,18 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     //
     // Search & Inheritence included when generating object model
     //
+    
+    id object = nil;
+    
+    if (request.parameters[ALPHAObjectDataPointerIdentifier] && request.parameters[ALPHAObjectDataClassNameIdentifier])
+    {
+        object = [self objectForPointerString:request.parameters[ALPHAObjectDataPointerIdentifier] className:request.parameters[ALPHAObjectDataClassNameIdentifier]];
+    }
+
+    if (!object)
+    {
+        return nil;
+    }
     
     ALPHAObjectModel *model = [[ALPHAObjectModel alloc] initWithIdentifier:ALPHAObjectDataIdentifier];
     
@@ -169,28 +171,28 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     {
         NSMutableArray *mutableUnsortedFilteredProperties = [NSMutableArray array];
         
-        for (ALPHAObjectProperty *propertyBox in properties)
+        for (ALPHAObjectProperty *property in properties)
         {
-            if ([propertyBox.propertyName rangeOfString:search options:NSCaseInsensitiveSearch].location != NSNotFound)
+            if ([property.name rangeOfString:search options:NSCaseInsensitiveSearch].location != NSNotFound)
             {
-                [mutableUnsortedFilteredProperties addObject:propertyBox];
+                [mutableUnsortedFilteredProperties addObject:property];
             }
         }
         
         properties = mutableUnsortedFilteredProperties;
     }
     
-    return [properties sortedArrayUsingComparator:^NSComparisonResult(ALPHAObjectProperty *propertyBox1, ALPHAObjectProperty *propertyBox2)
+    return [properties sortedArrayUsingComparator:^NSComparisonResult(ALPHAObjectProperty *property1, ALPHAObjectProperty *property2)
     {
-        NSString *name1 = propertyBox1.propertyName;
-        NSString *name2 = propertyBox2.propertyName;
+        NSString *name1 = property1.name;
+        NSString *name2 = property2.name;
         return [name1 caseInsensitiveCompare:name2];
     }];
 }
 
 + (NSArray *)propertiesForClass:(Class)class onObject:(id)object
 {
-    NSMutableArray *boxedProperties = [NSMutableArray array];
+    NSMutableArray *properties = [NSMutableArray array];
     unsigned int propertyCount = 0;
     objc_property_t *propertyList = class_copyPropertyList(class, &propertyCount);
     
@@ -198,23 +200,23 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     {
         for (unsigned int i = 0; i < propertyCount; i++)
         {
-            ALPHAObjectProperty *propertyBox = [[ALPHAObjectProperty alloc] init];
-            propertyBox.propertyName = [NSString stringWithUTF8String:property_getName(propertyList[i])];
-            propertyBox.propertyCType = [FLEXRuntimeUtility typeEncodingForProperty:propertyList[i]];
-            propertyBox.propertyType = [FLEXRuntimeUtility prettyTypeForProperty:propertyList[i]];
+            ALPHAObjectProperty *property = [[ALPHAObjectProperty alloc] init];
+            property.name = [NSString stringWithUTF8String:property_getName(propertyList[i])];
+            property.type.cType = [FLEXRuntimeUtility typeEncodingForProperty:propertyList[i]];
+            property.type.name = [FLEXRuntimeUtility prettyTypeForProperty:propertyList[i]];
             
             if (!class_isMetaClass(object_getClass(object)))
             {
-                propertyBox.propertyValue = [FLEXRuntimeUtility descriptionForIvarOrPropertyValue:[FLEXRuntimeUtility valueForProperty:propertyList[i] onObject:object]];
+                property.value = [FLEXRuntimeUtility descriptionForIvarOrPropertyValue:[FLEXRuntimeUtility valueForProperty:propertyList[i] onObject:object]];
             }
             
-            [boxedProperties addObject:propertyBox];
+            [properties addObject:property];
         }
         
         free (propertyList);
     }
     
-    return boxedProperties;
+    return properties;
 }
 
 + (NSArray *)inheritedPropertiesForClass:(Class)class onObject:(id)object
@@ -246,28 +248,28 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     {
         NSMutableArray *mutableUnsortedFilteredIvars = [NSMutableArray array];
         
-        for (ALPHAObjectIvar *ivarBox in ivars)
+        for (ALPHAObjectIvar *ivar in ivars)
         {
-            if ([ivarBox.ivarName rangeOfString:search options:NSCaseInsensitiveSearch].location != NSNotFound)
+            if ([ivar.name rangeOfString:search options:NSCaseInsensitiveSearch].location != NSNotFound)
             {
-                [mutableUnsortedFilteredIvars addObject:ivarBox];
+                [mutableUnsortedFilteredIvars addObject:ivar];
             }
         }
         
         ivars = mutableUnsortedFilteredIvars;
     }
     
-    return [ivars sortedArrayUsingComparator:^NSComparisonResult(ALPHAObjectIvar *ivarBox1, ALPHAObjectIvar *ivarBox2)
+    return [ivars sortedArrayUsingComparator:^NSComparisonResult(ALPHAObjectIvar *ivar1, ALPHAObjectIvar *ivar2)
     {
-        NSString *name1 = ivarBox1.ivarName;
-        NSString *name2 = ivarBox2.ivarName;
+        NSString *name1 = ivar1.name;
+        NSString *name2 = ivar2.name;
         return [name1 caseInsensitiveCompare:name2];
     }];
 }
 
 + (NSArray *)ivarsForClass:(Class)class onObject:(id)object
 {
-    NSMutableArray *boxedIvars = [NSMutableArray array];
+    NSMutableArray *ivars = [NSMutableArray array];
     unsigned int ivarCount = 0;
     Ivar *ivarList = class_copyIvarList(class, &ivarCount);
     
@@ -275,23 +277,23 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     {
         for (unsigned int i = 0; i < ivarCount; i++)
         {
-            ALPHAObjectIvar *ivarBox = [[ALPHAObjectIvar alloc] init];
-            ivarBox.ivarName = [NSString stringWithUTF8String:ivar_getName(ivarList[i])];
-            ivarBox.ivarType = [FLEXRuntimeUtility prettyTypeForIvar:ivarList[i]];
-            ivarBox.ivarCType = [FLEXRuntimeUtility typeEncodingForIvar:ivarList[i]];
+            ALPHAObjectIvar *ivar = [[ALPHAObjectIvar alloc] init];
+            ivar.name = [NSString stringWithUTF8String:ivar_getName(ivarList[i])];
+            ivar.type.name = [FLEXRuntimeUtility prettyTypeForIvar:ivarList[i]];
+            ivar.type.cType = [FLEXRuntimeUtility typeEncodingForIvar:ivarList[i]];
             
-            if (!class_isMetaClass(object_getClass(object)) && ![ivarBox.ivarType isEqualToString:@"Class"])
+            if (!class_isMetaClass(object_getClass(object)) && ![ivar.type.name isEqualToString:@"Class"])
             {
-                ivarBox.ivarValue = [FLEXRuntimeUtility descriptionForIvarOrPropertyValue:[FLEXRuntimeUtility valueForIvar:ivarList[i] onObject:object]];
+                ivar.value = [FLEXRuntimeUtility descriptionForIvarOrPropertyValue:[FLEXRuntimeUtility valueForIvar:ivarList[i] onObject:object]];
             }
             
-            [boxedIvars addObject:ivarBox];
+            [ivars addObject:ivar];
         }
         
         free (ivarList);
     }
     
-    return boxedIvars;
+    return ivars;
 }
 
 + (NSArray *)inheritedIvarsForClass:(Class)class onObject:(id)object
@@ -341,21 +343,21 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     {
         NSMutableArray *mutableUnsortedFilteredMethods = [NSMutableArray array];
         
-        for (ALPHAObjectMethod *methodBox in candidateMethods)
+        for (ALPHAObjectMethod *method in candidateMethods)
         {
-            if ([methodBox.methodName rangeOfString:search options:NSCaseInsensitiveSearch].location != NSNotFound)
+            if ([method.name rangeOfString:search options:NSCaseInsensitiveSearch].location != NSNotFound)
             {
-                [mutableUnsortedFilteredMethods addObject:methodBox];
+                [mutableUnsortedFilteredMethods addObject:method];
             }
         }
         
         candidateMethods = mutableUnsortedFilteredMethods;
     }
     
-    return [candidateMethods sortedArrayUsingComparator:^NSComparisonResult(ALPHAObjectMethod *methodBox1, ALPHAObjectMethod *methodBox2)
+    return [candidateMethods sortedArrayUsingComparator:^NSComparisonResult(ALPHAObjectMethod *method1, ALPHAObjectMethod *method2)
     {
-        NSString *name1 = methodBox1.methodName;
-        NSString *name2 = methodBox2.methodName;
+        NSString *name1 = method1.name;
+        NSString *name2 = method2.name;
         return [name1 caseInsensitiveCompare:name2];
     }];
 }
@@ -363,7 +365,7 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
 
 + (NSArray *)methodsForClass:(Class)class areClassMethods:(BOOL)areClassMethods
 {
-    NSMutableArray *boxedMethods = [NSMutableArray array];
+    NSMutableArray *methods = [NSMutableArray array];
     unsigned int methodCount = 0;
     Method *methodList = class_copyMethodList(class, &methodCount);
     
@@ -371,18 +373,51 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     {
         for (unsigned int i = 0; i < methodCount; i++)
         {
-            ALPHAObjectMethod *methodBox = [[ALPHAObjectMethod alloc] init];
-            methodBox.methodName = NSStringFromSelector(method_getName(methodList[i]));
-            methodBox.methodReturnType = [FLEXRuntimeUtility prettyReturnTypeForMethod:methodList[i]];
-            methodBox.arguments = [FLEXRuntimeUtility prettyArgumentComponentsForMethod:methodList[i]];
-            methodBox.isClassMethod = areClassMethods;
+            ALPHAObjectMethod *method = [[ALPHAObjectMethod alloc] init];
+            method.name = NSStringFromSelector(method_getName(methodList[i]));
             
-            [boxedMethods addObject:methodBox];
+            char *returnType = method_copyReturnType(methodList[i]);
+            
+            method.returnType.name = [FLEXRuntimeUtility prettyReturnTypeForMethod:methodList[i]];
+            method.returnType.cType = @(returnType);
+            
+            free (returnType);
+            
+            method.arguments = (NSArray<ALPHAObjectArgument> *)[self argumentListForMethod:methodList[i]];
+            method.isClassMethod = areClassMethods;
+            
+            [methods addObject:method];
         }
         
         free(methodList);
     }
-    return boxedMethods;
+    return methods;
+}
+
++ (NSArray *)argumentListForMethod:(Method)method
+{
+    NSMutableArray *components = [NSMutableArray array];
+    
+    NSString *selectorName = NSStringFromSelector(method_getName(method));
+    NSArray *selectorComponents = [selectorName componentsSeparatedByString:@":"];
+    unsigned int numberOfArguments = method_getNumberOfArguments(method);
+    
+    for (unsigned int argIndex = kFLEXNumberOfImplicitArgs; argIndex < numberOfArguments; argIndex++)
+    {
+        ALPHAObjectArgument *argument = [[ALPHAObjectArgument alloc] init];
+        argument.name = selectorComponents[argIndex - kFLEXNumberOfImplicitArgs];
+        
+        char *argType = method_copyArgumentType(method, argIndex);
+        
+        argument.type.cType = @(argType);
+        argument.type.name = [FLEXRuntimeUtility readableTypeForEncoding:@(argType)];
+        
+        free(argType);
+        
+        [components addObject:argument];
+    }
+    
+    return components;
 }
 
 + (NSArray *)inheritedMethodsForClass:(Class)class areClassMethods:(BOOL)areClassMethods
@@ -432,6 +467,105 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     return superclasses;
 }
 
+#pragma mark - Actions
+
+- (BOOL)canPerformAction:(id<ALPHAIdentifiableItem>)action
+{
+    return [action isKindOfClass:[ALPHAObjectActionItem class]];
+}
+
+- (void)performAction:(ALPHAObjectActionItem *)action completion:(ALPHADataSourceCompletion)completion
+{
+    //
+    // Check if we have correct action to be performed
+    //
+    
+    NSError *error;
+    
+    if (![action isKindOfClass:[ALPHAObjectActionItem class]])
+    {
+        error = [NSError errorWithDomain:@"com.unifiedsense.alpha.error" code:2 userInfo:@{ @"action" : action }];
+    }
+    
+    //
+    // First find the referenced object
+    //
+    
+    id object = [self objectForPointerString:action.objectPointer className:action.objectClass];
+    id returnObject = nil;
+    
+    if (!error && object)
+    {
+        returnObject = [self executeAction:action onObject:object withError:&error];
+    }
+
+    //
+    // Call completion
+    //
+    
+    if (completion)
+    {
+        completion (returnObject, error);
+    }
+}
+
+- (id)executeAction:(ALPHAObjectActionItem *)action onObject:(id)object withError:(NSError **)error;
+{
+    if (!object)
+    {
+        return nil;
+    }
+    
+    //
+    // Property setter calls, method calls, handling NSUserDefaults too
+    //
+    
+    if (action.selector)
+    {
+        SEL selector = NSSelectorFromString(action.selector);
+        return [FLEXRuntimeUtility performSelector:selector onObject:object withArguments:action.arguments error:error];
+    }
+    
+    //
+    // iVars
+    //
+    
+    else if (action.ivar)
+    {
+        unsigned int ivarCount = 0;
+        Ivar *ivarList = class_copyIvarList([object class], &ivarCount);
+        
+        Ivar ivar = NULL;
+        
+        if (ivarList)
+        {
+            for (unsigned int i = 0; i < ivarCount; i++)
+            {
+                NSString *ivarName = [NSString stringWithUTF8String:ivar_getName(ivarList[i])];
+                
+                if ([ivarName isEqualToString:action.ivar])
+                {
+                    ivar = ivarList[i];
+                    
+                    break;
+                }
+            }
+            
+            free (ivarList);
+        }
+        
+        if (ivar != NULL)
+        {
+            [FLEXRuntimeUtility setValue:[action.arguments firstObject] forIvar:ivar onObject:object];
+        }
+    }
+    else if (*error)
+    {
+        *error = [NSError errorWithDomain:@"com.unifedsense.alpha.error" code:3 userInfo:@{}];
+    }
+    
+    return nil;
+}
 
 #pragma mark - Private methods
 
@@ -440,14 +574,22 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     __unsafe_unretained id object;
     sscanf([pointerString cStringUsingEncoding:NSUTF8StringEncoding], "%p", &object);
     
-    Class objectClass = NSClassFromString(className);
+    //
+    // Do a class name check
+    //
     
-    if ([object class] == objectClass)
+    if (className)
     {
-        return object;
+        Class objectClass = NSClassFromString(className);
+        
+        if ([object class] == objectClass)
+        {
+            return object;
+        }
     }
     
-    return nil;
+    return object;
 }
+
 
 @end

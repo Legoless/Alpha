@@ -659,7 +659,7 @@ static const NSInteger kFLEXObjectExplorerScopeIncludeInheritanceIndex = 1;
 - (BOOL)canDrillInToRow:(NSInteger)row inExplorerSection:(FLEXObjectExplorerSection)section
 {
     BOOL canDrillIn = NO;
-    switch (section) {
+    /*switch (section) {
         case FLEXObjectExplorerSectionDescription:
             break;
             
@@ -704,7 +704,7 @@ static const NSInteger kFLEXObjectExplorerScopeIncludeInheritanceIndex = 1;
         case FLEXObjectExplorerSectionReferencingInstances:
             canDrillIn = YES;
             break;
-    }
+    }*/
     return canDrillIn;
 }
 
@@ -781,7 +781,7 @@ static const NSInteger kFLEXObjectExplorerScopeIncludeInheritanceIndex = 1;
 - (UIViewController *)drillInViewControllerForRow:(NSUInteger)row inExplorerSection:(FLEXObjectExplorerSection)section
 {
     UIViewController *viewController = nil;
-    switch (section) {
+    /*switch (section) {
         case FLEXObjectExplorerSectionDescription:
             break;
             
@@ -831,7 +831,7 @@ static const NSInteger kFLEXObjectExplorerScopeIncludeInheritanceIndex = 1;
         case FLEXObjectExplorerSectionReferencingInstances: {
             viewController = [FLEXInstancesTableViewController instancesTableViewControllerForInstancesReferencingObject:self.object];
         } break;
-    }
+    }*/
     return viewController;
 }
 

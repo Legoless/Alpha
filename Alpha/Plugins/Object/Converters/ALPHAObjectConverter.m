@@ -96,13 +96,13 @@
         
         if ([object isKindOfClass:[ALPHAObjectProperty class]])
         {
-            item.title = [FLEXRuntimeUtility appendName:[object propertyName] toType:[object propertyType]];
-            item.detail = [object propertyValue];
+            item.title = [object description];
+            item.detail = [(ALPHAObjectProperty *)object value];
         }
         else if ([object isKindOfClass:[ALPHAObjectIvar class]])
         {
-            item.title = [FLEXRuntimeUtility appendName:[object ivarName] toType:[object ivarType]];
-            item.detail = [object ivarValue];
+            item.title = [object prettyDescription];
+            item.detail = [(ALPHAObjectProperty *)object value];
         }
         else if ([object isKindOfClass:[ALPHAObjectMethod class]])
         {

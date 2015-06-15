@@ -13,41 +13,55 @@
 #import "FLEXArgumentInputViewFactory.h"
 #import "FLEXArgumentInputSwitchView.h"
 
-@interface ALPHAIvarEditorViewController () <FLEXArgumentInputViewDelegate>
+#import "ALPHAObjectActionItem.h"
 
-@property (nonatomic, assign) Ivar ivar;
+@interface ALPHAIvarEditorViewController () <FLEXArgumentInputViewDelegate>
 
 @end
 
 @implementation ALPHAIvarEditorViewController
 
-- (id)initWithSource:(id<ALPHADataSource>)source objectTarget:(ALPHAObjectModel *)target
+#pragma mark - Getters and Setters
+
+- (void)setIvar:(ALPHAObjectIvar *)ivar
 {
-    self = [super initWithSource:source objectTarget:target];
+    _ivar = ivar;
     
-    if (self)
+    if (self.isViewLoaded)
     {
-        self.title = @"Instance Variable";
+        [self updateViewWithIvar:ivar];
     }
-    
-    return self;
 }
+
+- (void)updateViewWithIvar:(ALPHAObjectIvar *)ivar
+{
+    self.fieldEditorView.fieldDescription = [self.ivar description];
+    
+    const char *typeEncoding = [ivar.type.cType UTF8String];
+    
+    FLEXArgumentInputView *inputView = [FLEXArgumentInputViewFactory argumentInputViewForTypeEncoding:typeEncoding];
+    inputView.backgroundColor = self.view.backgroundColor;
+    inputView.inputValue = ivar.value;
+    inputView.delegate = self;
+    
+    self.fieldEditorView.argumentInputViews = @[ inputView ];
+    
+    // Don't show a "set" button for switches. Set the ivar when the switch toggles.
+    if ([inputView isKindOfClass:[FLEXArgumentInputSwitchView class]])
+    {
+        self.navigationItem.rightBarButtonItem = nil;
+    }
+}
+
+#pragma mark - UIViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.fieldEditorView.fieldDescription = [FLEXRuntimeUtility prettyNameForIvar:self.ivar];
-    
-    FLEXArgumentInputView *inputView = [FLEXArgumentInputViewFactory argumentInputViewForTypeEncoding:ivar_getTypeEncoding(self.ivar)];
-    inputView.backgroundColor = self.view.backgroundColor;
-    inputView.inputValue = [FLEXRuntimeUtility valueForIvar:self.ivar onObject:self.target];
-    inputView.delegate = self;
-    self.fieldEditorView.argumentInputViews = @[inputView];
-    
-    // Don't show a "set" button for switches. Set the ivar when the switch toggles.
-    if ([inputView isKindOfClass:[FLEXArgumentInputSwitchView class]]) {
-        self.navigationItem.rightBarButtonItem = nil;
+    if (self.ivar)
+    {
+        [self updateViewWithIvar:self.ivar];
     }
 }
 
@@ -55,20 +69,44 @@
 {
     [super actionButtonPressed:sender];
     
-    [FLEXRuntimeUtility setValue:self.firstInputView.inputValue forIvar:self.ivar onObject:self.target];
-    self.firstInputView.inputValue = [FLEXRuntimeUtility valueForIvar:self.ivar onObject:self.target];
+    ALPHAObjectActionItem *action = [[ALPHAObjectActionItem alloc] initWithObjectModel:self.target];
+    action.ivar = self.ivar.name;
+    action.arguments = self.firstInputView.inputValue ? @[ self.firstInputView.inputValue ] : nil;
+    
+    [self.source performAction:action completion:^(id model, NSError *error)
+    {
+        if (error)
+        {
+            NSString *title = @"Ivar Set Failed";
+            NSString *message = [error localizedDescription];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+        }
+        else
+        {
+            // If the setter was called without error, pop the view controller to indicate that and make the user's life easier.
+            // Don't do this for simulated taps on the action button (i.e. from switch/BOOL editors). The experience is weird there.
+            if (sender)
+            {
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+        }
+    }];
 }
 
 - (void)argumentInputViewValueDidChange:(FLEXArgumentInputView *)argumentInputView
 {
-    if ([argumentInputView isKindOfClass:[FLEXArgumentInputSwitchView class]]) {
+    if ([argumentInputView isKindOfClass:[FLEXArgumentInputSwitchView class]])
+    {
         [self actionButtonPressed:nil];
     }
 }
 
-+ (BOOL)canEditIvar:(Ivar)ivar currentValue:(id)value
++ (BOOL)canEditIvar:(ALPHAObjectIvar *)ivar
 {
-    return [FLEXArgumentInputViewFactory canEditFieldWithTypeEncoding:ivar_getTypeEncoding(ivar) currentValue:value];
+    const char *typeEncoding = [ivar.type.cType UTF8String];
+    
+    return [FLEXArgumentInputViewFactory canEditFieldWithTypeEncoding:typeEncoding currentValue:ivar.value];
 }
 
 @end

@@ -10,16 +10,35 @@
 
 @implementation ALPHAObjectMethod
 
+- (instancetype)init
+{
+    self = [super init];
+    
+    if (self)
+    {
+        self.returnType = [ALPHAObjectType new];
+    }
+    
+    return self;
+}
+
 - (NSString *)prettyDescription
 {
-    NSString *selectorName = self.methodName;
+    NSString *selectorName = self.name;
     NSString *methodTypeString = self.isClassMethod ? @"+" : @"-";
-    NSString *readableReturnType = self.methodReturnType;
+    NSString *readableReturnType = self.returnType.name;
     NSString *prettyName = [NSString stringWithFormat:@"%@ (%@)", methodTypeString, readableReturnType];
     
     if ([self.arguments count] > 0)
     {
-        prettyName = [prettyName stringByAppendingString:[self.arguments componentsJoinedByString:@" "]];
+        NSMutableArray *prettyArguments = [NSMutableArray array];
+        
+        for (ALPHAObjectArgument *argument in self.arguments)
+        {
+            [prettyArguments addObject:argument.prettyDescription];
+        }
+        
+        prettyName = [prettyName stringByAppendingString:[prettyArguments componentsJoinedByString:@" "]];
     }
     else
     {

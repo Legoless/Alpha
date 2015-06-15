@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Flipboard. All rights reserved.
 //
 
+#import <objc/runtime.h>
+
 #import "FLEXClassExplorerViewController.h"
 #import "ALPHAMethodCallingViewController.h"
 #import "FLEXInstancesTableViewController.h"
@@ -96,7 +98,7 @@ typedef NS_ENUM(NSUInteger, FLEXClassExplorerRow) {
 - (UIViewController *)customSectionDrillInViewControllerForRowCookie:(id)rowCookie
 {
     UIViewController *drillInViewController = nil;
-    FLEXClassExplorerRow row = [rowCookie unsignedIntegerValue];
+    /*FLEXClassExplorerRow row = [rowCookie unsignedIntegerValue];
     switch (row) {
         case FLEXClassExplorerRowNew:
             drillInViewController = [[ALPHAMethodCallingViewController alloc] initWithTarget:self.theClass method:class_getClassMethod(self.theClass, @selector(new))];
@@ -109,7 +111,7 @@ typedef NS_ENUM(NSUInteger, FLEXClassExplorerRow) {
         case FLEXClassExplorerRowLiveInstances:
             drillInViewController = [FLEXInstancesTableViewController instancesTableViewControllerForClassName:NSStringFromClass(self.theClass)];
             break;
-    }
+    }*/
     return drillInViewController;
 }
 

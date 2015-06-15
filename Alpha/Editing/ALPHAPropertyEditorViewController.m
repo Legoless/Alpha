@@ -13,79 +13,111 @@
 #import "FLEXArgumentInputViewFactory.h"
 #import "FLEXArgumentInputSwitchView.h"
 
+#import "ALPHAObjectActionItem.h"
+
 @interface ALPHAPropertyEditorViewController () <FLEXArgumentInputViewDelegate>
 
 @end
 
 @implementation ALPHAPropertyEditorViewController
 
-- (id)initWithTarget:(id)target property:(objc_property_t)property
+#pragma mark - Getters and Setters
+
+- (void)setProperty:(ALPHAObjectProperty *)property
 {
-    self = [super initWithTarget:target];
-    if (self) {
-        self.property = property;
-        self.title = @"Property";
+    _property = property;
+    
+    if (self.isViewLoaded)
+    {
+        [self updateViewWithProperty:property];
     }
-    return self;
 }
+
+- (void)updateViewWithProperty:(ALPHAObjectProperty *)property
+{
+    self.fieldEditorView.fieldDescription = property.prettyDescription;
+    self.setterButton.enabled = [[self class] canEditProperty:property];
+    
+    const char *typeEncoding = [property.type.cType UTF8String];
+    FLEXArgumentInputView *inputView = [FLEXArgumentInputViewFactory argumentInputViewForTypeEncoding:typeEncoding];
+    inputView.backgroundColor = self.view.backgroundColor;
+    inputView.inputValue = property.value;
+    inputView.delegate = self;
+    
+    self.fieldEditorView.argumentInputViews = @[ inputView ];
+    
+    // Don't show a "set" button for switches - just call the setter immediately after the switch toggles.
+    
+    if ([inputView isKindOfClass:[FLEXArgumentInputSwitchView class]])
+    {
+        self.navigationItem.rightBarButtonItem = nil;
+    }
+    
+    self.title = @"Property";
+}
+
+#pragma mark - UIViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.fieldEditorView.fieldDescription = [FLEXRuntimeUtility fullDescriptionForProperty:self.property];
-    id currentValue = [FLEXRuntimeUtility valueForProperty:self.property onObject:self.target];
-    self.setterButton.enabled = [[self class] canEditProperty:self.property currentValue:currentValue];
-    
-    const char *typeEncoding = [[FLEXRuntimeUtility typeEncodingForProperty:self.property] UTF8String];
-    FLEXArgumentInputView *inputView = [FLEXArgumentInputViewFactory argumentInputViewForTypeEncoding:typeEncoding];
-    inputView.backgroundColor = self.view.backgroundColor;
-    inputView.inputValue = [FLEXRuntimeUtility valueForProperty:self.property onObject:self.target];
-    inputView.delegate = self;
-    self.fieldEditorView.argumentInputViews = @[inputView];
-    
-    // Don't show a "set" button for switches - just call the setter immediately after the switch toggles.
-    if ([inputView isKindOfClass:[FLEXArgumentInputSwitchView class]]) {
-        self.navigationItem.rightBarButtonItem = nil;
+
+    if (self.property)
+    {
+        [self updateViewWithProperty:self.property];
     }
 }
+
+#pragma mark - ALPHAFieldEditorViewController
 
 - (void)actionButtonPressed:(id)sender
 {
     [super actionButtonPressed:sender];
     
     id userInputObject = self.firstInputView.inputValue;
-    NSArray *arguments = userInputObject ? @[userInputObject] : nil;
-    SEL setterSelector = [FLEXRuntimeUtility setterSelectorForProperty:self.property];
-    NSError *error = nil;
-    [FLEXRuntimeUtility performSelector:setterSelector onObject:self.target withArguments:arguments error:&error];
-    if (error) {
-        NSString *title = @"Property Setter Failed";
-        NSString *message = [error localizedDescription];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
-        self.firstInputView.inputValue = [FLEXRuntimeUtility valueForProperty:self.property onObject:self.target];
-    } else {
-        // If the setter was called without error, pop the view controller to indicate that and make the user's life easier.
-        // Don't do this for simulated taps on the action button (i.e. from switch/BOOL editors). The experience is weird there.
-        if (sender) {
-            [self.navigationController popViewControllerAnimated:YES];
+
+    //
+    // Create object action
+    //
+    
+    ALPHAObjectActionItem *action = [[ALPHAObjectActionItem alloc] initWithObjectModel:self.target];
+    action.selector = self.property.setter;
+    action.arguments = userInputObject ? @[ userInputObject ] : nil;
+    
+    [self.source performAction:action completion:^(id model, NSError *error)
+    {
+        if (error)
+        {
+            NSString *title = @"Property Setter Failed";
+            NSString *message = [error localizedDescription];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
         }
-    }
+        else
+        {
+            // If the setter was called without error, pop the view controller to indicate that and make the user's life easier.
+            // Don't do this for simulated taps on the action button (i.e. from switch/BOOL editors). The experience is weird there.
+            if (sender)
+            {
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+        }
+    }];
 }
 
 - (void)argumentInputViewValueDidChange:(FLEXArgumentInputView *)argumentInputView
 {
-    if ([argumentInputView isKindOfClass:[FLEXArgumentInputSwitchView class]]) {
+    if ([argumentInputView isKindOfClass:[FLEXArgumentInputSwitchView class]])
+    {
         [self actionButtonPressed:nil];
     }
 }
 
-+ (BOOL)canEditProperty:(objc_property_t)property currentValue:(id)value
++ (BOOL)canEditProperty:(ALPHAObjectProperty *)property
 {
-    const char *typeEncoding = [[FLEXRuntimeUtility typeEncodingForProperty:property] UTF8String];
-    BOOL canEditType = [FLEXArgumentInputViewFactory canEditFieldWithTypeEncoding:typeEncoding currentValue:value];
-    BOOL isReadonly = [FLEXRuntimeUtility isReadonlyProperty:property];
+    const char *typeEncoding = [property.type.cType UTF8String];
+    BOOL canEditType = [FLEXArgumentInputViewFactory canEditFieldWithTypeEncoding:typeEncoding currentValue:property.value];
+    BOOL isReadonly = property.isReadOnly;
     return canEditType && !isReadonly;
 }
 

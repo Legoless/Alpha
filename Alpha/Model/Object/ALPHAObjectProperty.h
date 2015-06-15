@@ -6,15 +6,33 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHAObjectValue.h"
+#import "ALPHAObjectType.h"
+
+#import "ALPHAObjectPrintable.h"
 
 @protocol ALPHAObjectProperty <NSObject>
 
 @end
 
-@interface ALPHAObjectProperty : NSObject <ALPHASerializableItem>
+@interface ALPHAObjectProperty : NSObject <ALPHASerializableItem, ALPHAObjectPrintable>
+
+@property (nonatomic, copy) NSString *name;
 
 @property (nonatomic, strong) ALPHAObjectType* type;
-@property (nonatomic, strong) ALPHAObjectValue *value;
+
+@property (nonatomic, copy) NSString *value;
+
+/*!
+ *  Attributes from runtime inspection
+ */
+@property (nonatomic, copy) NSDictionary *attributes;
+
+#pragma mark - Convenience
+
+- (BOOL)isReadOnly;
+- (BOOL)isDynamic;
+
+- (NSString *)setter;
+- (NSString *)getter;
 
 @end

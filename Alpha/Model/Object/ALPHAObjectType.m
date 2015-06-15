@@ -10,4 +10,9 @@
 
 @implementation ALPHAObjectType
 
+- (NSString *)prettyDescription
+{
+    return self.name;
+}
+
 @end

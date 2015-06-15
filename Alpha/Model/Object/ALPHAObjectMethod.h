@@ -14,9 +14,9 @@
 
 @end
 
-@interface ALPHAObjectMethod : NSObject <ALPHASerializableItem>
+@interface ALPHAObjectMethod : NSObject <ALPHASerializableItem, ALPHAObjectPrintable>
 
-@property (nonatomic, copy) NSString *methodName;
+@property (nonatomic, copy) NSString *name;
 @property (nonatomic, strong) ALPHAObjectType *returnType;
 
 @property (nonatomic, assign) BOOL isClassMethod;

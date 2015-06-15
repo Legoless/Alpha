@@ -7,14 +7,15 @@
 //
 
 #import "ALPHASerialization.h"
+#import "ALPHAObjectPrintable.h"
 
 @protocol ALPHAObjectType <NSObject>
 
 @end
 
-@interface ALPHAObjectType : NSObject <ALPHASerializableItem>
+@interface ALPHAObjectType : NSObject <ALPHASerializableItem, ALPHAObjectPrintable>
 
-@property (nonatomic, copy) NSString *type;
+@property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *cType;
 
 @end

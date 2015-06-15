@@ -131,7 +131,7 @@ typedef NS_ENUM(NSUInteger, FLEXViewExplorerRow) {
 {
     UIViewController *drillInViewController = nil;
     
-    if ([rowCookie isKindOfClass:[NSNumber class]]) {
+    /*if ([rowCookie isKindOfClass:[NSNumber class]]) {
         FLEXViewExplorerRow row = [rowCookie unsignedIntegerValue];
         switch (row) {
             case FLEXViewExplorerRowViewController:
@@ -152,7 +152,7 @@ typedef NS_ENUM(NSUInteger, FLEXViewExplorerRow) {
                 drillInViewController = [FLEXObjectExplorerFactory explorerViewControllerForObject:currentValue];
             }
         }
-    }
+    }*/
 
     return drillInViewController;
 }

@@ -6,16 +6,17 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHAObjectValue.h"
 #import "ALPHAObjectType.h"
 
 @protocol ALPHAObjectIvar <NSObject>
 
 @end
 
-@interface ALPHAObjectIvar : NSObject <ALPHASerializableItem>
+@interface ALPHAObjectIvar : NSObject <ALPHASerializableItem, ALPHAObjectPrintable>
+
+@property (nonatomic, copy) NSString* name;
 
 @property (nonatomic, strong) ALPHAObjectType* type;
-@property (nonatomic, strong) ALPHAObjectValue *value;
+@property (nonatomic, strong) NSString *value;
 
 @end

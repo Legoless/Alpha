@@ -32,6 +32,7 @@ extern NSString *const kFLEXUtilityAttributeOldStyleTypeEncoding;
 // Global Helpers
 + (NSString *)appendName:(NSString *)name toType:(NSString *)type;
 + (NSString *)prefixOfClassName:(NSString *)className;
++ (NSString *)readableTypeForEncoding:(NSString *)encodingString;
 
 // Property Helpers
 + (NSString *)prettyNameForProperty:(objc_property_t)property;
@@ -43,6 +44,7 @@ extern NSString *const kFLEXUtilityAttributeOldStyleTypeEncoding;
 + (id)valueForProperty:(objc_property_t)property onObject:(id)object;
 + (NSString *)descriptionForIvarOrPropertyValue:(id)value;
 + (void)tryAddPropertyWithName:(const char *)name attributes:(NSDictionary *)attributePairs toClass:(__unsafe_unretained Class)theClass;
++ (NSDictionary *)attributesDictionaryForProperty:(objc_property_t)property;
 
 // Ivar Helpers
 + (NSString *)prettyNameForIvar:(Ivar)ivar;

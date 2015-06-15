@@ -10,4 +10,21 @@
 
 @implementation ALPHAObjectArgument
 
+- (instancetype)init
+{
+    self = [super init];
+    
+    if (self)
+    {
+        self.type = [ALPHAObjectType new];
+    }
+    
+    return self;
+}
+
+- (NSString *)prettyDescription
+{
+    return [NSString stringWithFormat:@"%@:(%@)", self.name, self.type.prettyDescription];
+}
+
 @end

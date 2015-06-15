@@ -71,16 +71,6 @@
 
 #pragma mark - ALPHADataSource
 
-- (BOOL)canPerformAction:(id<ALPHAIdentifiableItem>)action
-{
-    if (!self.isEnabled)
-    {
-        return NO;
-    }
-    
-    return [self.actions containsObject:action.request.identifier];
-}
-
 - (BOOL)hasDataForRequest:(ALPHARequest *)request
 {
     if (!self.isEnabled)
@@ -99,6 +89,16 @@
     {
         completion (model, nil);
     }
+}
+
+- (BOOL)canPerformAction:(id<ALPHAIdentifiableItem>)action
+{
+    if (!self.isEnabled)
+    {
+        return NO;
+    }
+    
+    return [self.actions containsObject:action.request.identifier];
 }
 
 - (void)performAction:(id<ALPHAIdentifiableItem>)action completion:(ALPHADataSourceCompletion)completion

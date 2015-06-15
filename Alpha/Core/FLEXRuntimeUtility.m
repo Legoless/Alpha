@@ -10,18 +10,18 @@
 #import "FLEXRuntimeUtility.h"
 
 // See https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtPropertyIntrospection.html#//apple_ref/doc/uid/TP40008048-CH101-SW6
-NSString *const kFLEXUtilityAttributeTypeEncoding = @"T";
-NSString *const kFLEXUtilityAttributeBackingIvar = @"V";
-NSString *const kFLEXUtilityAttributeReadOnly = @"R";
-NSString *const kFLEXUtilityAttributeCopy = @"C";
-NSString *const kFLEXUtilityAttributeRetain = @"&";
-NSString *const kFLEXUtilityAttributeNonAtomic = @"N";
-NSString *const kFLEXUtilityAttributeCustomGetter = @"G";
-NSString *const kFLEXUtilityAttributeCustomSetter = @"S";
-NSString *const kFLEXUtilityAttributeDynamic = @"D";
-NSString *const kFLEXUtilityAttributeWeak = @"W";
-NSString *const kFLEXUtilityAttributeGarbageCollectable = @"P";
-NSString *const kFLEXUtilityAttributeOldStyleTypeEncoding = @"t";
+NSString *const kFLEXUtilityAttributeTypeEncoding           = @"T";
+NSString *const kFLEXUtilityAttributeBackingIvar            = @"V";
+NSString *const kFLEXUtilityAttributeReadOnly               = @"R";
+NSString *const kFLEXUtilityAttributeCopy                   = @"C";
+NSString *const kFLEXUtilityAttributeRetain                 = @"&";
+NSString *const kFLEXUtilityAttributeNonAtomic              = @"N";
+NSString *const kFLEXUtilityAttributeCustomGetter           = @"G";
+NSString *const kFLEXUtilityAttributeCustomSetter           = @"S";
+NSString *const kFLEXUtilityAttributeDynamic                = @"D";
+NSString *const kFLEXUtilityAttributeWeak                   = @"W";
+NSString *const kFLEXUtilityAttributeGarbageCollectable     = @"P";
+NSString *const kFLEXUtilityAttributeOldStyleTypeEncoding   = @"t";
 
 static NSString *const FLEXRuntimeUtilityErrorDomain = @"FLEXRuntimeUtilityErrorDomain";
 typedef NS_ENUM(NSInteger, FLEXRuntimeUtilityErrorCode) {

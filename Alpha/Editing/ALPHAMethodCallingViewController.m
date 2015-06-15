@@ -13,6 +13,9 @@
 #import "FLEXObjectExplorerViewController.h"
 #import "FLEXArgumentInputView.h"
 #import "FLEXArgumentInputViewFactory.h"
+#import "ALPHAObjectActionItem.h"
+
+#import "ALPHAScreenManager.h"
 
 @interface ALPHAMethodCallingViewController ()
 
@@ -20,16 +23,21 @@
 
 @implementation ALPHAMethodCallingViewController
 
+#pragma mark - Getters and Setters
+
 - (void)setMethod:(ALPHAObjectMethod *)method
 {
     _method = method;
     
-    self.title = method.isClassMethod ? @"Class Method" : @"Method";
+    if (self.isViewLoaded)
+    {
+        [self updateViewWithMethod:method];
+    }
 }
 
-- (void)viewDidLoad
+- (void)updateViewWithMethod:(ALPHAObjectMethod *)method
 {
-    [super viewDidLoad];
+    self.title = method.isClassMethod ? @"Class Method" : @"Method";
     
     self.fieldEditorView.fieldDescription = [self.method prettyDescription];
     
@@ -37,20 +45,34 @@
     
     unsigned int argumentIndex = kFLEXNumberOfImplicitArgs;
     
-    for (ALPHAObjectMethod *methodComponent in self.method.arguments)
+    for (ALPHAObjectArgument *methodComponent in self.method.arguments)
     {
-        char *argumentTypeEncoding = method_copyArgumentType(self.method, argumentIndex);
-        FLEXArgumentInputView *inputView = [FLEXArgumentInputViewFactory argumentInputViewForTypeEncoding:argumentTypeEncoding];
-        free(argumentTypeEncoding);
+        const char *typeEncoding = [self.method.returnType.cType UTF8String];
+        FLEXArgumentInputView *inputView = [FLEXArgumentInputViewFactory argumentInputViewForTypeEncoding:typeEncoding];
         
         inputView.backgroundColor = self.view.backgroundColor;
-        inputView.title = methodComponent;
+        inputView.title = methodComponent.prettyDescription;
+        
         [argumentInputViews addObject:inputView];
         argumentIndex++;
     }
     
     self.fieldEditorView.argumentInputViews = argumentInputViews;
 }
+
+#pragma mark - UIViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    if (self.method)
+    {
+        [self updateViewWithMethod:self.method];
+    }
+}
+
+#pragma mark - ALPHAFieldEditorViewController
 
 - (NSString *)titleForActionButton
 {
@@ -62,32 +84,50 @@
     [super actionButtonPressed:sender];
     
     NSMutableArray *arguments = [NSMutableArray array];
-    for (FLEXArgumentInputView *inputView in self.fieldEditorView.argumentInputViews) {
+    
+    for (FLEXArgumentInputView *inputView in self.fieldEditorView.argumentInputViews)
+    {
         id argumentValue = inputView.inputValue;
-        if (!argumentValue) {
+        
+        if (!argumentValue)
+        {
             // Use NSNulls as placeholders in the array. They will be interpreted as nil arguments.
             argumentValue = [NSNull null];
         }
+        
         [arguments addObject:argumentValue];
     }
     
-    NSError *error = nil;
-    id returnedObject = [FLEXRuntimeUtility performSelector:method_getName(self.method) onObject:self.target withArguments:arguments error:&error];
+    ALPHAObjectActionItem *action = [[ALPHAObjectActionItem alloc] initWithObjectModel:self.target];
+    action.selector = self.method.name;
+    action.arguments = arguments;
     
-    if (error) {
-        NSString *title = @"Method Call Failed";
-        NSString *message = [error localizedDescription];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
-    } else if (returnedObject) {
-        // For non-nil (or void) return types, push an explorer view controller to display the returned object
-        FLEXObjectExplorerViewController *explorerViewController = [FLEXObjectExplorerFactory explorerViewControllerForObject:returnedObject];
-        [self.navigationController pushViewController:explorerViewController animated:YES];
-    } else {
-        // If we didn't get a returned object but the method call succeeded,
-        // pop this view controller off the stack to indicate that the call went through.
-        [self.navigationController popViewControllerAnimated:YES];
-    }
+    [self.source performAction:action completion:^(id returnedObject, NSError *error)
+    {
+        if (error)
+        {
+            NSString *title = @"Method Call Failed";
+            NSString *message = [error localizedDescription];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+        }
+        else if (returnedObject)
+        {
+            //
+            // For non-nil (or void) return types, push an explorer view controller to display the returned object
+            //
+            
+            ALPHAScreenManager* manager = [ALPHAScreenManager defaultManager];
+            
+            [manager pushObject:returnedObject];
+        }
+        else
+        {
+            // If we didn't get a returned object but the method call succeeded,
+            // pop this view controller off the stack to indicate that the call went through.
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }];
 }
 
 @end
