@@ -41,4 +41,11 @@
 - (NSString *)setter;
 - (NSString *)getter;
 
+/*!
+ *  Converts string value back to value
+ *
+ *  @return converted value
+ */
+- (id)convertedValue;
+
 @end

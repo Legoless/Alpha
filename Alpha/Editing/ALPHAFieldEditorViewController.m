@@ -73,16 +73,18 @@
 {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [FLEXUtility scrollViewGrayColor];
+    self.view.backgroundColor = self.theme.backgroundColor;
     
     self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
-    self.scrollView.backgroundColor = self.view.backgroundColor;
+    self.scrollView.backgroundColor = self.theme.backgroundColor;
     self.scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.scrollView.delegate = self;
     [self.view addSubview:self.scrollView];
     
     self.fieldEditorView = [[FLEXFieldEditorView alloc] init];
-    self.fieldEditorView.backgroundColor = self.view.backgroundColor;
+    self.fieldEditorView.backgroundColor = self.theme.backgroundColor;
+    self.fieldEditorView.separatorColor = self.theme.highlightedBackgroundColor;
+    self.fieldEditorView.tintColor = self.theme.tintColor;
     
     [self.scrollView addSubview:self.fieldEditorView];
     

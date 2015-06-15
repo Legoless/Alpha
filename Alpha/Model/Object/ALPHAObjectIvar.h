@@ -24,4 +24,6 @@
 @property (nonatomic, strong) ALPHAObjectType* type;
 @property (nonatomic, strong) NSString *value;
 
+- (id)convertedValue;
+
 @end

@@ -31,12 +31,17 @@
     // Local notification test
     //
     
-    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
-    localNotification.alertAction = @"Finish";
-    localNotification.alertBody = @"Finish stuff.";
-    localNotification.fireDate = [[NSDate date] dateByAddingTimeInterval:86400.0 * 4.0];
+    if ([[UIApplication sharedApplication] scheduledLocalNotifications].count < 5)
+    {
+        UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+        localNotification.alertAction = @"Finish";
+        localNotification.alertBody = @"Finish stuff.";
+        localNotification.fireDate = [[NSDate date] dateByAddingTimeInterval:86400.0 * 4.0];
+        
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    }
     
-    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    [self performSelector:@selector(alphaButtonTapped:) withObject:self afterDelay:1.0];
 }
 
 - (void)alphaButtonTapped:(id)sender

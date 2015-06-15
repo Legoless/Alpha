@@ -21,10 +21,32 @@
 
 @implementation FLEXFieldEditorView
 
+#pragma mark - Getters and Setters
+
+- (void)setTintColor:(UIColor *)tintColor
+{
+    [super setTintColor:tintColor];
+    
+    self.targetDescriptionLabel.textColor = tintColor;
+    self.fieldDescriptionLabel.textColor = tintColor;
+}
+
+- (void)setSeparatorColor:(UIColor *)separatorColor
+{
+    _separatorColor = separatorColor;
+    
+    self.targetDescriptionDivider.backgroundColor = separatorColor;
+    self.fieldDescriptionDivider.backgroundColor = separatorColor;
+}
+
+#pragma mark - Initialization
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {
+    
+    if (self)
+    {
         self.targetDescriptionLabel = [[UILabel alloc] init];
         self.targetDescriptionLabel.numberOfLines = 0;
         self.targetDescriptionLabel.font = [[self class] labelFont];
@@ -71,7 +93,8 @@
     self.fieldDescriptionDivider.frame = CGRectMake(originX, originY, contentWidth, dividerLineHeight);
     originY = CGRectGetMaxY(self.fieldDescriptionDivider.frame) + verticalPadding;
 
-    for (UIView *argumentInputView in self.argumentInputViews) {
+    for (UIView *argumentInputView in self.argumentInputViews)
+    {
         CGSize inputViewSize = [argumentInputView sizeThatFits:constrainSize];
         argumentInputView.frame = CGRectMake(originX, originY, inputViewSize.width, inputViewSize.height);
         originY = CGRectGetMaxY(argumentInputView.frame) + verticalPadding;
@@ -87,7 +110,8 @@
 
 - (void)setTargetDescription:(NSString *)targetDescription
 {
-    if (![_targetDescription isEqual:targetDescription]) {
+    if (![_targetDescription isEqual:targetDescription])
+    {
         _targetDescription = targetDescription;
         self.targetDescriptionLabel.text = targetDescription;
         [self setNeedsLayout];
@@ -96,7 +120,8 @@
 
 - (void)setFieldDescription:(NSString *)fieldDescription
 {
-    if (![_fieldDescription isEqual:fieldDescription]) {
+    if (![_fieldDescription isEqual:fieldDescription])
+    {
         _fieldDescription = fieldDescription;
         self.fieldDescriptionLabel.text = fieldDescription;
         [self setNeedsLayout];
@@ -105,15 +130,18 @@
 
 - (void)setArgumentInputViews:(NSArray *)argumentInputViews
 {
-    if (![_argumentInputViews isEqual:argumentInputViews]) {
+    if (![_argumentInputViews isEqual:argumentInputViews])
+    {
         
-        for (FLEXArgumentInputView *inputView in _argumentInputViews) {
+        for (FLEXArgumentInputView *inputView in _argumentInputViews)
+        {
             [inputView removeFromSuperview];
         }
         
         _argumentInputViews = argumentInputViews;
         
-        for (FLEXArgumentInputView *newInputView in argumentInputViews) {
+        for (FLEXArgumentInputView *newInputView in argumentInputViews)
+        {
             [self addSubview:newInputView];
         }
         
@@ -173,7 +201,8 @@
     height += dividerLineHeight;
     height += verticalPadding;
     
-    for (FLEXArgumentInputView *inputView in self.argumentInputViews) {
+    for (FLEXArgumentInputView *inputView in self.argumentInputViews)
+    {
         height += [inputView sizeThatFits:constrainSize].height;
         height += verticalPadding;
     }

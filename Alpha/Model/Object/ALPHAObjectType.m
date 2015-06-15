@@ -15,4 +15,12 @@
     return self.name;
 }
 
+- (NSString *)typeString
+{
+    NSString* type = [self.name stringByReplacingOccurrencesOfString:@"*" withString:@""];
+    type = [type stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+    return type;
+}
+
 @end

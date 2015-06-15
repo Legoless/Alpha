@@ -16,4 +16,5 @@
 @property (nonatomic, copy) NSString* objectClass;
 @property (nonatomic, copy) NSString* objectPointer;
 
+
 @end

@@ -18,4 +18,11 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *cType;
 
+/*!
+ *  Cleans name so clean string is returned (pointer stars removed)
+ *
+ *  @return type string
+ */
+- (NSString *)typeString;
+
 @end

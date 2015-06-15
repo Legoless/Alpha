@@ -6,9 +6,11 @@
 //  Copyright (c) 2014 Flipboard. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @interface FLEXFieldEditorView : UIView
+
+@property (nonatomic, copy) UIColor *separatorColor;
 
 @property (nonatomic, copy) NSString *targetDescription;
 @property (nonatomic, copy) NSString *fieldDescription;
