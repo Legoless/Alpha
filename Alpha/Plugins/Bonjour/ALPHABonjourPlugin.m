@@ -1,0 +1,89 @@
+//
+//  ALPHABonjourPlugin.m
+//  Alpha
+//
+//  Created by Dal Rupnik on 16/06/15.
+//  Copyright (c) 2015 Unified Sense. All rights reserved.
+//
+
+
+#import "ALPHABonjourPlugin.h"
+
+#import "ALPHAActions.h"
+
+#import "ALPHABonjourConfig.h"
+
+#import "ALPHALocalSource.h"
+
+#import "FLEXResources.h"
+
+#import "ALPHABonjourServer.h"
+
+@interface ALPHABonjourPlugin ()
+
+@property (nonatomic, strong) ALPHABonjourServer* server;
+
+@end
+
+@implementation ALPHABonjourPlugin
+
+#pragma mark - Getters and Setters
+
+- (ALPHABonjourServer *)server
+{
+    if (!_server)
+    {
+        _server = [[ALPHABonjourServer alloc] init];
+        _server.source = [ALPHALocalSource new];
+    }
+    
+    return _server;
+}
+
+#pragma mark - Initialization
+
+- (id)init
+{
+    self = [super initWithIdentifier:@"com.unifiedsense.alpha.plugin.bonjour"];
+    
+    if (self)
+    {
+        ALPHABlockActionItem *touchAction = [ALPHABlockActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.bonjour."];
+        touchAction.title = @"Bonjour";
+        touchAction.icon = [FLEXResources hierarchyIndentPattern];
+        touchAction.actionBlock = ^id(id sender)
+        {
+            [self activateBonjourServer];
+            
+            return nil;
+        };
+        
+        [self registerAction:touchAction];
+        
+        ALPHAScreenActionItem* menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.screenshot.main"];
+        menuAction.icon = @"📶";
+        menuAction.title = @"Remote";
+        //menuAction.dataIdentifier = ALPHAScreenshotDataIdentifier;
+        menuAction.isMain = YES;
+        
+        [self registerAction:menuAction];
+        
+        //[self registerSource:[ALPHAScreenshotSource new]];
+    }
+    
+    return self;
+}
+
+- (void)activateBonjourServer
+{
+    if (self.server.isActive)
+    {
+        [self.server stop];
+    }
+    else
+    {
+        [self.server start];
+    }
+}
+
+@end

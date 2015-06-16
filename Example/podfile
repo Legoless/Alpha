@@ -5,4 +5,4 @@ source 'https://github.com/CocoaPods/Specs.git'
 pod 'Haystack'
 
 # Remote plugin
-#pod 'DTBonjour'
+pod 'DTBonjour'
