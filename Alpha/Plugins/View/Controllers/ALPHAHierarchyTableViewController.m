@@ -209,8 +209,8 @@ static const NSInteger kFLEXHierarchyScopeFullHierarchyIndex = 1;
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
     UIView *drillInView = [self.displayedViews objectAtIndex:indexPath.row];
-    
-    [[ALPHAScreenManager defaultManager] pushObject:drillInView];
+
+    [[ALPHAScreenManager defaultManager] pushObject:[ALPHARequest requestForObject:drillInView]];
 }
 
 

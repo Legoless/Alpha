@@ -38,7 +38,7 @@
         
         item.transparent = view.hidden;
         
-        item.object = view;
+        item.object = [ALPHARequest requestForObject:view];
         
         [items addObject:item];
     }
