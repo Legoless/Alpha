@@ -245,6 +245,8 @@
     
     cell.detailTextLabel.minimumScaleFactor = 0.5;
     cell.detailTextLabel.adjustsFontSizeToFitWidth = YES;
+    
+    cell.tintColor = theme.tintColor;
     //cell.detailTextLabel.adjustsLetterSpacingToFitWidth = YES;
 }
 

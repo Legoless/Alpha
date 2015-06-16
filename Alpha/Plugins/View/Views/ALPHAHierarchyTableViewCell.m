@@ -8,11 +8,13 @@
 
 #import "ALPHAHierarchyTableViewCell.h"
 
+#import "ALPHADepthIndicatorView.h"
+
 #import "FLEXUtility.h"
 
 @interface ALPHAHierarchyTableViewCell ()
 
-@property (nonatomic, strong) UIView *depthIndicatorView;
+@property (nonatomic, strong) ALPHADepthIndicatorView *depthIndicatorView;
 @property (nonatomic, strong) UIImageView *colorCircleImageView;
 
 @end
@@ -35,8 +37,7 @@
     
     if (self)
     {
-        self.depthIndicatorView = [[UIView alloc] init];
-        self.depthIndicatorView.backgroundColor = [FLEXUtility hierarchyIndentPatternColor];
+        self.depthIndicatorView = [[ALPHADepthIndicatorView alloc] init];
         [self.contentView addSubview:self.depthIndicatorView];
         
         UIImage *defaultCircleImage = [FLEXUtility circularImageWithColor:[UIColor blackColor] radius:5.0];
@@ -54,7 +55,7 @@
     
     // UITableViewCell changes all subviews in the contentView to backgroundColor = clearColor.
     // We want to preserve the hierarchy background color when highlighted.
-    self.depthIndicatorView.backgroundColor = [FLEXUtility hierarchyIndentPatternColor];
+    //self.depthIndicatorView.backgroundColor = [FLEXUtility hierarchyIndentPatternColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -62,7 +63,7 @@
     [super setSelected:selected animated:animated];
     
     // See setHighlighted above.
-    self.depthIndicatorView.backgroundColor = [FLEXUtility hierarchyIndentPatternColor];
+    //self.depthIndicatorView.backgroundColor = [FLEXUtility hierarchyIndentPatternColor];
 }
 
 - (void)layoutSubviews
@@ -70,9 +71,8 @@
     [super layoutSubviews];
     
     const CGFloat kContentPadding = 10.0;
-    const CGFloat kDepthIndicatorWidthMultiplier = 4.0;
     
-    CGRect depthIndicatorFrame = CGRectMake(kContentPadding, 0, self.viewDepth * kDepthIndicatorWidthMultiplier, self.contentView.bounds.size.height);
+    CGRect depthIndicatorFrame = CGRectMake(kContentPadding, 0, self.viewDepth * self.depthIndicatorView.depthIndicatorWidth, self.contentView.bounds.size.height);
     self.depthIndicatorView.frame = depthIndicatorFrame;
     
     CGRect circleFrame = self.colorCircleImageView.frame;
@@ -91,6 +91,8 @@
     detailTextLabelFrame.origin.x = detailOriginX;
     detailTextLabelFrame.size.width = CGRectGetMaxX(self.contentView.bounds) - kContentPadding - detailOriginX;
     self.detailTextLabel.frame = detailTextLabelFrame;
+    
+    [self.depthIndicatorView setNeedsDisplay];
 }
 
 - (void)setViewColor:(UIColor *)viewColor

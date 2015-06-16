@@ -138,6 +138,7 @@
 		38B468431B2F782400B42009 /* ALPHAViewHierarchyConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B468421B2F782400B42009 /* ALPHAViewHierarchyConverter.m */; };
 		38B468461B2FFF3900B42009 /* ALPHASerializableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B468451B2FFF3900B42009 /* ALPHASerializableView.m */; };
 		38B4684D1B300D3700B42009 /* ALPHAHierarchyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B4684C1B300D3700B42009 /* ALPHAHierarchyTableViewCell.m */; };
+		38B468501B3013D000B42009 /* ALPHADepthIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B4684F1B3013D000B42009 /* ALPHADepthIndicatorView.m */; };
 		38DE4A491A0B78BC00EB447A /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38DE4A481A0B78BC00EB447A /* Launch.xib */; };
 		38DE4A4C1A0B7DB000EB447A /* AAPLNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DE4A4B1A0B7DB000EB447A /* AAPLNetworkViewController.m */; };
 		38E0D9861B27430E00A2D8B8 /* ALPHARequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E0D9851B27430E00A2D8B8 /* ALPHARequest.m */; };
@@ -476,6 +477,8 @@
 		38B468451B2FFF3900B42009 /* ALPHASerializableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHASerializableView.m; sourceTree = "<group>"; };
 		38B4684B1B300D3700B42009 /* ALPHAHierarchyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAHierarchyTableViewCell.h; sourceTree = "<group>"; };
 		38B4684C1B300D3700B42009 /* ALPHAHierarchyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAHierarchyTableViewCell.m; sourceTree = "<group>"; };
+		38B4684E1B3013D000B42009 /* ALPHADepthIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHADepthIndicatorView.h; sourceTree = "<group>"; };
+		38B4684F1B3013D000B42009 /* ALPHADepthIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHADepthIndicatorView.m; sourceTree = "<group>"; };
 		38DE4A481A0B78BC00EB447A /* Launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
 		38DE4A4A1A0B7DB000EB447A /* AAPLNetworkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLNetworkViewController.h; sourceTree = "<group>"; };
 		38DE4A4B1A0B7DB000EB447A /* AAPLNetworkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLNetworkViewController.m; sourceTree = "<group>"; };
@@ -1465,6 +1468,8 @@
 			children = (
 				38B4684B1B300D3700B42009 /* ALPHAHierarchyTableViewCell.h */,
 				38B4684C1B300D3700B42009 /* ALPHAHierarchyTableViewCell.m */,
+				38B4684E1B3013D000B42009 /* ALPHADepthIndicatorView.h */,
+				38B4684F1B3013D000B42009 /* ALPHADepthIndicatorView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1776,6 +1781,7 @@
 				386993491B18962D005B1BEE /* ALPHATapTrigger.m in Sources */,
 				382DF2CC1B279BA200FA01EF /* ALPHAFileSource.m in Sources */,
 				535682BD18F3670300BAAD62 /* AAPLTintedToolbarViewController.m in Sources */,
+				38B468501B3013D000B42009 /* ALPHADepthIndicatorView.m in Sources */,
 				38353E781B1DAC38009E4ACF /* ALPHAMockObject.m in Sources */,
 				38424A321B25C66400C07B7B /* NSString+ALPHAAdditional.m in Sources */,
 				38424A2F1B25C15700C07B7B /* UIViewController+ALPHAEventLog.m in Sources */,
