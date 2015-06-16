@@ -12,6 +12,16 @@
 
 #pragma mark - Getters and Setters
 
+- (NSInteger)selectedScopeButtonIndex
+{
+    return self.segmentedControl.selectedSegmentIndex;
+}
+
+- (void)setSelectedScopeButtonIndex:(NSInteger)selectedScopeButtonIndex
+{
+    self.segmentedControl.selectedSegmentIndex = selectedScopeButtonIndex;
+}
+
 - (void)setShowsScopeBar:(BOOL)showsScopeBar
 {
     _showsScopeBar = showsScopeBar;
