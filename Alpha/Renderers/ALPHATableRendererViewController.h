@@ -1,6 +1,6 @@
 //
 //  ALPHATableRendererViewController.h
-//  UICatalog
+//  Alpha
 //
 //  Created by Dal Rupnik on 29/05/15.
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
@@ -9,6 +9,7 @@
 #import "ALPHADataRenderer.h"
 #import "ALPHAViewController.h"
 #import "ALPHAScreenModel.h"
+#import "ALPHASearchScopeView.h"
 
 @interface ALPHATableRendererViewController : UITableViewController <ALPHADataRenderer>
 
@@ -25,5 +26,9 @@
 @property (nonatomic, strong) id<ALPHADataSource> source;
 
 @property (nonatomic, strong) ALPHATheme *theme;
+
+#pragma mark - For subclassing
+
+@property (nonatomic, strong) ALPHASearchScopeView *detailView;
 
 @end

@@ -48,6 +48,8 @@
     
     ALPHATableScreenModel *model = [[ALPHATableScreenModel alloc] initWithRequest:object.request];
     model.title = @"View Hierarchy";
+    model.separatorStyle = UITableViewCellSeparatorStyleNone;
+    model.rowHeight = 50.0;
     
     model.searchBarPlaceholder = @"Filter";
     //model.scopes = @[ @"Views at Tap", @"Full Hierarchy" ];

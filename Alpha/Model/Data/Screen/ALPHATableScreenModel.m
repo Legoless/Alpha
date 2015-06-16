@@ -10,4 +10,16 @@
 
 @implementation ALPHATableScreenModel
 
+- (instancetype)initWithRequest:(ALPHARequest *)request
+{
+    self = [super initWithRequest:request];
+    
+    if (self)
+    {
+        self.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    }
+    
+    return self;
+}
+
 @end

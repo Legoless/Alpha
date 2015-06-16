@@ -43,9 +43,8 @@
         UIImage *defaultCircleImage = [FLEXUtility circularImageWithColor:[UIColor blackColor] radius:5.0];
         self.colorCircleImageView = [[UIImageView alloc] initWithImage:defaultCircleImage];
         [self.contentView addSubview:self.colorCircleImageView];
-        
-        
     }
+    
     return self;
 }
 

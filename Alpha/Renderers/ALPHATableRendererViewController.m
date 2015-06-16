@@ -24,17 +24,15 @@
 #import "ALPHATableScreenModel.h"
 #import "ALPHAScreenManager.h"
 
-#import "ALPHASearchScopeView.h"
-
 @interface ALPHATableRendererViewController () <UISearchBarDelegate>
 
 @property (nonatomic, strong) NSTimer *refreshTimer;
 
-@property (nonatomic, strong) ALPHASearchScopeView *detailView;
-
 @end
 
 @implementation ALPHATableRendererViewController
+
+@synthesize theme = _theme;
 
 #pragma mark - Getters and Setters
 
@@ -70,6 +68,16 @@
         self.request = screenModel.request;
     }
     
+    if ([screenModel isKindOfClass:[ALPHATableScreenModel class]])
+    {
+        if (self.tableScreenModel.rowHeight > 0.0)
+        {
+            self.tableView.rowHeight = self.tableScreenModel.rowHeight;
+        }
+        
+        self.tableView.separatorStyle = self.tableScreenModel.separatorStyle;
+    }
+    
     [self.tableView reloadData];
 }
 
@@ -88,8 +96,6 @@
     }
     else
     {
-        
-        
         //
         // Use a data converter to get screen model
         //
@@ -99,6 +105,16 @@
             self.screenModel = [[ALPHAConverterManager sharedManager] screenModelForObject:object];
         }
     }
+}
+
+- (ALPHATheme *)theme
+{
+    if (!_theme)
+    {
+        _theme = [ALPHAManager sharedManager].theme;
+    }
+    
+    return _theme;
 }
 
 - (void)setTheme:(ALPHATheme *)theme

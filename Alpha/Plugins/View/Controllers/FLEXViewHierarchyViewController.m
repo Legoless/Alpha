@@ -10,7 +10,7 @@
 #import "FLEXExplorerToolbar.h"
 #import "FLEXToolbarItem.h"
 #import "FLEXUtility.h"
-#import "FLEXHierarchyTableViewController.h"
+#import "ALPHAHierarchyTableViewController.h"
 
 #import "ALPHAScreenManager.h"
 
@@ -18,7 +18,7 @@
 
 #import "ALPHAManager.h"
 
-@interface FLEXViewHierarchyViewController ()  <FLEXHierarchyTableViewControllerDelegate, ALPHAViewControllerDelegate>
+@interface FLEXViewHierarchyViewController () <ALPHAViewControllerDelegate>
 
 //
 // Previous properties, to refactor
@@ -66,6 +66,7 @@
     {
         self.observedViews = [NSMutableSet set];
     }
+    
     return self;
 }
 
@@ -353,10 +354,12 @@
 {
     NSArray *allViews = [self allViewsInHierarchy];
     NSDictionary *depthsForViews = [self hierarchyDepthsForViews:allViews];
-    FLEXHierarchyTableViewController *hierarchyTVC = [[FLEXHierarchyTableViewController alloc] initWithViews:allViews viewsAtTap:self.viewsAtTapPoint selectedView:self.selectedView depths:depthsForViews];
+    ALPHAHierarchyTableViewController *hierarchyTVC = [[ALPHAHierarchyTableViewController alloc] initWithViews:allViews viewsAtTap:self.viewsAtTapPoint selectedView:self.selectedView depths:depthsForViews];
     hierarchyTVC.delegate = self;
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:hierarchyTVC];
-    [[ALPHAManager sharedManager] displayViewController:navigationController animated:YES completion:nil];
+    /*UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:hierarchyTVC];
+    [[ALPHAManager sharedManager] displayViewController:navigationController animated:YES completion:nil];*/
+    
+    [[ALPHAScreenManager defaultManager] pushViewController:hierarchyTVC];
 }
 
 - (NSArray *)allViewsInHierarchy
@@ -687,59 +690,66 @@
     CGPoint pointInLocalCoordinates = [self.view convertPoint:pointInWindowCoordinates fromView:nil];
     
     // Always if it's on the toolbar
-    if (CGRectContainsPoint(self.explorerToolbar.frame, pointInLocalCoordinates)) {
+    if (CGRectContainsPoint(self.explorerToolbar.frame, pointInLocalCoordinates))
+    {
         shouldReceiveTouch = YES;
     }
     
     // Always if we're in selection mode
-    if (!shouldReceiveTouch && self.currentMode == FLEXViewHierarchyModeSelect) {
+    if (!shouldReceiveTouch && self.currentMode == FLEXViewHierarchyModeSelect)
+    {
         shouldReceiveTouch = YES;
     }
     
     // Always in move mode too
-    if (!shouldReceiveTouch && self.currentMode == FLEXViewHierarchyModeMove) {
+    if (!shouldReceiveTouch && self.currentMode == FLEXViewHierarchyModeMove)
+    {
         shouldReceiveTouch = YES;
     }
     
     // Always if we have a modal presented
-    if (!shouldReceiveTouch && self.presentedViewController) {
+    if (!shouldReceiveTouch && self.presentedViewController)
+    {
         shouldReceiveTouch = YES;
     }
     
     return shouldReceiveTouch;
 }
 
-
-#pragma mark - FLEXHierarchyTableViewControllerDelegate
-
-- (void)hierarchyViewController:(FLEXHierarchyTableViewController *)hierarchyViewController didFinishWithSelectedView:(UIView *)selectedView
-{
-    // Note that we need to wait until the view controller is dismissed to calculated the frame of the outline view.
-    // Otherwise the coordinate conversion doesn't give the correct result.
-    [[ALPHAManager sharedManager] removeViewControllerAnimated:YES completion:^{
-        // If the selected view is outside of the tapoint array (selected from "Full Hierarchy"),
-        // then clear out the tap point array and remove all the outline views.
-        if (![self.viewsAtTapPoint containsObject:selectedView]) {
-            self.viewsAtTapPoint = nil;
-            [self removeAndClearOutlineViews];
-        }
-        
-        // If we now have a selected view and we didn't have one previously, go to "select" mode.
-        if (self.currentMode == FLEXViewHierarchyModeDefault && selectedView) {
-            self.currentMode = FLEXViewHierarchyModeSelect;
-        }
-        
-        // The selected view setter will also update the selected view overlay appropriately.
-        self.selectedView = selectedView;
-    }];
-}
-
-
 #pragma mark - ALPHAViewControllerDelegate
 
 - (void)viewControllerDidFinish:(UIViewController *)viewController
 {
-    [[ALPHAManager sharedManager] removeViewControllerAnimated:YES completion:nil];
+    if ([viewController isKindOfClass:[ALPHAHierarchyTableViewController class]])
+    {
+        ALPHAHierarchyTableViewController* hierarchyViewController = (ALPHAHierarchyTableViewController *)viewController;
+        
+        // Note that we need to wait until the view controller is dismissed to calculated the frame of the outline view.
+        // Otherwise the coordinate conversion doesn't give the correct result.
+        [[ALPHAManager sharedManager] removeViewControllerAnimated:YES completion:^
+        {
+            // If the selected view is outside of the tapoint array (selected from "Full Hierarchy"),
+            // then clear out the tap point array and remove all the outline views.
+            if (![self.viewsAtTapPoint containsObject:hierarchyViewController.selectedView])
+            {
+                self.viewsAtTapPoint = nil;
+                [self removeAndClearOutlineViews];
+            }
+            
+            // If we now have a selected view and we didn't have one previously, go to "select" mode.
+            if (self.currentMode == FLEXViewHierarchyModeDefault && hierarchyViewController.selectedView)
+            {
+                self.currentMode = FLEXViewHierarchyModeSelect;
+            }
+            
+            // The selected view setter will also update the selected view overlay appropriately.
+            self.selectedView = hierarchyViewController.selectedView;
+        }];
+    }
+    else
+    {
+        [[ALPHAManager sharedManager] removeViewControllerAnimated:YES completion:nil];
+    }
 }
 
 

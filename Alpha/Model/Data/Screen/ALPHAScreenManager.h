@@ -30,6 +30,8 @@
 
 - (void)pushObject:(id)object;
 
+- (void)pushViewController:(UIViewController *)viewController;
+
 - (void)renderer:(UIViewController<ALPHADataRenderer> *)renderer didSelectItem:(id)item;
 
 @end

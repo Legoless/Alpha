@@ -78,9 +78,17 @@
 
 - (void)pushViewController:(UIViewController *)viewController
 {
-    if ([viewController respondsToSelector:@selector(setDelegate:)])
+    if ([viewController respondsToSelector:@selector(setDelegate:)] && [viewController respondsToSelector:@selector(delegate)])
     {
-        [(id)viewController setDelegate:self];
+        if (![(id)viewController delegate])
+        {
+            [(id)viewController setDelegate:self];
+        }
+    }
+    
+    if ([viewController respondsToSelector:@selector(setTheme:)])
+    {
+        [(id)viewController setTheme:self.theme];
     }
     
     if (viewController.navigationController && !self.navigationController)
@@ -203,11 +211,6 @@
     else
     {
         controller = [[class alloc] init];
-    }
-    
-    if ([controller respondsToSelector:@selector(setTheme:)])
-    {
-        [controller setTheme:self.theme];
     }
     
     //

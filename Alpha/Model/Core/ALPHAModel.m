@@ -10,6 +10,11 @@
 
 @implementation ALPHAModel
 
+- (instancetype)init
+{
+    return [self initWithRequest:nil];
+}
+
 - (instancetype)initWithIdentifier:(NSString *)identifier
 {
     ALPHARequest* request = [ALPHARequest requestWithIdentifier:identifier];

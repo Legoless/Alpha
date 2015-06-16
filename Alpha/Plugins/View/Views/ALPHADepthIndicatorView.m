@@ -35,6 +35,7 @@
         UIBezierPath *path = [UIBezierPath bezierPath];
         [path moveToPoint:CGPointMake(x, 0.0)];
         [path addLineToPoint:CGPointMake(x, rect.size.height)];
+        path.lineWidth = 0.5;
         
         [path stroke];
     }

@@ -16,6 +16,16 @@
 @property (nonatomic, assign) UITableViewStyle tableViewStyle;
 
 /*!
+ *  Default row height on table view
+ */
+@property (nonatomic, assign) CGFloat rowHeight;
+
+/*!
+ *  Set table view separator style
+ */
+@property (nonatomic, assign) UITableViewCellSeparatorStyle separatorStyle;
+
+/*!
  *  Array of display section objects objects
  */
 @property (nonatomic, copy) NSArray *sections;
