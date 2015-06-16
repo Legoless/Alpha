@@ -41,7 +41,18 @@ NSString *const ALPHAViewDataPointerIdentifier  = @"com.unifiedsense.alpha.data.
         [serializableViews addObject:[[ALPHASerializableView alloc] initWithView:view]];
     }
     
-    model.views = serializableViews.copy;
+    NSArray *serializedViews = serializableViews.copy;
+    
+    if (request.parameters[ALPHASearchTextParameterKey])
+    {
+        serializedViews = [serializedViews filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(ALPHASerializableView *candidateView, NSDictionary *bindings)
+        {
+            NSString *title = candidateView.viewDescription;
+            return [title rangeOfString:request.parameters[ALPHASearchTextParameterKey] options:NSCaseInsensitiveSearch].location != NSNotFound;
+        }]];
+    }
+    
+    model.views = (NSArray<ALPHASerializableView> *)serializedViews;
     
     return model;
 }

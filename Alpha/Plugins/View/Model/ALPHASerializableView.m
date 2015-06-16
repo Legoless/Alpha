@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
+#import "FLEXUtility.h"
+
 #import "ALPHASerializableView.h"
 
 @implementation ALPHASerializableView
@@ -18,7 +20,7 @@
     {
         self.viewClass = NSStringFromClass([view class]);
         self.viewPointer = [NSString stringWithFormat:@"%p", view];
-        self.viewDescription = [view debugDescription];
+        self.viewDescription = [FLEXUtility descriptionForView:view includingFrame:NO];
         
         NSInteger depth = 0;
         UIView *tryView = view;
