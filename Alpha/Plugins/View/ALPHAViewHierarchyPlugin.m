@@ -15,21 +15,21 @@
 
 #import "ALPHAViewHierarchySource.h"
 
-#import "FLEXViewHierarchyViewController.h"
+#import "ALPHAViewHierarchyViewController.h"
 
 @interface ALPHAViewHierarchyPlugin () <ALPHAViewControllerDelegate>
 
-@property (nonatomic, strong) FLEXViewHierarchyViewController* viewHierarchyViewController;
+@property (nonatomic, strong) ALPHAViewHierarchyViewController * viewHierarchyViewController;
 
 @end
 
 @implementation ALPHAViewHierarchyPlugin
 
-- (FLEXViewHierarchyViewController *)viewHierarchyViewController
+- (ALPHAViewHierarchyViewController *)viewHierarchyViewController
 {
     if (!_viewHierarchyViewController)
     {
-        _viewHierarchyViewController = [[FLEXViewHierarchyViewController alloc] init];
+        _viewHierarchyViewController = [[ALPHAViewHierarchyViewController alloc] init];
         _viewHierarchyViewController.delegate = self;
     }
     

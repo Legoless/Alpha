@@ -44,6 +44,10 @@
     {
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStyleDone target:self action:@selector(donePressed:)];
     }
+    else if (self.navigationController.viewControllers.firstObject == self)
+    {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStyleDone target:self action:@selector(donePressed:)];
+    }
     else
     {
         self.navigationItem.rightBarButtonItem = nil;

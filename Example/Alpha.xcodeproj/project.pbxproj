@@ -107,7 +107,7 @@
 		386993381B18962D005B1BEE /* ALPHATouchPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3869929E1B18962D005B1BEE /* ALPHATouchPlugin.m */; };
 		386993391B18962D005B1BEE /* ALPHATouchWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992A11B18962D005B1BEE /* ALPHATouchWindow.m */; };
 		3869933D1B18962D005B1BEE /* ALPHAHierarchyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992AC1B18962D005B1BEE /* ALPHAHierarchyTableViewController.m */; };
-		3869933F1B18962D005B1BEE /* FLEXViewHierarchyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992B01B18962D005B1BEE /* FLEXViewHierarchyViewController.m */; };
+		3869933F1B18962D005B1BEE /* ALPHAViewHierarchyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992B01B18962D005B1BEE /* ALPHAViewHierarchyViewController.m */; };
 		386993401B18962D005B1BEE /* ALPHAViewHierarchyPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992B21B18962D005B1BEE /* ALPHAViewHierarchyPlugin.m */; };
 		386993411B18962D005B1BEE /* FLEXExplorerToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992B51B18962D005B1BEE /* FLEXExplorerToolbar.m */; };
 		386993421B18962D005B1BEE /* FLEXToolbarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 386992B71B18962D005B1BEE /* FLEXToolbarItem.m */; };
@@ -415,8 +415,8 @@
 		386992A11B18962D005B1BEE /* ALPHATouchWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHATouchWindow.m; sourceTree = "<group>"; };
 		386992AB1B18962D005B1BEE /* ALPHAHierarchyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAHierarchyTableViewController.h; sourceTree = "<group>"; };
 		386992AC1B18962D005B1BEE /* ALPHAHierarchyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAHierarchyTableViewController.m; sourceTree = "<group>"; };
-		386992AF1B18962D005B1BEE /* FLEXViewHierarchyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXViewHierarchyViewController.h; sourceTree = "<group>"; };
-		386992B01B18962D005B1BEE /* FLEXViewHierarchyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXViewHierarchyViewController.m; sourceTree = "<group>"; };
+		386992AF1B18962D005B1BEE /* ALPHAViewHierarchyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAViewHierarchyViewController.h; sourceTree = "<group>"; };
+		386992B01B18962D005B1BEE /* ALPHAViewHierarchyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAViewHierarchyViewController.m; sourceTree = "<group>"; };
 		386992B11B18962D005B1BEE /* ALPHAViewHierarchyPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAViewHierarchyPlugin.h; sourceTree = "<group>"; };
 		386992B21B18962D005B1BEE /* ALPHAViewHierarchyPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAViewHierarchyPlugin.m; sourceTree = "<group>"; };
 		386992B41B18962D005B1BEE /* FLEXExplorerToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXExplorerToolbar.h; sourceTree = "<group>"; };
@@ -1335,8 +1335,8 @@
 			children = (
 				386992AB1B18962D005B1BEE /* ALPHAHierarchyTableViewController.h */,
 				386992AC1B18962D005B1BEE /* ALPHAHierarchyTableViewController.m */,
-				386992AF1B18962D005B1BEE /* FLEXViewHierarchyViewController.h */,
-				386992B01B18962D005B1BEE /* FLEXViewHierarchyViewController.m */,
+				386992AF1B18962D005B1BEE /* ALPHAViewHierarchyViewController.h */,
+				386992B01B18962D005B1BEE /* ALPHAViewHierarchyViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1853,7 +1853,7 @@
 				38B4684D1B300D3700B42009 /* ALPHAHierarchyTableViewCell.m in Sources */,
 				384DDDB81B1DA6B3003DCDAE /* ALPHANotification.m in Sources */,
 				38303FB61B2ED12200F77082 /* ALPHAObjectActionItem.m in Sources */,
-				3869933F1B18962D005B1BEE /* FLEXViewHierarchyViewController.m in Sources */,
+				3869933F1B18962D005B1BEE /* ALPHAViewHierarchyViewController.m in Sources */,
 				38353ECE1B1DAFC2009E4ACF /* ALPHAScreenSection.m in Sources */,
 				38353E891B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m in Sources */,
 				382DF2C01B2762FE00FA01EF /* ALPHADeviceStatusSource.m in Sources */,

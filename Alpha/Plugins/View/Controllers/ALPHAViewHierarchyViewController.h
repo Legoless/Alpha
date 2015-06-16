@@ -1,9 +1,9 @@
 //
-//  FLEXViewHierarchyViewController.h
-//  UICatalog
+//  ALPHAViewHierarchyViewController.h
+//  Alpha
 //
 //  Created by Dal Rupnik on 24/11/14.
-//  Copyright (c) 2014 f. All rights reserved.
+//  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
 #import "ALPHAViewController.h"
@@ -14,7 +14,7 @@ typedef NS_ENUM(NSUInteger, FLEXExplorerMode) {
     FLEXViewHierarchyModeMove
 };
 
-@interface FLEXViewHierarchyViewController : ALPHAViewController
+@interface ALPHAViewHierarchyViewController : ALPHAViewController
 
 /// Tracks the currently active tool/mode
 @property (nonatomic, assign) FLEXExplorerMode currentMode;

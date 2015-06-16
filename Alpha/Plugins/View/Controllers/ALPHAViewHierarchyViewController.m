@@ -1,9 +1,9 @@
 //
-//  FLEXViewHierarchyViewController.m
-//  UICatalog
+//  ALPHAViewHierarchyViewController.m
+//  Alpha
 //
 //  Created by Dal Rupnik on 24/11/14.
-//  Copyright (c) 2014 f. All rights reserved.
+//  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
 #import "ALPHAMainViewController.h"
@@ -14,11 +14,11 @@
 
 #import "ALPHAScreenManager.h"
 
-#import "FLEXViewHierarchyViewController.h"
+#import "ALPHAViewHierarchyViewController.h"
 
 #import "ALPHAManager.h"
 
-@interface FLEXViewHierarchyViewController () <ALPHAViewControllerDelegate>
+@interface ALPHAViewHierarchyViewController () <ALPHAViewControllerDelegate>
 
 //
 // Previous properties, to refactor
@@ -56,7 +56,7 @@
 
 @end
 
-@implementation FLEXViewHierarchyViewController
+@implementation ALPHAViewHierarchyViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -395,7 +395,7 @@
 {
     if (self.selectedView)
     {
-        [[ALPHAScreenManager defaultManager] pushObject:self.selectedView];
+        [[ALPHAScreenManager defaultManager] pushObject:[ALPHARequest requestForObject:self.selectedView]];
     }
 }
 
@@ -500,6 +500,8 @@
 {
     if (tapGR.state == UIGestureRecognizerStateRecognized && self.selectedView)
     {
+        [[ALPHAScreenManager defaultManager] pushObject:[ALPHARequest requestForObject:self.selectedView]];
+        
         /*
         FLEXObjectExplorerViewController *selectedViewExplorer = [FLEXObjectExplorerFactory explorerViewControllerForObject:self.selectedView];
         selectedViewExplorer.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(selectedViewExplorerFinished:)];
