@@ -184,15 +184,45 @@
 {
     ALPHAScreenItem *item = [self.tableScreenModel.sections[indexPath.section] items][indexPath.row];
     
-    NSString *cellIdentifier = [self cellIdentifierForDefaultStyle:item.style];
+    //
+    // Pull cell identifier based on class string
+    //
+    NSString *cellIdentifier = item.cellClass;
+    
+    if (cellIdentifier)
+    {
+        cellIdentifier = [self cellIdentifierForDefaultStyle:item.style];
+    }
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    //
+    // Create cell and apply theme
+    //
     
     if (!cell)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:item.style reuseIdentifier:cellIdentifier];
+        Class class = NSClassFromString(item.cellClass);
+        
+        //
+        // Check for table view cell subclass, if not, revert to default
+        //
+        if (![class isSubclassOfClass:[UITableViewCell class]])
+        {
+            class = [UITableViewCell class];
+        }
+        
+        if (!cell)
+        {
+            cell = [[class alloc] initWithStyle:item.style reuseIdentifier:cellIdentifier];
+        }
         
         [self cell:cell applyTheme:self.theme];
     }
+    
+    //
+    // Apply item to cell
+    //
     
     [self cell:cell applyItem:item];
     
@@ -245,6 +275,16 @@
     
     [self applyStringObject:[self titleForItem:item] toLabel:cell.textLabel];
     [self applyStringObject:[self detailForItem:item] toLabel:cell.detailTextLabel];
+    [self applyParameters:item.cellParameters toCell:cell];
+    
+    if (item.transparent)
+    {
+        cell.tintColor = [cell.tintColor colorWithAlphaComponent:0.2];
+    }
+    else
+    {
+        cell.tintColor = [cell.tintColor colorWithAlphaComponent:1.0];
+    }
 }
 
 - (id)titleForItem:(ALPHAScreenItem *)item
@@ -499,6 +539,14 @@
     else
     {
         label.text = object;
+    }
+}
+
+- (void)applyParameters:(NSDictionary *)parameters toCell:(UITableViewCell *)cell
+{
+    for (id key in parameters)
+    {
+        [cell setValue:parameters[key] forKey:key];
     }
 }
 

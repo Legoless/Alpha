@@ -60,6 +60,29 @@ const unsigned int kFLEXNumberOfImplicitArgs = 2;
     return [[className substringToIndex:location] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
+
++ (id)objectForPointerString:(NSString *)pointerString className:(NSString *)className
+{
+    __unsafe_unretained id object;
+    sscanf([pointerString cStringUsingEncoding:NSUTF8StringEncoding], "%p", &object);
+    
+    //
+    // Do a class name check
+    //
+    
+    if (className)
+    {
+        Class objectClass = NSClassFromString(className);
+        
+        if ([object class] == objectClass)
+        {
+            return object;
+        }
+    }
+    
+    return object;
+}
+
 #pragma mark - Property Helpers (Public)
 
 + (NSString *)prettyTypeForProperty:(objc_property_t)property

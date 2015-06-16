@@ -13,6 +13,8 @@
 
 #import "ALPHAViewHierarchyPlugin.h"
 
+#import "ALPHAViewHierarchySource.h"
+
 #import "FLEXViewHierarchyViewController.h"
 
 @interface ALPHAViewHierarchyPlugin () <ALPHAViewControllerDelegate>
@@ -36,7 +38,7 @@
 
 - (id)init
 {
-    self = [super initWithIdentifier:@"com.unifiedsense.alpha.plugin.view"];
+    self = [super initWithIdentifier:@"com.unifiedsense.alpha.plugin.viewHierarchy"];
     
     if (self)
     {
@@ -52,12 +54,27 @@
             [[ALPHAManager sharedManager] addOverlayViewController:self.viewHierarchyViewController animated:YES completion:nil];
             
             return nil;
-            //[[FLEXManager sharedManager].explorerWindow addSubview:self.viewHierarchyViewController.view];
-            
-            //[self.viewHierarchyViewController displayHierarchyExplorer];
         };
 
         [self registerAction:inspectAction];
+        
+        //
+        // Open views hierarchy
+        //
+        
+        ALPHAScreenActionItem* menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.viewHierarchy"];
+        menuAction.title = @"View Hierarchy";
+        menuAction.icon = @"💻";
+        menuAction.dataIdentifier = ALPHAViewDataIdentifier;
+        menuAction.isMain = YES;
+        
+        [self registerAction:menuAction];
+        
+        //
+        // Source
+        //
+        
+        [self registerSource:[ALPHAViewHierarchySource new]];
     }
     
     return self;

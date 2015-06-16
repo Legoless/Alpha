@@ -58,7 +58,7 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     
     if (request.parameters[ALPHAObjectDataPointerIdentifier] && request.parameters[ALPHAObjectDataClassNameIdentifier])
     {
-        object = [self objectForPointerString:request.parameters[ALPHAObjectDataPointerIdentifier] className:request.parameters[ALPHAObjectDataClassNameIdentifier]];
+        object = [FLEXRuntimeUtility objectForPointerString:request.parameters[ALPHAObjectDataPointerIdentifier] className:request.parameters[ALPHAObjectDataClassNameIdentifier]];
     }
 
     if (!object)
@@ -493,7 +493,7 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     // First find the referenced object
     //
     
-    id object = [self objectForPointerString:action.objectPointer className:action.objectClass];
+    id object = [FLEXRuntimeUtility objectForPointerString:action.objectPointer className:action.objectClass];
     id returnObject = nil;
     
     if (!error && object)
@@ -568,30 +568,5 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     
     return nil;
 }
-
-#pragma mark - Private methods
-
-- (id)objectForPointerString:(NSString *)pointerString className:(NSString *)className
-{
-    __unsafe_unretained id object;
-    sscanf([pointerString cStringUsingEncoding:NSUTF8StringEncoding], "%p", &object);
-    
-    //
-    // Do a class name check
-    //
-    
-    if (className)
-    {
-        Class objectClass = NSClassFromString(className);
-        
-        if ([object class] == objectClass)
-        {
-            return object;
-        }
-    }
-    
-    return object;
-}
-
 
 @end

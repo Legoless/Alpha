@@ -8,7 +8,7 @@
 
 #import "FLEXHierarchyTableViewController.h"
 #import "FLEXUtility.h"
-#import "FLEXHierarchyTableViewCell.h"
+#import "ALPHAHierarchyTableViewCell.h"
 #import "ALPHAScreenManager.h"
 
 static const NSInteger kFLEXHierarchyScopeViewsAtTapIndex = 0;
@@ -158,22 +158,28 @@ static const NSInteger kFLEXHierarchyScopeFullHierarchyIndex = 1;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    FLEXHierarchyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (!cell) {
-        cell = [[FLEXHierarchyTableViewCell alloc] initWithReuseIdentifier:CellIdentifier];
+    ALPHAHierarchyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (!cell)
+    {
+        cell = [[ALPHAHierarchyTableViewCell alloc] initWithReuseIdentifier:CellIdentifier];
     }
     
     UIView *view = [self.displayedViews objectAtIndex:indexPath.row];
     NSNumber *depth = [self.depthsForViews objectForKey:[NSValue valueWithNonretainedObject:view]];
     UIColor *viewColor = [FLEXUtility consistentRandomColorForObject:view];
+    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     cell.textLabel.text = [FLEXUtility descriptionForView:view includingFrame:NO];
     cell.detailTextLabel.text = [FLEXUtility detailDescriptionForView:view];
     cell.viewColor = viewColor;
     cell.viewDepth = [depth integerValue];
-    if (view.isHidden || view.alpha < 0.01) {
+    if (view.isHidden || view.alpha < 0.01)
+    {
         cell.textLabel.textColor = [UIColor lightGrayColor];
         cell.detailTextLabel.textColor = [UIColor lightGrayColor];
-    } else {
+    }
+    else
+    {
         cell.textLabel.textColor = [UIColor blackColor];
         cell.detailTextLabel.textColor = [UIColor blackColor];
     }
@@ -187,13 +193,13 @@ static const NSInteger kFLEXHierarchyScopeFullHierarchyIndex = 1;
     [self.delegate hierarchyViewController:self didFinishWithSelectedView:self.selectedView];
 }
 
-/*
+
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
     UIView *drillInView = [self.displayedViews objectAtIndex:indexPath.row];
     
     [[ALPHAScreenManager defaultManager] pushObject:drillInView];
-}*/
+}
 
 
 #pragma mark - Button Actions

@@ -12,7 +12,7 @@
 #import "FLEXUtility.h"
 #import "FLEXHierarchyTableViewController.h"
 
-#import "FLEXAutoFillEngine.h"
+#import "ALPHAScreenManager.h"
 
 #import "FLEXViewHierarchyViewController.h"
 
@@ -390,11 +390,10 @@
 
 - (void)globalsButtonTapped:(FLEXToolbarItem *)sender
 {
-    //
-    // Attempt to autofill
-    //
-    
-    [[FLEXAutoFillEngine sharedEngine] autoFillView:self.selectedView];
+    if (self.selectedView)
+    {
+        [[ALPHAScreenManager defaultManager] pushObject:self.selectedView];
+    }
 }
 
 - (void)closeButtonTapped:(FLEXToolbarItem *)sender
@@ -416,6 +415,7 @@
 {
     // Move and details only active when an object is selected.
     BOOL hasSelectedObject = self.selectedView != nil;
+    self.explorerToolbar.globalsItem.enabled = hasSelectedObject;
     self.explorerToolbar.moveItem.enabled = hasSelectedObject;
     self.explorerToolbar.selectItem.selected = self.currentMode == FLEXViewHierarchyModeSelect;
     self.explorerToolbar.moveItem.selected = self.currentMode == FLEXViewHierarchyModeMove;

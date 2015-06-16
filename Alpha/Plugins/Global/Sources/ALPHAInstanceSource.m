@@ -65,9 +65,9 @@ NSString* const ALPHAInstanceDataClassNameIdentifier = @"kALPHAInstanceDataClass
     {
         instanceData = [self instancesForClassName:request.parameters[ALPHAInstanceDataClassNameIdentifier]];
     }
-    else if (request.parameters[ALPHAInstanceDataReferenceObjectIdentifier])
+    else if (request.parameters[ALPHAInstanceDataReferenceObjectIdentifier] && request.parameters[ALPHAInstanceDataClassNameIdentifier])
     {
-        instanceData = [self instancesReferencingObject:request.parameters[ALPHAInstanceDataReferenceObjectIdentifier]];
+        instanceData = [self instancesReferencingObjectPointer:request.parameters[ALPHAInstanceDataReferenceObjectIdentifier] className:request.parameters[ALPHAInstanceDataClassNameIdentifier]];
     }
     
     NSInteger row = 0;
@@ -113,8 +113,15 @@ NSString* const ALPHAInstanceDataClassNameIdentifier = @"kALPHAInstanceDataClass
 
 #pragma mark - Private methods
 
-- (NSDictionary *)instancesReferencingObject:(id)object
+- (NSDictionary *)instancesReferencingObjectPointer:(NSString *)pointer className:(NSString *)className
 {
+    id object = [FLEXRuntimeUtility objectForPointerString:pointer className:pointer];
+    
+    if (!object)
+    {
+        return nil;
+    }
+    
     NSMutableArray *instances = [NSMutableArray array];
     NSMutableArray *fieldNames = [NSMutableArray array];
     

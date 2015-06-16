@@ -52,24 +52,17 @@ extern NSString* const ALPHAObjectDataClassNameIdentifier;
 + (instancetype)requestWithIdentifier:(NSString *)identifier;
 + (instancetype)requestWithIdentifier:(NSString *)identifier parameters:(NSDictionary *)parameters;
 
-#pragma mark - File requests
-
-/*!
- *  Creates request for file with URL. Identifier used for file is 
- *
- *  @param fileURL file url is stored in parameters
- *
- *  @return request instance
- */
-+ (instancetype)requestForFile:(NSString *)fileURL;
-+ (instancetype)requestForFile:(NSString *)fileURL fileClass:(NSString *)fileClass;
 
 #pragma mark - Initialization
 
 - (instancetype)initWithIdentifier:(NSString *)identifier;
 - (instancetype)initWithIdentifier:(NSString *)identifier parameters:(NSDictionary *)parameters;
 
+@end
+
 #pragma mark - Search requests
+
+@interface ALPHARequest (Search)
 
 - (instancetype)searchRequestWithText:(NSString *)text;
 - (instancetype)searchRequestWithScope:(NSNumber *)scope;
@@ -83,7 +76,27 @@ extern NSString* const ALPHAObjectDataClassNameIdentifier;
  */
 - (instancetype)searchRequestWithText:(NSString *)text scope:(NSNumber *)scope;
 
+@end
+
+#pragma mark - File requests
+
+@interface ALPHARequest (File)
+
+/*!
+ *  Creates request for file with URL. Identifier used for file is
+ *
+ *  @param fileURL file url is stored in parameters
+ *
+ *  @return request instance
+ */
++ (instancetype)requestForFile:(NSString *)fileURL;
++ (instancetype)requestForFile:(NSString *)fileURL fileClass:(NSString *)fileClass;
+
+@end
+
 #pragma mark - Object requests
+
+@interface ALPHARequest (Object)
 
 /*!
  *  Returns request with reference pointer value to be sent to object source.

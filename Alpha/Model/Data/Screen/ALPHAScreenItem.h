@@ -41,6 +41,22 @@ typedef NSInteger ALPHAScreenItemPriority;
 @property (nonatomic, assign) UITableViewCellAccessoryType accessory;
 
 /*!
+ *  Set this property to YES to render the screen item half transparent
+ */
+@property (nonatomic, assign) BOOL transparent;
+
+/*!
+ *  If any Alpha implemented cell class should be used instead of default.
+ */
+@property (nonatomic, copy) NSString *cellClass;
+
+/*!
+ *  If cell class is used, additional parameters can be set on cell class. The keys in dictionary
+ *  correspond to properties in cell class.
+ */
+@property (nonatomic, copy) NSDictionary *cellParameters;
+
+/*!
  *  Specified priority of the action item so the item is placed correctly in menus or table or collection
  */
 @property (nonatomic, assign) ALPHAScreenItemPriority priority;

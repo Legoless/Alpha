@@ -1,32 +1,40 @@
 //
-//  FLEXHierarchyTableViewCell.m
-//  Flipboard
+//  ALPHAHierarchyTableViewCell.m
+//  Alpha
 //
-//  Created by Ryan Olson on 2014-05-02.
-//  Copyright (c) 2014 Flipboard. All rights reserved.
+//  Created by Dal Rupnik on 16/06/15.
+//  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "FLEXHierarchyTableViewCell.h"
+#import "ALPHAHierarchyTableViewCell.h"
+
 #import "FLEXUtility.h"
 
-@interface FLEXHierarchyTableViewCell ()
+@interface ALPHAHierarchyTableViewCell ()
 
 @property (nonatomic, strong) UIView *depthIndicatorView;
 @property (nonatomic, strong) UIImageView *colorCircleImageView;
 
 @end
 
-@implementation FLEXHierarchyTableViewCell
+@implementation ALPHAHierarchyTableViewCell
 
-- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier
+- (instancetype)init
+{
+    return [self initWithReuseIdentifier:@"HierarchyTableViewCell"];
+}
+
+- (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier
 {
     return [self initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
 }
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
+    
+    if (self)
+    {
         self.depthIndicatorView = [[UIView alloc] init];
         self.depthIndicatorView.backgroundColor = [FLEXUtility hierarchyIndentPatternColor];
         [self.contentView addSubview:self.depthIndicatorView];
@@ -35,15 +43,7 @@
         self.colorCircleImageView = [[UIImageView alloc] initWithImage:defaultCircleImage];
         [self.contentView addSubview:self.colorCircleImageView];
         
-        self.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:14.0];
-        self.detailTextLabel.font = [FLEXUtility defaultTableViewCellLabelFont];
         
-        if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
-            // Supported starting with iOS 7
-            self.accessoryType = UITableViewCellAccessoryDetailButton;
-        } else {
-            self.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-        }
     }
     return self;
 }
@@ -108,5 +108,4 @@
         [self setNeedsLayout];
     }
 }
-
 @end

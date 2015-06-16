@@ -83,6 +83,11 @@
         [(id)viewController setDelegate:self];
     }
     
+    if (viewController.navigationController && !self.navigationController)
+    {
+        self.navigationController = viewController.navigationController;
+    }
+    
     if (!self.navigationController)
     {
         ALPHANavigationController *navigationController = [[ALPHANavigationController alloc] initWithRootViewController:viewController];
@@ -110,7 +115,7 @@
     // are ignored, because they
     //
     
-    if (![item isKindOfClass:[ALPHAScreenActionItem class]] &&[item isKindOfClass:[ALPHAActionItem class]])
+    if (![item isKindOfClass:[ALPHAScreenActionItem class]] && [item isKindOfClass:[ALPHAActionItem class]])
     {
         [renderer.source performAction:(ALPHAActionItem *)item completion:^(ALPHAModel *model, NSError *error)
         {

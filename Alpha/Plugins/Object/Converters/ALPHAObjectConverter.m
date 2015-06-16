@@ -8,6 +8,8 @@
 
 #import <objc/runtime.h>
 
+#import "ALPHAInstanceSource.h"
+
 #import "ALPHAIvarRendererViewController.h"
 #import "ALPHAMethodRendererViewController.h"
 #import "ALPHAPropertyRendererViewController.h"
@@ -72,7 +74,7 @@
     
     if (!object.request.parameters[ALPHASearchTextParameterKey])
     {
-        [sections addObject:[self sectionForObjectGraph]];
+        [sections addObject:[self sectionForObjectGraphWithObject:object]];
     }
     
     model.sections = sections.copy;
@@ -259,7 +261,15 @@
     }
     else if (class == [UIView class])
     {
+        item = [[ALPHAScreenItem alloc] init];
+        item.title = @"View Controller";
         
+        [items addObject:item];
+        
+        item = [[ALPHAScreenItem alloc] init];
+        item.title = @"Preview Image";
+        
+        [items addObject:item];
     }
     else if (class == [CALayer class])
     {
@@ -271,17 +281,8 @@
     else
     {
         item = [[ALPHAScreenItem alloc] init];
-        item.title = @"+ (id)new";
-        
-        [items addObject:item];
-        
-        item = [[ALPHAScreenItem alloc] init];
-        item.title = @"+ (id)alloc";
-        
-        [items addObject:item];
-        
-        item = [[ALPHAScreenItem alloc] init];
         item.title = @"Live Instances";
+        item.object = [ALPHARequest requestWithIdentifier:ALPHAInstanceDataIdentifier parameters:@{ ALPHAInstanceDataClassNameIdentifier : NSStringFromClass(class) }];
         
         [items addObject:item];
     }
@@ -289,13 +290,14 @@
     return items.copy;
 }
 
-- (ALPHAScreenSection *)sectionForObjectGraph
+- (ALPHAScreenSection *)sectionForObjectGraphWithObject:(ALPHAObjectModel *)object
 {
     ALPHAScreenSection *section = [[ALPHAScreenSection alloc] init];
     section.headerText = @"Object Graph";
     
     ALPHAScreenItem *item = [[ALPHAScreenItem alloc] init];
     item.title = @"Other objects with ivars referencing this object";
+    item.object = [ALPHARequest requestWithIdentifier:ALPHAInstanceDataIdentifier parameters:@{ ALPHAInstanceDataClassNameIdentifier : object.objectClass, ALPHAInstanceDataReferenceObjectIdentifier : object.objectPointer }];
     
     section.items = @[ item ];
     
