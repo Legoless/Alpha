@@ -230,16 +230,19 @@ NSString *const ALPHANotificationDataIdentifier = @"com.unifiedsense.alpha.data.
 
 - (NSString *)enabledNotificationTypes
 {
-    if ([[UIApplication sharedApplication] respondsToSelector:@selector(currentUserNotificationSettings)])
+    return [self stringForUserNotificationSettings:[[UIApplication sharedApplication] currentUserNotificationSettings]];
+    
+    /*if ([[UIApplication sharedApplication] respondsToSelector:@selector(currentUserNotificationSettings)])
     {
         return [self stringForUserNotificationSettings:[[UIApplication sharedApplication] currentUserNotificationSettings]];
     }
     else
     {
         return [self stringForEnabledRemoteNotificationTypes:[UIApplication sharedApplication].enabledRemoteNotificationTypes];
-    }
+    }*/
 }
 
+/*
 - (NSString *)stringForEnabledRemoteNotificationTypes:(UIRemoteNotificationType)notificationType
 {
     NSMutableArray *types = [NSMutableArray array];
@@ -265,7 +268,7 @@ NSString *const ALPHANotificationDataIdentifier = @"com.unifiedsense.alpha.data.
     }
     
     return types.count ? [types componentsJoinedByString:@", "] : @"none";
-}
+}*/
 
 - (NSString *)stringForUserNotificationSettings:(UIUserNotificationSettings *)settings
 {
