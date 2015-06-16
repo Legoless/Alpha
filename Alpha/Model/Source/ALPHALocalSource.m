@@ -53,12 +53,15 @@
 
 #pragma mark - ALPHADataSource
 
-- (BOOL)hasDataForRequest:(ALPHARequest *)request
+- (void)hasDataForRequest:(ALPHARequest *)request completion:(ALPHADataSourceRequestVerification)completion
 {
-    return ([self sourceForRequest:request] != nil);
+    if (completion)
+    {
+        completion(([self sourceForRequest:request] != nil));
+    }
 }
 
-- (void)dataForRequest:(ALPHARequest *)request completion:(ALPHADataSourceCompletion)completion
+- (void)dataForRequest:(ALPHARequest *)request completion:(ALPHADataSourceRequestCompletion)completion
 {
     id<ALPHADataSource> source = [self sourceForRequest:request];
     
@@ -71,12 +74,15 @@
     }];
 }
 
-- (BOOL)canPerformAction:(id<ALPHAIdentifiableItem>)action
+- (void)canPerformAction:(id<ALPHAIdentifiableItem>)action completion:(ALPHADataSourceRequestVerification)completion;
 {
-    return ([self sourceForAction:action] != nil);
+    if (completion)
+    {
+        completion(([self sourceForAction:action] != nil));
+    }
 }
 
-- (void)performAction:(id<ALPHAIdentifiableItem>)action completion:(ALPHADataSourceCompletion)completion
+- (void)performAction:(id<ALPHAIdentifiableItem>)action completion:(ALPHADataSourceRequestCompletion)completion
 {
     id<ALPHADataSource> source = [self sourceForAction:action];
     
@@ -91,16 +97,17 @@
 
 - (id<ALPHADataSource>)sourceForRequest:(ALPHARequest *)request
 {
-    id foundSource = nil;
+    __block id foundSource = nil;
     
     for (id<ALPHADataSource> source in self.sources)
     {
-        if ([source hasDataForRequest:request])
+        [source hasDataForRequest:request completion:^(BOOL result)
         {
-            foundSource = source;
-            
-            break;
-        }
+            if (result)
+            {
+                foundSource = source;
+            }
+        }];
     }
     
     if ([foundSource respondsToSelector:@selector(isEnabled)])
@@ -113,15 +120,19 @@
 
 - (id<ALPHADataSource>)sourceForAction:(id<ALPHAIdentifiableItem>)action
 {
-    id foundSource = nil;
+    __block id foundSource = nil;
     
     for (id<ALPHADataSource> source in self.sources)
     {
-        if ([source respondsToSelector:@selector(canPerformAction:)] && [source canPerformAction:action] && [source respondsToSelector:@selector(performAction:completion:)])
+        if ([source respondsToSelector:@selector(canPerformAction:completion:)] && [source respondsToSelector:@selector(performAction:completion:)])
         {
-            foundSource = source;
-            
-            break;
+            [source canPerformAction:action completion:^(BOOL result)
+            {
+                if (result)
+                {
+                    foundSource = source;
+                }
+            }];
         }
     }
     

@@ -11,12 +11,17 @@
 
 @implementation ALPHALocalFileSource
 
-- (BOOL)hasDataForRequest:(ALPHARequest *)request
+- (void)hasDataForRequest:(ALPHARequest *)request completion:(ALPHADataSourceRequestVerification)completion
 {
-    return [request.identifier isEqualToString:ALPHAFileRequestIdentifier];
+    if (!completion)
+    {
+        return;
+    }
+    
+    completion ([request.identifier isEqualToString:ALPHAFileRequestIdentifier]);
 }
 
-- (void)dataForRequest:(ALPHARequest *)request completion:(ALPHADataSourceCompletion)completion
+- (void)dataForRequest:(ALPHARequest *)request completion:(ALPHADataSourceRequestCompletion)completion
 {
     NSString* url = request.parameters[ALPHAFileURLParameterKey];
     

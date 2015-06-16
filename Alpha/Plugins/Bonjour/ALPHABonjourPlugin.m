@@ -48,7 +48,7 @@
     
     if (self)
     {
-        ALPHABlockActionItem *touchAction = [ALPHABlockActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.bonjour."];
+        ALPHABlockActionItem *touchAction = [ALPHABlockActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.bonjour.activate"];
         touchAction.title = @"Bonjour";
         touchAction.icon = [FLEXResources hierarchyIndentPattern];
         touchAction.actionBlock = ^id(id sender)
@@ -59,15 +59,7 @@
         };
         
         [self registerAction:touchAction];
-        
-        ALPHAScreenActionItem* menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.screenshot.main"];
-        menuAction.icon = @"📶";
-        menuAction.title = @"Remote";
-        //menuAction.dataIdentifier = ALPHAScreenshotDataIdentifier;
-        menuAction.isMain = YES;
-        
-        [self registerAction:menuAction];
-        
+                
         //[self registerSource:[ALPHAScreenshotSource new]];
     }
     

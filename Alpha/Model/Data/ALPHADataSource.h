@@ -10,7 +10,8 @@
 #import "ALPHAIdentifiableItem.h"
 #import "ALPHARequest.h"
 
-typedef void (^ALPHADataSourceCompletion)(id model, NSError *error);
+typedef void (^ALPHADataSourceRequestCompletion)(id object, NSError *error);
+typedef void (^ALPHADataSourceRequestVerification)(BOOL result);
 
 @protocol ALPHADataSource <NSObject>
 
@@ -23,7 +24,7 @@ typedef void (^ALPHADataSourceCompletion)(id model, NSError *error);
  *
  *  @return YES if data for request is available
  */
-- (BOOL)hasDataForRequest:(ALPHARequest *)request;
+- (void)hasDataForRequest:(ALPHARequest *)request completion:(ALPHADataSourceRequestVerification)completion;
 
 /*!
  *  Request data with request object
@@ -31,7 +32,7 @@ typedef void (^ALPHADataSourceCompletion)(id model, NSError *error);
  *  @param request     data request object
  *  @param completion  called upon completion
  */
-- (void)dataForRequest:(ALPHARequest *)request completion:(ALPHADataSourceCompletion)completion;
+- (void)dataForRequest:(ALPHARequest *)request completion:(ALPHADataSourceRequestCompletion)completion;
 
 @optional
 
@@ -44,7 +45,7 @@ typedef void (^ALPHADataSourceCompletion)(id model, NSError *error);
  *
  *  @return YES if action can be performed
  */
-- (BOOL)canPerformAction:(id<ALPHAIdentifiableItem>)action;
+- (void)canPerformAction:(id<ALPHAIdentifiableItem>)action completion:(ALPHADataSourceRequestVerification)completion;
 
 /*!
  *  Performs actions with identifiers
@@ -52,7 +53,7 @@ typedef void (^ALPHADataSourceCompletion)(id model, NSError *error);
  *  @param identifiers to be performed
  *  @param completion  called upon completion
  */
-- (void)performAction:(id<ALPHAIdentifiableItem>)action completion:(ALPHADataSourceCompletion)completion;
+- (void)performAction:(id<ALPHAIdentifiableItem>)action completion:(ALPHADataSourceRequestCompletion)completion;
 
 /*!
  *  Enable or disable source (can be optional)

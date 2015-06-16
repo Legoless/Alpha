@@ -476,7 +476,7 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     return [action isKindOfClass:[ALPHAObjectActionItem class]];
 }
 
-- (void)performAction:(ALPHAObjectActionItem *)action completion:(ALPHADataSourceCompletion)completion
+- (void)performAction:(ALPHAObjectActionItem *)action completion:(ALPHADataSourceRequestCompletion)completion
 {
     //
     // Check if we have correct action to be performed

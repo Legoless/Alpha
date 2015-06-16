@@ -1,13 +1,13 @@
 //
-//  ALPHABonjourSource.h
+//  ALPHARemotePlugin.h
 //  Alpha
 //
 //  Created by Dal Rupnik on 16/06/15.
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHABaseDataSource.h"
+#import "ALPHAPlugin.h"
 
-@interface ALPHABonjourSource : ALPHABaseDataSource
+@interface ALPHARemotePlugin : ALPHAPlugin
 
 @end

@@ -54,4 +54,15 @@ typedef enum : NSUInteger {
     return randomString;
 }
 
++ (NSString *)hs_UUID
+{
+    CFUUIDRef uuidObj = CFUUIDCreate(nil);
+    
+    NSString *uuidString = (__bridge_transfer NSString *)CFUUIDCreateString(nil, uuidObj);
+    
+    CFRelease(uuidObj);
+    
+    return uuidString;
+}
+
 @end

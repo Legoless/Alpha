@@ -44,11 +44,19 @@ NSString* const ALPHAInstanceDataClassNameIdentifier = @"kALPHAInstanceDataClass
  *
  *  @return YES if correct parameters are provided
  */
-- (BOOL)hasDataForRequest:(ALPHARequest *)request
+- (void)hasDataForRequest:(ALPHARequest *)request completion:(ALPHADataSourceRequestVerification)completion
 {
-    BOOL hasData = [super hasDataForRequest:request];
+    if (!completion)
+    {
+        return;
+    }
     
-    return hasData && (request.parameters[ALPHAInstanceDataClassNameIdentifier] != nil || request.parameters[ALPHAInstanceDataReferenceObjectIdentifier] != nil);
+    [super hasDataForRequest:request completion:^(BOOL result)
+    {
+        BOOL hasData = result && (request.parameters[ALPHAInstanceDataClassNameIdentifier] != nil || request.parameters[ALPHAInstanceDataReferenceObjectIdentifier] != nil);
+        
+        completion(hasData);
+    }];
 }
 
 - (ALPHAModel *)modelForRequest:(ALPHARequest *)request

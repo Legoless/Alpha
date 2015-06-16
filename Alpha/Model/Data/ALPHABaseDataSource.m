@@ -71,17 +71,19 @@
 
 #pragma mark - ALPHADataSource
 
-- (BOOL)hasDataForRequest:(ALPHARequest *)request
+- (void)hasDataForRequest:(ALPHARequest *)request completion:(ALPHADataSourceRequestVerification)completion
 {
-    if (!self.isEnabled)
+    if (!completion)
     {
-        return NO;
+        return;
     }
     
-    return [self.identifiers containsObject:request.identifier];
+    BOOL result = self.isEnabled && [self.identifiers containsObject:request.identifier];
+    
+    completion (result);
 }
 
-- (void)dataForRequest:(ALPHARequest *)request completion:(ALPHADataSourceCompletion)completion
+- (void)dataForRequest:(ALPHARequest *)request completion:(ALPHADataSourceRequestCompletion)completion
 {
     ALPHAModel *model = [self modelForRequest:request];
     
@@ -91,17 +93,19 @@
     }
 }
 
-- (BOOL)canPerformAction:(id<ALPHAIdentifiableItem>)action
+- (void)canPerformAction:(id<ALPHAIdentifiableItem>)action completion:(ALPHADataSourceRequestVerification)completion
 {
-    if (!self.isEnabled)
+    if (!completion)
     {
-        return NO;
+        return;
     }
     
-    return [self.actions containsObject:action.request.identifier];
+    BOOL result = self.isEnabled && [self.actions containsObject:action.request.identifier];
+    
+    completion (result);
 }
 
-- (void)performAction:(id<ALPHAIdentifiableItem>)action completion:(ALPHADataSourceCompletion)completion
+- (void)performAction:(id<ALPHAIdentifiableItem>)action completion:(ALPHADataSourceRequestCompletion)completion
 {
     //
     // Default heuristics for executing actions

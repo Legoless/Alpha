@@ -1,6 +1,6 @@
 PODS:
   - DTBonjour (1.1.1)
-  - Haystack (0.8.5)
+  - Haystack (0.8.6)
 
 DEPENDENCIES:
   - DTBonjour
@@ -8,6 +8,6 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   DTBonjour: f221ef5500b109de0eb8cf0f6700c10a27cc8eb0
-  Haystack: a095f43efeddfb54183144bf06028a888b5f79b4
+  Haystack: 4ce636837bd9bea70130c963fde91a21dc77af9f
 
 COCOAPODS: 0.37.2

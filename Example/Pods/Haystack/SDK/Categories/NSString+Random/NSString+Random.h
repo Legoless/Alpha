@@ -33,4 +33,11 @@
  */
 + (NSString *)hs_randomStringOfLength:(NSUInteger)length;
 
+/*!
+ *  Returns random new UUID
+ *
+ *  @return random UUID
+ */
++ (NSString *)hs_UUID;
+
 @end

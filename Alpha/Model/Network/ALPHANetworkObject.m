@@ -1,21 +1,24 @@
 //
-//  ALPHABonjourObject.m
+//  ALPHANetworkObject.m
 //  Alpha
 //
 //  Created by Dal Rupnik on 16/06/15.
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHABonjourObject.h"
+NSString *const ALPHANetworkObjectCheckKey = @"kALPHANetworkObjectCheckKey";
+
 #import "ALPHASerialization.h"
 
-@interface ALPHABonjourObject ()
+#import "ALPHANetworkObject.h"
+
+@interface ALPHANetworkObject ()
 
 @property (nonatomic, strong) id<ALPHASerializer> serializer;
 
 @end
 
-@implementation ALPHABonjourObject
+@implementation ALPHANetworkObject
 
 - (id<ALPHASerializer>)serializer
 {
@@ -26,7 +29,6 @@
     
     return _serializer;
 }
-
 
 - (instancetype)initWithObject:(id<ALPHASerializableItem>)object
 {
@@ -40,7 +42,6 @@
     
     return self;
 }
-
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {

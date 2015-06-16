@@ -1,5 +1,5 @@
 //
-//  ALPHABonjourObject.h
+//  ALPHANetworkObject.h
 //  Alpha
 //
 //  Created by Dal Rupnik on 16/06/15.
@@ -8,18 +8,25 @@
 
 @import Foundation;
 
+/*!
+ *  Set this key in parameters to true, if only check should be done.
+ */
+extern NSString *const ALPHANetworkObjectCheckKey;
+
 #import "ALPHASerialization.h"
 
 /*!
- *  Underlying bonjour object that is transferred over the network.
- *  Bonjour source and server always communicate with this object.
+ *  Underlying network object that is transferred over the network.
+ *  Network sources and server bases always communicate using this object.
  */
-@interface ALPHABonjourObject : NSObject <NSCoding>
+@interface ALPHANetworkObject : NSObject
 
 @property (nonatomic, copy) NSString* objectClass;
 @property (nonatomic, copy) id objectData;
 
 @property (nonatomic, copy) NSError *error;
+
+@property (nonatomic, copy) NSDictionary *parameters;
 
 /*!
  *  Prepares Bonjour object
