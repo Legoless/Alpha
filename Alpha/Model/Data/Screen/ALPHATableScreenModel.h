@@ -7,6 +7,7 @@
 //
 
 #import "ALPHAScreenModel.h"
+#import "ALPHAScreenSection.h"
 
 @interface ALPHATableScreenModel : ALPHAScreenModel
 
@@ -28,6 +29,6 @@
 /*!
  *  Array of display section objects objects
  */
-@property (nonatomic, copy) NSArray *sections;
+@property (nonatomic, copy) NSArray<ALPHAScreenSection> *sections;
 
 @end

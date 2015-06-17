@@ -19,7 +19,7 @@ extern NSString *const ALPHANetworkObjectVerificationKey;
  *  Underlying network object that is transferred over the network.
  *  Network sources and server bases always communicate using this object.
  */
-@interface ALPHANetworkObject : NSObject
+@interface ALPHANetworkObject : NSObject <NSSecureCoding>
 
 @property (nonatomic, copy) NSString* objectClass;
 @property (nonatomic, copy) id objectData;

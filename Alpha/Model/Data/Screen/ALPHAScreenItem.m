@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
+#import "ALPHASerialization.h"
+
 #import "ALPHAScreenItem.h"
 
 NSString* const ALPHADisplayItemTitleKey = @"kALPHADisplayItemTitleKey";
@@ -14,6 +16,23 @@ NSString* const ALPHADisplayItemDetailkey = @"kALPHADisplayItemDetailkey";
 @implementation ALPHAScreenItem
 
 #pragma mark - Getters and Setters
+
+- (void)setObject:(id)object
+{
+    if (![self.objectClass isEqualToString:NSStringFromClass([object class])])
+    {
+        _object = [[ALPHASerializerManager sharedManager] deserializeObject:object toClass:NSClassFromString(self.objectClass)];
+    }
+    else
+    {
+        _object = object;
+        
+        if (!self.objectClass)
+        {
+            self.objectClass = NSStringFromClass([object class]);
+        }
+    }
+}
 
 - (void)setTitle:(id)title
 {

@@ -23,10 +23,17 @@
 
 @implementation ALPHABonjourServer
 
+- (BOOL)isActive
+{
+    return self.server.port > 0;
+}
+
 - (void)start
 {
     self.server = [[DTBonjourServer alloc] initWithBonjourType:ALPHABonjourType];
     self.server.TXTRecord = @{ @"id" : [NSString hs_UUID], @"name" : [[UIDevice currentDevice] name], @"type" : [[UIDevice currentDevice] model], @"system" : [[UIDevice currentDevice] systemName], @"version" : [[UIDevice currentDevice] systemVersion] };
+    
+    self.server.delegate = self;
     [self.server start];
 }
 
@@ -39,11 +46,18 @@
 
 #pragma mark - DTBonjourServerDelegate
 
+- (void)bonjourServer:(DTBonjourServer *)server didAcceptConnection:(DTBonjourDataConnection *)connection
+{
+    NSLog(@"SERVER ACCEPTED CONNECTION: %@", connection);
+}
+
 - (void)bonjourServer:(DTBonjourServer *)server didReceiveObject:(ALPHANetworkObject *)object onConnection:(DTBonjourDataConnection *)connection
 {
     //
     // We had received an object, we assume it is bonjour object, but make a check to prevent crashing.
     //
+    
+    NSLog(@"SERVER RECEIVING OBJECT: %@ CONN: %@", object, connection);
     
     if (![object isKindOfClass:[ALPHANetworkObject class]] || !self.source)
     {

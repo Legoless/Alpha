@@ -221,7 +221,7 @@
     
     for (NSString *key in [object allKeys])
     {
-        NSString *propertyName = [mapDictionary objectForKey:key];;
+        NSString *propertyName = [mapDictionary objectForKey:key];
         
         if (!propertyName)
         {
@@ -249,7 +249,7 @@
         {
             NSArray *nestedArray = [object objectForKey:key];
             
-            NSString *arrayType = [self typeFromProtocolOfObject:nestedArray];
+            NSString *arrayType = [self typeFromProtocolOfObject:[nestedArray class]];
             [newObject setValue:[self deserializeObject:nestedArray toClass:NSClassFromString(arrayType)] forKey:propertyName];
         }
         
@@ -395,6 +395,8 @@
  */
 - (NSString *)typeFromProtocolOfObject:(id)object
 {
+    NSLog(@"OBJECT: %@ Class: %@", object, [object class]);
+    
     unsigned int count;
     __unsafe_unretained Protocol **protocols = class_copyProtocolList(object, &count);
     

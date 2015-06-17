@@ -9,6 +9,10 @@
 #import "ALPHAActionItem.h"
 #import "ALPHADataSource.h"
 
+@protocol ALPHAScreenActionItem <ALPHAActionItem>
+
+@end
+
 @interface ALPHAScreenActionItem : ALPHAActionItem
 
 /*!

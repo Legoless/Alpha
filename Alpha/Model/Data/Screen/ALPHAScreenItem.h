@@ -6,13 +6,24 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
+@import UIKit;
+
 #import "ALPHASerializableItem.h"
 
 typedef NSInteger ALPHAScreenItemPriority;
 
+@protocol ALPHAScreenItem <NSObject>
+
+@end
+
 @interface ALPHAScreenItem : NSObject <ALPHASerializableItem>
 
 #pragma mark - Model
+
+/*!
+ *  Class for model if back-reference is present
+ */
+@property (nonatomic, copy) NSString *objectClass;
 
 /*!
  *  Back-Reference for model if created from a model

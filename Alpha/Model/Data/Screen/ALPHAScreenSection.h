@@ -8,6 +8,15 @@
 
 #import "ALPHASerializableItem.h"
 
+#import "ALPHAScreenItem.h"
+#import "ALPHAActionItem.h"
+#import "ALPHAScreenActionItem.h"
+#import "ALPHASelectorActionItem.h"
+
+@protocol ALPHAScreenSection <NSObject>
+
+@end
+
 @interface ALPHAScreenSection : NSObject <ALPHASerializableItem>
 
 @property (nonatomic, copy) NSString* identifier;
@@ -16,9 +25,9 @@
 @property (nonatomic, copy) NSString* footerText;
 
 //
-// Array of Display Item objects
+// Array of Display Item objects, protocols define which objects can be in array
 //
-@property (nonatomic, copy) NSArray* items;
+@property (nonatomic, copy) NSArray<ALPHAScreenActionItem, ALPHASelectorActionItem, ALPHAActionItem, ALPHAScreenItem>* items;
 
 - (instancetype)initWithIdentifier:(NSString *)identifier;
 - (instancetype)initWithIdentifier:(NSString *)identifier title:(NSString *)title;

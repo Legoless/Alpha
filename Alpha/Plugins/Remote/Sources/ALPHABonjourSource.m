@@ -53,6 +53,11 @@
     
     NSError* error = nil;
     
+    if (![self.connection isOpen])
+    {
+        [self.connection open];
+    }
+    
     [self.connection sendObject:object error:&error];
     
     if (error)
@@ -74,6 +79,11 @@
     
     NSError* error = nil;
     
+    if (![self.connection isOpen])
+    {
+        [self.connection open];
+    }
+    
     [self.connection sendObject:object error:&error];
     
     if (error)
@@ -85,7 +95,6 @@
             completion(nil, error);
         }
     }
-
 }
 
 - (void)canPerformAction:(id<ALPHAIdentifiableItem>)action completion:(ALPHADataSourceRequestVerification)completion;
@@ -96,6 +105,11 @@
     self.verification = completion;
     
     NSError* error = nil;
+    
+    if (![self.connection isOpen])
+    {
+        [self.connection open];
+    }
     
     [self.connection sendObject:object error:&error];
     
@@ -119,6 +133,11 @@
     
     NSError* error = nil;
     
+    if (![self.connection isOpen])
+    {
+        [self.connection open];
+    }
+    
     [self.connection sendObject:object error:&error];
     
     if (error)
@@ -139,6 +158,8 @@
     //
     // Check if it errored
     //
+    
+    NSLog(@"CLIENT RECEIVED OBJECT: %@", object);
     
     id serializedObject = object.object;
     
@@ -175,15 +196,5 @@
 }
 
 #pragma mark - Private methods
-
-- (void)verificationComplete:(ALPHADataSourceRequestVerification)completion
-{
-    
-}
-
-- (void)requestComplete:(ALPHADataSourceRequestCompletion)completion
-{
-    
-}
 
 @end

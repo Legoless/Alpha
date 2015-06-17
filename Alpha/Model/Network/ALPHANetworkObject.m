@@ -20,6 +20,11 @@ NSString *const ALPHANetworkObjectVerificationKey = @"kALPHANetworkObjectVerific
 
 @implementation ALPHANetworkObject
 
++ (BOOL)supportsSecureCoding
+{
+    return YES;
+}
+
 - (id<ALPHASerializer>)serializer
 {
     if (!_serializer)
@@ -46,7 +51,7 @@ NSString *const ALPHANetworkObjectVerificationKey = @"kALPHANetworkObjectVerific
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:self.objectClass forKey:@"objectClass"];
-    [aCoder encodeObject:self.objectClass forKey:@"objectData"];
+    [aCoder encodeObject:self.objectData forKey:@"objectData"];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder

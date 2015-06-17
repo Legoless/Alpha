@@ -12,6 +12,10 @@
 /*!
  *  Action item
  */
+@protocol ALPHAActionItem <NSObject>
+
+@end
+
 @interface ALPHAActionItem : ALPHAScreenItem <ALPHAIdentifiableItem>
 
 @property (nonatomic, copy) ALPHARequest* request;

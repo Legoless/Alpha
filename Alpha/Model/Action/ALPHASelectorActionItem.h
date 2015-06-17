@@ -8,6 +8,10 @@
 
 #import "ALPHAActionItem.h"
 
+@protocol ALPHASelectorActionItem <ALPHAActionItem>
+
+@end
+
 @interface ALPHASelectorActionItem : ALPHAActionItem
 
 @property (nonatomic, copy) NSString* selector;
