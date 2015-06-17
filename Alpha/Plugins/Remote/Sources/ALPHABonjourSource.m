@@ -81,6 +81,8 @@
     
     self.completion = completion;
     
+    NSLog(@"SETTING COMPLETION: %@", completion);
+    
     NSError* error = nil;
     
     if (![self.connection isOpen])
@@ -169,28 +171,36 @@
     
     id serializedObject = object.object;
     
+    NSLog(@"CLIENT SERIALIZED: %@", serializedObject);
+    NSLog(@"COMPLETION: %@", self.completion);
+    
     if (object.error)
     {
         if (self.verification)
         {
             self.verification(NO);
+        
+            self.verification = nil;
         }
         else if (self.completion)
         {
             self.completion (nil, object.error);
+            
+            self.completion = nil;
         }
     }
     else if (object.parameters[ALPHANetworkObjectVerificationKey] && self.verification)
     {
         self.verification ([object.parameters[ALPHANetworkObjectVerificationKey] boolValue]);
+        
+        self.verification = nil;
     }
     else if (serializedObject && self.completion)
     {
         self.completion (serializedObject, nil);
+        
+        self.completion = nil;
     }
-    
-    self.verification = nil;
-    self.completion = nil;
 }
 
 - (void)connectionDidClose:(DTBonjourDataConnection *)connection
