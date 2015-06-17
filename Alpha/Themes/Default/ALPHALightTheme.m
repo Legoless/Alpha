@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 f. All rights reserved.
 //
 
-#import "FLEXUtility.h"
+#import "ALPHAUtility.h"
 #import "ALPHALightTheme.h"
 
 @implementation ALPHALightTheme

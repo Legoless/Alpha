@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "FLEXRuntimeUtility.h"
-#import "FLEXUtility.h"
+#import "ALPHARuntimeUtility.h"
+#import "ALPHAUtility.h"
 #import "FLEXHeapEnumerator.h"
 
 #import "ALPHATableScreenModel.h"
@@ -98,7 +98,7 @@ NSString* const ALPHAInstanceDataClassNameIdentifier = @"kALPHAInstanceDataClass
         }
         
         item.title = title;
-        item.detail = [FLEXRuntimeUtility descriptionForIvarOrPropertyValue:instance];
+        item.detail = [ALPHARuntimeUtility descriptionForIvarOrPropertyValue:instance];
         
         row++;
         [items addObject:item];
@@ -123,7 +123,7 @@ NSString* const ALPHAInstanceDataClassNameIdentifier = @"kALPHAInstanceDataClass
 
 - (NSDictionary *)instancesReferencingObjectPointer:(NSString *)pointer className:(NSString *)className
 {
-    id object = [FLEXRuntimeUtility objectForPointerString:pointer className:pointer];
+    id object = [ALPHARuntimeUtility objectForPointerString:pointer className:pointer];
     
     if (!object)
     {

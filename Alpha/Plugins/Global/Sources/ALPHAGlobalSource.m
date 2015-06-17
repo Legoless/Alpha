@@ -10,7 +10,7 @@
 #import "ALPHAClassSource.h"
 #import "ALPHALibrarySource.h"
 
-#import "FLEXUtility.h"
+#import "ALPHAUtility.h"
 
 #import "ALPHAApplicationDelegate.h"
 #import "ALPHAModel.h"
@@ -40,7 +40,7 @@ NSString* const ALPHAGlobalDataIdentifier = @"com.unifiedsense.alpha.data.global
     NSMutableArray *items = [NSMutableArray array];
     
     ALPHAScreenActionItem* menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.global.classes"];
-    menuAction.title = [NSString stringWithFormat:@"%@ Classes", [FLEXUtility applicationName]];
+    menuAction.title = [NSString stringWithFormat:@"%@ Classes", [ALPHAUtility applicationName]];
     menuAction.icon = @"📕";
     menuAction.dataIdentifier = ALPHAClassDataIdentifier;
     

@@ -1,15 +1,15 @@
 //
-//  FLEXUtility.m
+//  ALPHAUtility.m
 //  Flipboard
 //
 //  Created by Ryan Olson on 4/18/14.
 //  Copyright (c) 2014 Flipboard. All rights reserved.
 //
 
-#import "FLEXUtility.h"
+#import "ALPHAUtility.h"
 #import "FLEXResources.h"
 
-@implementation FLEXUtility
+@implementation ALPHAUtility
 
 + (UIColor *)consistentRandomColorForObject:(id)object
 {
@@ -84,7 +84,7 @@
 
 + (NSString *)applicationName
 {
-    return [[[FLEXUtility applicationImageName] componentsSeparatedByString:@"/"] lastObject];
+    return [[[ALPHAUtility applicationImageName] componentsSeparatedByString:@"/"] lastObject];
 }
 
 + (NSString *)safeDescriptionForObject:(id)object

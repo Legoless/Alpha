@@ -7,7 +7,7 @@
 //
 
 #import "FLEXArgumentInputJSONObjectView.h"
-#import "FLEXRuntimeUtility.h"
+#import "ALPHARuntimeUtility.h"
 
 @implementation FLEXArgumentInputJSONObjectView
 
@@ -25,12 +25,12 @@
 
 - (void)setInputValue:(id)inputValue
 {
-    self.inputTextView.text = [FLEXRuntimeUtility editableJSONStringForObject:inputValue];
+    self.inputTextView.text = [ALPHARuntimeUtility editableJSONStringForObject:inputValue];
 }
 
 - (id)inputValue
 {
-    return [FLEXRuntimeUtility objectValueFromEditableJSONString:self.inputTextView.text];
+    return [ALPHARuntimeUtility objectValueFromEditableJSONString:self.inputTextView.text];
 }
 
 + (BOOL)supportsObjCType:(const char *)type withCurrentValue:(id)value
@@ -41,7 +41,7 @@
     if (supported) {
         if (value) {
             // If there's a current value, it must be serializable to JSON
-            supported = [FLEXRuntimeUtility editableJSONStringForObject:value] != nil;
+            supported = [ALPHARuntimeUtility editableJSONStringForObject:value] != nil;
         } else {
             // Otherwise, see if we have more type information than just 'id'.
             // If we do, make sure the encoding is something serializable to JSON.

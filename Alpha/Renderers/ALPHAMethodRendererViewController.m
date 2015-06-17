@@ -7,7 +7,7 @@
 //
 
 #import "ALPHAMethodRendererViewController.h"
-#import "FLEXRuntimeUtility.h"
+#import "ALPHARuntimeUtility.h"
 #import "ALPHAFieldEditorView.h"
 #import "FLEXArgumentInputView.h"
 #import "FLEXArgumentInputViewFactory.h"
@@ -48,7 +48,7 @@
     
     NSMutableArray *argumentInputViews = [NSMutableArray array];
     
-    unsigned int argumentIndex = kFLEXNumberOfImplicitArgs;
+    unsigned int argumentIndex = ALPHANumberOfImplicitArgsKey;
     
     for (ALPHAObjectArgument *methodComponent in self.method.arguments)
     {

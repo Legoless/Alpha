@@ -16,7 +16,7 @@
 
 #import "NSString+ALPHAAdditional.h"
 
-#import "FLEXRuntimeUtility.h"
+#import "ALPHARuntimeUtility.h"
 
 #import "ALPHAObjectProperty.h"
 #import "ALPHAObjectIvar.h"
@@ -104,13 +104,13 @@
         if ([object isKindOfClass:[ALPHAObjectProperty class]])
         {
             item.title = [object description];
-            item.detail = [FLEXRuntimeUtility descriptionForIvarOrPropertyValue:[(ALPHAObjectProperty *)object value]];
+            item.detail = [ALPHARuntimeUtility descriptionForIvarOrPropertyValue:[(ALPHAObjectProperty *) object value]];
 
         }
         else if ([object isKindOfClass:[ALPHAObjectIvar class]])
         {
             item.title = [object prettyDescription];
-            item.detail = [FLEXRuntimeUtility descriptionForIvarOrPropertyValue:[(ALPHAObjectIvar *)object value]];
+            item.detail = [ALPHARuntimeUtility descriptionForIvarOrPropertyValue:[(ALPHAObjectIvar *) object value]];
         }
         else if ([object isKindOfClass:[ALPHAObjectMethod class]])
         {

@@ -398,4 +398,57 @@
     return nil;
 }
 
+#pragma mark - Notifications
+
+- (ALPHAStatusBarNotification *)displayNotificationWithMessage:(NSString *)message forDuration:(NSTimeInterval)duration
+{
+    ALPHAStatusBarNotification *notification = [[ALPHAStatusBarNotification alloc] init];
+    
+    [notification displayNotificationWithMessage:message forDuration:duration];
+    
+    [self applyTheme:self.theme toNotification:notification];
+    
+    return notification;
+}
+
+- (ALPHAStatusBarNotification *)displayNotificationWithMessage:(NSString *)message completion:(void (^)(void))completion
+{
+    ALPHAStatusBarNotification *notification = [[ALPHAStatusBarNotification alloc] init];
+    
+    [notification displayNotificationWithMessage:message completion:completion];
+    
+    [self applyTheme:self.theme toNotification:notification];
+    
+    return notification;
+}
+
+- (ALPHAStatusBarNotification *)displayNotificationWithView:(UIView *)view forDuration:(CGFloat)duration
+{
+    ALPHAStatusBarNotification *notification = [[ALPHAStatusBarNotification alloc] init];
+    
+    [notification displayNotificationWithView:view forDuration:duration];
+    
+    [self applyTheme:self.theme toNotification:notification];
+    
+    return notification;
+}
+
+- (ALPHAStatusBarNotification *)displayNotificationWithView:(UIView *)view completion:(void (^)(void))completion
+{
+    ALPHAStatusBarNotification *notification = [[ALPHAStatusBarNotification alloc] init];
+    
+    [notification displayNotificationWithView:view completion:completion];
+    
+    [self applyTheme:self.theme toNotification:notification];
+    
+    return notification;
+}
+
+- (void)applyTheme:(ALPHATheme *)theme toNotification:(ALPHAStatusBarNotification *)notification
+{
+    notification.notificationLabel.font = [theme themeFontOfSize:9.0];
+    notification.notificationLabel.backgroundColor = theme.selectedBackgroundColor;
+    notification.notificationLabel.textColor = theme.tintColor;
+}
+
 @end

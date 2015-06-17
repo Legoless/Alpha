@@ -15,9 +15,13 @@
 
 #import "ALPHABonjourServer.h"
 
+#import "ALPHAManager.h"
+
 @interface ALPHABonjourServer () <DTBonjourServerDelegate>
 
 @property (atomic, strong) DTBonjourServer *server;
+
+@property (nonatomic, strong) ALPHAStatusBarNotification *notification;
 
 @end
 
@@ -35,6 +39,8 @@
     
     self.server.delegate = self;
     [self.server start];
+    
+    self.notification = [[ALPHAManager sharedManager] displayNotificationWithMessage:[self serverStatusText] completion:nil];
 }
 
 - (void)stop
@@ -42,13 +48,18 @@
     [self.server stop];
     
     self.server = nil;
+    
+    [self.notification dismissNotificationWithCompletion:^
+    {
+        self.notification = nil;
+    }];
 }
 
 #pragma mark - DTBonjourServerDelegate
 
 - (void)bonjourServer:(DTBonjourServer *)server didAcceptConnection:(DTBonjourDataConnection *)connection
 {
-    NSLog(@"SERVER ACCEPTED CONNECTION: %@", connection);
+    self.notification.notificationLabel.text = [self serverStatusText];
 }
 
 - (void)bonjourServer:(DTBonjourServer *)server didReceiveObject:(ALPHANetworkObject *)object onConnection:(DTBonjourDataConnection *)connection
@@ -57,7 +68,7 @@
     // We had received an object, we assume it is bonjour object, but make a check to prevent crashing.
     //
     
-    NSLog(@"SERVER RECEIVING OBJECT: %@ CONN: %@", object, connection);
+    //NSLog(@"SERVER RECEIVING OBJECT: %@ CONN: %@", object, connection);
     
     if (![object isKindOfClass:[ALPHANetworkObject class]] || !self.source)
     {
@@ -135,5 +146,11 @@
     }
 }
 
+#pragma mark - Private methods
+
+- (NSString *)serverStatusText
+{
+    return [NSString stringWithFormat:@"Bonjour Server Active: %ld - Connected", (long)self.server.connections.count];
+}
 
 @end

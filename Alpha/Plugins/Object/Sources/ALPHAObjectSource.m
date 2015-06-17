@@ -15,8 +15,8 @@
 #import "ALPHAObjectIvar.h"
 #import "ALPHAObjectMethod.h"
 
-#import "FLEXUtility.h"
-#import "FLEXRuntimeUtility.h"
+#import "ALPHAUtility.h"
+#import "ALPHARuntimeUtility.h"
 
 #import "ALPHAObjectModel.h"
 #import "ALPHAObjectSource.h"
@@ -58,7 +58,7 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     
     if (request.parameters[ALPHAObjectDataPointerIdentifier] && request.parameters[ALPHAObjectDataClassNameIdentifier])
     {
-        object = [FLEXRuntimeUtility objectForPointerString:request.parameters[ALPHAObjectDataPointerIdentifier] className:request.parameters[ALPHAObjectDataClassNameIdentifier]];
+        object = [ALPHARuntimeUtility objectForPointerString:request.parameters[ALPHAObjectDataPointerIdentifier] className:request.parameters[ALPHAObjectDataClassNameIdentifier]];
     }
 
     if (!object)
@@ -72,7 +72,7 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     
     model.objectPointer = request.parameters[ALPHAObjectDataPointerIdentifier];
     model.objectClass = NSStringFromClass([object class]);
-    model.objectDescription = [FLEXUtility safeDescriptionForObject:object];
+    model.objectDescription = [ALPHAUtility safeDescriptionForObject:object];
     
     model.objectContent = [self contentWithObject:object];
     model.objectMainSuperclass = [self mainSuperclassForObject:object];
@@ -142,7 +142,7 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     
     Class class = [object superclass];
     
-    while (![mainSuperclassPrefixes containsObject:[FLEXRuntimeUtility prefixOfClassName: NSStringFromClass(class)]])
+    while (![mainSuperclassPrefixes containsObject:[ALPHARuntimeUtility prefixOfClassName:NSStringFromClass(class)]])
     {
         class = [class superclass];
     }
@@ -203,13 +203,13 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
         {
             ALPHAObjectProperty *property = [[ALPHAObjectProperty alloc] init];
             property.name = [NSString stringWithUTF8String:property_getName(propertyList[i])];
-            property.type.cType = [FLEXRuntimeUtility typeEncodingForProperty:propertyList[i]];
-            property.type.name = [FLEXRuntimeUtility prettyTypeForProperty:propertyList[i]];
-            property.attributes = [FLEXRuntimeUtility attributesDictionaryForProperty:propertyList[i]];
+            property.type.cType = [ALPHARuntimeUtility typeEncodingForProperty:propertyList[i]];
+            property.type.name = [ALPHARuntimeUtility prettyTypeForProperty:propertyList[i]];
+            property.attributes = [ALPHARuntimeUtility attributesDictionaryForProperty:propertyList[i]];
             
             if (!class_isMetaClass(object_getClass(object)))
             {
-                property.value = [FLEXRuntimeUtility valueForProperty:propertyList[i] onObject:object];
+                property.value = [ALPHARuntimeUtility valueForProperty:propertyList[i] onObject:object];
             }
             
             [properties addObject:property];
@@ -281,12 +281,12 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
         {
             ALPHAObjectIvar *ivar = [[ALPHAObjectIvar alloc] init];
             ivar.name = [NSString stringWithUTF8String:ivar_getName(ivarList[i])];
-            ivar.type.name = [FLEXRuntimeUtility prettyTypeForIvar:ivarList[i]];
-            ivar.type.cType = [FLEXRuntimeUtility typeEncodingForIvar:ivarList[i]];
+            ivar.type.name = [ALPHARuntimeUtility prettyTypeForIvar:ivarList[i]];
+            ivar.type.cType = [ALPHARuntimeUtility typeEncodingForIvar:ivarList[i]];
             
             if (!class_isMetaClass(object_getClass(object)) && ![ivar.type.name isEqualToString:@"Class"])
             {
-                ivar.value = [FLEXRuntimeUtility valueForIvar:ivarList[i] onObject:object];
+                ivar.value = [ALPHARuntimeUtility valueForIvar:ivarList[i] onObject:object];
             }
             
             [ivars addObject:ivar];
@@ -380,7 +380,7 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
             
             char *returnType = method_copyReturnType(methodList[i]);
             
-            method.returnType.name = [FLEXRuntimeUtility prettyReturnTypeForMethod:methodList[i]];
+            method.returnType.name = [ALPHARuntimeUtility prettyReturnTypeForMethod:methodList[i]];
             method.returnType.cType = @(returnType);
             
             free (returnType);
@@ -404,15 +404,15 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     NSArray *selectorComponents = [selectorName componentsSeparatedByString:@":"];
     unsigned int numberOfArguments = method_getNumberOfArguments(method);
     
-    for (unsigned int argIndex = kFLEXNumberOfImplicitArgs; argIndex < numberOfArguments; argIndex++)
+    for (unsigned int argIndex = ALPHANumberOfImplicitArgsKey; argIndex < numberOfArguments; argIndex++)
     {
         ALPHAObjectArgument *argument = [[ALPHAObjectArgument alloc] init];
-        argument.name = selectorComponents[argIndex - kFLEXNumberOfImplicitArgs];
+        argument.name = selectorComponents[argIndex - ALPHANumberOfImplicitArgsKey];
         
         char *argType = method_copyArgumentType(method, argIndex);
         
         argument.type.cType = @(argType);
-        argument.type.name = [FLEXRuntimeUtility readableTypeForEncoding:@(argType)];
+        argument.type.name = [ALPHARuntimeUtility readableTypeForEncoding:@(argType)];
         
         free(argType);
         
@@ -493,7 +493,7 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     // First find the referenced object
     //
     
-    id object = [FLEXRuntimeUtility objectForPointerString:action.objectPointer className:action.objectClass];
+    id object = [ALPHARuntimeUtility objectForPointerString:action.objectPointer className:action.objectClass];
     id returnObject = nil;
     
     if (!error && object)
@@ -525,7 +525,7 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     if (action.selector)
     {
         SEL selector = NSSelectorFromString(action.selector);
-        return [FLEXRuntimeUtility performSelector:selector onObject:object withArguments:action.arguments error:error];
+        return [ALPHARuntimeUtility performSelector:selector onObject:object withArguments:action.arguments error:error];
     }
     
     //
@@ -558,7 +558,7 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
         
         if (ivar != NULL)
         {
-            [FLEXRuntimeUtility setValue:[action.arguments firstObject] forIvar:ivar onObject:object];
+            [ALPHARuntimeUtility setValue:[action.arguments firstObject] forIvar:ivar onObject:object];
         }
     }
     else if (*error)

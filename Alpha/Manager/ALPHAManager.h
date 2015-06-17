@@ -12,6 +12,8 @@
 #import "ALPHATheme.h"
 #import "ALPHATrigger.h"
 
+#import "ALPHAStatusBarNotification.h"
+
 /*!
  *  Singleton class, main entry point to work with Alpha
  */
@@ -131,6 +133,9 @@
 
 #pragma mark - Status bar notification display
 
-//#warning TODO: Add Status Bar Notification Overlay
+- (ALPHAStatusBarNotification *)displayNotificationWithMessage:(NSString *)message forDuration:(NSTimeInterval)duration;
+- (ALPHAStatusBarNotification *)displayNotificationWithMessage:(NSString *)message completion:(void (^)(void))completion;
+- (ALPHAStatusBarNotification *)displayNotificationWithView:(UIView *)view forDuration:(CGFloat)duration;
+- (ALPHAStatusBarNotification *)displayNotificationWithView:(UIView *)view completion:(void (^)(void))completion;
 
 @end

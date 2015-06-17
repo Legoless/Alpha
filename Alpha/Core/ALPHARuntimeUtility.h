@@ -1,5 +1,5 @@
 //
-//  FLEXRuntimeUtility.h
+//  ALPHARuntimeUtility.h
 //  Flipboard
 //
 //  Created by Ryan Olson on 6/8/14.
@@ -9,25 +9,25 @@
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 
-extern const unsigned int kFLEXNumberOfImplicitArgs;
+extern const unsigned int ALPHANumberOfImplicitArgsKey;
 
 // See https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtPropertyIntrospection.html#//apple_ref/doc/uid/TP40008048-CH101-SW6
-extern NSString *const kFLEXUtilityAttributeTypeEncoding;
-extern NSString *const kFLEXUtilityAttributeBackingIvar;
-extern NSString *const kFLEXUtilityAttributeReadOnly;
-extern NSString *const kFLEXUtilityAttributeCopy;
-extern NSString *const kFLEXUtilityAttributeRetain;
-extern NSString *const kFLEXUtilityAttributeNonAtomic;
-extern NSString *const kFLEXUtilityAttributeCustomGetter;
-extern NSString *const kFLEXUtilityAttributeCustomSetter;
-extern NSString *const kFLEXUtilityAttributeDynamic;
-extern NSString *const kFLEXUtilityAttributeWeak;
-extern NSString *const kFLEXUtilityAttributeGarbageCollectable;
-extern NSString *const kFLEXUtilityAttributeOldStyleTypeEncoding;
+extern NSString *const ALPHAUtilityAttributeTypeEncoding;
+extern NSString *const ALPHAUtilityAttributeBackingIvar;
+extern NSString *const ALPHAUtilityAttributeReadOnly;
+extern NSString *const ALPHAUtilityAttributeCopy;
+extern NSString *const ALPHAUtilityAttributeRetain;
+extern NSString *const ALPHAUtilityAttributeNonAtomic;
+extern NSString *const ALPHAUtilityAttributeCustomGetter;
+extern NSString *const ALPHAUtilityAttributeCustomSetter;
+extern NSString *const ALPHAUtilityAttributeDynamic;
+extern NSString *const ALPHAUtilityAttributeWeak;
+extern NSString *const ALPHAUtilityAttributeGarbageCollectable;
+extern NSString *const ALPHAUtilityAttributeOldStyleTypeEncoding;
 
 #define FLEXEncodeClass(class) ("@\"" #class "\"")
 
-@interface FLEXRuntimeUtility : NSObject
+@interface ALPHARuntimeUtility : NSObject
 
 // Global Helpers
 + (NSString *)appendName:(NSString *)name toType:(NSString *)type;

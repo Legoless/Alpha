@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "FLEXRuntimeUtility.h"
+#import "ALPHARuntimeUtility.h"
 
 #import "ALPHAObjectProperty.h"
 
@@ -26,7 +26,7 @@
 
 - (NSString *)description
 {
-    return [FLEXRuntimeUtility appendName:self.name toType:self.type.name];
+    return [ALPHARuntimeUtility appendName:self.name toType:self.type.name];
 }
 
 - (NSString *)prettyDescription
@@ -35,7 +35,7 @@
     NSMutableArray *attributesStrings = [NSMutableArray array];
     
     // Atomicity
-    if ([attributesDictionary objectForKey:kFLEXUtilityAttributeNonAtomic])
+    if ([attributesDictionary objectForKey:ALPHAUtilityAttributeNonAtomic])
     {
         [attributesStrings addObject:@"nonatomic"];
     }
@@ -45,15 +45,15 @@
     }
     
     // Storage
-    if (self.attributes[kFLEXUtilityAttributeRetain])
+    if (self.attributes[ALPHAUtilityAttributeRetain])
     {
         [attributesStrings addObject:@"strong"];
     }
-    else if (self.attributes[kFLEXUtilityAttributeCopy])
+    else if (self.attributes[ALPHAUtilityAttributeCopy])
     {
         [attributesStrings addObject:@"copy"];
     }
-    else if (self.attributes[kFLEXUtilityAttributeWeak])
+    else if (self.attributes[ALPHAUtilityAttributeWeak])
     {
         [attributesStrings addObject:@"weak"];
     }
@@ -63,7 +63,7 @@
     }
     
     // Mutability
-    if (self.attributes[kFLEXUtilityAttributeReadOnly])
+    if (self.attributes[ALPHAUtilityAttributeReadOnly])
     {
         [attributesStrings addObject:@"readonly"];
     }
@@ -73,8 +73,8 @@
     }
     
     // Custom getter/setter
-    NSString *customGetter = self.attributes[kFLEXUtilityAttributeCustomGetter];
-    NSString *customSetter = self.attributes[kFLEXUtilityAttributeCustomSetter];
+    NSString *customGetter = self.attributes[ALPHAUtilityAttributeCustomGetter];
+    NSString *customSetter = self.attributes[ALPHAUtilityAttributeCustomSetter];
     
     if (customGetter)
     {
@@ -93,7 +93,7 @@
 
 - (NSString *)setter
 {
-    NSString *setterSelectorString = self.attributes[kFLEXUtilityAttributeCustomSetter];
+    NSString *setterSelectorString = self.attributes[ALPHAUtilityAttributeCustomSetter];
     
     if (!setterSelectorString)
     {
@@ -106,7 +106,7 @@
 
 - (NSString *)getter
 {
-    NSString *getterSelectorString = self.attributes[kFLEXUtilityAttributeCustomGetter];
+    NSString *getterSelectorString = self.attributes[ALPHAUtilityAttributeCustomGetter];
     
     if (!getterSelectorString)
     {
@@ -118,12 +118,12 @@
 
 - (BOOL)isReadOnly
 {
-    return (self.attributes[kFLEXUtilityAttributeReadOnly] != nil);
+    return (self.attributes[ALPHAUtilityAttributeReadOnly] != nil);
 }
 
 - (BOOL)isDynamic
 {
-    return (self.attributes[kFLEXUtilityAttributeDynamic] != nil);
+    return (self.attributes[ALPHAUtilityAttributeDynamic] != nil);
 }
 
 @end

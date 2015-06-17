@@ -1,5 +1,5 @@
 //
-//  FLEXRuntimeUtility.m
+//  ALPHARuntimeUtility.m
 //  Flipboard
 //
 //  Created by Ryan Olson on 6/8/14.
@@ -7,21 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FLEXRuntimeUtility.h"
+#import "ALPHARuntimeUtility.h"
 
 // See https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtPropertyIntrospection.html#//apple_ref/doc/uid/TP40008048-CH101-SW6
-NSString *const kFLEXUtilityAttributeTypeEncoding           = @"T";
-NSString *const kFLEXUtilityAttributeBackingIvar            = @"V";
-NSString *const kFLEXUtilityAttributeReadOnly               = @"R";
-NSString *const kFLEXUtilityAttributeCopy                   = @"C";
-NSString *const kFLEXUtilityAttributeRetain                 = @"&";
-NSString *const kFLEXUtilityAttributeNonAtomic              = @"N";
-NSString *const kFLEXUtilityAttributeCustomGetter           = @"G";
-NSString *const kFLEXUtilityAttributeCustomSetter           = @"S";
-NSString *const kFLEXUtilityAttributeDynamic                = @"D";
-NSString *const kFLEXUtilityAttributeWeak                   = @"W";
-NSString *const kFLEXUtilityAttributeGarbageCollectable     = @"P";
-NSString *const kFLEXUtilityAttributeOldStyleTypeEncoding   = @"t";
+NSString *const ALPHAUtilityAttributeTypeEncoding = @"T";
+NSString *const ALPHAUtilityAttributeBackingIvar = @"V";
+NSString *const ALPHAUtilityAttributeReadOnly = @"R";
+NSString *const ALPHAUtilityAttributeCopy = @"C";
+NSString *const ALPHAUtilityAttributeRetain = @"&";
+NSString *const ALPHAUtilityAttributeNonAtomic = @"N";
+NSString *const ALPHAUtilityAttributeCustomGetter = @"G";
+NSString *const ALPHAUtilityAttributeCustomSetter = @"S";
+NSString *const ALPHAUtilityAttributeDynamic = @"D";
+NSString *const ALPHAUtilityAttributeWeak = @"W";
+NSString *const ALPHAUtilityAttributeGarbageCollectable = @"P";
+NSString *const ALPHAUtilityAttributeOldStyleTypeEncoding = @"t";
 
 static NSString *const FLEXRuntimeUtilityErrorDomain = @"FLEXRuntimeUtilityErrorDomain";
 typedef NS_ENUM(NSInteger, FLEXRuntimeUtilityErrorCode) {
@@ -31,9 +31,9 @@ typedef NS_ENUM(NSInteger, FLEXRuntimeUtilityErrorCode) {
 };
 
 // Arguments 0 and 1 are self and _cmd always
-const unsigned int kFLEXNumberOfImplicitArgs = 2;
+const unsigned int ALPHANumberOfImplicitArgsKey = 2;
 
-@implementation FLEXRuntimeUtility
+@implementation ALPHARuntimeUtility
 
 #pragma mark - Global Helpers (Public)
 
@@ -102,18 +102,18 @@ const unsigned int kFLEXNumberOfImplicitArgs = 2;
 + (NSString *)typeEncodingForProperty:(objc_property_t)property
 {
     NSDictionary *attributesDictionary = [self attributesDictionaryForProperty:property];
-    return [attributesDictionary objectForKey:kFLEXUtilityAttributeTypeEncoding];
+    return [attributesDictionary objectForKey:ALPHAUtilityAttributeTypeEncoding];
 }
 
 + (BOOL)isReadonlyProperty:(objc_property_t)property
 {
-    return [[self attributesDictionaryForProperty:property] objectForKey:kFLEXUtilityAttributeReadOnly] != nil;
+    return [[self attributesDictionaryForProperty:property] objectForKey:ALPHAUtilityAttributeReadOnly] != nil;
 }
 
 + (SEL)setterSelectorForProperty:(objc_property_t)property
 {
     SEL setterSelector = NULL;
-    NSString *setterSelectorString = [[self attributesDictionaryForProperty:property] objectForKey:kFLEXUtilityAttributeCustomSetter];
+    NSString *setterSelectorString = [[self attributesDictionaryForProperty:property] objectForKey:ALPHAUtilityAttributeCustomSetter];
     if (!setterSelectorString) {
         NSString *propertyName = @(property_getName(property));
         setterSelectorString = [NSString stringWithFormat:@"set%@%@:", [[propertyName substringToIndex:1] uppercaseString], [propertyName substringFromIndex:1]];
@@ -130,33 +130,33 @@ const unsigned int kFLEXNumberOfImplicitArgs = 2;
     NSMutableArray *attributesStrings = [NSMutableArray array];
     
     // Atomicity
-    if ([attributesDictionary objectForKey:kFLEXUtilityAttributeNonAtomic]) {
+    if ([attributesDictionary objectForKey:ALPHAUtilityAttributeNonAtomic]) {
         [attributesStrings addObject:@"nonatomic"];
     } else {
         [attributesStrings addObject:@"atomic"];
     }
     
     // Storage
-    if ([attributesDictionary objectForKey:kFLEXUtilityAttributeRetain]) {
+    if ([attributesDictionary objectForKey:ALPHAUtilityAttributeRetain]) {
         [attributesStrings addObject:@"strong"];
-    } else if ([attributesDictionary objectForKey:kFLEXUtilityAttributeCopy]) {
+    } else if ([attributesDictionary objectForKey:ALPHAUtilityAttributeCopy]) {
         [attributesStrings addObject:@"copy"];
-    } else if ([attributesDictionary objectForKey:kFLEXUtilityAttributeWeak]) {
+    } else if ([attributesDictionary objectForKey:ALPHAUtilityAttributeWeak]) {
         [attributesStrings addObject:@"weak"];
     } else {
         [attributesStrings addObject:@"assign"];
     }
     
     // Mutability
-    if ([attributesDictionary objectForKey:kFLEXUtilityAttributeReadOnly]) {
+    if ([attributesDictionary objectForKey:ALPHAUtilityAttributeReadOnly]) {
         [attributesStrings addObject:@"readonly"];
     } else {
         [attributesStrings addObject:@"readwrite"];
     }
     
     // Custom getter/setter
-    NSString *customGetter = [attributesDictionary objectForKey:kFLEXUtilityAttributeCustomGetter];
-    NSString *customSetter = [attributesDictionary objectForKey:kFLEXUtilityAttributeCustomSetter];
+    NSString *customGetter = [attributesDictionary objectForKey:ALPHAUtilityAttributeCustomGetter];
+    NSString *customSetter = [attributesDictionary objectForKey:ALPHAUtilityAttributeCustomSetter];
     if (customGetter) {
         [attributesStrings addObject:[NSString stringWithFormat:@"getter=%@", customGetter]];
     }
@@ -347,11 +347,11 @@ const unsigned int kFLEXNumberOfImplicitArgs = 2;
     NSArray *selectorComponents = [selectorName componentsSeparatedByString:@":"];
     unsigned int numberOfArguments = method_getNumberOfArguments(method);
     
-    for (unsigned int argIndex = kFLEXNumberOfImplicitArgs; argIndex < numberOfArguments; argIndex++) {
+    for (unsigned int argIndex = ALPHANumberOfImplicitArgsKey; argIndex < numberOfArguments; argIndex++) {
         char *argType = method_copyArgumentType(method, argIndex);
         NSString *readableArgType = [self readableTypeForEncoding:@(argType)];
         free(argType);
-        NSString *prettyComponent = [NSString stringWithFormat:@"%@:(%@) ", [selectorComponents objectAtIndex:argIndex - kFLEXNumberOfImplicitArgs], readableArgType];
+        NSString *prettyComponent = [NSString stringWithFormat:@"%@:(%@) ", [selectorComponents objectAtIndex:argIndex - ALPHANumberOfImplicitArgsKey], readableArgType];
         [components addObject:prettyComponent];
     }
     
@@ -381,8 +381,8 @@ const unsigned int kFLEXNumberOfImplicitArgs = 2;
     
     // Always self and _cmd
     NSUInteger numberOfArguments = [methodSignature numberOfArguments];
-    for (NSUInteger argumentIndex = kFLEXNumberOfImplicitArgs; argumentIndex < numberOfArguments; argumentIndex++) {
-        NSUInteger argumentsArrayIndex = argumentIndex - kFLEXNumberOfImplicitArgs;
+    for (NSUInteger argumentIndex = ALPHANumberOfImplicitArgsKey; argumentIndex < numberOfArguments; argumentIndex++) {
+        NSUInteger argumentsArrayIndex = argumentIndex - ALPHANumberOfImplicitArgsKey;
         id argumentObject = [arguments count] > argumentsArrayIndex ? [arguments objectAtIndex:argumentsArrayIndex] : nil;
         
         // NSNull in the arguments array can be passed as a placeholder to indicate nil. We only need to set the argument if it will be non-nil.

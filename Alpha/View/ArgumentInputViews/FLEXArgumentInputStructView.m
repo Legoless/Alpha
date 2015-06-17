@@ -8,7 +8,7 @@
 
 #import "FLEXArgumentInputStructView.h"
 #import "FLEXArgumentInputViewFactory.h"
-#import "FLEXRuntimeUtility.h"
+#import "ALPHARuntimeUtility.h"
 
 @interface FLEXArgumentInputStructView ()
 
@@ -24,16 +24,19 @@
     if (self) {
         NSMutableArray *inputViews = [NSMutableArray array];
         NSArray *customTitles = [[self class] customFieldTitlesForTypeEncoding:typeEncoding];
-        [FLEXRuntimeUtility enumerateTypesInStructEncoding:typeEncoding usingBlock:^(NSString *structName, const char *fieldTypeEncoding, NSString *prettyTypeEncoding, NSUInteger fieldIndex, NSUInteger fieldOffset) {
-            
+        [ALPHARuntimeUtility enumerateTypesInStructEncoding:typeEncoding usingBlock:^(NSString *structName, const char *fieldTypeEncoding, NSString *prettyTypeEncoding, NSUInteger fieldIndex, NSUInteger fieldOffset) {
+
             FLEXArgumentInputView *inputView = [FLEXArgumentInputViewFactory argumentInputViewForTypeEncoding:fieldTypeEncoding];
             inputView.backgroundColor = self.backgroundColor;
             inputView.targetSize = FLEXArgumentInputViewSizeSmall;
-            
-            if (fieldIndex < [customTitles count]) {
+
+            if (fieldIndex < [customTitles count])
+            {
                 inputView.title = [customTitles objectAtIndex:fieldIndex];
-            } else {
-                inputView.title = [NSString stringWithFormat:@"%@ field %lu (%@)", structName, (unsigned long)fieldIndex, prettyTypeEncoding];
+            }
+            else
+            {
+                inputView.title = [NSString stringWithFormat:@"%@ field %lu (%@)", structName, (unsigned long) fieldIndex, prettyTypeEncoding];
             }
 
             [inputViews addObject:inputView];
@@ -69,15 +72,18 @@
             if (valueSize > 0) {
                 void *unboxedValue = malloc(valueSize);
                 [inputValue getValue:unboxedValue];
-                [FLEXRuntimeUtility enumerateTypesInStructEncoding:structTypeEncoding usingBlock:^(NSString *structName, const char *fieldTypeEncoding, NSString *prettyTypeEncoding, NSUInteger fieldIndex, NSUInteger fieldOffset) {
-                    
+                [ALPHARuntimeUtility enumerateTypesInStructEncoding:structTypeEncoding usingBlock:^(NSString *structName, const char *fieldTypeEncoding, NSString *prettyTypeEncoding, NSUInteger fieldIndex, NSUInteger fieldOffset) {
+
                     void *fieldPointer = unboxedValue + fieldOffset;
                     FLEXArgumentInputView *inputView = [self.argumentInputViews objectAtIndex:fieldIndex];
-                    
-                    if (fieldTypeEncoding[0] == @encode(id)[0] || fieldTypeEncoding[0] == @encode(Class)[0]) {
-                        inputView.inputValue = (__bridge id)fieldPointer;
-                    } else {
-                        NSValue *boxedField = [FLEXRuntimeUtility valueForPrimitivePointer:fieldPointer objCType:fieldTypeEncoding];
+
+                    if (fieldTypeEncoding[0] == @encode(id)[0] || fieldTypeEncoding[0] == @encode(Class)[0])
+                    {
+                        inputView.inputValue = (__bridge id) fieldPointer;
+                    }
+                    else
+                    {
+                        NSValue *boxedField = [ALPHARuntimeUtility valueForPrimitivePointer:fieldPointer objCType:fieldTypeEncoding];
                         inputView.inputValue = boxedField;
                     }
                 }];
@@ -99,18 +105,22 @@
     
     if (structSize > 0) {
         void *unboxedStruct = malloc(structSize);
-        [FLEXRuntimeUtility enumerateTypesInStructEncoding:structTypeEncoding usingBlock:^(NSString *structName, const char *fieldTypeEncoding, NSString *prettyTypeEncoding, NSUInteger fieldIndex, NSUInteger fieldOffset) {
-            
+        [ALPHARuntimeUtility enumerateTypesInStructEncoding:structTypeEncoding usingBlock:^(NSString *structName, const char *fieldTypeEncoding, NSString *prettyTypeEncoding, NSUInteger fieldIndex, NSUInteger fieldOffset) {
+
             void *fieldPointer = unboxedStruct + fieldOffset;
             FLEXArgumentInputView *inputView = [self.argumentInputViews objectAtIndex:fieldIndex];
-            
-            if (fieldTypeEncoding[0] == @encode(id)[0] || fieldTypeEncoding[0] == @encode(Class)[0]) {
+
+            if (fieldTypeEncoding[0] == @encode(id)[0] || fieldTypeEncoding[0] == @encode(Class)[0])
+            {
                 // Object fields
-                memcpy(fieldPointer, (__bridge void *)inputView.inputValue, sizeof(id));
-            } else {
+                memcpy(fieldPointer, (__bridge void *) inputView.inputValue, sizeof(id));
+            }
+            else
+            {
                 // Boxed primitive/struct fields
                 id inputValue = inputView.inputValue;
-                if ([inputValue isKindOfClass:[NSValue class]] && strcmp([inputValue objCType], fieldTypeEncoding) == 0) {
+                if ([inputValue isKindOfClass:[NSValue class]] && strcmp([inputValue objCType], fieldTypeEncoding) == 0)
+                {
                     [inputValue getValue:fieldPointer];
                 }
             }

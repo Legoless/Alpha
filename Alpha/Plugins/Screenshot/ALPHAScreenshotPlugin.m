@@ -14,6 +14,8 @@
 #import "ALPHAScreenshotSource.h"
 #import "ALPHAActions.h"
 
+#import "ALPHAManager.h"
+
 #import "ALPHAScreenshotPlugin.h"
 
 @interface ALPHAScreenshotPlugin ()
@@ -79,7 +81,9 @@
     
     NSString *directory = [NSString stringWithFormat:@"%@Alpha/Screenshots", [[ALPHAFileManager sharedManager] documentsDirectory].absoluteString];
     
-    NSString *filePath = [NSString stringWithFormat:@"%@/%@", directory, [self stringForFile]];
+    NSString *filename = [self stringForFile];
+    
+    NSString *filePath = [NSString stringWithFormat:@"%@/%@", directory, filename];
     
     NSURL *fileURL = [NSURL URLWithString:filePath];
     
@@ -97,6 +101,8 @@
     {
         NSError* error;
         [imageData writeToURL:fileURL options:NSDataWritingAtomic error:&error];
+        
+        [[ALPHAManager sharedManager] displayNotificationWithMessage:[NSString stringWithFormat:@"Screenshot taken: %@", filename] forDuration:1.5];
     }
 }
 

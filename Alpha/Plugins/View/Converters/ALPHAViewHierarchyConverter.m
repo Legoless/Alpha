@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "FLEXUtility.h"
+#import "ALPHAUtility.h"
 
 #import "ALPHATableScreenModel.h"
 
@@ -34,7 +34,7 @@
         item.detail = [NSString stringWithFormat:@"Frame: %@", view.frame];
         
         item.cellClass = @"ALPHAHierarchyTableViewCell";
-        item.cellParameters = @{ @"viewDepth" : @(view.depth), @"viewColor" : [FLEXUtility consistentRandomColorForObject:view] };
+        item.cellParameters = @{ @"viewDepth" : @(view.depth), @"viewColor" : [ALPHAUtility consistentRandomColorForObject:view] };
         
         item.transparent = view.hidden;
         

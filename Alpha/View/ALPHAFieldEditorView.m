@@ -8,7 +8,7 @@
 
 #import "ALPHAFieldEditorView.h"
 #import "FLEXArgumentInputView.h"
-#import "FLEXUtility.h"
+#import "ALPHAUtility.h"
 
 @interface ALPHAFieldEditorView ()
 
@@ -173,7 +173,7 @@
 
 + (UIFont *)labelFont
 {
-    return [FLEXUtility defaultFontOfSize:14.0];
+    return [ALPHAUtility defaultFontOfSize:14.0];
 }
 
 + (CGFloat)dividerLineHeight

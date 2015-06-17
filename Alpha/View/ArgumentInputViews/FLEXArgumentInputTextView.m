@@ -7,7 +7,7 @@
 //
 
 #import "FLEXArgumentInputTextView.h"
-#import "FLEXUtility.h"
+#import "ALPHAUtility.h"
 
 @interface FLEXArgumentInputTextView () <UITextViewDelegate>
 
@@ -115,7 +115,7 @@
 
 + (UIFont *)inputFont
 {
-    return [FLEXUtility defaultFontOfSize:14.0];
+    return [ALPHAUtility defaultFontOfSize:14.0];
 }
 
 @end

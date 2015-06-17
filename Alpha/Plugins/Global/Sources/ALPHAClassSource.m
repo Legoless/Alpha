@@ -10,7 +10,7 @@
 
 #import "ALPHATableScreenModel.h"
 
-#import "FLEXUtility.h"
+#import "ALPHAUtility.h"
 
 #import "ALPHAClassSource.h"
 
@@ -42,7 +42,7 @@ NSString* const ALPHAClassBinaryParameterKey = @"kALPHAClassBinaryParameterKey";
 
 - (ALPHAModel *)modelForRequest:(ALPHARequest *)request
 {
-    NSString* binaryImageName = [FLEXUtility applicationImageName];
+    NSString* binaryImageName = [ALPHAUtility applicationImageName];
     
     if (request.parameters[ALPHAClassBinaryParameterKey])
     {

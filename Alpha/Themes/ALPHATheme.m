@@ -13,8 +13,7 @@
 #import "UIApplication+ALPHAPrivate.h"
 
 #import "ALPHATheme.h"
-#import "FLEXUtility.h"
-#import "ALPHAManager+Private.h"
+#import "ALPHAUtility.h"
 
 @implementation ALPHATheme
 

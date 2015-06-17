@@ -9,7 +9,7 @@
 #import "FLEXExplorerToolbar.h"
 #import "FLEXToolbarItem.h"
 #import "FLEXResources.h"
-#import "FLEXUtility.h"
+#import "ALPHAUtility.h"
 #import "ALPHAManager.h"
 
 @interface FLEXExplorerToolbar ()

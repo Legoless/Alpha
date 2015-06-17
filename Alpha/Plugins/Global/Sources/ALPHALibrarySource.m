@@ -8,7 +8,7 @@
 
 #import <objc/runtime.h>
 
-#import "FLEXUtility.h"
+#import "ALPHAUtility.h"
 
 #import "ALPHALibrarySource.h"
 #import "ALPHAClassSource.h"
@@ -78,7 +78,7 @@ NSString* const ALPHALibraryDataIdentifier = @"com.unifiedsense.alpha.data.libra
     const char **imageNames = objc_copyImageNames(&imageNamesCount);
     if (imageNames) {
         NSMutableArray *imageNameStrings = [NSMutableArray array];
-        NSString *appImageName = [FLEXUtility applicationImageName];
+        NSString *appImageName = [ALPHAUtility applicationImageName];
         for (unsigned int i = 0; i < imageNamesCount; i++) {
             const char *imageName = imageNames[i];
             NSString *imageNameString = [NSString stringWithUTF8String:imageName];

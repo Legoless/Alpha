@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "FLEXUtility.h"
+#import "ALPHAUtility.h"
 
 #import "ALPHAFileModel.h"
 
@@ -125,7 +125,7 @@ NSString* const ALPHAFileDataIdentifier = @"com.unifiedsense.alpha.data.file";
     // Preview images
     //
     
-    if ([FLEXUtility isImagePathExtension:[path pathExtension]])
+    if ([ALPHAUtility isImagePathExtension:[path pathExtension]])
     {
         object.previewImage = [UIImage imageWithContentsOfFile:path];
     }

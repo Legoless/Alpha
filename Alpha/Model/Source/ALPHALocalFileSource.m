@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "FLEXUtility.h"
+#import "ALPHAUtility.h"
 #import "ALPHALocalFileSource.h"
 
 @implementation ALPHALocalFileSource
@@ -37,7 +37,7 @@
     
     if (!fileClass)
     {
-        if ([FLEXUtility isImagePathExtension:[url pathExtension]])
+        if ([ALPHAUtility isImagePathExtension:[url pathExtension]])
         {
             fileClass = @"UIImage";
         }

@@ -7,7 +7,7 @@
 //
 
 #import "ALPHAPropertyRendererViewController.h"
-#import "FLEXRuntimeUtility.h"
+#import "ALPHARuntimeUtility.h"
 #import "ALPHAFieldEditorView.h"
 #import "FLEXArgumentInputView.h"
 #import "FLEXArgumentInputViewFactory.h"

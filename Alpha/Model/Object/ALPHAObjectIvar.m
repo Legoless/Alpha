@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "FLEXRuntimeUtility.h"
+#import "ALPHARuntimeUtility.h"
 
 #import "ALPHAObjectIvar.h"
 
@@ -26,7 +26,7 @@
 
 - (NSString *)prettyDescription
 {
-    return [FLEXRuntimeUtility appendName:self.name toType:self.type.name];
+    return [ALPHARuntimeUtility appendName:self.name toType:self.type.name];
 }
 
 @end

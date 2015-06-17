@@ -7,7 +7,7 @@
 //
 
 #import "ALPHAHierarchyTableViewController.h"
-#import "FLEXUtility.h"
+#import "ALPHAUtility.h"
 #import "ALPHAHierarchyTableViewCell.h"
 #import "ALPHAScreenManager.h"
 #import "ALPHATableScreenModel.h"
@@ -38,13 +38,13 @@ static const NSInteger kFLEXHierarchyScopeFullHierarchyIndex = 1;
         ALPHAScreenItem *item = [[ALPHAScreenItem alloc] init];
         item.style = UITableViewCellStyleSubtitle;
         
-        item.title = [FLEXUtility descriptionForView:view includingFrame:NO];
-        item.detail = [FLEXUtility detailDescriptionForView:view];
+        item.title = [ALPHAUtility descriptionForView:view includingFrame:NO];
+        item.detail = [ALPHAUtility detailDescriptionForView:view];
         
         NSNumber *depth = [self.depthsForViews objectForKey:[NSValue valueWithNonretainedObject:view]];
         
         item.cellClass = @"ALPHAHierarchyTableViewCell";
-        item.cellParameters = @{ @"viewDepth" : depth, @"viewColor" : [FLEXUtility consistentRandomColorForObject:view] };
+        item.cellParameters = @{ @"viewDepth" : depth, @"viewColor" : [ALPHAUtility consistentRandomColorForObject:view] };
         item.accessory = UITableViewCellAccessoryDetailDisclosureButton;
         
         item.transparent = view.hidden;
@@ -161,7 +161,7 @@ static const NSInteger kFLEXHierarchyScopeFullHierarchyIndex = 1;
     {
         self.displayedViews = [candidateViews filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(UIView *candidateView, NSDictionary *bindings)
         {
-            NSString *title = [FLEXUtility descriptionForView:candidateView includingFrame:NO];
+            NSString *title = [ALPHAUtility descriptionForView:candidateView includingFrame:NO];
             return [title rangeOfString:self.detailView.searchBar.text options:NSCaseInsensitiveSearch].location != NSNotFound;
         }]];
     }

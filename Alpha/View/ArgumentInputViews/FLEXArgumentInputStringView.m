@@ -7,7 +7,7 @@
 //
 
 #import "FLEXArgumentInputStringView.h"
-#import "FLEXRuntimeUtility.h"
+#import "ALPHARuntimeUtility.h"
 
 @implementation FLEXArgumentInputStringView
 

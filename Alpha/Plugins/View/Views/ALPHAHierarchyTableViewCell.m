@@ -10,7 +10,7 @@
 
 #import "ALPHADepthIndicatorView.h"
 
-#import "FLEXUtility.h"
+#import "ALPHAUtility.h"
 
 @interface ALPHAHierarchyTableViewCell ()
 
@@ -40,7 +40,7 @@
         self.depthIndicatorView = [[ALPHADepthIndicatorView alloc] init];
         [self.contentView addSubview:self.depthIndicatorView];
         
-        UIImage *defaultCircleImage = [FLEXUtility circularImageWithColor:[UIColor blackColor] radius:5.0];
+        UIImage *defaultCircleImage = [ALPHAUtility circularImageWithColor:[UIColor blackColor] radius:5.0];
         self.colorCircleImageView = [[UIImageView alloc] initWithImage:defaultCircleImage];
         [self.contentView addSubview:self.colorCircleImageView];
     }
@@ -54,7 +54,7 @@
     
     // UITableViewCell changes all subviews in the contentView to backgroundColor = clearColor.
     // We want to preserve the hierarchy background color when highlighted.
-    //self.depthIndicatorView.backgroundColor = [FLEXUtility hierarchyIndentPatternColor];
+    //self.depthIndicatorView.backgroundColor = [ALPHAUtility hierarchyIndentPatternColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -62,7 +62,7 @@
     [super setSelected:selected animated:animated];
     
     // See setHighlighted above.
-    //self.depthIndicatorView.backgroundColor = [FLEXUtility hierarchyIndentPatternColor];
+    //self.depthIndicatorView.backgroundColor = [ALPHAUtility hierarchyIndentPatternColor];
 }
 
 - (void)layoutSubviews
@@ -98,7 +98,7 @@
 {
     if (![_viewColor isEqual:viewColor]) {
         _viewColor = viewColor;
-        self.colorCircleImageView.image = [FLEXUtility circularImageWithColor:viewColor radius:6.0];
+        self.colorCircleImageView.image = [ALPHAUtility circularImageWithColor:viewColor radius:6.0];
     }
 }
 

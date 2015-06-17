@@ -7,7 +7,7 @@
 //
 
 #import "FLEXHeapEnumerator.h"
-#import "FLEXUtility.h"
+#import "ALPHAUtility.h"
 #import <objc/runtime.h>
 
 #import "ALPHAInstanceSource.h"

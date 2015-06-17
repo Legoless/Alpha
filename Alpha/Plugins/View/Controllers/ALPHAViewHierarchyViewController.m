@@ -9,7 +9,7 @@
 #import "ALPHAMainViewController.h"
 #import "FLEXExplorerToolbar.h"
 #import "FLEXToolbarItem.h"
-#import "FLEXUtility.h"
+#import "ALPHAUtility.h"
 #import "ALPHAHierarchyTableViewController.h"
 
 #import "ALPHAScreenManager.h"
@@ -116,7 +116,7 @@
 - (NSUInteger)supportedInterfaceOrientations
 {
     UIViewController *viewControllerToAsk = [self viewControllerForStatusBarAndOrientationProperties];
-    NSUInteger supportedOrientations = [FLEXUtility infoPlistSupportedInterfaceOrientationsMask];
+    NSUInteger supportedOrientations = [ALPHAUtility infoPlistSupportedInterfaceOrientationsMask];
     if (viewControllerToAsk && viewControllerToAsk != self) {
         supportedOrientations = [viewControllerToAsk supportedInterfaceOrientations];
     }
@@ -180,8 +180,8 @@
         [self beginObservingView:selectedView];
         
         // Update the toolbar and selected overlay
-        self.explorerToolbar.selectedViewDescription = [FLEXUtility descriptionForView:selectedView includingFrame:YES];
-        self.explorerToolbar.selectedViewOverlayColor = [FLEXUtility consistentRandomColorForObject:selectedView];;
+        self.explorerToolbar.selectedViewDescription = [ALPHAUtility descriptionForView:selectedView includingFrame:YES];
+        self.explorerToolbar.selectedViewOverlayColor = [ALPHAUtility consistentRandomColorForObject:selectedView];;
         
         if (selectedView) {
             if (!self.selectedViewOverlay) {
@@ -189,7 +189,7 @@
                 [self.view addSubview:self.selectedViewOverlay];
                 self.selectedViewOverlay.layer.borderWidth = 1.0;
             }
-            UIColor *outlineColor = [FLEXUtility consistentRandomColorForObject:selectedView];
+            UIColor *outlineColor = [ALPHAUtility consistentRandomColorForObject:selectedView];
             self.selectedViewOverlay.backgroundColor = [outlineColor colorWithAlphaComponent:0.2];
             self.selectedViewOverlay.layer.borderColor = [outlineColor CGColor];
             self.selectedViewOverlay.frame = [self.view convertRect:selectedView.bounds fromView:selectedView];
@@ -315,7 +315,7 @@
     }
     if (object == self.selectedView) {
         // Update the selected view description since we show the frame value there.
-        self.explorerToolbar.selectedViewDescription = [FLEXUtility descriptionForView:self.selectedView includingFrame:YES];
+        self.explorerToolbar.selectedViewDescription = [ALPHAUtility descriptionForView:self.selectedView includingFrame:YES];
         CGRect selectedViewOutlineFrame = [self frameInLocalCoordinatesForView:self.selectedView];
         self.selectedViewOverlay.frame = selectedViewOutlineFrame;
     }
@@ -556,7 +556,7 @@
     CGRect outlineFrame = [self frameInLocalCoordinatesForView:view];
     UIView *outlineView = [[UIView alloc] initWithFrame:outlineFrame];
     outlineView.backgroundColor = [UIColor clearColor];
-    outlineView.layer.borderColor = [[FLEXUtility consistentRandomColorForObject:view] CGColor];
+    outlineView.layer.borderColor = [[ALPHAUtility consistentRandomColorForObject:view] CGColor];
     outlineView.layer.borderWidth = 1.0;
     return outlineView;
 }

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "FLEXUtility.h"
+#import "ALPHAUtility.h"
 
 #import "ALPHAScreenManager.h"
 
@@ -88,7 +88,7 @@
     
     if ([object isKindOfClass:[NSString class]])
     {
-        NSString *htmlString = [NSString stringWithFormat:@"<pre>%@</pre>", [FLEXUtility stringByEscapingHTMLEntitiesInString:[object description]]];
+        NSString *htmlString = [NSString stringWithFormat:@"<pre>%@</pre>", [ALPHAUtility stringByEscapingHTMLEntitiesInString:[object description]]];
         [self.webView loadHTMLString:htmlString baseURL:nil];
     }
     else if ([object isKindOfClass:[NSURL class]])

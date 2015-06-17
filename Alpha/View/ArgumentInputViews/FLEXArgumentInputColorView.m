@@ -7,8 +7,8 @@
 //
 
 #import "FLEXArgumentInputColorView.h"
-#import "FLEXUtility.h"
-#import "FLEXRuntimeUtility.h"
+#import "ALPHAUtility.h"
+#import "ALPHARuntimeUtility.h"
 
 @protocol FLEXColorComponentInputViewDelegate;
 
@@ -41,7 +41,7 @@
         
         self.valueLabel = [[UILabel alloc] init];
         self.valueLabel.backgroundColor = self.backgroundColor;
-        self.valueLabel.font = [FLEXUtility defaultFontOfSize:14.0];
+        self.valueLabel.font = [ALPHAUtility defaultFontOfSize:14.0];
         self.valueLabel.textAlignment = NSTextAlignmentRight;
         [self addSubview:self.valueLabel];
         
@@ -174,7 +174,7 @@
         self.hexLabel = [[UILabel alloc] init];
         self.hexLabel.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.9];
         self.hexLabel.textAlignment = NSTextAlignmentCenter;
-        self.hexLabel.font = [FLEXUtility defaultFontOfSize:12.0];
+        self.hexLabel.font = [ALPHAUtility defaultFontOfSize:12.0];
         [self addSubview:self.hexLabel];
         
         self.alphaInput = [[FLEXColorComponentInputView alloc] init];

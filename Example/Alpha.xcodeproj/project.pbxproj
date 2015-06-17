@@ -13,6 +13,7 @@
 		38AB0F3B1B31690A00F0CC21 /* ALPHAFailureRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 38AB0F3A1B31690A00F0CC21 /* ALPHAFailureRecorder.m */; };
 		38AB0F3E1B316A4200F0CC21 /* ALPHATestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 38AB0F3D1B316A4200F0CC21 /* ALPHATestCase.m */; };
 		38AB0F401B316B9400F0CC21 /* AlphaNetworkObjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 38AB0F3F1B316B9400F0CC21 /* AlphaNetworkObjectTests.m */; };
+		38D964091B31D7E600DB3BC7 /* ALPHAStatusBarNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D964081B31D7E600DB3BC7 /* ALPHAStatusBarNotification.m */; };
 		38DE4A491A0B78BC00EB447A /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38DE4A481A0B78BC00EB447A /* Launch.xib */; };
 		38DE4A4C1A0B7DB000EB447A /* AAPLNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DE4A4B1A0B7DB000EB447A /* AAPLNetworkViewController.m */; };
 		38E435DF1B31A7F6009AECFF /* ALPHASerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E435DE1B31A7F6009AECFF /* ALPHASerialization.m */; };
@@ -145,7 +146,7 @@
 		67E649BCB54F8BDDB779B601 /* ALPHALibrarySource.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E642A3249F1FD18972D8E6 /* ALPHALibrarySource.m */; };
 		67E64A07177C299BCDBCBC92 /* ALPHAMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E648306D91B3FE76704921 /* ALPHAMockObject.m */; };
 		67E64A096726B1BDCFA7B61E /* ALPHADarkTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64BA652D7D2E541D534E6 /* ALPHADarkTheme.m */; };
-		67E64A26EF7A6D276E3D06DD /* FLEXUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E640FEB55AE53D9BE187B9 /* FLEXUtility.m */; };
+		67E64A26EF7A6D276E3D06DD /* ALPHAUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E640FEB55AE53D9BE187B9 /* ALPHAUtility.m */; };
 		67E64A5E78887B8C07893900 /* ALPHAExplorerMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64CBF1595EAF4DB5E7A08 /* ALPHAExplorerMenu.m */; };
 		67E64A7F65B0E82478D53006 /* ALPHAStatePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64201F42EFB80C15738FC /* ALPHAStatePlugin.m */; };
 		67E64AB59F040BE763AA4854 /* ALPHABonjourServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6405E5A490574464987B3 /* ALPHABonjourServer.m */; };
@@ -158,7 +159,7 @@
 		67E64B802B1EEA341E4EFECB /* ALPHAGlobalPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E649AF4DA3334216325DF6 /* ALPHAGlobalPlugin.m */; };
 		67E64B91ABA3856AE595DB38 /* ALPHAFieldEditorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64D462B53AAD0AD318BDB /* ALPHAFieldEditorView.m */; };
 		67E64B9DA90DAFD62DA44A7C /* ALPHAActionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64134C154380F6E98A2CF /* ALPHAActionItem.m */; };
-		67E64BC005CA564F9FA704D6 /* FLEXRuntimeUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6495BA192AE1A42779BDF /* FLEXRuntimeUtility.m */; };
+		67E64BC005CA564F9FA704D6 /* ALPHARuntimeUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6495BA192AE1A42779BDF /* ALPHARuntimeUtility.m */; };
 		67E64C053FB47A19111D1C72 /* ALPHARequestState.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64B16E1C75CD46A22E2C4 /* ALPHARequestState.m */; };
 		67E64C23399C98FD2DECD3E0 /* ALPHAFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64752E1AAB30E6DCD71DA /* ALPHAFileManager.m */; };
 		67E64C285D0A0729DA541656 /* ALPHAMenuSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64010BDAB5EBDCC02608D /* ALPHAMenuSource.m */; };
@@ -231,6 +232,8 @@
 		38AB0F3C1B316A4200F0CC21 /* ALPHATestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHATestCase.h; sourceTree = "<group>"; };
 		38AB0F3D1B316A4200F0CC21 /* ALPHATestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHATestCase.m; sourceTree = "<group>"; };
 		38AB0F3F1B316B9400F0CC21 /* AlphaNetworkObjectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlphaNetworkObjectTests.m; sourceTree = "<group>"; };
+		38D964071B31D7E600DB3BC7 /* ALPHAStatusBarNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAStatusBarNotification.h; sourceTree = "<group>"; };
+		38D964081B31D7E600DB3BC7 /* ALPHAStatusBarNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAStatusBarNotification.m; sourceTree = "<group>"; };
 		38DE4A481A0B78BC00EB447A /* Launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
 		38DE4A4A1A0B7DB000EB447A /* AAPLNetworkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLNetworkViewController.h; sourceTree = "<group>"; };
 		38DE4A4B1A0B7DB000EB447A /* AAPLNetworkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLNetworkViewController.m; sourceTree = "<group>"; };
@@ -307,7 +310,7 @@
 		67E64051084AD8FF90A8A24A /* ALPHATheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHATheme.m; sourceTree = "<group>"; };
 		67E6405E5A490574464987B3 /* ALPHABonjourServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHABonjourServer.m; sourceTree = "<group>"; };
 		67E6406A1A6E7C09379B63E1 /* UIImage+ALPHACreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ALPHACreation.m"; sourceTree = "<group>"; };
-		67E6406A4DE105083DCFAA32 /* FLEXUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXUtility.h; sourceTree = "<group>"; };
+		67E6406A4DE105083DCFAA32 /* ALPHAUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAUtility.h; sourceTree = "<group>"; };
 		67E6406C0044B02CBA6FA9F0 /* FLEXToolbarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXToolbarItem.h; sourceTree = "<group>"; };
 		67E640767677711A7BE1B9C9 /* ALPHAWebRendererViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAWebRendererViewController.m; sourceTree = "<group>"; };
 		67E64093D3BB3C4BBF4FE26F /* ALPHAFileConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAFileConverter.h; sourceTree = "<group>"; };
@@ -316,7 +319,7 @@
 		67E640BC5072A20C85031915 /* ALPHABonjourPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHABonjourPlugin.m; sourceTree = "<group>"; };
 		67E640CA7B04B298FD0AB47B /* ALPHARemotePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHARemotePlugin.h; sourceTree = "<group>"; };
 		67E640E34058C950872CF03D /* ALPHAIvarRendererViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAIvarRendererViewController.h; sourceTree = "<group>"; };
-		67E640FEB55AE53D9BE187B9 /* FLEXUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXUtility.m; sourceTree = "<group>"; };
+		67E640FEB55AE53D9BE187B9 /* ALPHAUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAUtility.m; sourceTree = "<group>"; };
 		67E6411CF768DC82A4038D4D /* ALPHAApplicationEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAApplicationEvent.h; sourceTree = "<group>"; };
 		67E64122983B25632811D676 /* FLEXMultilineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXMultilineTableViewCell.h; sourceTree = "<group>"; };
 		67E641249CF1F98D224B1DAD /* ALPHAObjectProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAObjectProperty.h; sourceTree = "<group>"; };
@@ -359,7 +362,6 @@
 		67E642EE9BC068D7002BB406 /* UIApplication+ALPHADelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+ALPHADelegate.h"; sourceTree = "<group>"; };
 		67E642F64CF2CC697B8BF099 /* ALPHAGenericConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAGenericConverter.m; sourceTree = "<group>"; };
 		67E642FE28269D57BE491115 /* ALPHAMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAMainViewController.h; sourceTree = "<group>"; };
-		67E643043A9EE568BA0074A6 /* ALPHAManager+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALPHAManager+Private.h"; sourceTree = "<group>"; };
 		67E64307044E5AE8EA4C19DB /* FLEXToolbarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXToolbarItem.m; sourceTree = "<group>"; };
 		67E6432CD486512F6BFE5214 /* ALPHAHeapSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAHeapSource.m; sourceTree = "<group>"; };
 		67E6433A9FBF4639B4446662 /* ALPHAWebRendererViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAWebRendererViewController.h; sourceTree = "<group>"; };
@@ -496,10 +498,10 @@
 		67E6492654EE0CC4EBD1B622 /* FLEXArgumentInputSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXArgumentInputSwitchView.m; sourceTree = "<group>"; };
 		67E6493695C3294F8E87AC3A /* FLEXExplorerToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXExplorerToolbar.m; sourceTree = "<group>"; };
 		67E64936CBDEC2CBC0C4E0DC /* ALPHAApplicationEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAApplicationEvent.m; sourceTree = "<group>"; };
-		67E64941A052D2A01D7B5C0C /* FLEXRuntimeUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXRuntimeUtility.h; sourceTree = "<group>"; };
+		67E64941A052D2A01D7B5C0C /* ALPHARuntimeUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHARuntimeUtility.h; sourceTree = "<group>"; };
 		67E6494676157656C6AF223B /* FLEXArgumentInputNotSupportedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXArgumentInputNotSupportedView.h; sourceTree = "<group>"; };
 		67E6494C856DBEA625D84E09 /* ALPHAScreenActionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAScreenActionItem.m; sourceTree = "<group>"; };
-		67E6495BA192AE1A42779BDF /* FLEXRuntimeUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXRuntimeUtility.m; sourceTree = "<group>"; };
+		67E6495BA192AE1A42779BDF /* ALPHARuntimeUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHARuntimeUtility.m; sourceTree = "<group>"; };
 		67E64968F9063051925793D4 /* ALPHAGenericModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAGenericModel.m; sourceTree = "<group>"; };
 		67E6497D11D8599B277F157A /* UIApplication+ALPHAEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+ALPHAEvent.h"; sourceTree = "<group>"; };
 		67E64991772D3FD147BD8FA7 /* ALPHAPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAPlugin.h; sourceTree = "<group>"; };
@@ -691,6 +693,15 @@
 				38AB0F3D1B316A4200F0CC21 /* ALPHATestCase.m */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		38D964061B31D57400DB3BC7 /* StatusBarNotification */ = {
+			isa = PBXGroup;
+			children = (
+				38D964071B31D7E600DB3BC7 /* ALPHAStatusBarNotification.h */,
+				38D964081B31D7E600DB3BC7 /* ALPHAStatusBarNotification.m */,
+			);
+			path = StatusBarNotification;
 			sourceTree = "<group>";
 		};
 		5356823118F3656900BAAD62 = {
@@ -943,6 +954,7 @@
 		67E643067E6234EA5EBEBE03 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				38D964061B31D57400DB3BC7 /* StatusBarNotification */,
 				67E6479FCB12A6921DEE2E1A /* ArgumentInputViews */,
 				67E64772110087B931ABADF0 /* ALPHAFieldEditorView.h */,
 				67E64D462B53AAD0AD318BDB /* ALPHAFieldEditorView.m */,
@@ -961,7 +973,6 @@
 				67E64DDD5EA481E7E7895CA9 /* ALPHAWindow.m */,
 				67E643B051E6EE7C57C41A2B /* ALPHAManager.h */,
 				67E64A3C1A821BF13AAD13CD /* ALPHAManager.m */,
-				67E643043A9EE568BA0074A6 /* ALPHAManager+Private.h */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -1229,12 +1240,12 @@
 		67E6478B92D30B99CDC71831 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				67E6412D346A961A0DD2F4C7 /* Controllers */,
+				67E6466AD98ADCF66DCB6A19 /* Converters */,
 				67E64762D26142C07744978E /* Model */,
-				67E6414DEC36A7FD89B3068F /* Views */,
 				67E646773049810238A68EA5 /* Sources */,
 				67E64937500FFEAB16D6653D /* Toolbar */,
-				67E6466AD98ADCF66DCB6A19 /* Converters */,
-				67E6412D346A961A0DD2F4C7 /* Controllers */,
+				67E6414DEC36A7FD89B3068F /* Views */,
 				67E648DF84FA23DA198EE2A2 /* ALPHAViewHierarchyPlugin.h */,
 				67E64003820C826A67AF864E /* ALPHAViewHierarchyPlugin.m */,
 			);
@@ -1528,8 +1539,8 @@
 		67E64BC5A6A6BF4406517FB2 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				67E6406A4DE105083DCFAA32 /* FLEXUtility.h */,
-				67E640FEB55AE53D9BE187B9 /* FLEXUtility.m */,
+				67E6406A4DE105083DCFAA32 /* ALPHAUtility.h */,
+				67E640FEB55AE53D9BE187B9 /* ALPHAUtility.m */,
 				67E64619D2531413CA628432 /* FLEXResources.h */,
 				67E6461A0AD417A5B8B03283 /* FLEXResources.m */,
 				67E646E83F2F17421CD7B1BE /* ALPHACanvasView.h */,
@@ -1539,8 +1550,8 @@
 				67E6439A2611C1B33E2A7412 /* CGVectorAdditions.h */,
 				67E648E037848D387B73459D /* FLEXHeapEnumerator.h */,
 				67E6482E8AD788D1800E8821 /* FLEXHeapEnumerator.m */,
-				67E64941A052D2A01D7B5C0C /* FLEXRuntimeUtility.h */,
-				67E6495BA192AE1A42779BDF /* FLEXRuntimeUtility.m */,
+				67E64941A052D2A01D7B5C0C /* ALPHARuntimeUtility.h */,
+				67E6495BA192AE1A42779BDF /* ALPHARuntimeUtility.m */,
 				67E645787109C165BB404815 /* ALPHAViewController.h */,
 				67E64C0FA202A58F70C116F9 /* ALPHAViewController.m */,
 				67E64DFDD78B38EF7A3A362A /* UIImage+ALPHACreation.h */,
@@ -1943,12 +1954,12 @@
 				535682B118F3670300BAAD62 /* AAPLImageViewController.m in Sources */,
 				535682A918F3670300BAAD62 /* AAPLAlertViewController.m in Sources */,
 				535682B218F3670300BAAD62 /* AAPLMasterViewController.m in Sources */,
-				67E64A26EF7A6D276E3D06DD /* FLEXUtility.m in Sources */,
+				67E64A26EF7A6D276E3D06DD /* ALPHAUtility.m in Sources */,
 				67E64C7C6BF51ED8F4FE909A /* FLEXResources.m in Sources */,
 				67E64419182A64C472B39990 /* ALPHACanvasView.m in Sources */,
 				67E64A07177C299BCDBCBC92 /* ALPHAMockObject.m in Sources */,
 				67E64AF10337DA7077F4DD0A /* FLEXHeapEnumerator.m in Sources */,
-				67E64BC005CA564F9FA704D6 /* FLEXRuntimeUtility.m in Sources */,
+				67E64BC005CA564F9FA704D6 /* ALPHARuntimeUtility.m in Sources */,
 				67E646C9D48FE996BD03475D /* ALPHAViewController.m in Sources */,
 				67E64D0D0C32518040EC1A57 /* UIImage+ALPHACreation.m in Sources */,
 				67E64C31F1FC9D980F769DCE /* ALPHAApplicationDelegate.m in Sources */,
@@ -2049,6 +2060,7 @@
 				67E6455F535A0679FFACD79F /* ALPHABonjourSource.m in Sources */,
 				67E6401CBF11A2D693714BA2 /* ALPHABonjourServerSource.m in Sources */,
 				67E641EC60CCCD66ABEE4F16 /* ALPHARemotePlugin.m in Sources */,
+				38D964091B31D7E600DB3BC7 /* ALPHAStatusBarNotification.m in Sources */,
 				67E640B5CA51FCBBFF0FCB6B /* ALPHABonjourConfig.m in Sources */,
 				67E64AB59F040BE763AA4854 /* ALPHABonjourServer.m in Sources */,
 				67E64554CC1F61776D88DEE5 /* ALPHABonjourPlugin.m in Sources */,
