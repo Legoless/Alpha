@@ -6,8 +6,20 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHASerializer.h"
+@import Foundation;
+
 #import "ALPHASerializableItem.h"
-#import "ALPHAObjectSerializer.h"
-#import "ALPHASerializerManager.h"
-#import "ALPHAJSONSerializer.h"
+
+@interface NSObject (Serialization) <NSSecureCoding>
+
+//coding
+
++ (NSDictionary *)codableProperties;
+- (void)setWithCoder:(NSCoder *)aDecoder;
+
+//property access
+
+- (NSDictionary *)codableProperties;
+- (NSDictionary *)dictionaryRepresentation;
+
+@end

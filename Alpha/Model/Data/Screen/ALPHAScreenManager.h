@@ -18,7 +18,6 @@
 
 #pragma mark - Properties for rendering
 
-@property (nonatomic, strong) id<ALPHASerializer> serializer;
 @property (nonatomic, strong) id<ALPHADataConverterSource> converter;
 @property (nonatomic, strong) ALPHAManager *manager;
 

@@ -91,7 +91,8 @@
         {
             [self.source dataForRequest:request completion:^(id object, NSError *error)
             {
-                ALPHANetworkObject *bonjour = [[ALPHANetworkObject alloc] initWithObject:object];
+                ALPHANetworkObject *bonjour = [[ALPHANetworkObject alloc] init];
+                bonjour.object = object;
                  
                 if (error)
                 {
@@ -120,7 +121,8 @@
         {
             [self.source performAction:action completion:^(id object, NSError *error)
             {
-                ALPHANetworkObject *bonjour = [[ALPHANetworkObject alloc] initWithObject:object];
+                ALPHANetworkObject *bonjour = [[ALPHANetworkObject alloc] init];
+                bonjour.object = object;
                 
                 if (error)
                 {

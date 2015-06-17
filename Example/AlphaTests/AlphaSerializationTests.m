@@ -17,7 +17,6 @@
 
 @interface AlphaSerializationTests : ALPHATestCase
 
-@property (nonatomic, strong) id<ALPHASerializer> serializer;
 @property (nonatomic, readonly) ALPHATableScreenModel* screenModel;
 
 @end
@@ -27,16 +26,6 @@
 - (ALPHATableScreenModel *)screenModel
 {
     return (ALPHATableScreenModel *)[[ALPHADeviceStatusSource new] modelForRequest:nil];
-}
-
-- (id<ALPHASerializer>)serializer
-{
-    if (!_serializer)
-    {
-        _serializer = [ALPHASerializerManager sharedManager];
-    }
-    
-    return _serializer;
 }
 
 - (void)setUp
@@ -54,9 +43,9 @@
 {
     ALPHARequest* request = [ALPHARequest requestWithIdentifier:@"com.unifiedsense.test" parameters:@{ @"test" : @"parameter" }];
 
-    id object = [self.serializer serializeObject:request];
+    id object = [NSKeyedArchiver archivedDataWithRootObject:request];
     
-    ALPHARequest* deserializedRequest = [self.serializer deserializeObject:object toClass:[ALPHARequest class]];
+    ALPHARequest* deserializedRequest = [NSKeyedUnarchiver unarchiveObjectWithData:object];
     
     XCTAssert([request.identifier isEqualToString:deserializedRequest.identifier], @"Equal identifiers");
     ALPHAAssertEqualDictionaries(request.parameters, deserializedRequest.parameters);
@@ -66,9 +55,9 @@
 {
     ALPHAModel* model = self.screenModel;
 
-    id object = [self.serializer serializeObject:model];
+    id object = [NSKeyedArchiver archivedDataWithRootObject:model];
     
-    ALPHAModel* deserializedModel = [self.serializer deserializeObject:object toClass:[model class]];
+    ALPHAModel* deserializedModel = [NSKeyedUnarchiver unarchiveObjectWithData:object];
     
     XCTAssert(model.class == deserializedModel.class, @"Equal superclass");
 }
@@ -77,9 +66,9 @@
 {
     ALPHATableScreenModel* model = self.screenModel;
     
-    id object = [self.serializer serializeObject:model];
+    id object = [NSKeyedArchiver archivedDataWithRootObject:model];
     
-    ALPHATableScreenModel* deserializedModel = [self.serializer deserializeObject:object toClass:[model class]];
+    ALPHATableScreenModel* deserializedModel = [NSKeyedUnarchiver unarchiveObjectWithData:object];
     
     //
     // Check all sections
@@ -92,8 +81,16 @@
         
         XCTAssert([deserializedSection class] == [originalSection class], @"Section model class is are not equal");
         XCTAssert([deserializedSection.identifier isEqualToString:originalSection.identifier], @"Section identifiers are not equal");
-        XCTAssert([deserializedSection.headerText isEqualToString:originalSection.headerText], @"Section header texts are not equal");
-        XCTAssert([deserializedSection.footerText isEqualToString:originalSection.footerText], @"Section footer texts are not equal");
+        
+        if (originalSection.headerText != nil)
+        {
+            XCTAssert([deserializedSection.headerText isEqualToString:originalSection.headerText], @"Section header texts are not equal");
+        }
+        
+        if (originalSection.footerText != nil)
+        {
+            XCTAssert([deserializedSection.footerText isEqualToString:originalSection.footerText], @"Section footer texts are not equal");
+        }
     }
 }
 
@@ -101,9 +98,9 @@
 {
     ALPHATableScreenModel* model = self.screenModel;
     
-    id object = [self.serializer serializeObject:model];
+    id object = [NSKeyedArchiver archivedDataWithRootObject:model];
     
-    ALPHATableScreenModel* deserializedModel = [self.serializer deserializeObject:object toClass:[model class]];
+    ALPHATableScreenModel* deserializedModel = [NSKeyedUnarchiver unarchiveObjectWithData:object];
     
     //
     // Check all sections
@@ -120,9 +117,12 @@
             ALPHAScreenItem* originalItem = originalSection.items[x];
             
             XCTAssert([deserializedItem class] == [originalItem class], @"Items must be of same class");
-            XCTAssert([deserializedItem.objectClass isEqualToString:originalItem.objectClass], @"Items must have same object class");
             XCTAssert([deserializedItem.titleText isEqualToString:originalItem.titleText]);
-            XCTAssert([deserializedItem.attributedTitleText isEqualToAttributedString:originalItem.attributedTitleText]);
+            
+            if (originalItem.attributedTitleText != nil)
+            {
+                XCTAssert([deserializedItem.attributedTitleText isEqualToAttributedString:originalItem.attributedTitleText]);
+            }
             
             XCTAssert(deserializedItem.style == originalItem.style);
         }

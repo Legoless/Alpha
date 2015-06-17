@@ -11,7 +11,6 @@
 #import "UIImage+ALPHACreation.h"
 
 #import "ALPHAConverterManager.h"
-#import "ALPHASerializerManager.h"
 
 #import "ALPHAGlobalActionIdentifiers.h"
 #import "ALPHAScreenItem.h"
@@ -328,10 +327,6 @@
     {
         [text appendString:item.titleText];
     }
-    else if (item.title)
-    {
-        [text appendString:[item.title description]];
-    }
 
     return text.copy;
 }
@@ -345,6 +340,7 @@
     
     NSString* detail = nil;
     
+    /*
     if ([item.detail isKindOfClass:[NSNumber class]])
     {
         //
@@ -364,13 +360,9 @@
             detail = [NSString stringWithFormat:@"%lld", detailNumber.longLongValue];
         }
     }
-    else if (item.detailText.length)
+    else*/ if (item.detailText.length)
     {
         detail = item.detailText;
-    }
-    else
-    {
-        detail = [item.detail description];
     }
     
     return detail;

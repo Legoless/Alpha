@@ -7,6 +7,7 @@
 //
 
 #import "ALPHAModel.h"
+#import "ALPHASerialization.h"
 
 @implementation ALPHAModel
 

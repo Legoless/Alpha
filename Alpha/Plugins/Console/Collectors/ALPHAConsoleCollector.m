@@ -49,7 +49,7 @@ NSString *const ALPHAConsoleDataIdentifier = @"com.unifiedsense.alpha.data.conso
             [tmpDict setObject:string forKey:keyString];
         }
         
-        ALPHAConsoleLog* log = [[ALPHAConsoleLog alloc] initWithDictionary:[self updateKeysWithOriginalDictionary:tmpDict]];
+        ALPHAConsoleLog* log = [[ALPHAConsoleLog alloc] initWithDictionary:tmpDict];
         
         if (log)
         {
@@ -79,24 +79,6 @@ NSString *const ALPHAConsoleDataIdentifier = @"com.unifiedsense.alpha.data.conso
     model.logs = [self systemLogs];
     
     return model;
-}
-
-- (NSDictionary *)updateKeysWithOriginalDictionary:(NSDictionary *)dict
-{
-    NSMutableDictionary *dictionary = [dict mutableCopy];
-    dictionary[@"level"] = dictionary[@"Level"];
-    dictionary[@"facility"] = dictionary[@"Facility"];
-    dictionary[@"host"] = dictionary[@"Host"];
-    dictionary[@"message"] = dictionary[@"Message"];
-    dictionary[@"readUID"] = dictionary[@"ReadUID"];
-    dictionary[@"sender"] = dictionary[@"Sender"];
-    dictionary[@"senderMachUUID"] = dictionary[@"SenderMachUUID"];
-    dictionary[@"time"] = dictionary[@"Time"];
-    dictionary[@"timeNanoSec"] = dictionary[@"TimeNanoSec"];
-    dictionary[@"thread"] = dictionary[@"CFLog Thread"];
-    dictionary[@"localTime"] = dictionary[@"CFLog Local Time"];
-    
-    return dictionary;
 }
 
 @end

@@ -26,4 +26,6 @@
 @property (nonatomic, copy) NSNumber *thread;
 @property (nonatomic, copy) NSNumber *UID;
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+
 @end

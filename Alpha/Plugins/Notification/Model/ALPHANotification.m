@@ -9,6 +9,7 @@
 #import "ALPHARequest.h"
 
 #import "ALPHANotification.h"
+#import "ALPHASerialization.h"
 
 @implementation ALPHANotification
 

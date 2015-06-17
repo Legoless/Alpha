@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
-#import "ALPHASerializableItem.h"
+#import "ALPHASerialization.h"
 
 #import "ALPHANetworkRequest.h"
 #import "ALPHANetworkResponse.h"

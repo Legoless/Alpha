@@ -14,34 +14,18 @@
 extern NSString *const ALPHANetworkObjectVerificationKey;
 
 #import "ALPHASerialization.h"
+#import "ALPHARequest.h"
 
 /*!
  *  Underlying network object that is transferred over the network.
  *  Network sources and server bases always communicate using this object.
  */
-@interface ALPHANetworkObject : NSObject <NSSecureCoding>
+@interface ALPHANetworkObject : NSObject <ALPHASerializableItem>
 
-@property (nonatomic, copy) NSString* objectClass;
-@property (nonatomic, copy) id objectData;
+@property (nonatomic, strong) id object;
 
 @property (nonatomic, copy) NSError *error;
 
 @property (nonatomic, copy) NSDictionary *parameters;
-
-/*!
- *  Prepares Bonjour object
- *
- *  @param object to be sent
- *
- *  @return
- */
-- (instancetype)initWithObject:(id<ALPHASerializableItem>)object;
-
-/*!
- *  Serializes object data and returns object
- *
- *  @return serialized object
- */
-- (id<ALPHASerializableItem>)object;
 
 @end

@@ -6,9 +6,8 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHASerialization.h"
-
 #import "ALPHAScreenItem.h"
+#import "ALPHASerialization.h"
 
 NSString* const ALPHADisplayItemTitleKey = @"kALPHADisplayItemTitleKey";
 NSString* const ALPHADisplayItemDetailkey = @"kALPHADisplayItemDetailkey";
@@ -17,27 +16,22 @@ NSString* const ALPHADisplayItemDetailkey = @"kALPHADisplayItemDetailkey";
 
 #pragma mark - Getters and Setters
 
-- (void)setObject:(id)object
+- (NSString *)title
 {
-    if (![self.objectClass isEqualToString:NSStringFromClass([object class])])
+    if (self.titleText)
     {
-        _object = [[ALPHASerializerManager sharedManager] deserializeObject:object toClass:NSClassFromString(self.objectClass)];
+        return self.titleText;
     }
-    else
+    else if (self.attributedTitleText)
     {
-        _object = object;
-        
-        if (!self.objectClass)
-        {
-            self.objectClass = NSStringFromClass([object class]);
-        }
+        return self.attributedTitleText.string;
     }
+    
+    return nil;
 }
 
 - (void)setTitle:(id)title
 {
-    _title = title;
-    
     if ([title isKindOfClass:[NSString class]])
     {
         self.titleText = title;
@@ -45,6 +39,32 @@ NSString* const ALPHADisplayItemDetailkey = @"kALPHADisplayItemDetailkey";
     else if ([title isKindOfClass:[NSAttributedString class]])
     {
         self.attributedTitleText = title;
+    }
+}
+
+- (NSString *)detail
+{
+    if (self.detailText)
+    {
+        return self.detailText;
+    }
+    else if (self.attributedDetailText)
+    {
+        return self.attributedDetailText.string;
+    }
+    
+    return nil;
+}
+
+- (void)setDetail:(id)detail
+{
+    if ([detail isKindOfClass:[NSString class]])
+    {
+        self.detailText = detail;
+    }
+    else if ([detail isKindOfClass:[NSAttributedString class]])
+    {
+        self.attributedDetailText = detail;
     }
 }
 

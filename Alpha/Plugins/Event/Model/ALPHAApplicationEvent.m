@@ -7,6 +7,7 @@
 //
 
 #import "ALPHAApplicationEvent.h"
+#import "ALPHASerialization.h"
 
 @implementation ALPHAApplicationEvent
 

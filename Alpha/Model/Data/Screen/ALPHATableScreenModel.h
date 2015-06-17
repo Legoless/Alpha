@@ -29,6 +29,6 @@
 /*!
  *  Array of display section objects objects
  */
-@property (nonatomic, copy) NSArray<ALPHAScreenSection> *sections;
+@property (nonatomic, copy) NSArray *sections;
 
 @end

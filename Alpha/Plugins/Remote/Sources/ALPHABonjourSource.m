@@ -46,7 +46,9 @@
 
 - (void)hasDataForRequest:(ALPHARequest *)request completion:(ALPHADataSourceRequestVerification)completion
 {
-    ALPHANetworkObject* object = [[ALPHANetworkObject alloc] initWithObject:request];
+    ALPHANetworkObject* object = [[ALPHANetworkObject alloc] init];
+    
+    object.object = request;
     object.parameters = @{ ALPHANetworkObjectVerificationKey : @(YES) };
     
     self.verification = completion;
@@ -73,7 +75,9 @@
 
 - (void)dataForRequest:(ALPHARequest *)request completion:(ALPHADataSourceRequestCompletion)completion
 {
-    ALPHANetworkObject* object = [[ALPHANetworkObject alloc] initWithObject:request];
+    ALPHANetworkObject* object = [[ALPHANetworkObject alloc] init];
+    
+    object.object = request;
     
     self.completion = completion;
     
@@ -99,7 +103,8 @@
 
 - (void)canPerformAction:(id<ALPHAIdentifiableItem>)action completion:(ALPHADataSourceRequestVerification)completion;
 {
-    ALPHANetworkObject* object = [[ALPHANetworkObject alloc] initWithObject:action];
+    ALPHANetworkObject* object = [[ALPHANetworkObject alloc] init];
+    object.object = action;
     object.parameters = @{ ALPHANetworkObjectVerificationKey : @(YES) };
     
     self.verification = completion;
@@ -127,8 +132,9 @@
 
 - (void)performAction:(id<ALPHAIdentifiableItem>)action completion:(ALPHADataSourceRequestCompletion)completion
 {
-    ALPHANetworkObject* object = [[ALPHANetworkObject alloc] initWithObject:action];
+    ALPHANetworkObject* object = [[ALPHANetworkObject alloc] init];
     
+    object.object = action;
     self.completion = completion;
     
     NSError* error = nil;

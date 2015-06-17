@@ -9,6 +9,7 @@
 #import "FLEXUtility.h"
 
 #import "ALPHARequest.h"
+#import "ALPHASerialization.h"
 
 NSString *const ALPHAFileRequestIdentifier          = @"com.unifiedsense.alpha.data.file.request";
 NSString *const ALPHAFileURLParameterKey            = @"kALPHAFileURLParameterKey";

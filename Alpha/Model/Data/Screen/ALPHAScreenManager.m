@@ -7,7 +7,6 @@
 //
 
 #import "ALPHAActions.h"
-#import "ALPHASerializerManager.h"
 #import "ALPHAScreenManager.h"
 #import "ALPHAConverterManager.h"
 #import "ALPHALocalSource.h"
@@ -37,16 +36,6 @@
     }
     
     return _manager;
-}
-
-- (id<ALPHASerializer>)serializer
-{
-    if (!_serializer)
-    {
-        _serializer = [ALPHASerializerManager sharedManager];
-    }
-    
-    return _serializer;
 }
 
 - (id<ALPHADataConverterSource>)converter

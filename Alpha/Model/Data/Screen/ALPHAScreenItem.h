@@ -9,21 +9,13 @@
 @import UIKit;
 
 #import "ALPHASerializableItem.h"
+#import "ALPHARequest.h"
 
 typedef NSInteger ALPHAScreenItemPriority;
-
-@protocol ALPHAScreenItem <NSObject>
-
-@end
 
 @interface ALPHAScreenItem : NSObject <ALPHASerializableItem>
 
 #pragma mark - Model
-
-/*!
- *  Class for model if back-reference is present
- */
-@property (nonatomic, copy) NSString *objectClass;
 
 /*!
  *  Back-Reference for model if created from a model
@@ -37,12 +29,14 @@ typedef NSInteger ALPHAScreenItemPriority;
  */
 @property (nonatomic, strong) id icon;
 
-@property (nonatomic, strong) id title;
+- (NSString *)title;
+- (void)setTitle:(id)title;
 
 @property (nonatomic, copy) NSString *titleText;
 @property (nonatomic, copy) NSAttributedString *attributedTitleText;
 
-@property (nonatomic, strong) id detail;
+- (NSString *)detail;
+- (void)setDetail:(id)detail;
 
 @property (nonatomic, copy) NSString* detailText;
 @property (nonatomic, copy) NSAttributedString* attributedDetailText;

@@ -16,27 +16,14 @@
 
 @interface AlphaNetworkObjectTests : ALPHATestCase
 
-@property (nonatomic, strong) id<ALPHASerializer> serializer;
-
 @end
 
 @implementation AlphaNetworkObjectTests
 
-- (id<ALPHASerializer>)serializer
-{
-    if (!_serializer)
-    {
-        _serializer = [ALPHASerializerManager sharedManager];
-    }
-    
-    return _serializer;
-}
-
 - (void)setUp
 {
     [super setUp];
-    
-    
+
 }
 
 - (void)tearDown
@@ -49,7 +36,8 @@
 {
     ALPHARequest* request = [ALPHARequest requestWithIdentifier:@"com.unifiedsense.test" parameters:@{ @"test" : @"parameter" }];
     
-    ALPHANetworkObject *object = [[ALPHANetworkObject alloc] initWithObject:request];
+    ALPHANetworkObject *object = [[ALPHANetworkObject alloc] init];
+    object.object = request;
     
     id serialized = [NSKeyedArchiver archivedDataWithRootObject:object];
     

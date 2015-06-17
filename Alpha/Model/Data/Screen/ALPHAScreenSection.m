@@ -8,6 +8,7 @@
 
 #import "ALPHAScreenSection.h"
 #import "ALPHAScreenItem.h"
+#import "ALPHASerialization.h"
 
 @implementation ALPHAScreenSection
 
