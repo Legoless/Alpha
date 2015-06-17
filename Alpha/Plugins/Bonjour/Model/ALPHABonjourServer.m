@@ -63,12 +63,12 @@
         // Check if it is only for a hasData request
         //
         
-        if (object.parameters[ALPHANetworkObjectCheckKey])
+        if (object.parameters[ALPHANetworkObjectVerificationKey])
         {
             [self.source hasDataForRequest:request completion:^(BOOL result)
             {
                 ALPHANetworkObject *bonjour = [[ALPHANetworkObject alloc] init];
-                bonjour.parameters = @{ ALPHANetworkObjectCheckKey : @(result) };
+                bonjour.parameters = @{ ALPHANetworkObjectVerificationKey : @(result) };
                 
                 [connection sendObject:bonjour error:nil];
             }];
@@ -92,13 +92,12 @@
     {
         id<ALPHAIdentifiableItem> action = (id<ALPHAIdentifiableItem>)item;
         
-        if (object.parameters[ALPHANetworkObjectCheckKey])
+        if (object.parameters[ALPHANetworkObjectVerificationKey])
         {
             [self.source canPerformAction:action completion:^(BOOL result)
             {
-                
                 ALPHANetworkObject *bonjour = [[ALPHANetworkObject alloc] init];
-                bonjour.parameters = @{ ALPHANetworkObjectCheckKey : @(result) };
+                bonjour.parameters = @{ ALPHANetworkObjectVerificationKey : @(result) };
                 
                 [connection sendObject:bonjour error:nil];
             }];

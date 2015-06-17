@@ -11,7 +11,7 @@
 /*!
  *  Set this key in parameters to true, if only check should be done.
  */
-extern NSString *const ALPHANetworkObjectCheckKey;
+extern NSString *const ALPHANetworkObjectVerificationKey;
 
 #import "ALPHASerialization.h"
 

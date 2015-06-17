@@ -90,7 +90,7 @@ NSString *const ALPHABonjourServerDataIdentifier = @"com.unifiedsense.alpha.data
         
         item.title = service.name;
         item.detail = [NSString stringWithFormat:@"      %@ %@", service.system, service.version];
-        
+                
         item.style = UITableViewCellStyleSubtitle;
         
         [items addObject:item];
@@ -102,7 +102,6 @@ NSString *const ALPHABonjourServerDataIdentifier = @"com.unifiedsense.alpha.data
     screenModel.expiration = 5.0;
     
     return screenModel;
-
 }
 
 #pragma mark - NetServiceBrowser Delegate
