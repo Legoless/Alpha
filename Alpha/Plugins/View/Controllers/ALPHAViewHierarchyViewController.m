@@ -6,10 +6,11 @@
 //  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
+#import "ALPHACore.h"
+
 #import "ALPHAMainViewController.h"
 #import "FLEXExplorerToolbar.h"
 #import "FLEXToolbarItem.h"
-#import "ALPHAUtility.h"
 #import "ALPHAHierarchyTableViewController.h"
 
 #import "ALPHAScreenManager.h"
@@ -180,8 +181,8 @@
         [self beginObservingView:selectedView];
         
         // Update the toolbar and selected overlay
-        self.explorerToolbar.selectedViewDescription = [ALPHAUtility descriptionForView:selectedView includingFrame:YES];
-        self.explorerToolbar.selectedViewOverlayColor = [ALPHAUtility consistentRandomColorForObject:selectedView];;
+        self.explorerToolbar.selectedViewDescription = [ALPHARuntimeUtility descriptionForView:selectedView includingFrame:YES];
+        self.explorerToolbar.selectedViewOverlayColor = [UIColor alpha_consistentRandomColorForObject:selectedView];;
         
         if (selectedView) {
             if (!self.selectedViewOverlay) {
@@ -189,7 +190,7 @@
                 [self.view addSubview:self.selectedViewOverlay];
                 self.selectedViewOverlay.layer.borderWidth = 1.0;
             }
-            UIColor *outlineColor = [ALPHAUtility consistentRandomColorForObject:selectedView];
+            UIColor *outlineColor = [UIColor alpha_consistentRandomColorForObject:selectedView];
             self.selectedViewOverlay.backgroundColor = [outlineColor colorWithAlphaComponent:0.2];
             self.selectedViewOverlay.layer.borderColor = [outlineColor CGColor];
             self.selectedViewOverlay.frame = [self.view convertRect:selectedView.bounds fromView:selectedView];
@@ -315,7 +316,7 @@
     }
     if (object == self.selectedView) {
         // Update the selected view description since we show the frame value there.
-        self.explorerToolbar.selectedViewDescription = [ALPHAUtility descriptionForView:self.selectedView includingFrame:YES];
+        self.explorerToolbar.selectedViewDescription = [ALPHARuntimeUtility descriptionForView:self.selectedView includingFrame:YES];
         CGRect selectedViewOutlineFrame = [self frameInLocalCoordinatesForView:self.selectedView];
         self.selectedViewOverlay.frame = selectedViewOutlineFrame;
     }
@@ -556,7 +557,7 @@
     CGRect outlineFrame = [self frameInLocalCoordinatesForView:view];
     UIView *outlineView = [[UIView alloc] initWithFrame:outlineFrame];
     outlineView.backgroundColor = [UIColor clearColor];
-    outlineView.layer.borderColor = [[ALPHAUtility consistentRandomColorForObject:view] CGColor];
+    outlineView.layer.borderColor = [[UIColor alpha_consistentRandomColorForObject:view] CGColor];
     outlineView.layer.borderWidth = 1.0;
     return outlineView;
 }
@@ -677,8 +678,8 @@
 {
     CGPoint translation = [movePanGR translationInView:self.selectedView.superview];
     CGRect newSelectedViewFrame = self.selectedViewFrameBeforeDragging;
-    newSelectedViewFrame.origin.x = FLEXFloor(newSelectedViewFrame.origin.x + translation.x);
-    newSelectedViewFrame.origin.y = FLEXFloor(newSelectedViewFrame.origin.y + translation.y);
+    newSelectedViewFrame.origin.x = ALPHAFloor(newSelectedViewFrame.origin.x + translation.x);
+    newSelectedViewFrame.origin.y = ALPHAFloor(newSelectedViewFrame.origin.y + translation.y);
     self.selectedView.frame = newSelectedViewFrame;
 }
 

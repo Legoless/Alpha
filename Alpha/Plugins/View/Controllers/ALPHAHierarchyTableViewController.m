@@ -7,11 +7,13 @@
 //
 
 #import "ALPHAHierarchyTableViewController.h"
-#import "ALPHAUtility.h"
+#import "ALPHARuntimeUtility.h"
 #import "ALPHAHierarchyTableViewCell.h"
 #import "ALPHAScreenManager.h"
 #import "ALPHATableScreenModel.h"
 #import "ALPHAActions.h"
+
+#import "UIColor+Random.h"
 
 static const NSInteger kFLEXHierarchyScopeViewsAtTapIndex = 0;
 static const NSInteger kFLEXHierarchyScopeFullHierarchyIndex = 1;
@@ -38,13 +40,13 @@ static const NSInteger kFLEXHierarchyScopeFullHierarchyIndex = 1;
         ALPHAScreenItem *item = [[ALPHAScreenItem alloc] init];
         item.style = UITableViewCellStyleSubtitle;
         
-        item.title = [ALPHAUtility descriptionForView:view includingFrame:NO];
-        item.detail = [ALPHAUtility detailDescriptionForView:view];
+        item.title = [ALPHARuntimeUtility descriptionForView:view includingFrame:NO];
+        item.detail = [ALPHARuntimeUtility detailDescriptionForView:view];
         
         NSNumber *depth = [self.depthsForViews objectForKey:[NSValue valueWithNonretainedObject:view]];
         
         item.cellClass = @"ALPHAHierarchyTableViewCell";
-        item.cellParameters = @{ @"viewDepth" : depth, @"viewColor" : [ALPHAUtility consistentRandomColorForObject:view] };
+        item.cellParameters = @{ @"viewDepth" : depth, @"viewColor" : [UIColor alpha_consistentRandomColorForObject:view] };
         item.accessory = UITableViewCellAccessoryDetailDisclosureButton;
         
         item.transparent = view.hidden;
@@ -161,7 +163,7 @@ static const NSInteger kFLEXHierarchyScopeFullHierarchyIndex = 1;
     {
         self.displayedViews = [candidateViews filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(UIView *candidateView, NSDictionary *bindings)
         {
-            NSString *title = [ALPHAUtility descriptionForView:candidateView includingFrame:NO];
+            NSString *title = [ALPHARuntimeUtility descriptionForView:candidateView includingFrame:NO];
             return [title rangeOfString:self.detailView.searchBar.text options:NSCaseInsensitiveSearch].location != NSNotFound;
         }]];
     }

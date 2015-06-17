@@ -7,7 +7,7 @@
 //
 
 #import "FLEXArgumentInputView.h"
-#import "ALPHAUtility.h"
+#import "ALPHAManager.h"
 
 @interface FLEXArgumentInputView ()
 
@@ -110,7 +110,7 @@
 
 + (UIFont *)titleFont
 {
-    return [ALPHAUtility defaultFontOfSize:12.0];
+    return [[ALPHAManager sharedManager].theme themeFontOfSize:12.0];
 }
 
 + (CGFloat)titleBottomPadding

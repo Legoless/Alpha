@@ -80,7 +80,7 @@
     titleSize = CGSizeMake(ceil(titleSize.width), ceil(titleSize.height));
     titleRect.size = titleSize;
     titleRect.origin.y = contentRect.origin.y + CGRectGetMaxY(contentRect) - titleSize.height;
-    titleRect.origin.x = contentRect.origin.x + FLEXFloor((contentRect.size.width - titleSize.width) / 2.0);
+    titleRect.origin.x = contentRect.origin.x + ALPHAFloor((contentRect.size.width - titleSize.width) / 2.0);
     return titleRect;
 }
 
@@ -89,8 +89,8 @@
     CGSize imageSize = [self imageForState:UIControlStateNormal].size;
     CGRect titleRect = [self titleRectForContentRect:contentRect];
     CGFloat availableHeight = contentRect.size.height - titleRect.size.height - [ALPHAManager sharedManager].theme.topMargin;
-    CGFloat originY = [ALPHAManager sharedManager].theme.topMargin + FLEXFloor((availableHeight - imageSize.height) / 2.0);
-    CGFloat originX = FLEXFloor((contentRect.size.width - imageSize.width) / 2.0);
+    CGFloat originY = [ALPHAManager sharedManager].theme.topMargin + ALPHAFloor((availableHeight - imageSize.height) / 2.0);
+    CGFloat originX = ALPHAFloor((contentRect.size.width - imageSize.width) / 2.0);
     CGRect imageRect = CGRectMake(originX, originY, imageSize.width, imageSize.height);
     return imageRect;
 }

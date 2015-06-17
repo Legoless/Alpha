@@ -58,7 +58,7 @@
 
 + (BOOL)supportsObjCType:(const char *)type withCurrentValue:(id)value
 {
-    return (type && (strcmp(type, FLEXEncodeClass(NSDate)) == 0)) || [value isKindOfClass:[NSDate class]];
+    return (type && (strcmp(type, ALPHAEncodeClass(NSDate)) == 0)) || [value isKindOfClass:[NSDate class]];
 }
 
 @end

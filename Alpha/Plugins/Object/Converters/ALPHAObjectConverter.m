@@ -14,7 +14,7 @@
 #import "ALPHAMethodRendererViewController.h"
 #import "ALPHAPropertyRendererViewController.h"
 
-#import "NSString+ALPHAAdditional.h"
+#import "NSString+Identifier.h"
 
 #import "ALPHARuntimeUtility.h"
 

@@ -10,6 +10,8 @@
 
 #import "ALPHADepthIndicatorView.h"
 
+#import "UIImage+Creation.h"
+
 #import "ALPHAUtility.h"
 
 @interface ALPHAHierarchyTableViewCell ()
@@ -40,7 +42,7 @@
         self.depthIndicatorView = [[ALPHADepthIndicatorView alloc] init];
         [self.contentView addSubview:self.depthIndicatorView];
         
-        UIImage *defaultCircleImage = [ALPHAUtility circularImageWithColor:[UIColor blackColor] radius:5.0];
+        UIImage *defaultCircleImage = [UIImage alpha_circularImageWithColor:[UIColor blackColor] radius:5.0];
         self.colorCircleImageView = [[UIImageView alloc] initWithImage:defaultCircleImage];
         [self.contentView addSubview:self.colorCircleImageView];
     }
@@ -76,7 +78,7 @@
     
     CGRect circleFrame = self.colorCircleImageView.frame;
     circleFrame.origin.x = CGRectGetMaxX(depthIndicatorFrame);
-    circleFrame.origin.y = self.textLabel.frame.origin.y + FLEXFloor((self.textLabel.frame.size.height - circleFrame.size.height) / 2.0);
+    circleFrame.origin.y = self.textLabel.frame.origin.y + ALPHAFloor((self.textLabel.frame.size.height - circleFrame.size.height) / 2.0);
     self.colorCircleImageView.frame = circleFrame;
     
     CGRect textLabelFrame = self.textLabel.frame;
@@ -98,7 +100,7 @@
 {
     if (![_viewColor isEqual:viewColor]) {
         _viewColor = viewColor;
-        self.colorCircleImageView.image = [ALPHAUtility circularImageWithColor:viewColor radius:6.0];
+        self.colorCircleImageView.image = [UIImage alpha_circularImageWithColor:viewColor radius:6.0];
     }
 }
 

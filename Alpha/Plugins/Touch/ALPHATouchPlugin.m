@@ -9,7 +9,7 @@
 #import "ALPHATouchPlugin.h"
 
 #import "FLEXResources.h"
-#import "UIApplication+ALPHAEvent.h"
+#import "UIApplication+Event.h"
 
 #import "ALPHATouchWindow.h"
 #import "ALPHABlockActionItem.h"

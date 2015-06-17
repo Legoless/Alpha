@@ -7,7 +7,7 @@
 //
 
 #import <Haystack/Haystack.h>
-#import "ALPHAUtility.h"
+#import "ALPHARuntimeUtility.h"
 
 #import "UIDevice+ALPHAStatus.h"
 #import "ALPHADeviceStatusSource.h"
@@ -83,7 +83,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     
     NSDictionary* sectionData = @{ @"identifier" : @"com.unifiedsense.alpha.data.status.application",
                                    @"items" : @[
-                                         @{ @"Name" : [ALPHAUtility applicationName] },
+                                         @{ @"Name" : [ALPHARuntimeUtility applicationName] },
                                          @{ @"Version" : [[UIApplication sharedApplication] version] },
                                          @{ @"Build" : [[UIApplication sharedApplication] build] },
                                          @{ @"Build Date" : [NSString stringWithFormat:@"%@ - %@", [NSString stringWithUTF8String:__DATE__], [NSString stringWithUTF8String:__TIME__]] },

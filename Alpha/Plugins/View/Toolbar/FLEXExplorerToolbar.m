@@ -104,8 +104,8 @@
     const CGFloat kToolbarItemHeight = [[self class] toolbarItemHeight];
     self.dragHandle.frame = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, [[self class] dragHandleWidth], kToolbarItemHeight);
     CGRect dragHandleImageFrame = self.dragHandleImageView.frame;
-    dragHandleImageFrame.origin.x = FLEXFloor((self.dragHandle.frame.size.width - dragHandleImageFrame.size.width) / 2.0);
-    dragHandleImageFrame.origin.y = FLEXFloor((self.dragHandle.frame.size.height - dragHandleImageFrame.size.height) / 2.0);
+    dragHandleImageFrame.origin.x = ALPHAFloor((self.dragHandle.frame.size.width - dragHandleImageFrame.size.width) / 2.0);
+    dragHandleImageFrame.origin.y = ALPHAFloor((self.dragHandle.frame.size.height - dragHandleImageFrame.size.height) / 2.0);
     self.dragHandleImageView.frame = dragHandleImageFrame;
     
     
@@ -113,7 +113,7 @@
     CGFloat originX = CGRectGetMaxX(self.dragHandle.frame);
     CGFloat originY = self.bounds.origin.y;
     CGFloat height = kToolbarItemHeight;
-    CGFloat width = FLEXFloor((CGRectGetMaxX(self.bounds) - originX) / [self.toolbarItems count]);
+    CGFloat width = ALPHAFloor((CGRectGetMaxX(self.bounds) - originX) / [self.toolbarItems count]);
     for (UIView *toolbarItem in self.toolbarItems) {
         toolbarItem.frame = CGRectMake(originX, originY, width, height);
         originX = CGRectGetMaxX(toolbarItem.frame);
@@ -142,7 +142,7 @@
     selectedViewColorFrame.size.width = kSelectedViewColorDiameter;
     selectedViewColorFrame.size.height = kSelectedViewColorDiameter;
     selectedViewColorFrame.origin.x = kHorizontalPadding;
-    selectedViewColorFrame.origin.y = FLEXFloor((kDescriptionContainerHeight - kSelectedViewColorDiameter) / 2.0);
+    selectedViewColorFrame.origin.y = ALPHAFloor((kDescriptionContainerHeight - kSelectedViewColorDiameter) / 2.0);
     self.selectedViewColorIndicator.frame = selectedViewColorFrame;
     self.selectedViewColorIndicator.layer.cornerRadius = ceil(selectedViewColorFrame.size.height / 2.0);
     

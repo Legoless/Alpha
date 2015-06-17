@@ -1,5 +1,5 @@
 //
-//  UIApplication+ALPHAEvent.h
+//  UIApplication+Event.h
 //  Alpha
 //
 //  Created by Dal Rupnik on 05/11/14.
@@ -9,6 +9,6 @@
 extern NSString* const ALPHAShakeMotionNotification;
 extern NSString* const ALPHAInterfaceEventNotification;
 
-@interface UIApplication (ALPHAEvent)
+@interface UIApplication (Event)
 
 @end

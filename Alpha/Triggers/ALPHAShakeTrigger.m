@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
-#import "UIApplication+ALPHAEvent.h"
+#import "UIApplication+Event.h"
 
 #import "ALPHAShakeTrigger.h"
 

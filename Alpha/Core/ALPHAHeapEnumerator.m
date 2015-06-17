@@ -1,12 +1,12 @@
 //
-//  FLEXHeapEnumerator.m
-//  Flipboard
+//  ALPHAHeapEnumerator.m
+//  Alpha
 //
-//  Created by Ryan Olson on 5/28/14.
-//  Copyright (c) 2014 Flipboard. All rights reserved.
+//  Created by Dal Rupnik on 17/6/15.
+//  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "FLEXHeapEnumerator.h"
+#import "ALPHAHeapEnumerator.h"
 #import <malloc/malloc.h>
 #import <mach/mach.h>
 #import <objc/runtime.h>
@@ -16,9 +16,9 @@ static CFMutableSetRef registeredClasses;
 // Mimics the objective-c object stucture for checking if a range of memory is an object.
 typedef struct {
     Class isa;
-} flex_maybe_object_t;
+} ALPHAMaybeObject;
 
-@implementation FLEXHeapEnumerator
+@implementation ALPHAHeapEnumerator
 
 static kern_return_t memory_reader(task_t task, vm_address_t remote_address, vm_size_t size, void **local_memory)
 {
@@ -28,14 +28,14 @@ static kern_return_t memory_reader(task_t task, vm_address_t remote_address, vm_
 
 static void range_callback(task_t task, void *context, unsigned type, vm_range_t *ranges, unsigned rangeCount)
 {
-    flex_object_enumeration_block_t block = (__bridge flex_object_enumeration_block_t)context;
+    ALPHAObjectEnumerationBlock block = (__bridge ALPHAObjectEnumerationBlock)context;
     if (!block) {
         return;
     }
     
     for (unsigned int i = 0; i < rangeCount; i++) {
         vm_range_t range = ranges[i];
-        flex_maybe_object_t *tryObject = (flex_maybe_object_t *)range.address;
+        ALPHAMaybeObject *tryObject = (ALPHAMaybeObject *)range.address;
         Class tryClass = NULL;
 #ifdef __arm64__
         // See http://www.sealiesoftware.com/blog/archive/2013/09/24/objc_explain_Non-pointer_isa.html
@@ -51,7 +51,7 @@ static void range_callback(task_t task, void *context, unsigned type, vm_range_t
     }
 }
 
-+ (void)enumerateLiveObjectsUsingBlock:(flex_object_enumeration_block_t)block
++ (void)enumerateLiveObjectsUsingBlock:(ALPHAObjectEnumerationBlock)block
 {
     if (!block) {
         return;

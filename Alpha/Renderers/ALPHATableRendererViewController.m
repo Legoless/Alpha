@@ -8,7 +8,7 @@
 
 #import "ALPHATableRendererViewController.h"
 
-#import "UIImage+ALPHACreation.h"
+#import "UIImage+Creation.h"
 
 #import "ALPHAConverterManager.h"
 

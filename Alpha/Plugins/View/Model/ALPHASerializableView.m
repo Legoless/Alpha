@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHAUtility.h"
+#import "ALPHARuntimeUtility.h"
 
 #import "ALPHASerializableView.h"
 
@@ -20,7 +20,7 @@
     {
         self.viewClass = NSStringFromClass([view class]);
         self.viewPointer = [NSString stringWithFormat:@"%p", view];
-        self.viewDescription = [ALPHAUtility descriptionForView:view includingFrame:NO];
+        self.viewDescription = [ALPHARuntimeUtility descriptionForView:view includingFrame:NO];
         
         NSInteger depth = 0;
         UIView *tryView = view;

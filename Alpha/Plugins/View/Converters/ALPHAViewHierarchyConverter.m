@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHAUtility.h"
+#import "UIColor+Random.h"
 
 #import "ALPHATableScreenModel.h"
 
@@ -34,7 +34,7 @@
         item.detail = [NSString stringWithFormat:@"Frame: %@", view.frame];
         
         item.cellClass = @"ALPHAHierarchyTableViewCell";
-        item.cellParameters = @{ @"viewDepth" : @(view.depth), @"viewColor" : [ALPHAUtility consistentRandomColorForObject:view] };
+        item.cellParameters = @{ @"viewDepth" : @(view.depth), @"viewColor" : [UIColor alpha_consistentRandomColorForObject:view] };
         
         item.transparent = view.hidden;
         

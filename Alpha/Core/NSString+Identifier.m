@@ -1,14 +1,14 @@
 //
-//  NSString+ALPHAAdditional.m
+//  NSString+Identifier.m
 //  Alpha
 //
 //  Created by Dal Rupnik on 08/06/15.
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "NSString+ALPHAAdditional.h"
+#import "NSString+Identifier.h"
 
-@implementation NSString (ALPHAAdditional)
+@implementation NSString (Identifier)
 
 - (NSString *)alpha_cleanCodeIdentifier
 {

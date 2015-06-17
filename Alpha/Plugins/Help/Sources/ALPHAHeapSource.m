@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "FLEXHeapEnumerator.h"
+#import "ALPHAHeapEnumerator.h"
 #import "ALPHAUtility.h"
 #import <objc/runtime.h>
 
@@ -127,11 +127,10 @@ NSString* const ALPHAHeapDataIdentifier = @"com.unifiedsense.alpha.data.heap";
     }
     
     // Enumerate all objects on the heap to build the counts of instances for each class.
-    [FLEXHeapEnumerator enumerateLiveObjectsUsingBlock:^(__unsafe_unretained id object, __unsafe_unretained Class actualClass)
-    {
-        NSUInteger instanceCount = (NSUInteger)CFDictionaryGetValue(mutableCountsForClasses, (__bridge const void *)actualClass);
+    [ALPHAHeapEnumerator enumerateLiveObjectsUsingBlock:^(__unsafe_unretained id object, __unsafe_unretained Class actualClass) {
+        NSUInteger instanceCount = (NSUInteger) CFDictionaryGetValue(mutableCountsForClasses, (__bridge const void *) actualClass);
         instanceCount++;
-        CFDictionarySetValue(mutableCountsForClasses, (__bridge const void *)actualClass, (const void *)instanceCount);
+        CFDictionarySetValue(mutableCountsForClasses, (__bridge const void *) actualClass, (const void *) instanceCount);
     }];
     
     // Convert our CF primitive dictionary into a nicer mapping of class name strings to counts that we will use as the table's model.

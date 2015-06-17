@@ -8,7 +8,7 @@
 
 #import <Haystack/Haystack.h>
 
-#import "NSString+ALPHAAdditional.h"
+#import "NSString+Identifier.h"
 
 #import "UIViewController+ALPHAEventLog.h"
 #import "ALPHAEventCollector.h"

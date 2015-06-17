@@ -12,6 +12,8 @@
 
 #import "ALPHAActions.h"
 
+#import "NSString+Entities.h"
+
 #import "ALPHAConverterManager.h"
 
 #import "ALPHAWebRendererViewController.h"
@@ -88,7 +90,7 @@
     
     if ([object isKindOfClass:[NSString class]])
     {
-        NSString *htmlString = [NSString stringWithFormat:@"<pre>%@</pre>", [ALPHAUtility stringByEscapingHTMLEntitiesInString:[object description]]];
+        NSString *htmlString = [NSString stringWithFormat:@"<pre>%@</pre>", [[object description] alpha_stringByEscapingHTMLEntities]];
         [self.webView loadHTMLString:htmlString baseURL:nil];
     }
     else if ([object isKindOfClass:[NSURL class]])

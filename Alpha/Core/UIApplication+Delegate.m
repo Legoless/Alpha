@@ -1,5 +1,5 @@
 //
-//  UIApplication+ALPHADelegate.m
+//  UIApplication+Delegate.m
 //  Alpha
 //
 //  Created by Dal Rupnik on 01/06/15.
@@ -9,11 +9,11 @@
 #import <Haystack/Haystack.h>
 #import <objc/runtime.h>
 
-#import "UIApplication+ALPHADelegate.h"
+#import "UIApplication+Delegate.h"
 #import "ALPHAApplicationDelegate.h"
 #import "ALPHAManager.h"
 
-@implementation UIApplication (ALPHADelegate)
+@implementation UIApplication (Delegate)
 
 + (void)load
 {
@@ -25,32 +25,15 @@
     //[UIApplication swizzleInstanceMethod:@selector(delegate) withMethod:@selector(alpha_delegate)];
 }
 
-- (id)injectedDelegate
+- (id)alpha_injectedDelegate
 {
-    return objc_getAssociatedObject(self, @selector(injectedDelegate));
+    return objc_getAssociatedObject(self, @selector(alpha_injectedDelegate));
 }
 
-- (void)setInjectedDelegate:(id)injectedDelegate
+- (void)setAlpha_injectedDelegate:(id)alpha_injectedDelegate
 {
-    objc_setAssociatedObject(self, @selector(injectedDelegate), injectedDelegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, @selector(alpha_injectedDelegate), alpha_injectedDelegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-
-/*
-- (id<UIApplicationDelegate>)alpha_delegate
-{
-    id<UIApplicationDelegate> delegate = [self alpha_delegate];
-    
-    if ([delegate isKindOfClass:[ALPHAApplicationDelegate class]])
-    {
-        ALPHAApplicationDelegate* alphaDelegate = delegate;
-        
-        return alphaDelegate.object;
-    }
-    else
-    {
-        return delegate;
-    }
-}*/
 
 - (void)alpha_setDelegate:(id<UIApplicationDelegate>)delegate
 {
@@ -79,11 +62,11 @@
         
         static ALPHAApplicationDelegate* alphaDelegate;
         
-        alphaDelegate = [self.injectedDelegate isKindOfClass:[ALPHAApplicationDelegate class]] ? self.injectedDelegate : [[ALPHAApplicationDelegate alloc] initWithDelegate:targetDelegate];
+        alphaDelegate = [self.alpha_injectedDelegate isKindOfClass:[ALPHAApplicationDelegate class]] ? self.alpha_injectedDelegate : [[ALPHAApplicationDelegate alloc] initWithDelegate:targetDelegate];
         
         alphaDelegate.object = targetDelegate;
         
-        self.injectedDelegate = alphaDelegate;
+        self.alpha_injectedDelegate = alphaDelegate;
         
         // Need to switch delegates here, to stay with Alpha delegate.
         targetDelegate = alphaDelegate;

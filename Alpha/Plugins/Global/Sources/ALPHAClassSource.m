@@ -10,7 +10,7 @@
 
 #import "ALPHATableScreenModel.h"
 
-#import "ALPHAUtility.h"
+#import "ALPHARuntimeUtility.h"
 
 #import "ALPHAClassSource.h"
 
@@ -20,7 +20,6 @@ NSString* const ALPHAClassBinaryParameterKey = @"kALPHAClassBinaryParameterKey";
 @interface ALPHAClassSource ()
 
 @end
-
 
 @implementation ALPHAClassSource
 
@@ -42,7 +41,7 @@ NSString* const ALPHAClassBinaryParameterKey = @"kALPHAClassBinaryParameterKey";
 
 - (ALPHAModel *)modelForRequest:(ALPHARequest *)request
 {
-    NSString* binaryImageName = [ALPHAUtility applicationImageName];
+    NSString* binaryImageName = [ALPHARuntimeUtility applicationImageName];
     
     if (request.parameters[ALPHAClassBinaryParameterKey])
     {

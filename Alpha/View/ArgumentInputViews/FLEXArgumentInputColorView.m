@@ -9,6 +9,7 @@
 #import "FLEXArgumentInputColorView.h"
 #import "ALPHAUtility.h"
 #import "ALPHARuntimeUtility.h"
+#import "ALPHAManager.h"
 
 @protocol FLEXColorComponentInputViewDelegate;
 
@@ -41,7 +42,7 @@
         
         self.valueLabel = [[UILabel alloc] init];
         self.valueLabel.backgroundColor = self.backgroundColor;
-        self.valueLabel.font = [ALPHAUtility defaultFontOfSize:14.0];
+        self.valueLabel.font = [[ALPHAManager sharedManager].theme themeFontOfSize:14.0];
         self.valueLabel.textAlignment = NSTextAlignmentRight;
         [self addSubview:self.valueLabel];
         
@@ -69,7 +70,7 @@
     
     [self.valueLabel sizeToFit];
     CGFloat valueLabelOriginX = CGRectGetMaxX(self.slider.frame);
-    CGFloat valueLabelOriginY = FLEXFloor((self.slider.frame.size.height - self.valueLabel.frame.size.height) / 2.0);
+    CGFloat valueLabelOriginY = ALPHAFloor((self.slider.frame.size.height - self.valueLabel.frame.size.height) / 2.0);
     self.valueLabel.frame = CGRectMake(valueLabelOriginX, valueLabelOriginY, kValueLabelWidth, self.valueLabel.frame.size.height);
 }
 
@@ -174,7 +175,7 @@
         self.hexLabel = [[UILabel alloc] init];
         self.hexLabel.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.9];
         self.hexLabel.textAlignment = NSTextAlignmentCenter;
-        self.hexLabel.font = [ALPHAUtility defaultFontOfSize:12.0];
+        self.hexLabel.font = [[ALPHAManager sharedManager].theme themeFontOfSize:12.0];
         [self addSubview:self.hexLabel];
         
         self.alphaInput = [[FLEXColorComponentInputView alloc] init];
@@ -323,7 +324,7 @@
 
 + (BOOL)supportsObjCType:(const char *)type withCurrentValue:(id)value
 {
-    return (type && (strcmp(type, @encode(CGColorRef)) == 0 || strcmp(type, FLEXEncodeClass(UIColor)) == 0)) || [value isKindOfClass:[UIColor class]];
+    return (type && (strcmp(type, @encode(CGColorRef)) == 0 || strcmp(type, ALPHAEncodeClass(UIColor)) == 0)) || [value isKindOfClass:[UIColor class]];
 }
 
 @end

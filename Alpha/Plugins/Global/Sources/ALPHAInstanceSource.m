@@ -8,7 +8,7 @@
 
 #import "ALPHARuntimeUtility.h"
 #import "ALPHAUtility.h"
-#import "FLEXHeapEnumerator.h"
+#import "ALPHAHeapEnumerator.h"
 
 #import "ALPHATableScreenModel.h"
 
@@ -133,23 +133,26 @@ NSString* const ALPHAInstanceDataClassNameIdentifier = @"kALPHAInstanceDataClass
     NSMutableArray *instances = [NSMutableArray array];
     NSMutableArray *fieldNames = [NSMutableArray array];
     
-    [FLEXHeapEnumerator enumerateLiveObjectsUsingBlock:^(__unsafe_unretained id tryObject, __unsafe_unretained Class actualClass)
-    {
+    [ALPHAHeapEnumerator enumerateLiveObjectsUsingBlock:^(__unsafe_unretained id tryObject, __unsafe_unretained Class actualClass) {
         // Get all the ivars on the object. Start with the class and and travel up the inheritance chain.
         // Once we find a match, record it and move on to the next object. There's no reason to find multiple matches within the same object.
         Class tryClass = actualClass;
-        
+
         while (tryClass)
         {
             unsigned int ivarCount = 0;
             Ivar *ivars = class_copyIvarList(tryClass, &ivarCount);
-            for (unsigned int ivarIndex = 0; ivarIndex < ivarCount; ivarIndex++) {
+            for (unsigned int ivarIndex = 0; ivarIndex < ivarCount; ivarIndex++
+                    )
+            {
                 Ivar ivar = ivars[ivarIndex];
                 const char *typeEncoding = ivar_getTypeEncoding(ivar);
-                if (typeEncoding[0] == @encode(id)[0] || typeEncoding[0] == @encode(Class)[0]) {
+                if (typeEncoding[0] == @encode(id)[0] || typeEncoding[0] == @encode(Class)[0])
+                {
                     ptrdiff_t offset = ivar_getOffset(ivar);
-                    uintptr_t *fieldPointer = (__bridge void *)tryObject + offset;
-                    if (*fieldPointer == (uintptr_t)(__bridge void *)object) {
+                    uintptr_t *fieldPointer = (__bridge void *) tryObject + offset;
+                    if (*fieldPointer == (uintptr_t) (__bridge void *) object)
+                    {
                         [instances addObject:tryObject];
                         [fieldNames addObject:@(ivar_getName(ivar))];
                         return;
@@ -168,14 +171,13 @@ NSString* const ALPHAInstanceDataClassNameIdentifier = @"kALPHAInstanceDataClass
     const char *classNameCString = [className UTF8String];
     NSMutableArray *instances = [NSMutableArray array];
     
-    [FLEXHeapEnumerator enumerateLiveObjectsUsingBlock:^(__unsafe_unretained id object, __unsafe_unretained Class actualClass)
-    {
+    [ALPHAHeapEnumerator enumerateLiveObjectsUsingBlock:^(__unsafe_unretained id object, __unsafe_unretained Class actualClass) {
         if (strcmp(classNameCString, class_getName(actualClass)) == 0)
         {
             // Note: objects of certain classes crash when retain is called. It is up to the user to avoid tapping into instance lists for these classes.
             // Ex. OS_dispatch_queue_specific_queue
             // In the future, we could provide some kind of warning for classes that are known to be problematic.
-            
+
             if (object)
             {
                 [instances addObject:object];

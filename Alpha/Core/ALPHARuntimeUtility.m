@@ -35,6 +35,78 @@ const unsigned int ALPHANumberOfImplicitArgsKey = 2;
 
 @implementation ALPHARuntimeUtility
 
+#pragma mark - Application Helpers
+
++ (NSString *)applicationImageName
+{
+    return [[NSBundle mainBundle] executablePath];
+}
+
++ (NSString *)applicationName
+{
+    return [[[self applicationImageName] componentsSeparatedByString:@"/"] lastObject];
+}
+
+#pragma mark - Object Helpers
+
++ (UIViewController *)viewControllerForView:(UIView *)view
+{
+    UIViewController *viewController = nil;
+    SEL viewDelSel = NSSelectorFromString([NSString stringWithFormat:@"%@ewDelegate", @"_vi"]);
+    if ([view respondsToSelector:viewDelSel]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        viewController = [view performSelector:viewDelSel];
+#pragma clang diagnostic pop
+    }
+    return viewController;
+}
+
++ (NSString *)descriptionForView:(UIView *)view includingFrame:(BOOL)includeFrame
+{
+    NSString *description = [[view class] description];
+    
+    NSString *viewControllerDescription = [[[self viewControllerForView:view] class] description];
+    if ([viewControllerDescription length] > 0) {
+        description = [description stringByAppendingFormat:@" (%@)", viewControllerDescription];
+    }
+    
+    if (includeFrame) {
+        description = [description stringByAppendingFormat:@" %@", [self stringForCGRect:view.frame]];
+    }
+    
+    if ([view.accessibilityLabel length] > 0) {
+        description = [description stringByAppendingFormat:@" · %@", view.accessibilityLabel];
+    }
+    
+    return description;
+}
+
++ (NSString *)detailDescriptionForView:(UIView *)view
+{
+    return [NSString stringWithFormat:@"frame %@", [self stringForCGRect:view.frame]];
+}
+
+
++ (BOOL)isImagePathExtension:(NSString *)extension
+{
+    // https://developer.apple.com/library/ios/documentation/uikit/reference/UIImage_Class/Reference/Reference.html#//apple_ref/doc/uid/TP40006890-CH3-SW3
+    return [@[@"jpg", @"jpeg", @"png", @"gif", @"tiff", @"tif"] containsObject:extension];
+}
+
++ (NSString *)safeDescriptionForObject:(id)object
+{
+    // Don't assume that we have an NSObject subclass.
+    // Check to make sure the object responds to the description methods.
+    NSString *description = nil;
+    if ([object respondsToSelector:@selector(debugDescription)]) {
+        description = [object debugDescription];
+    } else if ([object respondsToSelector:@selector(description)]) {
+        description = [object description];
+    }
+    return description;
+}
+
 #pragma mark - Global Helpers (Public)
 
 + (NSString *)prefixOfClassName:(NSString *)className
@@ -770,6 +842,12 @@ const unsigned int ALPHANumberOfImplicitArgsKey = 2;
     }
     
     return value;
+}
+
+
++ (NSString *)stringForCGRect:(CGRect)rect
+{
+    return [NSString stringWithFormat:@"{(%g, %g), (%g, %g)}", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height];
 }
 
 @end

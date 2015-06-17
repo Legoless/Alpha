@@ -1,5 +1,5 @@
 //
-//  UIApplication+ALPHADelegate.h
+//  UIApplication+Delegate.h
 //  Alpha
 //
 //  Created by Dal Rupnik on 01/06/15.
@@ -8,11 +8,11 @@
 
 @import UIKit;
 
-@interface UIApplication (ALPHADelegate)
+@interface UIApplication (Delegate)
 
 /*!
  *  Returns ALPHAApplicationDelegate injected object
  */
-@property (nonatomic, strong) id injectedDelegate;
+@property (nonatomic, strong) id alpha_injectedDelegate;
 
 @end

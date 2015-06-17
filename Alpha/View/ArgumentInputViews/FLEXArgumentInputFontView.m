@@ -24,7 +24,7 @@
 {
     self = [super initWithArgumentTypeEncoding:typeEncoding];
     if (self) {
-        self.fontNameInput = [[FLEXArgumentInputFontsPickerView alloc] initWithArgumentTypeEncoding:FLEXEncodeClass(NSString)];
+        self.fontNameInput = [[FLEXArgumentInputFontsPickerView alloc] initWithArgumentTypeEncoding:ALPHAEncodeClass(NSString)];
         self.fontNameInput.backgroundColor = self.backgroundColor;
         self.fontNameInput.targetSize = FLEXArgumentInputViewSizeSmall;
         self.fontNameInput.title = @"Font Name:";
@@ -113,7 +113,7 @@
 
 + (BOOL)supportsObjCType:(const char *)type withCurrentValue:(id)value
 {
-    BOOL supported = type && strcmp(type, FLEXEncodeClass(UIFont)) == 0;
+    BOOL supported = type && strcmp(type, ALPHAEncodeClass(UIFont)) == 0;
     supported = supported || (value && [value isKindOfClass:[UIFont class]]);
     return supported;
 }

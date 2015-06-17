@@ -1,5 +1,5 @@
 //
-//  UIApplication+ALPHAEvent.m
+//  UIApplication+Event.m
 //  Alpha
 //
 //  Created by Dal Rupnik on 05/11/14.
@@ -8,12 +8,12 @@
 
 #import <Haystack/Haystack.h>
 
-#import "UIApplication+ALPHAEvent.h"
+#import "UIApplication+Event.h"
 
 NSString* const ALPHAShakeMotionNotification = @"kALPHAShakeMotionNotification";
 NSString* const ALPHAInterfaceEventNotification = @"kALPHAInterfaceEventNotification";
 
-@implementation UIApplication (ALPHAEvent)
+@implementation UIApplication (Event)
 
 + (void)load
 {

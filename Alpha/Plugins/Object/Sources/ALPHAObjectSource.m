@@ -15,12 +15,10 @@
 #import "ALPHAObjectIvar.h"
 #import "ALPHAObjectMethod.h"
 
-#import "ALPHAUtility.h"
 #import "ALPHARuntimeUtility.h"
 
 #import "ALPHAObjectModel.h"
 #import "ALPHAObjectSource.h"
-
 
 NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object";
 
@@ -72,7 +70,7 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     
     model.objectPointer = request.parameters[ALPHAObjectDataPointerIdentifier];
     model.objectClass = NSStringFromClass([object class]);
-    model.objectDescription = [ALPHAUtility safeDescriptionForObject:object];
+    model.objectDescription = [ALPHARuntimeUtility safeDescriptionForObject:object];
     
     model.objectContent = [self contentWithObject:object];
     model.objectMainSuperclass = [self mainSuperclassForObject:object];

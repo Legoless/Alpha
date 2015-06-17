@@ -9,7 +9,7 @@
 #import <objc/runtime.h>
 #import <Haystack/Haystack.h>
 
-#import "NSString+ALPHAAdditional.h"
+#import "NSString+Identifier.h"
 
 #import "ALPHAWebRendererViewController.h"
 #import "ALPHAScreenActionItem.h"

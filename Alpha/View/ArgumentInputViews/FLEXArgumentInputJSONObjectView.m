@@ -49,10 +49,10 @@
             if (strcmp(type, @encode(id)) != 0) {
                 BOOL isJSONSerializableType = NO;
                 // Note: we can't use @encode(NSString) here because that drops the string information and just goes to @encode(id).
-                isJSONSerializableType = isJSONSerializableType || strcmp(type, FLEXEncodeClass(NSString)) == 0;
-                isJSONSerializableType = isJSONSerializableType || strcmp(type, FLEXEncodeClass(NSNumber)) == 0;
-                isJSONSerializableType = isJSONSerializableType || strcmp(type, FLEXEncodeClass(NSArray)) == 0;
-                isJSONSerializableType = isJSONSerializableType || strcmp(type, FLEXEncodeClass(NSDictionary)) == 0;
+                isJSONSerializableType = isJSONSerializableType || strcmp(type, ALPHAEncodeClass(NSString)) == 0;
+                isJSONSerializableType = isJSONSerializableType || strcmp(type, ALPHAEncodeClass(NSNumber)) == 0;
+                isJSONSerializableType = isJSONSerializableType || strcmp(type, ALPHAEncodeClass(NSArray)) == 0;
+                isJSONSerializableType = isJSONSerializableType || strcmp(type, ALPHAEncodeClass(NSDictionary)) == 0;
                 
                 supported = isJSONSerializableType;
             }

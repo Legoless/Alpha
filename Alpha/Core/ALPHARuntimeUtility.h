@@ -6,7 +6,8 @@
 //  Copyright (c) 2014 Flipboard. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+
 #import <objc/runtime.h>
 
 extern const unsigned int ALPHANumberOfImplicitArgsKey;
@@ -25,9 +26,20 @@ extern NSString *const ALPHAUtilityAttributeWeak;
 extern NSString *const ALPHAUtilityAttributeGarbageCollectable;
 extern NSString *const ALPHAUtilityAttributeOldStyleTypeEncoding;
 
-#define FLEXEncodeClass(class) ("@\"" #class "\"")
+#define ALPHAEncodeClass(class) ("@\"" #class "\"")
 
 @interface ALPHARuntimeUtility : NSObject
+
+// Application helpers
++ (NSString *)applicationImageName;
++ (NSString *)applicationName;
+
+// Object helpers
++ (BOOL)isImagePathExtension:(NSString *)extension;
++ (NSString *)safeDescriptionForObject:(id)object;
++ (NSString *)detailDescriptionForView:(UIView *)view;
++ (UIViewController *)viewControllerForView:(UIView *)view;
++ (NSString *)descriptionForView:(UIView *)view includingFrame:(BOOL)includeFrame;
 
 // Global Helpers
 + (NSString *)appendName:(NSString *)name toType:(NSString *)type;

@@ -1,34 +1,17 @@
 //
 //  ALPHAUtility.h
-//  Flipboard
+//  Alpha
 //
-//  Created by Ryan Olson on 4/18/14.
-//  Copyright (c) 2014 Flipboard. All rights reserved.
+//  Created by Dal Rupnik on 17/6/15.
+//  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+@import Foundation;
 
-#define FLEXFloor(x) (floor([[UIScreen mainScreen] scale] * (x)) / [[UIScreen mainScreen] scale])
+#define ALPHAFloor(x) (floor([[UIScreen mainScreen] scale] * (x)) / [[UIScreen mainScreen] scale])
 
 @interface ALPHAUtility : NSObject
 
-+ (UIColor *)consistentRandomColorForObject:(id)object;
-+ (NSString *)descriptionForView:(UIView *)view includingFrame:(BOOL)includeFrame;
-+ (NSString *)stringForCGRect:(CGRect)rect;
-+ (UIViewController *)viewControllerForView:(UIView *)view;
-+ (NSString *)detailDescriptionForView:(UIView *)view;
-+ (UIImage *)circularImageWithColor:(UIColor *)color radius:(CGFloat)radius;
-+ (UIColor *)scrollViewGrayColor;
-
-+ (NSString *)applicationImageName;
-+ (NSString *)applicationName;
-+ (NSString *)safeDescriptionForObject:(id)object;
-+ (UIFont *)defaultFontOfSize:(CGFloat)size;
-+ (UIFont *)defaultTableViewCellLabelFont;
-+ (NSString *)stringByEscapingHTMLEntitiesInString:(NSString *)originalString;
 + (UIInterfaceOrientationMask)infoPlistSupportedInterfaceOrientationsMask;
-+ (NSString *)searchBarPlaceholderText;
-+ (BOOL)isImagePathExtension:(NSString *)extension;
 
 @end
