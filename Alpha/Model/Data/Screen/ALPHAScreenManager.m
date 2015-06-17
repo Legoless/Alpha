@@ -73,7 +73,7 @@
 
 - (void)pushObject:(id)object
 {
-    [self renderer:nil pushObject:object request:nil];
+    [self renderer:nil pushObject:object request:nil source:nil];
 }
 
 - (void)pushViewController:(UIViewController *)viewController
@@ -139,18 +139,13 @@
         // Other items are usually a connection to another screen
         //
         
-        [self renderer:renderer pushObject:item request:nil];
+        [self renderer:renderer pushObject:item request:nil source:nil];
     }
 }
 
 #pragma mark - Private methods
 
-/*!
- *  Pushes object by creating a new view controller,
- *
- *  @param object to push
- */
-- (void)renderer:(UIViewController<ALPHADataRenderer> *)renderer pushObject:(id)object request:(ALPHARequest *)request
+- (void)renderer:(UIViewController<ALPHADataRenderer> *)renderer pushObject:(id)object request:(ALPHARequest *)request source:(id<ALPHADataSource>)source
 {
     //
     // Return here, we do not want to do anything further.
@@ -158,14 +153,25 @@
     
     if ([object isKindOfClass:[ALPHAScreenItem class]] && [object object])
     {
-        [self renderer:renderer pushObject:[(ALPHAScreenItem *)object object] request:nil];
+        [self renderer:renderer pushObject:[(ALPHAScreenItem *)object object] request:nil source:source];
         
         return;
     }
 
     Class class = [self.converter renderClassForObject:object];
     
-    id<ALPHADataSource> source = renderer.source;
+    //
+    // Use renderer's source if available
+    //
+    
+    if (!source)
+    {
+        source = renderer.source;
+    }
+    
+    //
+    // If not available create a new local source
+    //
     
     if (!source)
     {
@@ -203,7 +209,7 @@
             {
                 if (newObject)
                 {
-                    [self renderer:renderer pushObject:newObject request:request];
+                    [self renderer:renderer pushObject:newObject request:request source:source];
                 }
             }];
             
