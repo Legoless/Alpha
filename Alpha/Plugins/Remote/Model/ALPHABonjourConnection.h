@@ -12,6 +12,8 @@
 
 @property (nonatomic, weak) NSNetService* service;
 
+@property (nonatomic, copy) NSString* id;
+
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *type;
 @property (nonatomic, copy) NSString *system;

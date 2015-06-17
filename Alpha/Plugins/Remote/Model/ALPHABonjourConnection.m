@@ -20,6 +20,7 @@
         
         NSDictionary *dict = [NSNetService dictionaryFromTXTRecordData:service.TXTRecordData];
         
+        self.id = [[NSString alloc] initWithData:dict[@"id"] encoding:NSUTF8StringEncoding];
         self.name = [[NSString alloc] initWithData:dict[@"name"] encoding:NSUTF8StringEncoding];
         self.type = [[NSString alloc] initWithData:dict[@"type"] encoding:NSUTF8StringEncoding];
         self.system = [[NSString alloc] initWithData:dict[@"system"] encoding:NSUTF8StringEncoding];

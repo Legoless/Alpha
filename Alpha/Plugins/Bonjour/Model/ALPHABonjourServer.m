@@ -26,7 +26,7 @@
 - (void)start
 {
     self.server = [[DTBonjourServer alloc] initWithBonjourType:ALPHABonjourType];
-    self.server.TXTRecord = @{ @"ID" : [NSString hs_UUID], @"name" : [[UIDevice currentDevice] name], @"type" : [[UIDevice currentDevice] model], @"system" : [[UIDevice currentDevice] systemName], @"version" : [[UIDevice currentDevice] systemVersion] };
+    self.server.TXTRecord = @{ @"id" : [NSString hs_UUID], @"name" : [[UIDevice currentDevice] name], @"type" : [[UIDevice currentDevice] model], @"system" : [[UIDevice currentDevice] systemName], @"version" : [[UIDevice currentDevice] systemVersion] };
     [self.server start];
 }
 

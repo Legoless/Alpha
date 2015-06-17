@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong) ALPHABonjourConnection *connection;
 
+- (instancetype)initWithConnection:(ALPHABonjourConnection *)connection;
+
 @end

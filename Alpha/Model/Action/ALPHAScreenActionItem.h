@@ -7,6 +7,7 @@
 //
 
 #import "ALPHAActionItem.h"
+#import "ALPHADataSource.h"
 
 @interface ALPHAScreenActionItem : ALPHAActionItem
 
@@ -25,6 +26,11 @@
  *  This is to support backwards FLEX view controllers.
  */
 @property (nonatomic, copy) NSString* viewControllerClass;
+
+/*!
+ *  Source pointer, to make it swap
+ */
+@property (nonatomic, strong) id<ALPHADataSource> source;
 
 - (void)setDataIdentifier:(NSString *)dataIdentifier;
 

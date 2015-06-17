@@ -28,6 +28,20 @@
     connection.delegate = self;
 }
 
+#pragma mark - Initialziation
+
+- (instancetype)initWithConnection:(ALPHABonjourConnection *)connection
+{
+    self = [super init];
+    
+    if (self)
+    {
+        self.connection = connection;
+    }
+    
+    return self;
+}
+
 #pragma mark - ALPHADataSource
 
 - (void)hasDataForRequest:(ALPHARequest *)request completion:(ALPHADataSourceRequestVerification)completion

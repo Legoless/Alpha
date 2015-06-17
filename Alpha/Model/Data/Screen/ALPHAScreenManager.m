@@ -186,6 +186,15 @@
         else if ([object isKindOfClass:[ALPHAScreenActionItem class]])
         {
             request = [(ALPHAScreenActionItem *)object request];
+            
+            //
+            // Redirect source if screen action item has it
+            //
+            
+            if ([(ALPHAScreenActionItem *)object source])
+            {
+                source = [(ALPHAScreenActionItem *)object source];
+            }
         }
         
         if (request)

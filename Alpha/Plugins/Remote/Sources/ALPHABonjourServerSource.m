@@ -10,6 +10,10 @@
 #import "ALPHABonjourConfig.h"
 #import "ALPHATableScreenModel.h"
 #import "ALPHABonjourConnection.h"
+#import "ALPHABonjourSource.h"
+#import "ALPHAMenuSource.h"
+
+#import "ALPHAActions.h"
 
 NSString *const ALPHABonjourServerDataIdentifier = @"com.unifiedsense.alpha.data.bonjour";
 
@@ -77,7 +81,7 @@ NSString *const ALPHABonjourServerDataIdentifier = @"com.unifiedsense.alpha.data
     
     for (ALPHABonjourConnection* service in self.services)
     {
-        ALPHAScreenItem* item = [[ALPHAScreenItem alloc] init];
+        ALPHAScreenActionItem* item = [[ALPHAScreenActionItem alloc] initWithIdentifier:service.name];
         
         if ([service.type containsString:@"iPhone"])
         {
@@ -90,7 +94,10 @@ NSString *const ALPHABonjourServerDataIdentifier = @"com.unifiedsense.alpha.data
         
         item.title = service.name;
         item.detail = [NSString stringWithFormat:@"      %@ %@", service.system, service.version];
-                
+        
+        item.dataIdentifier = ALPHAMenuDataIdentifier;
+        item.source = [[ALPHABonjourSource alloc] initWithConnection:service];
+        
         item.style = UITableViewCellStyleSubtitle;
         
         [items addObject:item];
