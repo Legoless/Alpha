@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 #endif
 
-NSString * const PINMemoryCachePrefix = @"com.pinterest.PINMemoryCache";
+NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCacheShared";
 
 @interface PINMemoryCache ()
 #if OS_OBJECT_USE_OBJC

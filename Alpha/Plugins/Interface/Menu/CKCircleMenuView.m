@@ -149,10 +149,11 @@ NSString* const CIRCLE_MENU_BUTTON_BORDER_WIDTH = @"kCircleMenuButtonBorderWidth
     UIImage *tintedImage = [anImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     
     UIButton* tButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    CGFloat tButtonViewX = self.buttonRadius - anImage.size.width / 2;
-    CGFloat tButtonViewY = self.buttonRadius - anImage.size.height / 2;
-    tButton.frame = CGRectMake(tButtonViewX, tButtonViewY, anImage.size.width, anImage.size.height);
+    CGFloat width = self.buttonRadius * 0.8;
+    CGFloat height = self.buttonRadius * 0.8;
+    tButton.frame = CGRectMake( ((self.buttonRadius * 2.0) - width) / 2.0, ((self.buttonRadius * 2.0) - height) / 2.0, width, height);
     [tButton setImage:tintedImage forState:UIControlStateNormal];
+    tButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
     tButton.tag = aTag + TAG_BUTTON_OFFSET;
     tButton.tintColor = self.borderViewColor;
     
@@ -169,6 +170,7 @@ NSString* const CIRCLE_MENU_BUTTON_BORDER_WIDTH = @"kCircleMenuButtonBorderWidth
     }
 
     tInnerView.tag = aTag + TAG_INNER_VIEW_OFFSET;
+    
     [tInnerView addSubview:tButton];
     
     return tInnerView;

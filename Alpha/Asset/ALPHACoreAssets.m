@@ -199,33 +199,33 @@ NSString *const ALPHAIconRemoteIdentifier       = @"com.unifiedsense.alpha.icon.
     
     if (self)
     {
-        self.drawingSize = CGSizeMake(40.0, 40.0);
+        self.drawingSize = CGSizeMake(80.0, 80.0);
         self.drawingBlock = ^(CGSize size, NSDictionary* parameters)
         {
             UIColor *fillColor = parameters[ALPHADrawingForegroundColorKey];
             UIColor *strokeColor = fillColor;
             
             CGRect frame = { CGPointZero, size };
-            
+
             //// Subframes
-            CGRect infoGroup = CGRectMake(CGRectGetMinX(frame), CGRectGetMinY(frame), CGRectGetWidth(frame), CGRectGetHeight(frame));
+            CGRect infoGroup = CGRectMake(CGRectGetMinX(frame) + 5.8, CGRectGetMinY(frame) + 4, CGRectGetWidth(frame) - 11, CGRectGetHeight(frame) - 9);
             
             //// Info Group
             {
                 //// Oval Drawing
-                UIBezierPath* ovalPath = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(CGRectGetMinX(infoGroup) + floor(CGRectGetWidth(infoGroup) * 0.40250 + 0.3) + 0.2, CGRectGetMinY(infoGroup) + floor(CGRectGetHeight(infoGroup) * 0.10000 + 0.1) + 0.4, floor(CGRectGetWidth(infoGroup) * 0.57250 - 0.3) - floor(CGRectGetWidth(infoGroup) * 0.40250 + 0.3) + 0.6, floor(CGRectGetHeight(infoGroup) * 0.29500 + 0.5) - floor(CGRectGetHeight(infoGroup) * 0.10000 + 0.1) - 0.4)];
+                UIBezierPath* ovalPath = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(CGRectGetMinX(infoGroup) + floor(CGRectGetWidth(infoGroup) * 0.40870 + 0.3) + 0.2, CGRectGetMinY(infoGroup) + floor(CGRectGetHeight(infoGroup) * 0.11268 + 0.1) + 0.4, floor(CGRectGetWidth(infoGroup) * 0.57681 - 0.3) - floor(CGRectGetWidth(infoGroup) * 0.40870 + 0.3) + 0.6, floor(CGRectGetHeight(infoGroup) * 0.27606 + 0.5) - floor(CGRectGetHeight(infoGroup) * 0.11268 + 0.1) - 0.4)];
                 [fillColor setFill];
                 [ovalPath fill];
                 
                 
                 //// Rectangle Drawing
-                UIBezierPath* rectanglePath = [UIBezierPath bezierPathWithRoundedRect: CGRectMake(CGRectGetMinX(infoGroup) + floor(CGRectGetWidth(infoGroup) * 0.42500 + 0.5), CGRectGetMinY(infoGroup) + floor(CGRectGetHeight(infoGroup) * 0.32500 + 0.5), floor(CGRectGetWidth(infoGroup) * 0.57500 + 0.5) - floor(CGRectGetWidth(infoGroup) * 0.42500 + 0.5), floor(CGRectGetHeight(infoGroup) * 0.90000 + 0.5) - floor(CGRectGetHeight(infoGroup) * 0.32500 + 0.5)) cornerRadius: 6];
+                UIBezierPath* rectanglePath = [UIBezierPath bezierPathWithRoundedRect: CGRectMake(CGRectGetMinX(infoGroup) + floor(CGRectGetWidth(infoGroup) * 0.42029 + 0.5), CGRectGetMinY(infoGroup) + floor(CGRectGetHeight(infoGroup) * 0.32394 + 0.5), floor(CGRectGetWidth(infoGroup) * 0.57971 + 0.5) - floor(CGRectGetWidth(infoGroup) * 0.42029 + 0.5), floor(CGRectGetHeight(infoGroup) * 0.88732 + 0.5) - floor(CGRectGetHeight(infoGroup) * 0.32394 + 0.5)) cornerRadius: 5.5];
                 [fillColor setFill];
                 [rectanglePath fill];
                 
                 
                 //// Rectangle 2 Drawing
-                UIBezierPath* rectangle2Path = [UIBezierPath bezierPathWithRoundedRect: CGRectMake(CGRectGetMinX(infoGroup) + floor(CGRectGetWidth(infoGroup) * 0.33094 + 0.03) + 0.47, CGRectGetMinY(infoGroup) + floor(CGRectGetHeight(infoGroup) * 0.32531 + 0.17) + 0.33, floor(CGRectGetWidth(infoGroup) * 0.57531 + 0.47) - floor(CGRectGetWidth(infoGroup) * 0.33094 + 0.03) - 0.45, floor(CGRectGetHeight(infoGroup) * 0.42094 - 0.48) - floor(CGRectGetHeight(infoGroup) * 0.32531 + 0.17) + 0.65) cornerRadius: 3.83];
+                UIBezierPath* rectangle2Path = [UIBezierPath bezierPathWithRoundedRect: CGRectMake(CGRectGetMinX(infoGroup) + floor(CGRectGetWidth(infoGroup) * 0.34022 + 0.03) + 0.47, CGRectGetMinY(infoGroup) + floor(CGRectGetHeight(infoGroup) * 0.32430 + 0.17) + 0.33, floor(CGRectGetWidth(infoGroup) * 0.58007 + 0.47) - floor(CGRectGetWidth(infoGroup) * 0.34022 + 0.03) - 0.45, floor(CGRectGetHeight(infoGroup) * 0.43204 - 0.48) - floor(CGRectGetHeight(infoGroup) * 0.32430 + 0.17) + 0.65) cornerRadius: 3.83];
                 [fillColor setFill];
                 [rectangle2Path fill];
                 
@@ -253,12 +253,14 @@ NSString *const ALPHAIconRemoteIdentifier       = @"com.unifiedsense.alpha.icon.
     
     if (self)
     {
-        self.drawingSize = CGSizeMake(40.0, 40.0);
+        self.drawingSize = CGSizeMake(80.0, 80.0);
         self.drawingBlock = ^(CGSize size, NSDictionary* parameters)
         {
             UIColor *fillColor = parameters[ALPHADrawingForegroundColorKey];
             
             CGRect frame = { CGPointZero, size };
+            
+            frame = CGRectInset(frame, size.width * 0.15, size.height * 0.15);
             
             //// Bezier Drawing
             UIBezierPath* bezierPath = UIBezierPath.bezierPath;
@@ -302,7 +304,7 @@ NSString *const ALPHAIconRemoteIdentifier       = @"com.unifiedsense.alpha.icon.
     
     if (self)
     {
-        self.drawingSize = CGSizeMake(40.0, 40.0);
+        self.drawingSize = CGSizeMake(80.0, 80.0);
         self.drawingBlock = ^(CGSize size, NSDictionary* parameters)
         {
             UIColor *fillColor = parameters[ALPHADrawingForegroundColorKey];
@@ -377,7 +379,7 @@ NSString *const ALPHAIconRemoteIdentifier       = @"com.unifiedsense.alpha.icon.
     
     if (self)
     {
-        self.drawingSize = CGSizeMake(40.0, 40.0);
+        self.drawingSize = CGSizeMake(80.0, 80.0);
         self.drawingBlock = ^(CGSize size, NSDictionary* parameters)
         {
             UIColor *fillColor = parameters[ALPHADrawingForegroundColorKey];

@@ -18,7 +18,7 @@ NSString *const ALPHAIconFileIdentifier = @"com.unifiedsense.alpha.icon.file";
     
     if (self)
     {
-        self.drawingSize = CGSizeMake(40.0, 40.0);
+        self.drawingSize = CGSizeMake(80.0, 80.0);
         self.drawingBlock = ^(CGSize size, NSDictionary* parameters)
         {
             UIColor *fillColor = parameters[ALPHADrawingForegroundColorKey];

@@ -14,7 +14,7 @@
 #import "ALPHABlockActionItem.h"
 
 #import "ALPHAAssetManager.h"
-#import "ALPHAScreenshotIcon.h"
+#import "ALPHATouchIcon.h"
 
 @interface ALPHATouchPlugin ()
 
@@ -58,7 +58,7 @@
     {
         ALPHABlockActionItem *touchAction = [ALPHABlockActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.touch.touches"];
         touchAction.title = @"Touches";
-        touchAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconScreenshotIdentifier];
+        touchAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconTouchIdentifier];
         touchAction.actionBlock = ^id(id sender){
             self.shouldDisplayTouches = !self.shouldDisplayTouches;
             

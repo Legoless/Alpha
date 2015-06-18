@@ -22,8 +22,8 @@ taskID = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHan
 #define PINCacheEndBackgroundTask()
 #endif
 
-NSString * const PINDiskCachePrefix = @"com.pinterest.PINDiskCache";
-NSString * const PINDiskCacheSharedName = @"PINDiskCacheShared";
+NSString * const PINDiskCachePrefix = @"com.unifiedsense.alpha.AssetCacheDisk";
+NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
 
 @interface PINDiskCache ()
 

@@ -25,7 +25,7 @@
     {
         self.fontFamily = @"Menlo";
         
-        self.topMargin = 2.0;
+        self.topMargin = 4.0;
         
         self.tintColor = [UIColor blackColor];
         

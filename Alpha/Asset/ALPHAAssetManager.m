@@ -114,18 +114,27 @@
     // Check cache
     //
     
-    NSString *cacheKey = [self cacheKeyForAsset:asset size:asset.drawingSize color:color];
+    UIImage *image = nil;
+    NSString *cacheKey = nil;
     
-    UIImage *image = [self.cache objectForKey:cacheKey];
-    
-    if (image)
+    if (self.useCache)
     {
-        return image;
+        cacheKey = [self cacheKeyForAsset:asset size:asset.drawingSize color:color];
+        
+        image = [self.cache objectForKey:cacheKey];
+        
+        if (image)
+        {
+            return image;
+        }
     }
     
     image = [asset imageWithColor:color];
     
-    [self.cache setObject:image forKey:cacheKey];
+    if (self.useCache && cacheKey && image)
+    {
+        [self.cache setObject:image forKey:cacheKey];
+    }
     
     return image;
 }
@@ -144,6 +153,11 @@
 }
 
 #pragma mark - Private methods
+
+- (BOOL)useCache
+{
+    return YES;
+}
 
 - (void)loadAssets
 {
