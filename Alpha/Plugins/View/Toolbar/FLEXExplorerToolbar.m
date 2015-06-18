@@ -11,6 +11,7 @@
 #import "FLEXResources.h"
 #import "ALPHAUtility.h"
 #import "ALPHAManager.h"
+#import "ALPHACoreAssets.h"
 
 @interface FLEXExplorerToolbar ()
 
@@ -45,7 +46,7 @@
         self.dragHandle.backgroundColor = [ALPHAManager sharedManager].theme.backgroundColor;
         [self addSubview:self.dragHandle];
         
-        UIImage *dragHandle = [FLEXResources dragHandle];
+        UIImage *dragHandle = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconDragHandleIdentifier];
         self.dragHandleImageView = [[UIImageView alloc] initWithImage:dragHandle];
         
         [self.dragHandle addSubview:self.dragHandleImageView];
@@ -192,7 +193,7 @@
 
 + (CGFloat)dragHandleWidth
 {
-    return 30.0;
+    return 20.0;
 }
 
 + (CGFloat)descriptionLabelHeight

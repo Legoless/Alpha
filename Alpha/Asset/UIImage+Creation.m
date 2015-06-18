@@ -8,6 +8,8 @@
 
 #import "UIImage+Creation.h"
 
+NSString *const ALPHADrawingForegroundColorKey = @"kALPHADrawingForegroundColorKey";
+
 @implementation UIImage (Creation)
 
 + (UIImage *)alpha_imageWithColor:(UIColor *)color
@@ -35,6 +37,28 @@
     UIImage *circularImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return circularImage;
+}
+
++ (UIImage *)alpha_imageWithSize:(CGSize)size color:(UIColor *)color drawingBlock:(ALPHADrawingBlock)drawingBlock
+{
+    UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
+
+    if (!color)
+    {
+        color = [UIColor whiteColor];
+    }
+    
+    [color setFill];
+    [color setStroke];
+    
+    if (drawingBlock)
+    {
+        drawingBlock(size, @{ ALPHADrawingForegroundColorKey : color });
+    }
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
 }
 
 @end
