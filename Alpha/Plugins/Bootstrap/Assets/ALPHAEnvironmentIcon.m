@@ -25,9 +25,8 @@ NSString *const ALPHAIconEnvironmentIdentifier = @"com.unifiedsense.alpha.icon.e
             
             CGRect frame = { CGPointZero, size };
             
-            
             //// Subframes
-            CGRect enviromentGroup = CGRectMake(CGRectGetMinX(frame) + 16.3, CGRectGetMinY(frame) + 5.94, CGRectGetWidth(frame) - 32.85, CGRectGetHeight(frame) - 11.76);
+            CGRect enviromentGroup = CGRectMake(CGRectGetMinX(frame) + 12.3, CGRectGetMinY(frame) - 0.06, CGRectGetWidth(frame) - 24.85, CGRectGetHeight(frame) + 0.24);
             
             //// enviroment Group
             {
@@ -48,7 +47,6 @@ NSString *const ALPHAIconEnvironmentIdentifier = @"com.unifiedsense.alpha.icon.e
                 [bezierPath closePath];
                 [fillColor setFill];
                 [bezierPath fill];
-                
                 
                 //// Bezier 2 Drawing
                 UIBezierPath* bezier2Path = UIBezierPath.bezierPath;
