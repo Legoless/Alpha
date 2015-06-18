@@ -36,7 +36,7 @@ extern NSString *const ALPHAIconMenuIdentifier;
 
 @end
 
-extern NSString *const ALPHARemoteIconIdentifier;
+extern NSString *const ALPHAIconRemoteIdentifier;
 
 @interface ALPHARemoteIcon : ALPHAAsset
 
