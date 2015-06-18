@@ -17,3 +17,27 @@ extern NSString *const ALPHAIconDragHandleIdentifier;
 @interface ALPHADragHandleIcon : ALPHAAsset
 
 @end
+
+extern NSString *const ALPHAIconInfoIdentifier;
+
+@interface ALPHAInfoIcon : ALPHAAsset
+
+@end
+
+extern NSString *const ALPHAIconCloseIdentifier;
+
+@interface ALPHACloseIcon : ALPHAAsset
+
+@end
+
+extern NSString *const ALPHAIconMenuIdentifier;
+
+@interface ALPHAMenuIcon : ALPHAAsset
+
+@end
+
+extern NSString *const ALPHARemoteIconIdentifier;
+
+@interface ALPHARemoteIcon : ALPHAAsset
+
+@end
