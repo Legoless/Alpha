@@ -82,7 +82,12 @@
 
 - (UIImage *)imageWithIdentifier:(NSString *)identifier color:(UIColor *)color
 {
-    return [self imageWithAsset:self.assets[identifier] color:color];
+    return [self imageWithIdentifier:identifier color:color size:CGSizeZero];
+}
+
+- (UIImage *)imageWithIdentifier:(NSString *)identifier color:(UIColor *)color size:(CGSize)size
+{
+    return [self imageWithAsset:self.assets[identifier] color:color size:size];
 }
 
 - (UIImage *)imageWithAsset:(ALPHAAsset *)asset
@@ -91,6 +96,11 @@
 }
 
 - (UIImage *)imageWithAsset:(ALPHAAsset *)asset color:(UIColor *)color
+{
+    return [self imageWithAsset:asset color:color size:CGSizeZero];
+}
+
+- (UIImage *)imageWithAsset:(ALPHAAsset *)asset color:(UIColor *)color size:(CGSize)size
 {
     //
     // Need asset to return image
@@ -107,7 +117,16 @@
     
     if (asset.assetImage)
     {
-        return [asset imageWithColor:color];
+        return [asset imageWithColor:color size:size];
+    }
+    
+    //
+    // Check size
+    //
+    
+    if (CGSizeEqualToSize(size, CGSizeZero))
+    {
+        size = asset.drawingSize;
     }
     
     //
@@ -119,7 +138,7 @@
     
     if (self.useCache)
     {
-        cacheKey = [self cacheKeyForAsset:asset size:asset.drawingSize color:color];
+        cacheKey = [self cacheKeyForAsset:asset size:size color:color];
         
         image = [self.cache objectForKey:cacheKey];
         
@@ -129,7 +148,7 @@
         }
     }
     
-    image = [asset imageWithColor:color];
+    image = [asset imageWithColor:color size:size];
     
     if (self.useCache && cacheKey && image)
     {
@@ -156,7 +175,7 @@
 
 - (BOOL)useCache
 {
-    return YES;
+    return NO;
 }
 
 - (void)loadAssets

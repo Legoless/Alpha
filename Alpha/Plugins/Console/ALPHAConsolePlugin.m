@@ -11,6 +11,9 @@
 #import "ALPHAConsoleCollector.h"
 #import "ALPHAConsolePlugin.h"
 
+#import "ALPHAConsoleIcon.h"
+#import "ALPHAAssetManager.h"
+
 @implementation ALPHAConsolePlugin
 
 - (instancetype)init
@@ -20,7 +23,7 @@
     if (self)
     {
         ALPHAScreenActionItem* menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.console.main"];
-        menuAction.icon = @"⚠️";
+        menuAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconConsoleIdentifier color:nil size:CGSizeMake(20.0, 20.0)];
         menuAction.title = @"Console";
         menuAction.dataIdentifier = ALPHAConsoleDataIdentifier;
         menuAction.isMain = YES;

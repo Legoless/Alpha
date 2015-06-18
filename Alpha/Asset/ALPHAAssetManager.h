@@ -34,7 +34,10 @@
 
 - (UIImage *)imageWithAsset:(ALPHAAsset *)asset;
 - (UIImage *)imageWithAsset:(ALPHAAsset *)asset color:(UIColor *)color;
+- (UIImage *)imageWithAsset:(ALPHAAsset *)asset color:(UIColor *)color size:(CGSize)size;
+
 - (UIImage *)imageWithIdentifier:(NSString *)identifier;
 - (UIImage *)imageWithIdentifier:(NSString *)identifier color:(UIColor *)color;
+- (UIImage *)imageWithIdentifier:(NSString *)identifier color:(UIColor *)color size:(CGSize)size;
 
 @end

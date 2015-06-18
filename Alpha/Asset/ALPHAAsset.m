@@ -52,7 +52,7 @@
         if (!CGSizeEqualToSize(image.size, size))
         {
             CGRect rect = { { 0.0, 0.0 }, size };
-            UIGraphicsBeginImageContext (size);
+            UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].nativeScale);
             [image drawInRect:rect];
             UIImage *picture1 = UIGraphicsGetImageFromCurrentImageContext();
             UIGraphicsEndImageContext();

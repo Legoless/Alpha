@@ -89,11 +89,9 @@
 
 - (CGRect)imageRectForContentRect:(CGRect)contentRect
 {
-    CGSize imageSize = [self imageForState:UIControlStateNormal].size;
     CGRect titleRect = [self titleRectForContentRect:contentRect];
     CGFloat availableHeight = contentRect.size.height - titleRect.size.height - ([ALPHAManager sharedManager].theme.topMargin * 2.0);
     CGFloat originY = [ALPHAManager sharedManager].theme.topMargin;
-    CGFloat originX = ALPHAFloor((contentRect.size.width - imageSize.width) / 2.0);
     CGRect imageRect = CGRectMake(0.0, originY, contentRect.size.width, availableHeight);
     return imageRect;
 }

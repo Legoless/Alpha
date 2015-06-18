@@ -41,7 +41,7 @@ NSString *const ALPHADrawingForegroundColorKey = @"kALPHADrawingForegroundColorK
 
 + (UIImage *)alpha_imageWithSize:(CGSize)size color:(UIColor *)color drawingBlock:(ALPHADrawingBlock)drawingBlock
 {
-    UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
+    UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].nativeScale);
 
     if (!color)
     {

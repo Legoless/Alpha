@@ -22,7 +22,6 @@ NSString *const ALPHAIconFileIdentifier = @"com.unifiedsense.alpha.icon.file";
         self.drawingBlock = ^(CGSize size, NSDictionary* parameters)
         {
             UIColor *fillColor = parameters[ALPHADrawingForegroundColorKey];
-            UIColor *strokeColor = fillColor;
             
             CGRect frame = { CGPointZero, size };
             

@@ -24,9 +24,9 @@ NSString *const ALPHAIconConsoleIdentifier = @"com.unifiedsense.alpha.icon.conso
             UIColor *fillColor = parameters[ALPHADrawingForegroundColorKey];
             
             CGRect frame = { CGPointZero, size };
-            //// Subframes
-            CGRect consoleGroup = CGRectMake(CGRectGetMinX(frame) - 0.33, CGRectGetMinY(frame) + 9.6, CGRectGetWidth(frame) + 0.25, CGRectGetHeight(frame) - 19.14);
             
+            //// Subframes
+            CGRect consoleGroup = CGRectMake(CGRectGetMinX(frame) - (0.004125 * size.width), CGRectGetMinY(frame) + (0.12 * size.height), CGRectGetWidth(frame) + (0.003125 * size.width), CGRectGetHeight(frame) - (0.23925 * size.height));
             
             //// Console Group
             {
