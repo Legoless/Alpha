@@ -15,9 +15,9 @@
 
 #import "ALPHALocalSource.h"
 
-#import "FLEXResources.h"
-
 #import "ALPHABonjourServer.h"
+
+#import "ALPHACoreAssets.h"
 
 @interface ALPHABonjourPlugin ()
 
@@ -50,7 +50,7 @@
     {
         ALPHABlockActionItem *touchAction = [ALPHABlockActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.bonjour.activate"];
         touchAction.title = @"Bonjour";
-        touchAction.icon = [FLEXResources hierarchyIndentPattern];
+        touchAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconRemoteIdentifier];
         touchAction.actionBlock = ^id(id sender)
         {
             [self activateBonjourServer];

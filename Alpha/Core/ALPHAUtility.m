@@ -7,7 +7,6 @@
 //
 
 #import "ALPHAUtility.h"
-#import "FLEXResources.h"
 
 @implementation ALPHAUtility
 

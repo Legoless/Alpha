@@ -9,10 +9,12 @@
 #import <Haystack/Haystack.h>
 
 #import "ALPHAWindow.h"
-#import "FLEXResources.h"
 #import "ALPHAFileManager.h"
 #import "ALPHAScreenshotSource.h"
 #import "ALPHAActions.h"
+
+#import "ALPHAScreenshotIcon.h"
+#import "ALPHAAssetManager.h"
 
 #import "ALPHAManager.h"
 
@@ -32,7 +34,7 @@
     {
         ALPHABlockActionItem *touchAction = [ALPHABlockActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.screenshot.make"];
         touchAction.title = @"Screenshot";
-        touchAction.icon = [FLEXResources dragHandle];
+        touchAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconScreenshotIdentifier];
         touchAction.actionBlock = ^id(id sender)
         {
             [self saveScreenshot];

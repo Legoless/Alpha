@@ -8,6 +8,8 @@
 
 #import "ALPHAAsset.h"
 
+extern NSString *const ALPHAIconMoveIdentifier;
+
 @interface ALPHAMoveIcon : ALPHAAsset
 
 @end

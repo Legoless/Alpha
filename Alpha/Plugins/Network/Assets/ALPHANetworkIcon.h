@@ -8,6 +8,8 @@
 
 #import "ALPHAAsset.h"
 
+extern NSString *const ALPHAIconNetworkIdentifier;
+
 @interface ALPHANetworkIcon : ALPHAAsset
 
 @end

@@ -13,8 +13,6 @@
 
 #import "CGVectorAdditions.h"
 
-#import "FLEXResources.h"
-
 #import "ALPHAExplorerMenu.h"
 
 @interface ALPHAExplorerMenu () <CKCircleMenuDelegate>

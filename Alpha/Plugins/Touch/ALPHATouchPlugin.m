@@ -8,11 +8,13 @@
 
 #import "ALPHATouchPlugin.h"
 
-#import "FLEXResources.h"
 #import "UIApplication+Event.h"
 
 #import "ALPHATouchWindow.h"
 #import "ALPHABlockActionItem.h"
+
+#import "ALPHAAssetManager.h"
+#import "ALPHAScreenshotIcon.h"
 
 @interface ALPHATouchPlugin ()
 
@@ -56,7 +58,7 @@
     {
         ALPHABlockActionItem *touchAction = [ALPHABlockActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.touch.touches"];
         touchAction.title = @"Touches";
-        touchAction.icon = [FLEXResources selectIcon];
+        touchAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconScreenshotIdentifier];
         touchAction.actionBlock = ^id(id sender){
             self.shouldDisplayTouches = !self.shouldDisplayTouches;
             

@@ -8,10 +8,13 @@
 
 #import "FLEXExplorerToolbar.h"
 #import "FLEXToolbarItem.h"
-#import "FLEXResources.h"
 #import "ALPHAUtility.h"
 #import "ALPHAManager.h"
+
 #import "ALPHACoreAssets.h"
+#import "ALPHAViewIcon.h"
+#import "ALPHASelectIcon.h"
+#import "ALPHAMoveIcon.H"
 
 @interface FLEXExplorerToolbar ()
 
@@ -51,27 +54,27 @@
         
         [self.dragHandle addSubview:self.dragHandleImageView];
         
-        UIImage *globalsIcon = [FLEXResources globeIcon];
+        UIImage *globalsIcon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconInfoIdentifier];
         self.globalsItem = [FLEXToolbarItem toolbarItemWithTitle:@"info" image:globalsIcon];
         [self addSubview:self.globalsItem];
         [toolbarItems addObject:self.globalsItem];
         
-        UIImage *listIcon = [FLEXResources listIcon];
+        UIImage *listIcon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconViewIdentifier];
         self.hierarchyItem = [FLEXToolbarItem toolbarItemWithTitle:@"views" image:listIcon];
         [self addSubview:self.hierarchyItem];
         [toolbarItems addObject:self.hierarchyItem];
         
-        UIImage *selectIcon = [FLEXResources selectIcon];
+        UIImage *selectIcon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconSelectIdentifier];
         self.selectItem = [FLEXToolbarItem toolbarItemWithTitle:@"select" image:selectIcon];
         [self addSubview:self.selectItem];
         [toolbarItems addObject:self.selectItem];
         
-        UIImage *moveIcon = [FLEXResources moveIcon];
+        UIImage *moveIcon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconMoveIdentifier];
         self.moveItem = [FLEXToolbarItem toolbarItemWithTitle:@"move" image:moveIcon];
         [self addSubview:self.moveItem];
         [toolbarItems addObject:self.moveItem];
         
-        UIImage *closeIcon = [FLEXResources closeIcon];
+        UIImage *closeIcon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconCloseIdentifier];
         self.closeItem = [FLEXToolbarItem toolbarItemWithTitle:@"close" image:closeIcon];
         [self addSubview:self.closeItem];
         [toolbarItems addObject:self.closeItem];

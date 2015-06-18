@@ -13,7 +13,8 @@
 #import "ALPHABlockActionItem.h"
 #import "ALPHAScreenActionItem.h"
 #import "ALPHAMenuSource.h"
-#import "FLEXResources.h"
+
+#import "ALPHACoreAssets.h"
 
 #import "ALPHAGlobalActionIdentifiers.h"
 
@@ -74,7 +75,7 @@
         
         ALPHABlockActionItem *closeAction = [ALPHABlockActionItem itemWithIdentifier:ALPHAActionCloseIdentifier];
         closeAction.title = @"Close";
-        closeAction.icon = [FLEXResources closeIcon];
+        closeAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconCloseIdentifier];
         closeAction.actionBlock = ^id(id sender){
             [[ALPHAManager sharedManager] setInterfaceHidden:YES];
             
@@ -82,8 +83,8 @@
         };
         
         ALPHABlockActionItem *infoAction = [ALPHABlockActionItem itemWithIdentifier:@"com.unifiedsense.alpha.info"];
-        infoAction.title = @"Info";
-        infoAction.icon = [FLEXResources globeIcon];
+        infoAction.title = @"Menu";
+        infoAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconMenuIdentifier];
         infoAction.actionBlock = ^id(id sender){
             [self.explorerViewController displayInfoTable];
             

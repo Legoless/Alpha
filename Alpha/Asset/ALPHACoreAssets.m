@@ -9,10 +9,10 @@
 #import "ALPHACoreAssets.h"
 
 NSString *const ALPHAIconDragHandleIdentifier   = @"com.unifiedsense.alpha.icon.dragHandle";
-NSString *const ALPHAIconInfoIdentifier         = @"com.unifiedsense.alpha.icon.dragHandle";
-NSString *const ALPHAIconCloseIdentifier        = @"com.unifiedsense.alpha.icon.dragHandle";
-NSString *const ALPHAIconMenuIdentifier         = @"com.unifiedsense.alpha.icon.dragHandle";
-NSString *const ALPHAIconIconIdentifier         = @"com.unifiedsense.alpha.icon.dragHandle";
+NSString *const ALPHAIconInfoIdentifier         = @"com.unifiedsense.alpha.icon.info";
+NSString *const ALPHAIconCloseIdentifier        = @"com.unifiedsense.alpha.icon.close";
+NSString *const ALPHAIconMenuIdentifier         = @"com.unifiedsense.alpha.icon.menu";
+NSString *const ALPHAIconRemoteIdentifier       = @"com.unifiedsense.alpha.icon.remote";
 
 @implementation ALPHADragHandleIcon
 
@@ -190,7 +190,6 @@ NSString *const ALPHAIconIconIdentifier         = @"com.unifiedsense.alpha.icon.
 }
 
 @end
-
 
 @implementation ALPHAInfoIcon
 

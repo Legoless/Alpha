@@ -8,6 +8,8 @@
 
 #import "ALPHAAsset.h"
 
+extern NSString *const ALPHAIconTouchIdentifier;
+
 @interface ALPHATouchIcon : ALPHAAsset
 
 @end

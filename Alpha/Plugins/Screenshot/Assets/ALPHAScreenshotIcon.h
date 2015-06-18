@@ -8,6 +8,8 @@
 
 #import "ALPHAAsset.h"
 
+extern NSString *const ALPHAIconScreenshotIdentifier;
+
 @interface ALPHAScreenshotIcon : ALPHAAsset
 
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "ALPHAActions.h"
-#import "FLEXResources.h"
 
 #import "ALPHAManager.h"
 
@@ -16,6 +15,9 @@
 #import "ALPHAViewHierarchySource.h"
 
 #import "ALPHAViewHierarchyViewController.h"
+
+#import "ALPHAAssetManager.h"
+#import "ALPHAViewIcon.h"
 
 @interface ALPHAViewHierarchyPlugin () <ALPHAViewControllerDelegate>
 
@@ -48,7 +50,7 @@
         
         ALPHABlockActionItem *inspectAction = [ALPHABlockActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.view.inspect"];
         inspectAction.title = @"Inspect";
-        inspectAction.icon = [FLEXResources listIcon];
+        inspectAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconViewIdentifier];
         inspectAction.actionBlock = ^id(id sender)
         {
             [[ALPHAManager sharedManager] addOverlayViewController:self.viewHierarchyViewController animated:YES completion:nil];
