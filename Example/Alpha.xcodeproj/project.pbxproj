@@ -1414,8 +1414,8 @@
 			isa = PBXGroup;
 			children = (
 				67E64783C3798103EB77BF05 /* Menu */,
-				67E64B0FD28398842113D533 /* Sources */,
 				67E648D782169176C00388AD /* Controllers */,
+				67E64B0FD28398842113D533 /* Sources */,
 				67E64170A50C22A771AD9AE8 /* ALPHAInterfacePlugin.h */,
 				67E6437951689DFD830BCE66 /* ALPHAInterfacePlugin.m */,
 			);

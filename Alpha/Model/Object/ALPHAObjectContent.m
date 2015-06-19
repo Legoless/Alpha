@@ -21,7 +21,7 @@
     for (id object in array)
     {
         ALPHAObjectElement *item = [[ALPHAObjectElement alloc] init];
-        item.name = [NSString stringWithFormat:@"%lu", counter];
+        item.name = [NSString stringWithFormat:@"%lu", (unsigned long)counter];
         item.objectClass = NSStringFromClass([object class]);
         item.objectPointer = [NSString stringWithFormat:@"%p", object];
         

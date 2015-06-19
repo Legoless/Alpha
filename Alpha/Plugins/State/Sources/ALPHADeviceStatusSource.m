@@ -153,8 +153,6 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     
     NSString* region = [[NSLocale currentLocale] objectForKey:NSLocaleIdentifier];
     
-    
-    
     [items addObjectsFromArray:@[
         @{ @"Timezone" : [NSTimeZone localTimeZone].name },
         @{ @"Region" : [[NSLocale currentLocale] displayNameForKey:NSLocaleIdentifier value:region] },
@@ -191,8 +189,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
                      ],
                      @"style" : @(UITableViewCellStyleValue1),
                      @"headerText" : @"Device" };
-    
-    
+
     ALPHAScreenSection* deviceSection = [ALPHAScreenSection screenSectionWithDictionary:sectionData];
     
     //
@@ -222,9 +219,9 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     
     sectionData = @{ @"identifier" : @"com.unifiedsense.alpha.data.status.network",
                      @"items" : @[
-                             @{ @"MAC Address" : [UIDevice currentDevice].hs_macAddress },
-                             @{ @"SSID" : [UIDevice currentDevice].hs_SSID },
-                             @{ @"BSSDID" : [UIDevice currentDevice].hs_BSSID },
+                             @{ @"MAC Address" : ALPHAEncodeString([UIDevice currentDevice].hs_macAddress) },
+                             @{ @"SSID" : ALPHAEncodeString([UIDevice currentDevice].hs_SSID) },
+                             @{ @"BSSDID" : ALPHAEncodeString([UIDevice currentDevice].hs_BSSID) },
                              @{ @"Received Wi-Fi" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].hs_receivedWiFi.longLongValue countStyle:NSByteCountFormatterCountStyleBinary] },
                              @{ @"Sent Wi-Fi" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].hs_sentWifi.longLongValue countStyle:NSByteCountFormatterCountStyleBinary] },
                              @{ @"Received Cellular" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].hs_receivedCellular.longLongValue countStyle:NSByteCountFormatterCountStyleBinary] },
