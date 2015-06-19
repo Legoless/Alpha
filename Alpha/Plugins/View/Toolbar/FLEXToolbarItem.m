@@ -26,9 +26,9 @@
     
     if (self)
     {
-        self.backgroundColor = [ALPHAManager sharedManager].theme.toolbarBackgroundColor;
-        [self setTitleColor:[ALPHAManager sharedManager].theme.toolbarTintColor forState:UIControlStateNormal];
-        [self setTitleColor:[ALPHAManager sharedManager].theme.toolbarTintDisabledColor forState:UIControlStateDisabled];
+        self.backgroundColor = [ALPHAManager defaultManager].theme.toolbarBackgroundColor;
+        [self setTitleColor:[ALPHAManager defaultManager].theme.toolbarTintColor forState:UIControlStateNormal];
+        [self setTitleColor:[ALPHAManager defaultManager].theme.toolbarTintDisabledColor forState:UIControlStateDisabled];
     }
     
     return self;
@@ -36,7 +36,7 @@
 
 + (instancetype)toolbarItemWithTitle:(NSString *)title image:(UIImage *)image
 {
-    ALPHATheme* theme = [ALPHAManager sharedManager].theme;
+    ALPHATheme* theme = [ALPHAManager defaultManager].theme;
     
     FLEXToolbarItem *toolbarItem = [self buttonWithType:UIButtonTypeCustom];
     NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:@{ NSFontAttributeName : theme.toolbarTitleFont, NSForegroundColorAttributeName : theme.toolbarTintColor }];
@@ -67,15 +67,15 @@
 {
     if (self.highlighted)
     {
-        self.backgroundColor = [ALPHAManager sharedManager].theme.toolbarHighlightedColor;
+        self.backgroundColor = [ALPHAManager defaultManager].theme.toolbarHighlightedColor;
     }
     else if (self.selected)
     {
-        self.backgroundColor = [ALPHAManager sharedManager].theme.toolbarSelectedColor;
+        self.backgroundColor = [ALPHAManager defaultManager].theme.toolbarSelectedColor;
     }
     else
     {
-        self.backgroundColor = [ALPHAManager sharedManager].theme.toolbarBackgroundColor;
+        self.backgroundColor = [ALPHAManager defaultManager].theme.toolbarBackgroundColor;
     }
 }
 
@@ -96,8 +96,8 @@
 - (CGRect)imageRectForContentRect:(CGRect)contentRect
 {
     CGRect titleRect = [self titleRectForContentRect:contentRect];
-    CGFloat availableHeight = contentRect.size.height - titleRect.size.height - ([ALPHAManager sharedManager].theme.toolbarTopMargin * 2.0);
-    CGFloat originY = [ALPHAManager sharedManager].theme.toolbarTopMargin;
+    CGFloat availableHeight = contentRect.size.height - titleRect.size.height - ([ALPHAManager defaultManager].theme.toolbarTopMargin * 2.0);
+    CGFloat originY = [ALPHAManager defaultManager].theme.toolbarTopMargin;
     CGRect imageRect = CGRectMake(0.0, originY, contentRect.size.width, availableHeight);
     return imageRect;
 }

@@ -358,7 +358,7 @@
     ALPHAHierarchyTableViewController *hierarchyTVC = [[ALPHAHierarchyTableViewController alloc] initWithViews:allViews viewsAtTap:self.viewsAtTapPoint selectedView:self.selectedView depths:depthsForViews];
     hierarchyTVC.delegate = self;
     /*UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:hierarchyTVC];
-    [[ALPHAManager sharedManager] displayViewController:navigationController animated:YES completion:nil];*/
+    [[ALPHAManager defaultManager] displayViewController:navigationController animated:YES completion:nil];*/
     
     [[ALPHAScreenManager defaultManager] pushViewController:hierarchyTVC];
 }
@@ -366,7 +366,7 @@
 - (NSArray *)allViewsInHierarchy
 {
     NSMutableArray *allViews = [NSMutableArray array];
-    NSArray *windows = [[ALPHAManager sharedManager] allWindows];
+    NSArray *windows = [[ALPHAManager defaultManager] allWindows];
     
     for (UIWindow *window in windows)
     {
@@ -507,7 +507,7 @@
         FLEXObjectExplorerViewController *selectedViewExplorer = [FLEXObjectExplorerFactory explorerViewControllerForObject:self.selectedView];
         selectedViewExplorer.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(selectedViewExplorerFinished:)];
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:selectedViewExplorer];
-        [[ALPHAManager sharedManager] displayViewController:navigationController animated:YES completion:nil];*/
+        [[ALPHAManager defaultManager] displayViewController:navigationController animated:YES completion:nil];*/
     }
 }
 
@@ -574,7 +574,7 @@
 - (NSArray *)viewsAtPoint:(CGPoint)tapPointInWindow skipHiddenViews:(BOOL)skipHidden
 {
     NSMutableArray *views = [NSMutableArray array];
-    for (UIWindow *window in [[ALPHAManager sharedManager] allWindows]) {
+    for (UIWindow *window in [[ALPHAManager defaultManager] allWindows]) {
         // Don't include the explorer's own window or subviews.
         if (window != self.view.window && [window pointInside:tapPointInWindow withEvent:nil]) {
             [views addObject:window];
@@ -589,7 +589,7 @@
     // Select in the window that would handle the touch, but don't just use the result of hitTest:withEvent: so we can still select views with interaction disabled.
     // Default to the the application's key window if none of the windows want the touch.
     UIWindow *windowForSelection = [[UIApplication sharedApplication] keyWindow];
-    for (UIWindow *window in [[[ALPHAManager sharedManager] allWindows] reverseObjectEnumerator])
+    for (UIWindow *window in [[[ALPHAManager defaultManager] allWindows] reverseObjectEnumerator])
     {
         // Ignore the explorer's own window.
         if (window != self.view.window) {
@@ -729,7 +729,7 @@
         
         // Note that we need to wait until the view controller is dismissed to calculated the frame of the outline view.
         // Otherwise the coordinate conversion doesn't give the correct result.
-        [[ALPHAManager sharedManager] removeViewControllerAnimated:YES completion:^
+        [[ALPHAManager defaultManager] removeViewControllerAnimated:YES completion:^
         {
             // If the selected view is outside of the tapoint array (selected from "Full Hierarchy"),
             // then clear out the tap point array and remove all the outline views.
@@ -751,7 +751,7 @@
     }
     else
     {
-        [[ALPHAManager sharedManager] removeViewControllerAnimated:YES completion:nil];
+        [[ALPHAManager defaultManager] removeViewControllerAnimated:YES completion:nil];
     }
 }
 
@@ -760,7 +760,7 @@
 
 - (void)selectedViewExplorerFinished:(id)sender
 {
-    [[ALPHAManager sharedManager] removeViewControllerAnimated:YES completion:nil];
+    [[ALPHAManager defaultManager] removeViewControllerAnimated:YES completion:nil];
 }
 
 @end

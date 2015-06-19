@@ -1,5 +1,5 @@
 //
-//  ALPHAConsoleCollector.h
+//  ALPHAConsoleSource.h
 //  Alpha
 //
 //  Created by Dal Rupnik on 10/11/14.
@@ -10,6 +10,6 @@
 
 extern NSString *const ALPHAConsoleDataIdentifier;
 
-@interface ALPHAConsoleCollector : ALPHABaseDataSource
+@interface ALPHAConsoleSource : ALPHABaseDataSource
 
 @end

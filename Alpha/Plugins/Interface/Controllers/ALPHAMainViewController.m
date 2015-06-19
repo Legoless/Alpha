@@ -23,7 +23,6 @@
 #import "ALPHAExplorerMenu.h"
 
 #import "ALPHAViewController.h"
-#import "ALPHALocalSource.h"
 
 #import "ALPHAScreenManager.h"
 
@@ -75,10 +74,10 @@
     self.explorerMenu.delegate = self;
     self.explorerMenu.snapToBorder = YES;
     
-    self.explorerMenu.tintColor = [ALPHAManager sharedManager].theme.menuTintColor;
-    self.explorerMenu.mainBackgroundColor = [ALPHAManager sharedManager].theme.menuBackgroundColor;
-    self.explorerMenu.buttonBackgroundColor = [ALPHAManager sharedManager].theme.menuButtonBackgroundColor;
-    self.explorerMenu.buttonSelectedBackgroundColor = [ALPHAManager sharedManager].theme.menuButtonSelectedBackgroundColor;
+    self.explorerMenu.tintColor = [ALPHAManager defaultManager].theme.menuTintColor;
+    self.explorerMenu.mainBackgroundColor = [ALPHAManager defaultManager].theme.menuBackgroundColor;
+    self.explorerMenu.buttonBackgroundColor = [ALPHAManager defaultManager].theme.menuButtonBackgroundColor;
+    self.explorerMenu.buttonSelectedBackgroundColor = [ALPHAManager defaultManager].theme.menuButtonSelectedBackgroundColor;
     
     //
     // Disable touches for canvas view, we do not care about other shit
@@ -105,7 +104,7 @@
     [self.actions removeAllObjects];
     [self.actionImages removeAllObjects];
     
-    NSArray* plugins = [ALPHAManager sharedManager].plugins;
+    NSArray* plugins = [ALPHAManager defaultManager].plugins;
     
     for (ALPHAPlugin* plugin in plugins)
     {

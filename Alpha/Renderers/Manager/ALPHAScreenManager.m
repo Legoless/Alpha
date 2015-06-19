@@ -8,8 +8,8 @@
 
 #import "ALPHAActions.h"
 #import "ALPHAScreenManager.h"
-#import "ALPHAConverterManager.h"
 #import "ALPHALocalSource.h"
+#import "ALPHAManager.h"
 
 #import "ALPHANavigationController.h"
 
@@ -32,7 +32,7 @@
 {
     if (!_manager)
     {
-        _manager = [ALPHAManager sharedManager];
+        _manager = [ALPHAManager defaultManager];
     }
     
     return _manager;
@@ -165,6 +165,7 @@
     if (!source)
     {
         source = [ALPHALocalSource new];
+        [(ALPHALocalSource *)source loadSourcesFromPlugins:[ALPHAManager defaultManager].plugins];
     }
     
     //

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "UIApplication+ALPHAPrivate.h"
+#import "UIApplication+Private.h"
 #import "UIDevice+ALPHAStatus.h"
 
 @implementation UIDevice (ALPHAStatus)
@@ -38,7 +38,7 @@
 
 - (NSString *)alpha_carrierName
 {
-    UIView* statusBar = [[UIApplication sharedApplication] statusBar];
+    UIView* statusBar = [[UIApplication sharedApplication] alpha_statusBar];
     
     UIView* statusBarForegroundView = nil;
     

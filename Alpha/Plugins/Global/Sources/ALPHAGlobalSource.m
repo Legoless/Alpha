@@ -61,9 +61,9 @@ NSString* const ALPHAGlobalDataIdentifier = @"com.unifiedsense.alpha.data.global
     [items addObject:menuAction];
     
     menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.global.rootViewController"];
-    menuAction.title = NSStringFromClass([[[ALPHAManager sharedManager].keyWindow rootViewController] class]);
+    menuAction.title = NSStringFromClass([[[ALPHAManager defaultManager].keyWindow rootViewController] class]);
     menuAction.icon = @"🌴";
-    menuAction.object = [[ALPHAManager sharedManager].keyWindow rootViewController];
+    menuAction.object = [[ALPHAManager defaultManager].keyWindow rootViewController];
     
     [items addObject:menuAction];
     
@@ -84,7 +84,7 @@ NSString* const ALPHAGlobalDataIdentifier = @"com.unifiedsense.alpha.data.global
     menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.global.rootViewController"];
     menuAction.title = @"- [UIApplication keyWindow]";
     menuAction.icon = @"🔑";
-    menuAction.object = [ALPHAManager sharedManager].keyWindow;
+    menuAction.object = [ALPHAManager defaultManager].keyWindow;
     
     [items addObject:menuAction];
     

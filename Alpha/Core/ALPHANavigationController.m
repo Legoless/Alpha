@@ -17,7 +17,7 @@
     [super viewWillAppear:animated];
     
     // Override status bar style for alpha
-    [UIApplication sharedApplication].statusBarStyle = [ALPHAManager sharedManager].theme.statusBarStyle;
+    [UIApplication sharedApplication].statusBarStyle = [ALPHAManager defaultManager].theme.statusBarStyle;
     
     [self setNeedsStatusBarAppearanceUpdate];
 }
@@ -31,7 +31,7 @@
 
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
-    return [ALPHAManager sharedManager].theme.statusBarStyle;
+    return [ALPHAManager defaultManager].theme.statusBarStyle;
 }
 
 @end

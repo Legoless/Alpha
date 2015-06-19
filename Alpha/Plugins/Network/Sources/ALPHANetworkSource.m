@@ -1,5 +1,5 @@
 //
-//  ALPHANetworkCollector.m
+//  ALPHANetworkSource.m
 //  Alpha
 //
 //  Created by Dal Rupnik on 08/06/15.
@@ -26,7 +26,7 @@
 #import <objc/runtime.h>
 #import <objc/message.h>
 
-#import "ALPHANetworkCollector.h"
+#import "ALPHANetworkSource.h"
 #import "ALPHARequestState.h"
 
 #import "ALPHANetworkModel.h"
@@ -45,14 +45,14 @@ NSString *const ALPHANetworkDataIdentifier = @"com.unifiedsense.alpha.data.netwo
 
 - (void)alpha__redirectRequest:(NSURLRequest *)arg1 redirectResponse:(NSURLResponse *)arg2 completion:(id)arg3;
 {
-    [[ALPHANetworkCollector sharedCollector] URLSession:[self.task valueForKey:@"session"] task:self.task willPerformHTTPRedirection:(id)arg2 newRequest:arg1];
+    [[ALPHANetworkSource sharedCollector] URLSession:[self.task valueForKey:@"session"] task:self.task willPerformHTTPRedirection:(id)arg2 newRequest:arg1];
     
     [self alpha__redirectRequest:arg1 redirectResponse:arg2 completion:arg3];
 }
 
 - (void)alpha__didReceiveData:(id)arg1;
 {
-    [[ALPHANetworkCollector sharedCollector] URLSession:[self.task valueForKey:@"session"] dataTask:(id)self.task didReceiveData:arg1];
+    [[ALPHANetworkSource sharedCollector] URLSession:[self.task valueForKey:@"session"] dataTask:(id)self.task didReceiveData:arg1];
     
     [self alpha__didReceiveData:arg1];
 }
@@ -60,21 +60,21 @@ NSString *const ALPHANetworkDataIdentifier = @"com.unifiedsense.alpha.data.netwo
 - (void)alpha__didReceiveResponse:(NSURLResponse *)response sniff:(BOOL)sniff;
 {
     // This can be called multiple times for the same request. Make sure it doesn't
-    [[ALPHANetworkCollector sharedCollector] URLSession:[self.task valueForKey:@"session"] dataTask:(id)self.task didReceiveResponse:response];
+    [[ALPHANetworkSource sharedCollector] URLSession:[self.task valueForKey:@"session"] dataTask:(id)self.task didReceiveResponse:response];
     
     [self alpha__didReceiveResponse:response sniff:sniff];
 }
 
 - (void)alpha__didFinishWithError:(NSError *)arg1;
 {
-    [[ALPHANetworkCollector sharedCollector] URLSession:[self.task valueForKey:@"session"] task:self.task didCompleteWithError:arg1];
+    [[ALPHANetworkSource sharedCollector] URLSession:[self.task valueForKey:@"session"] task:self.task didCompleteWithError:arg1];
     [self alpha__didFinishWithError:arg1];
 }
 
 @end
 
 
-@interface ALPHANetworkCollector ()
+@interface ALPHANetworkSource ()
 
 /*!
  *  Holds model objects
@@ -87,7 +87,7 @@ NSString *const ALPHANetworkDataIdentifier = @"com.unifiedsense.alpha.data.netwo
 
 @end
 
-@implementation ALPHANetworkCollector
+@implementation ALPHANetworkSource
 
 + (instancetype)sharedCollector
 {
@@ -321,7 +321,7 @@ NSString *const ALPHANetworkDataIdentifier = @"com.unifiedsense.alpha.data.netwo
     typedef NSURLRequest *(^NSURLConnectionWillSendRequestBlock)(id <NSURLConnectionDelegate> slf, NSURLConnection *connection, NSURLRequest *request, NSURLResponse *response);
     
     NSURLConnectionWillSendRequestBlock undefinedBlock = ^NSURLRequest *(id <NSURLConnectionDelegate> slf, NSURLConnection *connection, NSURLRequest *request, NSURLResponse *response) {
-        [[ALPHANetworkCollector sharedCollector] connection:connection willSendRequest:request redirectResponse:response];
+        [[ALPHANetworkSource sharedCollector] connection:connection willSendRequest:request redirectResponse:response];
         return request;
     };
     
@@ -353,7 +353,7 @@ NSString *const ALPHANetworkDataIdentifier = @"com.unifiedsense.alpha.data.netwo
     typedef void (^NSURLConnectionDidReceiveResponseBlock)(id <NSURLConnectionDelegate> slf, NSURLConnection *connection, NSURLResponse *response);
     
     NSURLConnectionDidReceiveResponseBlock undefinedBlock = ^(id <NSURLConnectionDelegate> slf, NSURLConnection *connection, NSURLResponse *response) {
-        [[ALPHANetworkCollector sharedCollector] connection:connection didReceiveResponse:response];
+        [[ALPHANetworkSource sharedCollector] connection:connection didReceiveResponse:response];
     };
     
     NSURLConnectionDidReceiveResponseBlock implementationBlock = ^(id <NSURLConnectionDelegate> slf, NSURLConnection *connection, NSURLResponse *response) {
@@ -382,7 +382,7 @@ NSString *const ALPHANetworkDataIdentifier = @"com.unifiedsense.alpha.data.netwo
     typedef void (^NSURLConnectionDidReceiveDataBlock)(id <NSURLConnectionDelegate> slf, NSURLConnection *connection, NSData *data);
     
     NSURLConnectionDidReceiveDataBlock undefinedBlock = ^(id <NSURLConnectionDelegate> slf, NSURLConnection *connection, NSData *data) {
-        [[ALPHANetworkCollector sharedCollector] connection:connection didReceiveData:data];
+        [[ALPHANetworkSource sharedCollector] connection:connection didReceiveData:data];
     };
     
     NSURLConnectionDidReceiveDataBlock implementationBlock = ^(id <NSURLConnectionDelegate> slf, NSURLConnection *connection, NSData *data) {
@@ -411,7 +411,7 @@ NSString *const ALPHANetworkDataIdentifier = @"com.unifiedsense.alpha.data.netwo
     typedef void (^NSURLConnectionDidFinishLoadingBlock)(id <NSURLConnectionDelegate> slf, NSURLConnection *connection);
     
     NSURLConnectionDidFinishLoadingBlock undefinedBlock = ^(id <NSURLConnectionDelegate> slf, NSURLConnection *connection) {
-        [[ALPHANetworkCollector sharedCollector] connectionDidFinishLoading:connection];
+        [[ALPHANetworkSource sharedCollector] connectionDidFinishLoading:connection];
     };
     
     NSURLConnectionDidFinishLoadingBlock implementationBlock = ^(id <NSURLConnectionDelegate> slf, NSURLConnection *connection) {
@@ -436,7 +436,7 @@ NSString *const ALPHANetworkDataIdentifier = @"com.unifiedsense.alpha.data.netwo
     typedef void (^NSURLConnectionDidFailWithErrorBlock)(id <NSURLConnectionDelegate> slf, NSURLConnection *connection, NSError *error);
     
     NSURLConnectionDidFailWithErrorBlock undefinedBlock = ^(id <NSURLConnectionDelegate> slf, NSURLConnection *connection, NSError *error) {
-        [[ALPHANetworkCollector sharedCollector] connection:connection didFailWithError:error];
+        [[ALPHANetworkSource sharedCollector] connection:connection didFailWithError:error];
     };
     
     NSURLConnectionDidFailWithErrorBlock implementationBlock = ^(id <NSURLConnectionDelegate> slf, NSURLConnection *connection, NSError *error) {
@@ -506,7 +506,7 @@ NSString *const ALPHANetworkDataIdentifier = @"com.unifiedsense.alpha.data.netwo
 {
     if (!_queue)
     {
-        _queue = dispatch_queue_create("com.unifiedsense.alpha.data.network.ALPHANetworkCollector", DISPATCH_QUEUE_SERIAL);
+        _queue = dispatch_queue_create("com.unifiedsense.alpha.data.network.ALPHANetworkSource", DISPATCH_QUEUE_SERIAL);
     }
     
     return _queue;
@@ -790,7 +790,7 @@ NSString *const ALPHANetworkDataIdentifier = @"com.unifiedsense.alpha.data.netwo
 
 @end
 
-@implementation ALPHANetworkCollector (NSURLConnectionHelpers)
+@implementation ALPHANetworkSource (NSURLConnectionHelpers)
 
 - (void)connection:(NSURLConnection *)connection willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)response;
 {
@@ -821,7 +821,7 @@ NSString *const ALPHANetworkDataIdentifier = @"com.unifiedsense.alpha.data.netwo
             NSURLRequest *request = [self requestForConnection:connection];
             if (!request && [connection respondsToSelector:@selector(currentRequest)]) {
                 
-                NSLog(@"Alpha Warning: -[ALPHANetworkCollector connection:willSendRequest:redirectResponse:] not called, request timestamp may be inaccurate. See Known Issues in the README for more information.");
+                NSLog(@"Alpha Warning: -[ALPHANetworkSource connection:willSendRequest:redirectResponse:] not called, request timestamp may be inaccurate. See Known Issues in the README for more information.");
                 
                 request = connection.currentRequest;
                 [self setRequest:request forConnection:connection];
@@ -889,7 +889,7 @@ NSString *const ALPHANetworkDataIdentifier = @"com.unifiedsense.alpha.data.netwo
 
 @end
 
-@implementation ALPHANetworkCollector (NSURLSessionTaskHelpers)
+@implementation ALPHANetworkSource (NSURLSessionTaskHelpers)
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task willPerformHTTPRedirection:(NSHTTPURLResponse *)response newRequest:(NSURLRequest *)request
 {

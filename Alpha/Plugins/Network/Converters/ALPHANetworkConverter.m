@@ -55,7 +55,7 @@
     
     NSString *string = [NSString stringWithFormat:@"● %@ %@", method, url.path];
     
-    ALPHATheme* theme = [ALPHAManager sharedManager].theme;
+    ALPHATheme* theme = [ALPHAManager defaultManager].theme;
     
     UIFont *font = theme.cellTitleFont;
     
@@ -134,7 +134,7 @@
         }
     }
     
-    ALPHATheme* theme = [ALPHAManager sharedManager].theme;
+    ALPHATheme* theme = [ALPHAManager defaultManager].theme;
     
     UIFont *font = [theme.cellSubtitleFont fontWithSize:10.0];
     

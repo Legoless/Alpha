@@ -77,7 +77,7 @@
         closeAction.title = @"Close";
         closeAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconCloseIdentifier];
         closeAction.actionBlock = ^id(id sender){
-            [[ALPHAManager sharedManager] setInterfaceHidden:YES];
+            [[ALPHAManager defaultManager] setInterfaceHidden:YES];
             
             return nil;
         };
@@ -120,7 +120,7 @@
 
 - (void)finish
 {
-    [[ALPHAManager sharedManager] setHidden:YES];
+    [[ALPHAManager defaultManager] setHidden:YES];
 }
 
 @end

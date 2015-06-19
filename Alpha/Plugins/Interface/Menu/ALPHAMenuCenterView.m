@@ -50,7 +50,7 @@
 
 - (void)setup
 {
-    //ALPHAManager* manager = [ALPHAManager sharedManager];
+    //ALPHAManager* manager = [ALPHAManager defaultManager];
     
     self.mainBackgroundColor = [UIColor blackColor];
     self.tintColor = [UIColor whiteColor];

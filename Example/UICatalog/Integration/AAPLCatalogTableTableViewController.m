@@ -52,7 +52,7 @@
 {
 #if DEBUG
     // This acts as a manual Alpha trigger
-    [ALPHAManager sharedManager].interfaceHidden = NO;
+    [ALPHAManager defaultManager].interfaceHidden = NO;
 #endif
 }
 

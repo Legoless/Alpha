@@ -1,5 +1,5 @@
 //
-//  ALPHANotificationCollector.h
+//  ALPHANotificationSource.h
 //  Alpha
 //
 //  Created by Dal Rupnik on 11/11/14.
@@ -12,6 +12,6 @@
 
 extern NSString *const ALPHANotificationDataIdentifier;
 
-@interface ALPHANotificationCollector : ALPHABaseDataSource
+@interface ALPHANotificationSource : ALPHABaseDataSource
 
 @end

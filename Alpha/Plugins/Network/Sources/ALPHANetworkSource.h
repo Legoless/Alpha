@@ -1,5 +1,5 @@
 //
-//  ALPHANetworkCollector.h
+//  ALPHANetworkSource.h
 //  Alpha
 //
 //  Created by Dal Rupnik on 08/06/15.
@@ -10,7 +10,7 @@
 
 extern NSString *const ALPHANetworkDataIdentifier;
 
-@interface ALPHANetworkCollector : ALPHABaseDataSource
+@interface ALPHANetworkSource : ALPHABaseDataSource
 
 /*!
  *  Network collector can only be one, so we use singleton approach, to add access to it.
@@ -29,7 +29,7 @@ extern NSString *const ALPHANetworkDataIdentifier;
 @end
 
 
-@interface ALPHANetworkCollector (NSURLConnectionHelpers)
+@interface ALPHANetworkSource (NSURLConnectionHelpers)
 
 - (void)connection:(NSURLConnection *)connection willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)response;
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response;
@@ -41,7 +41,7 @@ extern NSString *const ALPHANetworkDataIdentifier;
 
 @end
 
-@interface ALPHANetworkCollector (NSURLSessionTaskHelpers)
+@interface ALPHANetworkSource (NSURLSessionTaskHelpers)
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task willPerformHTTPRedirection:(NSHTTPURLResponse *)response newRequest:(NSURLRequest *)request;
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response;

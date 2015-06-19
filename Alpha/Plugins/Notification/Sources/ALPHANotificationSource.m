@@ -1,5 +1,5 @@
 //
-//  ALPHANotificationCollector.m
+//  ALPHANotificationSource.m
 //  Alpha
 //
 //  Created by Dal Rupnik on 11/11/14.
@@ -15,11 +15,11 @@
 
 #import "ALPHANotificationModel.h"
 
-#import "ALPHANotificationCollector.h"
+#import "ALPHANotificationSource.h"
 
 NSString *const ALPHANotificationDataIdentifier = @"com.unifiedsense.alpha.data.notification";
 
-@interface ALPHANotificationCollector ()
+@interface ALPHANotificationSource ()
 
 /*!
  *  Contains string with enabled notification types that
@@ -53,7 +53,7 @@ NSString *const ALPHANotificationDataIdentifier = @"com.unifiedsense.alpha.data.
 
 @end
 
-@implementation ALPHANotificationCollector
+@implementation ALPHANotificationSource
 
 #pragma mark - Getters and Setters
 

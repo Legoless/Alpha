@@ -60,14 +60,14 @@ NSString *const ALPHAViewDataPointerIdentifier  = @"com.unifiedsense.alpha.data.
 - (NSArray *)allViewsInHierarchy
 {
     NSMutableArray *allViews = [NSMutableArray array];
-    NSArray *windows = [[ALPHAManager sharedManager] allWindows];
+    NSArray *windows = [[ALPHAManager defaultManager] allWindows];
     
     for (UIWindow *window in windows)
     {
         //
         // Ignore Alpha window
         //
-        if (window != [ALPHAManager sharedManager].alphaWindow)
+        if (window != [ALPHAManager defaultManager].alphaWindow)
         {
             [allViews addObject:window];
             [allViews addObjectsFromArray:[self allRecursiveSubviewsInView:window]];

@@ -1,5 +1,5 @@
 //
-//  ALPHAEventCollector.m
+//  ALPHAEventSource.m
 //  Alpha
 //
 //  Created by Dal Rupnik on 08/06/15.
@@ -8,19 +8,19 @@
 
 #import <Haystack/Haystack.h>
 
-#import "ALPHAEventCollector.h"
+#import "ALPHAEventSource.h"
 #import "ALPHAEventModel.h"
 #import "ALPHAApplicationDelegate.h"
 
 NSString *const ALPHAEventDataIdentifier = @"com.unifiedsense.alpha.data.event";
 
-@interface ALPHAEventCollector ()
+@interface ALPHAEventSource ()
 
 @property (nonatomic, strong) NSMutableArray *events;
 
 @end
 
-@implementation ALPHAEventCollector
+@implementation ALPHAEventSource
 
 #pragma mark - Getters and Setters
 

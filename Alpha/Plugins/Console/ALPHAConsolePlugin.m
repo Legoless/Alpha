@@ -8,7 +8,7 @@
 
 #import "ALPHAScreenActionItem.h"
 
-#import "ALPHAConsoleCollector.h"
+#import "ALPHAConsoleSource.h"
 #import "ALPHAConsolePlugin.h"
 
 #import "ALPHAConsoleIcon.h"
@@ -30,7 +30,7 @@
         
         [self registerAction:menuAction];
         
-        [self registerSource:[ALPHAConsoleCollector new]];
+        [self registerSource:[ALPHAConsoleSource new]];
     }
     
     return self;

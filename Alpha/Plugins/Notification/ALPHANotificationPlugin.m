@@ -8,7 +8,7 @@
 
 #import "ALPHANotificationPlugin.h"
 #import "ALPHAScreenActionItem.h"
-#import "ALPHANotificationCollector.h"
+#import "ALPHANotificationSource.h"
 #import "ALPHANotificationIcon.h"
 #import "ALPHAAssetManager.h"
 
@@ -40,7 +40,7 @@
         // Collectors
         //
         
-        [self registerSource:[ALPHANotificationCollector new]];
+        [self registerSource:[ALPHANotificationSource new]];
     }
     
     return self;

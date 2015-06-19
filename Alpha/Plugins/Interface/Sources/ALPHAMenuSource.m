@@ -33,7 +33,7 @@ NSString* const ALPHAMenuDataIdentifier = @"com.unifiedsense.alpha.data.menu";
 
 - (ALPHAModel *)modelForRequest:(ALPHARequest *)request
 {
-    NSArray* plugins = [ALPHAManager sharedManager].plugins;
+    NSArray* plugins = [ALPHAManager defaultManager].plugins;
     
     NSMutableArray *items = [NSMutableArray array];
     

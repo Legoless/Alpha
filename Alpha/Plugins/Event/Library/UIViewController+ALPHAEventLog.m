@@ -11,7 +11,7 @@
 #import "NSString+Identifier.h"
 
 #import "UIViewController+ALPHAEventLog.h"
-#import "ALPHAEventCollector.h"
+#import "ALPHAEventSource.h"
 
 @implementation UIViewController (ALPHAEventLog)
 
@@ -31,7 +31,7 @@
     // TODO: Remove FLEX backwards support when ready
     if (![event.sender startsWith:@"ALPHA"] && ![event.sender startsWith:@"FLEX"])
     {
-        [[ALPHAEventCollector sharedCollector] addEvent:event];
+        [[ALPHAEventSource sharedCollector] addEvent:event];
     }
     
     [self alpha_viewDidAppear:animated];
@@ -47,7 +47,7 @@
     // TODO: Remove FLEX backwards support when ready
     if (![event.sender startsWith:@"ALPHA"] && ![event.sender startsWith:@"FLEX"])
     {
-        [[ALPHAEventCollector sharedCollector] addEvent:event];
+        [[ALPHAEventSource sharedCollector] addEvent:event];
     }
     
     [self alpha_viewDidDisappear:animated];

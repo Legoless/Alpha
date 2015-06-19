@@ -21,4 +21,6 @@
  */
 @property (nonatomic, copy) NSArray *sources;
 
+- (void)loadSourcesFromPlugins:(NSArray *)plugins;
+
 @end

@@ -29,7 +29,7 @@
 {
     if (self.enabled)
     {
-        [[ALPHAManager sharedManager] setInterfaceHidden:NO];
+        [[ALPHAManager defaultManager] setInterfaceHidden:NO];
     }
 }
 

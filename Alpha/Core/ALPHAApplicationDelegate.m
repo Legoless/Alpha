@@ -9,7 +9,7 @@
 #import <Haystack/Haystack.h>
 
 #import "ALPHANotification.h"
-#import "ALPHANotificationCollector.h"
+#import "ALPHANotificationSource.h"
 
 #import "ALPHAApplicationDelegate.h"
 

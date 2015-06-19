@@ -50,7 +50,7 @@
 {
     NSString *string = [NSString stringWithFormat:@"● %@", consoleLog.message];
     
-    ALPHATheme* theme = [ALPHAManager sharedManager].theme;
+    ALPHATheme* theme = [ALPHAManager defaultManager].theme;
     
     UIFont *font = theme.cellTitleFont;
     
@@ -84,7 +84,7 @@
     
     [detailString appendFormat:@"  %@ %@[%@:%@]", consoleLog.localTime, consoleLog.sender, consoleLog.PID, consoleLog.ASLMessageID];
     
-    ALPHATheme* theme = [ALPHAManager sharedManager].theme;
+    ALPHATheme* theme = [ALPHAManager defaultManager].theme;
     
     UIFont *font = theme.cellSubtitleFont;
     

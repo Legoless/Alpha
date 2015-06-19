@@ -8,8 +8,8 @@
 
 #import "ALPHALocalSource.h"
 #import "ALPHALocalFileSource.h"
-#import "ALPHAManager.h"
-#import "ALPHAModel.H"
+#import "ALPHAModel.h"
+#import "ALPHAPlugin.h"
 
 @interface ALPHALocalSource ()
 
@@ -17,22 +17,8 @@
 
 @implementation ALPHALocalSource
 
-- (instancetype)init
+- (void)loadSourcesFromPlugins:(NSArray *)plugins
 {
-    self = [super init];
-    
-    if (self)
-    {
-        self.sources = [self loadSources];
-    }
-    
-    return self;
-}
-
-- (NSArray *)loadSources
-{
-    NSArray* plugins = [ALPHAManager sharedManager].plugins;
-    
     NSMutableArray *sources = [NSMutableArray array];
     
     for (ALPHAPlugin *plugin in plugins)
@@ -48,7 +34,7 @@
     //
     [sources addObject:[ALPHALocalFileSource new]];
     
-    return [sources copy];
+    self.sources = [sources copy];
 }
 
 #pragma mark - ALPHADataSource

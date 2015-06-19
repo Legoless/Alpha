@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
-#import "ALPHANetworkCollector.h"
+#import "ALPHANetworkSource.h"
 
 #import "ALPHAScreenActionItem.h"
 
@@ -31,7 +31,7 @@
         
         [self registerAction:menuAction];
         
-        [self registerSource:[ALPHANetworkCollector sharedCollector]];
+        [self registerSource:[ALPHANetworkSource sharedCollector]];
     }
     
     return self;

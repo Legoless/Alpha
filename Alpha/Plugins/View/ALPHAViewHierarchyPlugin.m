@@ -53,7 +53,7 @@
         inspectAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconViewIdentifier];
         inspectAction.actionBlock = ^id(id sender)
         {
-            [[ALPHAManager sharedManager] addOverlayViewController:self.viewHierarchyViewController animated:YES completion:nil];
+            [[ALPHAManager defaultManager] addOverlayViewController:self.viewHierarchyViewController animated:YES completion:nil];
             
             return nil;
         };
@@ -88,7 +88,7 @@
     // Close was tapped on child view controller, we should remove the view controller from children
     //
     
-    [[ALPHAManager sharedManager] removeOverlayViewController:self.viewHierarchyViewController];
+    [[ALPHAManager defaultManager] removeOverlayViewController:self.viewHierarchyViewController];
 }
 
 - (BOOL)shouldHandleTouchAtPoint:(CGPoint)pointInWindow

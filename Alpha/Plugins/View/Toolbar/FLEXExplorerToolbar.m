@@ -41,47 +41,47 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.tintColor = [ALPHAManager sharedManager].theme.mainColor;
+        self.tintColor = [ALPHAManager defaultManager].theme.mainColor;
         
         NSMutableArray *toolbarItems = [NSMutableArray array];
         
         self.dragHandle = [[UIView alloc] init];
-        self.dragHandle.backgroundColor = [ALPHAManager sharedManager].theme.toolbarBackgroundColor;
+        self.dragHandle.backgroundColor = [ALPHAManager defaultManager].theme.toolbarBackgroundColor;
         [self addSubview:self.dragHandle];
         
         UIImage *dragHandle = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconDragHandleIdentifier];
         self.dragHandleImageView = [[UIImageView alloc] initWithImage:dragHandle];
-        self.dragHandleImageView.tintColor = [ALPHAManager sharedManager].theme.toolbarDetailTintColor;
+        self.dragHandleImageView.tintColor = [ALPHAManager defaultManager].theme.toolbarDetailTintColor;
         
         [self.dragHandle addSubview:self.dragHandleImageView];
         
         UIImage *globalsIcon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconInfoIdentifier];
         self.globalsItem = [FLEXToolbarItem toolbarItemWithTitle:@"info" image:globalsIcon];
-        self.globalsItem.tintColor = [ALPHAManager sharedManager].theme.toolbarDetailTintColor;
+        self.globalsItem.tintColor = [ALPHAManager defaultManager].theme.toolbarDetailTintColor;
         [self addSubview:self.globalsItem];
         [toolbarItems addObject:self.globalsItem];
         
         UIImage *listIcon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconViewIdentifier];
         self.hierarchyItem = [FLEXToolbarItem toolbarItemWithTitle:@"views" image:listIcon];
-        self.hierarchyItem.tintColor = [ALPHAManager sharedManager].theme.toolbarDetailTintColor;
+        self.hierarchyItem.tintColor = [ALPHAManager defaultManager].theme.toolbarDetailTintColor;
         [self addSubview:self.hierarchyItem];
         [toolbarItems addObject:self.hierarchyItem];
         
         UIImage *selectIcon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconSelectIdentifier];
         self.selectItem = [FLEXToolbarItem toolbarItemWithTitle:@"select" image:selectIcon];
-        self.selectItem.tintColor = [ALPHAManager sharedManager].theme.toolbarDetailTintColor;
+        self.selectItem.tintColor = [ALPHAManager defaultManager].theme.toolbarDetailTintColor;
         [self addSubview:self.selectItem];
         [toolbarItems addObject:self.selectItem];
         
         UIImage *moveIcon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconMoveIdentifier];
         self.moveItem = [FLEXToolbarItem toolbarItemWithTitle:@"move" image:moveIcon];
-        self.moveItem.tintColor = [ALPHAManager sharedManager].theme.toolbarDetailTintColor;
+        self.moveItem.tintColor = [ALPHAManager defaultManager].theme.toolbarDetailTintColor;
         [self addSubview:self.moveItem];
         [toolbarItems addObject:self.moveItem];
         
         UIImage *closeIcon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconCloseIdentifier];
         self.closeItem = [FLEXToolbarItem toolbarItemWithTitle:@"close" image:closeIcon];
-        self.closeItem.tintColor = [ALPHAManager sharedManager].theme.toolbarDetailTintColor;
+        self.closeItem.tintColor = [ALPHAManager defaultManager].theme.toolbarDetailTintColor;
         [self addSubview:self.closeItem];
         [toolbarItems addObject:self.closeItem];
         
@@ -89,7 +89,7 @@
         self.backgroundColor = [UIColor clearColor];
         
         self.selectedViewDescriptionContainer = [[UIView alloc] init];
-        self.selectedViewDescriptionContainer.backgroundColor = [ALPHAManager sharedManager].theme.toolbarDetailBackgroundColor;
+        self.selectedViewDescriptionContainer.backgroundColor = [ALPHAManager defaultManager].theme.toolbarDetailBackgroundColor;
         self.selectedViewDescriptionContainer.hidden = YES;
         [self addSubview:self.selectedViewDescriptionContainer];
         
@@ -100,7 +100,7 @@
         self.selectedViewDescriptionLabel = [[UILabel alloc] init];
         self.selectedViewDescriptionLabel.backgroundColor = [UIColor clearColor];
         self.selectedViewDescriptionLabel.font = [[self class] descriptionLabelFont];
-        self.selectedViewDescriptionLabel.textColor = [ALPHAManager sharedManager].theme.toolbarDetailTintColor;
+        self.selectedViewDescriptionLabel.textColor = [ALPHAManager defaultManager].theme.toolbarDetailTintColor;
         [self.selectedViewDescriptionContainer addSubview:self.selectedViewDescriptionLabel];
     }
     return self;
@@ -192,7 +192,7 @@
 
 + (UIFont *)descriptionLabelFont
 {
-    return [ALPHAManager sharedManager].theme.toolbarDetailFont;
+    return [ALPHAManager defaultManager].theme.toolbarDetailFont;
 }
 
 + (CGFloat)toolbarItemHeight

@@ -61,7 +61,7 @@
         _titleLabel = [[UILabel alloc] init];
         _titleLabel.font = [[self class] titleFont];
         _titleLabel.backgroundColor = self.backgroundColor;
-        _titleLabel.textColor = [ALPHAManager sharedManager].theme.fieldTitleColor;
+        _titleLabel.textColor = [ALPHAManager defaultManager].theme.fieldTitleColor;
         _titleLabel.numberOfLines = 0;
         [self addSubview:_titleLabel];
     }
@@ -115,12 +115,12 @@
 
 + (UIFont *)titleFont
 {
-    return [ALPHAManager sharedManager].theme.fieldTitleFont;
+    return [ALPHAManager defaultManager].theme.fieldTitleFont;
 }
 
 + (CGFloat)titleBottomPadding
 {
-    return [ALPHAManager sharedManager].theme.fieldTitleBottomMargin;
+    return [ALPHAManager defaultManager].theme.fieldTitleBottomMargin;
 }
 
 

@@ -25,12 +25,12 @@
     if (self) {
         self.inputTextView = [[UITextView alloc] init];
         self.inputTextView.font = [[self class] inputFont];
-        self.inputTextView.backgroundColor = [ALPHAManager sharedManager].theme.fieldInputBackgroundColor;
-        self.inputTextView.layer.borderColor = [[ALPHAManager sharedManager].theme.fieldInputBorderColor CGColor];
-        self.inputTextView.layer.borderWidth = [ALPHAManager sharedManager].theme.fieldInputBorderWidth;
+        self.inputTextView.backgroundColor = [ALPHAManager defaultManager].theme.fieldInputBackgroundColor;
+        self.inputTextView.layer.borderColor = [[ALPHAManager defaultManager].theme.fieldInputBorderColor CGColor];
+        self.inputTextView.layer.borderWidth = [ALPHAManager defaultManager].theme.fieldInputBorderWidth;
         self.inputTextView.autocapitalizationType = UITextAutocapitalizationTypeNone;
         self.inputTextView.autocorrectionType = UITextAutocorrectionTypeNo;
-        self.inputTextView.keyboardAppearance = [ALPHAManager sharedManager].theme.keyboardAppearance;
+        self.inputTextView.keyboardAppearance = [ALPHAManager defaultManager].theme.keyboardAppearance;
         self.inputTextView.delegate = self;
         self.inputTextView.inputAccessoryView = [self createToolBar];
         [self addSubview:self.inputTextView];
@@ -45,12 +45,12 @@
     UIToolbar *toolBar = [UIToolbar new];
     [toolBar sizeToFit];
     toolBar.translucent = NO;
-    toolBar.barTintColor = [ALPHAManager sharedManager].theme.fieldToolbarBackgroundColor;
-    toolBar.tintColor = [ALPHAManager sharedManager].theme.fieldToolbarTintColor;
+    toolBar.barTintColor = [ALPHAManager defaultManager].theme.fieldToolbarBackgroundColor;
+    toolBar.tintColor = [ALPHAManager defaultManager].theme.fieldToolbarTintColor;
     
     UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(textViewDone)];
-    [doneItem setTitleTextAttributes:@{ NSFontAttributeName : [ALPHAManager sharedManager].theme.fieldToolbarFont } forState:UIControlStateNormal];
+    [doneItem setTitleTextAttributes:@{ NSFontAttributeName : [ALPHAManager defaultManager].theme.fieldToolbarFont } forState:UIControlStateNormal];
     
     toolBar.items = @[ spaceItem, doneItem ];
     return toolBar;
@@ -119,7 +119,7 @@
 
 + (UIFont *)inputFont
 {
-    return [ALPHAManager sharedManager].theme.fieldInputFont;
+    return [ALPHAManager defaultManager].theme.fieldInputFont;
 }
 
 @end

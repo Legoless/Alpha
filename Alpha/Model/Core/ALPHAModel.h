@@ -6,8 +6,11 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHASerializableItem.h"
+#import "ALPHADataRenderer.h"
+#import "ALPHADataSource.h"
+#import "ALPHASerialization.h"
 #import "ALPHAIdentifiableItem.h"
+#import "ALPHAPlugin.h"
 
 @interface ALPHAModel : NSObject <ALPHASerializableItem, ALPHAIdentifiableItem>
 

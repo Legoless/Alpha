@@ -8,7 +8,7 @@
 
 #import "ALPHAEventPlugin.h"
 #import "ALPHAScreenActionItem.h"
-#import "ALPHAEventCollector.h"
+#import "ALPHAEventSource.h"
 #import "ALPHAAssetManager.h"
 #import "ALPHAEventIcon.h"
 
@@ -45,7 +45,7 @@
         // Collectors
         //
         
-        [self registerSource:[ALPHAEventCollector sharedCollector]];
+        [self registerSource:[ALPHAEventSource sharedCollector]];
     }
     
     return self;

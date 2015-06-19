@@ -103,7 +103,7 @@
 {
     if (!_theme)
     {
-        _theme = [ALPHAManager sharedManager].theme;
+        _theme = [ALPHAManager defaultManager].theme;
     }
     
     return _theme;

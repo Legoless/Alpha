@@ -59,14 +59,14 @@
     [super viewDidLoad];
     
 #if DEBUG
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"FLEX" style:UIBarButtonItemStylePlain target:self action:@selector(flexButtonTapped:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"FLEX" style:UIBarButtonItemStylePlain target:self action:@selector(alphaButtonTapped:)];
 #endif
 }
 
-- (void)flexButtonTapped:(id)sender
+- (void)alphaButtonTapped:(id)sender
 {
 #if DEBUG
-    [[ALPHAManager sharedManager] setHidden:NO];
+    [[ALPHAManager defaultManager] setHidden:NO];
 #endif
 }
 

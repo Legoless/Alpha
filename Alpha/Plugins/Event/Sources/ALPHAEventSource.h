@@ -1,5 +1,5 @@
 //
-//  ALPHAEventCollector.h
+//  ALPHAEventSource.h
 //  Alpha
 //
 //  Created by Dal Rupnik on 08/06/15.
@@ -12,7 +12,7 @@
 
 extern NSString *const ALPHAEventDataIdentifier;
 
-@interface ALPHAEventCollector : ALPHABaseDataSource
+@interface ALPHAEventSource : ALPHABaseDataSource
 
 + (instancetype)sharedCollector;
 

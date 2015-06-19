@@ -40,7 +40,7 @@
     self.server.delegate = self;
     [self.server start];
     
-    self.notification = [[ALPHAManager sharedManager] displayNotificationWithMessage:[self serverStatusText] completion:nil];
+    self.notification = [[ALPHAManager defaultManager] displayNotificationWithMessage:[self serverStatusText] completion:nil];
 }
 
 - (void)stop

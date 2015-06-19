@@ -1,5 +1,5 @@
 //
-//  ALPHAConsoleCollector.m
+//  ALPHAConsoleSource.m
 //  Alpha
 //
 //  Created by Dal Rupnik on 10/11/14.
@@ -11,15 +11,15 @@
 #import "ALPHAConsoleLog.h"
 #import "ALPHAConsoleModel.h"
 
-#import "ALPHAConsoleCollector.h"
+#import "ALPHAConsoleSource.h"
 
 NSString *const ALPHAConsoleDataIdentifier = @"com.unifiedsense.alpha.data.console";
 
-@interface ALPHAConsoleCollector ()
+@interface ALPHAConsoleSource ()
 
 @end
 
-@implementation ALPHAConsoleCollector
+@implementation ALPHAConsoleSource
 
 - (NSArray *)systemLogs
 {

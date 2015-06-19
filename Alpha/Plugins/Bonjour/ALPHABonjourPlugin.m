@@ -17,6 +17,8 @@
 
 #import "ALPHABonjourServer.h"
 
+#import "ALPHAManager.h"
+
 #import "ALPHACoreAssets.h"
 
 @interface ALPHABonjourPlugin ()
@@ -34,7 +36,11 @@
     if (!_server)
     {
         _server = [[ALPHABonjourServer alloc] init];
-        _server.source = [ALPHALocalSource new];
+        
+        ALPHALocalSource* source = [ALPHALocalSource new];
+        [source loadSourcesFromPlugins:[ALPHAManager defaultManager].plugins];
+        
+        _server.source = source;
     }
     
     return _server;

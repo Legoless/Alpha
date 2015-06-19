@@ -42,7 +42,7 @@
  *
  *  @return instance of FLEX manager
  */
-+ (instancetype)sharedManager;
++ (instancetype)defaultManager;
 
 /*!
  *  Integrates Alpha system into the app (called automatically by iOS, do not call)

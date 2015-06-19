@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
-#import "ALPHAFont.h"
-
 /*!
  *  Theme exposes colors and text attributes that is reflected throughout Alpha
  */

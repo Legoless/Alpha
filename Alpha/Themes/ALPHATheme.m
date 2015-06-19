@@ -6,16 +6,9 @@
 //  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
-#import <Haystack/Haystack.h>
-
-#import "ALPHANavigationController.h"
-
 #import "UIImage+Creation.h"
 
-#import "UIApplication+ALPHAPrivate.h"
-
 #import "ALPHATheme.h"
-#import "ALPHAUtility.h"
 
 @implementation ALPHATheme
 
@@ -75,22 +68,24 @@
     //
     // Applying theme as much as possible via UIAppearance
     //
+
+    Class navigationControllerClass = NSClassFromString(@"ALPHANavigationController");
+
+    if (navigationControllerClass)
+    {
+        [[UINavigationBar appearanceWhenContainedIn:navigationControllerClass, nil] setTitleTextAttributes:@{ NSFontAttributeName : self.headerTitleFont, NSForegroundColorAttributeName : self.headerTitleColor }];
     
-    [[UINavigationBar appearanceWhenContainedIn:[ALPHANavigationController class], nil] setTitleTextAttributes:@{ NSFontAttributeName : self.headerTitleFont, NSForegroundColorAttributeName : self.headerTitleColor }];
-    
-    [[UINavigationBar appearanceWhenContainedIn:[ALPHANavigationController class], nil] setBackgroundImage:[UIImage alpha_imageWithColor:self.headerBackgroundColor] forBarMetrics:UIBarMetricsDefault];
-    [[UINavigationBar appearanceWhenContainedIn:[ALPHANavigationController class], nil] setTranslucent:NO];
-    [[UINavigationBar appearanceWhenContainedIn:[ALPHANavigationController class], nil] setTintColor:self.headerButtonColor];
-    [[UINavigationBar appearanceWhenContainedIn:[ALPHANavigationController class], nil] setShadowImage:[UIImage alpha_imageWithColor:self.headerShadowColor]];
-    
-    [[UIBarButtonItem appearanceWhenContainedIn:[ALPHANavigationController class], nil] setTitleTextAttributes:@{ NSFontAttributeName : self.headerButtonFont, NSForegroundColorAttributeName : self.headerButtonColor } forState:UIControlStateNormal];
-    
+        [[UINavigationBar appearanceWhenContainedIn:navigationControllerClass, nil] setBackgroundImage:[UIImage alpha_imageWithColor:self.headerBackgroundColor] forBarMetrics:UIBarMetricsDefault];
+        [[UINavigationBar appearanceWhenContainedIn:navigationControllerClass, nil] setTranslucent:NO];
+        [[UINavigationBar appearanceWhenContainedIn:navigationControllerClass, nil] setTintColor:self.headerButtonColor];
+        [[UINavigationBar appearanceWhenContainedIn:navigationControllerClass, nil] setShadowImage:[UIImage alpha_imageWithColor:self.headerShadowColor]];
+
+        [[UIBarButtonItem appearanceWhenContainedIn:navigationControllerClass, nil] setTitleTextAttributes:@{ NSFontAttributeName : self.headerButtonFont, NSForegroundColorAttributeName : self.headerButtonColor } forState:UIControlStateNormal];
+
+        [[UISegmentedControl appearanceWhenContainedIn:navigationControllerClass, nil] setTitleTextAttributes:@{ NSFontAttributeName : self.searchBarFont, NSForegroundColorAttributeName : self.searchTintColor } forState:UIControlStateNormal];
+    }
+
     [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setDefaultTextAttributes:@{ NSFontAttributeName : self.searchBarFont, NSForegroundColorAttributeName : self.searchTintColor }];
-    
-    [[UISegmentedControl appearanceWhenContainedIn:[ALPHANavigationController class], nil] setTitleTextAttributes:@{ NSFontAttributeName : self.searchBarFont, NSForegroundColorAttributeName : self.searchTintColor } forState:UIControlStateNormal];
-    //id statusBar = [[UIApplication sharedApplication] statusBar];
-    
-    //[statusBar performSelector:NSSelectorFromString(@"setForegroundColor:") withObject:self.mainColor];
 }
 
 - (CGRect)rect:(CGRect)rect withMargin:(UIEdgeInsets)margin

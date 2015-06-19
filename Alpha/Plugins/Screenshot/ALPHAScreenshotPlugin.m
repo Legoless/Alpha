@@ -104,7 +104,7 @@
         NSError* error;
         [imageData writeToURL:fileURL options:NSDataWritingAtomic error:&error];
         
-        [[ALPHAManager sharedManager] displayNotificationWithMessage:[NSString stringWithFormat:@"Screenshot taken: %@", filename] forDuration:1.5];
+        [[ALPHAManager defaultManager] displayNotificationWithMessage:[NSString stringWithFormat:@"Screenshot taken: %@", filename] forDuration:1.5];
     }
 }
 
