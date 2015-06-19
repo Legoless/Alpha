@@ -110,50 +110,44 @@
  *
  *  @param fontFamily
  */
-- (void)setFontsWithFamily:(NSString *)fontFamily
+- (void)setFontsWithFamily:(NSString *)fontFamily defaultPointSize:(CGFloat)size
 {
-    [self setHeaderFontsWithFamily:fontFamily];
-    [self setContentFontsWithFamily:fontFamily];
+    [self setHeaderFontsWithFamily:fontFamily defaultPointSize:size];
+    [self setContentFontsWithFamily:fontFamily defaultPointSize:size];
 }
 
-- (void)setHeaderFontsWithFamily:(NSString *)fontFamily
+- (void)setHeaderFontsWithFamily:(NSString *)fontFamily defaultPointSize:(CGFloat)size
 {
-    self.headerTitleFont = [UIFont fontWithName:fontFamily size:17.0];
-    self.headerButtonFont = [UIFont fontWithName:fontFamily size:14.0];
+    self.headerTitleFont = [UIFont fontWithName:fontFamily size:size + 5.0];
+    self.headerButtonFont = [UIFont fontWithName:fontFamily size:size + 2.0];
     
-    self.notificationFont = [UIFont fontWithName:fontFamily size:8.0];
-    self.toolbarTitleFont = [UIFont fontWithName:fontFamily size:10.0];
+    self.notificationFont = [UIFont fontWithName:fontFamily size:size - 4.0];
+    self.toolbarTitleFont = [UIFont fontWithName:fontFamily size:size - 2.0];
     
-    self.toolbarDetailFont = [UIFont fontWithName:fontFamily size:8.0];
+    self.toolbarDetailFont = [UIFont fontWithName:fontFamily size:size - 4.0];
     
-    self.searchBarFont = [UIFont fontWithName:fontFamily size:12.0];
-    self.fieldInputFont = [UIFont fontWithName:fontFamily size:12.0];
-    
-    self.headerTitleFont = [UIFont fontWithName:fontFamily size:17.0];
-    self.headerTitleFont = [UIFont fontWithName:fontFamily size:17.0];
-    self.headerTitleFont = [UIFont fontWithName:fontFamily size:17.0];
-    self.headerTitleFont = [UIFont fontWithName:fontFamily size:17.0];
-    self.headerTitleFont = [UIFont fontWithName:fontFamily size:17.0];
+    self.searchBarFont = [UIFont fontWithName:fontFamily size:size];
+    self.fieldInputFont = [UIFont fontWithName:fontFamily size:size];
 }
 
-- (void)setContentFontsWithFamily:(NSString *)fontFamily
+- (void)setContentFontsWithFamily:(NSString *)fontFamily defaultPointSize:(CGFloat)size
 {
-    self.cellTitleFont = [UIFont fontWithName:fontFamily size:12.0];
-    self.cellSubtitleFont = [UIFont fontWithName:fontFamily size:10.0];
-    self.cellDetailFont = [UIFont fontWithName:fontFamily size:12.0];
+    self.cellTitleFont = [UIFont fontWithName:fontFamily size:size];
+    self.cellSubtitleFont = [UIFont fontWithName:fontFamily size:size - 2.0];
+    self.cellDetailFont = [UIFont fontWithName:fontFamily size:size];
     
-    self.tableHeaderFont = [UIFont fontWithName:fontFamily size:11.0];
-    self.tableFooterFont = [UIFont fontWithName:fontFamily size:11.0];
+    self.tableHeaderFont = [UIFont fontWithName:fontFamily size:size - 1.0];
+    self.tableFooterFont = [UIFont fontWithName:fontFamily size:size - 1.0];
     
-    self.tableHeaderGroupedFont = [UIFont fontWithName:fontFamily size:11.0];
-    self.tableFooterGroupedFont = [UIFont fontWithName:fontFamily size:11.0];
+    self.tableHeaderGroupedFont = [UIFont fontWithName:fontFamily size:size - 1.0];
+    self.tableFooterGroupedFont = [UIFont fontWithName:fontFamily size:size - 1.0];
     
-    self.fieldTitleFont = [UIFont fontWithName:fontFamily size:12.0];
+    self.fieldTitleFont = [UIFont fontWithName:fontFamily size:size];
     
-    self.fieldToolbarFont = [UIFont fontWithName:fontFamily size:10.0];
+    self.fieldToolbarFont = [UIFont fontWithName:fontFamily size:size - 2.0];
     
-    self.fieldColorFont = [UIFont fontWithName:fontFamily size:12.0];
-    self.fieldColorComponentFont = [UIFont fontWithName:fontFamily size:12.0];
+    self.fieldColorFont = [UIFont fontWithName:fontFamily size:size];
+    self.fieldColorComponentFont = [UIFont fontWithName:fontFamily size:size];
 }
 
 @end

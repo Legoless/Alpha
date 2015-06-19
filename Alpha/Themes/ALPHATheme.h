@@ -233,10 +233,10 @@
 
 - (CGRect)rect:(CGRect)rect withMargin:(UIEdgeInsets)margin;
 
-- (void)setFontsWithFamily:(NSString *)fontFamily;
+- (void)setFontsWithFamily:(NSString *)fontFamily defaultPointSize:(CGFloat)size;
 
-- (void)setHeaderFontsWithFamily:(NSString *)fontFamily;
+- (void)setHeaderFontsWithFamily:(NSString *)fontFamily defaultPointSize:(CGFloat)size;
 
-- (void)setContentFontsWithFamily:(NSString *)fontFamily;
+- (void)setContentFontsWithFamily:(NSString *)fontFamily defaultPointSize:(CGFloat)size;
 
 @end

@@ -17,8 +17,8 @@
 {
     ALPHATheme *theme = [ALPHATheme theme];
     
-    [theme setHeaderFontsWithFamily:self.headerFontFamily];
-    [theme setContentFontsWithFamily:self.contentFontFamily];
+    [theme setHeaderFontsWithFamily:self.headerFontFamily defaultPointSize:self.headerFontSize];
+    [theme setContentFontsWithFamily:self.contentFontFamily defaultPointSize:self.contentFontSize];
     
     //
     // Light modifier so we get accents lighter or darker based on theme
@@ -92,14 +92,16 @@
 + (instancetype)defaultPalette
 {
     ALPHAColorPalette *palette = [[ALPHAColorPalette alloc] init];
-    palette.headerFontFamily = @"Menlo";
+    palette.headerFontFamily = @"GillSans";
+    palette.headerFontSize = 14.0;
     palette.contentFontFamily = @"Menlo";
+    palette.contentFontSize = 12.0;
     
     palette.mainColor = [UIColor colorWithWhite:0.1 alpha:1.0];
     palette.accentColor = [UIColor whiteColor];
     palette.backgroundColor = [UIColor colorWithWhite:0.05 alpha:1.0];
     palette.contentColor = [UIColor blackColor];
-    palette.textColor = [UIColor redColor];
+    palette.textColor = [UIColor whiteColor];
     
     return palette;
 }

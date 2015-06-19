@@ -21,11 +21,13 @@
  *  - Notification overlay
  */
 @property (nonatomic, strong) NSString *headerFontFamily;
+@property (nonatomic, assign) CGFloat headerFontSize;
 
 /*!
  *  Font Family used for all content.
  */
 @property (nonatomic, strong) NSString *contentFontFamily;
+@property (nonatomic, assign) CGFloat contentFontSize;
 
 #pragma mark - Colors
 
