@@ -20,11 +20,12 @@
     palette.contentFontFamily = @"Menlo";
     palette.contentFontSize = 12.0;
     
-    palette.mainColor = UIColorFromKey(@"#E46A6B");
-    palette.accentColor = UIColorFromKey(@"#3F3F3F");
-    palette.backgroundColor = UIColorFromKey(@"#EEEEEE");
-    palette.contentColor = [UIColor whiteColor];
-    palette.textColor = UIColorFromKey(@"#040404");
+    palette.mainColor = UIColorFromKey(@"#07263B");
+    palette.accentColor = UIColorFromKey(@"#85E3EB");
+    palette.backgroundColor = UIColorFromKey(@"#07263B");
+    palette.contentColor = UIColorFromKey(@"#0B304A");
+    palette.contentTintColor = UIColorFromKey(@"#E5D947");
+    palette.textColor = UIColorFromKey(@"#95B3CB");
     
     return palette;
 }
