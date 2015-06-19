@@ -174,7 +174,7 @@
 
 + (UIFont *)labelFont
 {
-    return [[ALPHAManager sharedManager].theme themeFontOfSize:14.0];
+    return [ALPHAManager sharedManager].theme.fieldTitleFont;
 }
 
 + (CGFloat)dividerLineHeight

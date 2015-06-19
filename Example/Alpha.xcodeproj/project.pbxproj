@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3830B2DD1B34109A00E1C9F9 /* ALPHAFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 3830B2DC1B34109A00E1C9F9 /* ALPHAFont.m */; };
 		3830B2E01B341B5600E1C9F9 /* ALPHAColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 3830B2DF1B341B5600E1C9F9 /* ALPHAColorPalette.m */; };
+		3830B2E31B3436A800E1C9F9 /* UIFont+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 3830B2E21B3436A800E1C9F9 /* UIFont+Convenience.m */; };
 		38353E891B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38353E881B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m */; };
 		38655F5F1B31F62500482338 /* UIColor+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = 38655F5E1B31F62500482338 /* UIColor+Random.m */; };
 		38655F621B31F6AD00482338 /* NSString+Entities.m in Sources */ = {isa = PBXBuildFile; fileRef = 38655F611B31F6AD00482338 /* NSString+Entities.m */; };
@@ -247,6 +248,8 @@
 		3830B2DC1B34109A00E1C9F9 /* ALPHAFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAFont.m; sourceTree = "<group>"; };
 		3830B2DE1B341B5600E1C9F9 /* ALPHAColorPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAColorPalette.h; sourceTree = "<group>"; };
 		3830B2DF1B341B5600E1C9F9 /* ALPHAColorPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAColorPalette.m; sourceTree = "<group>"; };
+		3830B2E11B3436A700E1C9F9 /* UIFont+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Convenience.h"; sourceTree = "<group>"; };
+		3830B2E21B3436A800E1C9F9 /* UIFont+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Convenience.m"; sourceTree = "<group>"; };
 		38353E871B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLCatalogTableTableViewController.h; sourceTree = "<group>"; };
 		38353E881B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLCatalogTableTableViewController.m; sourceTree = "<group>"; };
 		38525D7E1B0C91E4006644A1 /* VisualVoicemail.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VisualVoicemail.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/PrivateFrameworks/VisualVoicemail.framework; sourceTree = DEVELOPER_DIR; };
@@ -1481,6 +1484,8 @@
 				3830B2DF1B341B5600E1C9F9 /* ALPHAColorPalette.m */,
 				3830B2DB1B34109A00E1C9F9 /* ALPHAFont.h */,
 				3830B2DC1B34109A00E1C9F9 /* ALPHAFont.m */,
+				3830B2E11B3436A700E1C9F9 /* UIFont+Convenience.h */,
+				3830B2E21B3436A800E1C9F9 /* UIFont+Convenience.m */,
 			);
 			path = Themes;
 			sourceTree = "<group>";
@@ -2329,6 +2334,7 @@
 				67E64E3263D178721CE31B7F /* ALPHANetworkConverter.m in Sources */,
 				67E64272D559D736DC725ADF /* ALPHANetworkPlugin.m in Sources */,
 				67E64DF271AF0FF5E9C6CA69 /* ALPHABootstrap.m in Sources */,
+				3830B2E31B3436A800E1C9F9 /* UIFont+Convenience.m in Sources */,
 				67E64B50799FF8CAD2F69327 /* ALPHAEnvironmentSource.m in Sources */,
 				67E64F9DBC325184E9197D74 /* ALPHABootstrapPlugin.m in Sources */,
 				38E435DF1B31A7F6009AECFF /* ALPHASerialization.m in Sources */,

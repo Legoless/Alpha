@@ -120,8 +120,8 @@
     self.view.backgroundColor = self.theme.backgroundColor;
     
     self.imageView = [[UIImageView alloc] init];
-    self.imageView.layer.borderWidth = 1.0;
-    self.imageView.layer.borderColor = [[UIColor darkGrayColor] CGColor];
+    self.imageView.layer.borderWidth = self.theme.imageViewBorderWidth;
+    self.imageView.layer.borderColor = [self.theme.imageViewBorderColor CGColor];
     
     self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     self.scrollView.delegate = self;

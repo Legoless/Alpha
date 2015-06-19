@@ -32,17 +32,17 @@
 @property (nonatomic, assign) UIStatusBarStyle statusBarStyle;
 
 /*!
- *  Content font family
+ *  Keyboard appearance in Alpha fields
  */
-@property (nonatomic, strong) NSString *contentFontFamily;
+@property (nonatomic, assign) UIKeyboardAppearance keyboardAppearance;
 
 #pragma mark - Navigation Bar
 
 /*!
  *  Navigation bar font family
  */
-@property (nonatomic, strong) ALPHAFont *headerTitleFont;
-@property (nonatomic, strong) ALPHAFont *headerButtonFont;
+@property (nonatomic, strong) UIFont *headerTitleFont;
+@property (nonatomic, strong) UIFont *headerButtonFont;
 
 @property (nonatomic, strong) UIColor *headerTitleColor;
 @property (nonatomic, strong) UIColor *headerButtonColor;
@@ -57,7 +57,7 @@
 
 @property (nonatomic, strong) UIColor *notificationBackgroundColor;
 @property (nonatomic, strong) UIColor *notificationTintColor;
-@property (nonatomic, strong) ALPHAFont *notificationFont;
+@property (nonatomic, strong) UIFont *notificationFont;
 
 #pragma mark - Main Menu
 
@@ -87,13 +87,22 @@
 @property (nonatomic, strong) UIColor *toolbarBackgroundColor;
 @property (nonatomic, strong) UIColor *toolbarSelectedColor;
 @property (nonatomic, strong) UIColor *toolbarDisabledColor;
+@property (nonatomic, strong) UIColor *toolbarHighlightedColor;
 
 /*!
  *  Usually matches menu tint color
  */
 @property (nonatomic, strong) UIColor *toolbarTintColor;
+@property (nonatomic, strong) UIColor *toolbarTintDisabledColor;
 
-@property (nonatomic, strong) ALPHAFont *toolbarTitleFont;
+@property (nonatomic, strong) UIFont *toolbarTitleFont;
+
+/*!
+ *  Toolbar optional detail
+ */
+@property (nonatomic, strong) UIColor *toolbarDetailBackgroundColor;
+@property (nonatomic, strong) UIColor *toolbarDetailTintColor;
+@property (nonatomic, strong) UIFont *toolbarDetailFont;
 
 #pragma mark - Search & Segment Bar
 
@@ -110,7 +119,7 @@
 /*!
  *  Applied to both segments (scopes) and search box
  */
-@property (nonatomic, strong) ALPHAFont *searchBarFont;
+@property (nonatomic, strong) UIFont *searchBarFont;
 
 #pragma mark - Table View General
 
@@ -118,10 +127,16 @@
 
 #pragma mark - Table View Cell
 
+@property (nonatomic, strong) UIColor *cellTintColor;
+
 @property (nonatomic, strong) UIColor *cellBackgroundColor;
 @property (nonatomic, strong) UIColor *cellSelectedBackgroundColor;
 
 @property (nonatomic, strong) UIColor *cellTitleColor;
+
+@property (nonatomic, strong) UIFont *cellTitleFont;
+@property (nonatomic, strong) UIFont *cellSubtitleFont;
+@property (nonatomic, strong) UIFont *cellDetailFont;
 
 /*!
  *  Cell subtitle color (when cell is in subtitle style)
@@ -137,22 +152,67 @@
 
 @property (nonatomic, strong) UIColor *tableHeaderBackgroundColor;
 @property (nonatomic, strong) UIColor *tableHeaderFontColor;
-@property (nonatomic, strong) ALPHAFont *tableHeaderFont;
+@property (nonatomic, strong) UIFont *tableHeaderFont;
+@property (nonatomic, assign) CGFloat tableHeaderHeight;
+
+@property (nonatomic, assign) UIEdgeInsets tableHeaderMargin;
 
 @property (nonatomic, strong) UIColor *tableFooterBackgroundColor;
 @property (nonatomic, strong) UIColor *tableFooterFontColor;
-@property (nonatomic, strong) ALPHAFont *tableFooterFont;
+@property (nonatomic, strong) UIFont *tableFooterFont;
+@property (nonatomic, assign) CGFloat tableFooterHeight;
+
+@property (nonatomic, assign) UIEdgeInsets tableFooterMargin;
 
 #pragma mark - Table View Grouped
 
 /*!
  *  Grouped table view uses default background color, so specify font and colors here
  */
+@property (nonatomic, strong) UIColor *tableHeaderGroupedBackgroundColor;
 @property (nonatomic, strong) UIColor *tableHeaderGroupedFontColor;
-@property (nonatomic, strong) ALPHAFont *tableHeaderGroupedFont;
+@property (nonatomic, strong) UIFont *tableHeaderGroupedFont;
 
+@property (nonatomic, assign) UIEdgeInsets tableHeaderGroupedMargin;
+@property (nonatomic, assign) CGFloat tableHeaderGroupedHeight;
+
+@property (nonatomic, strong) UIColor *tableFooterGroupedBackgroundColor;
 @property (nonatomic, strong) UIColor *tableFooterGroupedFontColor;
-@property (nonatomic, strong) ALPHAFont *tableFooterGroupedFont;
+@property (nonatomic, strong) UIFont *tableFooterGroupedFont;
+
+@property (nonatomic, assign) UIEdgeInsets tableFooterGroupedMargin;
+@property (nonatomic, assign) CGFloat tableFooterGroupedHeight;
+
+#pragma mark - Field Editor
+
+@property (nonatomic, strong) UIColor *fieldSeparatorColor;
+@property (nonatomic, strong) UIColor *fieldTintColor;
+
+@property (nonatomic, strong) UIFont *fieldTitleFont;
+@property (nonatomic, strong) UIColor *fieldTitleColor;
+
+@property (nonatomic, assign) CGFloat fieldTitleBottomMargin;
+
+@property (nonatomic, strong) UIColor *fieldToolbarBackgroundColor;
+@property (nonatomic, strong) UIColor *fieldToolbarTintColor;
+@property (nonatomic, strong) UIFont *fieldToolbarFont;
+
+#pragma mark - Text Editor
+
+@property (nonatomic, strong) UIFont *fieldInputFont;
+@property (nonatomic, strong) UIColor *fieldInputBackgroundColor;
+@property (nonatomic, strong) UIColor *fieldInputBorderColor;
+@property (nonatomic, assign) CGFloat fieldInputBorderWidth;
+
+#pragma mark - Color Editor
+
+@property (nonatomic, strong) UIFont *fieldColorFont;
+@property (nonatomic, strong) UIFont *fieldColorComponentFont;
+
+#pragma mark - Image Rendering
+
+@property (nonatomic, strong) UIColor *imageViewBorderColor;
+@property (nonatomic, assign) CGFloat imageViewBorderWidth;
 
 #pragma mark - Initialization
 
@@ -174,5 +234,9 @@
  *  @param window Alpha Window
  */
 - (void)applyInWindow:(UIWindow *)window;
+
+#pragma mark - Utility methods
+
+- (CGRect)rect:(CGRect)rect withMargin:(UIEdgeInsets)margin;
 
 @end

@@ -83,7 +83,7 @@
         self.backgroundColor = [UIColor clearColor];
         
         self.selectedViewDescriptionContainer = [[UIView alloc] init];
-        self.selectedViewDescriptionContainer.backgroundColor = [ALPHAManager sharedManager].theme.highlightedBackgroundColor;
+        self.selectedViewDescriptionContainer.backgroundColor = [ALPHAManager sharedManager].theme.toolbarDetailBackgroundColor;
         self.selectedViewDescriptionContainer.hidden = YES;
         [self addSubview:self.selectedViewDescriptionContainer];
         
@@ -94,7 +94,7 @@
         self.selectedViewDescriptionLabel = [[UILabel alloc] init];
         self.selectedViewDescriptionLabel.backgroundColor = [UIColor clearColor];
         self.selectedViewDescriptionLabel.font = [[self class] descriptionLabelFont];
-        self.selectedViewDescriptionLabel.textColor = [ALPHAManager sharedManager].theme.mainColor;
+        self.selectedViewDescriptionLabel.textColor = [ALPHAManager sharedManager].theme.toolbarDetailTintColor;
         [self.selectedViewDescriptionContainer addSubview:self.selectedViewDescriptionLabel];
     }
     return self;
@@ -186,7 +186,7 @@
 
 + (UIFont *)descriptionLabelFont
 {
-    return [UIFont systemFontOfSize:12.0];
+    return [ALPHAManager sharedManager].theme.toolbarDetailFont;
 }
 
 + (CGFloat)toolbarItemHeight

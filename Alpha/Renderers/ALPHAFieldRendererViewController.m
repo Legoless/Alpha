@@ -83,8 +83,8 @@
     
     self.fieldEditorView = [[ALPHAFieldEditorView alloc] init];
     self.fieldEditorView.backgroundColor = self.theme.backgroundColor;
-    self.fieldEditorView.separatorColor = self.theme.highlightedBackgroundColor;
-    self.fieldEditorView.tintColor = self.theme.mainColor;
+    self.fieldEditorView.separatorColor = self.theme.fieldSeparatorColor;
+    self.fieldEditorView.tintColor = self.theme.fieldTintColor;
     
     [self.scrollView addSubview:self.fieldEditorView];
     
@@ -150,7 +150,7 @@
 {
     if ([self.object isKindOfClass:[ALPHAObjectElement class]])
     {
-        ALPHAObjectElement * reference = self.object;
+        ALPHAObjectElement *reference = self.object;
         
         self.fieldEditorView.targetDescription = [NSString stringWithFormat:@"%@ %@", reference.objectClass, reference.objectPointer];
     }

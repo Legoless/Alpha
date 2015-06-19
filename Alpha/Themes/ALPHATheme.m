@@ -52,7 +52,7 @@
     // Applying theme as much as possible via UIAppearance
     //
     
-    [[UINavigationBar appearanceWhenContainedIn:[ALPHANavigationController class], nil] setTitleTextAttributes:@{ NSFontAttributeName : self.headerTitleFont.font, NSForegroundColorAttributeName : self.headerTitleColor }];
+    [[UINavigationBar appearanceWhenContainedIn:[ALPHANavigationController class], nil] setTitleTextAttributes:@{ NSFontAttributeName : self.headerTitleFont, NSForegroundColorAttributeName : self.headerTitleColor }];
     
     [[UINavigationBar appearanceWhenContainedIn:[ALPHANavigationController class], nil] setBackgroundImage:[UIImage alpha_imageWithColor:self.headerBackgroundColor] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearanceWhenContainedIn:[ALPHANavigationController class], nil] setTranslucent:NO];
@@ -60,12 +60,23 @@
     
     [[UIBarButtonItem appearanceWhenContainedIn:[ALPHANavigationController class], nil] setTitleTextAttributes:@{ NSFontAttributeName : self.headerButtonFont, NSForegroundColorAttributeName : self.headerButtonColor } forState:UIControlStateNormal];
     
-    [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setDefaultTextAttributes:@{ NSFontAttributeName : self.searchBarFont.font, NSForegroundColorAttributeName : self.searchTintColor }];
+    [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setDefaultTextAttributes:@{ NSFontAttributeName : self.searchBarFont, NSForegroundColorAttributeName : self.searchTintColor }];
     
-    [[UISegmentedControl appearanceWhenContainedIn:[ALPHANavigationController class], nil] setTitleTextAttributes:@{ NSFontAttributeName : self.searchBarFont.font, NSForegroundColorAttributeName : self.searchTintColor } forState:UIControlStateNormal];
+    [[UISegmentedControl appearanceWhenContainedIn:[ALPHANavigationController class], nil] setTitleTextAttributes:@{ NSFontAttributeName : self.searchBarFont, NSForegroundColorAttributeName : self.searchTintColor } forState:UIControlStateNormal];
     //id statusBar = [[UIApplication sharedApplication] statusBar];
     
     //[statusBar performSelector:NSSelectorFromString(@"setForegroundColor:") withObject:self.mainColor];
+}
+
+- (CGRect)rect:(CGRect)rect withMargin:(UIEdgeInsets)margin
+{
+    //CGRect newRect = CGRectZero;
+    rect.origin.x += margin.left;
+    rect.origin.y += margin.top;
+    rect.size.width -= margin.left + margin.right;
+    rect.size.height -= margin.top + margin.bottom;
+    
+    return rect;
 }
 
 

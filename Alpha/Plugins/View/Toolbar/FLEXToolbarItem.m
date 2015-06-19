@@ -23,11 +23,14 @@
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {
-        self.backgroundColor = [ALPHAManager sharedManager].theme.backgroundColor;
-        [self setTitleColor:[ALPHAManager sharedManager].theme.mainColor forState:UIControlStateNormal];
-        [self setTitleColor:[ALPHAManager sharedManager].theme.disabledTitleColor forState:UIControlStateDisabled];
+    
+    if (self)
+    {
+        self.backgroundColor = [ALPHAManager sharedManager].theme.toolbarBackgroundColor;
+        [self setTitleColor:[ALPHAManager sharedManager].theme.toolbarTintColor forState:UIControlStateNormal];
+        [self setTitleColor:[ALPHAManager sharedManager].theme.toolbarTintDisabledColor forState:UIControlStateDisabled];
     }
+    
     return self;
 }
 
@@ -36,7 +39,7 @@
     ALPHATheme* theme = [ALPHAManager sharedManager].theme;
     
     FLEXToolbarItem *toolbarItem = [self buttonWithType:UIButtonTypeCustom];
-    NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:@{ NSFontAttributeName : [theme themeFontOfSize:10.0], NSForegroundColorAttributeName : theme.mainColor }];
+    NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:@{ NSFontAttributeName : theme.toolbarTitleFont, NSForegroundColorAttributeName : theme.toolbarTintColor }];
     toolbarItem.attributedTitle = attributedTitle;
     [toolbarItem setAttributedTitle:attributedTitle forState:UIControlStateNormal];
     [toolbarItem setImage:image forState:UIControlStateNormal];
@@ -62,15 +65,19 @@
 
 - (void)updateBackgroundColor
 {
-    if (self.highlighted) {
-        self.backgroundColor = [ALPHAManager sharedManager].theme.highlightedBackgroundColor;
-    } else if (self.selected) {
-        self.backgroundColor = [ALPHAManager sharedManager].theme.selectedBackgroundColor;
-    } else {
-        self.backgroundColor = [ALPHAManager sharedManager].theme.backgroundColor;
+    if (self.highlighted)
+    {
+        self.backgroundColor = [ALPHAManager sharedManager].theme.toolbarHighlightedColor;
+    }
+    else if (self.selected)
+    {
+        self.backgroundColor = [ALPHAManager sharedManager].theme.toolbarSelectedColor;
+    }
+    else
+    {
+        self.backgroundColor = [ALPHAManager sharedManager].theme.toolbarBackgroundColor;
     }
 }
-
 
 #pragma mark - UIButton Layout Overrides
 
@@ -85,7 +92,6 @@
     titleRect.origin.x = contentRect.origin.x + ALPHAFloor((contentRect.size.width - titleSize.width) / 2.0);
     return titleRect;
 }
-
 
 - (CGRect)imageRectForContentRect:(CGRect)contentRect
 {

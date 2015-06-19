@@ -46,7 +46,8 @@
 
 - (void)setTitle:(NSString *)title
 {
-    if (![_title isEqual:title]) {
+    if (![_title isEqual:title])
+    {
         _title = title;
         self.titleLabel.text = title;
         [self setNeedsLayout];
@@ -55,14 +56,16 @@
 
 - (UILabel *)titleLabel
 {
-    if (!_titleLabel) {
+    if (!_titleLabel)
+    {
         _titleLabel = [[UILabel alloc] init];
         _titleLabel.font = [[self class] titleFont];
         _titleLabel.backgroundColor = self.backgroundColor;
-        _titleLabel.textColor = [UIColor colorWithWhite:0.3 alpha:1.0];
+        _titleLabel.textColor = [ALPHAManager sharedManager].theme.fieldTitleColor;
         _titleLabel.numberOfLines = 0;
         [self addSubview:_titleLabel];
     }
+    
     return _titleLabel;
 }
 
@@ -74,7 +77,9 @@
 - (CGFloat)topInputFieldVerticalLayoutGuide
 {
     CGFloat verticalLayoutGuide = 0;
-    if (self.showsTitle) {
+    
+    if (self.showsTitle)
+    {
         CGFloat titleHeight = [self.titleLabel sizeThatFits:self.bounds.size].height;
         verticalLayoutGuide = titleHeight + [[self class] titleBottomPadding];
     }
@@ -110,12 +115,13 @@
 
 + (UIFont *)titleFont
 {
-    return [[ALPHAManager sharedManager].theme themeFontOfSize:12.0];
+    return [ALPHAManager sharedManager].theme.fieldTitleFont;
 }
 
 + (CGFloat)titleBottomPadding
 {
-    return 4.0;
+    // 4.0
+    return [ALPHAManager sharedManager].theme.fieldTitleBottomMargin;
 }
 
 

@@ -57,7 +57,7 @@
     
     ALPHATheme* theme = [ALPHAManager sharedManager].theme;
     
-    UIFont *font = [theme boldThemeFontOfSize:14.0];
+    UIFont *font = theme.cellTitleFont;
     
     NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:string attributes:@{ NSFontAttributeName : font }];
     
@@ -136,7 +136,7 @@
     
     ALPHATheme* theme = [ALPHAManager sharedManager].theme;
     
-    UIFont *font = [theme themeFontOfSize:10.0];
+    UIFont *font = [theme.cellSubtitleFont fontWithSize:10.0];
     
     NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:detailString attributes:@{ NSFontAttributeName : font }];
     

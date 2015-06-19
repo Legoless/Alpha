@@ -25,11 +25,12 @@
     if (self) {
         self.inputTextView = [[UITextView alloc] init];
         self.inputTextView.font = [[self class] inputFont];
-        self.inputTextView.backgroundColor = [UIColor whiteColor];
-        self.inputTextView.layer.borderColor = [[UIColor blackColor] CGColor];
-        self.inputTextView.layer.borderWidth = 1.0;
+        self.inputTextView.backgroundColor = [ALPHAManager sharedManager].theme.fieldInputBackgroundColor;
+        self.inputTextView.layer.borderColor = [[ALPHAManager sharedManager].theme.fieldInputBorderColor CGColor];
+        self.inputTextView.layer.borderWidth = [ALPHAManager sharedManager].theme.fieldInputBorderWidth;
         self.inputTextView.autocapitalizationType = UITextAutocapitalizationTypeNone;
         self.inputTextView.autocorrectionType = UITextAutocorrectionTypeNo;
+        self.inputTextView.keyboardAppearance = [ALPHAManager sharedManager].theme.keyboardAppearance;
         self.inputTextView.delegate = self;
         self.inputTextView.inputAccessoryView = [self createToolBar];
         [self addSubview:self.inputTextView];
@@ -43,9 +44,15 @@
 {
     UIToolbar *toolBar = [UIToolbar new];
     [toolBar sizeToFit];
+    toolBar.translucent = NO;
+    toolBar.barTintColor = [ALPHAManager sharedManager].theme.fieldToolbarBackgroundColor;
+    toolBar.tintColor = [ALPHAManager sharedManager].theme.fieldToolbarTintColor;
+    
     UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(textViewDone)];
-    toolBar.items = @[spaceItem, doneItem];
+    [doneItem setTitleTextAttributes:@{ NSFontAttributeName : [ALPHAManager sharedManager].theme.fieldToolbarFont } forState:UIControlStateNormal];
+    
+    toolBar.items = @[ spaceItem, doneItem ];
     return toolBar;
 }
 
@@ -54,7 +61,6 @@
     [self.inputTextView resignFirstResponder];
 }
 
-
 #pragma mark - Text View Changes
 
 - (void)textViewDidChange:(UITextView *)textView
@@ -62,14 +68,12 @@
     [self.delegate argumentInputViewValueDidChange:self];
 }
 
-
 #pragma mark - Superclass Overrides
 
 - (BOOL)inputViewIsFirstResponder
 {
     return self.inputTextView.isFirstResponder;
 }
-
 
 #pragma mark - Layout and Sizing
 
@@ -111,12 +115,11 @@
     return fitSize;
 }
 
-
 #pragma mark - Class Helpers
 
 + (UIFont *)inputFont
 {
-    return [[ALPHAManager sharedManager].theme themeFontOfSize:14.0];
+    return [ALPHAManager sharedManager].theme.fieldInputFont;
 }
 
 @end

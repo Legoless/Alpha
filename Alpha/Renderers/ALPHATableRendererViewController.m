@@ -114,7 +114,7 @@
     _theme = theme;
     
     self.view.backgroundColor = theme.backgroundColor;
-    self.tableView.separatorColor = theme.highlightedBackgroundColor;
+    self.tableView.separatorColor = theme.tableSeparatorColor;
 }
 
 #pragma mark - Initialization
@@ -227,7 +227,7 @@
             cell = [[class alloc] initWithStyle:item.style reuseIdentifier:cellIdentifier];
         }
         
-        [self cell:cell applyTheme:self.theme];
+        [self cell:cell applyTheme:self.theme item:item];
     }
     
     //
@@ -241,22 +241,29 @@
 
 #pragma mark - Cell Configuration
 
-- (void)cell:(UITableViewCell *)cell applyTheme:(ALPHATheme *)theme
+- (void)cell:(UITableViewCell *)cell applyTheme:(ALPHATheme *)theme item:(ALPHAScreenItem *)item
 {
-    cell.textLabel.font = [theme themeFontWithFont:cell.textLabel.font];
-    cell.detailTextLabel.font = [theme themeFontWithFont:cell.detailTextLabel.font];
+    cell.textLabel.font = theme.cellTitleFont;
+    cell.textLabel.textColor = theme.cellTitleColor;
     
-    cell.textLabel.textColor = theme.mainColor;
-    cell.detailTextLabel.textColor = [theme.mainColor colorWithAlphaComponent:0.5];
-    
-    cell.backgroundColor = theme.backgroundColor;
+    if (item.style == UITableViewCellStyleSubtitle)
+    {
+        cell.detailTextLabel.font = theme.cellSubtitleFont;
+        cell.detailTextLabel.textColor = theme.cellSubtitleColor;
+    }
+    else
+    {
+        cell.detailTextLabel.font = theme.cellDetailFont;
+        cell.detailTextLabel.textColor = theme.cellDetailColor;
+    }
+    cell.backgroundColor = theme.cellBackgroundColor;
     cell.selectedBackgroundView = [UIView new];
-    cell.selectedBackgroundView.backgroundColor = theme.highlightedBackgroundColor;
+    cell.selectedBackgroundView.backgroundColor = theme.cellSelectedBackgroundColor;
     
     cell.detailTextLabel.minimumScaleFactor = 0.5;
     cell.detailTextLabel.adjustsFontSizeToFitWidth = YES;
     
-    cell.tintColor = theme.mainColor;
+    cell.tintColor = theme.cellTintColor;
     //cell.detailTextLabel.adjustsLetterSpacingToFitWidth = YES;
 }
 
@@ -361,16 +368,37 @@
 
 #pragma mark - UITableViewDelegate
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return self.theme.tableHeaderHeight;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return self.theme.tableFooterHeight;
+}
+
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+    UIView *headerView = [[UIView alloc] init];
+    headerView.backgroundColor = (tableView.style == UITableViewStylePlain) ? self.theme.tableHeaderBackgroundColor : self.theme.tableHeaderGroupedBackgroundColor;
+    
     UILabel *label = [[UILabel alloc] init];
-    label.frame = CGRectMake(17.0, 8.0, self.view.bounds.size.width - 17.0, 12.0);
-    label.font = [self.theme themeFontOfSize:12.0];
-    label.textColor = [self.theme.mainColor colorWithAlphaComponent:0.6];
+    label.textColor = (tableView.style == UITableViewStylePlain) ? self.theme.tableHeaderFontColor : self.theme.tableHeaderGroupedFontColor;
+    label.font = (tableView.style == UITableViewStylePlain) ? self.theme.tableHeaderFont : self.theme.tableHeaderGroupedFont;
+    
+    if (tableView.style == UITableViewStylePlain)
+    {
+        //label.frame = CGRectMake(17.0, 8.0, self.view.bounds.size.width - 17.0, 12.0);
+        label.frame = [self.theme rect:CGRectMake(0.0, 0.0, self.view.bounds.size.width, self.theme.tableHeaderHeight) withMargin:self.theme.tableHeaderMargin];
+    }
+    else
+    {
+        label.frame = [self.theme rect:CGRectMake(0.0, 0.0, self.view.bounds.size.width, self.theme.tableHeaderGroupedHeight) withMargin:self.theme.tableHeaderGroupedMargin];
+    }
+    
     label.text = [self tableView:tableView titleForHeaderInSection:section];
     
-    UIView *headerView = [[UIView alloc] init];
-    headerView.backgroundColor = [self.theme.highlightedBackgroundColor colorWithAlphaComponent:0.8];
     [headerView addSubview:label];
     
     return headerView;
@@ -378,14 +406,24 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
+    UIView *footerView = [[UIView alloc] init];
+    footerView.backgroundColor = (tableView.style == UITableViewStylePlain) ? self.theme.tableFooterBackgroundColor : self.theme.tableFooterGroupedBackgroundColor;
+    
     UILabel *label = [[UILabel alloc] init];
-    label.frame = CGRectMake(17.0, 8.0, self.view.bounds.size.width - 17.0, 12.0);
-    label.font = [self.theme themeFontOfSize:12.0];
-    label.textColor = [self.theme.mainColor colorWithAlphaComponent:0.6];
+    label.textColor = (tableView.style == UITableViewStylePlain) ? self.theme.tableFooterFontColor : self.theme.tableFooterGroupedFontColor;
+    label.font = (tableView.style == UITableViewStylePlain) ? self.theme.tableFooterFont : self.theme.tableFooterGroupedFont;
+    
+    if (tableView.style == UITableViewStylePlain)
+    {
+        label.frame = [self.theme rect:CGRectMake(0.0, 0.0, self.view.bounds.size.width, self.theme.tableFooterHeight) withMargin:self.theme.tableFooterMargin];
+    }
+    else
+    {
+        label.frame = [self.theme rect:CGRectMake(0.0, 0.0, self.view.bounds.size.width, self.theme.tableFooterGroupedHeight) withMargin:self.theme.tableFooterGroupedMargin];
+    }
+    
     label.text = [self tableView:tableView titleForFooterInSection:section];
     
-    UIView *footerView = [[UIView alloc] init];
-    footerView.backgroundColor = [self.theme.highlightedBackgroundColor colorWithAlphaComponent:0.8];
     [footerView addSubview:label];
     
     return footerView;
