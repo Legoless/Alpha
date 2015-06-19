@@ -89,6 +89,9 @@
     UIColor* color = self.mainBackgroundColor;
     UIColor* color2 = self.tintColor;
     
+    CGFloat innerModifier1 = 0.87;
+    CGFloat innerModifier2 = 0.78;
+    
     //// Group
     {
         //// Oval Drawing
@@ -97,18 +100,18 @@
         [ovalPath fill];
         
         
-        CGFloat padding = (rect.size.width - (rect.size.width * 0.83)) / 2.0;
+        CGFloat padding = (rect.size.width - (rect.size.width * innerModifier1)) / 2.0;
         
         //// Oval 2 Drawing
-        UIBezierPath* oval2Path = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(padding, padding, rect.size.width * 0.83, rect.size.height * 0.83)];
+        UIBezierPath* oval2Path = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(padding, padding, rect.size.width * innerModifier1, rect.size.height * innerModifier1)];
         [color2 setFill];
         [oval2Path fill];
         
-        padding = (rect.size.width - (rect.size.width * 0.72)) / 2.0;
+        padding = (rect.size.width - (rect.size.width * innerModifier2)) / 2.0;
         
         
         //// Oval 3 Drawing
-        UIBezierPath* oval3Path = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(padding, padding, rect.size.width * 0.72, rect.size.height * 0.72)];
+        UIBezierPath* oval3Path = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(padding, padding, rect.size.width * innerModifier2, rect.size.height * innerModifier2)];
         [color setFill];
         [oval3Path fill];
     }

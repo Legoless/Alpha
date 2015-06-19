@@ -45,15 +45,15 @@
     theme.menuButtonBackgroundColor = [theme.menuButtonBackgroundColor colorWithAlphaComponent:0.8];
     theme.menuButtonSelectedBackgroundColor = [self.mainColor alpha_colorWithBrightnessModifier:0.1];
     
-    theme.toolbarBackgroundColor = self.accentColor;
-    theme.toolbarSelectedColor = [self.accentColor alpha_colorWithBrightnessModifier:-0.2 * isLight];
-    theme.toolbarHighlightedColor = [self.accentColor alpha_colorWithBrightnessModifier:-0.3 * isLight];
+    theme.toolbarBackgroundColor = self.mainColor;
+    theme.toolbarSelectedColor = [self.mainColor alpha_colorWithBrightnessModifier:-0.2 * isLight];
+    theme.toolbarHighlightedColor = [self.mainColor alpha_colorWithBrightnessModifier:-0.3 * isLight];
     
-    theme.toolbarTintColor = self.mainColor;
-    theme.toolbarTintDisabledColor = [self.mainColor colorWithAlphaComponent:0.5];
+    theme.toolbarTintColor = self.accentColor;
+    theme.toolbarTintDisabledColor = [self.accentColor colorWithAlphaComponent:0.5];
     
-    theme.toolbarDetailBackgroundColor = [self.accentColor alpha_colorWithBrightnessModifier:-0.2 * isLight];
-    theme.toolbarDetailTintColor = self.mainColor;
+    theme.toolbarDetailBackgroundColor = [self.mainColor alpha_colorWithBrightnessModifier:-0.2 * isLight];
+    theme.toolbarDetailTintColor = self.accentColor;
     
     theme.searchBackgroundColor = self.backgroundColor;
     theme.searchFieldBackgroundColor = [self.backgroundColor alpha_colorWithBrightnessModifier:-0.1];
@@ -97,11 +97,11 @@
     palette.contentFontFamily = @"Menlo";
     palette.contentFontSize = 12.0;
     
-    palette.mainColor = [UIColor colorWithWhite:0.1 alpha:1.0];
-    palette.accentColor = [UIColor whiteColor];
-    palette.backgroundColor = [UIColor colorWithWhite:0.05 alpha:1.0];
+    palette.mainColor = [UIColor colorWithWhite:0.05 alpha:1.0];
+    palette.accentColor = UIColorFromKey(@"#f7d746");
+    palette.backgroundColor = UIColorFromKey(@"#1f1f1f");
     palette.contentColor = [UIColor blackColor];
-    palette.textColor = [UIColor whiteColor];
+    palette.textColor = [UIColor colorWithWhite:0.9 alpha:1.0];
     
     return palette;
 }

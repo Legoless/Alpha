@@ -72,6 +72,13 @@
     return _buttonSelectedBackgroundColor;
 }
 
+- (void)setTintColor:(UIColor *)tintColor
+{
+    [super setTintColor:tintColor];
+    
+    self.centerView.tintColor = tintColor;
+}
+
 #pragma mark - UIView
 
 - (void)awakeFromNib
@@ -98,7 +105,7 @@
     
     self.direction = CircleMenuDirectionRight;
     self.delay = 0.0;
-    self.buttonRadius = 30.0;
+    self.buttonRadius = 26.0;
     self.shadow = 0;
     self.radius = 80.0;
     self.angle = 90.0;
