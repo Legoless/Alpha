@@ -61,14 +61,14 @@
     theme.searchTintColor = self.mainColor;
     theme.searchPlaceholderColor = [self.mainColor colorWithAlphaComponent:0.6];
     
-    theme.tableSeparatorColor = [self.backgroundColor alpha_colorWithBrightnessModifier:-0.1 * isLight];
+    theme.tableSeparatorColor = [self.backgroundColor alpha_colorWithBrightnessModifier:-0.02 * isLight];
     
-    theme.cellTintColor = self.mainColor;
+    theme.cellTintColor = self.accentColor;
     theme.cellBackgroundColor = self.contentColor;
     theme.cellSelectedBackgroundColor = [self.contentColor alpha_colorWithBrightnessModifier:-0.05 * isLight];
     theme.cellTitleColor = self.textColor;
     theme.cellSubtitleColor = [self.textColor colorWithAlphaComponent:0.6];
-    theme.cellDetailColor = self.mainColor;
+    theme.cellDetailColor = self.accentColor;
     
     theme.tableHeaderBackgroundColor = [self.backgroundColor colorWithAlphaComponent:0.6];
     theme.tableHeaderFontColor = [self.backgroundColor alpha_colorWithBrightnessModifier:-0.2 * isLight];
@@ -100,7 +100,7 @@
     palette.mainColor = [UIColor colorWithWhite:0.05 alpha:1.0];
     palette.accentColor = UIColorFromKey(@"#f7d746");
     palette.backgroundColor = UIColorFromKey(@"#1f1f1f");
-    palette.contentColor = [UIColor blackColor];
+    palette.contentColor = [UIColor colorWithWhite:0.02 alpha:1.0];
     palette.textColor = [UIColor colorWithWhite:0.9 alpha:1.0];
     
     return palette;

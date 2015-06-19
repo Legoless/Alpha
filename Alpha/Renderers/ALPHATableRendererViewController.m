@@ -378,12 +378,22 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return self.theme.tableHeaderHeight;
+    if ([self tableView:tableView titleForHeaderInSection:section])
+    {
+        return (tableView.style == UITableViewStylePlain) ? self.theme.tableHeaderHeight : self.theme.tableHeaderGroupedHeight;
+    }
+    
+    return 0.0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return self.theme.tableFooterHeight;
+    if ([self tableView:tableView titleForFooterInSection:section])
+    {
+        return (tableView.style == UITableViewStylePlain) ? self.theme.tableFooterHeight : self.theme.tableFooterGroupedHeight;
+    }
+    
+    return 0.0;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -397,7 +407,6 @@
     
     if (tableView.style == UITableViewStylePlain)
     {
-        //label.frame = CGRectMake(17.0, 8.0, self.view.bounds.size.width - 17.0, 12.0);
         label.frame = [self.theme rect:CGRectMake(0.0, 0.0, self.view.bounds.size.width, self.theme.tableHeaderHeight) withMargin:self.theme.tableHeaderMargin];
     }
     else
