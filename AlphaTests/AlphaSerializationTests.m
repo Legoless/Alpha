@@ -59,7 +59,7 @@
     
     ALPHAModel* deserializedModel = [NSKeyedUnarchiver unarchiveObjectWithData:object];
     
-    XCTAssert(model.class == deserializedModel.class, @"Equal superclass");
+    XCTAssert([NSStringFromClass(model.class) isEqualToString:NSStringFromClass(deserializedModel.class)], @"Equal superclass");
 }
 
 - (void)testTableScreenSectionSerialization
@@ -78,8 +78,8 @@
     {
         ALPHAScreenSection* deserializedSection = deserializedModel.sections[i];
         ALPHAScreenSection* originalSection = model.sections[i];
-        
-        XCTAssert([deserializedSection class] == [originalSection class], @"Section model class is are not equal");
+
+        XCTAssert([NSStringFromClass(originalSection.class) isEqualToString:NSStringFromClass(deserializedSection.class)], @"Section model class are not equal");
         XCTAssert([deserializedSection.identifier isEqualToString:originalSection.identifier], @"Section identifiers are not equal");
         
         if (originalSection.headerText != nil)
@@ -116,7 +116,7 @@
             ALPHAScreenItem* deserializedItem = deserializedSection.items[x];
             ALPHAScreenItem* originalItem = originalSection.items[x];
             
-            XCTAssert([deserializedItem class] == [originalItem class], @"Items must be of same class");
+            XCTAssert([NSStringFromClass(originalItem.class) isEqualToString:NSStringFromClass(deserializedItem.class)], @"Items must be of same class");
             XCTAssert([deserializedItem.titleText isEqualToString:originalItem.titleText]);
             
             if (originalItem.attributedTitleText != nil)
