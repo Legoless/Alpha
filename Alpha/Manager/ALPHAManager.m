@@ -448,7 +448,7 @@
 {
     notification.notificationLabel.font = [theme themeFontOfSize:9.0];
     notification.notificationLabel.backgroundColor = theme.selectedBackgroundColor;
-    notification.notificationLabel.textColor = theme.tintColor;
+    notification.notificationLabel.textColor = theme.mainColor;
 }
 
 @end

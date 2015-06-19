@@ -23,16 +23,17 @@
     
     if (self)
     {
+        /*
         self.fontFamily = @"Menlo";
         
         self.topMargin = 4.0;
         
-        self.tintColor = [UIColor blackColor];
+        self.mainColor = [UIColor blackColor];
         
         self.disabledTitleColor = [UIColor lightGrayColor];
         self.highlightedBackgroundColor = [UIColor grayColor];
         self.selectedBackgroundColor = [UIColor darkGrayColor];
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor whiteColor];*/
     }
     
     return self;
@@ -45,76 +46,27 @@
 
 - (void)applyInWindow:(UIWindow *)window
 {
-    window.tintColor = self.tintColor;
+    window.tintColor = self.mainColor;
     
-    [[UINavigationBar appearanceWhenContainedIn:[ALPHANavigationController class], nil] setTitleTextAttributes:@{ NSFontAttributeName : [UIFont fontWithName:self.fontFamily size:17.0], NSForegroundColorAttributeName : self.tintColor }];
+    //
+    // Applying theme as much as possible via UIAppearance
+    //
     
-    [[UINavigationBar appearanceWhenContainedIn:[ALPHANavigationController class], nil] setBackgroundImage:[UIImage alpha_imageWithColor:self.highlightedBackgroundColor] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearanceWhenContainedIn:[ALPHANavigationController class], nil] setTitleTextAttributes:@{ NSFontAttributeName : self.headerTitleFont.font, NSForegroundColorAttributeName : self.headerTitleColor }];
+    
+    [[UINavigationBar appearanceWhenContainedIn:[ALPHANavigationController class], nil] setBackgroundImage:[UIImage alpha_imageWithColor:self.headerBackgroundColor] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearanceWhenContainedIn:[ALPHANavigationController class], nil] setTranslucent:NO];
-    [[UINavigationBar appearanceWhenContainedIn:[ALPHANavigationController class], nil] setShadowImage:[UIImage alpha_imageWithColor:self.selectedBackgroundColor]];
+    [[UINavigationBar appearanceWhenContainedIn:[ALPHANavigationController class], nil] setShadowImage:[UIImage alpha_imageWithColor:self.headerShadowColor]];
     
-    [[UIBarButtonItem appearanceWhenContainedIn:[ALPHANavigationController class], nil] setTitleTextAttributes:@{ NSFontAttributeName : [UIFont fontWithName:self.fontFamily size:14.0] } forState:UIControlStateNormal];
+    [[UIBarButtonItem appearanceWhenContainedIn:[ALPHANavigationController class], nil] setTitleTextAttributes:@{ NSFontAttributeName : self.headerButtonFont, NSForegroundColorAttributeName : self.headerButtonColor } forState:UIControlStateNormal];
     
-    [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setDefaultTextAttributes:@{ NSFontAttributeName : [UIFont fontWithName:self.fontFamily size:12.0], NSForegroundColorAttributeName : self.tintColor }];
+    [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setDefaultTextAttributes:@{ NSFontAttributeName : self.searchBarFont.font, NSForegroundColorAttributeName : self.searchTintColor }];
     
-    [[UISegmentedControl appearanceWhenContainedIn:[ALPHANavigationController class], nil] setTitleTextAttributes:@{ NSFontAttributeName : [UIFont fontWithName:self.fontFamily size:12.0], NSForegroundColorAttributeName : self.tintColor } forState:UIControlStateNormal];
+    [[UISegmentedControl appearanceWhenContainedIn:[ALPHANavigationController class], nil] setTitleTextAttributes:@{ NSFontAttributeName : self.searchBarFont.font, NSForegroundColorAttributeName : self.searchTintColor } forState:UIControlStateNormal];
     //id statusBar = [[UIApplication sharedApplication] statusBar];
     
-    //[statusBar performSelector:NSSelectorFromString(@"setForegroundColor:") withObject:self.tintColor];
+    //[statusBar performSelector:NSSelectorFromString(@"setForegroundColor:") withObject:self.mainColor];
 }
 
-- (UIFont *)italicThemeFontOfSize:(CGFloat)size
-{
-    return [self fontWithStyle:@"Italic" ofSize:size];
-}
-
-- (UIFont *)boldThemeFontOfSize:(CGFloat)size
-{
-    return [self fontWithStyle:@"Bold" ofSize:size];
-}
-
-- (UIFont *)boldItalicThemeFontOfSize:(CGFloat)size
-{
-    return [self fontWithStyle:@"BoldItalic" ofSize:size];
-}
-
-- (UIFont *)themeFontOfSize:(CGFloat)size
-{
-    return [self fontWithStyle:nil ofSize:size];
-}
-
-- (UIFont *)themeFontWithFont:(UIFont *)font
-{
-    return [self themeFontOfSize:font.pointSize];
-}
-
-- (UIFont *)italicThemeFontWithFont:(UIFont *)font
-{
-    return [self italicThemeFontOfSize:font.pointSize];
-}
-
-- (UIFont *)boldThemeFontWithFont:(UIFont *)font
-{
-    return [self boldThemeFontOfSize:font.pointSize];
-}
-
-- (UIFont *)boldItalicThemeFontWithFont:(UIFont *)font
-{
-    return [self boldItalicThemeFontOfSize:font.pointSize];
-}
-
-#pragma mark - Private methods
-
-- (UIFont *)fontWithStyle:(NSString *)fontStyle ofSize:(CGFloat)size
-{
-    NSString* fontFamily = self.fontFamily;
-    
-    if (fontStyle)
-    {
-        fontFamily = [NSString stringWithFormat:@"%@-%@", self.fontFamily, fontStyle];
-    }
-    
-    return [UIFont fontWithName:fontFamily size:size - 2.0];
-}
 
 @end

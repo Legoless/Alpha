@@ -16,7 +16,7 @@
     
     if (self)
     {
-        self.tintColor = [UIColor whiteColor];
+        self.mainColor = [UIColor whiteColor];
         self.statusBarStyle = UIStatusBarStyleLightContent;
         
         self.disabledTitleColor = [UIColor colorWithWhite:0.8 alpha:1.0];

@@ -1,9 +1,9 @@
 //
-//  FLEXMenuCenterView.m
-//  UICatalog
+//  ALPHAMenuCenterView.m
+//  Alpha
 //
-//  Created by Dal Rupnik on 24/11/14.
-//  Copyright (c) 2014 f. All rights reserved.
+//  Created by Dal Rupnik on 19/11/14.
+//  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
 #import "ALPHAMenuCenterView.h"
@@ -29,13 +29,6 @@
     self.imageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 }
 
-- (void)setSecondaryColor:(UIColor *)secondaryColor
-{
-    _secondaryColor = secondaryColor;
-    
-    self.imageView.tintColor = secondaryColor;
-}
-
 #pragma mark - UIView
 
 - (void)awakeFromNib
@@ -59,14 +52,13 @@
 {
     //ALPHAManager* manager = [ALPHAManager sharedManager];
     
-    self.mainColor = [ALPHAManager sharedManager].theme.backgroundColor;
-    self.secondaryColor = [ALPHAManager sharedManager].theme.tintColor;
+    self.mainBackgroundColor = [UIColor blackColor];
+    self.tintColor = [UIColor whiteColor];
     
     self.backgroundColor = [UIColor clearColor];
     
     self.imageView = [[UIImageView alloc] initWithFrame:[self rectWithPaddingPercent:0.75]];
     self.imageView.userInteractionEnabled = NO;
-    self.imageView.tintColor = self.secondaryColor;
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     
     [self addSubview:self.imageView];
@@ -94,8 +86,8 @@
 - (void)drawRect:(CGRect)rect
 {
     //// Color Declarations
-    UIColor* color = self.mainColor;
-    UIColor* color2 = self.secondaryColor;
+    UIColor* color = self.mainBackgroundColor;
+    UIColor* color2 = self.tintColor;
     
     //// Group
     {

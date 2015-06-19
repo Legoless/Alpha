@@ -75,8 +75,10 @@
     self.explorerMenu.delegate = self;
     self.explorerMenu.snapToBorder = YES;
     
-    self.explorerMenu.circleBackgroundColor = [[ALPHAManager sharedManager].theme.backgroundColor colorWithAlphaComponent:0.8];
-    self.explorerMenu.circleActiveBackgroundColor = [ALPHAManager sharedManager].theme.highlightedBackgroundColor;
+    self.explorerMenu.tintColor = [ALPHAManager sharedManager].theme.menuTintColor;
+    self.explorerMenu.mainBackgroundColor = [ALPHAManager sharedManager].theme.menuBackgroundColor;
+    self.explorerMenu.buttonBackgroundColor = [ALPHAManager sharedManager].theme.menuButtonBackgroundColor;
+    self.explorerMenu.buttonSelectedBackgroundColor = [ALPHAManager sharedManager].theme.menuButtonSelectedBackgroundColor;
     
     //
     // Disable touches for canvas view, we do not care about other shit

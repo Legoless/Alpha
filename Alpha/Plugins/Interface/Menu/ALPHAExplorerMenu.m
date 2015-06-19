@@ -45,24 +45,31 @@
 
 #pragma mark - Getters and Setters
 
-- (UIColor *)circleBackgroundColor
+- (void)setMainBackgroundColor:(UIColor *)mainBackgroundColor
 {
-    if (!_circleBackgroundColor)
+    _mainBackgroundColor = mainBackgroundColor;
+    
+    self.centerView.mainBackgroundColor = mainBackgroundColor;
+}
+
+- (UIColor *)buttonBackgroundColor
+{
+    if (!_buttonBackgroundColor)
     {
         return [UIColor blackColor];
     }
     
-    return _circleBackgroundColor;
+    return _buttonBackgroundColor;
 }
 
-- (UIColor *)circleActiveBackgroundColor
+- (UIColor *)buttonSelectedBackgroundColor
 {
-    if (!_circleActiveBackgroundColor)
+    if (!_buttonSelectedBackgroundColor)
     {
         return [UIColor colorWithWhite:0.6 alpha:1.0];
     }
     
-    return _circleActiveBackgroundColor;
+    return _buttonSelectedBackgroundColor;
 }
 
 #pragma mark - UIView
@@ -99,6 +106,7 @@
     self.backgroundColor = [UIColor clearColor];
     
     self.centerView = [[ALPHAMenuCenterView alloc] initWithFrame:self.bounds];
+    self.centerView.mainBackgroundColor = self.mainBackgroundColor;
     
     [self addSubview:self.centerView];
     
@@ -477,14 +485,17 @@
     [tOptions setValue:[NSDecimalNumber numberWithFloat:self.angle] forKey:CIRCLE_MENU_MAX_ANGLE];
     [tOptions setValue:[NSDecimalNumber numberWithFloat:self.radius] forKey:CIRCLE_MENU_RADIUS];
     [tOptions setValue:[NSNumber numberWithInt:self.direction] forKey:CIRCLE_MENU_DIRECTION];
-    
-    [tOptions setValue:self.circleBackgroundColor forKey:CIRCLE_MENU_BUTTON_BACKGROUND_NORMAL];
-    [tOptions setValue:self.circleActiveBackgroundColor forKey:CIRCLE_MENU_BUTTON_BACKGROUND_ACTIVE];
-    [tOptions setValue:self.tintColor forKey:CIRCLE_MENU_BUTTON_BORDER];
-    
+
     [tOptions setValue:[NSNumber numberWithInt:self.shadow] forKey:CIRCLE_MENU_DEPTH];
     [tOptions setValue:[NSDecimalNumber decimalNumberWithString:[NSString stringWithFormat:@"%f", self.buttonRadius]] forKey:CIRCLE_MENU_BUTTON_RADIUS];
     [tOptions setValue:[NSDecimalNumber decimalNumberWithString:@"2.5"] forKey:CIRCLE_MENU_BUTTON_BORDER_WIDTH];
+    
+    //
+    // Colors
+    //
+    [tOptions setValue:self.buttonBackgroundColor forKey:CIRCLE_MENU_BUTTON_BACKGROUND_NORMAL];
+    [tOptions setValue:self.buttonSelectedBackgroundColor forKey:CIRCLE_MENU_BUTTON_BACKGROUND_ACTIVE];
+    [tOptions setValue:self.tintColor forKey:CIRCLE_MENU_BUTTON_BORDER];
     
     return [tOptions copy];
 }

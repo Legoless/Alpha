@@ -16,10 +16,15 @@
 
 @end
 
+/*!
+ *  Main Alpha Menu
+ */
 @interface ALPHAExplorerMenu : UIView
 
-@property (nonatomic, strong) UIColor *circleBackgroundColor;
-@property (nonatomic, strong) UIColor *circleActiveBackgroundColor;
+@property (nonatomic, strong) UIColor *mainBackgroundColor;
+
+@property (nonatomic, strong) UIColor *buttonBackgroundColor;
+@property (nonatomic, strong) UIColor *buttonSelectedBackgroundColor;
 
 /*!
  *  If set to YES, menu will snap to border, similar to accessiblity menu

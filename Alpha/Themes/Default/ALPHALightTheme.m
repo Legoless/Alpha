@@ -17,7 +17,7 @@
     
     if (self)
     {
-        self.tintColor = [UIColor blackColor];
+        self.mainColor = [UIColor blackColor];
         
         self.disabledTitleColor = [UIColor colorWithWhite:121.0/255.0 alpha:1.0];
         self.highlightedBackgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];

@@ -25,7 +25,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [ALPHAManager sharedManager].theme.backgroundColor;
-        [self setTitleColor:[ALPHAManager sharedManager].theme.tintColor forState:UIControlStateNormal];
+        [self setTitleColor:[ALPHAManager sharedManager].theme.mainColor forState:UIControlStateNormal];
         [self setTitleColor:[ALPHAManager sharedManager].theme.disabledTitleColor forState:UIControlStateDisabled];
     }
     return self;
@@ -36,7 +36,7 @@
     ALPHATheme* theme = [ALPHAManager sharedManager].theme;
     
     FLEXToolbarItem *toolbarItem = [self buttonWithType:UIButtonTypeCustom];
-    NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:@{ NSFontAttributeName : [theme themeFontOfSize:10.0], NSForegroundColorAttributeName : theme.tintColor }];
+    NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:@{ NSFontAttributeName : [theme themeFontOfSize:10.0], NSForegroundColorAttributeName : theme.mainColor }];
     toolbarItem.attributedTitle = attributedTitle;
     [toolbarItem setAttributedTitle:attributedTitle forState:UIControlStateNormal];
     [toolbarItem setImage:image forState:UIControlStateNormal];

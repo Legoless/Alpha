@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3830B2DD1B34109A00E1C9F9 /* ALPHAFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 3830B2DC1B34109A00E1C9F9 /* ALPHAFont.m */; };
+		3830B2E01B341B5600E1C9F9 /* ALPHAColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 3830B2DF1B341B5600E1C9F9 /* ALPHAColorPalette.m */; };
 		38353E891B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38353E881B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m */; };
 		38655F5F1B31F62500482338 /* UIColor+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = 38655F5E1B31F62500482338 /* UIColor+Random.m */; };
 		38655F621B31F6AD00482338 /* NSString+Entities.m in Sources */ = {isa = PBXBuildFile; fileRef = 38655F611B31F6AD00482338 /* NSString+Entities.m */; };
@@ -241,6 +243,10 @@
 
 /* Begin PBXFileReference section */
 		0C6C81861F8DC133E5D85165 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		3830B2DB1B34109A00E1C9F9 /* ALPHAFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAFont.h; sourceTree = "<group>"; };
+		3830B2DC1B34109A00E1C9F9 /* ALPHAFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAFont.m; sourceTree = "<group>"; };
+		3830B2DE1B341B5600E1C9F9 /* ALPHAColorPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAColorPalette.h; sourceTree = "<group>"; };
+		3830B2DF1B341B5600E1C9F9 /* ALPHAColorPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAColorPalette.m; sourceTree = "<group>"; };
 		38353E871B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLCatalogTableTableViewController.h; sourceTree = "<group>"; };
 		38353E881B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLCatalogTableTableViewController.m; sourceTree = "<group>"; };
 		38525D7E1B0C91E4006644A1 /* VisualVoicemail.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VisualVoicemail.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/PrivateFrameworks/VisualVoicemail.framework; sourceTree = DEVELOPER_DIR; };
@@ -1471,6 +1477,10 @@
 				67E6485469F4A2231B6DEE49 /* Default */,
 				67E64EB171F44F501394FE9B /* ALPHATheme.h */,
 				67E64051084AD8FF90A8A24A /* ALPHATheme.m */,
+				3830B2DE1B341B5600E1C9F9 /* ALPHAColorPalette.h */,
+				3830B2DF1B341B5600E1C9F9 /* ALPHAColorPalette.m */,
+				3830B2DB1B34109A00E1C9F9 /* ALPHAFont.h */,
+				3830B2DC1B34109A00E1C9F9 /* ALPHAFont.m */,
 			);
 			path = Themes;
 			sourceTree = "<group>";
@@ -2211,6 +2221,7 @@
 				67E648E2A47FB545A7273AB2 /* ALPHAPlugin.m in Sources */,
 				67E64F9320287D87C5ACBC5E /* ALPHAGenericModel.m in Sources */,
 				67E64F1D87418C33325942B8 /* ALPHAScreenItem.m in Sources */,
+				3830B2E01B341B5600E1C9F9 /* ALPHAColorPalette.m in Sources */,
 				67E64F9B9AE6DE03E116327D /* ALPHAScreenModel.m in Sources */,
 				67E648CCA5772A80DC8A1F31 /* ALPHAScreenManager.m in Sources */,
 				67E64DE0604DDE3394CB45D6 /* ALPHAScreenSection.m in Sources */,
@@ -2348,6 +2359,7 @@
 				67E647F32A3ABCBCE752386B /* ALPHAIvarRendererViewController.m in Sources */,
 				67E642B340DD916CE3CEE12C /* ALPHAFieldRendererViewController.m in Sources */,
 				67E64DD0F202557E48EC16E0 /* ALPHAImageRendererViewController.m in Sources */,
+				3830B2DD1B34109A00E1C9F9 /* ALPHAFont.m in Sources */,
 				67E640AE9BE030C9B89E8384 /* ALPHATableRendererViewController.m in Sources */,
 				67E64DB5675769FE0F68079B /* ALPHAMethodRendererViewController.m in Sources */,
 				67E64D4423A8EC425CD5BB47 /* ALPHADefaultsRendererViewController.m in Sources */,

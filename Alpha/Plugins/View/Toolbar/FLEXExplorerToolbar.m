@@ -41,7 +41,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.tintColor = [ALPHAManager sharedManager].theme.tintColor;
+        self.tintColor = [ALPHAManager sharedManager].theme.mainColor;
         
         NSMutableArray *toolbarItems = [NSMutableArray array];
         
@@ -94,7 +94,7 @@
         self.selectedViewDescriptionLabel = [[UILabel alloc] init];
         self.selectedViewDescriptionLabel.backgroundColor = [UIColor clearColor];
         self.selectedViewDescriptionLabel.font = [[self class] descriptionLabelFont];
-        self.selectedViewDescriptionLabel.textColor = [ALPHAManager sharedManager].theme.tintColor;
+        self.selectedViewDescriptionLabel.textColor = [ALPHAManager sharedManager].theme.mainColor;
         [self.selectedViewDescriptionContainer addSubview:self.selectedViewDescriptionLabel];
     }
     return self;

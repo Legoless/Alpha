@@ -246,8 +246,8 @@
     cell.textLabel.font = [theme themeFontWithFont:cell.textLabel.font];
     cell.detailTextLabel.font = [theme themeFontWithFont:cell.detailTextLabel.font];
     
-    cell.textLabel.textColor = theme.tintColor;
-    cell.detailTextLabel.textColor = [theme.tintColor colorWithAlphaComponent:0.5];
+    cell.textLabel.textColor = theme.mainColor;
+    cell.detailTextLabel.textColor = [theme.mainColor colorWithAlphaComponent:0.5];
     
     cell.backgroundColor = theme.backgroundColor;
     cell.selectedBackgroundView = [UIView new];
@@ -256,7 +256,7 @@
     cell.detailTextLabel.minimumScaleFactor = 0.5;
     cell.detailTextLabel.adjustsFontSizeToFitWidth = YES;
     
-    cell.tintColor = theme.tintColor;
+    cell.tintColor = theme.mainColor;
     //cell.detailTextLabel.adjustsLetterSpacingToFitWidth = YES;
 }
 
@@ -366,7 +366,7 @@
     UILabel *label = [[UILabel alloc] init];
     label.frame = CGRectMake(17.0, 8.0, self.view.bounds.size.width - 17.0, 12.0);
     label.font = [self.theme themeFontOfSize:12.0];
-    label.textColor = [self.theme.tintColor colorWithAlphaComponent:0.6];
+    label.textColor = [self.theme.mainColor colorWithAlphaComponent:0.6];
     label.text = [self tableView:tableView titleForHeaderInSection:section];
     
     UIView *headerView = [[UIView alloc] init];
@@ -381,7 +381,7 @@
     UILabel *label = [[UILabel alloc] init];
     label.frame = CGRectMake(17.0, 8.0, self.view.bounds.size.width - 17.0, 12.0);
     label.font = [self.theme themeFontOfSize:12.0];
-    label.textColor = [self.theme.tintColor colorWithAlphaComponent:0.6];
+    label.textColor = [self.theme.mainColor colorWithAlphaComponent:0.6];
     label.text = [self tableView:tableView titleForFooterInSection:section];
     
     UIView *footerView = [[UIView alloc] init];
@@ -482,7 +482,7 @@
     
     UIRefreshControl* refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
-    refreshControl.tintColor = [self.theme.tintColor colorWithAlphaComponent:0.5];
+    refreshControl.tintColor = [self.theme.mainColor colorWithAlphaComponent:0.5];
     
     return refreshControl;
 }
@@ -518,7 +518,7 @@
         ALPHASearchScopeView *scopeView = [[ALPHASearchScopeView alloc] init];
         scopeView.delegate = self;
         
-        scopeView.tintColor = self.theme.tintColor;
+        scopeView.tintColor = self.theme.mainColor;
         //scopeView.backgroundColor = self.theme.highlightedBackgroundColor;
         scopeView.backgroundColor = [UIColor colorWithWhite:0.08 alpha:1.0];
         

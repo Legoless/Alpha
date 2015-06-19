@@ -1,18 +1,18 @@
 //
-//  FLEXMenuCenterView.h
-//  UICatalog
+//  ALPHAMenuCenterView.h
+//  Alpha
 //
-//  Created by Dal Rupnik on 24/11/14.
-//  Copyright (c) 2014 f. All rights reserved.
+//  Created by Dal Rupnik on 19/11/14.
+//  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
 /*!
- *  Usage: Private to explorer menu
+ *  Usage: Private to explorer menu, a rendered circle view that displays an icon and is assigned a long pressure
+ *  recognizer.
  */
 @interface ALPHAMenuCenterView : UIView
 
 @property (nonatomic, strong) UIImage* image;
-@property (nonatomic, strong) UIColor* mainColor;
-@property (nonatomic, strong) UIColor* secondaryColor;
+@property (nonatomic, strong) UIColor* mainBackgroundColor;
 
 @end
