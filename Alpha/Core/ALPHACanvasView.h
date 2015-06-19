@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
+@import UIKit;
+
 @interface ALPHACanvasView : UIView
 
 @property (nonatomic) BOOL shouldReceiveTouches;

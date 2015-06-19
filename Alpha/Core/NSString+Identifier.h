@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
+@import Foundation;
+
 @interface NSString (Identifier)
 
 - (NSString *)alpha_cleanCodeIdentifier;

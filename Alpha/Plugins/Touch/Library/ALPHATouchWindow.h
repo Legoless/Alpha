@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 f. All rights reserved.
 //
 
+@import UIKit;
+
 @interface ALPHATouchWindow : UIWindow
 
 - (void)displayEvent:(UIEvent *)event;

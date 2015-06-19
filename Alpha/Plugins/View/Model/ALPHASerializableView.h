@@ -9,6 +9,7 @@
 #import "ALPHASerialization.h"
 
 @import Foundation;
+@import UIKit;
 
 @protocol ALPHASerializableView <NSObject>
 

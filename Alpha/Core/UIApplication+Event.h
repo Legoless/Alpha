@@ -6,6 +6,9 @@
 //  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
+@import Foundation;
+@import UIKit;
+
 extern NSString* const ALPHAShakeMotionNotification;
 extern NSString* const ALPHAInterfaceEventNotification;
 

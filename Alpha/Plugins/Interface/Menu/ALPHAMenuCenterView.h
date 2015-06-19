@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
+@import UIKit;
+
 /*!
  *  Usage: Private to explorer menu, a rendered circle view that displays an icon and is assigned a long pressure
  *  recognizer.

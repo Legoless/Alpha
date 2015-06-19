@@ -6,4 +6,6 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
+@import Foundation;
+
 extern NSString *const ALPHABonjourType;

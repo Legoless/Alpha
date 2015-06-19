@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
+@import Foundation;
+
 @interface ALPHAFileManager : NSObject
 
 @property (nonatomic, readonly) NSURL* documentsDirectory;

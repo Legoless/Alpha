@@ -55,7 +55,6 @@
 		67E64042591B45C93975819E /* ALPHANotioColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64BF582C828B926AAA794 /* ALPHANotioColorPalette.m */; };
 		67E6404A44531BE5D0945132 /* ALPHATouchIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64A16D01380CFE81AB707 /* ALPHATouchIcon.m */; };
 		67E6404F81AC4D8BDE724160 /* ALPHAStatusIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64B757C827FC4FD0CF083 /* ALPHAStatusIcon.m */; };
-		67E64059E5618A4D2EDB441D /* ALPHAFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64B746A187C53312D2B3B /* ALPHAFont.m */; };
 		67E6407E9A82A90F9D192D11 /* ALPHAHeapSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64499AD4D8B9965DF4B17 /* ALPHAHeapSource.m */; };
 		67E6407F8CFCED2DF07581A6 /* FLEXArgumentInputViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64201C71E82A1C23F47AB /* FLEXArgumentInputViewFactory.m */; };
 		67E640885F61128A7C9BD5F0 /* ALPHABootstrapPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E640C32D243A1C56845A6A /* ALPHABootstrapPlugin.m */; };
@@ -178,7 +177,6 @@
 		67E645CD614A7C518CF4A523 /* ALPHAPropertyRendererViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64A97AE74952B2F07E55F /* ALPHAPropertyRendererViewController.m */; };
 		67E645E2DCBC49C9421D43B1 /* NSString+Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64701E6FFE9948EDA2A1E /* NSString+Data.m */; };
 		67E645E33AD66D3B69ED2BBF /* UIFont+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E641BF956FAC052BA0E3B6 /* UIFont+Convenience.m */; };
-		67E645F64634178622AC010B /* ALPHAFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64B746A187C53312D2B3B /* ALPHAFont.m */; };
 		67E645FF09AE2A54387C9148 /* ALPHAAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E646D40194EF6C1C8C94B9 /* ALPHAAsset.m */; };
 		67E645FF66E03988117BD2FA /* ALPHAModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64140C295D54EDDDC03B1 /* ALPHAModel.m */; };
 		67E64603421C34B0A5079F0F /* ALPHAFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64BD266623CC24A9238D4 /* ALPHAFileManager.m */; };
@@ -412,6 +410,7 @@
 		67E64FD2EEF2702A7DBE058C /* ALPHABonjourConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64B6177105C6D60A2BEC9 /* ALPHABonjourConfig.m */; };
 		67E64FDD5A3CF66AD2F355DF /* ALPHAImageRendererViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6457D49F16BB1E6956800 /* ALPHAImageRendererViewController.m */; };
 		67E64FFA842D6490401AF494 /* PINCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6431139066ACFBB4A7CC4 /* PINCache.m */; };
+		B72E57EC5EF5071C383C26A9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC22ABC4E8D617E74145AB1C /* libPods.a */; };
 		C880721E1307571D224A9E73 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC22ABC4E8D617E74145AB1C /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -764,7 +763,6 @@
 		67E64B6177105C6D60A2BEC9 /* ALPHABonjourConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHABonjourConfig.m; sourceTree = "<group>"; };
 		67E64B6A2A73F6CBAFFFF0EB /* ALPHANetworkConnectionTiming.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHANetworkConnectionTiming.m; sourceTree = "<group>"; };
 		67E64B6EDBC8337F9A3FD1D9 /* ALPHAFilePlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAFilePlugin.m; sourceTree = "<group>"; };
-		67E64B746A187C53312D2B3B /* ALPHAFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAFont.m; sourceTree = "<group>"; };
 		67E64B757C827FC4FD0CF083 /* ALPHAStatusIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAStatusIcon.m; sourceTree = "<group>"; };
 		67E64B989738598539F40835 /* ALPHAObjectPrintable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAObjectPrintable.h; sourceTree = "<group>"; };
 		67E64BB9534C2E762D2EDCDC /* ALPHAFieldRendererViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAFieldRendererViewController.m; sourceTree = "<group>"; };
@@ -863,7 +861,6 @@
 		67E64F026594D79228721F65 /* FLEXArgumentInputNotSupportedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEXArgumentInputNotSupportedView.h; sourceTree = "<group>"; };
 		67E64F054A367B37E3EE6A45 /* ALPHANetworkIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHANetworkIcon.m; sourceTree = "<group>"; };
 		67E64F13D02B8B15994ECD6A /* ALPHABonjourPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHABonjourPlugin.h; sourceTree = "<group>"; };
-		67E64F1C28C5D1F2BE8B149D /* ALPHAFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAFont.h; sourceTree = "<group>"; };
 		67E64F30D0AA048293B5695F /* ALPHARequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHARequest.m; sourceTree = "<group>"; };
 		67E64F6A81170F5A646015DC /* NSString+Identifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Identifier.m"; sourceTree = "<group>"; };
 		67E64F6AF82C8B0461DD72C7 /* ALPHAFormenteraColorPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAFormenteraColorPalette.h; sourceTree = "<group>"; };
@@ -888,6 +885,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B72E57EC5EF5071C383C26A9 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1516,8 +1514,6 @@
 		67E647277F95D9D2C51F4F63 /* Themes */ = {
 			isa = PBXGroup;
 			children = (
-				67E64F1C28C5D1F2BE8B149D /* ALPHAFont.h */,
-				67E64B746A187C53312D2B3B /* ALPHAFont.m */,
 				67E64FED946D2318F41F44B0 /* ALPHATheme.h */,
 				67E64B1F84594923C5CB244E /* ALPHATheme.m */,
 				67E64853E1077F1E2A9ACD78 /* UIColor+Tools.h */,
@@ -2172,14 +2168,14 @@
 		67E64F7DA608FE0028857810 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				67E645963335293DCC65FF52 /* Core */,
 				67E64106E363EAFB00F26F7A /* Action */,
+				67E645963335293DCC65FF52 /* Core */,
+				67E6432F036948BEF8E57A3E /* Conversion */,
+				67E64D4E7BA857C7F33330DD /* Network */,
 				67E644E848B8E115C8A2D937 /* Object */,
 				67E64D41B3BBE81FE366A5DE /* Screen */,
-				67E64E1DEA6386EA2193D4DE /* Source */,
-				67E64D4E7BA857C7F33330DD /* Network */,
-				67E6432F036948BEF8E57A3E /* Conversion */,
 				67E64E16ABD32AC7440C8BBD /* Serialization */,
+				67E64E1DEA6386EA2193D4DE /* Source */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2191,9 +2187,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38AB0F311B315B1700F0CC21 /* Build configuration list for PBXNativeTarget "AlphaTests" */;
 			buildPhases = (
+				A17151D5567F85EB20B61146 /* Check Pods Manifest.lock */,
 				38AB0F231B315B1700F0CC21 /* Sources */,
 				38AB0F241B315B1700F0CC21 /* Frameworks */,
 				38AB0F251B315B1700F0CC21 /* Resources */,
+				0199831BA3952DB43B316D43 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2286,6 +2284,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0199831BA3952DB43B316D43 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A17151D5567F85EB20B61146 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		B744C97DDA70691A6A3D9F72 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2396,7 +2424,6 @@
 				67E64BECC0798C8C51D238FA /* ALPHAConverterManager.m in Sources */,
 				67E6468E7CBEC89855E34B5F /* ALPHAGenericConverter.m in Sources */,
 				67E64575EB84F6DBC374865A /* ALPHASerialization.m in Sources */,
-				67E645F64634178622AC010B /* ALPHAFont.m in Sources */,
 				67E647DCD8A4D032DF12CA0B /* ALPHATheme.m in Sources */,
 				67E6435FAF71B5C040265ADB /* UIColor+Tools.m in Sources */,
 				67E643747A6C73619CC215B9 /* ALPHAColorPalette.m in Sources */,
@@ -2612,7 +2639,6 @@
 				67E64D2AE595FB409DB28F2A /* ALPHAConverterManager.m in Sources */,
 				67E64EED2647513D09B1C99B /* ALPHAGenericConverter.m in Sources */,
 				67E64B2B0B89FCF9FE3EBE12 /* ALPHASerialization.m in Sources */,
-				67E64059E5618A4D2EDB441D /* ALPHAFont.m in Sources */,
 				67E6478A272986DA931F3717 /* ALPHATheme.m in Sources */,
 				67E641F98ABB3D2F63634242 /* UIColor+Tools.m in Sources */,
 				67E6409A420D165457392C90 /* ALPHAColorPalette.m in Sources */,
@@ -2768,6 +2794,7 @@
 /* Begin XCBuildConfiguration section */
 		38AB0F2F1B315B1700F0CC21 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C6C81861F8DC133E5D85165 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -2782,7 +2809,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = AlphaTests/Info.plist;
+				INFOPLIST_FILE = ../AlphaTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -2793,6 +2820,7 @@
 		};
 		38AB0F301B315B1700F0CC21 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EFDBC5D9C946F8E17E67DBC /* Pods.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -2804,7 +2832,7 @@
 					"$(inherited)",
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = AlphaTests/Info.plist;
+				INFOPLIST_FILE = ../AlphaTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;

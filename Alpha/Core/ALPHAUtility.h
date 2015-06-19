@@ -7,6 +7,7 @@
 //
 
 @import Foundation;
+@import UIKit;
 
 #define ALPHAFloor(x) (floor([[UIScreen mainScreen] scale] * (x)) / [[UIScreen mainScreen] scale])
 

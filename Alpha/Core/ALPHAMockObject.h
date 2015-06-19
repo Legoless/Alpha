@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
+@import Foundation;
+
 /*!
  *  Mock Object will act as set object and it will redirect notifications to the object property (if set).
  *  

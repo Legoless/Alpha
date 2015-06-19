@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
+@import Foundation;
+
 /*!
  *  This object is used internally to track connections made out
  */

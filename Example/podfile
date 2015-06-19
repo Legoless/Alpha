@@ -2,6 +2,8 @@ platform :ios, '8.0'
 
 source 'https://github.com/CocoaPods/Specs.git'
 
+link_with 'UICatalog', 'AlphaTests'
+
 pod 'Haystack'
 
 # Remote plugin

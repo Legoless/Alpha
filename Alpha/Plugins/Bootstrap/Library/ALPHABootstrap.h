@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
+@import Foundation;
+
 @interface ALPHABootstrap : NSObject
 
 /*!

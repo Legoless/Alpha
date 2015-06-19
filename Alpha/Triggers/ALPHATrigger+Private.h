@@ -8,6 +8,8 @@
 
 #import "ALPHATrigger.h"
 
+@import UIKit;
+
 /*!
  *  Private utility methods for triggers
  */

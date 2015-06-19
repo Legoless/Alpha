@@ -6,11 +6,11 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-NSString *const ALPHANetworkObjectVerificationKey = @"kALPHANetworkObjectVerificationKey";
-
 #import "ALPHASerialization.h"
 
 #import "ALPHANetworkObject.h"
+
+NSString *const ALPHANetworkObjectVerificationKey = @"kALPHANetworkObjectVerificationKey";
 
 @interface ALPHANetworkObject ()
 
