@@ -68,14 +68,6 @@ NSString* const ALPHAMenuDataIdentifier = @"com.unifiedsense.alpha.data.menu";
     dataModel.title = @"Alpha";
     dataModel.sections = @[ section ];
     
-    //
-    // Close action
-    //
-    
-    ALPHAActionItem* closeAction = [[ALPHAActionItem alloc] initWithIdentifier:ALPHAActionCloseIdentifier];
-    
-    dataModel.rightAction = closeAction;
-    
     return dataModel;
 }
 

@@ -39,18 +39,7 @@
 {
     _screenModel = screenModel;
     
-    if ([screenModel.rightAction.request.identifier isEqualToString:ALPHAActionCloseIdentifier])
-    {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStyleDone target:self action:@selector(donePressed:)];
-    }
-    else if (self.navigationController.viewControllers.firstObject == self)
-    {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStyleDone target:self action:@selector(donePressed:)];
-    }
-    else
-    {
-        self.navigationItem.rightBarButtonItem = nil;
-    }
+    [self updateNavigationItems];
     
     self.title = screenModel.title;
     
@@ -145,6 +134,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [self updateNavigationItems];
     
     if (!self.object || self.screenModel.expiration > 0)
     {
@@ -457,6 +448,31 @@
 }
 
 #pragma mark - Private Methods
+
+- (void)updateNavigationItems
+{
+    if ([self.screenModel.rightAction.request.identifier isEqualToString:ALPHAActionCloseIdentifier])
+    {
+        [self createCloseBarButtonItem];
+    }
+    else if (self.navigationController.viewControllers.firstObject == self)
+    {
+        [self createCloseBarButtonItem];
+    }
+    else
+    {
+        self.navigationItem.rightBarButtonItem = nil;
+    }
+
+}
+
+- (void)createCloseBarButtonItem
+{
+    if (![self.navigationItem.rightBarButtonItem.title isEqualToString:@"Close"])
+    {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStyleDone target:self action:@selector(donePressed:)];
+    }
+}
 
 - (UIRefreshControl *)createRefreshControl
 {

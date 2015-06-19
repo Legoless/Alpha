@@ -21,16 +21,16 @@
     
     if (self)
     {
+        ALPHAScreenActionItem* menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.bootstrap.main"];
+        menuAction.icon = @"🎨";
+        menuAction.title = @"Environments";
+        menuAction.dataIdentifier = ALPHAEnvironmentDataIdentifier;
+        menuAction.isMain = YES;
+        
+        [self registerAction:menuAction];
+        
         if ([ALPHABootstrap hasEnvironments])
         {
-            ALPHAScreenActionItem* menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.bootstrap.main"];
-            menuAction.icon = @"🎨";
-            menuAction.title = @"Environments";
-            menuAction.dataIdentifier = ALPHAEnvironmentDataIdentifier;
-            menuAction.isMain = YES;
-            
-            [self registerAction:menuAction];
-            
             [self registerSource:[ALPHAEnvironmentSource new]];
         }
     }
