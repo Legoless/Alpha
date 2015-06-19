@@ -88,7 +88,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
                                          @{ @"Build" : [[UIApplication sharedApplication] build] },
                                          @{ @"Build Date" : [NSString stringWithFormat:@"%@ - %@", [NSString stringWithUTF8String:__DATE__], [NSString stringWithUTF8String:__TIME__]] },
                                          @{ @"Bundle ID" : [[NSBundle mainBundle] bundleIdentifier] },
-                                         @{ @"Badge Number" : @([UIApplication sharedApplication].applicationIconBadgeNumber) }
+                                         @{ @"Badge Number" : [@([UIApplication sharedApplication].applicationIconBadgeNumber) stringValue] }
                                    ],
                                    @"style" : @(UITableViewCellStyleValue1),
                                    @"headerText" : @"Application" };
@@ -181,7 +181,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
                              @{ @"Capacity" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].hs_diskMarketingSpace countStyle:NSByteCountFormatterCountStyleBinary] },
                              @{ @"Total Capacity" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].hs_diskTotalSpace countStyle:NSByteCountFormatterCountStyleBinary] },
                              @{ @"Free Capacity" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].hs_diskFreeSpace countStyle:NSByteCountFormatterCountStyleBinary] },
-                             @{ @"Jailbroken" : @([UIDevice currentDevice].hs_jailbreakStatus != UIDeviceJailbreakStatusNotJailbroken) }
+                             @{ @"Jailbroken" : ([UIDevice currentDevice].hs_jailbreakStatus != UIDeviceJailbreakStatusNotJailbroken ? @"Yes" : @"No") }
                      ],
                      @"style" : @(UITableViewCellStyleValue1),
                      @"headerText" : @"Device" };

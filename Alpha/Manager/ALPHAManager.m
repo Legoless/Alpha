@@ -16,7 +16,6 @@
 // Defaults
 #import "ALPHAInterfacePlugin.h"
 #import "ALPHAColorPalette.h"
-#import "ALPHAFormenteraColorPalette.h"
 
 #import "ALPHAViewController.h"
 
@@ -156,7 +155,7 @@
 {
     if (!_theme)
     {
-        _theme = [ALPHAFormenteraColorPalette defaultPalette].paletteTheme;
+        _theme = [ALPHAColorPalette defaultPalette].paletteTheme;
         [_theme applyInWindow:self.alphaWindow];
     }
     

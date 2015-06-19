@@ -339,39 +339,16 @@
 
 - (id)detailForItem:(ALPHAScreenItem *)item
 {
-    if (item.attributedDetailText)
+    if (item.attributedDetailText.length)
     {
         return item.attributedDetailText;
     }
-    
-    NSString* detail = nil;
-    
-    /*
-    if ([item.detail isKindOfClass:[NSNumber class]])
+    else if (item.detailText.length)
     {
-        //
-        // Check for boolean here
-        //
-        
-        NSNumber* detailNumber = item.detail;
-        
-        if (strcmp([detailNumber objCType], @encode(BOOL)) == 0)
-        {
-            BOOL detailData = detailNumber.boolValue;
-            
-            detail = detailData ? @"YES" : @"NO";
-        }
-        else
-        {
-            detail = [NSString stringWithFormat:@"%lld", detailNumber.longLongValue];
-        }
-    }
-    else*/ if (item.detailText.length)
-    {
-        detail = item.detailText;
+        return item.detailText;
     }
     
-    return detail;
+    return nil;
 }
 
 #pragma mark - UITableViewDelegate
