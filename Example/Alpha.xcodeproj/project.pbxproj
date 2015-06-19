@@ -12,6 +12,7 @@
 		3830B2E31B3436A800E1C9F9 /* UIFont+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 3830B2E21B3436A800E1C9F9 /* UIFont+Convenience.m */; };
 		3830B2E61B3453D900E1C9F9 /* UIColor+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 3830B2E51B3453D900E1C9F9 /* UIColor+Tools.m */; };
 		3830B2EA1B347F0900E1C9F9 /* ALPHANotioColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 3830B2E91B347F0900E1C9F9 /* ALPHANotioColorPalette.m */; };
+		3830B2ED1B34870F00E1C9F9 /* ALPHAFormenteraColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 3830B2EC1B34870F00E1C9F9 /* ALPHAFormenteraColorPalette.m */; };
 		38353E891B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38353E881B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m */; };
 		38655F5F1B31F62500482338 /* UIColor+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = 38655F5E1B31F62500482338 /* UIColor+Random.m */; };
 		38655F621B31F6AD00482338 /* NSString+Entities.m in Sources */ = {isa = PBXBuildFile; fileRef = 38655F611B31F6AD00482338 /* NSString+Entities.m */; };
@@ -253,6 +254,8 @@
 		3830B2E51B3453D900E1C9F9 /* UIColor+Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Tools.m"; sourceTree = "<group>"; };
 		3830B2E81B347F0900E1C9F9 /* ALPHANotioColorPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHANotioColorPalette.h; sourceTree = "<group>"; };
 		3830B2E91B347F0900E1C9F9 /* ALPHANotioColorPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHANotioColorPalette.m; sourceTree = "<group>"; };
+		3830B2EB1B34870F00E1C9F9 /* ALPHAFormenteraColorPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAFormenteraColorPalette.h; sourceTree = "<group>"; };
+		3830B2EC1B34870F00E1C9F9 /* ALPHAFormenteraColorPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAFormenteraColorPalette.m; sourceTree = "<group>"; };
 		38353E871B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLCatalogTableTableViewController.h; sourceTree = "<group>"; };
 		38353E881B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLCatalogTableTableViewController.m; sourceTree = "<group>"; };
 		38525D7E1B0C91E4006644A1 /* VisualVoicemail.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VisualVoicemail.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/PrivateFrameworks/VisualVoicemail.framework; sourceTree = DEVELOPER_DIR; };
@@ -731,6 +734,8 @@
 			children = (
 				3830B2E81B347F0900E1C9F9 /* ALPHANotioColorPalette.h */,
 				3830B2E91B347F0900E1C9F9 /* ALPHANotioColorPalette.m */,
+				3830B2EB1B34870F00E1C9F9 /* ALPHAFormenteraColorPalette.h */,
+				3830B2EC1B34870F00E1C9F9 /* ALPHAFormenteraColorPalette.m */,
 			);
 			path = Palettes;
 			sourceTree = "<group>";
@@ -2236,6 +2241,7 @@
 				67E6419ABB3BCFB09EF72D1F /* ALPHABlockActionItem.m in Sources */,
 				67E64C83F3B60EBCBAB5C7B4 /* ALPHAScreenActionItem.m in Sources */,
 				67E64E51E8B8BC9317DEBF60 /* ALPHASelectorActionItem.m in Sources */,
+				3830B2ED1B34870F00E1C9F9 /* ALPHAFormenteraColorPalette.m in Sources */,
 				67E64CDA970F40B43BDC7FF6 /* ALPHAGlobalActionIdentifiers.m in Sources */,
 				38EBEDB11B32D86D006CF2FA /* ALPHANotificationIcon.m in Sources */,
 				67E641A8982A2A70212F1F89 /* ALPHAObjectIvar.m in Sources */,

@@ -16,6 +16,7 @@
 // Defaults
 #import "ALPHAInterfacePlugin.h"
 #import "ALPHAColorPalette.h"
+#import "ALPHANotioColorPalette.h"
 
 #import "ALPHAViewController.h"
 

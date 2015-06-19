@@ -34,17 +34,18 @@
 /*!
  *  Primary color is used for:
  *   - Navigation bar background
- *   - Main menu tint
- *   - Toolbar icon tint
- *   -
+ *   - Main menu background
+ *   - Toolbar background
  */
 @property (nonatomic, strong) UIColor *mainColor;
 
 /*!
  *  Accent color should be in contrast with primary color and is used for:
  *   - Menu background
- *   - Toolbar background
+ *   - Toolbar tint
  *   - Text on navigation bar
+ *   - Buttons on navigation bar
+ *   - Icons on table view
  */
 @property (nonatomic, strong) UIColor *accentColor;
 
@@ -63,6 +64,14 @@
  *   - Input field content
  */
 @property (nonatomic, strong) UIColor *contentColor;
+
+/*!
+ *  Content tint color is used for:
+ *   - Content links
+ *   - Content icons
+ *   - Table view icons
+ */
+@property (nonatomic, strong) UIColor *contentTintColor;
 
 /*!
  *  Text color on content, must have large contrast with content and background color

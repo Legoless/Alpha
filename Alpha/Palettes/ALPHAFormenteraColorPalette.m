@@ -1,5 +1,5 @@
 //
-//  ALPHANotioColorPalette.m
+//  ALPHAFormenteraColorPalette.m
 //  Alpha
 //
 //  Created by Dal Rupnik on 19/06/15.
@@ -8,24 +8,23 @@
 
 #import <Haystack/Haystack.h>
 
-#import "ALPHANotioColorPalette.h"
+#import "ALPHAFormenteraColorPalette.h"
 
-@implementation ALPHANotioColorPalette
+@implementation ALPHAFormenteraColorPalette
 
 + (instancetype)defaultPalette
 {
-    ALPHANotioColorPalette *palette = [[ALPHANotioColorPalette alloc] init];
+    ALPHAFormenteraColorPalette *palette = [[ALPHAFormenteraColorPalette alloc] init];
     palette.headerFontFamily = @"GillSans";
     palette.headerFontSize = 14.0;
     palette.contentFontFamily = @"Menlo";
     palette.contentFontSize = 12.0;
     
     palette.mainColor = UIColorFromKey(@"#E46A6B");
-    palette.accentColor = [UIColor whiteColor];
+    palette.accentColor = UIColorFromKey(@"#3F3F3F");
     palette.backgroundColor = UIColorFromKey(@"#EEEEEE");
     palette.contentColor = [UIColor whiteColor];
-    palette.contentTintColor = UIColorFromKey(@"#6E6E6E");
-    palette.textColor = UIColorFromKey(@"#3F3F3F");
+    palette.textColor = UIColorFromKey(@"#040404");
     
     return palette;
 }
