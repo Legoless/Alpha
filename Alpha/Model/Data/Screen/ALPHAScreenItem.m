@@ -80,4 +80,18 @@ NSString* const ALPHADisplayItemDetailkey = @"kALPHADisplayItemDetailkey";
     }
 }
 
+#pragma mark - Initialization
+
+- (instancetype)init
+{
+    self = [super init];
+    
+    if (self)
+    {
+        self.imageContentMode = UIViewContentModeScaleAspectFit;
+    }
+    
+    return self;
+}
+
 @end

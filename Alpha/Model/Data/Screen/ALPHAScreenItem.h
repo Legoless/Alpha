@@ -28,6 +28,7 @@ typedef NSInteger ALPHAScreenItemPriority;
  *  NSString with Emoji or UIImage
  */
 @property (nonatomic, strong) id icon;
+@property (nonatomic, assign) UIViewContentMode imageContentMode;
 
 - (NSString *)title;
 - (void)setTitle:(id)title;

@@ -27,6 +27,7 @@
     {
         self.request = request;
         self.enabled = YES;
+        self.imageContentMode = UIViewContentModeCenter;
     }
     
     return self;

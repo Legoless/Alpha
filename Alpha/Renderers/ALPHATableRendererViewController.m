@@ -287,8 +287,7 @@
     if ([item.icon isKindOfClass:[UIImage class]])
     {
         cell.imageView.image = item.icon;
-        cell.imageView.backgroundColor = [UIColor redColor];
-        cell.imageView.contentMode = UIViewContentModeCenter;
+        cell.imageView.contentMode = item.imageContentMode;
     }
     else
     {
