@@ -26,7 +26,7 @@ NSString *const ALPHAIconEventIdentifier   = @"com.unifiedsense.alpha.icon.event
             CGRect frame = { CGPointZero, size };
             
             //// Subframes
-            CGRect group = CGRectMake(CGRectGetMinX(frame) + 0.42, CGRectGetMinY(frame) + 6, CGRectGetWidth(frame) - 0.61, CGRectGetHeight(frame) - 11.27);
+            CGRect group = CGRectMake(CGRectGetMinX(frame), CGRectGetMinY(frame) + (0.075 * size.height), CGRectGetWidth(frame), CGRectGetHeight(frame) - (0.1375 * size.height));
             
             //// Group
             {

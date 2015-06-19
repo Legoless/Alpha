@@ -26,7 +26,7 @@ NSString *const ALPHAIconHeapIdentifier = @"com.unifiedsense.alpha.icon.heap";
             CGRect frame = { CGPointZero, size };
             
             //// Subframes
-            CGRect heapObjectsGroup = CGRectMake(CGRectGetMinX(frame) - 0.14, CGRectGetMinY(frame) + 6.35, CGRectGetWidth(frame) - 0.32, CGRectGetHeight(frame) - 12.12);
+            CGRect heapObjectsGroup = CGRectMake(CGRectGetMinX(frame), CGRectGetMinY(frame) + (0.075 * size.height), CGRectGetWidth(frame), CGRectGetHeight(frame) - (0.15 * size.height));
             
             
             //// HeapObjects Group

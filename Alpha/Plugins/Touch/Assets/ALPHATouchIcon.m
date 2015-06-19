@@ -26,7 +26,7 @@ NSString *const ALPHAIconTouchIdentifier   = @"com.unifiedsense.alpha.icon.touch
             CGRect frame = { CGPointZero, size };
             
             //// Subframes
-            CGRect touchPoseGroup = CGRectMake(CGRectGetMinX(frame) + 7.45, CGRectGetMinY(frame) - 0.19, CGRectGetWidth(frame) - 14.9, CGRectGetHeight(frame) + 0.4);
+            CGRect touchPoseGroup = CGRectMake(CGRectGetMinX(frame) + (0.0875 * size.width), CGRectGetMinY(frame), CGRectGetWidth(frame) - (0.1875 * size.width), CGRectGetHeight(frame));
 
             //// TouchPose Group
             {

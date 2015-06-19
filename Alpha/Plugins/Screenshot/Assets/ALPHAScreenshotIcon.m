@@ -26,7 +26,7 @@ NSString *const ALPHAIconScreenshotIdentifier = @"com.unifiedsense.alpha.icon.sc
             CGRect frame = { CGPointZero, size };
             
             //// Subframes
-            CGRect screenshotGroup = CGRectMake(CGRectGetMinX(frame), CGRectGetMinY(frame) + 9.17, CGRectGetWidth(frame) - 0.17, CGRectGetHeight(frame) - 19);
+            CGRect screenshotGroup = CGRectMake(CGRectGetMinX(frame), CGRectGetMinY(frame) + (0.1125 * size.height), CGRectGetWidth(frame), CGRectGetHeight(frame) - (0.2375 * size.height));
             
             //// Screenshot Group
             {

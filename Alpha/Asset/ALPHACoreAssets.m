@@ -30,7 +30,7 @@ NSString *const ALPHAIconRemoteIdentifier       = @"com.unifiedsense.alpha.icon.
             CGRect frame = { CGPointZero, size };
             
             //// Subframes
-            CGRect handleGroup = CGRectMake(CGRectGetMinX(frame) + 0.03, CGRectGetMinY(frame) - 0.06, CGRectGetWidth(frame) + 0.05, CGRectGetHeight(frame) + 0.18);
+            CGRect handleGroup = CGRectMake(CGRectGetMinX(frame), CGRectGetMinY(frame), CGRectGetWidth(frame), CGRectGetHeight(frame));
 
             //// Handle Group
             {
@@ -208,7 +208,7 @@ NSString *const ALPHAIconRemoteIdentifier       = @"com.unifiedsense.alpha.icon.
             CGRect frame = { CGPointZero, size };
 
             //// Subframes
-            CGRect infoGroup = CGRectMake(CGRectGetMinX(frame) + 5.8, CGRectGetMinY(frame) + 4, CGRectGetWidth(frame) - 11, CGRectGetHeight(frame) - 9);
+            CGRect infoGroup = CGRectMake(CGRectGetMinX(frame) + (size.width * 0.0725), CGRectGetMinY(frame) + (0.05 * size.height), CGRectGetWidth(frame) - (0.1375 * size.width), CGRectGetHeight(frame) - (0.1125 * size.height));
             
             //// Info Group
             {
@@ -312,7 +312,7 @@ NSString *const ALPHAIconRemoteIdentifier       = @"com.unifiedsense.alpha.icon.
             CGRect frame = { CGPointZero, size };
             
             //// Subframes
-            CGRect mainMenuGroup = CGRectMake(CGRectGetMinX(frame) + 0.08, CGRectGetMinY(frame) + 10.67, CGRectGetWidth(frame), CGRectGetHeight(frame) - 21.25);
+            CGRect mainMenuGroup = CGRectMake(CGRectGetMinX(frame), CGRectGetMinY(frame) + (0.133375 * size.height), CGRectGetWidth(frame), CGRectGetHeight(frame) - (0.265625 * size.height));
             
             //// MainMenu Group
             {
@@ -388,7 +388,7 @@ NSString *const ALPHAIconRemoteIdentifier       = @"com.unifiedsense.alpha.icon.
             
             
             //// Subframes
-            CGRect bonjourGroup = CGRectMake(CGRectGetMinX(frame) + 3, CGRectGetMinY(frame) + 10.01, CGRectGetWidth(frame) - 5, CGRectGetHeight(frame) - 20.63);
+            CGRect bonjourGroup = CGRectMake(CGRectGetMinX(frame) + (0.0375 * size.width), CGRectGetMinY(frame) + (0.125 * size.height), CGRectGetWidth(frame) - (0.0625 * size.width), CGRectGetHeight(frame) - (0.25 * size.height));
             
             
             //// Bonjour Group

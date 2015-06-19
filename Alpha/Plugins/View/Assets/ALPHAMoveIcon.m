@@ -26,7 +26,7 @@ NSString *const ALPHAIconMoveIdentifier = @"com.unifiedsense.alpha.icon.move";
             CGRect frame = { CGPointZero, size };
             
             //// Subframes
-            CGRect moveGroup = CGRectMake(CGRectGetMinX(frame) - 0.07, CGRectGetMinY(frame) - 0.46, CGRectGetWidth(frame) + 0.48, CGRectGetHeight(frame) + 0.48);
+            CGRect moveGroup = CGRectMake(CGRectGetMinX(frame), CGRectGetMinY(frame), CGRectGetWidth(frame), CGRectGetHeight(frame));
             
             //// Move Group
             {

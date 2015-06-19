@@ -26,7 +26,7 @@ NSString *const ALPHAIconNotificationIdentifier = @"com.unifiedsense.alpha.icon.
             CGRect frame = { CGPointZero, size };
             
             //// Subframes
-            CGRect notificationGroup = CGRectMake(CGRectGetMinX(frame) + 1.7, CGRectGetMinY(frame) + 0.17, CGRectGetWidth(frame) - 3.65, CGRectGetHeight(frame) - 0.57);
+            CGRect notificationGroup = CGRectMake(CGRectGetMinX(frame), CGRectGetMinY(frame), CGRectGetWidth(frame) - (0.05 * size.width), CGRectGetHeight(frame));
             
             
             //// Notification Group

@@ -26,7 +26,7 @@ NSString *const ALPHAIconViewIdentifier = @"com.unifiedsense.alpha.icon.view";
             CGRect frame = { CGPointZero, size };
             
             //// Subframes
-            CGRect viewInspectionGroup = CGRectMake(CGRectGetMinX(frame) + 0.36, CGRectGetMinY(frame) + 11.65, CGRectGetWidth(frame) - 0.72, CGRectGetHeight(frame) - 22.63);
+            CGRect viewInspectionGroup = CGRectMake(CGRectGetMinX(frame), CGRectGetMinY(frame) + (0.15 * size.height), CGRectGetWidth(frame), CGRectGetHeight(frame) - (0.2875 * size.height));
             
             //// ViewInspection Group
             {

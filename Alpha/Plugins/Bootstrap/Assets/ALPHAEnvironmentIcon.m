@@ -26,7 +26,7 @@ NSString *const ALPHAIconEnvironmentIdentifier = @"com.unifiedsense.alpha.icon.e
             CGRect frame = { CGPointZero, size };
             
             //// Subframes
-            CGRect enviromentGroup = CGRectMake(CGRectGetMinX(frame) + 12.3, CGRectGetMinY(frame) - 0.06, CGRectGetWidth(frame) - 24.85, CGRectGetHeight(frame) + 0.24);
+            CGRect enviromentGroup = CGRectMake(CGRectGetMinX(frame) + (0.15 * size.width), CGRectGetMinY(frame), CGRectGetWidth(frame) - (0.3125 * size.width), CGRectGetHeight(frame));
             
             //// enviroment Group
             {
