@@ -248,7 +248,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     
     ALPHATableScreenModel* dataModel = [[ALPHATableScreenModel alloc] initWithIdentifier:ALPHADeviceStatusDataIdentifier];
     dataModel.title = @"Status";
-    //dataModel.tableViewStyle = UITableViewStyleGrouped;
+    dataModel.tableViewStyle = UITableViewStyleGrouped;
     
     dataModel.sections = @[ applicationSection, usageSection, systemSection, localeSection, deviceSection, ipSection, networkSection, cellularSection ];
     

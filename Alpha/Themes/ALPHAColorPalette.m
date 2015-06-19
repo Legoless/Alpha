@@ -55,8 +55,8 @@
     theme.toolbarDetailBackgroundColor = [self.mainColor alpha_colorWithBrightnessModifier:-0.15 * isLight];
     theme.toolbarDetailTintColor = self.accentColor;
     
-    theme.searchBackgroundColor = [self.backgroundColor alpha_colorWithBrightnessModifier:0.05 * isLight];
-    theme.searchFieldBackgroundColor = [self.backgroundColor alpha_colorWithBrightnessModifier:-0.1];
+    theme.searchBackgroundColor = self.backgroundColor;
+    theme.searchFieldBackgroundColor = [self.backgroundColor alpha_colorWithBrightnessModifier:-0.05];
     
     theme.searchTintColor = self.accentColor;
     theme.searchPlaceholderColor = [self.accentColor colorWithAlphaComponent:0.6];
@@ -70,15 +70,15 @@
     theme.cellSubtitleColor = [self.textColor colorWithAlphaComponent:0.6];
     theme.cellDetailColor = self.accentColor;
     
-    theme.tableHeaderBackgroundColor = [self.backgroundColor colorWithAlphaComponent:0.6];
+    theme.tableHeaderBackgroundColor = [self.backgroundColor colorWithAlphaComponent:0.8];
     theme.tableHeaderFontColor = [self.backgroundColor alpha_colorWithBrightnessModifier:-0.25 * isLight];
-    theme.tableFooterBackgroundColor = [self.backgroundColor colorWithAlphaComponent:0.6];
+    theme.tableFooterBackgroundColor = [self.backgroundColor colorWithAlphaComponent:0.8];
     theme.tableFooterFontColor = [self.backgroundColor alpha_colorWithBrightnessModifier:-0.25 * isLight];
     
     theme.tableHeaderGroupedBackgroundColor = self.backgroundColor;
-    theme.tableHeaderGroupedFontColor = [self.backgroundColor alpha_colorWithBrightnessModifier:-0.1 * isLight];
+    theme.tableHeaderGroupedFontColor = [self.backgroundColor alpha_colorWithBrightnessModifier:-0.25 * isLight];
     theme.tableFooterGroupedBackgroundColor = self.backgroundColor;
-    theme.tableFooterGroupedFontColor = [self.backgroundColor alpha_colorWithBrightnessModifier:-0.1 * isLight];
+    theme.tableFooterGroupedFontColor = [self.backgroundColor alpha_colorWithBrightnessModifier:-0.25 * isLight];
     
     theme.fieldSeparatorColor = theme.tableSeparatorColor;
     theme.fieldInputBackgroundColor = self.contentColor;
@@ -99,7 +99,7 @@
     
     palette.mainColor = [UIColor colorWithWhite:0.05 alpha:1.0];
     palette.accentColor = UIColorFromKey(@"#f7d746");
-    palette.backgroundColor = UIColorFromKey(@"#1f1f1f");
+    palette.backgroundColor = [UIColor colorWithWhite:0.06 alpha:1.0];
     palette.contentColor = [UIColor colorWithWhite:0.02 alpha:1.0];
     palette.textColor = [UIColor colorWithWhite:0.9 alpha:1.0];
     

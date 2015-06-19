@@ -46,10 +46,10 @@
         self.tableFooterHeight = 30.0;
         self.tableFooterMargin = UIEdgeInsetsZero;
         
-        self.tableHeaderGroupedHeight = 55.0;
+        self.tableHeaderGroupedHeight = 40.0;
         self.tableHeaderGroupedMargin = UIEdgeInsetsMake(8.0, 17.0, 0.0, 0.0);
         
-        self.tableFooterGroupedHeight = 55.0;
+        self.tableFooterGroupedHeight = 40.0;
         self.tableFooterGroupedMargin = UIEdgeInsetsZero;
         
         self.fieldTitleBottomMargin = 4.0;
@@ -96,7 +96,7 @@
 {
     //CGRect newRect = CGRectZero;
     rect.origin.x += margin.left;
-    //rect.origin.y += margin.top;
+    rect.origin.y += margin.top;
     rect.size.width -= margin.left + margin.right;
     rect.size.height -= margin.top + margin.bottom;
     
