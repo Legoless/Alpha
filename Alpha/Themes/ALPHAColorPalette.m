@@ -55,11 +55,11 @@
     theme.toolbarDetailBackgroundColor = [self.mainColor alpha_colorWithBrightnessModifier:-0.15 * isLight];
     theme.toolbarDetailTintColor = self.accentColor;
     
-    theme.searchBackgroundColor = self.backgroundColor;
+    theme.searchBackgroundColor = [self.backgroundColor alpha_colorWithBrightnessModifier:0.05 * isLight];
     theme.searchFieldBackgroundColor = [self.backgroundColor alpha_colorWithBrightnessModifier:-0.1];
     
-    theme.searchTintColor = self.mainColor;
-    theme.searchPlaceholderColor = [self.mainColor colorWithAlphaComponent:0.6];
+    theme.searchTintColor = self.accentColor;
+    theme.searchPlaceholderColor = [self.accentColor colorWithAlphaComponent:0.6];
     
     theme.tableSeparatorColor = [self.backgroundColor alpha_colorWithBrightnessModifier:-0.02 * isLight];
     
@@ -71,9 +71,9 @@
     theme.cellDetailColor = self.accentColor;
     
     theme.tableHeaderBackgroundColor = [self.backgroundColor colorWithAlphaComponent:0.6];
-    theme.tableHeaderFontColor = [self.backgroundColor alpha_colorWithBrightnessModifier:-0.2 * isLight];
+    theme.tableHeaderFontColor = [self.backgroundColor alpha_colorWithBrightnessModifier:-0.25 * isLight];
     theme.tableFooterBackgroundColor = [self.backgroundColor colorWithAlphaComponent:0.6];
-    theme.tableFooterFontColor = [self.backgroundColor alpha_colorWithBrightnessModifier:-0.2 * isLight];
+    theme.tableFooterFontColor = [self.backgroundColor alpha_colorWithBrightnessModifier:-0.25 * isLight];
     
     theme.tableHeaderGroupedBackgroundColor = self.backgroundColor;
     theme.tableHeaderGroupedFontColor = [self.backgroundColor alpha_colorWithBrightnessModifier:-0.1 * isLight];

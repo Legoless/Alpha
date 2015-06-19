@@ -573,9 +573,9 @@
         ALPHASearchScopeView *scopeView = [[ALPHASearchScopeView alloc] init];
         scopeView.delegate = self;
         
-        scopeView.tintColor = self.theme.mainColor;
+        //scopeView.tintColor = [UIColor redColor];
         //scopeView.backgroundColor = self.theme.highlightedBackgroundColor;
-        scopeView.backgroundColor = [UIColor colorWithWhite:0.08 alpha:1.0];
+        scopeView.backgroundColor = self.theme.searchBackgroundColor;
         
         scopeView.placeholder = screenModel.searchBarPlaceholder;
         
@@ -584,6 +584,7 @@
         scopeView.scopeButtonTitles = screenModel.scopes;
 
         scopeView.showsScopeBar = (screenModel.scopes != nil) ? YES : NO;
+        scopeView.searchBar.keyboardAppearance = self.theme.keyboardAppearance;
 
         [scopeView sizeToFit];
         
