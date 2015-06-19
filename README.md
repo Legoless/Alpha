@@ -20,16 +20,21 @@ Alpha is the next generation debugging system for iOS applications. It started a
 - Screenshot system
 - Touches displayed on screen via [Touchpose](https://github.com/toddreed/Touchpose)
 - Theme system
+- Remote connection to app (state, debug)
+- Use only specific modules of Alpha
+- Inspect and modify views in the hierarchy.
+- See the properties and ivars on any object.
+- Dynamically modify many properties and ivars.
+- Dynamically call instance and class methods.
+- Access any live object via a scan of the heap.
+- View the file system within your app's sandbox.
+- Explore all classes in your app and linked systems frameworks (public and private).
+- Dynamically view and modify `NSUserDefaults` values.
 
 Currently work in progress:
 
-**0.2.0**
-- *Entire Application State Snapshot*
-- *Status information widgets*
-- *Remote connection to app (state, debug)*
-- *Specify features in podfile using subspecs*
-
 **0.3.0**
+- *Entire Application State Snapshot*
 - *Recording touches and replaying actions*
 - *In-app debugger*
 
@@ -41,16 +46,7 @@ Currently work in progress:
 ![View Hierarchy Exploration](http://engineering.flipboard.com/assets/flex/basic-view-exploration.gif)
 
 
-## Give Yourself Debugging Superpowers
-- Inspect and modify views in the hierarchy.
-- See the properties and ivars on any object.
-- Dynamically modify many properties and ivars.
-- Dynamically call instance and class methods.
-- Access any live object via a scan of the heap.
-- View the file system within your app's sandbox.
-- Explore all classes in your app and linked systems frameworks (public and private).
-- Quickly access useful objects such as `[UIApplication sharedApplication]`, the app delegate, the root view controller on the key window, and more.
-- Dynamically view and modify `NSUserDefaults` values.
+## Contributions
 
 Unlike many other debugging tools, Alpha runs entirely inside your app, so you don't need to be connected to LLDB/Xcode or a different remote debugging server. It works well in the simulator and on physical devices.
 
