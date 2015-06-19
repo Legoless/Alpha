@@ -6,7 +6,12 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
+@import CoreTelephony;
+
 #import <Haystack/Haystack.h>
+
+#import "NSString+Data.h"
+
 #import "ALPHARuntimeUtility.h"
 
 #import "UIDevice+ALPHAStatus.h"
@@ -14,39 +19,14 @@
 #import "ALPHAModel.h"
 #import "ALPHATableScreenModel.h"
 
+extern NSString* CTSettingCopyMyPhoneNumber();
+
+#define ALPHAEncodeBool(expr) ( (expr) ? @"Yes" : @"No" )
+#define ALPHAEncodeString(expr) ( (expr != nil) ? [expr description] : @"" )
+
 NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.status";
 
 @interface ALPHADeviceStatusSource ()
-
-//#warning Implement and check those properties
-
-/*!
- *  Application memory size
- */
-@property (nonatomic) long long applicationMemorySize;
-
-/*!
- *  Size of application, including documents
- */
-@property (nonatomic) long long applicationSandboxSize;
-
-/*!
- *  Size of user related documents
- */
-@property (nonatomic) long long applicationDocumentSize;
-
-//
-// System global
-//
-
-/*!
- *  Global available memory
- */
-@property (nonatomic) long long systemMemorySize;
-
-@property (nonatomic) long long systemDiskSpace;
-
-@property (nonatomic) long long systemFreeDiskSpace;
 
 @end
 
@@ -70,6 +50,8 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     if (self)
     {
         [self addDataIdentifier:ALPHADeviceStatusDataIdentifier];
+        
+        [UIDevice currentDevice].batteryMonitoringEnabled = YES;
     }
     
     return self;
@@ -77,6 +59,8 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
 
 - (ALPHAModel *)modelForRequest:(ALPHARequest *)request
 {
+    NSMutableArray* items = [NSMutableArray array];
+    
     //
     // Application section
     //
@@ -102,6 +86,8 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     sectionData = @{ @"identifier" : @"com.unifiedsense.alpha.data.status.usage",
                      @"items" : @[
                              @{ @"Memory Size" : [NSByteCountFormatter stringFromByteCount:[UIApplication sharedApplication].memorySize countStyle:NSByteCountFormatterCountStyleBinary] },
+                             @{ @"Documents Size" : [self sizeOfFolder: [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]] },
+                             @{ @"Sandbox Size" : [self sizeOfFolder:NSHomeDirectory()] },
                              @{ @"Thread Count" : [NSString stringWithFormat:@"%lu", (unsigned long)[UIApplication sharedApplication].threadCount] },
                              @{ @"Process Count" : [NSString stringWithFormat:@"%lu", (unsigned long)[UIDevice currentDevice].hs_processCount] },
                              @{ @"CPU Usage" : [NSString stringWithFormat:@"%lu%%", (unsigned long)([UIApplication sharedApplication].cpuUsage * 100.0)] }
@@ -116,12 +102,28 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     // System section
     //
     
+    [items removeAllObjects];
+    [items addObjectsFromArray:@[
+        @{ @"System Version" : [NSString stringWithFormat:@"%@ %@", [UIDevice currentDevice].systemName, [UIDevice currentDevice].systemVersion] },
+        @{ @"System Time" : [self.dateFormatter stringFromDate:[NSDate date]] },
+    ]];
+    
+    NSArray *keyboards = [[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] objectForKey:@"AppleKeyboards"];;
+    
+    for (NSString* keyboard in keyboards)
+    {
+        NSString* title = @"";
+        
+        if (items.count <= 2)
+        {
+            title = @"User Keyboards";
+        }
+        
+        [items addObject:@{ title : keyboard }];
+    }
+    
     sectionData = @{ @"identifier" : @"com.unifiedsense.alpha.data.status.system",
-                     @"items" : @[
-                             @{ @"System Version" : [NSString stringWithFormat:@"%@ %@", [UIDevice currentDevice].systemName, [UIDevice currentDevice].systemVersion] },
-
-                             @{ @"System Time" : [self.dateFormatter stringFromDate:[NSDate date]] }
-                     ],
+                     @"items" : items.copy,
                      @"style" : @(UITableViewCellStyleValue1),
                      @"headerText" : @"System" };
     
@@ -131,7 +133,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     // Locale section
     //
     
-    NSMutableArray* items = [NSMutableArray array];
+    [items removeAllObjects];
     
     NSArray* languages = [NSLocale preferredLanguages];
     
@@ -150,6 +152,8 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     }
     
     NSString* region = [[NSLocale currentLocale] objectForKey:NSLocaleIdentifier];
+    
+    
     
     [items addObjectsFromArray:@[
         @{ @"Timezone" : [NSTimeZone localTimeZone].name },
@@ -171,6 +175,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     
     sectionData = @{ @"identifier" : @"com.unifiedsense.alpha.data.status.device",
                      @"items" : @[
+                             @{ @"Name" : [UIDevice currentDevice].name },
                              @{ @"Model" : [UIDevice currentDevice].modelName },
                              @{ @"Identifier" : [UIDevice currentDevice].modelIdentifier },
                              @{ @"CPU Count" : [NSString stringWithFormat:@"%lu", (unsigned long)([UIDevice currentDevice].hs_cpuPhysicalCount)] },
@@ -181,7 +186,8 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
                              @{ @"Capacity" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].hs_diskMarketingSpace countStyle:NSByteCountFormatterCountStyleBinary] },
                              @{ @"Total Capacity" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].hs_diskTotalSpace countStyle:NSByteCountFormatterCountStyleBinary] },
                              @{ @"Free Capacity" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].hs_diskFreeSpace countStyle:NSByteCountFormatterCountStyleBinary] },
-                             @{ @"Jailbroken" : ([UIDevice currentDevice].hs_jailbreakStatus != UIDeviceJailbreakStatusNotJailbroken ? @"Yes" : @"No") }
+                             @{ @"Jailbroken" : ALPHAEncodeBool([UIDevice currentDevice].hs_jailbreakStatus != UIDeviceJailbreakStatusNotJailbroken) },
+                             @{ @"Battery level" : [NSString stringWithFormat:@"%ld%%", (long)([UIDevice currentDevice].batteryLevel * 100)] }
                      ],
                      @"style" : @(UITableViewCellStyleValue1),
                      @"headerText" : @"Device" };
@@ -230,11 +236,17 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     
     ALPHAScreenSection* networkSection = [ALPHAScreenSection screenSectionWithDictionary:sectionData];
     
-    //#warning Add other data from Core Telephony (phone number, etc, ...)
-    
+    CTTelephonyNetworkInfo* info = [[CTTelephonyNetworkInfo alloc] init];
+
     sectionData = @{ @"identifier" : @"com.unifiedsense.alpha.data.status.cellular",
                      @"items" : @[
-                             @{ @"Carrier" : [UIDevice currentDevice].alpha_carrierName }
+                             @{ @"Carrier" : [UIDevice currentDevice].alpha_carrierName },
+                             @{ @"Carrier Name" : ALPHAEncodeString([info.subscriberCellularProvider.carrierName capitalizedString]) },
+                             @{ @"Data Connection": ALPHAEncodeString([self radioTypeFromRadioAccessTechnology:info.currentRadioAccessTechnology]) },
+                             @{ @"Country Code" : ALPHAEncodeString(info.subscriberCellularProvider.mobileCountryCode) },
+                             @{ @"Network Code" : ALPHAEncodeString(info.subscriberCellularProvider.mobileNetworkCode) },
+                             @{ @"ISO Country Code" : ALPHAEncodeString(info.subscriberCellularProvider.isoCountryCode) },
+                             @{ @"VoIP Enabled" : ALPHAEncodeBool(info.subscriberCellularProvider.allowsVOIP) }
                      ],
                      @"style" : @(UITableViewCellStyleValue1),
                      @"headerText" : @"Cellular" };
@@ -256,6 +268,32 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     dataModel.expiration = 0.5;
     
     return dataModel;
+}
+
+#pragma mark - Private Methods
+
+- (NSString *)sizeOfFolder:(NSString *)folderPath
+{
+    NSArray *contents = [[NSFileManager defaultManager] subpathsOfDirectoryAtPath:folderPath error:nil];
+    NSEnumerator *contentsEnumurator = [contents objectEnumerator];
+    
+    NSString *file;
+    unsigned long long int folderSize = 0;
+    
+    while (file = [contentsEnumurator nextObject])
+    {
+        NSDictionary *fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:[folderPath stringByAppendingPathComponent:file] error:nil];
+        folderSize += [[fileAttributes objectForKey:NSFileSize] intValue];
+    }
+    
+    //This line will give you formatted size from bytes ....
+    NSString *folderSizeStr = [NSByteCountFormatter stringFromByteCount:folderSize countStyle:NSByteCountFormatterCountStyleFile];
+    return folderSizeStr;
+}
+
+- (NSString *)radioTypeFromRadioAccessTechnology:(NSString *)radioAccess
+{
+    return [radioAccess stringByReplacingOccurrencesOfString:@"CTRadioAccessTechnology" withString:@""];
 }
 
 @end

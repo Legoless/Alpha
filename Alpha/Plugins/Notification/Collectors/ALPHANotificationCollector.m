@@ -9,6 +9,8 @@
 #import <Haystack/Haystack.h>
 #import "ALPHAApplicationDelegate.h"
 
+#import "NSString+Data.h"
+
 #import "ALPHANotification.h"
 
 #import "ALPHANotificationModel.h"
@@ -208,7 +210,7 @@ NSString *const ALPHANotificationDataIdentifier = @"com.unifiedsense.alpha.data.
     {
         NSData* deviceToken = [anInvocation hs_objectAtIndex:3];
         
-        NSString* tokenString = [self deviceTokenFromData:deviceToken];
+        NSString* tokenString = [NSString alpha_hexStringFromData:deviceToken];
         
         self.remoteNotificationToken = tokenString;
         self.remoteRegistrationDescription = @"Registered";
@@ -231,44 +233,7 @@ NSString *const ALPHANotificationDataIdentifier = @"com.unifiedsense.alpha.data.
 - (NSString *)enabledNotificationTypes
 {
     return [self stringForUserNotificationSettings:[[UIApplication sharedApplication] currentUserNotificationSettings]];
-    
-    /*if ([[UIApplication sharedApplication] respondsToSelector:@selector(currentUserNotificationSettings)])
-    {
-        return [self stringForUserNotificationSettings:[[UIApplication sharedApplication] currentUserNotificationSettings]];
-    }
-    else
-    {
-        return [self stringForEnabledRemoteNotificationTypes:[UIApplication sharedApplication].enabledRemoteNotificationTypes];
-    }*/
 }
-
-/*
-- (NSString *)stringForEnabledRemoteNotificationTypes:(UIRemoteNotificationType)notificationType
-{
-    NSMutableArray *types = [NSMutableArray array];
-    
-    if ((notificationType & UIRemoteNotificationTypeAlert) != 0)
-    {
-        [types addObject:@"alert"];
-    }
-    
-    if ((notificationType & UIRemoteNotificationTypeBadge) != 0)
-    {
-        [types addObject:@"badge"];
-    }
-    
-    if ((notificationType & UIRemoteNotificationTypeNewsstandContentAvailability) != 0)
-    {
-        [types addObject:@"content"];
-    }
-    
-    if ((notificationType & UIRemoteNotificationTypeSound) != 0)
-    {
-        [types addObject:@"sound"];
-    }
-    
-    return types.count ? [types componentsJoinedByString:@", "] : @"none";
-}*/
 
 - (NSString *)stringForUserNotificationSettings:(UIUserNotificationSettings *)settings
 {
@@ -290,19 +255,6 @@ NSString *const ALPHANotificationDataIdentifier = @"com.unifiedsense.alpha.data.
     }
     
     return types.count ? [types componentsJoinedByString:@", "] : @"none";
-}
-
-- (NSString *)deviceTokenFromData:(NSData *)data
-{
-    // Convert device deviceToken to a hex string
-    NSMutableString *deviceToken = [NSMutableString stringWithCapacity:([data length] * 2)];
-    const unsigned char *bytes = (const unsigned char *)[data bytes];
-    
-    for (NSUInteger i = 0; i < [data length]; i++) {
-        [deviceToken appendFormat:@"%02X", bytes[i]];
-    }
-    
-    return [deviceToken lowercaseString];
 }
 
 @end
