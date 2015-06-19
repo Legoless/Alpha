@@ -46,13 +46,13 @@
     theme.menuButtonSelectedBackgroundColor = [self.mainColor alpha_colorWithBrightnessModifier:0.1];
     
     theme.toolbarBackgroundColor = self.mainColor;
-    theme.toolbarSelectedColor = [self.mainColor alpha_colorWithBrightnessModifier:-0.2 * isLight];
-    theme.toolbarHighlightedColor = [self.mainColor alpha_colorWithBrightnessModifier:-0.3 * isLight];
+    theme.toolbarSelectedColor = [self.mainColor alpha_colorWithBrightnessModifier:-0.15 * isLight];
+    theme.toolbarHighlightedColor = [self.mainColor alpha_colorWithBrightnessModifier:-0.2 * isLight];
     
     theme.toolbarTintColor = self.accentColor;
     theme.toolbarTintDisabledColor = [self.accentColor colorWithAlphaComponent:0.5];
     
-    theme.toolbarDetailBackgroundColor = [self.mainColor alpha_colorWithBrightnessModifier:-0.2 * isLight];
+    theme.toolbarDetailBackgroundColor = [self.mainColor alpha_colorWithBrightnessModifier:-0.15 * isLight];
     theme.toolbarDetailTintColor = self.accentColor;
     
     theme.searchBackgroundColor = self.backgroundColor;

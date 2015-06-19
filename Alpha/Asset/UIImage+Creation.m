@@ -58,7 +58,7 @@ NSString *const ALPHADrawingForegroundColorKey = @"kALPHADrawingForegroundColorK
     
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    return image;
+    return [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 }
 
 @end

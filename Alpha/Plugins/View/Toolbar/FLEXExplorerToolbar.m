@@ -46,36 +46,42 @@
         NSMutableArray *toolbarItems = [NSMutableArray array];
         
         self.dragHandle = [[UIView alloc] init];
-        self.dragHandle.backgroundColor = [ALPHAManager sharedManager].theme.backgroundColor;
+        self.dragHandle.backgroundColor = [ALPHAManager sharedManager].theme.toolbarBackgroundColor;
         [self addSubview:self.dragHandle];
         
         UIImage *dragHandle = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconDragHandleIdentifier];
         self.dragHandleImageView = [[UIImageView alloc] initWithImage:dragHandle];
+        self.dragHandleImageView.tintColor = [ALPHAManager sharedManager].theme.toolbarDetailTintColor;
         
         [self.dragHandle addSubview:self.dragHandleImageView];
         
         UIImage *globalsIcon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconInfoIdentifier];
         self.globalsItem = [FLEXToolbarItem toolbarItemWithTitle:@"info" image:globalsIcon];
+        self.globalsItem.tintColor = [ALPHAManager sharedManager].theme.toolbarDetailTintColor;
         [self addSubview:self.globalsItem];
         [toolbarItems addObject:self.globalsItem];
         
         UIImage *listIcon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconViewIdentifier];
         self.hierarchyItem = [FLEXToolbarItem toolbarItemWithTitle:@"views" image:listIcon];
+        self.hierarchyItem.tintColor = [ALPHAManager sharedManager].theme.toolbarDetailTintColor;
         [self addSubview:self.hierarchyItem];
         [toolbarItems addObject:self.hierarchyItem];
         
         UIImage *selectIcon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconSelectIdentifier];
         self.selectItem = [FLEXToolbarItem toolbarItemWithTitle:@"select" image:selectIcon];
+        self.selectItem.tintColor = [ALPHAManager sharedManager].theme.toolbarDetailTintColor;
         [self addSubview:self.selectItem];
         [toolbarItems addObject:self.selectItem];
         
         UIImage *moveIcon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconMoveIdentifier];
         self.moveItem = [FLEXToolbarItem toolbarItemWithTitle:@"move" image:moveIcon];
+        self.moveItem.tintColor = [ALPHAManager sharedManager].theme.toolbarDetailTintColor;
         [self addSubview:self.moveItem];
         [toolbarItems addObject:self.moveItem];
         
         UIImage *closeIcon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconCloseIdentifier];
         self.closeItem = [FLEXToolbarItem toolbarItemWithTitle:@"close" image:closeIcon];
+        self.closeItem.tintColor = [ALPHAManager sharedManager].theme.toolbarDetailTintColor;
         [self addSubview:self.closeItem];
         [toolbarItems addObject:self.closeItem];
         

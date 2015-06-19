@@ -124,14 +124,14 @@
     self.notificationFont = [UIFont fontWithName:fontFamily size:size - 4.0];
     self.toolbarTitleFont = [UIFont fontWithName:fontFamily size:size - 2.0];
     
-    self.toolbarDetailFont = [UIFont fontWithName:fontFamily size:size - 4.0];
-    
     self.searchBarFont = [UIFont fontWithName:fontFamily size:size];
     self.fieldInputFont = [UIFont fontWithName:fontFamily size:size];
 }
 
 - (void)setContentFontsWithFamily:(NSString *)fontFamily defaultPointSize:(CGFloat)size
 {
+    self.toolbarDetailFont = [UIFont fontWithName:fontFamily size:size - 4.0];
+    
     self.cellTitleFont = [UIFont fontWithName:fontFamily size:size];
     self.cellSubtitleFont = [UIFont fontWithName:fontFamily size:size - 2.0];
     self.cellDetailFont = [UIFont fontWithName:fontFamily size:size];
