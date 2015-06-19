@@ -23,9 +23,10 @@
     //
     // Light modifier so we get accents lighter or darker based on theme
     //
-    CGFloat isLight = ([self.backgroundColor alpha_brightness] > 0.5) ? 1.0 : -1.0;
+    CGFloat isLight = ([self.contentColor alpha_brightness] >= 0.5) ? 1.0 : -1.0;
     
     theme.statusBarStyle = isLight > 0 ? UIStatusBarStyleDefault : UIStatusBarStyleLightContent;
+    theme.keyboardAppearance = isLight > 0.0 ? UIKeyboardAppearanceLight : UIKeyboardAppearanceDark;
     
     //
     // Set colors
@@ -37,12 +38,12 @@
     
     theme.headerBackgroundColor = self.mainColor;
     theme.headerShadowColor = [self.mainColor alpha_colorWithBrightnessModifier:-0.05 * isLight];
-    theme.notificationBackgroundColor = [self.mainColor alpha_colorWithBrightnessModifier:-0.2 * isLight];
+    theme.notificationBackgroundColor = [self.mainColor alpha_colorWithBrightnessModifier:-0.05 * isLight];
     theme.notificationTintColor = self.accentColor;
     
     theme.menuBackgroundColor = self.mainColor;
     theme.menuTintColor = self.accentColor;
-    theme.menuButtonBackgroundColor = [theme.menuButtonBackgroundColor colorWithAlphaComponent:0.8];
+    theme.menuButtonBackgroundColor = [theme.menuBackgroundColor colorWithAlphaComponent:0.9];
     theme.menuButtonSelectedBackgroundColor = [self.mainColor alpha_colorWithBrightnessModifier:0.1];
     
     theme.toolbarBackgroundColor = self.mainColor;
@@ -61,7 +62,7 @@
     theme.searchTintColor = self.accentColor;
     theme.searchPlaceholderColor = [self.accentColor colorWithAlphaComponent:0.6];
     
-    theme.tableSeparatorColor = [self.backgroundColor alpha_colorWithBrightnessModifier:-0.02 * isLight];
+    theme.tableSeparatorColor = [self.backgroundColor alpha_colorWithBrightnessModifier:-0.03 * isLight];
     
     theme.cellTintColor = self.accentColor;
     theme.cellBackgroundColor = self.contentColor;

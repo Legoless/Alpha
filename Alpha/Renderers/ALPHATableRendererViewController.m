@@ -416,6 +416,11 @@
     
     label.text = [self tableView:tableView titleForHeaderInSection:section];
     
+    if (tableView.style == UITableViewStyleGrouped)
+    {
+        label.text = [label.text uppercaseString];
+    }
+        
     [headerView addSubview:label];
     
     return headerView;

@@ -11,6 +11,7 @@
 		3830B2E01B341B5600E1C9F9 /* ALPHAColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 3830B2DF1B341B5600E1C9F9 /* ALPHAColorPalette.m */; };
 		3830B2E31B3436A800E1C9F9 /* UIFont+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 3830B2E21B3436A800E1C9F9 /* UIFont+Convenience.m */; };
 		3830B2E61B3453D900E1C9F9 /* UIColor+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 3830B2E51B3453D900E1C9F9 /* UIColor+Tools.m */; };
+		3830B2EA1B347F0900E1C9F9 /* ALPHANotioColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 3830B2E91B347F0900E1C9F9 /* ALPHANotioColorPalette.m */; };
 		38353E891B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38353E881B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m */; };
 		38655F5F1B31F62500482338 /* UIColor+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = 38655F5E1B31F62500482338 /* UIColor+Random.m */; };
 		38655F621B31F6AD00482338 /* NSString+Entities.m in Sources */ = {isa = PBXBuildFile; fileRef = 38655F611B31F6AD00482338 /* NSString+Entities.m */; };
@@ -250,6 +251,8 @@
 		3830B2E21B3436A800E1C9F9 /* UIFont+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Convenience.m"; sourceTree = "<group>"; };
 		3830B2E41B3453D900E1C9F9 /* UIColor+Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Tools.h"; sourceTree = "<group>"; };
 		3830B2E51B3453D900E1C9F9 /* UIColor+Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Tools.m"; sourceTree = "<group>"; };
+		3830B2E81B347F0900E1C9F9 /* ALPHANotioColorPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHANotioColorPalette.h; sourceTree = "<group>"; };
+		3830B2E91B347F0900E1C9F9 /* ALPHANotioColorPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHANotioColorPalette.m; sourceTree = "<group>"; };
 		38353E871B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLCatalogTableTableViewController.h; sourceTree = "<group>"; };
 		38353E881B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLCatalogTableTableViewController.m; sourceTree = "<group>"; };
 		38525D7E1B0C91E4006644A1 /* VisualVoicemail.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VisualVoicemail.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/PrivateFrameworks/VisualVoicemail.framework; sourceTree = DEVELOPER_DIR; };
@@ -721,6 +724,15 @@
 				8EFDBC5D9C946F8E17E67DBC /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		3830B2E71B347EC300E1C9F9 /* Palettes */ = {
+			isa = PBXGroup;
+			children = (
+				3830B2E81B347F0900E1C9F9 /* ALPHANotioColorPalette.h */,
+				3830B2E91B347F0900E1C9F9 /* ALPHANotioColorPalette.m */,
+			);
+			path = Palettes;
 			sourceTree = "<group>";
 		};
 		38353E861B1DADEF009E4ACF /* Integration */ = {
@@ -1790,6 +1802,7 @@
 				67E64BC5A6A6BF4406517FB2 /* Core */,
 				67E64316BF46DD7C58AC33E2 /* Manager */,
 				67E643338C75BD341AB37F48 /* Model */,
+				3830B2E71B347EC300E1C9F9 /* Palettes */,
 				67E64E4FA036882446B804B6 /* Plugins */,
 				67E643BAA87F672D6B78FC86 /* Private */,
 				67E64D53BBFADFA6B15C6518 /* Renderers */,
@@ -2310,6 +2323,7 @@
 				67E648E437090C4CD8D0BC53 /* ALPHANetworkConnectionTiming.m in Sources */,
 				67E64C053FB47A19111D1C72 /* ALPHARequestState.m in Sources */,
 				67E64D7525F5E283290D82F6 /* ALPHANetworkCollector.m in Sources */,
+				3830B2EA1B347F0900E1C9F9 /* ALPHANotioColorPalette.m in Sources */,
 				38EBEDB81B32D8AC006CF2FA /* ALPHAScreenshotIcon.m in Sources */,
 				67E64E3263D178721CE31B7F /* ALPHANetworkConverter.m in Sources */,
 				67E64272D559D736DC725ADF /* ALPHANetworkPlugin.m in Sources */,
