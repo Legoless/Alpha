@@ -32,6 +32,11 @@
  */
 @property (nonatomic) BOOL snapToBorder;
 
+/*!
+ *  When no action is set, this image is displayed
+ */
+@property (nonatomic, strong) UIImage *mainImage;
+
 @property (nonatomic, copy) NSArray* images;
 @property (nonatomic, weak) id<ALPHAExplorerMenuDelegate> delegate;
 

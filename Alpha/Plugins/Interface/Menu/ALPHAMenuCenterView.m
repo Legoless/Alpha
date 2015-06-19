@@ -57,7 +57,7 @@
     
     self.backgroundColor = [UIColor clearColor];
     
-    self.imageView = [[UIImageView alloc] initWithFrame:[self rectWithPaddingPercent:0.75]];
+    self.imageView = [[UIImageView alloc] initWithFrame:[self rectWithPaddingPercent:0.45]];
     self.imageView.userInteractionEnabled = NO;
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     

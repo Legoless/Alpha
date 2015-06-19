@@ -79,6 +79,13 @@
     self.centerView.tintColor = tintColor;
 }
 
+- (void)setMainImage:(UIImage *)mainImage
+{
+    _mainImage = mainImage;
+    
+    self.centerView.image = mainImage;
+}
+
 #pragma mark - UIView
 
 - (void)awakeFromNib
@@ -279,7 +286,7 @@
         
         self.menuOpenDate = [NSDate date];
         
-        self.centerView.image = nil;
+        self.centerView.image = self.mainImage;
         
         [self updateContextPosition];
     }
@@ -296,7 +303,7 @@
     {
         self.menuOpenDate = nil;
         
-        self.centerView.image = nil;
+        self.centerView.image = self.mainImage;
         
         [UIView animateWithDuration:0.2 animations:^
         {
@@ -325,6 +332,11 @@
         image = self.images[anIndex];
         
         self.menuOpenDate = [NSDate date];
+    }
+    
+    if (!image)
+    {
+        image = self.mainImage;
     }
     
     self.centerView.image = image;

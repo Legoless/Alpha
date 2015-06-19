@@ -20,6 +20,8 @@
 
 #import "FLEXToolbarItem.h"
 
+#import "ALPHACoreAssets.h"
+
 #import "ALPHAExplorerMenu.h"
 
 #import "ALPHAViewController.h"
@@ -58,6 +60,7 @@
     self.explorerMenu.mainBackgroundColor = [ALPHAManager defaultManager].theme.menuBackgroundColor;
     self.explorerMenu.buttonBackgroundColor = [ALPHAManager defaultManager].theme.menuButtonBackgroundColor;
     self.explorerMenu.buttonSelectedBackgroundColor = [ALPHAManager defaultManager].theme.menuButtonSelectedBackgroundColor;
+    self.explorerMenu.mainImage = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHALogoIdentifier];
     
     //
     // Disable touches for canvas view, we do not care about other shit

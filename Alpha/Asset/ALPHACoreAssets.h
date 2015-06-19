@@ -41,3 +41,9 @@ extern NSString *const ALPHAIconRemoteIdentifier;
 @interface ALPHARemoteIcon : ALPHAAsset
 
 @end
+
+extern NSString *const ALPHALogoIdentifier;
+
+@interface ALPHALogoAsset : ALPHAAsset
+
+@end
