@@ -113,7 +113,7 @@
 {
     _theme = theme;
     
-    self.view.backgroundColor = theme.backgroundColor;
+    self.view.backgroundColor = (self.tableView.style == UITableViewStylePlain) ? theme.cellBackgroundColor : theme.backgroundColor;
     self.tableView.separatorColor = theme.tableSeparatorColor;
 }
 
@@ -130,6 +130,13 @@
 }
 
 #pragma mark - UIViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -264,6 +271,7 @@
     cell.detailTextLabel.adjustsFontSizeToFitWidth = YES;
     
     cell.tintColor = theme.cellTintColor;
+    cell.imageView.tintColor = theme.cellTintColor;
     //cell.detailTextLabel.adjustsLetterSpacingToFitWidth = YES;
 }
 

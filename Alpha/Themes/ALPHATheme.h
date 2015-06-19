@@ -7,7 +7,6 @@
 //
 
 #import "ALPHAFont.h"
-#import "ALPHAColorPalette.h"
 
 /*!
  *  Theme exposes colors and text attributes that is reflected throughout Alpha
@@ -79,14 +78,13 @@
 /*!
  *  Top icon margin
  */
-@property (nonatomic, assign) CGFloat topMargin;
+@property (nonatomic, assign) CGFloat toolbarTopMargin;
 
 /*!
  *  Usually matches menu background color
  */
 @property (nonatomic, strong) UIColor *toolbarBackgroundColor;
 @property (nonatomic, strong) UIColor *toolbarSelectedColor;
-@property (nonatomic, strong) UIColor *toolbarDisabledColor;
 @property (nonatomic, strong) UIColor *toolbarHighlightedColor;
 
 /*!
@@ -216,16 +214,12 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithColorPalette:(ALPHAColorPalette *)colorPalette;
-
 /*!
  *  Factory - Returns new instance of the theme
  *
  *  @return ALPHATheme instance
  */
 + (instancetype)theme;
-
-+ (instancetype)themeWithColorPalette:(ALPHAColorPalette *)colorPalette;
 
 /*!
  *  Called by the Alpha system once theme is initialized, will call UIAppearance
@@ -238,5 +232,11 @@
 #pragma mark - Utility methods
 
 - (CGRect)rect:(CGRect)rect withMargin:(UIEdgeInsets)margin;
+
+- (void)setFontsWithFamily:(NSString *)fontFamily;
+
+- (void)setHeaderFontsWithFamily:(NSString *)fontFamily;
+
+- (void)setContentFontsWithFamily:(NSString *)fontFamily;
 
 @end

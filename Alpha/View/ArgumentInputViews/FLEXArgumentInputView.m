@@ -120,7 +120,6 @@
 
 + (CGFloat)titleBottomPadding
 {
-    // 4.0
     return [ALPHAManager sharedManager].theme.fieldTitleBottomMargin;
 }
 

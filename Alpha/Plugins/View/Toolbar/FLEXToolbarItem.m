@@ -96,8 +96,8 @@
 - (CGRect)imageRectForContentRect:(CGRect)contentRect
 {
     CGRect titleRect = [self titleRectForContentRect:contentRect];
-    CGFloat availableHeight = contentRect.size.height - titleRect.size.height - ([ALPHAManager sharedManager].theme.topMargin * 2.0);
-    CGFloat originY = [ALPHAManager sharedManager].theme.topMargin;
+    CGFloat availableHeight = contentRect.size.height - titleRect.size.height - ([ALPHAManager sharedManager].theme.toolbarTopMargin * 2.0);
+    CGFloat originY = [ALPHAManager sharedManager].theme.toolbarTopMargin;
     CGRect imageRect = CGRectMake(0.0, originY, contentRect.size.width, availableHeight);
     return imageRect;
 }

@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
+#import <Haystack/Haystack.h>
+
 #import "ALPHANavigationController.h"
 
 #import "UIImage+Creation.h"
@@ -17,23 +19,43 @@
 
 @implementation ALPHATheme
 
+#pragma mark - Initialization
+
 - (instancetype)init
 {
     self = [super init];
     
     if (self)
     {
-        /*
-        self.fontFamily = @"Menlo";
+        //
+        // Defaults
+        //
         
-        self.topMargin = 4.0;
+        self.statusBarStyle = UIStatusBarStyleLightContent;
+        self.keyboardAppearance = UIKeyboardAppearanceDark;
         
-        self.mainColor = [UIColor blackColor];
+        //
+        // Toolbar
+        //
         
-        self.disabledTitleColor = [UIColor lightGrayColor];
-        self.highlightedBackgroundColor = [UIColor grayColor];
-        self.selectedBackgroundColor = [UIColor darkGrayColor];
-        self.backgroundColor = [UIColor whiteColor];*/
+        self.toolbarTopMargin = 4.0;
+        
+        self.tableHeaderHeight = UITableViewAutomaticDimension;
+        self.tableHeaderMargin = UIEdgeInsetsMake(8.0, 17.0, 0.0, 0.0);
+        
+        self.tableFooterHeight = UITableViewAutomaticDimension;
+        self.tableFooterMargin = UIEdgeInsetsZero;
+        
+        self.tableHeaderGroupedHeight = UITableViewAutomaticDimension;
+        self.tableHeaderGroupedMargin = UIEdgeInsetsMake(8.0, 17.0, 0.0, 0.0);
+        
+        self.tableFooterGroupedHeight = UITableViewAutomaticDimension;
+        self.tableFooterGroupedMargin = UIEdgeInsetsZero;
+        
+        self.fieldTitleBottomMargin = 4.0;
+        
+        self.fieldInputBorderWidth = 1.0;
+        self.imageViewBorderWidth = 1.0;
     }
     
     return self;
@@ -43,6 +65,8 @@
 {
     return [[[self class] alloc] init];
 }
+
+#pragma mark - Public Methods
 
 - (void)applyInWindow:(UIWindow *)window
 {
@@ -79,5 +103,57 @@
     return rect;
 }
 
+#pragma mark - Private Methods
+
+/*!
+ *  Creates all UIFonts with specified family
+ *
+ *  @param fontFamily
+ */
+- (void)setFontsWithFamily:(NSString *)fontFamily
+{
+    [self setHeaderFontsWithFamily:fontFamily];
+    [self setContentFontsWithFamily:fontFamily];
+}
+
+- (void)setHeaderFontsWithFamily:(NSString *)fontFamily
+{
+    self.headerTitleFont = [UIFont fontWithName:fontFamily size:17.0];
+    self.headerButtonFont = [UIFont fontWithName:fontFamily size:14.0];
+    
+    self.notificationFont = [UIFont fontWithName:fontFamily size:8.0];
+    self.toolbarTitleFont = [UIFont fontWithName:fontFamily size:10.0];
+    
+    self.toolbarDetailFont = [UIFont fontWithName:fontFamily size:8.0];
+    
+    self.searchBarFont = [UIFont fontWithName:fontFamily size:12.0];
+    self.fieldInputFont = [UIFont fontWithName:fontFamily size:12.0];
+    
+    self.headerTitleFont = [UIFont fontWithName:fontFamily size:17.0];
+    self.headerTitleFont = [UIFont fontWithName:fontFamily size:17.0];
+    self.headerTitleFont = [UIFont fontWithName:fontFamily size:17.0];
+    self.headerTitleFont = [UIFont fontWithName:fontFamily size:17.0];
+    self.headerTitleFont = [UIFont fontWithName:fontFamily size:17.0];
+}
+
+- (void)setContentFontsWithFamily:(NSString *)fontFamily
+{
+    self.cellTitleFont = [UIFont fontWithName:fontFamily size:12.0];
+    self.cellSubtitleFont = [UIFont fontWithName:fontFamily size:10.0];
+    self.cellDetailFont = [UIFont fontWithName:fontFamily size:12.0];
+    
+    self.tableHeaderFont = [UIFont fontWithName:fontFamily size:11.0];
+    self.tableFooterFont = [UIFont fontWithName:fontFamily size:11.0];
+    
+    self.tableHeaderGroupedFont = [UIFont fontWithName:fontFamily size:11.0];
+    self.tableFooterGroupedFont = [UIFont fontWithName:fontFamily size:11.0];
+    
+    self.fieldTitleFont = [UIFont fontWithName:fontFamily size:12.0];
+    
+    self.fieldToolbarFont = [UIFont fontWithName:fontFamily size:10.0];
+    
+    self.fieldColorFont = [UIFont fontWithName:fontFamily size:12.0];
+    self.fieldColorComponentFont = [UIFont fontWithName:fontFamily size:12.0];
+}
 
 @end
