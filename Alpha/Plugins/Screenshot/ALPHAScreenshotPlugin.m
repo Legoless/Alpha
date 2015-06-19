@@ -45,7 +45,7 @@
         [self registerAction:touchAction];
         
         ALPHAScreenActionItem* menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.screenshot.main"];
-        menuAction.icon = @"📱";
+        menuAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconScreenshotIdentifier color:nil size:CGSizeMake(20.0, 20.0)];
         menuAction.title = @"Screenshots";
         menuAction.dataIdentifier = ALPHAScreenshotDataIdentifier;
         menuAction.isMain = YES;

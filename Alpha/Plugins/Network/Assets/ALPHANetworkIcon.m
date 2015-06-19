@@ -21,8 +21,6 @@ NSString *const ALPHAIconNetworkIdentifier = @"com.unifiedsense.alpha.icon.netwo
         self.drawingSize = CGSizeMake(80.0, 80.0);
         self.drawingBlock = ^(CGSize size, NSDictionary* parameters)
         {
-            CGContextRef context = UIGraphicsGetCurrentContext();
-            
             UIColor *fillColor = parameters[ALPHADrawingForegroundColorKey];
             
             CGRect frame = { CGPointZero, size };

@@ -66,7 +66,7 @@
         
         ALPHAScreenActionItem* menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.viewHierarchy"];
         menuAction.title = @"View Hierarchy";
-        menuAction.icon = @"💻";
+        menuAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconViewIdentifier color:nil size:CGSizeMake(20.0, 20.0)];
         menuAction.dataIdentifier = ALPHAViewDataIdentifier;
         menuAction.isMain = YES;
         

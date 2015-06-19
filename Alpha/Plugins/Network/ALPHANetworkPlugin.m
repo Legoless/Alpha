@@ -12,6 +12,9 @@
 
 #import "ALPHANetworkPlugin.h"
 
+#import "ALPHANetworkIcon.h"
+#import "ALPHAAssetManager.h"
+
 @implementation ALPHANetworkPlugin
 
 - (instancetype)init
@@ -21,7 +24,7 @@
     if (self)
     {
         ALPHAScreenActionItem* menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.network.main"];
-        menuAction.icon = @"💬";
+        menuAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconNetworkIdentifier color:nil size:CGSizeMake(20.0, 20.0)];
         menuAction.title = @"Network";
         menuAction.dataIdentifier = ALPHANetworkDataIdentifier;
         menuAction.isMain = YES;

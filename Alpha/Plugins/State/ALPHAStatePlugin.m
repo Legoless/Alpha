@@ -9,6 +9,8 @@
 #import "ALPHAStatePlugin.h"
 #import "ALPHAScreenActionItem.h"
 #import "ALPHADeviceStatusSource.h"
+#import "ALPHAAssetManager.h"
+#import "ALPHAStatusIcon.h"
 
 @interface ALPHAStatePlugin ()
 
@@ -27,7 +29,7 @@
         //
         
         ALPHAScreenActionItem* menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.state.status"];
-        menuAction.icon = @"📊";
+        menuAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconStatusIdentifier color:nil size:CGSizeMake(20.0, 20.0)];
         menuAction.title = @"Status";
         menuAction.dataIdentifier = ALPHADeviceStatusDataIdentifier;
         menuAction.isMain = YES;

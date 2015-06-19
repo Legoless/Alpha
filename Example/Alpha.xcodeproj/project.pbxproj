@@ -1085,7 +1085,7 @@
 			path = Converters;
 			sourceTree = "<group>";
 		};
-		67E64190F6B16F8EABE77452 /* Help */ = {
+		67E64190F6B16F8EABE77452 /* Heap */ = {
 			isa = PBXGroup;
 			children = (
 				38EBED951B32D6E2006CF2FA /* Assets */,
@@ -1093,7 +1093,7 @@
 				67E647F48709E9B93198E3BA /* ALPHAHeapPlugin.h */,
 				67E649B4EF45935EB04AAA30 /* ALPHAHeapPlugin.m */,
 			);
-			path = Help;
+			path = Heap;
 			sourceTree = "<group>";
 		};
 		67E6421E55250478DF2BAD21 /* Event */ = {
@@ -1916,7 +1916,7 @@
 				67E6421E55250478DF2BAD21 /* Event */,
 				67E64AD697E5B351EF3EBFBE /* File */,
 				67E64C6B83D2C7BFBFF5AE05 /* Global */,
-				67E64190F6B16F8EABE77452 /* Help */,
+				67E64190F6B16F8EABE77452 /* Heap */,
 				67E64866EE3EA453B7701BAA /* Interface */,
 				67E64F838E55CAFC29D506EB /* Network */,
 				67E644A62C1480E94B472649 /* Notification */,

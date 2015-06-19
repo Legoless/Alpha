@@ -14,6 +14,8 @@
 #import "ALPHAClassSource.h"
 #import "ALPHALibrarySource.h"
 #import "ALPHAInstanceSource.h"
+#import "ALPHAAssetManager.h"
+#import "ALPHAGlobalIcon.h"
 
 @implementation ALPHAGlobalPlugin
 
@@ -25,7 +27,7 @@
     {
         ALPHAScreenActionItem* menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.globalState"];
         menuAction.title = @"Global State";
-        menuAction.icon = @"🌍";
+        menuAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconGlobalIdentifier color:nil size:CGSizeMake(20.0, 20.0)];
         menuAction.dataIdentifier = ALPHAGlobalDataIdentifier;
         menuAction.isMain = YES;
         

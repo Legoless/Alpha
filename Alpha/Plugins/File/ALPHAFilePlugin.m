@@ -9,6 +9,8 @@
 #import "ALPHAScreenActionItem.h"
 #import "ALPHAFilePlugin.h"
 #import "ALPHAFileSource.h"
+#import "ALPHAAssetManager.h"
+#import "ALPHAFileIcon.h"
 
 @implementation ALPHAFilePlugin
 
@@ -19,10 +21,9 @@
     if (self)
     {
         ALPHAScreenActionItem* menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.fileBrowser"];
-        menuAction.icon = @"📁";
+        menuAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconFileIdentifier color:nil size:CGSizeMake(20.0, 20.0)];
         menuAction.title = @"File Browser";
         menuAction.dataIdentifier = ALPHAFileDataIdentifier;
-        //menuAction.viewControllerClass = @"FLEXFileBrowserTableViewController";
         menuAction.isMain = YES;
 
         [self registerAction:menuAction];

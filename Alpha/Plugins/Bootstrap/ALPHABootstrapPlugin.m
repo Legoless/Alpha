@@ -13,6 +13,9 @@
 
 #import "ALPHABootstrapPlugin.h"
 
+#import "ALPHAAssetManager.h"
+#import "ALPHAEnvironmentIcon.h"
+
 @implementation ALPHABootstrapPlugin
 
 - (instancetype)init
@@ -22,7 +25,7 @@
     if (self)
     {
         ALPHAScreenActionItem* menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.bootstrap.main"];
-        menuAction.icon = @"🎨";
+        menuAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconEnvironmentIdentifier color:nil size:CGSizeMake(20.0, 20.0)];
         menuAction.title = @"Environments";
         menuAction.dataIdentifier = ALPHAEnvironmentDataIdentifier;
         menuAction.isMain = YES;

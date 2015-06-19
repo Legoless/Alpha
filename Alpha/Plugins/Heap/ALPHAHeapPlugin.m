@@ -10,6 +10,8 @@
 
 #import "ALPHAHeapPlugin.h"
 #import "ALPHAHeapSource.h"
+#import "ALPHAAssetManager.h"
+#import "ALPHAHeapIcon.h"
 
 @implementation ALPHAHeapPlugin
 
@@ -20,7 +22,7 @@
     if (self)
     {
         ALPHAScreenActionItem* menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.memoryHeap"];
-        menuAction.icon = @"💩";
+        menuAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconHeapIdentifier color:nil size:CGSizeMake(20.0, 20.0)];
         menuAction.title = @"Heap Objects";
         menuAction.dataIdentifier = ALPHAHeapDataIdentifier;
         menuAction.isMain = YES;

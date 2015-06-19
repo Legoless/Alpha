@@ -10,6 +10,7 @@
 #import "ALPHABonjourServerSource.h"
 
 #import "ALPHARemotePlugin.h"
+#import "ALPHACoreAssets.h"
 
 @implementation ALPHARemotePlugin
 
@@ -20,7 +21,7 @@
     if (self)
     {
         ALPHAScreenActionItem* menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.remote.main"];
-        menuAction.icon = @"📶";
+        menuAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconRemoteIdentifier color:nil size:CGSizeMake(20.0, 20.0)];
         menuAction.title = @"Remote";
         menuAction.dataIdentifier = ALPHABonjourServerDataIdentifier;
         menuAction.isMain = YES;

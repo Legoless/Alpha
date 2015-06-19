@@ -9,6 +9,8 @@
 #import "ALPHANotificationPlugin.h"
 #import "ALPHAScreenActionItem.h"
 #import "ALPHANotificationCollector.h"
+#import "ALPHANotificationIcon.h"
+#import "ALPHAAssetManager.h"
 
 @interface ALPHANotificationPlugin ()
 
@@ -27,7 +29,7 @@
         //
         
         ALPHAScreenActionItem *menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.notification.notifications"];
-        menuAction.icon = @"🔔";
+        menuAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconNotificationIdentifier color:nil size:CGSizeMake(20.0, 20.0)];
         menuAction.title = @"Notifications";
         menuAction.dataIdentifier = ALPHANotificationDataIdentifier;
         menuAction.isMain = YES;
