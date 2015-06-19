@@ -57,6 +57,7 @@
         ALPHABlockActionItem *touchAction = [ALPHABlockActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.bonjour.activate"];
         touchAction.title = @"Bonjour";
         touchAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconRemoteIdentifier];
+        touchAction.priority = 3000.0;
         touchAction.actionBlock = ^id(id sender)
         {
             [self activateBonjourServer];

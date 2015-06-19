@@ -51,6 +51,7 @@
         ALPHABlockActionItem *inspectAction = [ALPHABlockActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.view.inspect"];
         inspectAction.title = @"Inspect";
         inspectAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconViewIdentifier];
+        inspectAction.priority = 4000.0;
         inspectAction.actionBlock = ^id(id sender)
         {
             [[ALPHAManager defaultManager] addOverlayViewController:self.viewHierarchyViewController animated:YES completion:nil];

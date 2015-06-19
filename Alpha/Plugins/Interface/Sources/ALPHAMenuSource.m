@@ -58,10 +58,11 @@ NSString* const ALPHAMenuDataIdentifier = @"com.unifiedsense.alpha.data.menu";
         }
     }
     
-    NSSortDescriptor* prioritySortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"priority" ascending:NO];
+    NSSortDescriptor* prioritySortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"priority" ascending:YES];
+    NSSortDescriptor* titleSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES];
     
     ALPHAScreenSection* section = [[ALPHAScreenSection alloc] initWithIdentifier:ALPHAMenuDataIdentifier];
-    section.items = [items sortedArrayUsingDescriptors:@[ prioritySortDescriptor ]];
+    section.items = [items sortedArrayUsingDescriptors:@[ prioritySortDescriptor, titleSortDescriptor ]];
     
     ALPHATableScreenModel* dataModel = [[ALPHATableScreenModel alloc] initWithIdentifier:ALPHAMenuDataIdentifier];
     dataModel.title = @"Alpha";

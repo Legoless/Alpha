@@ -34,35 +34,15 @@
 
 @property (nonatomic, strong) ALPHAExplorerMenu *explorerMenu;
 
-@property (nonatomic, strong) NSMutableArray *actions;
+@property (nonatomic, strong) NSArray *actions;
 
-@property (nonatomic, strong) NSMutableArray *actionImages;
+@property (nonatomic, strong) NSArray *actionImages;
 
 @end
 
 @implementation ALPHAMainViewController
 
 #pragma mark - Getters and Setters
-
-- (NSMutableArray *)actions
-{
-    if (!_actions)
-    {
-        _actions = [NSMutableArray array];
-    }
-    
-    return _actions;
-}
-
-- (NSMutableArray *)actionImages
-{
-    if (!_actionImages)
-    {
-        _actionImages = [NSMutableArray array];
-    }
-    
-    return _actionImages;
-}
 
 #pragma mark - UIViewController
 
@@ -101,8 +81,7 @@
 
 - (void)updateActions
 {
-    [self.actions removeAllObjects];
-    [self.actionImages removeAllObjects];
+    NSMutableArray *actions = [NSMutableArray array];
     
     NSArray* plugins = [ALPHAManager defaultManager].plugins;
     
@@ -114,12 +93,24 @@
             {
                 if (action.isEnabled && [action.icon isKindOfClass:[UIImage class]] && [action isKindOfClass:[ALPHABlockActionItem class]])
                 {
-                    [self.actions addObject:action];
-                    [self.actionImages addObject:action.icon];
+                    [actions addObject:action];
                 }
             }
         }
     }
+    NSSortDescriptor* prioritySortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"priority" ascending:YES];
+    NSSortDescriptor* titleSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES];
+    
+    self.actions = [actions sortedArrayUsingDescriptors:@[ prioritySortDescriptor, titleSortDescriptor ]];
+    
+    [actions removeAllObjects];
+    
+    for (ALPHAActionItem *action in self.actions)
+    {
+        [actions addObject:action.icon];
+    }
+    
+    self.actionImages = actions.copy;
     
     self.explorerMenu.images = [self.actionImages copy];
 }

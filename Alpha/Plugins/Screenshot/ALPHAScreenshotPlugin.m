@@ -35,7 +35,7 @@
         ALPHABlockActionItem *touchAction = [ALPHABlockActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.screenshot.make"];
         touchAction.title = @"Screenshot";
         touchAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconScreenshotIdentifier];
-        touchAction.priority = 6000.0;
+        touchAction.priority = 2000.0;
         touchAction.actionBlock = ^id(id sender)
         {
             [self saveScreenshot];
