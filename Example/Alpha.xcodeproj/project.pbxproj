@@ -148,7 +148,6 @@
 		67E644AE0041786C6775E1D5 /* FLEXArgumentInputFontView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E648EA2617EA13078FF7CF /* FLEXArgumentInputFontView.m */; };
 		67E644AE7DBEB41715304B9E /* FLEXArgumentInputViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64201C71E82A1C23F47AB /* FLEXArgumentInputViewFactory.m */; };
 		67E644B32D60F9637CD6AFD1 /* ALPHALibrarySource.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64BC88D4093BAB657D1FA /* ALPHALibrarySource.m */; };
-		67E644B9EB7D2E3574DBAD59 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67E643219F4778AE76CBAA91 /* Info.plist */; };
 		67E644BAF49991DCDBB1A2C3 /* ALPHAWebRendererViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64C8C419D90EF6DF0AD25 /* ALPHAWebRendererViewController.m */; };
 		67E644C4880243E17408DA89 /* ALPHAStatePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E640DE08418BEDFBEABBB8 /* ALPHAStatePlugin.m */; };
 		67E644CAEFFCDEB6C9EDAA9B /* ALPHAConsoleIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E643AA35420C72C09FE871 /* ALPHAConsoleIcon.m */; };
@@ -1516,12 +1515,12 @@
 			children = (
 				67E64FED946D2318F41F44B0 /* ALPHATheme.h */,
 				67E64B1F84594923C5CB244E /* ALPHATheme.m */,
-				67E64853E1077F1E2A9ACD78 /* UIColor+Tools.h */,
-				67E640D73B83F4B23F016B19 /* UIColor+Tools.m */,
 				67E6466F952375114399E9B1 /* ALPHAColorPalette.h */,
 				67E6466B335BB573ECAFBF31 /* ALPHAColorPalette.m */,
 				67E64BF3DFDF6594160352D0 /* UIFont+Convenience.h */,
 				67E641BF956FAC052BA0E3B6 /* UIFont+Convenience.m */,
+				67E64853E1077F1E2A9ACD78 /* UIColor+Tools.h */,
+				67E640D73B83F4B23F016B19 /* UIColor+Tools.m */,
 			);
 			path = Themes;
 			sourceTree = "<group>";
@@ -2228,7 +2227,7 @@
 		5356823218F3656900BAAD62 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Unified Sense";
 				TargetAttributes = {
 					38AB0F261B315B1700F0CC21 = {
@@ -2264,7 +2263,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67E644B9EB7D2E3574DBAD59 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
