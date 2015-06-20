@@ -7,8 +7,13 @@
 #import "AAPLCatalogTableTableViewController.h"
 
 #if DEBUG
-// FLEX should only be compiled and used in debug builds.
+// Alpha should only be compiled and used in debug builds.
 #import "ALPHAManager.h"
+#import "ALPHAAmethystColorPalette.h"
+#import "ALPHAAlizarinColorPalette.h"
+#import "ALPHAGreenSeaColorPalette.h"
+#import "ALPHANotioColorPalette.h"
+#import "ALPHAFormenteraColorPalette.h"
 #endif
 
 @interface AAPLCatalogTableTableViewController ()
@@ -51,6 +56,7 @@
 - (void)alphaButtonTapped:(id)sender
 {
 #if DEBUG
+    [ALPHAManager defaultManager].theme = [ALPHANotioColorPalette defaultPalette].paletteTheme;
     // This acts as a manual Alpha trigger
     [ALPHAManager defaultManager].interfaceHidden = NO;
 #endif

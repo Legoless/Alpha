@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		38353E891B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38353E881B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m */; };
+		38921B931B34E64C00A50DED /* ALPHAGreenSeaColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 38921B921B34E64C00A50DED /* ALPHAGreenSeaColorPalette.m */; };
+		38921B961B34E6BB00A50DED /* ALPHAAlizarinColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 38921B951B34E6BB00A50DED /* ALPHAAlizarinColorPalette.m */; };
+		38921B991B34E6DC00A50DED /* ALPHAAmethystColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 38921B981B34E6DC00A50DED /* ALPHAAmethystColorPalette.m */; };
 		38DE4A491A0B78BC00EB447A /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38DE4A481A0B78BC00EB447A /* Launch.xib */; };
 		38DE4A4C1A0B7DB000EB447A /* AAPLNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DE4A4B1A0B7DB000EB447A /* AAPLNetworkViewController.m */; };
 		3EC6487318FF8A5000024205 /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3EC6487218FF8A5000024205 /* ReadMe.txt */; };
@@ -427,6 +430,12 @@
 		0C6C81861F8DC133E5D85165 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		38353E871B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLCatalogTableTableViewController.h; sourceTree = "<group>"; };
 		38353E881B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLCatalogTableTableViewController.m; sourceTree = "<group>"; };
+		38921B911B34E64C00A50DED /* ALPHAGreenSeaColorPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAGreenSeaColorPalette.h; sourceTree = "<group>"; };
+		38921B921B34E64C00A50DED /* ALPHAGreenSeaColorPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAGreenSeaColorPalette.m; sourceTree = "<group>"; };
+		38921B941B34E6BB00A50DED /* ALPHAAlizarinColorPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAAlizarinColorPalette.h; sourceTree = "<group>"; };
+		38921B951B34E6BB00A50DED /* ALPHAAlizarinColorPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAAlizarinColorPalette.m; sourceTree = "<group>"; };
+		38921B971B34E6DC00A50DED /* ALPHAAmethystColorPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAAmethystColorPalette.h; sourceTree = "<group>"; };
+		38921B981B34E6DC00A50DED /* ALPHAAmethystColorPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAAmethystColorPalette.m; sourceTree = "<group>"; };
 		38AB0F271B315B1700F0CC21 /* AlphaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlphaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		38DE4A481A0B78BC00EB447A /* Launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
 		38DE4A4A1A0B7DB000EB447A /* AAPLNetworkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLNetworkViewController.h; sourceTree = "<group>"; };
@@ -1763,10 +1772,16 @@
 		67E649562EFFC317E3D02B4F /* Palettes */ = {
 			isa = PBXGroup;
 			children = (
-				67E6468F877E566242B7EC69 /* ALPHANotioColorPalette.h */,
-				67E64BF582C828B926AAA794 /* ALPHANotioColorPalette.m */,
+				38921B971B34E6DC00A50DED /* ALPHAAmethystColorPalette.h */,
+				38921B981B34E6DC00A50DED /* ALPHAAmethystColorPalette.m */,
 				67E64F6AF82C8B0461DD72C7 /* ALPHAFormenteraColorPalette.h */,
 				67E644B1BF05EC3DC0F15223 /* ALPHAFormenteraColorPalette.m */,
+				38921B941B34E6BB00A50DED /* ALPHAAlizarinColorPalette.h */,
+				38921B951B34E6BB00A50DED /* ALPHAAlizarinColorPalette.m */,
+				38921B911B34E64C00A50DED /* ALPHAGreenSeaColorPalette.h */,
+				38921B921B34E64C00A50DED /* ALPHAGreenSeaColorPalette.m */,
+				67E6468F877E566242B7EC69 /* ALPHANotioColorPalette.h */,
+				67E64BF582C828B926AAA794 /* ALPHANotioColorPalette.m */,
 			);
 			path = Palettes;
 			sourceTree = "<group>";
@@ -2591,6 +2606,7 @@
 				67E64232CE12F7E0AA40CF4D /* FLEXArgumentInputColorView.m in Sources */,
 				67E64E08FF28B147A746EDCC /* FLEXArgumentInputNumberView.m in Sources */,
 				67E640404FFDFDA173B7AEE2 /* FLEXArgumentInputStringView.m in Sources */,
+				38921B961B34E6BB00A50DED /* ALPHAAlizarinColorPalette.m in Sources */,
 				67E64A01D8AB098215FB7834 /* FLEXArgumentInputStructView.m in Sources */,
 				67E6467528CF5476ADFCE4AA /* FLEXArgumentInputSwitchView.m in Sources */,
 				67E6407F8CFCED2DF07581A6 /* FLEXArgumentInputViewFactory.m in Sources */,
@@ -2610,6 +2626,7 @@
 				67E64B0268CE1467F66DB214 /* ALPHAAssetManager.m in Sources */,
 				67E647BDB33185AB1B6164E3 /* ALPHAModel.m in Sources */,
 				67E64E2C909F3D8E198169E3 /* ALPHAPlugin.m in Sources */,
+				38921B991B34E6DC00A50DED /* ALPHAAmethystColorPalette.m in Sources */,
 				67E64B4522CC91A8104B5204 /* ALPHAGenericModel.m in Sources */,
 				67E640DCB74AF96E9410C6B2 /* ALPHAActionItem.m in Sources */,
 				67E643BED0951F643380C519 /* ALPHABlockActionItem.m in Sources */,
@@ -2632,6 +2649,7 @@
 				67E64FBAA3A039E4B718C78B /* ALPHALocalSource.m in Sources */,
 				67E6499282C9E9601786107F /* ALPHABaseDataSource.m in Sources */,
 				67E648FF2C979CE134BE93E0 /* ALPHALocalFileSource.m in Sources */,
+				38921B931B34E64C00A50DED /* ALPHAGreenSeaColorPalette.m in Sources */,
 				67E6473D73418939E6EE9E06 /* ALPHARequest.m in Sources */,
 				67E6450B3201163978179BDA /* ALPHANetworkObject.m in Sources */,
 				67E64D2AE595FB409DB28F2A /* ALPHAConverterManager.m in Sources */,

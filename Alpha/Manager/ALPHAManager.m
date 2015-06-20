@@ -61,6 +61,7 @@
 @implementation ALPHAManager
 
 @synthesize interfacePlugin = _interfacePlugin;
+@synthesize theme = _theme;
 
 #pragma mark - Getters and Setters
 
@@ -160,6 +161,12 @@
     }
     
     return _theme;
+}
+
+- (void)setTheme:(ALPHATheme *)theme
+{
+    _theme = theme;
+    [_theme applyInWindow:self.alphaWindow];
 }
 
 #pragma mark - Display
