@@ -59,6 +59,9 @@ Thanks to all the contributors to the following projects:
 - [KZBootstrap](https://github.com/krzysztofzablocki/KZBootstrap)
 - [Touchpose](https://github.com/toddreed/Touchpose)
 - [PINCache]()
+- [CKCircleMenuView]()
+- [CWStatusBarNotification]()
+- [DTBonjour]()
 - Many more...
 
 Contact
