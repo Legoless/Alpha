@@ -15,10 +15,10 @@ Alpha is the next generation debugging system for iOS applications. It started a
 
 - Push Notification logging (independent of provider)
 - Console logging (ASL)
-- Network logging (based on [PonyDebugger](https://github.com/square/PonyDebugger))
-- Bootstrap environment change with [KZBootstrap](https://github.com/krzysztofzablocki/KZBootstrap)
+- Network logging
+- Environment changes
 - Screenshot system
-- Touches displayed on screen via [Touchpose](https://github.com/toddreed/Touchpose)
+- Touches displayed on screen
 - Theme system
 - Remote connection to app (state, debug)
 - Use only specific modules of Alpha
@@ -48,8 +48,12 @@ Currently work in progress:
 
 ## Contributions
 
-Unlike many other debugging tools, Alpha runs entirely inside your app, so you don't need to be connected to LLDB/Xcode or a different remote debugging server. It works well in the simulator and on physical devices.
+Thanks to all the contributors to the following projects:
 
+- [FLEX (Flipboard Explorer)](https://github.com/Flipboard/FLEX)
+- [PonyDebugger](https://github.com/square/PonyDebugger)
+- [KZBootstrap](https://github.com/krzysztofzablocki/KZBootstrap)
+- [Touchpose](https://github.com/toddreed/Touchpose)
 
 Contact
 ======
