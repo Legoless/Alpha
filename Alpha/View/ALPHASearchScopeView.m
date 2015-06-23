@@ -204,7 +204,7 @@
     
     if ([self.delegate respondsToSelector:@selector(searchBar:selectedScopeButtonIndexDidChange:)])
     {
-        [self.delegate searchBar:nil selectedScopeButtonIndexDidChange:self.segmentedControl.selectedSegmentIndex];
+        [self.delegate searchBar:self.searchBar selectedScopeButtonIndexDidChange:self.segmentedControl.selectedSegmentIndex];
     }
 }
 

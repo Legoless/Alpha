@@ -199,7 +199,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ALPHAScreenItem *item = [self.tableScreenModel.sections[indexPath.section] items][indexPath.row];
+    ALPHAScreenItem *item = (ALPHAScreenItem *)[self.tableScreenModel.sections[indexPath.section] items][indexPath.row];
     
     //
     // Pull cell identifier based on class string
@@ -446,7 +446,7 @@
     // Action mechanic
     //
     
-    ALPHAScreenItem *item = [self.tableScreenModel.sections[indexPath.section] items][indexPath.row];
+    ALPHAScreenItem *item = (ALPHAScreenItem *)[self.tableScreenModel.sections[indexPath.section] items][indexPath.row];
     
     if ([item isKindOfClass:[ALPHAActionItem class]] || [item object])
     {

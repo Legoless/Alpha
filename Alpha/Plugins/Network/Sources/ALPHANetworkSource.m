@@ -35,7 +35,7 @@ NSString *const ALPHANetworkDataIdentifier = @"com.unifiedsense.alpha.data.netwo
 
 @interface __NSCFURLSessionConnection_Swizzles : NSObject
 
-@property(copy) NSURLSessionTask *task; // @synthesize task=_task;
+@property(copy) NSURLSessionTask *task;
 
 @end
 
@@ -233,8 +233,11 @@ NSString *const ALPHANetworkDataIdentifier = @"com.unifiedsense.alpha.data.netwo
         
         BOOL success = class_addMethod(cfURLSessionConnectionClass, sourceMethod, originalImp, encoding);
         NSAssert(success, @"Should be successful");
-        IMP replacedImp = class_replaceMethod(cfURLSessionConnectionClass, originalMethod, sourceImp, encoding);
-        NSAssert(replacedImp, @"Expected original method to have been replaced");
+        class_replaceMethod(cfURLSessionConnectionClass, originalMethod, sourceImp, encoding);
+        
+        // TODO: Check if replaced imp in case of redirectRequest.
+        //IMP replacedImp = class_replaceMethod(cfURLSessionConnectionClass, originalMethod, sourceImp, encoding);
+        //NSAssert(replacedImp, @"Expected original method to have been replaced");
     }
     
     if (methods) {

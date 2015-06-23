@@ -114,7 +114,7 @@
 
 #pragma mark - Rotation
 
-- (NSUInteger)supportedInterfaceOrientations
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
     UIViewController *viewControllerToAsk = [self viewControllerForStatusBarAndOrientationProperties];
     NSUInteger supportedOrientations = [ALPHAUtility infoPlistSupportedInterfaceOrientationsMask];
