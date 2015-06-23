@@ -31,7 +31,7 @@
     for (ALPHAConsoleLog* log in model.logs)
     {
         ALPHAScreenItem* item = [[ALPHAScreenItem alloc] init];
-        item.object = log;
+        item.object = [ALPHARequest requestForObject:log];
         item.attributedTitleText = [self titleForLog:log];
         item.attributedDetailText = [self subtitleForLog:log];
         item.style = UITableViewCellStyleSubtitle;

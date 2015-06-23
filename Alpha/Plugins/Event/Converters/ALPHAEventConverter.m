@@ -30,7 +30,7 @@
     for (ALPHAApplicationEvent* event in model.events)
     {
         ALPHAScreenItem* item = [[ALPHAScreenItem alloc] init];
-        item.object = event;
+        item.object = [ALPHARequest requestForObject:event];
         
         item.title = event.name;
         item.detail = event.sender;

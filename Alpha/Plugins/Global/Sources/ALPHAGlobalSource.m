@@ -56,49 +56,49 @@ NSString* const ALPHAGlobalDataIdentifier = @"com.unifiedsense.alpha.data.global
     menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.global.delegate"];
     menuAction.title = NSStringFromClass([[self delegate] class]);
     menuAction.icon = @"👉";
-    menuAction.object = [self delegate];
+    menuAction.object = [ALPHARequest requestForObject:[self delegate]];
     
     [items addObject:menuAction];
     
     menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.global.rootViewController"];
     menuAction.title = NSStringFromClass([[[ALPHAManager defaultManager].keyWindow rootViewController] class]);
     menuAction.icon = @"🌴";
-    menuAction.object = [[ALPHAManager defaultManager].keyWindow rootViewController];
+    menuAction.object = [ALPHARequest requestForObject:[[ALPHAManager defaultManager].keyWindow rootViewController]];
     
     [items addObject:menuAction];
     
     menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.global.userDefaults"];
     menuAction.title = @"+ [NSUserDefaults standardUserDefaults]";
     menuAction.icon = @"🚶";
-    menuAction.object = [NSUserDefaults standardUserDefaults];
+    menuAction.object = [ALPHARequest requestForObject:[NSUserDefaults standardUserDefaults]];
     
     [items addObject:menuAction];
     
     menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.global.sharedApplication"];
     menuAction.title = @"+ [UIApplication sharedApplication]";
     menuAction.icon = @"💾";
-    menuAction.object = [UIApplication sharedApplication];
+    menuAction.object = [ALPHARequest requestForObject:[UIApplication sharedApplication]];
     
     [items addObject:menuAction];
     
     menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.global.rootViewController"];
     menuAction.title = @"- [UIApplication keyWindow]";
     menuAction.icon = @"🔑";
-    menuAction.object = [ALPHAManager defaultManager].keyWindow;
+    menuAction.object = [ALPHARequest requestForObject:[ALPHAManager defaultManager].keyWindow];
     
     [items addObject:menuAction];
     
     menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.global.rootViewController"];
     menuAction.title = @"+ [UIScreen mainScreen]";
     menuAction.icon = @"💻";
-    menuAction.object = [UIScreen mainScreen];
+    menuAction.object = [ALPHARequest requestForObject:[UIScreen mainScreen]];
     
     [items addObject:menuAction];
     
     menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.global.rootViewController"];
     menuAction.title = @"+ [UIDevice currentDevice]";
     menuAction.icon = @"📱";
-    menuAction.object = [UIDevice currentDevice];
+    menuAction.object = [ALPHARequest requestForObject:[UIDevice currentDevice]];
     
     [items addObject:menuAction];
     

@@ -30,7 +30,7 @@
     for (ALPHANetworkConnection* connection in model.requests)
     {
         ALPHAScreenItem* item = [[ALPHAScreenItem alloc] init];
-        item.object = connection;
+        item.object = [ALPHARequest requestForObject:connection];
         item.attributedTitleText = [self titleForConnection:connection];
         item.attributedDetailText = [self subtitleForConnection:connection];
         item.style = UITableViewCellStyleSubtitle;

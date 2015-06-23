@@ -56,7 +56,7 @@
 - (void)alphaButtonTapped:(id)sender
 {
 #if DEBUG
-    [ALPHAManager defaultManager].theme = [ALPHANotioColorPalette defaultPalette].paletteTheme;
+    //[ALPHAManager defaultManager].theme = [ALPHANotioColorPalette defaultPalette].paletteTheme;
     // This acts as a manual Alpha trigger
     [ALPHAManager defaultManager].interfaceHidden = NO;
 #endif
