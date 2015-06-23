@@ -1,9 +1,5 @@
 ![alpha](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Logo.png "Alpha Logo")
 
- 
-# Alpha
-
-
 [![Issues on Waffle](https://img.shields.io/badge/issues on-Waffle-blue.svg)](http://waffle.io/legoless/alpha)
 [![Built by Dominus](https://img.shields.io/badge/built by-Dominus-brightgreen.svg)](http://github.com/legoless/Dominus)
 [![Build Status](https://travis-ci.org/Legoless/Alpha.svg)](https://travis-ci.org/legoless/Alpha)
@@ -11,6 +7,10 @@
 [![Pod Version](http://img.shields.io/cocoapods/v/Alpha.svg?style=flat)](http://cocoadocs.org/docsets/Alpha/)
 [![Pod Platform](http://img.shields.io/cocoapods/p/Alpha.svg?style=flat)](http://cocoadocs.org/docsets/Alpha/)
 [![Pod License](http://img.shields.io/cocoapods/l/Alpha.svg?style=flat)](http://opensource.org/licenses/BSD-3-Clause)
+
+----------------
+
+### Alpha
 
 
 Alpha is the next generation debugging system for iOS applications. It started as an unofficial fork from [FLEX](https://github.com/Flipboard/FLEX) (Flipboard Explorer), but continued to be actively developed and grew exponentionally. Complete feature set for Alpha:
@@ -56,6 +56,7 @@ Thanks to all the contributors to the following projects:
 - [PonyDebugger](https://github.com/square/PonyDebugger)
 - [KZBootstrap](https://github.com/krzysztofzablocki/KZBootstrap)
 - [Touchpose](https://github.com/toddreed/Touchpose)
+- [PINCache]()
 - Many more...
 
 Contact
