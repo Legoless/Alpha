@@ -60,7 +60,7 @@
     self.explorerMenu.mainBackgroundColor = [ALPHAManager defaultManager].theme.menuBackgroundColor;
     self.explorerMenu.buttonBackgroundColor = [ALPHAManager defaultManager].theme.menuButtonBackgroundColor;
     self.explorerMenu.buttonSelectedBackgroundColor = [ALPHAManager defaultManager].theme.menuButtonSelectedBackgroundColor;
-    self.explorerMenu.mainImage = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHALogoIdentifier];
+    self.explorerMenu.mainImage = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHALogoIdentifier color:nil size:CGSizeMake(34.0, 34.0)];
     
     //
     // Disable touches for canvas view, we do not care about other shit

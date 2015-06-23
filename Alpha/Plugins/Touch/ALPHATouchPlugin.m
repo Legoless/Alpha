@@ -58,7 +58,7 @@
     {
         ALPHABlockActionItem *touchAction = [ALPHABlockActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.touch.touches"];
         touchAction.title = @"Touches";
-        touchAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconTouchIdentifier];
+        touchAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconTouchIdentifier color:nil size:CGSizeMake(28.0, 28.0)];
         touchAction.priority = 1000.0;
         touchAction.actionBlock = ^id(id sender){
             self.shouldDisplayTouches = !self.shouldDisplayTouches;

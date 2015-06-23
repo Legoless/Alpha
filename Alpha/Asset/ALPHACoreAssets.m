@@ -506,7 +506,7 @@ NSString *const ALPHALogoIdentifier             = @"com.unifiedsense.alpha.logo"
                 bezierPath.lineCapStyle = kCGLineCapRound;
                 
                 [strokeColor setStroke];
-                bezierPath.lineWidth = 3;
+                bezierPath.lineWidth = 3 * (size.width / 80.0);
                 [bezierPath stroke];
                 
                 

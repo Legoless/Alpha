@@ -75,7 +75,7 @@
         
         ALPHABlockActionItem *closeAction = [ALPHABlockActionItem itemWithIdentifier:ALPHAActionCloseIdentifier];
         closeAction.title = @"Close";
-        closeAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconCloseIdentifier];
+        closeAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconCloseIdentifier color:nil size:CGSizeMake(28.0, 28.0)];
         closeAction.priority = 6000.0;
         closeAction.actionBlock = ^id(id sender){
             [[ALPHAManager defaultManager] setInterfaceHidden:YES];
@@ -85,7 +85,7 @@
         
         ALPHABlockActionItem *infoAction = [ALPHABlockActionItem itemWithIdentifier:@"com.unifiedsense.alpha.info"];
         infoAction.title = @"Menu";
-        infoAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconMenuIdentifier];
+        infoAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconMenuIdentifier color:nil size:CGSizeMake(28.0, 28.0)];
         infoAction.priority = 5000.0;
         infoAction.actionBlock = ^id(id sender){
             [self.explorerViewController displayInfoTable];
