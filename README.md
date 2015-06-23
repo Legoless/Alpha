@@ -73,4 +73,4 @@ Dal Rupnik
 License
 ======
 
-**Alpha** is released under the BSD license. See [LICENSE](https://github.com/Legoless/Alpha/blob/master/LICENSE) file for more information.
+**Alpha** is released under the MIT license. See [LICENSE](https://github.com/Legoless/Alpha/blob/master/LICENSE) file for more information.
