@@ -23,7 +23,7 @@ Alpha is the next generation debugging framework for iOS applications. It starte
 - Environment changes
 - Screenshot system
 - Touches displayed on screen
-- Theme system
+- Theme system so it fits into the app.
 - Remote connection to app (state, debug)
 - Use only specific modules of Alpha
 - Inspect and modify views in the hierarchy.
