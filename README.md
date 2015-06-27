@@ -19,7 +19,7 @@ Alpha is the next generation debugging framework for iOS applications. It starte
 
 - Push Notification logging (independent of provider)
 - Console logging (ASL)
-- Network logging
+- Network connection logging
 - Environment changes
 - Screenshot system
 - Touches displayed on screen
