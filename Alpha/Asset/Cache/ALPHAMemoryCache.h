@@ -7,21 +7,21 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class PINMemoryCache;
+@class ALPHAMemoryCache;
 
 /**
  A callback block which provides only the cache as an argument
  */
 
-typedef void (^PINMemoryCacheBlock)(PINMemoryCache *cache);
+typedef void (^PINMemoryCacheBlock)(ALPHAMemoryCache *cache);
 
 /**
  A callback block which provides the cache, key and object as arguments
  */
-typedef void (^PINMemoryCacheObjectBlock)(PINMemoryCache *cache, NSString *key, id __nullable object);
+typedef void (^PINMemoryCacheObjectBlock)(ALPHAMemoryCache *cache, NSString *key, id __nullable object);
 
 /**
- `PINMemoryCache` is a fast, thread safe key/value store similar to `NSCache`. On iOS it will clear itself
+ `ALPHAMemoryCache` is a fast, thread safe key/value store similar to `NSCache`. On iOS it will clear itself
  automatically to reduce memory usage when the app receives a memory warning or goes into the background.
  
  Access is natively synchronous. Asynchronous variations are provided. Every asynchronous method accepts a
@@ -33,11 +33,11 @@ typedef void (^PINMemoryCacheObjectBlock)(PINMemoryCache *cache, NSString *key, 
  Objects can optionally be set with a "cost", which could be a byte count or any other meaningful integer.
  Setting a <costLimit> will automatically keep the cache below that value with <trimToCostByDate:>.
  
- Values will not persist after application relaunch or returning from the background. See <PINCache> for
+ Values will not persist after application relaunch or returning from the background. See <ALPHACache> for
  a memory cache backed by a disk cache.
  */
 
-@interface PINMemoryCache : NSObject
+@interface ALPHAMemoryCache : NSObject
 
 #pragma mark -
 /// @name Core

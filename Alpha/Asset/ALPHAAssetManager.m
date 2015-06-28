@@ -8,14 +8,14 @@
 
 #import <objc/runtime.h>
 
-#import "PINCache.h"
+#import "ALPHACache.h"
 
 #import "ALPHAAssetManager.h"
 
 @interface ALPHAAssetManager ()
 
 @property (nonatomic, strong) NSMutableDictionary *assets;
-@property (nonatomic, strong) PINCache *cache;
+@property (nonatomic, strong) ALPHACache *cache;
 
 @end
 
@@ -23,11 +23,11 @@
 
 #pragma mark - Getters and Setters
 
-- (PINCache *)cache
+- (ALPHACache *)cache
 {
     if (!_cache)
     {
-        _cache = [PINCache sharedCache];
+        _cache = [ALPHACache sharedCache];
     }
     
     return _cache;

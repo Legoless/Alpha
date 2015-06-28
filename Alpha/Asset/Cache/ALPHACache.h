@@ -4,43 +4,43 @@
 
 #import <Foundation/Foundation.h>
 
-#import "PINDiskCache.h"
-#import "PINMemoryCache.h"
+#import "ALPHADiskCache.h"
+#import "ALPHAMemoryCache.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class PINCache;
+@class ALPHACache;
 
 /**
  A callback block which provides only the cache as an argument
  */
 
-typedef void (^PINCacheBlock)(PINCache *cache);
+typedef void (^PINCacheBlock)(ALPHACache *cache);
 
 /**
  A callback block which provides the cache, key and object as arguments
  */
 
-typedef void (^PINCacheObjectBlock)(PINCache *cache, NSString *key, id __nullable object);
+typedef void (^PINCacheObjectBlock)(ALPHACache *cache, NSString *key, id __nullable object);
 
 /**
- `PINCache` is a thread safe key/value store designed for persisting temporary objects that are expensive to
+ `ALPHACache` is a thread safe key/value store designed for persisting temporary objects that are expensive to
  reproduce, such as downloaded data or the results of slow processing. It is comprised of two self-similar
- stores, one in memory (<PINMemoryCache>) and one on disk (<PINDiskCache>).
+ stores, one in memory (<ALPHAMemoryCache>) and one on disk (<ALPHADiskCache>).
  
- `PINCache` itself actually does very little; its main function is providing a front end for a common use case:
+ `ALPHACache` itself actually does very little; its main function is providing a front end for a common use case:
  a small, fast memory cache that asynchronously persists itself to a large, slow disk cache. When objects are
  removed from the memory cache in response to an "apocalyptic" event they remain in the disk cache and are
- repopulated in memory the next time they are accessed. `PINCache` also does the tedious work of creating a
+ repopulated in memory the next time they are accessed. `ALPHACache` also does the tedious work of creating a
  dispatch group to wait for both caches to finish their operations without blocking each other.
  
  The parallel caches are accessible as public properties (<memoryCache> and <diskCache>) and can be manipulated
- separately if necessary. See the docs for <PINMemoryCache> and <PINDiskCache> for more details.
+ separately if necessary. See the docs for <ALPHAMemoryCache> and <ALPHADiskCache> for more details.
 
  @warning when using in extension or watch extension, define PIN_APP_EXTENSIONS=1
  */
 
-@interface PINCache : NSObject
+@interface ALPHACache : NSObject
 
 #pragma mark -
 /// @name Core
@@ -61,14 +61,14 @@ typedef void (^PINCacheObjectBlock)(PINCache *cache, NSString *key, id __nullabl
 @property (readonly) NSUInteger diskByteCount;
 
 /**
- The underlying disk cache, see <PINDiskCache> for additional configuration and trimming options.
+ The underlying disk cache, see <ALPHADiskCache> for additional configuration and trimming options.
  */
-@property (readonly) PINDiskCache *diskCache;
+@property (readonly) ALPHADiskCache *diskCache;
 
 /**
- The underlying memory cache, see <PINMemoryCache> for additional configuration and trimming options.
+ The underlying memory cache, see <ALPHAMemoryCache> for additional configuration and trimming options.
  */
-@property (readonly) PINMemoryCache *memoryCache;
+@property (readonly) ALPHAMemoryCache *memoryCache;
 
 #pragma mark -
 /// @name Initialization

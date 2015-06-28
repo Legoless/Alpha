@@ -7,28 +7,28 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class PINDiskCache;
+@class ALPHADiskCache;
 
 /**
  A callback block which provides only the cache as an argument
  */
 
-typedef void (^PINDiskCacheBlock)(PINDiskCache *cache);
+typedef void (^PINDiskCacheBlock)(ALPHADiskCache *cache);
 
 /**
  A callback block which provides the cache, key and object as arguments
  */
 
-typedef void (^PINDiskCacheObjectBlock)(PINDiskCache *cache, NSString *key, id <NSCoding>  __nullable object, NSURL *fileURL);
+typedef void (^PINDiskCacheObjectBlock)(ALPHADiskCache *cache, NSString *key, id <NSCoding>  __nullable object, NSURL *fileURL);
 
 /**
- `PINDiskCache` is a thread safe key/value store backed by the file system. It accepts any object conforming
+ `ALPHADiskCache` is a thread safe key/value store backed by the file system. It accepts any object conforming
  to the `NSCoding` protocol, which includes the basic Foundation data types and collection classes and also
  many UIKit classes, notably `UIImage`. All work is performed on a serial queue shared by all instances in
  the app, and archiving is handled by `NSKeyedArchiver`. This is a particular advantage for `UIImage` because
  it skips `UIImagePNGRepresentation()` and retains information like scale and orientation.
  
- The designated initializer for `PINDiskCache` is <initWithName:>. The <name> string is used to create a directory
+ The designated initializer for `ALPHADiskCache` is <initWithName:>. The <name> string is used to create a directory
  under Library/Caches that scopes disk access for this instance. Multiple instances with the same name are *not* 
  allowed as they would conflict with each other.
  
@@ -36,15 +36,15 @@ typedef void (^PINDiskCacheObjectBlock)(PINDiskCache *cache, NSString *key, id <
  will cause the queue to wait, making it safe to access and manipulate the actual cache files on disk for the
  duration of the block.
  
- Because this cache is bound by disk I/O it can be much slower than <PINMemoryCache>, although values stored in
- `PINDiskCache` persist after application relaunch. Using <PINCache> is recommended over using `PINDiskCache`
+ Because this cache is bound by disk I/O it can be much slower than <ALPHAMemoryCache>, although values stored in
+ `ALPHADiskCache` persist after application relaunch. Using <ALPHACache> is recommended over using `ALPHADiskCache`
  by itself, as it adds a fast layer of additional memory caching while still writing to disk.
 
  All access to the cache is dated so the that the least-used objects can be trimmed first. Setting an optional
  <ageLimit> will trigger a GCD timer to periodically to trim the cache with <trimToDate:>.
  */
 
-@interface PINDiskCache : NSObject
+@interface ALPHADiskCache : NSObject
 
 
 
@@ -57,7 +57,7 @@ typedef void (^PINDiskCacheObjectBlock)(PINDiskCache *cache, NSString *key, id <
 @property (readonly) NSString *name;
 
 /**
- The URL of the directory used by this cache, usually `Library/Caches/com.pinterest.PINDiskCache.(name)`
+ The URL of the directory used by this cache, usually `Library/Caches/com.pinterest.ALPHADiskCache.(name)`
  
  @warning Do not interact with files under this URL except in <lockFileAccessWhileExecutingBlock:> or
  <synchronouslyLockFileAccessWhileExecutingBlock:>.
@@ -76,7 +76,7 @@ typedef void (^PINDiskCacheObjectBlock)(PINDiskCache *cache, NSString *key, id <
 
     __block NSUInteger byteCount = 0;
  
-    [_diskCache synchronouslyLockFileAccessWhileExecutingBlock:^(PINDiskCache *diskCache) {
+    [_diskCache synchronouslyLockFileAccessWhileExecutingBlock:^(ALPHADiskCache *diskCache) {
         byteCount = diskCache.byteCount;
     }];
  */

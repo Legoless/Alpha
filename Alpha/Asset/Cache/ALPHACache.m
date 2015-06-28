@@ -2,12 +2,12 @@
 //  Modifications by Garrett Moon
 //  Copyright (c) 2015 Pinterest. All rights reserved.
 
-#import "PINCache.h"
+#import "ALPHACache.h"
 
 NSString * const PINCachePrefix = @"com.unifiedsense.alpha.AssetCacheShared";
 NSString * const PINCacheSharedName = @"ALPHAAssetCacheShared";
 
-@interface PINCache ()
+@interface ALPHACache ()
 #if OS_OBJECT_USE_OBJC
 @property (strong, nonatomic) dispatch_queue_t concurrentQueue;
 #else
@@ -15,7 +15,7 @@ NSString * const PINCacheSharedName = @"ALPHAAssetCacheShared";
 #endif
 @end
 
-@implementation PINCache
+@implementation ALPHACache
 
 #pragma mark - Initialization -
 
@@ -43,8 +43,8 @@ NSString * const PINCacheSharedName = @"ALPHAAssetCacheShared";
         NSString *queueName = [[NSString alloc] initWithFormat:@"%@.%p", PINCachePrefix, self];
         _concurrentQueue = dispatch_queue_create([[NSString stringWithFormat:@"%@ Asynchronous Queue", queueName] UTF8String], DISPATCH_QUEUE_CONCURRENT);
         
-        _diskCache = [[PINDiskCache alloc] initWithName:_name rootPath:rootPath];
-        _memoryCache = [[PINMemoryCache alloc] init];
+        _diskCache = [[ALPHADiskCache alloc] initWithName:_name rootPath:rootPath];
+        _memoryCache = [[ALPHAMemoryCache alloc] init];
     }
     return self;
 }
@@ -74,46 +74,46 @@ NSString * const PINCacheSharedName = @"ALPHAAssetCacheShared";
     if (!key || !block)
         return;
     
-    __weak PINCache *weakSelf = self;
+    __weak ALPHACache *weakSelf = self;
     
     dispatch_async(_concurrentQueue, ^{
-        PINCache *strongSelf = weakSelf;
+        ALPHACache *strongSelf = weakSelf;
         if (!strongSelf)
             return;
         
-        __weak PINCache *weakSelf = strongSelf;
+        __weak ALPHACache *weakSelf = strongSelf;
         
-        [strongSelf->_memoryCache objectForKey:key block:^(PINMemoryCache *cache, NSString *key, id object) {
-            PINCache *strongSelf = weakSelf;
+        [strongSelf->_memoryCache objectForKey:key block:^(ALPHAMemoryCache *cache, NSString *key, id object) {
+            ALPHACache *strongSelf = weakSelf;
             if (!strongSelf)
                 return;
             
             if (object) {
-                [strongSelf->_diskCache fileURLForKey:key block:^(PINDiskCache *cache, NSString *key, id <NSCoding> object, NSURL *fileURL) {
+                [strongSelf->_diskCache fileURLForKey:key block:^(ALPHADiskCache *cache, NSString *key, id <NSCoding> object, NSURL *fileURL) {
                     // update the access time on disk
                 }];
                 
-                __weak PINCache *weakSelf = strongSelf;
+                __weak ALPHACache *weakSelf = strongSelf;
                 
                 dispatch_async(strongSelf->_concurrentQueue, ^{
-                    PINCache *strongSelf = weakSelf;
+                    ALPHACache *strongSelf = weakSelf;
                     if (strongSelf)
                         block(strongSelf, key, object);
                 });
             } else {
-                __weak PINCache *weakSelf = strongSelf;
+                __weak ALPHACache *weakSelf = strongSelf;
                 
-                [strongSelf->_diskCache objectForKey:key block:^(PINDiskCache *cache, NSString *key, id <NSCoding> object, NSURL *fileURL) {
-                    PINCache *strongSelf = weakSelf;
+                [strongSelf->_diskCache objectForKey:key block:^(ALPHADiskCache *cache, NSString *key, id <NSCoding> object, NSURL *fileURL) {
+                    ALPHACache *strongSelf = weakSelf;
                     if (!strongSelf)
                         return;
                     
                     [strongSelf->_memoryCache setObject:object forKey:key block:nil];
                     
-                    __weak PINCache *weakSelf = strongSelf;
+                    __weak ALPHACache *weakSelf = strongSelf;
                     
                     dispatch_async(strongSelf->_concurrentQueue, ^{
-                        PINCache *strongSelf = weakSelf;
+                        ALPHACache *strongSelf = weakSelf;
                         if (strongSelf)
                             block(strongSelf, key, object);
                     });
@@ -137,11 +137,11 @@ NSString * const PINCacheSharedName = @"ALPHAAssetCacheShared";
         dispatch_group_enter(group);
         dispatch_group_enter(group);
         
-        memBlock = ^(PINMemoryCache *cache, NSString *key, id object) {
+        memBlock = ^(ALPHAMemoryCache *cache, NSString *key, id object) {
             dispatch_group_leave(group);
         };
         
-        diskBlock = ^(PINDiskCache *cache, NSString *key, id <NSCoding> object, NSURL *fileURL) {
+        diskBlock = ^(ALPHADiskCache *cache, NSString *key, id <NSCoding> object, NSURL *fileURL) {
             dispatch_group_leave(group);
         };
     }
@@ -150,9 +150,9 @@ NSString * const PINCacheSharedName = @"ALPHAAssetCacheShared";
     [_diskCache setObject:object forKey:key block:diskBlock];
     
     if (group) {
-        __weak PINCache *weakSelf = self;
+        __weak ALPHACache *weakSelf = self;
         dispatch_group_notify(group, _concurrentQueue, ^{
-            PINCache *strongSelf = weakSelf;
+            ALPHACache *strongSelf = weakSelf;
             if (strongSelf)
                 block(strongSelf, key, object);
         });
@@ -177,11 +177,11 @@ NSString * const PINCacheSharedName = @"ALPHAAssetCacheShared";
         dispatch_group_enter(group);
         dispatch_group_enter(group);
         
-        memBlock = ^(PINMemoryCache *cache, NSString *key, id object) {
+        memBlock = ^(ALPHAMemoryCache *cache, NSString *key, id object) {
             dispatch_group_leave(group);
         };
         
-        diskBlock = ^(PINDiskCache *cache, NSString *key, id <NSCoding> object, NSURL *fileURL) {
+        diskBlock = ^(ALPHADiskCache *cache, NSString *key, id <NSCoding> object, NSURL *fileURL) {
             dispatch_group_leave(group);
         };
     }
@@ -190,9 +190,9 @@ NSString * const PINCacheSharedName = @"ALPHAAssetCacheShared";
     [_diskCache removeObjectForKey:key block:diskBlock];
     
     if (group) {
-        __weak PINCache *weakSelf = self;
+        __weak ALPHACache *weakSelf = self;
         dispatch_group_notify(group, _concurrentQueue, ^{
-            PINCache *strongSelf = weakSelf;
+            ALPHACache *strongSelf = weakSelf;
             if (strongSelf)
                 block(strongSelf, key, nil);
         });
@@ -214,11 +214,11 @@ NSString * const PINCacheSharedName = @"ALPHAAssetCacheShared";
         dispatch_group_enter(group);
         dispatch_group_enter(group);
         
-        memBlock = ^(PINMemoryCache *cache) {
+        memBlock = ^(ALPHAMemoryCache *cache) {
             dispatch_group_leave(group);
         };
         
-        diskBlock = ^(PINDiskCache *cache) {
+        diskBlock = ^(ALPHADiskCache *cache) {
             dispatch_group_leave(group);
         };
     }
@@ -227,9 +227,9 @@ NSString * const PINCacheSharedName = @"ALPHAAssetCacheShared";
     [_diskCache removeAllObjects:diskBlock];
     
     if (group) {
-        __weak PINCache *weakSelf = self;
+        __weak ALPHACache *weakSelf = self;
         dispatch_group_notify(group, _concurrentQueue, ^{
-            PINCache *strongSelf = weakSelf;
+            ALPHACache *strongSelf = weakSelf;
             if (strongSelf)
                 block(strongSelf);
         });
@@ -254,11 +254,11 @@ NSString * const PINCacheSharedName = @"ALPHAAssetCacheShared";
         dispatch_group_enter(group);
         dispatch_group_enter(group);
         
-        memBlock = ^(PINMemoryCache *cache) {
+        memBlock = ^(ALPHAMemoryCache *cache) {
             dispatch_group_leave(group);
         };
         
-        diskBlock = ^(PINDiskCache *cache) {
+        diskBlock = ^(ALPHADiskCache *cache) {
             dispatch_group_leave(group);
         };
     }
@@ -267,9 +267,9 @@ NSString * const PINCacheSharedName = @"ALPHAAssetCacheShared";
     [_diskCache trimToDate:date block:diskBlock];
     
     if (group) {
-        __weak PINCache *weakSelf = self;
+        __weak ALPHACache *weakSelf = self;
         dispatch_group_notify(group, _concurrentQueue, ^{
-            PINCache *strongSelf = weakSelf;
+            ALPHACache *strongSelf = weakSelf;
             if (strongSelf)
                 block(strongSelf);
         });
@@ -286,7 +286,7 @@ NSString * const PINCacheSharedName = @"ALPHAAssetCacheShared";
 {
     __block NSUInteger byteCount = 0;
     
-    [_diskCache synchronouslyLockFileAccessWhileExecutingBlock:^(PINDiskCache *diskCache) {
+    [_diskCache synchronouslyLockFileAccessWhileExecutingBlock:^(ALPHADiskCache *diskCache) {
         byteCount = diskCache.byteCount;
     }];
     

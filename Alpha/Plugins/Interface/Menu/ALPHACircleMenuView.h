@@ -1,5 +1,5 @@
 //
-//  CKCircleMenuView.h
+//  ALPHACircleMenuView.h
 //
 //  Created by Christian Klaproth on 31.08.14.
 //  Copyright (c) 2014 Christian Klaproth. All rights reserved.
@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol CKCircleMenuDelegate <NSObject>
+@protocol ALPHACircleMenuDelegate <NSObject>
 
 @optional
 
@@ -54,12 +54,12 @@ typedef enum {
     CircleMenuDirectionLeft
 } CircleMenuDirection;
 
-@interface CKCircleMenuView : UIView
+@interface ALPHACircleMenuView : UIView
 
-@property (weak, nonatomic) id<CKCircleMenuDelegate> delegate;
+@property (weak, nonatomic) id<ALPHACircleMenuDelegate> delegate;
 
 /*!
- * Initializes the CKCircleMenuView.
+ * Initializes the ALPHACircleMenuView.
  * @param aPoint the center of the menu's circle
  * @param anOptionsDictionary optional configuration, may be nil
  * @param anImage dynamic list of images (nil-terminated!) to be
@@ -69,7 +69,7 @@ typedef enum {
 - (id)initAtOrigin:(CGPoint)aPoint usingOptions:(NSDictionary*)anOptionsDictionary withImages:(UIImage*)anImage, ... NS_REQUIRES_NIL_TERMINATION;
 
 /*!
- * Initializes the CKCircleMenuView.
+ * Initializes the ALPHACircleMenuView.
  * @param aPoint the center of the menu's circle
  * @param anOptionsDictionary optional configuration, may be nil
  * @param anImageArray array of images to be used for the buttons,

@@ -2,7 +2,7 @@
 //  Modifications by Garrett Moon
 //  Copyright (c) 2015 Pinterest. All rights reserved.
 
-#import "PINMemoryCache.h"
+#import "ALPHAMemoryCache.h"
 
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_4_0
 #import <UIKit/UIKit.h>
@@ -10,7 +10,7 @@
 
 NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCacheShared";
 
-@interface PINMemoryCache ()
+@interface ALPHAMemoryCache ()
 #if OS_OBJECT_USE_OBJC
 @property (strong, nonatomic) dispatch_queue_t concurrentQueue;
 @property (strong, nonatomic) dispatch_semaphore_t lockSemaphore;
@@ -23,7 +23,7 @@ NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCach
 @property (strong, nonatomic) NSMutableDictionary *costs;
 @end
 
-@implementation PINMemoryCache
+@implementation ALPHAMemoryCache
 
 @synthesize ageLimit = _ageLimit;
 @synthesize costLimit = _costLimit;
@@ -117,10 +117,10 @@ NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCach
         if (self.removeAllObjectsOnMemoryWarning)
             [self removeAllObjects:nil];
 
-        __weak PINMemoryCache *weakSelf = self;
+        __weak ALPHAMemoryCache *weakSelf = self;
 
         dispatch_async(_concurrentQueue, ^{
-            PINMemoryCache *strongSelf = weakSelf;
+            ALPHAMemoryCache *strongSelf = weakSelf;
             if (!strongSelf) {
                 return;
             }
@@ -136,10 +136,10 @@ NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCach
         if (self.removeAllObjectsOnEnteringBackground)
             [self removeAllObjects:nil];
 
-        __weak PINMemoryCache *weakSelf = self;
+        __weak ALPHAMemoryCache *weakSelf = self;
 
         dispatch_async(_concurrentQueue, ^{
-            PINMemoryCache *strongSelf = weakSelf;
+            ALPHAMemoryCache *strongSelf = weakSelf;
             if (!strongSelf) {
                 return;
             }
@@ -258,11 +258,11 @@ NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCach
     
     [self trimMemoryToDate:date];
     
-    __weak PINMemoryCache *weakSelf = self;
+    __weak ALPHAMemoryCache *weakSelf = self;
     
     dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(ageLimit * NSEC_PER_SEC));
     dispatch_after(time, _concurrentQueue, ^(void){
-        PINMemoryCache *strongSelf = weakSelf;
+        ALPHAMemoryCache *strongSelf = weakSelf;
         
         [strongSelf trimToAgeLimitRecursively];
     });
@@ -272,10 +272,10 @@ NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCach
 
 - (void)objectForKey:(NSString *)key block:(PINMemoryCacheObjectBlock)block
 {
-    __weak PINMemoryCache *weakSelf = self;
+    __weak ALPHAMemoryCache *weakSelf = self;
     
     dispatch_async(_concurrentQueue, ^{
-        PINMemoryCache *strongSelf = weakSelf;
+        ALPHAMemoryCache *strongSelf = weakSelf;
         id object = [strongSelf objectForKey:key];
         
         if (block)
@@ -290,10 +290,10 @@ NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCach
 
 - (void)setObject:(id)object forKey:(NSString *)key withCost:(NSUInteger)cost block:(PINMemoryCacheObjectBlock)block
 {
-    __weak PINMemoryCache *weakSelf = self;
+    __weak ALPHAMemoryCache *weakSelf = self;
     
     dispatch_async(_concurrentQueue, ^{
-        PINMemoryCache *strongSelf = weakSelf;
+        ALPHAMemoryCache *strongSelf = weakSelf;
         [strongSelf setObject:object forKey:key withCost:cost];
         
         if (block)
@@ -303,10 +303,10 @@ NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCach
 
 - (void)removeObjectForKey:(NSString *)key block:(PINMemoryCacheObjectBlock)block
 {
-    __weak PINMemoryCache *weakSelf = self;
+    __weak ALPHAMemoryCache *weakSelf = self;
     
     dispatch_async(_concurrentQueue, ^{
-        PINMemoryCache *strongSelf = weakSelf;
+        ALPHAMemoryCache *strongSelf = weakSelf;
         [strongSelf removeObjectForKey:key];
         
         if (block)
@@ -316,10 +316,10 @@ NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCach
 
 - (void)trimToDate:(NSDate *)trimDate block:(PINMemoryCacheBlock)block
 {
-    __weak PINMemoryCache *weakSelf = self;
+    __weak ALPHAMemoryCache *weakSelf = self;
     
     dispatch_async(_concurrentQueue, ^{
-        PINMemoryCache *strongSelf = weakSelf;
+        ALPHAMemoryCache *strongSelf = weakSelf;
         [strongSelf trimToDate:trimDate];
         
         if (block)
@@ -329,10 +329,10 @@ NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCach
 
 - (void)trimToCost:(NSUInteger)cost block:(PINMemoryCacheBlock)block
 {
-    __weak PINMemoryCache *weakSelf = self;
+    __weak ALPHAMemoryCache *weakSelf = self;
     
     dispatch_async(_concurrentQueue, ^{
-        PINMemoryCache *strongSelf = weakSelf;
+        ALPHAMemoryCache *strongSelf = weakSelf;
         [strongSelf trimToCost:cost];
         
         if (block)
@@ -342,10 +342,10 @@ NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCach
 
 - (void)trimToCostByDate:(NSUInteger)cost block:(PINMemoryCacheBlock)block
 {
-    __weak PINMemoryCache *weakSelf = self;
+    __weak ALPHAMemoryCache *weakSelf = self;
     
     dispatch_async(_concurrentQueue, ^{
-        PINMemoryCache *strongSelf = weakSelf;
+        ALPHAMemoryCache *strongSelf = weakSelf;
         [strongSelf trimToCostByDate:cost];
         
         if (block)
@@ -355,10 +355,10 @@ NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCach
 
 - (void)removeAllObjects:(PINMemoryCacheBlock)block
 {
-    __weak PINMemoryCache *weakSelf = self;
+    __weak ALPHAMemoryCache *weakSelf = self;
     
     dispatch_async(_concurrentQueue, ^{
-        PINMemoryCache *strongSelf = weakSelf;
+        ALPHAMemoryCache *strongSelf = weakSelf;
         [strongSelf removeAllObjects];
         
         if (block)
@@ -368,10 +368,10 @@ NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCach
 
 - (void)enumerateObjectsWithBlock:(PINMemoryCacheObjectBlock)block completionBlock:(PINMemoryCacheBlock)completionBlock
 {
-    __weak PINMemoryCache *weakSelf = self;
+    __weak ALPHAMemoryCache *weakSelf = self;
     
     dispatch_async(_concurrentQueue, ^{
-        PINMemoryCache *strongSelf = weakSelf;
+        ALPHAMemoryCache *strongSelf = weakSelf;
         [strongSelf enumerateObjectsWithBlock:block];
         
         if (completionBlock)

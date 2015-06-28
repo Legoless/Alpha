@@ -8,20 +8,20 @@
 
 #import <math.h>
 
-#import "CKCircleMenuView.h"
+#import "ALPHACircleMenuView.h"
 #import "ALPHAMenuCenterView.h"
 
 #import "CGVectorAdditions.h"
 
 #import "ALPHAExplorerMenu.h"
 
-@interface ALPHAExplorerMenu () <CKCircleMenuDelegate>
+@interface ALPHAExplorerMenu () <ALPHACircleMenuDelegate>
 
 //
 // UI Elements
 //
 
-@property (nonatomic, strong) CKCircleMenuView *circleMenuView;
+@property (nonatomic, strong) ALPHACircleMenuView *circleMenuView;
 
 @property (nonatomic, strong) NSDate* menuOpenDate;
 
@@ -277,7 +277,7 @@
     {
         CGPoint tPoint = CGPointMake(self.bounds.size.width / 2.0, self.bounds.size.height / 2.0);
 
-        self.circleMenuView = [[CKCircleMenuView alloc] initAtOrigin:tPoint usingOptions:[self optionsDictionary] withImageArray:self.images];
+        self.circleMenuView = [[ALPHACircleMenuView alloc] initAtOrigin:tPoint usingOptions:[self optionsDictionary] withImageArray:self.images];
         [self addSubview:self.circleMenuView];
         
         self.circleMenuView.delegate = self;

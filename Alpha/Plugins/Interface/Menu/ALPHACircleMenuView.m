@@ -1,13 +1,13 @@
 //
-//  CKCircleMenuView.m
+//  ALPHACircleMenuView.m
 //
 //  Created by Christian Klaproth on 31.08.14.
 //  Copyright (c) 2014 Christian Klaproth. All rights reserved.
 //
 
-#import "CKCircleMenuView.h"
+#import "ALPHACircleMenuView.h"
 
-@interface CKCircleMenuView()
+@interface ALPHACircleMenuView ()
 
 @property (nonatomic) NSMutableArray* buttons;
 @property (weak, nonatomic) UIGestureRecognizer* recognizer;
@@ -46,7 +46,7 @@ NSString* const CIRCLE_MENU_DEPTH = @"kCircleMenuDepth";
 NSString* const CIRCLE_MENU_BUTTON_RADIUS = @"kCircleMenuButtonRadius";
 NSString* const CIRCLE_MENU_BUTTON_BORDER_WIDTH = @"kCircleMenuButtonBorderWidth";
 
-@implementation CKCircleMenuView
+@implementation ALPHACircleMenuView
 
 - (id)initWithOptions:(NSDictionary*)anOptionsDictionary
 {
@@ -395,7 +395,7 @@ NSString* const CIRCLE_MENU_BUTTON_BORDER_WIDTH = @"kCircleMenuButtonBorderWidth
 
 /*!
  * Target action method that gets called when the gesture used to open
- * the CKCircleMenuView changes.
+ * the ALPHACircleMenuView changes.
  */
 - (void)gestureChanged:(UILongPressGestureRecognizer*)sender
 {

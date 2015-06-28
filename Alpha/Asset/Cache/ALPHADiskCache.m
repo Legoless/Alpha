@@ -2,7 +2,7 @@
 //  Modifications by Garrett Moon
 //  Copyright (c) 2015 Pinterest. All rights reserved.
 
-#import "PINDiskCache.h"
+#import "ALPHADiskCache.h"
 
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_4_0
 #import <UIKit/UIKit.h>
@@ -25,7 +25,7 @@ taskID = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHan
 NSString * const PINDiskCachePrefix = @"com.unifiedsense.alpha.AssetCacheDisk";
 NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
 
-@interface PINDiskCache ()
+@interface ALPHADiskCache ()
 
 @property (assign) NSUInteger byteCount;
 @property (strong, nonatomic) NSURL *cacheURL;
@@ -40,7 +40,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
 @property (strong, nonatomic) NSMutableDictionary *sizes;
 @end
 
-@implementation PINDiskCache
+@implementation ALPHADiskCache
 
 @synthesize willAddObjectBlock = _willAddObjectBlock;
 @synthesize willRemoveObjectBlock = _willRemoveObjectBlock;
@@ -93,9 +93,9 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
         NSString *pathComponent = [[NSString alloc] initWithFormat:@"%@.%@", PINDiskCachePrefix, _name];
         _cacheURL = [NSURL fileURLWithPathComponents:@[ rootPath, pathComponent ]];
         
-        __weak PINDiskCache *weakSelf = self;
+        __weak ALPHADiskCache *weakSelf = self;
         dispatch_async(_asyncQueue, ^{
-            PINDiskCache *strongSelf = weakSelf;
+            ALPHADiskCache *strongSelf = weakSelf;
             [strongSelf lock];
                 [strongSelf createCacheDirectory];
                 [strongSelf initializeDiskProperties];
@@ -211,7 +211,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
     
     NSError *error = nil;
     NSString *uniqueString = [[NSProcessInfo processInfo] globallyUniqueString];
-    NSURL *uniqueTrashURL = [[PINDiskCache sharedTrashURL] URLByAppendingPathComponent:uniqueString];
+    NSURL *uniqueTrashURL = [[ALPHADiskCache sharedTrashURL] URLByAppendingPathComponent:uniqueString];
     BOOL moved = [[NSFileManager defaultManager] moveItemAtURL:itemURL toURL:uniqueTrashURL error:&error];
     PINDiskCacheError(error);
     return moved;
@@ -321,11 +321,11 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
     if (_willRemoveObjectBlock)
         _willRemoveObjectBlock(self, key, nil, fileURL);
     
-    BOOL trashed = [PINDiskCache moveItemAtURLToTrash:fileURL];
+    BOOL trashed = [ALPHADiskCache moveItemAtURLToTrash:fileURL];
     if (!trashed)
         return NO;
     
-    [PINDiskCache emptyTrash];
+    [ALPHADiskCache emptyTrash];
     
     NSNumber *byteSize = [_sizes objectForKey:key];
     if (byteSize)
@@ -400,23 +400,23 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
         [self trimDiskToDate:date];
     [self unlock];
     
-    __weak PINDiskCache *weakSelf = self;
+    __weak ALPHADiskCache *weakSelf = self;
     
     dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(_ageLimit * NSEC_PER_SEC));
     dispatch_after(time, _asyncQueue, ^(void) {
-        PINDiskCache *strongSelf = weakSelf;
+        ALPHADiskCache *strongSelf = weakSelf;
         [strongSelf trimToAgeLimitRecursively];
     });
 }
 
 #pragma mark - Public Asynchronous Methods -
 
-- (void)lockFileAccessWhileExecutingBlock:(void(^)(PINDiskCache *diskCache))block
+- (void)lockFileAccessWhileExecutingBlock:(void(^)(ALPHADiskCache *diskCache))block
 {
-    __weak PINDiskCache *weakSelf = self;
+    __weak ALPHADiskCache *weakSelf = self;
     
     dispatch_async(_asyncQueue, ^{
-        PINDiskCache *strongSelf = weakSelf;
+        ALPHADiskCache *strongSelf = weakSelf;
         if (block) {
             [strongSelf lock];
                 block(strongSelf);
@@ -427,10 +427,10 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
 
 - (void)objectForKey:(NSString *)key block:(PINDiskCacheObjectBlock)block
 {
-    __weak PINDiskCache *weakSelf = self;
+    __weak ALPHADiskCache *weakSelf = self;
     
     dispatch_async(_asyncQueue, ^{
-        PINDiskCache *strongSelf = weakSelf;
+        ALPHADiskCache *strongSelf = weakSelf;
         NSURL *fileURL = nil;
         id <NSCoding> object = [strongSelf objectForKey:key fileURL:&fileURL];
         
@@ -444,10 +444,10 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
 
 - (void)fileURLForKey:(NSString *)key block:(PINDiskCacheObjectBlock)block
 {
-    __weak PINDiskCache *weakSelf = self;
+    __weak ALPHADiskCache *weakSelf = self;
     
     dispatch_async(_asyncQueue, ^{
-        PINDiskCache *strongSelf = weakSelf;
+        ALPHADiskCache *strongSelf = weakSelf;
         NSURL *fileURL = [strongSelf fileURLForKey:key];
         
         if (block) {
@@ -460,10 +460,10 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
 
 - (void)setObject:(id <NSCoding>)object forKey:(NSString *)key block:(PINDiskCacheObjectBlock)block
 {
-    __weak PINDiskCache *weakSelf = self;
+    __weak ALPHADiskCache *weakSelf = self;
     
     dispatch_async(_asyncQueue, ^{
-        PINDiskCache *strongSelf = weakSelf;
+        ALPHADiskCache *strongSelf = weakSelf;
         NSURL *fileURL = nil;
         [strongSelf setObject:object forKey:key fileURL:&fileURL];
         
@@ -477,10 +477,10 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
 
 - (void)removeObjectForKey:(NSString *)key block:(PINDiskCacheObjectBlock)block
 {
-    __weak PINDiskCache *weakSelf = self;
+    __weak ALPHADiskCache *weakSelf = self;
     
     dispatch_async(_asyncQueue, ^{
-        PINDiskCache *strongSelf = weakSelf;
+        ALPHADiskCache *strongSelf = weakSelf;
         NSURL *fileURL = nil;
         [strongSelf removeObjectForKey:key fileURL:&fileURL];
         
@@ -494,10 +494,10 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
 
 - (void)trimToSize:(NSUInteger)trimByteCount block:(PINDiskCacheBlock)block
 {
-    __weak PINDiskCache *weakSelf = self;
+    __weak ALPHADiskCache *weakSelf = self;
     
     dispatch_async(_asyncQueue, ^{
-        PINDiskCache *strongSelf = weakSelf;
+        ALPHADiskCache *strongSelf = weakSelf;
         [strongSelf trimToSize:trimByteCount];
         
         if (block) {
@@ -510,10 +510,10 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
 
 - (void)trimToDate:(NSDate *)trimDate block:(PINDiskCacheBlock)block
 {
-    __weak PINDiskCache *weakSelf = self;
+    __weak ALPHADiskCache *weakSelf = self;
     
     dispatch_async(_asyncQueue, ^{
-        PINDiskCache *strongSelf = weakSelf;
+        ALPHADiskCache *strongSelf = weakSelf;
         [strongSelf trimToDate:trimDate];
         
         if (block) {
@@ -526,10 +526,10 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
 
 - (void)trimToSizeByDate:(NSUInteger)trimByteCount block:(PINDiskCacheBlock)block
 {
-    __weak PINDiskCache *weakSelf = self;
+    __weak ALPHADiskCache *weakSelf = self;
     
     dispatch_async(_asyncQueue, ^{
-        PINDiskCache *strongSelf = weakSelf;
+        ALPHADiskCache *strongSelf = weakSelf;
         [strongSelf trimToSizeByDate:trimByteCount];
         
         if (block) {
@@ -542,10 +542,10 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
 
 - (void)removeAllObjects:(PINDiskCacheBlock)block
 {
-    __weak PINDiskCache *weakSelf = self;
+    __weak ALPHADiskCache *weakSelf = self;
     
     dispatch_async(_asyncQueue, ^{
-        PINDiskCache *strongSelf = weakSelf;
+        ALPHADiskCache *strongSelf = weakSelf;
         [strongSelf removeAllObjects];
         
         if (block) {
@@ -558,10 +558,10 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
 
 - (void)enumerateObjectsWithBlock:(PINDiskCacheObjectBlock)block completionBlock:(PINDiskCacheBlock)completionBlock
 {
-    __weak PINDiskCache *weakSelf = self;
+    __weak ALPHADiskCache *weakSelf = self;
     
     dispatch_async(_asyncQueue, ^{
-        PINDiskCache *strongSelf = weakSelf;
+        ALPHADiskCache *strongSelf = weakSelf;
         [strongSelf enumerateObjectsWithBlock:block];
         
         if (completionBlock) {
@@ -574,7 +574,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
 
 #pragma mark - Public Synchronous Methods -
 
-- (void)synchronouslyLockFileAccessWhileExecutingBlock:(void(^)(PINDiskCache *diskCache))block
+- (void)synchronouslyLockFileAccessWhileExecutingBlock:(void(^)(ALPHADiskCache *diskCache))block
 {
     if (block) {
         [self lock];
@@ -783,8 +783,8 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
         if (self->_willRemoveAllObjectsBlock)
             self->_willRemoveAllObjectsBlock(self);
         
-        [PINDiskCache moveItemAtURLToTrash:self->_cacheURL];
-        [PINDiskCache emptyTrash];
+        [ALPHADiskCache moveItemAtURLToTrash:self->_cacheURL];
+        [ALPHADiskCache emptyTrash];
         
         [self createCacheDirectory];
         
@@ -833,10 +833,10 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
 
 - (void)setWillAddObjectBlock:(PINDiskCacheObjectBlock)block
 {
-    __weak PINDiskCache *weakSelf = self;
+    __weak ALPHADiskCache *weakSelf = self;
     
     dispatch_async(_asyncQueue, ^{
-        PINDiskCache *strongSelf = weakSelf;
+        ALPHADiskCache *strongSelf = weakSelf;
         if (!strongSelf)
             return;
         [strongSelf lock];
@@ -858,10 +858,10 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
 
 - (void)setWillRemoveObjectBlock:(PINDiskCacheObjectBlock)block
 {
-    __weak PINDiskCache *weakSelf = self;
+    __weak ALPHADiskCache *weakSelf = self;
     
     dispatch_async(_asyncQueue, ^{
-        PINDiskCache *strongSelf = weakSelf;
+        ALPHADiskCache *strongSelf = weakSelf;
         if (!strongSelf)
             return;
         
@@ -884,10 +884,10 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
 
 - (void)setWillRemoveAllObjectsBlock:(PINDiskCacheBlock)block
 {
-    __weak PINDiskCache *weakSelf = self;
+    __weak ALPHADiskCache *weakSelf = self;
     
     dispatch_async(_asyncQueue, ^{
-        PINDiskCache *strongSelf = weakSelf;
+        ALPHADiskCache *strongSelf = weakSelf;
         if (!strongSelf)
             return;
         
@@ -910,10 +910,10 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
 
 - (void)setDidAddObjectBlock:(PINDiskCacheObjectBlock)block
 {
-    __weak PINDiskCache *weakSelf = self;
+    __weak ALPHADiskCache *weakSelf = self;
     
     dispatch_async(_asyncQueue, ^{
-        PINDiskCache *strongSelf = weakSelf;
+        ALPHADiskCache *strongSelf = weakSelf;
         if (!strongSelf)
             return;
         
@@ -936,10 +936,10 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
 
 - (void)setDidRemoveObjectBlock:(PINDiskCacheObjectBlock)block
 {
-    __weak PINDiskCache *weakSelf = self;
+    __weak ALPHADiskCache *weakSelf = self;
     
     dispatch_async(_asyncQueue, ^{
-        PINDiskCache *strongSelf = weakSelf;
+        ALPHADiskCache *strongSelf = weakSelf;
         if (!strongSelf)
             return;
         
@@ -962,10 +962,10 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
 
 - (void)setDidRemoveAllObjectsBlock:(PINDiskCacheBlock)block
 {
-    __weak PINDiskCache *weakSelf = self;
+    __weak ALPHADiskCache *weakSelf = self;
     
     dispatch_async(_asyncQueue, ^{
-        PINDiskCache *strongSelf = weakSelf;
+        ALPHADiskCache *strongSelf = weakSelf;
         if (!strongSelf)
             return;
         
@@ -988,10 +988,10 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
 
 - (void)setByteLimit:(NSUInteger)byteLimit
 {
-    __weak PINDiskCache *weakSelf = self;
+    __weak ALPHADiskCache *weakSelf = self;
     
     dispatch_async(_asyncQueue, ^{
-        PINDiskCache *strongSelf = weakSelf;
+        ALPHADiskCache *strongSelf = weakSelf;
         if (!strongSelf)
             return;
         
@@ -1017,10 +1017,10 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
 
 - (void)setAgeLimit:(NSTimeInterval)ageLimit
 {
-    __weak PINDiskCache *weakSelf = self;
+    __weak ALPHADiskCache *weakSelf = self;
     
     dispatch_async(_asyncQueue, ^{
-        PINDiskCache *strongSelf = weakSelf;
+        ALPHADiskCache *strongSelf = weakSelf;
         if (!strongSelf)
             return;
         
