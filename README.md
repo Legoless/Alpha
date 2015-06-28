@@ -14,8 +14,11 @@
 
 ### Alpha
 
+Alpha is the next generation debugging framework for iOS applications. It combines multiple debugging tools built on top of a simple, unified API.
 
-Alpha is the next generation debugging framework for iOS applications. It started as an unofficial fork from [FLEX](https://github.com/Flipboard/FLEX) (Flipboard Explorer), but continued to be actively developed and grew exponentionally. Complete feature set for Alpha:
+*It is currently a work in progress and might be too unstable to be used in real environment yet. Feel free to open GitHub issues.*
+
+# Features
 
 - Push Notification logging (independent of provider)
 - Console logging (ASL)
@@ -42,13 +45,9 @@ Currently work in progress:
 - *Recording touches and replaying actions*
 - *In-app debugger*
 
+# History
 
-**This is an unofficial fork from the amazing Flipboard guys. It is a big rewrite of FLEX architecture, making it completely extensible, but sadly not backwards compatible with original code.**
-
-*It is currently a work in progress and might be too unstable to be used in real environment yet. Feel free to open GitHub issues.*
-
-![View Hierarchy Exploration](http://engineering.flipboard.com/assets/flex/basic-view-exploration.gif)
-
+It started as an unofficial fork from [FLEX](https://github.com/Flipboard/FLEX) (Flipboard Explorer), but continued to be actively developed and grew exponentionally.
 
 ## Contributions
 
