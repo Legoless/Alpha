@@ -110,7 +110,7 @@
     self.longPressMenuRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleMenuTap:)];
     self.longPressMenuRecognizer.minimumPressDuration = 0.3;
     
-    self.direction = CircleMenuDirectionRight;
+    self.direction = ALPHACircleMenuDirectionRight;
     self.delay = 0.0;
     self.buttonRadius = 26.0;
     self.shadow = 0;
@@ -348,21 +348,21 @@
 {
     CGFloat radius = self.radius + self.buttonRadius;
     
-    CircleMenuDirection axisXClosestBorder = CircleMenuDirectionLeft;
+    ALPHACircleMenuDirection axisXClosestBorder = ALPHACircleMenuDirectionLeft;
     CGFloat axisXDistance = self.center.x;
     
     if (self.superview.bounds.size.width - self.center.x < self.center.x)
     {
-        axisXClosestBorder = CircleMenuDirectionRight;
+        axisXClosestBorder = ALPHACircleMenuDirectionRight;
         axisXDistance = self.superview.bounds.size.width - self.center.x;
     }
     
-    CircleMenuDirection axisYClosestBorder = CircleMenuDirectionUp;
+    ALPHACircleMenuDirection axisYClosestBorder = ALPHACircleMenuDirectionUp;
     CGFloat axisYDistance = self.center.y;
     
     if (self.superview.bounds.size.height - self.center.y < self.center.y)
     {
-        axisYClosestBorder = CircleMenuDirectionDown;
+        axisYClosestBorder = ALPHACircleMenuDirectionDown;
         axisYDistance = self.superview.bounds.size.height - self.center.y;
     }
     
@@ -414,7 +414,7 @@
     
     if (leftAngle < 90.0 && topAngle < 90.0)
     {
-        self.direction = CircleMenuDirectionDown;
+        self.direction = ALPHACircleMenuDirectionDown;
         
         totalAngle += leftAngle + topAngle;
         
@@ -422,7 +422,7 @@
     }
     else if (leftAngle < 90.0 && bottomAngle < 90.0)
     {
-        self.direction = CircleMenuDirectionRight;
+        self.direction = ALPHACircleMenuDirectionRight;
         
         totalAngle += leftAngle + bottomAngle;
         
@@ -430,7 +430,7 @@
     }
     else if (rightAngle < 90.0 && topAngle < 90.0)
     {
-        self.direction = CircleMenuDirectionLeft;
+        self.direction = ALPHACircleMenuDirectionLeft;
         
         totalAngle += rightAngle + topAngle;
         
@@ -438,7 +438,7 @@
     }
     else if (rightAngle < 90.0 && bottomAngle < 90.0)
     {
-        self.direction = CircleMenuDirectionUp;
+        self.direction = ALPHACircleMenuDirectionUp;
         
         totalAngle += rightAngle + bottomAngle;
         
@@ -446,7 +446,7 @@
     }
     else if (rightAngle < 90.0)
     {
-        self.direction = CircleMenuDirectionLeft;
+        self.direction = ALPHACircleMenuDirectionLeft;
         
         totalAngle = 360.0 - (2 * (90.0 - rightAngle));
         
@@ -454,7 +454,7 @@
     }
     else if (leftAngle < 90.0)
     {
-        self.direction = CircleMenuDirectionRight;
+        self.direction = ALPHACircleMenuDirectionRight;
         
         totalAngle = 360.0 - (2 * (90.0 - leftAngle));
         
@@ -462,7 +462,7 @@
     }
     else if (topAngle < 90.0)
     {
-        self.direction = CircleMenuDirectionDown;
+        self.direction = ALPHACircleMenuDirectionDown;
         
         totalAngle = 360.0 - (2 * (90.0 - topAngle));
         
@@ -474,13 +474,13 @@
         
         //angleModifier = 0.95;
         
-        self.direction = CircleMenuDirectionUp;
+        self.direction = ALPHACircleMenuDirectionUp;
     }
     else
     {
         totalAngle = 360.0;
         
-        //self.direction = CircleMenuDirectionUp;
+        //self.direction = ALPHACircleMenuDirectionUp;
     }
     
     totalAngle *= angleModifier;

@@ -114,16 +114,16 @@ NSString* const CIRCLE_MENU_BUTTON_BORDER_WIDTH = @"kCircleMenuButtonBorderWidth
     self.radius = [[anOptionsDictionary valueForKey:CIRCLE_MENU_RADIUS] doubleValue];
     self.maxAngle = [[anOptionsDictionary valueForKey:CIRCLE_MENU_MAX_ANGLE] doubleValue];
     switch ([[anOptionsDictionary valueForKey:CIRCLE_MENU_DIRECTION] integerValue]) {
-        case CircleMenuDirectionUp:
+        case ALPHACircleMenuDirectionUp:
             self.startingAngle = 0.0;
             break;
-        case CircleMenuDirectionRight:
+        case ALPHACircleMenuDirectionRight:
             self.startingAngle = 90.0;
             break;
-        case CircleMenuDirectionDown:
+        case ALPHACircleMenuDirectionDown:
             self.startingAngle = 180.0;
             break;
-        case CircleMenuDirectionLeft:
+        case ALPHACircleMenuDirectionLeft:
             self.startingAngle = 270.0;
             break;
     }
@@ -157,7 +157,7 @@ NSString* const CIRCLE_MENU_BUTTON_BORDER_WIDTH = @"kCircleMenuButtonBorderWidth
     tButton.tag = aTag + TAG_BUTTON_OFFSET;
     tButton.tintColor = self.borderViewColor;
     
-    UIView* tInnerView = [[CKRoundView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.buttonRadius * 2, self.buttonRadius * 2)];
+    UIView* tInnerView = [[ALPHARoundView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.buttonRadius * 2, self.buttonRadius * 2)];
     tInnerView.backgroundColor = self.innerViewColor;
     tInnerView.opaque = YES;
     tInnerView.clipsToBounds = NO;
@@ -438,7 +438,7 @@ NSString* const CIRCLE_MENU_BUTTON_BORDER_WIDTH = @"kCircleMenuButtonBorderWidth
 
 @end
 
-@implementation CKRoundView
+@implementation ALPHARoundView
 
 - (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent*)event
 {

@@ -48,11 +48,11 @@ extern NSString* const CIRCLE_MENU_BUTTON_RADIUS;
 extern NSString* const CIRCLE_MENU_BUTTON_BORDER_WIDTH;
 
 typedef enum {
-    CircleMenuDirectionUp = 1,
-    CircleMenuDirectionRight,
-    CircleMenuDirectionDown,
-    CircleMenuDirectionLeft
-} CircleMenuDirection;
+    ALPHACircleMenuDirectionUp = 1,
+    ALPHACircleMenuDirectionRight,
+    ALPHACircleMenuDirectionDown,
+    ALPHACircleMenuDirectionLeft
+} ALPHACircleMenuDirection;
 
 @interface ALPHACircleMenuView : UIView
 
@@ -98,7 +98,7 @@ typedef enum {
 
 @end
 
-@interface CKRoundView : UIView
+@interface ALPHARoundView : UIView
 
 @end
 
