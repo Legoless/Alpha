@@ -260,7 +260,7 @@ Pod::Spec.new do |spec|
   # Touch
   #
 
-  spec.subspec 'Interface' do |subspec|
+  spec.subspec 'Touch' do |subspec|
     subspec.source_files = 'Alpha/Plugins/Touch/**/*.{h,m}'
     subspec.dependency = 'Alpha/Core'
   end
@@ -269,7 +269,7 @@ Pod::Spec.new do |spec|
   # View
   #
 
-  spec.subspec 'Interface' do |subspec|
+  spec.subspec 'View' do |subspec|
     subspec.source_files = 'Alpha/Plugins/View/**/*.{h,m}'
     subspec.dependency = 'Alpha/Core'
   end
