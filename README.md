@@ -22,6 +22,34 @@ Alpha is an idea of the next generation debugging framework for iOS applications
 
 Features are separated into multiple plugins, which can be enabled or disabled, depending on application requirements.
 
+- **Bonjour**
+
+  Bonjour plugin contains a simple Bonjour server allowing Alpha to work over local Wi-Fi network.
+  
+- **Bootstrap**
+
+  Bootstrap plugin checks for [KZBootstrap](https://github.com/krzysztofzablocki/KZBootstrap) environments and allows modifying them in real-time.
+  
+- **Console**
+
+  Console plugin displays console logs (logged by NSLog) inside the application.
+  
+- **Event**
+
+  Event plugin logs and displays application wide events such as background state transitions and view controller appearances.
+  
+- **File**
+
+  File plugin allows browsing the sandboxed file system and previewing common file types, such as images, videos and text.
+  
+- **Global**
+
+  Global information plugin displays linked frameworks, libraries and classes. Requires **Object** plugin to work.
+  
+- **Heap**
+
+  Heap plugin allows inspection of active object instances on ther heap and helps with debugging memory errors. Requires **Object** plugin to work.
+
 - Push Notification logging (independent of provider)
 - Console logging (ASL)
 - Network connection logging
@@ -54,6 +82,10 @@ To use Alpha in your project, all you need to do is add a CocoaPod:
 pod 'Alpha'
 
 Alpha supports iOS 8 and up. Not all features are available on all versions.
+
+### Themes
+
+### Triggers
 
 ### Help
 
