@@ -132,7 +132,7 @@ To use Alpha in your project, all you need to do is add a **CocoaPods** library:
 ```ruby
 pod 'Alpha'
 ```
-This automatically includes all plugins and features.
+This automatically includes all plugins and features. To avoid clashes with libraries in application, all Alpha classes use `ALPHA` prefix. The recommended way is to ignore Alpha version and always use the latest version, to ensure best stability possible.
 
 *Alpha supports iOS 8 and up. Not all features are available on all versions.*
 
@@ -140,7 +140,9 @@ This automatically includes all plugins and features.
 
 # The Story
 
-Alpha originally started as an unofficial fork from [FLEX](https://github.com/Flipboard/FLEX) (Flipboard Explorer).
+*Alpha originally started as an unofficial fork from [FLEX](https://github.com/Flipboard/FLEX) (Flipboard Explorer). It began with a desire to add multiple features to FLEX, but looking more and more it was obvious that many architectural changes were required. Those are the hardest to merge into original repository without breaking multiple features, it was obvious that it fits more to create a separate repository.
+
+So Alpha was converted into a separate repository and work began on top of that. Many features were added and there are many architectural changes under the hood. Alpha offers a full API, which can be used to build almost any kind of plugin. In fact, all existing plugins are built on top of that API.*
 
 # Documentation
 
@@ -150,8 +152,11 @@ The entire Alpha documentation is available on [Wiki]() and on [CocoaDocs]().
 - Browse [Architecture]().
 - Go through [Frequently Asked Questions]().
 
-
 # Contributions
+
+
+
+# Credits
 
 This project would not be possible without all the work done by respected community contributors.
 Thanks to all contributors of the following projects:
