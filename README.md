@@ -18,7 +18,7 @@ Alpha is an idea of the next generation debugging framework for iOS applications
 
 *It is currently a work in progress and might be too unstable to be used in real environment yet. Feel free to open GitHub issues.*
 
-### Features
+# Features
 
 Features are separated into multiple plugins, which can be enabled or disabled, depending on application requirements.
 
@@ -106,7 +106,7 @@ Triggers are a way to activate Alpha interface. By default Alpha provides two tr
 
 Read more on [Triggers]().
 
-### Integration
+# Integration
 
 To use Alpha in your project, all you need to do is add a CocoaPod:
 
@@ -118,16 +118,16 @@ This automatically includes all plugins and features.
 *Alpha supports iOS 8 and up. Not all features are available on all versions.*
 
 
-### Help
+# Help
 
 - Frequently Asked Questions
 - Wiki
 
-### History
+# History
 
 Alpha originally started as an unofficial fork from [FLEX](https://github.com/Flipboard/FLEX) (Flipboard Explorer).
 
-### Contributions
+# Contributions
 
 This project would not be possible without all the work done by respected community contributors.
 Thanks to all the contributors to the following projects:
