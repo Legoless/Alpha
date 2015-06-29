@@ -1,29 +1,22 @@
 Pod::Spec.new do |spec|
   spec.name                   = "Alpha"
   spec.version                = "0.2.0"
-  spec.summary                = "Next generation debugging system for iOS"
+  spec.summary                = "Next generation debugging framework for iOS"
   spec.description            = <<-DESC
-                                - Inspect and modify views in the hierarchy.
-                                - See the properties and ivars on any object.
-                                - Dynamically modify many properties and ivars.
-                                - Dynamically call instance and class methods.
-                                - Access any live object via a scan of the heap.
-                                - View the file system within your app's sandbox.
-                                - Explore all classes in your app and linked systems frameworks (public and private).
-                                - Shortcuts for useful objects such as `[UIApplication sharedApplication]`.
-                                - Dynamically view and modify `NSUserDefaults` values.
+                                - A simple unified debugging plugin API.
+                                - Lives entirely in app sandbox.
+                                - Easy integration with no code changes.
+                                - Display device information, network connections and console logs.
+                                - Log push notifications and inspect payload.
+                                - Follow application life-cycle and user session.
                               DESC
 
   spec.license                = { :type => "MIT", :file => "LICENSE" }
   spec.homepage               = "https://github.com/legoless/Alpha"
-  spec.screenshots            = [ "http://engineering.flipboard.com/assets/flex/basic-view-exploration.gif",
-                                  "http://engineering.flipboard.com/assets/flex/advanced-view-editing.gif",
-                                  "http://engineering.flipboard.com/assets/flex/heap-browser.gif",
-                                  "http://engineering.flipboard.com/assets/flex/file-browser.gif",
-                                  "http://engineering.flipboard.com/assets/flex/nsuserdefaults-editor.gif",
-                                  "http://engineering.flipboard.com/assets/flex/system-libraries-browser.gif",
-                                  "http://engineering.flipboard.com/assets/flex/flex-readme-reverse-1.png",
-                                 "http://engineering.flipboard.com/assets/flex/flex-readme-reverse-2.png" ]
+  spec.screenshots            = [ "https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Intro.gif",
+                                  "https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Default_Theme.png",
+                                  "https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Formentera_Theme.png",
+                                  "https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Notio_Theme.png" ]
 
   spec.documentation_url      = "https://github.com/Legoless/Alpha/wiki"
   spec.author                 = { "Dal Rupnik" => "legoless@gmail.com" }
