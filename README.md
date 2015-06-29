@@ -14,11 +14,13 @@
 
 ### Alpha
 
-Alpha is the next generation debugging framework for iOS applications. It combines multiple debugging tools built on top of a simple, unified API.
+Alpha is an idea of the next generation debugging framework for iOS applications. It combines multiple debugging tools built on top of a simple, unified API. It lives entirely in your app sandbox and collects many types of data during your application lifetime. It is very easy to integrate and requires no code changes.
 
 *It is currently a work in progress and might be too unstable to be used in real environment yet. Feel free to open GitHub issues.*
 
 ### Features
+
+Features are separated into multiple plugins, which can be enabled or disabled, depending on application requirements.
 
 - Push Notification logging (independent of provider)
 - Console logging (ASL)
@@ -45,22 +47,39 @@ Currently work in progress:
 - *Recording touches and replaying actions*
 - *In-app debugger*
 
+### Integration
+
+To use Alpha in your project, all you need to do is add a CocoaPod:
+
+pod 'Alpha'
+
+Alpha supports iOS 8 and up. Not all features are available on all versions.
+
+### Help
+
+- Frequently Asked Questions
+- Wiki
+
 ### History
 
-It started as an unofficial fork from [FLEX](https://github.com/Flipboard/FLEX) (Flipboard Explorer), but continued to be actively developed and grew exponentionally.
+Alpha originally started as an unofficial fork from [FLEX](https://github.com/Flipboard/FLEX) (Flipboard Explorer).
 
 ### Contributions
 
+This project would not be possible without all the work done by respected community contributors.
 Thanks to all the contributors to the following projects:
 
 - [FLEX (Flipboard Explorer)](https://github.com/Flipboard/FLEX)
 - [PonyDebugger](https://github.com/square/PonyDebugger)
 - [KZBootstrap](https://github.com/krzysztofzablocki/KZBootstrap)
 - [Touchpose](https://github.com/toddreed/Touchpose)
-- [PINCache]()
-- [CKCircleMenuView]()
-- [CWStatusBarNotification]()
-- [DTBonjour]()
+- [PINCache](https://github.com/pinterest/PINCache)
+- [CKCircleMenuView](https://github.com/JaNd3r/CKCircleMenuView)
+- [CWStatusBarNotification](https://github.com/cezarywojcik/CWStatusBarNotification)
+- [DTBonjour](https://github.com/Cocoanetics/DTBonjour)
+- [Super DB](https://github.com/Shopify/superdb)
+- [iConsole](https://github.com/nicklockwood/iConsole)
+- [Haystack](https://github.com/legoless/Haystack)
 - Many more...
 
 Contact
