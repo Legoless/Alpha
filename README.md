@@ -12,9 +12,7 @@
 [![Pod License](http://img.shields.io/cocoapods/l/Alpha.svg?style=flat)](http://opensource.org/licenses/BSD-3-Clause)
 
 
-### Alpha
-
-Alpha is an idea of the next generation debugging framework for iOS applications. It combines multiple debugging tools built on top of a simple, unified API. It lives entirely in your app sandbox and collects many types of data during your application lifetime. It is very easy to integrate and requires no code changes.
+**Alpha** is an idea of the next generation debugging framework for iOS applications. It combines multiple debugging tools built on top of a simple, unified API. It lives entirely in your app sandbox and collects many types of data during your application lifetime. It is very easy to integrate and requires no code changes.
 
 *It is currently a work in progress and might be too unstable to be used in real environment yet. Feel free to open GitHub issues.*
 
