@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import <XCTest/XCTest.h>
+@import XCTest;
 
 #define NewFailureRecorder() \
 [[ALPHAFailureRecorder alloc] initWithTestCase:self filePath:__FILE__ lineNumber:__LINE__]

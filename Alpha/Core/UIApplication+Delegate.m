@@ -6,8 +6,9 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
+@import ObjectiveC.runtime;
+
 #import <Haystack/Haystack.h>
-#import <objc/runtime.h>
 
 #import "UIApplication+Delegate.h"
 #import "ALPHAApplicationDelegate.h"

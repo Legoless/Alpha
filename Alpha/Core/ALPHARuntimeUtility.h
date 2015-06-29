@@ -8,8 +8,7 @@
 
 @import Foundation;
 @import UIKit;
-
-#import <objc/runtime.h>
+@import ObjectiveC.runtime;
 
 extern const unsigned int ALPHANumberOfImplicitArgsKey;
 

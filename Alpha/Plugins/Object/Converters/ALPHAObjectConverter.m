@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import <objc/runtime.h>
+@import ObjectiveC.runtime;
 
 #import "ALPHAInstanceSource.h"
 

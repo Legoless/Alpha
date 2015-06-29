@@ -2,7 +2,7 @@
 //  Modifications by Garrett Moon
 //  Copyright (c) 2015 Pinterest. All rights reserved.
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 #import "ALPHADiskCache.h"
 #import "ALPHAMemoryCache.h"

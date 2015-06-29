@@ -38,10 +38,11 @@
 //  3. This notice may not be removed or altered from any source distribution.
 //
 
+@import ObjectiveC.runtime;
+
 #import "ALPHASerializableItem.h"
 
 #import "ALPHASerialization.h"
-#import <objc/runtime.h>
 
 #pragma GCC diagnostic ignored "-Wgnu"
 

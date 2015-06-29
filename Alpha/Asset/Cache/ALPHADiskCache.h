@@ -2,7 +2,8 @@
 //  Modifications by Garrett Moon
 //  Copyright (c) 2015 Pinterest. All rights reserved.
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+
 #import "Nullability.h"
 
 NS_ASSUME_NONNULL_BEGIN

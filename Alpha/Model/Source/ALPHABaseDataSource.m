@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
-#import <objc/runtime.h>
+@import ObjectiveC.runtime;
 
 #import "ALPHABaseDataSource.h"
 #import "ALPHAActions.h"

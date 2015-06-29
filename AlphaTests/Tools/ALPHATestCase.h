@@ -6,8 +6,7 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import <XCTest/XCTest.h>
-
+@import XCTest;
 @import Foundation;
 
 #import "ALPHAFailureRecorder.h"

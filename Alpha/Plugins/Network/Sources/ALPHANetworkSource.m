@@ -23,8 +23,8 @@
 // limitations under the License.
 //
 
-#import <objc/runtime.h>
-#import <objc/message.h>
+@import ObjectiveC.runtime;
+@import ObjectiveC.message;
 
 #import "ALPHANetworkSource.h"
 #import "ALPHARequestState.h"

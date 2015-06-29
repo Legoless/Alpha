@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 @class ALPHAArgumentInputView;
 

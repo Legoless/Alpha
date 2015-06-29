@@ -6,10 +6,11 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
+@import ObjectiveC.runtime;
+
 #import "ALPHAHeapEnumerator.h"
 #import <malloc/malloc.h>
 #import <mach/mach.h>
-#import <objc/runtime.h>
 
 static CFMutableSetRef registeredClasses;
 

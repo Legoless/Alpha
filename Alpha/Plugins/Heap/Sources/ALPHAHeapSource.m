@@ -6,9 +6,10 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
+@import ObjectiveC.runtime;
+
 #import "ALPHAHeapEnumerator.h"
 #import "ALPHAUtility.h"
-#import <objc/runtime.h>
 
 #import "ALPHAInstanceSource.h"
 

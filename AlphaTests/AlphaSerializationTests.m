@@ -6,14 +6,14 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
+@import XCTest;
+
 #import "ALPHASerialization.h"
 #import "ALPHARequest.h"
 #import "ALPHATestCase.h"
 
 #import "ALPHADeviceStatusSource.h"
 #import "ALPHATableScreenModel.h"
-
-#import <XCTest/XCTest.h>
 
 @interface AlphaSerializationTests : ALPHATestCase
 
