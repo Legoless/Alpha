@@ -93,17 +93,30 @@ Currently work in progress:
 - *Recording touches and replaying actions*
 - *In-app debugger*
 
+### Themes
+
+To better fit with various application, Alpha has theme support, which allows you to choose the color palette you wish to display Alpha in. 
+
+### Triggers
+
+Triggers are a way to activate Alpha interface. By default Alpha provides two triggers:
+
+- Shake Trigger - Activates when device is shaken two times in less than 5 seconds.
+- Tap Trigger - Activates when 3 fingers are pressed for 3 seconds anywhere in the application.
+
+Read more on [Triggers]().
+
 ### Integration
 
 To use Alpha in your project, all you need to do is add a CocoaPod:
 
+```ruby
 pod 'Alpha'
+```
+This automatically includes all plugins and features.
 
-Alpha supports iOS 8 and up. Not all features are available on all versions.
+*Alpha supports iOS 8 and up. Not all features are available on all versions.*
 
-### Themes
-
-### Triggers
 
 ### Help
 
