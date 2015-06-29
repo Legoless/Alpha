@@ -132,7 +132,13 @@ To use Alpha in your project, all you need to do is add a **CocoaPods** library:
 ```ruby
 pod 'Alpha'
 ```
-This automatically includes all plugins and features. To avoid clashes with libraries in application, all Alpha classes use `ALPHA` prefix. The recommended way is to ignore Alpha version and always use the latest version, to ensure best stability possible.
+This automatically includes all plugins and features. To avoid clashes with libraries in application, all Alpha classes use `ALPHA` prefix. The recommended way is to ignore Alpha version and always use the latest version, to ensure best stability possible. You can also pick the plugins to integrate manually.
+
+```ruby
+pod 'Alpha/Bonjour'
+pod 'Alpha/Interface'
+pod 'Alpha/State'
+```
 
 *Alpha supports iOS 8 and up. Not all features are available on all versions.*
 
@@ -140,9 +146,9 @@ This automatically includes all plugins and features. To avoid clashes with libr
 
 # The Story
 
-*Alpha originally started as an unofficial fork from [FLEX](https://github.com/Flipboard/FLEX) (Flipboard Explorer). It began with a desire to add multiple features to FLEX, but looking more and more it was obvious that many architectural changes were required. Those are the hardest to merge into original repository without breaking multiple features, it was obvious that it fits more to create a separate repository.*
+*Alpha originally started as an unofficial fork from [FLEX](https://github.com/Flipboard/FLEX) (Flipboard Explorer). It began with a desire to add multiple features to FLEX, but looking at it more and more, it was obvious that many architectural changes were required to support remote clients. Those kind of changes are the hardest to merge into original repository without breaking multiple features, it was obvious that it fits more to create a separate repository.*
 
-*So Alpha was converted into a separate repository and work began on top of that. Many features were added and there are many architectural changes under the hood. Alpha offers a full API, which can be used to build almost any kind of plugin. In fact, all existing plugins are built on top of that API.*
+*So Alpha was converted into a separate repository and work began on top of that. Many features were added and there are many architectural changes under the hood. Alpha is now not a separate tool, but a framework that offers a full API. Features from tools are now working on top of plugin API, which allows dynamic loading and incredible extensibility.*
 
 # Documentation
 
