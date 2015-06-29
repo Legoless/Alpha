@@ -10,8 +10,8 @@
 #import "ALPHAFieldEditorView.h"
 #import "ALPHARuntimeUtility.h"
 #import "ALPHAUtility.h"
-#import "FLEXArgumentInputView.h"
-#import "FLEXArgumentInputViewFactory.h"
+#import "ALPHAArgumentInputView.h"
+#import "ALPHAArgumentInputViewFactory.h"
 
 @interface ALPHAFieldRendererViewController () <UIScrollViewDelegate>
 
@@ -42,7 +42,7 @@
     return @"Set";
 }
 
-- (FLEXArgumentInputView *)firstInputView
+- (ALPHAArgumentInputView *)firstInputView
 {
     return [[self.fieldEditorView argumentInputViews] firstObject];
 }
@@ -117,7 +117,7 @@
     self.scrollView.scrollIndicatorInsets = scrollInsets;
     
     // Find the active input view and scroll to make sure it's visible.
-    for (FLEXArgumentInputView *argumentInputView in self.fieldEditorView.argumentInputViews)
+    for (ALPHAArgumentInputView *argumentInputView in self.fieldEditorView.argumentInputViews)
     {
         if (argumentInputView.inputViewIsFirstResponder)
         {

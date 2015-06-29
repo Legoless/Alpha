@@ -1,9 +1,9 @@
 //
-//  FLEXWindow.m
-//  Flipboard
+//  ALPHAWindow.m
+//  Alpha
 //
 //  Created by Ryan Olson on 4/13/14.
-//  Copyright (c) 2014 Flipboard. All rights reserved.
+//  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
 #import "ALPHAWindow.h"

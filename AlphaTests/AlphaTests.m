@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 #import <XCTest/XCTest.h>
 
 @interface AlphaTests : XCTestCase

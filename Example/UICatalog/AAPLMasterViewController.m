@@ -48,7 +48,7 @@
 #import "AAPLMasterViewController.h"
 
 #if DEBUG
-// FLEX should only be compiled and used in debug builds.
+// Alpha should only be compiled and used in debug builds.
 #import "ALPHAManager.h"
 #endif
 
@@ -59,7 +59,7 @@
     [super viewDidLoad];
     
 #if DEBUG
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"FLEX" style:UIBarButtonItemStylePlain target:self action:@selector(alphaButtonTapped:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Alpha" style:UIBarButtonItemStylePlain target:self action:@selector(alphaButtonTapped:)];
 #endif
 }
 

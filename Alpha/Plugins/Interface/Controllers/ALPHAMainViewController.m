@@ -18,7 +18,7 @@
 #import "ALPHAManager.h"
 #import "ALPHAPlugin.h"
 
-#import "FLEXToolbarItem.h"
+#import "ALPHAToolbarItem.h"
 
 #import "ALPHACoreAssets.h"
 
@@ -155,7 +155,7 @@
     [[ALPHAScreenManager defaultManager] pushObject:[ALPHARequest requestWithIdentifier:ALPHAMenuDataIdentifier]];
 }
 
-- (void)closeButtonTapped:(FLEXToolbarItem *)sender
+- (void)closeButtonTapped:(ALPHAToolbarItem *)sender
 {
     [self close];
 }

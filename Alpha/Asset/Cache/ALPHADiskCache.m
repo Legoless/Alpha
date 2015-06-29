@@ -5,7 +5,7 @@
 #import "ALPHADiskCache.h"
 
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_4_0
-#import <UIKit/UIKit.h>
+@import UIKit;
 #endif
 
 #define PINDiskCacheError(error) if (error) { NSLog(@"%@ (%d) ERROR: %@", \

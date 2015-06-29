@@ -44,7 +44,7 @@
 /*!
  *  Returns explorer view controller as the main interface
  *
- *  @return FLEX Explorer View Controller
+ *  @return Explorer View Controller instance
  */
 - (UIViewController *)mainInterface
 {
@@ -52,7 +52,7 @@
 }
 
 /*!
- *  Base plugin is the base of FLEX, cannot be disabled.
+ *  Base plugin is the base of Alpha, cannot be disabled.
  *
  *  @return always YES
  */
@@ -61,7 +61,7 @@
     return YES;
 }
 
-#pragma mark - Initializers
+#pragma mark - Initialization
 
 - (id)init
 {
@@ -106,14 +106,14 @@
     return self;
 }
 
-#pragma mark - FLEXPlugin
+#pragma mark - Plugin
 
 - (BOOL)shouldHandleTouchAtPoint:(CGPoint)pointInWindow
 {
     return [self.explorerViewController shouldReceiveTouchAtWindowPoint:pointInWindow];
 }
 
-#pragma mark - FLEXExplorerViewControllerDelegate
+#pragma mark - ALPHAViewControllerDelegate
 
 - (void)viewControllerDidFinish:(UIViewController *)viewController
 {

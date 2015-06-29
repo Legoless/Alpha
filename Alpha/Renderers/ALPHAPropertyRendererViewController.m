@@ -9,13 +9,13 @@
 #import "ALPHAPropertyRendererViewController.h"
 #import "ALPHARuntimeUtility.h"
 #import "ALPHAFieldEditorView.h"
-#import "FLEXArgumentInputView.h"
-#import "FLEXArgumentInputViewFactory.h"
-#import "FLEXArgumentInputSwitchView.h"
+#import "ALPHAArgumentInputView.h"
+#import "ALPHAArgumentInputViewFactory.h"
+#import "ALPHAArgumentInputSwitchView.h"
 
 #import "ALPHAObjectActionItem.h"
 
-@interface ALPHAPropertyRendererViewController () <FLEXArgumentInputViewDelegate>
+@interface ALPHAPropertyRendererViewController () <ALPHAArgumentInputViewDelegate>
 
 @end
 
@@ -48,7 +48,7 @@
     self.setterButton.enabled = [[self class] canEditProperty:property];
     
     const char *typeEncoding = [property.type.cType UTF8String];
-    FLEXArgumentInputView *inputView = [FLEXArgumentInputViewFactory argumentInputViewForTypeEncoding:typeEncoding];
+    ALPHAArgumentInputView *inputView = [ALPHAArgumentInputViewFactory argumentInputViewForTypeEncoding:typeEncoding];
     inputView.backgroundColor = self.view.backgroundColor;
     inputView.inputValue = property.value;
     inputView.delegate = self;
@@ -57,7 +57,7 @@
     
     // Don't show a "set" button for switches - just call the setter immediately after the switch toggles.
     
-    if ([inputView isKindOfClass:[FLEXArgumentInputSwitchView class]])
+    if ([inputView isKindOfClass:[ALPHAArgumentInputSwitchView class]])
     {
         self.navigationItem.rightBarButtonItem = nil;
     }
@@ -104,9 +104,9 @@
     }];
 }
 
-- (void)argumentInputViewValueDidChange:(FLEXArgumentInputView *)argumentInputView
+- (void)argumentInputViewValueDidChange:(ALPHAArgumentInputView *)argumentInputView
 {
-    if ([argumentInputView isKindOfClass:[FLEXArgumentInputSwitchView class]])
+    if ([argumentInputView isKindOfClass:[ALPHAArgumentInputSwitchView class]])
     {
         [self actionButtonPressed:nil];
     }
@@ -115,7 +115,7 @@
 + (BOOL)canEditProperty:(ALPHAObjectProperty *)property
 {
     const char *typeEncoding = [property.type.cType UTF8String];
-    BOOL canEditType = [FLEXArgumentInputViewFactory canEditFieldWithTypeEncoding:typeEncoding currentValue:property.value];
+    BOOL canEditType = [ALPHAArgumentInputViewFactory canEditFieldWithTypeEncoding:typeEncoding currentValue:property.value];
     BOOL isReadonly = property.isReadOnly;
     return canEditType && !isReadonly;
 }

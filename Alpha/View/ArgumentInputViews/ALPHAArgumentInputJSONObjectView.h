@@ -1,0 +1,13 @@
+//
+//  ALPHAArgumentInputJSONObjectView.h
+//  Alpha
+//
+//  Created by Ryan Olson on 6/15/14.
+//  Copyright (c) 2014 Unified Sense. All rights reserved.
+//
+
+#import "ALPHAArgumentInputTextView.h"
+
+@interface ALPHAArgumentInputJSONObjectView : ALPHAArgumentInputTextView
+
+@end

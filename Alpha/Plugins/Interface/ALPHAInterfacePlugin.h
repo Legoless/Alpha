@@ -9,7 +9,7 @@
 #import "ALPHAPlugin.h"
 
 /*!
- *  Contains main functionality such as close for FLEX, do not disable!
+ *  Contains main functionality such as close menu, so do not disable!
  */
 @interface ALPHAInterfacePlugin : ALPHAPlugin
 

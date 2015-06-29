@@ -27,9 +27,8 @@
     event.name = [NSString stringWithFormat:@"Appear %@", [NSStringFromClass(self.class) alpha_cleanCodeIdentifier]];
     event.sender = NSStringFromClass(self.class);
     event.info = @{ @"animated" : @(animated) };
-    
-    // TODO: Remove FLEX backwards support when ready
-    if (![event.sender startsWith:@"ALPHA"] && ![event.sender startsWith:@"FLEX"])
+
+    if (![event.sender startsWith:@"ALPHA"])
     {
         [[ALPHAEventSource sharedCollector] addEvent:event];
     }
@@ -43,9 +42,8 @@
     event.name = [NSString stringWithFormat:@"Disappear %@", [NSStringFromClass(self.class) alpha_cleanCodeIdentifier]];
     event.sender = NSStringFromClass(self.class);
     event.info = @{ @"animated" : @(animated) };
-    
-    // TODO: Remove FLEX backwards support when ready
-    if (![event.sender startsWith:@"ALPHA"] && ![event.sender startsWith:@"FLEX"])
+
+    if (![event.sender startsWith:@"ALPHA"])
     {
         [[ALPHAEventSource sharedCollector] addEvent:event];
     }

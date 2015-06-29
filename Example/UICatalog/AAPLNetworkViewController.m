@@ -3,12 +3,13 @@
 //  UICatalog
 //
 //  Created by Dal Rupnik on 06/11/14.
-//  Copyright (c) 2014 f. All rights reserved.
+//  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
 #import "AAPLNetworkViewController.h"
 
 @interface AAPLNetworkViewController () <NSURLConnectionDelegate, UITextFieldDelegate>
+
 @property (weak, nonatomic) IBOutlet UITextField *urlTextField;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *methodSegmentedControl;
 @property (weak, nonatomic) IBOutlet UITextView *responseTextView;

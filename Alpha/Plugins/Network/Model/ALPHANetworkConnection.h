@@ -14,15 +14,15 @@
 #import "ALPHANetworkError.h"
 
 typedef enum : NSUInteger {
-    FLEXNetworkConnectionTypeSession,
-    FLEXNetworkConnectionTypeConnection,
-} FLEXNetworkConnectionType;
+    ALPHANetworkConnectionTypeSession,
+    ALPHANetworkConnectionTypeConnection,
+} ALPHANetworkConnectionType;
 
 @interface ALPHANetworkConnection : NSObject <ALPHASerializableItem>
 
 @property (nonatomic, copy) NSString *requestID;
 
-@property (nonatomic) FLEXNetworkConnectionType type;
+@property (nonatomic) ALPHANetworkConnectionType type;
 
 @property (nonatomic, strong) ALPHANetworkRequest *request;
 

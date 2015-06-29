@@ -8,15 +8,15 @@
 
 #import "ALPHAViewController.h"
 
-typedef NS_ENUM(NSUInteger, FLEXExplorerMode) {
-    FLEXViewHierarchyModeDefault,
-    FLEXViewHierarchyModeSelect,
-    FLEXViewHierarchyModeMove
+typedef NS_ENUM(NSUInteger, ALPHAExplorerMode) {
+    ALPHAViewHierarchyModeDefault,
+    ALPHAViewHierarchyModeSelect,
+    ALPHAViewHierarchyModeMove
 };
 
 @interface ALPHAViewHierarchyViewController : ALPHAViewController
 
 /// Tracks the currently active tool/mode
-@property (nonatomic, assign) FLEXExplorerMode currentMode;
+@property (nonatomic, assign) ALPHAExplorerMode currentMode;
 
 @end

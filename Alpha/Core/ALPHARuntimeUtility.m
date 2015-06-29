@@ -1,12 +1,12 @@
 //
 //  ALPHARuntimeUtility.m
-//  Flipboard
+//  Alpha
 //
 //  Created by Ryan Olson on 6/8/14.
-//  Copyright (c) 2014 Flipboard. All rights reserved.
+//  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 #import "ALPHARuntimeUtility.h"
 
 // See https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtPropertyIntrospection.html#//apple_ref/doc/uid/TP40008048-CH101-SW6
@@ -23,11 +23,11 @@ NSString *const ALPHAUtilityAttributeWeak = @"W";
 NSString *const ALPHAUtilityAttributeGarbageCollectable = @"P";
 NSString *const ALPHAUtilityAttributeOldStyleTypeEncoding = @"t";
 
-static NSString *const FLEXRuntimeUtilityErrorDomain = @"FLEXRuntimeUtilityErrorDomain";
-typedef NS_ENUM(NSInteger, FLEXRuntimeUtilityErrorCode) {
-    FLEXRuntimeUtilityErrorCodeDoesNotRecognizeSelector = 0,
-    FLEXRuntimeUtilityErrorCodeInvocationFailed = 1,
-    FLEXRuntimeUtilityErrorCodeArgumentTypeMismatch = 2
+static NSString *const ALPHARuntimeUtilityErrorDomain = @"ALPHARuntimeUtilityErrorDomain";
+typedef NS_ENUM(NSInteger, ALPHARuntimeUtilityErrorCode) {
+    ALPHARuntimeUtilityErrorCodeDoesNotRecognizeSelector = 0,
+    ALPHARuntimeUtilityErrorCodeInvocationFailed = 1,
+    ALPHARuntimeUtilityErrorCodeArgumentTypeMismatch = 2
 };
 
 // Arguments 0 and 1 are self and _cmd always
@@ -439,7 +439,7 @@ const unsigned int ALPHANumberOfImplicitArgsKey = 2;
     if (![object respondsToSelector:selector]) {
         if (error) {
             NSDictionary *userInfo = @{ NSLocalizedDescriptionKey : [NSString stringWithFormat:@"%@ does not respond to the selector %@", object, NSStringFromSelector(selector)]};
-            *error = [NSError errorWithDomain:FLEXRuntimeUtilityErrorDomain code:FLEXRuntimeUtilityErrorCodeDoesNotRecognizeSelector userInfo:userInfo];
+            *error = [NSError errorWithDomain:ALPHARuntimeUtilityErrorDomain code:ALPHARuntimeUtilityErrorCodeDoesNotRecognizeSelector userInfo:userInfo];
         }
         return nil;
     }
@@ -475,7 +475,7 @@ const unsigned int ALPHANumberOfImplicitArgsKey = 2;
                 if (strcmp([argumentValue objCType], typeEncodingCString) != 0) {
                     if (error) {
                         NSDictionary *userInfo = @{ NSLocalizedDescriptionKey : [NSString stringWithFormat:@"Type encoding mismatch for agrument at index %lu. Value type: %s; Method argument type: %s.", (unsigned long)argumentsArrayIndex, [argumentValue objCType], typeEncodingCString]};
-                        *error = [NSError errorWithDomain:FLEXRuntimeUtilityErrorDomain code:FLEXRuntimeUtilityErrorCodeArgumentTypeMismatch userInfo:userInfo];
+                        *error = [NSError errorWithDomain:ALPHARuntimeUtilityErrorDomain code:ALPHARuntimeUtilityErrorCodeArgumentTypeMismatch userInfo:userInfo];
                     }
                     return nil;
                 }
@@ -507,7 +507,7 @@ const unsigned int ALPHANumberOfImplicitArgsKey = 2;
         // Bummer...
         if (error) {
             NSDictionary *userInfo = @{ NSLocalizedDescriptionKey : [NSString stringWithFormat:@"Exception thrown while performing selector %@ on object %@", NSStringFromSelector(selector), object]};
-            *error = [NSError errorWithDomain:FLEXRuntimeUtilityErrorDomain code:FLEXRuntimeUtilityErrorCodeInvocationFailed userInfo:userInfo];
+            *error = [NSError errorWithDomain:ALPHARuntimeUtilityErrorDomain code:ALPHARuntimeUtilityErrorCodeInvocationFailed userInfo:userInfo];
         }
     }
     

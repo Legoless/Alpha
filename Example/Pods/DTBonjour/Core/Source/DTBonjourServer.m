@@ -19,7 +19,7 @@
 #import "DTBonjourDataChunk.h"
 
 #if TARGET_OS_IPHONE
-#import <UIKit/UIKit.h>
+@import UIKit;
 #endif
 
 @interface DTBonjourServer() <NSNetServiceDelegate, DTBonjourDataConnectionDelegate>

@@ -20,7 +20,7 @@
 @end
 
 /*!
- *  If View Controller responds to FLEX events, such as touches above all other windows
+ *  If View Controller responds to events, such as touches above all other windows
  */
 @protocol ALPHAViewControllerResponder <NSObject>
 
@@ -36,7 +36,7 @@
 @property (nonatomic, weak) id<ALPHAViewControllerDelegate> delegate;
 
 /*!
- *  Wrapper property for view property if it is a type of FLEX Canvas view
+ *  Wrapper property for view property if it is a type of Canvas view
  */
 @property (nonatomic, readonly) ALPHACanvasView* canvasView;
 

@@ -27,7 +27,7 @@
 
 /*!
  *  Action that opens a view controller should have this property set to class name.
- *  This is to support backwards FLEX view controllers.
+ *  This is for backward support of view controller loading.
  */
 @property (nonatomic, copy) NSString* viewControllerClass;
 

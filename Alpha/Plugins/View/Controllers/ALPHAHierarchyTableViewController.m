@@ -15,8 +15,8 @@
 
 #import "UIColor+Random.h"
 
-static const NSInteger kFLEXHierarchyScopeViewsAtTapIndex = 0;
-static const NSInteger kFLEXHierarchyScopeFullHierarchyIndex = 1;
+static const NSInteger kALPHAHierarchyScopeViewsAtTapIndex = 0;
+static const NSInteger kALPHAHierarchyScopeFullHierarchyIndex = 1;
 
 @interface ALPHAHierarchyTableViewController () <UISearchBarDelegate>
 
@@ -145,11 +145,11 @@ static const NSInteger kFLEXHierarchyScopeFullHierarchyIndex = 1;
     
     if ([self showScopeBar])
     {
-        if (self.detailView.selectedScopeButtonIndex == kFLEXHierarchyScopeViewsAtTapIndex)
+        if (self.detailView.selectedScopeButtonIndex == kALPHAHierarchyScopeViewsAtTapIndex)
         {
             candidateViews = self.viewsAtTap;
         }
-        else if (self.detailView.selectedScopeButtonIndex == kFLEXHierarchyScopeFullHierarchyIndex)
+        else if (self.detailView.selectedScopeButtonIndex == kALPHAHierarchyScopeFullHierarchyIndex)
         {
             candidateViews = self.allViews;
         }

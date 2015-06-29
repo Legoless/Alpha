@@ -19,7 +19,7 @@
 
 #import "ALPHAViewController.h"
 
-@interface ALPHAManager () <FLEXWindowEventDelegate>
+@interface ALPHAManager () <ALPHAWindowEventDelegate>
 
 /*!
  *  Root view controller that is always active as alphaWindow root
@@ -36,7 +36,7 @@
  */
 @property (nonatomic, readonly) UIView* mainInterfaceView;
 
-#pragma mark - Tracking properties from FLEX
+#pragma mark - Tracking properties
 
 @property (nonatomic, strong, readwrite) UIWindow* keyWindow;
 
@@ -261,7 +261,7 @@
     return [instances copy];
 }
 
-#pragma mark - FLEXWindowEventDelegate
+#pragma mark - ALPHAWindowEventDelegate
 
 - (BOOL)shouldHandleTouchAtPoint:(CGPoint)pointInWindow
 {
@@ -353,11 +353,11 @@
     // Make our window key to correctly handle input.
     [self.rootViewController.view.window makeKeyWindow];
     
-    // Move the status bar on top of FLEX so we can get scroll to top behavior for taps.
+    // Move the status bar on top of window so we can get scroll to top behavior for taps.
     [[[UIApplication sharedApplication] alpha_statusWindow] setWindowLevel:self.rootViewController.view.window.windowLevel + 1.0];
     
     // If this app doesn't use view controller based status bar management and we're on iOS 7+,
-    // make sure the status bar style is UIStatusBarStyleDefault. We don't actully have to check
+    // make sure the status bar style is UIStatusBarStyleDefault. We don't actually have to check
     // for view controller based management because the global methods no-op if that is turned on.
     // Only for iOS 7+
     if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
@@ -376,7 +376,7 @@
     self.previousKeyWindow = nil;
     
     // Restore the status bar window's normal window level.
-    // We want it above FLEX while a modal is presented for scroll to top, but below FLEX otherwise for exploration.
+    // We want it above the window, while a modal is presented for scroll to top, but below otherwise for exploration.
     [[[UIApplication sharedApplication] alpha_statusWindow] setWindowLevel:UIWindowLevelStatusBar];
     
     // Restore the stauts bar style if the app is using global status bar management.

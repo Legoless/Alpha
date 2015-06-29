@@ -2,7 +2,7 @@
 //  UIDevice+DeviceInfo.h
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 #define isWideScreen ([[UIDevice currentDevice] isWidescreen])
 

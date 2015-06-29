@@ -16,7 +16,7 @@
 @property (nonatomic, getter = isEnabled) BOOL enabled;
 
 /*!
- *  Executes trigger, opens FLEX explorer
+ *  Executes trigger, opens Alpha
  *
  *  @param sender Trigger sender
  */

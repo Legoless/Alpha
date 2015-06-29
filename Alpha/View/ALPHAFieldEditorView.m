@@ -7,7 +7,7 @@
 //
 
 #import "ALPHAFieldEditorView.h"
-#import "FLEXArgumentInputView.h"
+#import "ALPHAArgumentInputView.h"
 #import "ALPHAUtility.h"
 #import "ALPHAManager.h"
 
@@ -134,14 +134,14 @@
     if (![_argumentInputViews isEqual:argumentInputViews])
     {
         
-        for (FLEXArgumentInputView *inputView in _argumentInputViews)
+        for (ALPHAArgumentInputView *inputView in _argumentInputViews)
         {
             [inputView removeFromSuperview];
         }
         
         _argumentInputViews = argumentInputViews;
         
-        for (FLEXArgumentInputView *newInputView in argumentInputViews)
+        for (ALPHAArgumentInputView *newInputView in argumentInputViews)
         {
             [self addSubview:newInputView];
         }
@@ -202,7 +202,7 @@
     height += dividerLineHeight;
     height += verticalPadding;
     
-    for (FLEXArgumentInputView *inputView in self.argumentInputViews)
+    for (ALPHAArgumentInputView *inputView in self.argumentInputViews)
     {
         height += [inputView sizeThatFits:constrainSize].height;
         height += verticalPadding;

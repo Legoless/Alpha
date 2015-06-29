@@ -12,7 +12,7 @@
 #import "ALPHADataRenderer.h"
 
 @class ALPHAFieldEditorView;
-@class FLEXArgumentInputView;
+@class ALPHAArgumentInputView;
 
 @interface ALPHAFieldRendererViewController : UIViewController <ALPHADataRenderer>
 
@@ -46,7 +46,7 @@
 #pragma mark - Field Editor
 
 // Convenience accessor since many subclasses only use one input view
-@property (nonatomic, readonly) FLEXArgumentInputView *firstInputView;
+@property (nonatomic, readonly) ALPHAArgumentInputView *firstInputView;
 
 //
 // For subclass use only.

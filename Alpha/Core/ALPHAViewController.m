@@ -16,17 +16,6 @@
 
 @interface ALPHAViewController ()
 
-//
-// New properties
-//
-
-/*
-@property (nonatomic, strong) FLEXExplorerMenu *explorerMenu;
-
-@property (nonatomic, strong) NSMutableArray *actions;
-
-@property (nonatomic, strong) NSMutableArray *actionImages;
-*/
 @end
 
 @implementation ALPHAViewController
@@ -42,26 +31,6 @@
 }
 
 #pragma mark - ALPHACanvasView to ignore touches
-
-/*
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    
-    if (self)
-    {
-        [self setup];
-    }
-    
-    return self;
-}
-
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-    
-    [self setup];
-}*/
 
 - (void)loadView
 {

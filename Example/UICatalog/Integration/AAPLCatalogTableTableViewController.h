@@ -4,7 +4,7 @@
 //
 //  Created by Ryan Olson on 7/17/14.
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @interface AAPLCatalogTableTableViewController : UITableViewController
 

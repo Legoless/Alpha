@@ -40,7 +40,7 @@
 /*!
  *  Singleton access to Alpha Manager, main entry point
  *
- *  @return instance of FLEX manager
+ *  @return instance of manager
  */
 + (instancetype)defaultManager;
 

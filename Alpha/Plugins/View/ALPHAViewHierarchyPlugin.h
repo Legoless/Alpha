@@ -9,7 +9,7 @@
 #import "ALPHAPlugin.h"
 
 /*!
- *  View hierarchy imported from original FLEX
+ *  View hierarchy plugin imported from original code
  */
 @interface ALPHAViewHierarchyPlugin : ALPHAPlugin
 

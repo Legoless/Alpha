@@ -1,31 +1,31 @@
 //
-//  FLEXTouchWindow.m
-//  UICatalog
+//  ALPHATouchWindow.m
+//  Alpha
 //
 //  Created by Dal Rupnik on 24/11/14.
-//  Copyright (c) 2014 f. All rights reserved.
+//  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
 @import ObjectiveC.runtime;
 
 #import "ALPHATouchWindow.h"
 
-@interface FLEXTouchView : UIView
+@interface ALPHATouchView : UIView
 @end
 
-@implementation FLEXTouchView
+@implementation ALPHATouchView
 @end
 
 /*!
  * Touch finger view from Touchpose
  */
-@interface FLEXTouchFingerView : UIView
+@interface ALPHATouchFingerView : UIView
 
 - (id)initWithPoint:(CGPoint)point color:(UIColor *)color touchEndAnimationDuration:(NSTimeInterval)touchEndAnimationDuration touchEndTransform:(CATransform3D)touchEndTransform customTouchImage:(UIImage *)customTouchImage customTouchPoint:(CGPoint)customtouchPoint;
 
 @end
 
-@implementation FLEXTouchFingerView
+@implementation ALPHATouchFingerView
 {
     CATransform3D _touchEndTransform;
     CGFloat _touchEndAnimationDuration;
@@ -97,11 +97,11 @@
 
 @end
 
-static NSString* kFLEXFingerViewAssociatedKey = @"kFingerViewForTouch";
+static NSString* kALPHAFingerViewAssociatedKey = @"kALPHAFingerViewAssociatedKey";
 
 @interface ALPHATouchWindow ()
 
-@property (nonatomic, strong) FLEXTouchView* touchesView;
+@property (nonatomic, strong) ALPHATouchView * touchesView;
 
 @end
 
@@ -116,7 +116,7 @@ static NSString* kFLEXFingerViewAssociatedKey = @"kFingerViewForTouch";
         // Lets place this window above everything
         self.windowLevel = UIWindowLevelStatusBar + 10000.0;
         
-        self.touchesView = [[FLEXTouchView alloc] initWithFrame:frame];
+        self.touchesView = [[ALPHATouchView alloc] initWithFrame:frame];
         self.touchesView.userInteractionEnabled = NO;
         self.userInteractionEnabled = NO;
         
@@ -144,15 +144,15 @@ static NSString* kFLEXFingerViewAssociatedKey = @"kFingerViewForTouch";
 
 - (void)updateFingerViewForTouch:(UITouch *)touch
 {
-    void *key = (__bridge void *)kFLEXFingerViewAssociatedKey;
+    void *key = (__bridge void *) kALPHAFingerViewAssociatedKey;
     
-    FLEXTouchFingerView* fingerView = objc_getAssociatedObject (touch, key);
+    ALPHATouchFingerView * fingerView = objc_getAssociatedObject (touch, key);
     
     CGPoint point = [touch locationInView:self.touchesView];
     
     if (!fingerView)
     {
-        fingerView = [[FLEXTouchFingerView alloc] initWithPoint:point color:[UIColor colorWithRed:0.251f green:0.424f blue:0.502f alpha:1.0f] touchEndAnimationDuration:0.5f touchEndTransform:CATransform3DMakeScale(1.5, 1.5, 1) customTouchImage:nil customTouchPoint:CGPointZero];
+        fingerView = [[ALPHATouchFingerView alloc] initWithPoint:point color:[UIColor colorWithRed:0.251f green:0.424f blue:0.502f alpha:1.0f] touchEndAnimationDuration:0.5f touchEndTransform:CATransform3DMakeScale(1.5, 1.5, 1) customTouchImage:nil customTouchPoint:CGPointZero];
         
         objc_setAssociatedObject(touch, key, fingerView, OBJC_ASSOCIATION_ASSIGN);
         
@@ -164,9 +164,9 @@ static NSString* kFLEXFingerViewAssociatedKey = @"kFingerViewForTouch";
 
 - (void)removeFingerViewForTouch:(UITouch *)touch
 {
-    void *key = (__bridge void *)kFLEXFingerViewAssociatedKey;
+    void *key = (__bridge void *) kALPHAFingerViewAssociatedKey;
     
-    FLEXTouchFingerView* fingerView = objc_getAssociatedObject (touch, key);
+    ALPHATouchFingerView * fingerView = objc_getAssociatedObject (touch, key);
     
     if (fingerView)
     {

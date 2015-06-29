@@ -9,8 +9,8 @@
 #import "ALPHACore.h"
 
 #import "ALPHAMainViewController.h"
-#import "FLEXExplorerToolbar.h"
-#import "FLEXToolbarItem.h"
+#import "ALPHAExplorerToolbar.h"
+#import "ALPHAToolbarItem.h"
 #import "ALPHAHierarchyTableViewController.h"
 
 #import "ALPHAScreenManager.h"
@@ -25,7 +25,7 @@
 // Previous properties, to refactor
 //
 
-@property (nonatomic, strong) FLEXExplorerToolbar *explorerToolbar;
+@property (nonatomic, strong) ALPHAExplorerToolbar *explorerToolbar;
 
 /// Gesture recognizer for dragging a view in move mode
 @property (nonatomic, strong) UIPanGestureRecognizer *movePanGR;
@@ -84,7 +84,7 @@
     [super viewDidLoad];
     
     // Toolbar
-    self.explorerToolbar = [[FLEXExplorerToolbar alloc] init];
+    self.explorerToolbar = [[ALPHAExplorerToolbar alloc] init];
     CGSize toolbarSize = [self.explorerToolbar sizeThatFits:self.view.bounds.size];
     // Start the toolbar off below any bars that may be at the top of the view.
     CGFloat toolbarOriginY = 100.0;
@@ -101,7 +101,7 @@
     
     // View moving
     self.movePanGR = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleMovePan:)];
-    self.movePanGR.enabled = self.currentMode == FLEXViewHierarchyModeMove;
+    self.movePanGR.enabled = self.currentMode == ALPHAViewHierarchyModeMove;
     [self.view addGestureRecognizer:self.movePanGR];
 }
 
@@ -114,10 +114,10 @@
 
 #pragma mark - Rotation
 
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+- (NSUInteger)supportedInterfaceOrientations
 {
     UIViewController *viewControllerToAsk = [self viewControllerForStatusBarAndOrientationProperties];
-    NSUInteger supportedOrientations = [ALPHAUtility infoPlistSupportedInterfaceOrientationsMask];
+    UIInterfaceOrientationMask supportedOrientations = [ALPHAUtility infoPlistSupportedInterfaceOrientationsMask];
     if (viewControllerToAsk && viewControllerToAsk != self) {
         supportedOrientations = [viewControllerToAsk supportedInterfaceOrientations];
     }
@@ -155,7 +155,7 @@
         NSValue *key = [NSValue valueWithNonretainedObject:view];
         UIView *outlineView = self.outlineViewsForVisibleViews[key];
         outlineView.frame = [self frameInLocalCoordinatesForView:view];
-        if (self.currentMode == FLEXViewHierarchyModeSelect) {
+        if (self.currentMode == ALPHAViewHierarchyModeSelect) {
             outlineView.hidden = NO;
         }
     }
@@ -225,18 +225,18 @@
     }
 }
 
-- (void)setCurrentMode:(FLEXExplorerMode)currentMode
+- (void)setCurrentMode:(ALPHAExplorerMode)currentMode
 {
     if (_currentMode != currentMode) {
         _currentMode = currentMode;
         switch (currentMode) {
-            case FLEXViewHierarchyModeDefault:
+            case ALPHAViewHierarchyModeDefault:
                 [self removeAndClearOutlineViews];
                 self.viewsAtTapPoint = nil;
                 self.selectedView = nil;
                 break;
                 
-            case FLEXViewHierarchyModeSelect:
+            case ALPHAViewHierarchyModeSelect:
                 // Make sure the outline views are unhidden in case we came from the move mode.
                 for (id key in self.outlineViewsForVisibleViews) {
                     UIView *outlineView = self.outlineViewsForVisibleViews[key];
@@ -244,7 +244,7 @@
                 }
                 break;
                 
-            case FLEXViewHierarchyModeMove:
+            case ALPHAViewHierarchyModeMove:
                 // Hide all the outline views to focus on the selected view, which is the only one that will move.
                 for (id key in self.outlineViewsForVisibleViews) {
                     UIView *outlineView = self.outlineViewsForVisibleViews[key];
@@ -252,7 +252,7 @@
                 }
                 break;
         }
-        self.movePanGR.enabled = currentMode == FLEXViewHierarchyModeMove;
+        self.movePanGR.enabled = currentMode == ALPHAViewHierarchyModeMove;
         [self updateButtonStates];
     }
 }
@@ -342,16 +342,16 @@
     [self.explorerToolbar.closeItem addTarget:self action:@selector(closeButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)selectButtonTapped:(FLEXToolbarItem *)sender
+- (void)selectButtonTapped:(ALPHAToolbarItem *)sender
 {
-    if (self.currentMode == FLEXViewHierarchyModeSelect) {
-        self.currentMode = FLEXViewHierarchyModeDefault;
+    if (self.currentMode == ALPHAViewHierarchyModeSelect) {
+        self.currentMode = ALPHAViewHierarchyModeDefault;
     } else {
-        self.currentMode = FLEXViewHierarchyModeSelect;
+        self.currentMode = ALPHAViewHierarchyModeSelect;
     }
 }
 
-- (void)hierarchyButtonTapped:(FLEXToolbarItem *)sender
+- (void)hierarchyButtonTapped:(ALPHAToolbarItem *)sender
 {
     NSArray *allViews = [self allViewsInHierarchy];
     NSDictionary *depthsForViews = [self hierarchyDepthsForViews:allViews];
@@ -380,19 +380,19 @@
     return allViews;
 }
 
-- (void)moveButtonTapped:(FLEXToolbarItem *)sender
+- (void)moveButtonTapped:(ALPHAToolbarItem *)sender
 {
-    if (self.currentMode == FLEXViewHierarchyModeMove)
+    if (self.currentMode == ALPHAViewHierarchyModeMove)
     {
-        self.currentMode = FLEXViewHierarchyModeDefault;
+        self.currentMode = ALPHAViewHierarchyModeDefault;
     }
     else
     {
-        self.currentMode = FLEXViewHierarchyModeMove;
+        self.currentMode = ALPHAViewHierarchyModeMove;
     }
 }
 
-- (void)globalsButtonTapped:(FLEXToolbarItem *)sender
+- (void)globalsButtonTapped:(ALPHAToolbarItem *)sender
 {
     if (self.selectedView)
     {
@@ -400,14 +400,14 @@
     }
 }
 
-- (void)closeButtonTapped:(FLEXToolbarItem *)sender
+- (void)closeButtonTapped:(ALPHAToolbarItem *)sender
 {
     [self close];
 }
 
 - (void)close;
 {
-    self.currentMode = FLEXViewHierarchyModeDefault;
+    self.currentMode = ALPHAViewHierarchyModeDefault;
     
     if ([self.delegate respondsToSelector:@selector(viewControllerDidFinish:)])
     {
@@ -421,8 +421,8 @@
     BOOL hasSelectedObject = self.selectedView != nil;
     self.explorerToolbar.globalsItem.enabled = hasSelectedObject;
     self.explorerToolbar.moveItem.enabled = hasSelectedObject;
-    self.explorerToolbar.selectItem.selected = self.currentMode == FLEXViewHierarchyModeSelect;
-    self.explorerToolbar.moveItem.selected = self.currentMode == FLEXViewHierarchyModeMove;
+    self.explorerToolbar.selectItem.selected = self.currentMode == ALPHAViewHierarchyModeSelect;
+    self.explorerToolbar.moveItem.selected = self.currentMode == ALPHAViewHierarchyModeMove;
 }
 
 
@@ -502,12 +502,6 @@
     if (tapGR.state == UIGestureRecognizerStateRecognized && self.selectedView)
     {
         [[ALPHAScreenManager defaultManager] pushObject:[ALPHARequest requestForObject:self.selectedView]];
-        
-        /*
-        FLEXObjectExplorerViewController *selectedViewExplorer = [FLEXObjectExplorerFactory explorerViewControllerForObject:self.selectedView];
-        selectedViewExplorer.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(selectedViewExplorerFinished:)];
-        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:selectedViewExplorer];
-        [[ALPHAManager defaultManager] displayViewController:navigationController animated:YES completion:nil];*/
     }
 }
 
@@ -517,9 +511,9 @@
 - (void)handleSelectionTap:(UITapGestureRecognizer *)tapGR
 {
     // Only if we're in selection mode
-    if (self.currentMode == FLEXViewHierarchyModeSelect && tapGR.state == UIGestureRecognizerStateRecognized) {
+    if (self.currentMode == ALPHAViewHierarchyModeSelect && tapGR.state == UIGestureRecognizerStateRecognized) {
         // Note that [tapGR locationInView:nil] is broken in iOS 8, so we have to do a two step conversion to window coordinates.
-        // Thanks to @lascorbe for finding this: https://github.com/Flipboard/FLEX/pull/31
+        // Thanks to @lascorbe for finding this
         CGPoint tapPointInView = [tapGR locationInView:self.view];
         CGPoint tapPointInWindow = [self.view convertPoint:tapPointInView toView:nil];
         [self updateOutlineViewsForSelectionPoint:tapPointInWindow];
@@ -699,13 +693,13 @@
     }
     
     // Always if we're in selection mode
-    if (!shouldReceiveTouch && self.currentMode == FLEXViewHierarchyModeSelect)
+    if (!shouldReceiveTouch && self.currentMode == ALPHAViewHierarchyModeSelect)
     {
         shouldReceiveTouch = YES;
     }
     
     // Always in move mode too
-    if (!shouldReceiveTouch && self.currentMode == FLEXViewHierarchyModeMove)
+    if (!shouldReceiveTouch && self.currentMode == ALPHAViewHierarchyModeMove)
     {
         shouldReceiveTouch = YES;
     }
@@ -740,9 +734,9 @@
             }
             
             // If we now have a selected view and we didn't have one previously, go to "select" mode.
-            if (self.currentMode == FLEXViewHierarchyModeDefault && hierarchyViewController.selectedView)
+            if (self.currentMode == ALPHAViewHierarchyModeDefault && hierarchyViewController.selectedView)
             {
-                self.currentMode = FLEXViewHierarchyModeSelect;
+                self.currentMode = ALPHAViewHierarchyModeSelect;
             }
             
             // The selected view setter will also update the selected view overlay appropriately.
@@ -756,7 +750,7 @@
 }
 
 
-#pragma mark - FLEXObjectExplorerViewController Done Action
+#pragma mark - ALPHAObjectExplorerViewController Done Action
 
 - (void)selectedViewExplorerFinished:(id)sender
 {

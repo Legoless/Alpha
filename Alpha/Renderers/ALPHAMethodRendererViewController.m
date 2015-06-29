@@ -9,8 +9,8 @@
 #import "ALPHAMethodRendererViewController.h"
 #import "ALPHARuntimeUtility.h"
 #import "ALPHAFieldEditorView.h"
-#import "FLEXArgumentInputView.h"
-#import "FLEXArgumentInputViewFactory.h"
+#import "ALPHAArgumentInputView.h"
+#import "ALPHAArgumentInputViewFactory.h"
 #import "ALPHAObjectActionItem.h"
 
 #import "ALPHAScreenManager.h"
@@ -53,7 +53,7 @@
     for (ALPHAObjectArgument *methodComponent in self.method.arguments)
     {
         const char *typeEncoding = [self.method.returnType.cType UTF8String];
-        FLEXArgumentInputView *inputView = [FLEXArgumentInputViewFactory argumentInputViewForTypeEncoding:typeEncoding];
+        ALPHAArgumentInputView *inputView = [ALPHAArgumentInputViewFactory argumentInputViewForTypeEncoding:typeEncoding];
         
         inputView.backgroundColor = self.theme.backgroundColor;
         inputView.title = methodComponent.prettyDescription;
@@ -80,7 +80,7 @@
     
     NSMutableArray *arguments = [NSMutableArray array];
     
-    for (FLEXArgumentInputView *inputView in self.fieldEditorView.argumentInputViews)
+    for (ALPHAArgumentInputView *inputView in self.fieldEditorView.argumentInputViews)
     {
         id argumentValue = inputView.inputValue;
         

@@ -610,7 +610,7 @@ NSString *const ALPHANetworkDataIdentifier = @"com.unifiedsense.alpha.data.netwo
     if (!self.baseRequests[requestID])
     {
         ALPHANetworkConnection *connection = [[ALPHANetworkConnection alloc] init];
-        connection.type = FLEXNetworkConnectionTypeConnection;
+        connection.type = ALPHANetworkConnectionTypeConnection;
         connection.requestID = [requestID copy];
         
         self.baseRequests[requestID] = connection;
@@ -634,7 +634,7 @@ NSString *const ALPHANetworkDataIdentifier = @"com.unifiedsense.alpha.data.netwo
     if (!self.baseRequests[requestID])
     {
         ALPHANetworkConnection *connection = [[ALPHANetworkConnection alloc] init];
-        connection.type = FLEXNetworkConnectionTypeSession;
+        connection.type = ALPHANetworkConnectionTypeSession;
         connection.requestID = [requestID copy];
         
         self.baseRequests[requestID] = connection;

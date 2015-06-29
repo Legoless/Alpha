@@ -178,11 +178,11 @@
     
     //
     // This represents specific object types and can add a special section, such as Array, Set, View,
-    // Layer, etc. Equals to custom section on FLEXObjectExplorerViewController
+    // Layer, etc. Equals to custom section on ALPHAObjectExplorerViewController
     //
     
     //
-    // Currently handled specific Foundation objects to add shortcuts that FLEX had.
+    // Currently handled specific Foundation objects to add shortcuts that the original code had.
     // - UIViewController
     // - UIView
     // - CALayer

@@ -1,22 +1,22 @@
 //
-//  FLEXWindow.h
-//  Flipboard
+//  ALPHAWindow.h
+//  Alpha
 //
 //  Created by Ryan Olson on 4/13/14.
-//  Copyright (c) 2014 Flipboard. All rights reserved.
+//  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
-@protocol FLEXWindowEventDelegate;
+@protocol ALPHAWindowEventDelegate;
 
 @interface ALPHAWindow : UIWindow
 
-@property (nonatomic, weak) id <FLEXWindowEventDelegate> eventDelegate;
+@property (nonatomic, weak) id <ALPHAWindowEventDelegate> eventDelegate;
 
 @end
 
-@protocol FLEXWindowEventDelegate <NSObject>
+@protocol ALPHAWindowEventDelegate <NSObject>
 
 - (BOOL)shouldHandleTouchAtPoint:(CGPoint)pointInWindow;
 

@@ -9,8 +9,8 @@
 #import "ALPHADefaultsRendererViewController.h"
 #import "ALPHAFieldEditorView.h"
 #import "ALPHARuntimeUtility.h"
-#import "FLEXArgumentInputView.h"
-#import "FLEXArgumentInputViewFactory.h"
+#import "ALPHAArgumentInputView.h"
+#import "ALPHAArgumentInputViewFactory.h"
 
 @interface ALPHADefaultsRendererViewController ()
 
@@ -40,7 +40,7 @@
     self.fieldEditorView.fieldDescription = self.key;
 
     id currentValue = [self.defaults objectForKey:self.key];
-    FLEXArgumentInputView *inputView = [FLEXArgumentInputViewFactory argumentInputViewForTypeEncoding:@encode(id) currentValue:currentValue];
+    ALPHAArgumentInputView *inputView = [ALPHAArgumentInputViewFactory argumentInputViewForTypeEncoding:@encode(id) currentValue:currentValue];
     inputView.backgroundColor = self.view.backgroundColor;
     inputView.inputValue = currentValue;
     self.fieldEditorView.argumentInputViews = @[inputView];
@@ -63,7 +63,7 @@
 
 + (BOOL)canEditDefaultWithValue:(id)currentValue
 {
-    return [FLEXArgumentInputViewFactory canEditFieldWithTypeEncoding:@encode(id) currentValue:currentValue];
+    return [ALPHAArgumentInputViewFactory canEditFieldWithTypeEncoding:@encode(id) currentValue:currentValue];
 }
 
 @end

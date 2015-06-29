@@ -1,9 +1,9 @@
 //
-//  FLEXPlugin.m
-//  UICatalog
+//  ALPHAPlugin.m
+//  Alpha
 //
 //  Created by Dal Rupnik on 19/11/14.
-//  Copyright (c) 2014 f. All rights reserved.
+//  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
 #import "ALPHAPlugin.h"
@@ -25,9 +25,7 @@
     NSString* classString = NSStringFromClass([self class]);
     
     classString = [classString stringByReplacingOccurrencesOfString:@"ALPHA" withString:@""];
-    
-    // Backwards compatibility, remove later.
-    classString = [classString stringByReplacingOccurrencesOfString:@"FLEX" withString:@""];
+
     classString = [classString stringByReplacingOccurrencesOfString:@"Plugin" withString:@""];
     
     return classString;

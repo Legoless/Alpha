@@ -9,13 +9,13 @@
 #import "ALPHAIvarRendererViewController.h"
 #import "ALPHAFieldEditorView.h"
 #import "ALPHARuntimeUtility.h"
-#import "FLEXArgumentInputView.h"
-#import "FLEXArgumentInputViewFactory.h"
-#import "FLEXArgumentInputSwitchView.h"
+#import "ALPHAArgumentInputView.h"
+#import "ALPHAArgumentInputViewFactory.h"
+#import "ALPHAArgumentInputSwitchView.h"
 
 #import "ALPHAObjectActionItem.h"
 
-@interface ALPHAIvarRendererViewController () <FLEXArgumentInputViewDelegate>
+@interface ALPHAIvarRendererViewController () <ALPHAArgumentInputViewDelegate>
 
 @end
 
@@ -48,7 +48,7 @@
     
     const char *typeEncoding = [ivar.type.cType UTF8String];
     
-    FLEXArgumentInputView *inputView = [FLEXArgumentInputViewFactory argumentInputViewForTypeEncoding:typeEncoding];
+    ALPHAArgumentInputView *inputView = [ALPHAArgumentInputViewFactory argumentInputViewForTypeEncoding:typeEncoding];
     inputView.backgroundColor = self.view.backgroundColor;
     inputView.inputValue = ivar.value;
     inputView.delegate = self;
@@ -56,7 +56,7 @@
     self.fieldEditorView.argumentInputViews = @[ inputView ];
     
     // Don't show a "set" button for switches. Set the ivar when the switch toggles.
-    if ([inputView isKindOfClass:[FLEXArgumentInputSwitchView class]])
+    if ([inputView isKindOfClass:[ALPHAArgumentInputSwitchView class]])
     {
         self.navigationItem.rightBarButtonItem = nil;
     }
@@ -96,9 +96,9 @@
     }];
 }
 
-- (void)argumentInputViewValueDidChange:(FLEXArgumentInputView *)argumentInputView
+- (void)argumentInputViewValueDidChange:(ALPHAArgumentInputView *)argumentInputView
 {
-    if ([argumentInputView isKindOfClass:[FLEXArgumentInputSwitchView class]])
+    if ([argumentInputView isKindOfClass:[ALPHAArgumentInputSwitchView class]])
     {
         [self actionButtonPressed:nil];
     }
@@ -108,7 +108,7 @@
 {
     const char *typeEncoding = [ivar.type.cType UTF8String];
     
-    return [FLEXArgumentInputViewFactory canEditFieldWithTypeEncoding:typeEncoding currentValue:ivar.value];
+    return [ALPHAArgumentInputViewFactory canEditFieldWithTypeEncoding:typeEncoding currentValue:ivar.value];
 }
 
 @end
