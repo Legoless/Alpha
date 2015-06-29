@@ -21,67 +21,22 @@
 
 Features are separated into multiple plugins, which can be enabled or disabled, depending on application requirements.
 
-- **Bonjour**
-Bonjour plugin contains a simple Bonjour server allowing Alpha to work over local Wi-Fi network.
-  
-- **Bootstrap**
-  Bootstrap plugin checks for [KZBootstrap](https://github.com/krzysztofzablocki/KZBootstrap) environments and allows modifying them in real-time.
-  
-- **Console**
-
-  Console plugin displays console logs (logged by NSLog) inside the application.
-  
-- **Event**
-
-  Event plugin logs and displays application wide events such as background state transitions and view controller appearances.
-  
-- **File**
-
-  File plugin allows browsing the sandboxed file system and previewing common file types, such as images, videos and text.
-  
-- **Global**
-
-  Global information plugin displays linked frameworks, libraries and classes. Requires **Object** plugin to work.
-  
-- **Heap**
-
-  Heap plugin allows inspection of active object instances on ther heap and helps with debugging memory errors. Requires **Object** plugin to work.
-  
-- **Interface**
-
-  Interface plugin is a specific plugin and is required to display Alpha menu interface and actions.
-  
-- **Network**
-
-  Network plugin logs network connections made using `NSURLSession` and `NSURLConnection` API's.
-  
-- **Notification**
-
-  Notification plugin displays scheduled and fired local notifications, received push notifications and notification permissions.
-  
-- **Object**
-
-  Object plugin allows for inspection of any class or object in the application, including `NSUserDefaults`, arrays and dictionaries.
-  
-- **Remote**
-
-  Remote plugin allows connecting to Alpha on another device.
-  
-- **Screenshot**
-
-  Screenshot plugin allows taking screenshots of the application with a single action.
-  
-- **State**
-
-  State plugin allows inspecting the device state and settings, such as locale, time and available memory.
-  
-- **Touch**
-
-  Touch plugin displays touches on screen when activated.
-  
-- **View**
-
-  View plugin allows view hierarchy manipulation and inspection in real-time.
+- **Bonjour** contains a simple Bonjour server allowing Alpha to work over local Wi-Fi network.
+- **Bootstrap** checks for [KZBootstrap](https://github.com/krzysztofzablocki/KZBootstrap) environments and allows modifying them in real-time.
+- **Console** displays console logs (logged by NSLog) inside the application.
+- **Event** logs and displays application wide events such as background state transitions and view controller appearances.
+- **File** allows browsing the sandboxed file system and previewing common file types, such as images, videos and text.
+- **Global** information plugin displays linked frameworks, libraries and classes. Requires **Object** plugin to work.
+- **Heap** allows inspection of active object instances on ther heap and helps with debugging memory errors. Requires **Object** plugin to work.
+- **Interface** plugin is a specific plugin and is required to display Alpha menu interface and actions.
+- **Network** logs network connections made using `NSURLSession` and `NSURLConnection` API's.
+- **Notification** displays scheduled and fired local notifications, received push notifications and notification permissions.
+- **Object** allows for inspection of any class or object in the application, including `NSUserDefaults`, arrays and dictionaries.
+- **Remote** plugin allows connecting to Alpha on another device.
+- **Screenshot** plugin allows taking screenshots of the application with a single action.
+- **State** allows inspecting the device state and settings, such as locale, time and available memory.
+- **Touch** plugin displays touches on screen when activated.
+- **View** allows view hierarchy manipulation and inspection in real-time.
 
 Currently work in progress:
 
