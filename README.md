@@ -12,33 +12,77 @@
 [![Pod License](http://img.shields.io/cocoapods/l/Alpha.svg?style=flat)](http://opensource.org/licenses/BSD-3-Clause)
 
 
-### Alpha
-
-Alpha is an idea of the next generation debugging framework for iOS applications. It combines multiple debugging tools built on top of a simple, unified API. It lives entirely in your app sandbox and collects many types of data during your application lifetime. It is very easy to integrate and requires no code changes.
+**Alpha** is an idea of the next generation debugging framework for iOS applications. It combines multiple debugging tools built on top of a simple, unified API. It lives entirely in your app sandbox and collects many types of data during your application lifetime. It is very easy to integrate and requires no code changes.
 
 *It is currently a work in progress and might be too unstable to be used in real environment yet. Feel free to open GitHub issues.*
 
-### Features
+# Features
 
 Features are separated into multiple plugins, which can be enabled or disabled, depending on application requirements.
 
-- Push Notification logging (independent of provider)
-- Console logging (ASL)
-- Network connection logging
-- Environment changes
-- Screenshot system
-- Touches displayed on screen
-- Theme system so it fits into the app.
-- Remote connection to app (state, debug)
-- Use only specific modules of Alpha
-- Inspect and modify views in the hierarchy.
-- See the properties and ivars on any object.
-- Dynamically modify many properties and ivars.
-- Dynamically call instance and class methods.
-- Access any live object via a scan of the heap.
-- View the file system within your app's sandbox.
-- Explore all classes in your app and linked systems frameworks (public and private).
-- Dynamically view and modify `NSUserDefaults` values.
+- **Bonjour**
+
+  Bonjour plugin contains a simple Bonjour server allowing Alpha to work over local Wi-Fi network.
+  
+- **Bootstrap**
+
+  Bootstrap plugin checks for [KZBootstrap](https://github.com/krzysztofzablocki/KZBootstrap) environments and allows modifying them in real-time.
+  
+- **Console**
+
+  Console plugin displays console logs (logged by NSLog) inside the application.
+  
+- **Event**
+
+  Event plugin logs and displays application wide events such as background state transitions and view controller appearances.
+  
+- **File**
+
+  File plugin allows browsing the sandboxed file system and previewing common file types, such as images, videos and text.
+  
+- **Global**
+
+  Global information plugin displays linked frameworks, libraries and classes. Requires **Object** plugin to work.
+  
+- **Heap**
+
+  Heap plugin allows inspection of active object instances on ther heap and helps with debugging memory errors. Requires **Object** plugin to work.
+  
+- **Interface**
+
+  Interface plugin is a specific plugin and is required to display Alpha menu interface and actions.
+  
+- **Network**
+
+  Network plugin logs network connections made using `NSURLSession` and `NSURLConnection` API's.
+  
+- **Notification**
+
+  Notification plugin displays scheduled and fired local notifications, received push notifications and notification permissions.
+  
+- **Object**
+
+  Object plugin allows for inspection of any class or object in the application, including `NSUserDefaults`, arrays and dictionaries.
+  
+- **Remote**
+
+  Remote plugin allows connecting to Alpha on another device.
+  
+- **Screenshot**
+
+  Screenshot plugin allows taking screenshots of the application with a single action.
+  
+- **State**
+
+  State plugin allows inspecting the device state and settings, such as locale, time and available memory.
+  
+- **Touch**
+
+  Touch plugin displays touches on screen when activated.
+  
+- **View**
+
+  View plugin allows view hierarchy manipulation and inspection in real-time.
 
 Currently work in progress:
 
@@ -47,29 +91,46 @@ Currently work in progress:
 - *Recording touches and replaying actions*
 - *In-app debugger*
 
-### Integration
+### Themes
+
+To better fit with various application, Alpha has theme support, which allows you to choose the color palette you wish to display Alpha in. 
+
+### Triggers
+
+Triggers are a way to activate Alpha interface. By default Alpha provides two triggers:
+
+- Shake Trigger - Activates when device is shaken two times in less than 5 seconds.
+- Tap Trigger - Activates when 3 fingers are pressed for 3 seconds anywhere in the application.
+
+Read more on [Triggers]().
+
+# Integration
 
 To use Alpha in your project, all you need to do is add a CocoaPod:
 
+```ruby
 pod 'Alpha'
+```
+This automatically includes all plugins and features.
 
-Alpha supports iOS 8 and up. Not all features are available on all versions.
+*Alpha supports iOS 8 and up. Not all features are available on all versions.*
 
-### Help
+
+# Help
 
 - Frequently Asked Questions
 - Wiki
 
-### History
+# History
 
 Alpha originally started as an unofficial fork from [FLEX](https://github.com/Flipboard/FLEX) (Flipboard Explorer).
 
-### Contributions
+# Contributions
 
 This project would not be possible without all the work done by respected community contributors.
-Thanks to all the contributors to the following projects:
+Thanks to all contributors of the following projects:
 
-- [FLEX (Flipboard Explorer)](https://github.com/Flipboard/FLEX)
+- [**FLEX (Flipboard Explorer)**](https://github.com/Flipboard/FLEX)
 - [PonyDebugger](https://github.com/square/PonyDebugger)
 - [KZBootstrap](https://github.com/krzysztofzablocki/KZBootstrap)
 - [Touchpose](https://github.com/toddreed/Touchpose)
