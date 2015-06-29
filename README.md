@@ -22,11 +22,9 @@
 Features are separated into multiple plugins, which can be enabled or disabled, depending on application requirements.
 
 - **Bonjour**
-
-  Bonjour plugin contains a simple Bonjour server allowing Alpha to work over local Wi-Fi network.
+Bonjour plugin contains a simple Bonjour server allowing Alpha to work over local Wi-Fi network.
   
 - **Bootstrap**
-
   Bootstrap plugin checks for [KZBootstrap](https://github.com/krzysztofzablocki/KZBootstrap) environments and allows modifying them in real-time.
   
 - **Console**
