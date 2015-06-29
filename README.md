@@ -109,7 +109,7 @@ The entire Alpha documentation is available on [Wiki]() and on [CocoaDocs]().
 
 - Read [Getting Started]().
 - Browse [Architecture]().
-- Go through [Frequently Asked Questions]().
+- Go through [Frequently Asked Questions](https://github.com/Legoless/Alpha/wiki/Frequently-Asked-Questions).
 
 # Contributions
 
