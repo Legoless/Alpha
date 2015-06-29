@@ -51,7 +51,9 @@ Alpha is meant to work with any application, but the default dark theme does not
 
 To better fit with various applications Alpha has theme support, which allows you to choose the color palette you wish to display Alpha in.
 
-![Default](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Default_Theme.png "Default Theme")![Formentera](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Formentera_Theme.png "Formentera Theme")![Notio](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Notio_Theme.png "Notio Theme")
+![Default](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Default_Theme.png "Default Theme")
+![Formentera](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Formentera_Theme.png "Formentera Theme")
+![Notio](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Notio_Theme.png "Notio Theme")
 
 There are **6 themes** available:
 - [Default](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Default_Theme.png) (first picture)
