@@ -116,12 +116,12 @@ If is also possible to create your own theme and use it in Alpha system.
 
 ### Triggers
 
-Triggers are a way to activate Alpha interface. By default Alpha provides two triggers:
+Triggers are a way to activate Alpha interface from your application. By default Alpha provides two triggers:
 
 - **Shake Trigger** - Activates when device is shaken two times in less than 5 seconds.
 - **Tap Trigger** - Activates when 3 fingers are pressed for 3 seconds anywhere in the application.
 
-Both triggers are activated by default.
+Both triggers are activated by default. Alternatively you can implement your own trigger or use the manual trigger.
 
 *Read more on [Triggers]().*
 
