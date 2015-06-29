@@ -94,9 +94,22 @@ Currently work in progress:
 
 ### Themes
 
+Alpha is meant to work with any application, but the default dark theme does not always fit best with the application color scheme.
+
 To better fit with various applications Alpha has theme support, which allows you to choose the color palette you wish to display Alpha in.
 
-If is also possible to create your own theme and use it as Alpha theme.
+![Formentera](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Formentera_Theme.png "Formentera Theme")
+![Notio](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Notio_Theme.png "Notio Theme")
+
+There are 6 themes available:
+- [Default](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Default_Theme.png)
+- [Formentera](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Formentera_Theme.png) (first picture)
+- [Notio](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Notio_Theme.png) (second picture)
+- [Alizarin](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Alizarin_Theme.png) - *by [Vikilas](http://vikilas.com)*
+- [Amethyst](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Amethyst_Theme.png) - *by [Vikilas](http://vikilas.com)*
+- [Green Sea](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/GreenSea_Theme.png) - *by [Vikilas](http://vikilas.com)*
+
+If is also possible to create your own theme and use it in Alpha system.
 
 *Read more on [Themes]().*
 
@@ -104,8 +117,10 @@ If is also possible to create your own theme and use it as Alpha theme.
 
 Triggers are a way to activate Alpha interface. By default Alpha provides two triggers:
 
-- Shake Trigger - Activates when device is shaken two times in less than 5 seconds.
-- Tap Trigger - Activates when 3 fingers are pressed for 3 seconds anywhere in the application.
+- **Shake Trigger** - Activates when device is shaken two times in less than 5 seconds.
+- **Tap Trigger** - Activates when 3 fingers are pressed for 3 seconds anywhere in the application.
+
+Both triggers are activated by default.
 
 *Read more on [Triggers]().*
 
