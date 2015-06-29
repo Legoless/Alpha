@@ -103,9 +103,9 @@ To better fit with various applications Alpha has theme support, which allows yo
 ![Notio](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Notio_Theme.png "Notio Theme")
 
 There are 6 themes available:
-- [Default](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Default_Theme.png)
-- [Formentera](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Formentera_Theme.png) (first picture)
-- [Notio](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Notio_Theme.png) (second picture)
+- [Default](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Default_Theme.png) (first picture)
+- [Formentera](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Formentera_Theme.png) (second picture)
+- [Notio](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Notio_Theme.png) (third picture)
 - [Alizarin](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Alizarin_Theme.png) - *by [Vikilas](http://vikilas.com)*
 - [Amethyst](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Amethyst_Theme.png) - *by [Vikilas](http://vikilas.com)*
 - [Green Sea](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/GreenSea_Theme.png) - *by [Vikilas](http://vikilas.com)*
@@ -140,9 +140,9 @@ This automatically includes all plugins and features. To avoid clashes with libr
 
 # The Story
 
-*Alpha originally started as an unofficial fork from [FLEX](https://github.com/Flipboard/FLEX) (Flipboard Explorer). It began with a desire to add multiple features to FLEX, but looking more and more it was obvious that many architectural changes were required. Those are the hardest to merge into original repository without breaking multiple features, it was obvious that it fits more to create a separate repository.
+*Alpha originally started as an unofficial fork from [FLEX](https://github.com/Flipboard/FLEX) (Flipboard Explorer). It began with a desire to add multiple features to FLEX, but looking more and more it was obvious that many architectural changes were required. Those are the hardest to merge into original repository without breaking multiple features, it was obvious that it fits more to create a separate repository.*
 
-So Alpha was converted into a separate repository and work began on top of that. Many features were added and there are many architectural changes under the hood. Alpha offers a full API, which can be used to build almost any kind of plugin. In fact, all existing plugins are built on top of that API.*
+*So Alpha was converted into a separate repository and work began on top of that. Many features were added and there are many architectural changes under the hood. Alpha offers a full API, which can be used to build almost any kind of plugin. In fact, all existing plugins are built on top of that API.*
 
 # Documentation
 
@@ -154,9 +154,9 @@ The entire Alpha documentation is available on [Wiki]() and on [CocoaDocs]().
 
 # Contributions
 
+To contribute to Alpha, please open pull requests. We warmly welcome any feature implementations or improvements, bug fixes, documentation or anything else you can think of.
 
-
-# Credits
+# Thanks
 
 This project would not be possible without all the work done by respected community contributors.
 Thanks to all contributors of the following projects:
@@ -186,4 +186,4 @@ Dal Rupnik
 License
 ======
 
-**Alpha** is released under the MIT license. See [LICENSE](https://github.com/Legoless/Alpha/blob/master/LICENSE) file for more information.
+**Alpha** is released under the **MIT** license. See [LICENSE](https://github.com/Legoless/Alpha/blob/master/LICENSE) file for more information.
