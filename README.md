@@ -15,6 +15,8 @@
 
 *It is currently a work in progress and might be too unstable to be used in real environment yet. Feel free to open GitHub issues.*
 
+![intro](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Intro.gif "Alpha Intro")
+
 # Features
 
 Features are separated into multiple plugins, which can be enabled or disabled, depending on application requirements.
