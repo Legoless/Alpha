@@ -93,7 +93,11 @@ Currently work in progress:
 
 ### Themes
 
-To better fit with various application, Alpha has theme support, which allows you to choose the color palette you wish to display Alpha in. 
+To better fit with various applications Alpha has theme support, which allows you to choose the color palette you wish to display Alpha in.
+
+If is also possible to create your own theme and use it as Alpha theme.
+
+*Read more on [Themes]().*
 
 ### Triggers
 
@@ -102,11 +106,11 @@ Triggers are a way to activate Alpha interface. By default Alpha provides two tr
 - Shake Trigger - Activates when device is shaken two times in less than 5 seconds.
 - Tap Trigger - Activates when 3 fingers are pressed for 3 seconds anywhere in the application.
 
-Read more on [Triggers]().
+*Read more on [Triggers]().*
 
 # Integration
 
-To use Alpha in your project, all you need to do is add a CocoaPod:
+To use Alpha in your project, all you need to do is add a **CocoaPods** library:
 
 ```ruby
 pod 'Alpha'
@@ -115,15 +119,20 @@ This automatically includes all plugins and features.
 
 *Alpha supports iOS 8 and up. Not all features are available on all versions.*
 
+*Read more on [Integration]().*
 
-# Help
-
-- Frequently Asked Questions
-- Wiki
-
-# History
+# The Story
 
 Alpha originally started as an unofficial fork from [FLEX](https://github.com/Flipboard/FLEX) (Flipboard Explorer).
+
+# Documentation
+
+The entire Alpha documentation is available on [Wiki]() and on [CocoaDocs]().
+
+- Read [Getting Started]().
+- Browse [Architecture]().
+- Go through [Frequently Asked Questions]().
+
 
 # Contributions
 
