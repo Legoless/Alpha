@@ -49,24 +49,42 @@ Features are separated into multiple plugins, which can be enabled or disabled, 
 - **Heap**
 
   Heap plugin allows inspection of active object instances on ther heap and helps with debugging memory errors. Requires **Object** plugin to work.
+  
+- **Interface**
 
-- Push Notification logging (independent of provider)
-- Console logging (ASL)
-- Network connection logging
-- Environment changes
-- Screenshot system
-- Touches displayed on screen
-- Theme system so it fits into the app.
-- Remote connection to app (state, debug)
-- Use only specific modules of Alpha
-- Inspect and modify views in the hierarchy.
-- See the properties and ivars on any object.
-- Dynamically modify many properties and ivars.
-- Dynamically call instance and class methods.
-- Access any live object via a scan of the heap.
-- View the file system within your app's sandbox.
-- Explore all classes in your app and linked systems frameworks (public and private).
-- Dynamically view and modify `NSUserDefaults` values.
+  Interface plugin is a specific plugin and is required to display Alpha menu interface and actions.
+  
+- **Network**
+
+  Network plugin logs network connections made using `NSURLSession` and `NSURLConnection` API's.
+  
+- **Notification**
+
+  Notification plugin displays scheduled and fired local notifications, received push notifications and notification permissions.
+  
+- **Object**
+
+  Object plugin allows for inspection of any class or object in the application, including `NSUserDefaults`, arrays and dictionaries.
+  
+- **Remote**
+
+  Remote plugin allows connecting to Alpha on another device.
+  
+- **Screenshot**
+
+  Screenshot plugin allows taking screenshots of the application with a single action.
+  
+- **State**
+
+  State plugin allows inspecting the device state and settings, such as locale, time and available memory.
+  
+- **Touch**
+
+  Touch plugin displays touches on screen when activated.
+  
+- **View**
+
+  View plugin allows view hierarchy manipulation and inspection in real-time.
 
 Currently work in progress:
 
