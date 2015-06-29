@@ -362,7 +362,7 @@
     // Only for iOS 7+
     if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
         self.previousStatusBarStyle = [[UIApplication sharedApplication] statusBarStyle];
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+        [[UIApplication sharedApplication] setStatusBarStyle:self.theme.statusBarStyle animated:animated];
     }
     
     // Show the view controller.
@@ -383,7 +383,7 @@
     // Only for iOS 7+
     if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1)
     {
-        [[UIApplication sharedApplication] setStatusBarStyle:self.previousStatusBarStyle];
+        [[UIApplication sharedApplication] setStatusBarStyle:self.previousStatusBarStyle animated:animated];
     }
     
     [self.rootViewController dismissViewControllerAnimated:animated completion:completion];
