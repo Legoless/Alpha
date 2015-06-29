@@ -53,7 +53,7 @@
     }];
 }
 
-#pragma mark - QTouchposeFingerView
+#pragma mark - ALPHATouchposeFingerView
 
 - (id)initWithPoint:(CGPoint)point color:(UIColor *)color touchEndAnimationDuration:(NSTimeInterval)touchEndAnimationDuration touchEndTransform:(CATransform3D)touchEndTransform customTouchImage:(UIImage *)customTouchImage customTouchPoint:(CGPoint)customtouchPoint
 
