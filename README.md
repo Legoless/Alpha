@@ -130,9 +130,9 @@ Alpha originally started as an unofficial fork from [FLEX](https://github.com/Fl
 # Contributions
 
 This project would not be possible without all the work done by respected community contributors.
-Thanks to all the contributors to the following projects:
+Thanks to all contributors of the following projects:
 
-- [FLEX (Flipboard Explorer)](https://github.com/Flipboard/FLEX)
+- [**FLEX (Flipboard Explorer)**](https://github.com/Flipboard/FLEX)
 - [PonyDebugger](https://github.com/square/PonyDebugger)
 - [KZBootstrap](https://github.com/krzysztofzablocki/KZBootstrap)
 - [Touchpose](https://github.com/toddreed/Touchpose)
