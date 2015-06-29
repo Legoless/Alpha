@@ -11,7 +11,7 @@
 [![Pod License](http://img.shields.io/cocoapods/l/Alpha.svg?style=flat)](http://opensource.org/licenses/BSD-3-Clause)
 
 
-**Alpha** is an idea of the next generation debugging framework for iOS applications. It combines multiple debugging tools built on top of a simple, unified API. It lives entirely in your app sandbox and collects many types of data during your application lifetime. It is very easy to integrate and requires no code changes.
+**Alpha** is an idea of the next generation debugging framework for iOS applications. It combines multiple debugging tools built on top of a **simple, unified API**. It lives entirely in your app sandbox and collects many types of data during your application lifetime. It is very easy to integrate and requires **no code changes**.
 
 *It is currently a work in progress and might be too unstable to be used in real environment yet. Feel free to open GitHub issues.*
 
@@ -55,7 +55,7 @@ To better fit with various applications Alpha has theme support, which allows yo
 ![Formentera](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Formentera_Theme.png "Formentera Theme")
 ![Notio](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Notio_Theme.png "Notio Theme")
 
-There are 6 themes available:
+There are **6 themes** available:
 - [Default](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Default_Theme.png) (first picture)
 - [Formentera](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Formentera_Theme.png) (second picture)
 - [Notio](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Notio_Theme.png) (third picture)
