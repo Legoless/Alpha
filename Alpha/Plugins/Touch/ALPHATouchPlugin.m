@@ -16,6 +16,8 @@
 #import "ALPHAAssetManager.h"
 #import "ALPHATouchIcon.h"
 
+#import "ALPHATouchViewController.h"
+
 @interface ALPHATouchPlugin ()
 
 @property (nonatomic, strong) ALPHATouchWindow *touchWindow;
@@ -29,7 +31,7 @@
     if (!_touchWindow)
     {
         _touchWindow = [[ALPHATouchWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-        //_touchWindow.rootViewController = [UIViewController new];
+        _touchWindow.rootViewController = [ALPHATouchViewController new];
         _touchWindow.userInteractionEnabled = NO;
     }
     
@@ -40,10 +42,11 @@
 {
     _shouldDisplayTouches = shouldDisplayTouches;
     
+    /*
     if (!self.touchWindow.isKeyWindow)
     {
         [self.touchWindow makeKeyAndVisible];
-    }
+    }*/
     
     self.touchWindow.hidden = !_shouldDisplayTouches;
 }

@@ -13,7 +13,9 @@
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {
+    
+    if (self)
+    {
         self.backgroundColor = [UIColor clearColor];
         // Some apps have windows at UIWindowLevelStatusBar + n.
         // If we make the window level too high, we block out UIAlertViews.

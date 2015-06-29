@@ -332,6 +332,8 @@
     
     [self.rootViewController.view bringSubviewToFront:self.mainInterfaceView];
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:ALPHAStatusBarUpdateNotification object:nil];
+    
     if (completion)
     {
         completion();
@@ -343,6 +345,8 @@
     [viewController willMoveToParentViewController:nil];
     [viewController.view removeFromSuperview];
     [viewController removeFromParentViewController];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:ALPHAStatusBarUpdateNotification object:nil];
 }
 
 - (void)displayViewController:(UIViewController *)viewController animated:(BOOL)animated completion:(void (^)(void))completion
@@ -359,14 +363,13 @@
     // If this app doesn't use view controller based status bar management and we're on iOS 7+,
     // make sure the status bar style is UIStatusBarStyleDefault. We don't actually have to check
     // for view controller based management because the global methods no-op if that is turned on.
-    // Only for iOS 7+
-    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
-        self.previousStatusBarStyle = [[UIApplication sharedApplication] statusBarStyle];
-        [[UIApplication sharedApplication] setStatusBarStyle:self.theme.statusBarStyle animated:animated];
-    }
+    self.previousStatusBarStyle = [[UIApplication sharedApplication] statusBarStyle];
+    [[UIApplication sharedApplication] setStatusBarStyle:self.theme.statusBarStyle animated:animated];
     
     // Show the view controller.
     [self.rootViewController presentViewController:viewController animated:animated completion:completion];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:ALPHAStatusBarUpdateNotification object:nil];
 }
 
 - (void)removeViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion
@@ -381,12 +384,11 @@
     
     // Restore the stauts bar style if the app is using global status bar management.
     // Only for iOS 7+
-    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1)
-    {
-        [[UIApplication sharedApplication] setStatusBarStyle:self.previousStatusBarStyle animated:animated];
-    }
+    [[UIApplication sharedApplication] setStatusBarStyle:self.previousStatusBarStyle animated:animated];
     
     [self.rootViewController dismissViewControllerAnimated:animated completion:completion];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:ALPHAStatusBarUpdateNotification object:nil];
 }
 
 

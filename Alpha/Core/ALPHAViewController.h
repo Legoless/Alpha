@@ -8,6 +8,8 @@
 
 #import "ALPHACanvasView.h"
 
+extern NSString *const ALPHAStatusBarUpdateNotification;
+
 /*!
  *  Protocol to properly handle transitions between View Controllers
  */

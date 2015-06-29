@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		38353E891B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38353E881B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m */; };
+		386601531B4184A000217F85 /* ALPHATouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386601521B4184A000217F85 /* ALPHATouchViewController.m */; };
 		38921B931B34E64C00A50DED /* ALPHAGreenSeaColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 38921B921B34E64C00A50DED /* ALPHAGreenSeaColorPalette.m */; };
 		38921B961B34E6BB00A50DED /* ALPHAAlizarinColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 38921B951B34E6BB00A50DED /* ALPHAAlizarinColorPalette.m */; };
 		38921B991B34E6DC00A50DED /* ALPHAAmethystColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 38921B981B34E6DC00A50DED /* ALPHAAmethystColorPalette.m */; };
@@ -430,6 +431,8 @@
 		0C6C81861F8DC133E5D85165 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		38353E871B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLCatalogTableTableViewController.h; sourceTree = "<group>"; };
 		38353E881B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLCatalogTableTableViewController.m; sourceTree = "<group>"; };
+		386601511B4184A000217F85 /* ALPHATouchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHATouchViewController.h; sourceTree = "<group>"; };
+		386601521B4184A000217F85 /* ALPHATouchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHATouchViewController.m; sourceTree = "<group>"; };
 		38921B911B34E64C00A50DED /* ALPHAGreenSeaColorPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAGreenSeaColorPalette.h; sourceTree = "<group>"; };
 		38921B921B34E64C00A50DED /* ALPHAGreenSeaColorPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAGreenSeaColorPalette.m; sourceTree = "<group>"; };
 		38921B941B34E6BB00A50DED /* ALPHAAlizarinColorPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAAlizarinColorPalette.h; sourceTree = "<group>"; };
@@ -1950,6 +1953,8 @@
 			children = (
 				67E6405BBDB6CE36908B7D8F /* ALPHATouchWindow.h */,
 				67E64ECEA58CF255B0CC5633 /* ALPHATouchWindow.m */,
+				386601511B4184A000217F85 /* ALPHATouchViewController.h */,
+				386601521B4184A000217F85 /* ALPHATouchViewController.m */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -2741,6 +2746,7 @@
 				67E647E62FC673561454F472 /* ALPHAMenuCenterView.m in Sources */,
 				67E64C881168D6DE755EA836 /* ALPHAMenuSource.m in Sources */,
 				67E64D6C5022309FE30E7D43 /* ALPHAMainViewController.m in Sources */,
+				386601531B4184A000217F85 /* ALPHATouchViewController.m in Sources */,
 				67E6471F0E47AB6BD92CFDE6 /* ALPHAInterfacePlugin.m in Sources */,
 				67E6454FB9FC6FDB26EC5825 /* ALPHAScreenshotIcon.m in Sources */,
 				67E647EA38B504601F9ED87F /* ALPHAScreenshotSource.m in Sources */,

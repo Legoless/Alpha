@@ -14,6 +14,8 @@
 
 #import "ALPHAViewController.h"
 
+NSString *const ALPHAStatusBarUpdateNotification = @"ALPHAStatusBarUpdateNotificationKey";
+
 @interface ALPHAViewController ()
 
 @end
@@ -71,8 +73,10 @@
 {
     UIViewController *viewControllerToAsk = [self viewControllerForStatusBarAndOrientationProperties];
     UIStatusBarStyle preferredStyle = UIStatusBarStyleDefault;
-    if (viewControllerToAsk && viewControllerToAsk != self) {
-        // We might need to foward to a child
+    
+    if (viewControllerToAsk && viewControllerToAsk != self)
+    {
+        // We might need to forward to a child
         UIViewController *childViewControllerToAsk = [viewControllerToAsk childViewControllerForStatusBarStyle];
         while (childViewControllerToAsk && childViewControllerToAsk != viewControllerToAsk) {
             viewControllerToAsk = childViewControllerToAsk;
@@ -81,6 +85,7 @@
         
         preferredStyle = [viewControllerToAsk preferredStatusBarStyle];
     }
+    
     return preferredStyle;
 }
 
