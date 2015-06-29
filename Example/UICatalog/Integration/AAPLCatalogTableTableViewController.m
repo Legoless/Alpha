@@ -3,6 +3,7 @@
 //  UICatalog
 //
 //  Created by Ryan Olson on 7/17/14.
+//
 
 #import "AAPLCatalogTableTableViewController.h"
 
@@ -56,7 +57,7 @@
 - (void)alphaButtonTapped:(id)sender
 {
 #if DEBUG
-    //[ALPHAManager defaultManager].theme = [ALPHANotioColorPalette defaultPalette].paletteTheme;
+    //[ALPHAManager defaultManager].theme = [ALPHAGreenSeaColorPalette defaultPalette].paletteTheme;
     // This acts as a manual Alpha trigger
     [ALPHAManager defaultManager].interfaceHidden = NO;
 #endif
