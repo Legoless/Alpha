@@ -121,16 +121,16 @@ This project would not be possible without all the work done by respected commun
 Thanks to all contributors of the following projects:
 
 - [**FLEX (Flipboard Explorer)**](https://github.com/Flipboard/FLEX)
-- [PonyDebugger](https://github.com/square/PonyDebugger)
-- [KZBootstrap](https://github.com/krzysztofzablocki/KZBootstrap)
-- [Touchpose](https://github.com/toddreed/Touchpose)
-- [PINCache](https://github.com/pinterest/PINCache)
 - [CKCircleMenuView](https://github.com/JaNd3r/CKCircleMenuView)
 - [CWStatusBarNotification](https://github.com/cezarywojcik/CWStatusBarNotification)
 - [DTBonjour](https://github.com/Cocoanetics/DTBonjour)
-- [Super DB](https://github.com/Shopify/superdb)
-- [iConsole](https://github.com/nicklockwood/iConsole)
 - [Haystack](https://github.com/legoless/Haystack)
+- [iConsole](https://github.com/nicklockwood/iConsole)
+- [KZBootstrap](https://github.com/krzysztofzablocki/KZBootstrap)
+- [PonyDebugger](https://github.com/square/PonyDebugger)
+- [PINCache](https://github.com/pinterest/PINCache)
+- [Super DB](https://github.com/Shopify/superdb)
+- [Touchpose](https://github.com/toddreed/Touchpose)
 - Many more...
 
 Contact
