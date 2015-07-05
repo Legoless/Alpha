@@ -1,6 +1,6 @@
 @import Foundation;
 
-@interface HSMath : NSObject
+@interface HAYMath : NSObject
 
 /*!
  * Converts angle in degrees to angle in radians.

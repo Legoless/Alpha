@@ -6,7 +6,7 @@
 
 @implementation UIButton (Position)
 
-- (void)setTitleBelowWithSpacing:(CGFloat)spacing
+- (void)hay_setTitleBelowWithSpacing:(CGFloat)spacing
 {
     // Get the size of the elements here for readability
     CGSize imageSize = self.imageView.frame.size;

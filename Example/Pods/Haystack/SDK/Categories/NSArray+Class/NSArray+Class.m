@@ -6,7 +6,7 @@
 
 @implementation NSArray (Class)
 
-- (id)firstObjectOfClass:(Class)objectClass
+- (id)hay_firstObjectOfClass:(Class)objectClass
 {
     for (id object in self)
     {
@@ -19,7 +19,7 @@
     return nil;
 }
 
-- (id)lastObjectOfClass:(Class)objectClass
+- (id)hay_lastObjectOfClass:(Class)objectClass
 {
     NSEnumerator *enumerator = self.reverseObjectEnumerator;
     
@@ -34,7 +34,7 @@
     return nil;
 }
 
-- (BOOL)containsObjectOfClass:(Class)objectClass
+- (BOOL)hay_containsObjectOfClass:(Class)objectClass
 {
     for (id object in self)
     {
@@ -47,7 +47,7 @@
     return NO;
 }
 
-- (BOOL)containsObjectOfInheritedClass:(Class)objectClass
+- (BOOL)hay_containsObjectOfInheritedClass:(Class)objectClass
 {
     for (id object in self)
     {
@@ -60,7 +60,7 @@
     return NO;
 }
 
-- (BOOL)containsAllObjectsOfClass:(Class)objectClass
+- (BOOL)hay_containsAllObjectsOfClass:(Class)objectClass
 {
     for (id object in self)
     {
@@ -73,7 +73,7 @@
     return YES;
 }
 
-- (BOOL)containsAllObjectsOfInheritedClass:(Class)objectClass
+- (BOOL)hay_containsAllObjectsOfInheritedClass:(Class)objectClass
 {
     for (id object in self)
     {

@@ -13,7 +13,7 @@
  *
  *  @return first instance of class, or nil
  */
-- (id)firstObjectOfClass:(Class)objectClass;
+- (id)hay_firstObjectOfClass:(Class)objectClass;
 
 /*!
  *  Returns last object instance that matches specified class
@@ -22,7 +22,7 @@
  *
  *  @return last instance of class, or nil
  */
-- (id)lastObjectOfClass:(Class)objectClass;
+- (id)hay_lastObjectOfClass:(Class)objectClass;
 
 /*!
  * Returns YES, if at least one object in array is member of provided class.
@@ -30,7 +30,7 @@
  * @param objectClass class of object
  * @return YES if array contains an object of same class.
  */
-- (BOOL)containsObjectOfClass:(Class)objectClass;
+- (BOOL)hay_containsObjectOfClass:(Class)objectClass;
 
 /*!
  * Returns YES, if at least one object in array is of provided class or
@@ -39,7 +39,7 @@
  * @param objectClass class of object
  * @return YES if array contains an object of same or inherited class.
  */
-- (BOOL)containsObjectOfInheritedClass:(Class)objectClass;
+- (BOOL)hay_containsObjectOfInheritedClass:(Class)objectClass;
 
 /*!
  * Returns YES, if at all objects in array are members of provided class.
@@ -47,7 +47,7 @@
  * @param objectClass class of object
  * @return YES if array contains only objects of same class.
  */
-- (BOOL)containsAllObjectsOfClass:(Class)objectClass;
+- (BOOL)hay_containsAllObjectsOfClass:(Class)objectClass;
 
 /*!
  * Returns YES, if at all objects in array are of provided class or
@@ -56,6 +56,6 @@
  * @param objectClass class of object
  * @return YES if array contains only objects of same or inherited class.
  */
-- (BOOL)containsAllObjectsOfInheritedClass:(Class)objectClass;
+- (BOOL)hay_containsAllObjectsOfInheritedClass:(Class)objectClass;
 
 @end

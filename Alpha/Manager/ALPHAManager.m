@@ -69,7 +69,7 @@
 {
     if (!_interfacePlugin)
     {
-        _interfacePlugin = [self.plugins firstObjectOfClass:[ALPHAInterfacePlugin class]];
+        _interfacePlugin = [self.plugins hay_firstObjectOfClass:[ALPHAInterfacePlugin class]];
         [self addOverlayViewController:_interfacePlugin.mainInterface animated:NO completion:nil];
     }
     
@@ -201,7 +201,7 @@
     // If we are running tests, we'll just return nil here, to disable all Alpha functionality
     // and speed up loading time.
     //
-    if ([[UIApplication sharedApplication] isRunningTests])
+    if ([[UIApplication sharedApplication] hay_isRunningTests])
     {
         return nil;
     }
@@ -234,7 +234,7 @@
 
 - (NSArray *)createInstancesOfClass:(Class)class
 {
-    NSArray *subclasses = [class subclasses];
+    NSArray *subclasses = [class hay_subclasses];
     NSMutableArray* instances = [NSMutableArray array];
     
     for (Class class in subclasses)

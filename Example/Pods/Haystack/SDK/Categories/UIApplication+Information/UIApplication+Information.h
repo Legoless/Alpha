@@ -11,27 +11,27 @@
  *
  *  @return memory footprint
  */
-- (long long)memorySize;
+- (long long)hay_memorySize;
 
 /**
  *  Returns current application thread count
  *
  *  @return thread count of current application
  */
-- (NSUInteger)threadCount;
+- (NSUInteger)hay_threadCount;
 
 /**
  *  Application's CPU usage
  *
  *  @return application's CPU usage
  */
-- (float)cpuUsage;
+- (float)hay_cpuUsage;
 
 /**
  * Returns YES if application is currently running tests
  *
  *  @return YES when running tests
  */
-- (BOOL)isRunningTests;
+- (BOOL)hay_isRunningTests;
 
 @end

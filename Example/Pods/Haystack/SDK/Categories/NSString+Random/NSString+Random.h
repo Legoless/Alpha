@@ -13,7 +13,7 @@
  *
  *  @return random string
  */
-+ (NSString *)hs_randomAlphaNumericStringOfLength:(NSUInteger)length;
++ (NSString *)hay_randomAlphaNumericStringOfLength:(NSUInteger)length;
 
 /*!
  *  Returns random alpha string (no numbers)
@@ -22,7 +22,7 @@
  *
  *  @return random string
  */
-+ (NSString *)hs_randomAlphaStringOfLength:(NSUInteger)length;
++ (NSString *)hay_randomAlphaStringOfLength:(NSUInteger)length;
 
 /*!
  *  Returns random string that can contain all ASCII characters
@@ -31,13 +31,13 @@
  *
  *  @return random string
  */
-+ (NSString *)hs_randomStringOfLength:(NSUInteger)length;
++ (NSString *)hay_randomStringOfLength:(NSUInteger)length;
 
 /*!
  *  Returns random new UUID
  *
  *  @return random UUID
  */
-+ (NSString *)hs_UUID;
++ (NSString *)hay_UUID;
 
 @end

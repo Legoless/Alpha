@@ -11,6 +11,6 @@
  *
  *  @return Detailed debug description
  */
-- (NSString *)detailedDebugDescription;
+- (NSString *)hay_detailedDebugDescription;
 
 @end

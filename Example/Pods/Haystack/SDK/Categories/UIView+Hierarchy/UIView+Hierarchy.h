@@ -6,6 +6,6 @@
 
 @interface UIView (Hierarchy)
 
-- (UIView *)parentViewOfType:(Class)class;
+- (UIView *)hay_parentViewOfType:(Class)class;
 
 @end

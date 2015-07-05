@@ -2,7 +2,7 @@
 //  NSDate+Additional.h
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 @interface NSDate (Additional)
 
@@ -12,6 +12,6 @@
  *  @param NSDate date to be compared
  *  @return NSComparisonResult result of comparison
  */
-- (NSComparisonResult)compareDateWithoutTimeTo:(NSDate *)date;
+- (NSComparisonResult)hay_compareDateWithoutTimeTo:(NSDate *)date;
 
 @end

@@ -105,7 +105,7 @@ NSString *const ALPHAEventDataIdentifier = @"com.unifiedsense.alpha.data.event";
     if (anInvocation.selector == @selector(application:didFinishLaunchingWithOptions:))
     {
         // Launched with options, 0 - self, 1 - _cmd, 2 - UIApplication, 3 - options
-        event.info = [anInvocation hs_objectAtIndex:3];
+        event.info = [anInvocation hay_objectAtIndex:3];
     }
     
     [self addEvent:event];

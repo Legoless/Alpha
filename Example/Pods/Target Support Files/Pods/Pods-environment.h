@@ -15,6 +15,6 @@
 // Haystack
 #define COCOAPODS_POD_AVAILABLE_Haystack
 #define COCOAPODS_VERSION_MAJOR_Haystack 0
-#define COCOAPODS_VERSION_MINOR_Haystack 8
-#define COCOAPODS_VERSION_PATCH_Haystack 6
+#define COCOAPODS_VERSION_MINOR_Haystack 9
+#define COCOAPODS_VERSION_PATCH_Haystack 1
 

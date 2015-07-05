@@ -2,7 +2,7 @@
 //  NSObject+Property.m
 //
 
-#import <objc/runtime.h>
+@import ObjectiveC.runtime;
 
 #import "NSObject+Property.h"
 
@@ -12,7 +12,7 @@
 // Code from: http://stackoverflow.com/questions/754824/get-an-object-properties-list-in-objective-c
 //
 
-static const char *getPropertyType(objc_property_t property)
+static const char *hay_getPropertyType(objc_property_t property)
 {
     const char *attributes = property_getAttributes(property);
 
@@ -49,17 +49,17 @@ static const char *getPropertyType(objc_property_t property)
     return "";
 }
 
-- (NSDictionary *)properties
+- (NSDictionary *)hay_properties
 {
-    return [[self class] classPropsFor:[self class]];
+    return [[self class] hay_classPropsFor:[self class]];
 }
 
-+ (NSDictionary *)properties
++ (NSDictionary *)hay_properties
 {
-    return [self classPropsFor:self];
+    return [self hay_classPropsFor:self];
 }
 
-+ (NSDictionary *)classPropsFor:(Class)class
++ (NSDictionary *)hay_classPropsFor:(Class)class
 {
     if (class == NULL)
     {
@@ -75,7 +75,7 @@ static const char *getPropertyType(objc_property_t property)
     {
         objc_property_t property = properties[i];
         const char *propName = property_getName(property);
-        const char *propType = getPropertyType(property);
+        const char *propType = hay_getPropertyType(property);
         
         if (propName && propType)
         {

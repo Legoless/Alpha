@@ -10,13 +10,13 @@
 /*!
  * Returns YES if device supports Touch ID sensor
  */
-- (BOOL)hasTouchID;
+- (BOOL)hay_hasTouchID;
 
 /**
  *  Returns YES if device has Retina or Retina HD display
  *
  *  @return YES if device is running on Retina (scale of 2.0 or more) display
  */
-- (BOOL)hasRetina;
+- (BOOL)hay_hasRetina;
 
 @end

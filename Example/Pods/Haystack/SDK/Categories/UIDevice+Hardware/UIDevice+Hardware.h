@@ -14,7 +14,7 @@
  *
  *  @return battery level
  */
-- (float)hs_batteryLevel;
+- (float)hay_batteryLevel;
 
 //
 // CPU Related
@@ -23,54 +23,54 @@
 /*!
  * Number of CPU cores
  */
-- (NSUInteger)hs_cpuCount;
+- (NSUInteger)hay_cpuCount;
 
 /*!
  * Number of active CPU cores
  */
-- (NSUInteger)hs_cpuActiveCount;
+- (NSUInteger)hay_cpuActiveCount;
 
-- (NSUInteger)hs_cpuPhysicalCount;
+- (NSUInteger)hay_cpuPhysicalCount;
 
-- (NSUInteger)hs_cpuPhysicalMaximumCount;
+- (NSUInteger)hay_cpuPhysicalMaximumCount;
 
-- (NSUInteger)hs_cpuLogicalCount;
+- (NSUInteger)hay_cpuLogicalCount;
 
-- (NSUInteger)hs_cpuLogicalMaximumCount;
+- (NSUInteger)hay_cpuLogicalMaximumCount;
 
-- (NSUInteger)hs_cpuFrequency;
+- (NSUInteger)hay_cpuFrequency;
 
-- (NSUInteger)hs_cpuMaximumFrequency;
+- (NSUInteger)hay_cpuMaximumFrequency;
 
-- (NSUInteger)hs_cpuMinimumFrequency;
+- (NSUInteger)hay_cpuMinimumFrequency;
 
-- (NSString *)hs_cpuType;
+- (NSString *)hay_cpuType;
 
-- (NSString *)hs_cpuSubType;
+- (NSString *)hay_cpuSubType;
 
-- (NSString *)hs_cpuArchitectures;
+- (NSString *)hay_cpuArchitectures;
 
 //
 // Memory Related
 //
 
-- (unsigned long long)hs_memoryMarketingSize;
+- (unsigned long long)hay_memoryMarketingSize;
 
 /**
  *  Total RAM size
  *
  *  @return Total RAM size
  */
-- (unsigned long long)hs_memoryPhysicalSize;
+- (unsigned long long)hay_memoryPhysicalSize;
 
 //
 // Disk Space Related
 //
 
-- (unsigned long long)hs_diskMarketingSpace;
+- (unsigned long long)hay_diskMarketingSpace;
 
-- (unsigned long long)hs_diskTotalSpace;
+- (unsigned long long)hay_diskTotalSpace;
 
-- (unsigned long long)hs_diskFreeSpace;
+- (unsigned long long)hay_diskFreeSpace;
 
 @end

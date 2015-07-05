@@ -6,25 +6,25 @@
 
 @implementation UIApplication (Version)
 
-- (NSString *)name
+- (NSString *)hay_name
 {
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     return [infoDictionary objectForKey:@"CFBundleDisplayName"];
 }
 
-- (NSString *)version
+- (NSString *)hay_version
 {
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     return [infoDictionary objectForKey:@"CFBundleShortVersionString"];
 }
 
-- (NSString *)build
+- (NSString *)hay_build
 {
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     return [infoDictionary objectForKey:@"CFBundleVersion"];
 }
 
-- (NSString *)bundleIdentifier
+- (NSString *)hay_bundleIdentifier
 {
     return [NSBundle mainBundle].bundleIdentifier;
 }

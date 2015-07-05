@@ -1,10 +1,10 @@
 //
-//  HSUnitFormatterPrefix.h
+//  HAYUnitFormatterPrefix.h
 //
 
 @import Foundation;
 
-@interface HSUnitFormatterPrefix : NSObject
+@interface HAYUnitFormatterPrefix : NSObject
 
 @property (nonatomic, copy) NSString *prefix;
 @property (nonatomic, copy) NSString *symbol;

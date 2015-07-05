@@ -2,23 +2,23 @@
 //  NSArray+Class.m
 //
 
-#import <objc/runtime.h>
+@import ObjectiveC.runtime;
 
 #import "NSObject+Swizzle.h"
 
 @implementation NSObject (Swizzle)
 
-+ (void)swizzleInstanceMethod:(SEL)firstMethod withMethod:(SEL)secondMethod
++ (void)hay_swizzleInstanceMethod:(SEL)firstMethod withMethod:(SEL)secondMethod
 {
     @synchronized (self)
     {
         Class class = [self class];
-        
-        [[self class] swizzleInstanceMethod:firstMethod withMethod:secondMethod inClass:class];
+
+        [[self class] hay_swizzleInstanceMethod:firstMethod withMethod:secondMethod inClass:class];
     }
 }
 
-+ (void)swizzleInstanceMethod:(SEL)firstMethod withMethod:(SEL)secondMethod inClass:(Class)class
++ (void)hay_swizzleInstanceMethod:(SEL)firstMethod withMethod:(SEL)secondMethod inClass:(Class)class
 {
     SEL originalSelector = firstMethod;
     SEL swizzledSelector = secondMethod;
@@ -38,17 +38,17 @@
     }
 }
 
-+ (void)swizzleClassMethod:(SEL)firstMethod withMethod:(SEL)secondMethod
++ (void)hay_swizzleClassMethod:(SEL)firstMethod withMethod:(SEL)secondMethod
 {
     @synchronized (self)
     {
         Class class = object_getClass((id)self);
-        
-        [self swizzleClassMethod:firstMethod withMethod:secondMethod inClass:class];
+
+        [self hay_swizzleClassMethod:firstMethod withMethod:secondMethod inClass:class];
     }
 }
 
-+ (void)swizzleClassMethod:(SEL)firstMethod withMethod:(SEL)secondMethod inClass:(Class)class
++ (void)hay_swizzleClassMethod:(SEL)firstMethod withMethod:(SEL)secondMethod inClass:(Class)class
 {
     SEL originalSelector = firstMethod;
     SEL swizzledSelector = secondMethod;

@@ -10,17 +10,17 @@
 
 @implementation UIApplication (Screenshot)
 
-- (UIImage *)screenshot
+- (UIImage *)hay_screenshot
 {
-    return [self screenshotExcludingWindows:nil withStatusBar:YES];
+    return [self hay_screenshotExcludingWindows:nil withStatusBar:YES];
 }
 
-- (UIImage *)screenshotExcludingWindows:(NSArray *)windows
+- (UIImage *)hay_screenshotExcludingWindows:(NSArray *)windows
 {
-    return [self screenshotExcludingWindows:windows withStatusBar:YES];
+    return [self hay_screenshotExcludingWindows:windows withStatusBar:YES];
 }
 
-- (UIImage *)screenshotExcludingWindows:(NSArray *)windows withStatusBar:(BOOL)statusBar
+- (UIImage *)hay_screenshotExcludingWindows:(NSArray *)windows withStatusBar:(BOOL)statusBar
 {
     NSMutableArray* sourceWindows = [self.windows mutableCopy];
     
@@ -43,7 +43,7 @@
     
     for (UIView *view in views)
     {
-        [images addObject:[view snapshotImageWithScale:2.0]];
+        [images addObject:[view hay_snapshotImageWithScale:2.0]];
     }
     
     return [images copy];

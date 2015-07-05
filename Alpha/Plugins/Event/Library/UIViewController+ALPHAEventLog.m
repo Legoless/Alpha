@@ -17,8 +17,8 @@
 
 + (void)load
 {
-    [UIViewController swizzleInstanceMethod:@selector(viewDidAppear:) withMethod:@selector(alpha_viewDidAppear:)];
-    [UIViewController swizzleInstanceMethod:@selector(viewDidDisappear:) withMethod:@selector(alpha_viewDidDisappear:)];
+    [UIViewController hay_swizzleInstanceMethod:@selector(viewDidAppear:) withMethod:@selector(alpha_viewDidAppear:)];
+    [UIViewController hay_swizzleInstanceMethod:@selector(viewDidDisappear:) withMethod:@selector(alpha_viewDidDisappear:)];
 }
 
 - (void)alpha_viewDidAppear:(BOOL)animated
@@ -28,7 +28,7 @@
     event.sender = NSStringFromClass(self.class);
     event.info = @{ @"animated" : @(animated) };
 
-    if (![event.sender startsWith:@"ALPHA"])
+    if (![event.sender hasPrefix:@"ALPHA"])
     {
         [[ALPHAEventSource sharedCollector] addEvent:event];
     }
@@ -43,7 +43,7 @@
     event.sender = NSStringFromClass(self.class);
     event.info = @{ @"animated" : @(animated) };
 
-    if (![event.sender startsWith:@"ALPHA"])
+    if (![event.sender hasPrefix:@"ALPHA"])
     {
         [[ALPHAEventSource sharedCollector] addEvent:event];
     }

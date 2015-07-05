@@ -5,7 +5,7 @@ typedef enum : NSUInteger {
     HSUnitFormatterUnitTypeMeter
 } HSUnitFormatterUnitType;
 
-@interface HSUnitFormatter : NSFormatter
+@interface HAYUnitFormatter : NSFormatter
 
 @property (nonatomic, copy) NSString *unit;
 

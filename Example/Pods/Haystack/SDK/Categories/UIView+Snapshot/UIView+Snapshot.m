@@ -6,12 +6,12 @@
 
 @implementation UIView (Snapshot)
 
-- (UIImage *)snapshotImage
+- (UIImage *)hay_snapshotImage
 {
-    return [self snapshotImageWithScale:2.0];
+    return [self hay_snapshotImageWithScale:2.0];
 }
 
-- (UIImage *)snapshotImageWithScale:(CGFloat)scale
+- (UIImage *)hay_snapshotImageWithScale:(CGFloat)scale
 {
 	UIGraphicsBeginImageContextWithOptions (self.bounds.size, NO, scale);
     

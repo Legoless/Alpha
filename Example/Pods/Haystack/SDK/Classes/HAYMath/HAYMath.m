@@ -1,8 +1,8 @@
-#import "HSMath.h"
+#import "HAYMath.h"
 
 #define ARC4RANDOM_MAX 0x100000000
 
-@implementation HSMath
+@implementation HAYMath
 
 + (double)degreesToRadians:(double)angle
 {

@@ -6,8 +6,8 @@
 
 @interface UIView (Snapshot)
 
-- (UIImage *)snapshotImage;
+- (UIImage *)hay_snapshotImage;
 
-- (UIImage *)snapshotImageWithScale:(CGFloat)scale;
+- (UIImage *)hay_snapshotImageWithScale:(CGFloat)scale;
 
 @end

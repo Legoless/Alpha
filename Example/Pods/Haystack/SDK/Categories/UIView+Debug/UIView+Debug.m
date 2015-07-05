@@ -6,7 +6,7 @@
 
 @implementation UIView (Debug)
 
-- (NSString *)detailedDebugDescription
+- (NSString *)hay_detailedDebugDescription
 {
     NSMutableString* debugDescription = [[self debugDescription] mutableCopy];
     

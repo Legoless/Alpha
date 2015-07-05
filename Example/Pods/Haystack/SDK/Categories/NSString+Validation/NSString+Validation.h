@@ -6,8 +6,8 @@
 
 @interface NSString (Validation)
 
-- (BOOL)isValidEmail;
+- (BOOL)hay_isValidEmail;
 
-- (BOOL)isValidEmailWithStrictFilter:(BOOL)strict;
+- (BOOL)hay_isValidEmailWithStrictFilter:(BOOL)strict;
 
 @end

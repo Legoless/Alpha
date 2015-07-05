@@ -6,10 +6,10 @@
 
 @interface UIApplication (Screenshot)
 
-- (UIImage *)screenshot;
+- (UIImage *)hay_screenshot;
 
-- (UIImage *)screenshotExcludingWindows:(NSArray *)windows;
+- (UIImage *)hay_screenshotExcludingWindows:(NSArray *)windows;
 
-- (UIImage *)screenshotExcludingWindows:(NSArray *)windows withStatusBar:(BOOL)statusBar;
+- (UIImage *)hay_screenshotExcludingWindows:(NSArray *)windows withStatusBar:(BOOL)statusBar;
 
 @end

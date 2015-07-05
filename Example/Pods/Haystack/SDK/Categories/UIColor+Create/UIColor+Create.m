@@ -6,17 +6,17 @@
 
 @implementation UIColor (Create)
 
-+ (UIColor *)colorWith8BitRed:(NSInteger)red green:(NSInteger)green blue:(NSInteger)blue
++ (UIColor *)hay_colorWith8BitRed:(NSInteger)red green:(NSInteger)green blue:(NSInteger)blue
 {
-    return [UIColor colorWith8BitRed:red green:green blue:blue alpha:1.0];
+    return [UIColor hay_colorWith8BitRed:red green:green blue:blue alpha:1.0];
 }
 
-+ (UIColor *)colorWith8BitRed:(NSInteger)red green:(NSInteger)green blue:(NSInteger)blue alpha:(CGFloat)alpha
++ (UIColor *)hay_colorWith8BitRed:(NSInteger)red green:(NSInteger)green blue:(NSInteger)blue alpha:(CGFloat)alpha
 {
     return [UIColor colorWithRed:(red / 255.0) green:(green / 255.0) blue:(blue / 255.0) alpha:alpha];
 }
 
-+ (UIColor *)colorWithHex:(NSString *)hex
++ (UIColor *)hay_colorWithHex:(NSString *)hex
 {
     //
     // Test for hash on start, remove it if necessary
@@ -64,21 +64,21 @@
     NSScanner *bScanner = [NSScanner scannerWithString:blueHex];
     [bScanner scanHexInt:&blueInt];
     
-    return [UIColor colorWith8BitRed:redInt green:greenInt blue:blueInt alpha:alphaInt / 255.0];
+    return [UIColor hay_colorWith8BitRed:redInt green:greenInt blue:blueInt alpha:alphaInt / 255.0];
 }
 
-+ (UIColor *)colorWithObject:(id)object
++ (UIColor *)hay_colorWithObject:(id)object
 {
     if ([object isKindOfClass:[NSString class]])
     {
-        UIColor* color = [self colorWithName:object];
+        UIColor* color = [self hay_colorWithName:object];
         
         if (color)
         {
             return color;
         }
         
-        return [self colorWithHex:object];
+        return [self hay_colorWithHex:object];
     }
     else if ([object isKindOfClass:[UIColor class]])
     {
@@ -88,9 +88,9 @@
     return nil;
 }
 
-+ (UIColor *)colorWithName:(NSString *)name
++ (UIColor *)hay_colorWithName:(NSString *)name
 {
-    id color = [self colorObjectWithName:name];
+    id color = [self hay_colorObjectWithName:name];
     
     if ([color isKindOfClass:[NSArray class]])
     {
@@ -104,9 +104,9 @@
     return nil;
 }
 
-+ (NSArray *)colorsWithName:(NSString *)name
++ (NSArray *)hay_colorsWithName:(NSString *)name
 {
-    id color = [self colorObjectWithName:name];
+    id color = [self hay_colorObjectWithName:name];
     
     if ([color isKindOfClass:[NSArray class]])
     {
@@ -116,7 +116,7 @@
     return nil;
 }
 
-+ (id)colorObjectWithName:(NSString *)name
++ (id)hay_colorObjectWithName:(NSString *)name
 {
     NSString* string = name;
     
@@ -138,7 +138,7 @@
     NSString* selectorString = [NSString stringWithFormat:@"%@Color", string];
     
     //
-    // Try if UIColor responds to name
+    // Try if UIColor responds to hay_name
     //
     
     SEL selector = NSSelectorFromString(selectorString);
@@ -152,7 +152,7 @@
             selectorString = [NSString stringWithFormat:@"%@Colors", string];
             
             //
-            // Try if UIColor responds to name
+            // Try if UIColor responds to hay_name
             //
             
             selector = NSSelectorFromString(selectorString);

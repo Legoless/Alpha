@@ -13,6 +13,6 @@
  *
  *  @return object
  */
-- (id)hs_objectAtIndex:(NSInteger)index;
+- (id)hay_objectAtIndex:(NSInteger)index;
 
 @end

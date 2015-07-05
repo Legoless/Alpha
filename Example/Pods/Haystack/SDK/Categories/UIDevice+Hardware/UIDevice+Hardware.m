@@ -12,7 +12,7 @@
 
 @implementation UIDevice (Hardware)
 
-- (float)hs_batteryLevel
+- (float)hay_batteryLevel
 {
     BOOL batteryMonitoring = self.batteryMonitoringEnabled;
     
@@ -35,54 +35,54 @@
 
 #pragma mark - CPU related
 
-- (NSUInteger)hs_cpuCount
+- (NSUInteger)hay_cpuCount
 {
-    return (NSUInteger)[[self systemInfoByName:@"hw.ncpu"] integerValue];
+    return (NSUInteger)[[self hay_systemInfoByName:@"hw.ncpu"] integerValue];
 }
 
-- (NSUInteger)hs_cpuActiveCount
+- (NSUInteger)hay_cpuActiveCount
 {
-    return (NSUInteger)[[self systemInfoByName:@"hw.activecpu"] integerValue];
+    return (NSUInteger)[[self hay_systemInfoByName:@"hw.activecpu"] integerValue];
 }
 
-- (NSUInteger)hs_cpuPhysicalCount
+- (NSUInteger)hay_cpuPhysicalCount
 {
-    return (NSUInteger)[[self systemInfoByName:@"hw.physicalcpu"] integerValue];
+    return (NSUInteger)[[self hay_systemInfoByName:@"hw.physicalcpu"] integerValue];
 }
 
-- (NSUInteger)hs_cpuPhysicalMaximumCount
+- (NSUInteger)hay_cpuPhysicalMaximumCount
 {
-    return (NSUInteger)[[self systemInfoByName:@"hw.physicalcpu_max"] integerValue];
+    return (NSUInteger)[[self hay_systemInfoByName:@"hw.physicalcpu_max"] integerValue];
 }
 
-- (NSUInteger)hs_cpuLogicalCount
+- (NSUInteger)hay_cpuLogicalCount
 {
-    return (NSUInteger)[[self systemInfoByName:@"hw.logicalcpu"] integerValue];
+    return (NSUInteger)[[self hay_systemInfoByName:@"hw.logicalcpu"] integerValue];
 }
 
-- (NSUInteger)hs_cpuLogicalMaximumCount
+- (NSUInteger)hay_cpuLogicalMaximumCount
 {
-    return (NSUInteger)[[self systemInfoByName:@"hw.logicalcpu_max"] integerValue];
+    return (NSUInteger)[[self hay_systemInfoByName:@"hw.logicalcpu_max"] integerValue];
 }
 
-- (NSUInteger)hs_cpuFrequency
+- (NSUInteger)hay_cpuFrequency
 {
-    return (NSUInteger)[[self systemInfoByName:@"hw.cpufrequency"] integerValue];
+    return (NSUInteger)[[self hay_systemInfoByName:@"hw.cpufrequency"] integerValue];
 }
 
-- (NSUInteger)hs_cpuMaximumFrequency
+- (NSUInteger)hay_cpuMaximumFrequency
 {
-    return (NSUInteger)[[self systemInfoByName:@"hw.cpufrequency_max"] integerValue];
+    return (NSUInteger)[[self hay_systemInfoByName:@"hw.cpufrequency_max"] integerValue];
 }
 
-- (NSUInteger)hs_cpuMinimumFrequency
+- (NSUInteger)hay_cpuMinimumFrequency
 {
-    return (NSUInteger)[[self systemInfoByName:@"hw.cpufrequency_min"] integerValue];
+    return (NSUInteger)[[self hay_systemInfoByName:@"hw.cpufrequency_min"] integerValue];
 }
 
-- (NSString *)hs_cpuType
+- (NSString *)hay_cpuType
 {
-    NSString *cpuType = [self systemInfoByName:@"hw.cputype"];
+    NSString *cpuType = [self hay_systemInfoByName:@"hw.cputype"];
     
     switch (cpuType.integerValue)
     {
@@ -112,17 +112,17 @@
     }
 }
 
-- (NSString *)hs_cpuSubType
+- (NSString *)hay_cpuSubType
 {
-    return [self systemInfoByName:@"hw.cpusubtype"];
+    return [self hay_systemInfoByName:@"hw.cpusubtype"];
 }
 
-- (NSString *)hs_cpuArchitectures
+- (NSString *)hay_cpuArchitectures
 {
     NSMutableArray *architectures = [NSMutableArray array];
     
-    NSInteger type = [self systemInfoByName:@"hw.cputype"].integerValue;
-    NSInteger subtype = [self systemInfoByName:@"hw.cpusubtype"].integerValue;
+    NSInteger type = [self hay_systemInfoByName:@"hw.cputype"].integerValue;
+    NSInteger subtype = [self hay_systemInfoByName:@"hw.cpusubtype"].integerValue;
     
     if (type == CPU_TYPE_X86)
     {
@@ -162,9 +162,9 @@
 
 #pragma mark - Memory Related
 
-- (unsigned long long)hs_memoryMarketingSize
+- (unsigned long long)hay_memoryMarketingSize
 {
-    unsigned long long totalSpace = [self hs_memoryPhysicalSize];
+    unsigned long long totalSpace = [self hay_memoryPhysicalSize];
     
     double next = pow(2, ceil (log (totalSpace) / log(2)));
     
@@ -172,29 +172,29 @@
 
 }
 
-- (unsigned long long)hs_memoryPhysicalSize
+- (unsigned long long)hay_memoryPhysicalSize
 {
-    return (unsigned long long)[[self systemInfoByName:@"hw.memsize"] longLongValue];
+    return (unsigned long long)[[self hay_systemInfoByName:@"hw.memsize"] longLongValue];
 }
 
 #pragma mark - Disk Space Related
 
-- (unsigned long long)hs_diskMarketingSpace
+- (unsigned long long)hay_diskMarketingSpace
 {
-    unsigned long long totalSpace = [self hs_diskTotalSpace];
+    unsigned long long totalSpace = [self hay_diskTotalSpace];
     
     double next = pow(2, ceil (log (totalSpace) / log(2)));
     
     return (unsigned long long)next;
 }
 
-- (unsigned long long)hs_diskTotalSpace
+- (unsigned long long)hay_diskTotalSpace
 {
     NSDictionary *fattributes = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:nil];
     return [[fattributes objectForKey:NSFileSystemSize] unsignedLongLongValue];
 }
 
-- (unsigned long long)hs_diskFreeSpace
+- (unsigned long long)hay_diskFreeSpace
 {
     NSDictionary *fattributes = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:nil];
     return [[fattributes objectForKey:NSFileSystemFreeSize] unsignedLongLongValue];

@@ -1,14 +1,14 @@
 //
-//  HSUnitFormatterPrefix.m
+//  HAYUnitFormatterPrefix.m
 //
 
-#import "HSUnitFormatterPrefix.h"
+#import "HAYUnitFormatterPrefix.h"
 
-@implementation HSUnitFormatterPrefix
+@implementation HAYUnitFormatterPrefix
 
 + (instancetype)unitFormatterPrefixForPrefix:(NSString *)prefix symbol:(NSString *)symbol decimal:(double)decimal shortScaleWord:(NSString *)shortScaleWord longScaleWord:(NSString *)longScaleWord
 {
-    HSUnitFormatterPrefix *formatterPrefix = [[HSUnitFormatterPrefix alloc] init];
+    HAYUnitFormatterPrefix *formatterPrefix = [[HAYUnitFormatterPrefix alloc] init];
     
     formatterPrefix.prefix = prefix;
     formatterPrefix.symbol = symbol;

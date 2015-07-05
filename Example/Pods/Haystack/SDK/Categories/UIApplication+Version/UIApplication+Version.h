@@ -11,27 +11,27 @@
  *
  * @return NSString application name
  */
-- (NSString *)name;
+- (NSString *)hay_name;
 
 /*!
  * Returns version number in x.y.z format
  *
  * @return NSString version number
  */
-- (NSString *)version;
+- (NSString *)hay_version;
 
 /*!
 * Returns build number as defined in bundle.
 *
  * @return NSString build number
 */
-- (NSString *)build;
+- (NSString *)hay_build;
 
 /**
  *  Returns main bundle identifier
  *
  *  @return main bundle identifier
  */
-- (NSString *)bundleIdentifier;
+- (NSString *)hay_bundleIdentifier;
 
 @end

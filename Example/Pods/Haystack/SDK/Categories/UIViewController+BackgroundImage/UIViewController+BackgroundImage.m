@@ -9,12 +9,12 @@
 
 @implementation UIViewController (BackgroundImage)
 
-- (void)setBackgroundImage:(UIImage *)image
+- (void)hay_setBackgroundImage:(UIImage *)image
 {
-    [self setBackgroundImage:image animated:NO];
+    [self hay_setBackgroundImage:image animated:NO];
 }
 
-- (void)setBackgroundImage:(UIImage *)image animated:(BOOL)animated
+- (void)hay_setBackgroundImage:(UIImage *)image animated:(BOOL)animated
 {
     UIImageView* imageView = nil;
     
@@ -57,7 +57,7 @@
     }
 }
 
-- (UIImage *)backgroundImage
+- (UIImage *)hay_backgroundImage
 {
     if ([self.view.subviews count] && [self.view.subviews[0] isKindOfClass:[UIImageView class]] && [self.view.subviews[0] tag] == BACKGROUND_IMAGEVIEW_TAG)
     {
@@ -69,7 +69,7 @@
     return nil;
 }
 
-- (UIImageView *)backgroundImageView
+- (UIImageView *)hay_backgroundImageView
 {
     if ([self.view.subviews count] && [self.view.subviews[0] isKindOfClass:[UIImageView class]] && [self.view.subviews[0] tag] == BACKGROUND_IMAGEVIEW_TAG)
     {

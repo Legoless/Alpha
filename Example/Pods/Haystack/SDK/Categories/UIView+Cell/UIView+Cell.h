@@ -6,8 +6,8 @@
 
 @interface UIView (Cell)
 
-- (UITableViewCell *)parentTableViewCell;
+- (UITableViewCell *)hay_parentTableViewCell;
 
-- (UICollectionViewCell *)parentCollectionViewCell;
+- (UICollectionViewCell *)hay_parentCollectionViewCell;
 
 @end

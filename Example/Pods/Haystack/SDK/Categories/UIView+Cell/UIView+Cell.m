@@ -8,14 +8,14 @@
 
 @implementation UIView (Cell)
 
-- (UITableViewCell *)parentTableViewCell
+- (UITableViewCell *)hay_parentTableViewCell
 {
-    return (UITableViewCell *)[self parentViewOfType:[UITableViewCell class]];
+    return (UITableViewCell *) [self hay_parentViewOfType:[UITableViewCell class]];
 }
 
-- (UICollectionViewCell *)parentCollectionViewCell
+- (UICollectionViewCell *)hay_parentCollectionViewCell
 {
-    return (UICollectionViewCell *)[self parentViewOfType:[UICollectionViewCell class]];
+    return (UICollectionViewCell *) [self hay_parentViewOfType:[UICollectionViewCell class]];
 }
 
 @end

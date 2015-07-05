@@ -9,16 +9,16 @@
  */
 @interface UIDevice (Network)
 
-- (NSString *)hs_SSID;
+- (NSString *)hay_SSID;
 
-- (NSString *)hs_BSSID;
+- (NSString *)hay_BSSID;
 
 /**
  *  Returns MAC address of network adapter
  *
  *  @return MAC address in formatted shape
  */
-- (NSString *)hs_macAddress;
+- (NSString *)hay_macAddress;
 
 /**
  *  Returns dictionary of local IP addresses, where key is the network interface
@@ -26,19 +26,19 @@
  *
  *  @return dictionary of local IP addresses
  */
-- (NSDictionary *)hs_localIPAddresses;
+- (NSDictionary *)hay_localIPAddresses;
 
 /**
  *  Returns number of bytes over WiFi
  *
  *  @return number of bytes
  */
-- (NSNumber *)hs_receivedWiFi;
+- (NSNumber *)hay_receivedWiFi;
 
-- (NSNumber *)hs_receivedCellular;
+- (NSNumber *)hay_receivedCellular;
 
-- (NSNumber *)hs_sentWifi;
+- (NSNumber *)hay_sentWifi;
 
-- (NSNumber *)hs_sentCellular;
+- (NSNumber *)hay_sentCellular;
 
 @end

@@ -15,12 +15,12 @@
 
 @implementation UIDevice (Software)
 
-- (BOOL)isJailbroken
+- (BOOL)hay_isJailbroken
 {
-    return [self hs_jailbreakStatus] != UIDeviceJailbreakStatusNotJailbroken;
+    return [self hay_jailbreakStatus] != UIDeviceJailbreakStatusNotJailbroken;
 }
 
-- (UIDeviceJailbreakStatus)hs_jailbreakStatus
+- (UIDeviceJailbreakStatus)hay_jailbreakStatus
 {
     #if !TARGET_IPHONE_SIMULATOR
     
@@ -128,7 +128,7 @@
     return UIDeviceJailbreakStatusNotJailbroken;
 }
 
-- (NSDate *)hs_systemBootDate
+- (NSDate *)hay_systemBootDate
 {
     const int MIB_SIZE = 2;
     
@@ -150,12 +150,12 @@
     return nil;
 }
 
-- (NSUInteger)hs_processCount
+- (NSUInteger)hay_processCount
 {
-    return [self hs_processList].count;
+    return [self hay_processList].count;
 }
 
-- (NSArray *)hs_processList
+- (NSArray *)hay_processList
 {
     
     int mib[4] = {CTL_KERN, KERN_PROC, KERN_PROC_ALL, 0};
@@ -243,7 +243,7 @@
                     #endif
                     
                     NSDictionary *dict = @{@"pid" : processID,
-                                           @"name" : processName,
+                                           @"hay_name" : processName,
                                            @"priority" : processPriority,
                                            @"ruid" : ruid,
                                            @"rgid" : rgid,
@@ -267,7 +267,7 @@
     return nil;
 }
 
-- (float)hs_cpuUsage
+- (float)hay_cpuUsage
 {
     processor_info_array_t _cpuInfo, _prevCPUInfo = nil;
     mach_msg_type_number_t _numCPUInfo, _numPrevCPUInfo = 0;

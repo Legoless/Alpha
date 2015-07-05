@@ -6,7 +6,7 @@
 
 @implementation NSData (Base64)
 
-- (NSString *)base64String
+- (NSString *)hay_base64String
 {
     
     const uint8_t *input = self.bytes;

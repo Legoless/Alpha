@@ -6,7 +6,7 @@
 
 @implementation UIView (Hierarchy)
 
-- (UIView *)parentViewOfType:(Class)class
+- (UIView *)hay_parentViewOfType:(Class)class
 {
     UIView *view = self.superview;
     

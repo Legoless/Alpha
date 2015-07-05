@@ -6,7 +6,7 @@
 
 @implementation NSURL (Parameters)
 
-- (NSDictionary *)queryParameters
+- (NSDictionary *)hay_queryParameters
 {
     NSString* url = [self query];
     
@@ -34,12 +34,12 @@
     return [parameters copy];
 }
 
-- (NSURL *)urlByAppendingParameter:(NSString *)parameter value:(NSString *)value
+- (NSURL *)hay_urlByAppendingParameter:(NSString *)parameter value:(NSString *)value
 {
-    return [self urlByAppendingParameters:@{ parameter : value }];
+    return [self hay_urlByAppendingParameters:@{ parameter : value }];
 }
 
-- (NSURL *)urlByAppendingParameters:(NSDictionary *)parameters
+- (NSURL *)hay_urlByAppendingParameters:(NSDictionary *)parameters
 {
     NSMutableString *absoluteURL = [[self absoluteString] mutableCopy];
     

@@ -17,7 +17,7 @@ NSString* const ALPHAInterfaceEventNotification = @"kALPHAInterfaceEventNotifica
 
 + (void)load
 {
-    [UIApplication swizzleInstanceMethod:@selector(sendEvent:) withMethod:@selector(alpha_sendEvent:)];
+    [UIApplication hay_swizzleInstanceMethod:@selector(sendEvent:) withMethod:@selector(alpha_sendEvent:)];
 }
 
 - (void)alpha_sendEvent:(UIEvent *)event

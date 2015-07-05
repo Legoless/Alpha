@@ -5,13 +5,13 @@
 #include <Endian.h>
 
 #import "UIDevice+DeviceInfo.h"
-#import "HSMath.h"
+#import "HAYMath.h"
 
 int	sysctlbyname(const char *, void *, size_t *, void *, size_t);
 
 @implementation UIDevice (DeviceInfo)
 
-- (BOOL)isWidescreen
+- (BOOL)hay_isWidescreen
 {
     CGRect bounds = [[UIScreen mainScreen] bounds];
     
@@ -24,7 +24,7 @@ int	sysctlbyname(const char *, void *, size_t *, void *, size_t);
     
     #endif
     
-    NSInteger gcd = [HSMath greatestCommonDivisorForA:(NSInteger)bounds.size.width b:(NSInteger)bounds.size.height];
+    NSInteger gcd = [HAYMath greatestCommonDivisorForA:(NSInteger) bounds.size.width b:(NSInteger) bounds.size.height];
     
     double larger = fmax (bounds.size.width, bounds.size.height);
     double smaller = fmin (bounds.size.width, bounds.size.height);
@@ -33,7 +33,7 @@ int	sysctlbyname(const char *, void *, size_t *, void *, size_t);
 }
 
 
-- (BOOL)isiPhone
+- (BOOL)hay_isiPhone
 {
     if ([self.model isEqualToString:@"iPhone"] && [self userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
     {
@@ -43,7 +43,7 @@ int	sysctlbyname(const char *, void *, size_t *, void *, size_t);
     return NO;
 }
 
-- (BOOL)isiPod
+- (BOOL)hay_isiPod
 {
     if ([self.model isEqualToString:@"iPod"] && [self userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
     {
@@ -53,7 +53,7 @@ int	sysctlbyname(const char *, void *, size_t *, void *, size_t);
     return NO;
 }
 
-- (BOOL)isiPad
+- (BOOL)hay_isiPad
 {
     if ([self userInterfaceIdiom] == UIUserInterfaceIdiomPad)
     {
@@ -63,7 +63,7 @@ int	sysctlbyname(const char *, void *, size_t *, void *, size_t);
     return NO;
 }
 
-- (NSString *)systemInfoByName:(NSString *)name
+- (NSString *)hay_systemInfoByName:(NSString *)name
 {
     const char* typeSpecifier = [name cStringUsingEncoding:NSASCIIStringEncoding];
     
@@ -109,14 +109,14 @@ int	sysctlbyname(const char *, void *, size_t *, void *, size_t);
     return results;
 }
 
-- (NSString *)modelIdentifier
+- (NSString *)hay_modelIdentifier
 {
-    return [self systemInfoByName:@"hw.machine"];
+    return [self hay_systemInfoByName:@"hw.machine"];
 }
 
-- (NSString *)modelName
+- (NSString *)hay_modelName
 {
-    return [self modelNameForModelIdentifier:[self modelIdentifier]];
+    return [self modelNameForModelIdentifier:[self hay_modelIdentifier]];
 }
 
 - (NSString *)modelNameForModelIdentifier:(NSString *)modelIdentifier
@@ -382,33 +382,26 @@ int	sysctlbyname(const char *, void *, size_t *, void *, size_t);
     return modelIdentifier;
 }
 
-- (UIDeviceFamily)deviceFamily
+- (HAYDeviceFamily)hay_deviceFamily
 {
-    NSString *modelIdentifier = [self modelIdentifier];
+    NSString *modelIdentifier = [self hay_modelIdentifier];
     
     if ([modelIdentifier hasPrefix:@"iPhone"])
     {
-        return UIDeviceFamilyiPhone;
+        return HAYDeviceFamilyiPhone;
     }
     
     if ([modelIdentifier hasPrefix:@"iPod"])
     {
-        return UIDeviceFamilyiPod;
+        return HAYDeviceFamilyiPod;
     }
     
     if ([modelIdentifier hasPrefix:@"iPad"])
     {
-        return UIDeviceFamilyiPad;
+        return HAYDeviceFamilyiPad;
     }
     
-    return UIDeviceFamilyUnknown;
-}
-
-- (BOOL)isRunningTests
-{
-    NSDictionary *environment = [[NSProcessInfo processInfo] environment];
-    NSString *injectBundle = environment[@"XCInjectBundle"];
-    return injectBundle.length;
+    return HAYDeviceFamilyUnknown;
 }
 
 @end

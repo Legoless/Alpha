@@ -9,7 +9,7 @@
 /*!
  * Sets position of title in the button below image in the button
  */
-- (void)setTitleBelowWithSpacing:(CGFloat)spacing;
+- (void)hay_setTitleBelowWithSpacing:(CGFloat)spacing;
 
 /*!
  * Sets position of title in the button above image in the button

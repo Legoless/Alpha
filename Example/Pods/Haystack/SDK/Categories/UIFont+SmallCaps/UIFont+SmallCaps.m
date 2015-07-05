@@ -2,13 +2,13 @@
 //  UIFont+SmallCaps.m
 //
 
-#import <CoreText/CoreText.h>
+@import CoreText;
 
 #import "UIFont+SmallCaps.h"
 
 @implementation UIFont (SmallCaps)
 
-- (UIFont *)smallCapFont
+- (UIFont *)hay_smallCapFont
 {
     UIFontDescriptor *descriptor = [self fontDescriptor];
     
@@ -18,12 +18,12 @@
     return [UIFont fontWithDescriptor:descriptor size:0];
 }
 
-- (BOOL)isSystemFont
+- (BOOL)hay_isSystemFont
 {
     return ([self.familyName isEqualToString:[UIFont systemFontOfSize:12.0f].familyName]) ? YES : NO;
 }
 
-- (BOOL)hasSmallCaps
+- (BOOL)hay_hasSmallCaps
 {
     CFArrayRef  fontProperties  =  CTFontCopyFeatures ( ( __bridge CTFontRef ) self ) ;
 

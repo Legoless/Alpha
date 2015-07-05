@@ -5,41 +5,41 @@
 #import "NSString+Random.h"
 
 typedef enum : NSUInteger {
-    HSRandomStringTypeAlphaNumeric,
-    HSRandomStringTypeAlpha,
-    HSRandomStringTypeAny,
-} HSRandomStringType;
+    HAYRandomStringTypeAlphaNumeric,
+    HAYRandomStringTypeAlpha,
+    HAYRandomStringTypeAny,
+} HAYRandomStringType;
 
 @implementation NSString (Random)
 
-+ (NSString *)hs_randomAlphaNumericStringOfLength:(NSUInteger)length
++ (NSString *)hay_randomAlphaNumericStringOfLength:(NSUInteger)length
 {
-    return [self hs_randomStringWithType:HSRandomStringTypeAlphaNumeric length:length];
+    return [self hay_randomStringWithType:HAYRandomStringTypeAlphaNumeric length:length];
 }
 
-+ (NSString *)hs_randomAlphaStringOfLength:(NSUInteger)length
++ (NSString *)hay_randomAlphaStringOfLength:(NSUInteger)length
 {
-    return [self hs_randomStringWithType:HSRandomStringTypeAlpha length:length];
+    return [self hay_randomStringWithType:HAYRandomStringTypeAlpha length:length];
 }
 
-+ (NSString *)hs_randomStringOfLength:(NSUInteger)length
++ (NSString *)hay_randomStringOfLength:(NSUInteger)length
 {
-    return [self hs_randomStringWithType:HSRandomStringTypeAny length:length];
+    return [self hay_randomStringWithType:HAYRandomStringTypeAny length:length];
 }
 
-+ (NSString *)hs_randomStringWithType:(HSRandomStringType)type length:(NSUInteger)length;
++ (NSString *)hay_randomStringWithType:(HAYRandomStringType)type length:(NSUInteger)length;
 {
     NSString* baseCharacters = nil;
     
     switch (type)
     {
-        case HSRandomStringTypeAlpha:
+        case HAYRandomStringTypeAlpha:
             baseCharacters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
             break;
-        case HSRandomStringTypeAlphaNumeric:
+        case HAYRandomStringTypeAlphaNumeric:
             baseCharacters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             break;
-        case HSRandomStringTypeAny:
+        case HAYRandomStringTypeAny:
             baseCharacters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#$%&/()=?+<>-_,.[]{}@:;";
             break;
     }
@@ -54,7 +54,7 @@ typedef enum : NSUInteger {
     return randomString;
 }
 
-+ (NSString *)hs_UUID
++ (NSString *)hay_UUID
 {
     CFUUIDRef uuidObj = CFUUIDCreate(nil);
     

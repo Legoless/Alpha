@@ -6,17 +6,17 @@
 
 @implementation NSString (Additional)
 
-- (BOOL)endsWith:(NSString *)string
+- (BOOL)hay_endsWith:(NSString *)string
 {
     return [self hasSuffix:string];
 }
 
-- (BOOL)startsWith:(NSString *)string
+- (BOOL)hay_startsWith:(NSString *)string
 {
     return [self hasPrefix:string];
 }
 
-- (NSUInteger)numberOfOccurencesOfString:(NSString *)string
+- (NSUInteger)hay_numberOfOccurencesOfString:(NSString *)string
 {
     NSUInteger count = 0;
     NSUInteger length = [self length];

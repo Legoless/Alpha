@@ -11,16 +11,16 @@
  *
  * @return UIFont small cap font
  */
-- (UIFont *)smallCapFont;
+- (UIFont *)hay_smallCapFont;
 
 /*!
  * Returns true if current font is of same family as system font
  */
-- (BOOL)isSystemFont;
+- (BOOL)hay_isSystemFont;
 
 /*!
  * Returns true if font has small caps available
  */
-- (BOOL)hasSmallCaps;
+- (BOOL)hay_hasSmallCaps;
 
 @end

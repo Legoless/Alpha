@@ -8,17 +8,17 @@
 
 @implementation NSObject (Runtime)
 
-+ (NSArray *)subclasses
++ (NSArray *)hay_subclasses
 {
-    return [self subclassesOfClass:self];
+    return [self hay_subclassesOfClass:self];
 }
 
-- (NSArray *)subclasses
+- (NSArray *)hay_subclasses
 {
-    return [[self class] subclassesOfClass:[self class]];
+    return [[self class] hay_subclassesOfClass:[self class]];
 }
 
-+ (NSArray *)subclassesOfClass:(Class)parentClass
++ (NSArray *)hay_subclassesOfClass:(Class)parentClass
 {
     int numClasses = objc_getClassList(NULL, 0);
     Class *classes = NULL;

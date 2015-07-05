@@ -1,6 +1,6 @@
 @import Foundation;
 
-@interface HSWeakPointer : NSObject
+@interface HAYWeakPointer : NSObject
 
 /*! 
  * Holds weak reference to an object

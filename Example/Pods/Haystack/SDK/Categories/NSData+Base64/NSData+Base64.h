@@ -2,10 +2,10 @@
 //  NSData+Base64.h
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 @interface NSData (Base64)
 
-- (NSString *)base64String;
+- (NSString *)hay_base64String;
 
 @end

@@ -11,6 +11,6 @@
  *
  * @return BOOL YES when object is property list
  */
-- (BOOL)isPropertyList;
+- (BOOL)hay_isPropertyList;
 
 @end

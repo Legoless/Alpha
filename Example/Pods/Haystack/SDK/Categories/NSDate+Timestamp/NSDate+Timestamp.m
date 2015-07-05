@@ -6,36 +6,36 @@
 
 @implementation NSDate (Timestamp)
 
-+ (NSTimeInterval)unixTimestampFromDate:(NSDate *)date
++ (NSTimeInterval)hay_unixTimestampFromDate:(NSDate *)date
 {
     return [date timeIntervalSince1970];
 }
 
-+ (NSTimeInterval)timeIntervalUntilUnixTimeStamp:(NSTimeInterval)timestamp;
++ (NSTimeInterval)hay_timeIntervalUntilUnixTimeStamp:(NSTimeInterval)timestamp;
 {
     NSDate *timeStampDate = [NSDate dateWithTimeIntervalSince1970:timestamp];
     
     return [timeStampDate timeIntervalSinceNow];
 }
 
-- (NSTimeInterval)unixTimestamp
+- (NSTimeInterval)hay_unixTimestamp
 {
     return [self timeIntervalSince1970];
 }
 
-+ (NSDate *)dateWithUnixTimestamp:(NSTimeInterval)timestamp
++ (NSDate *)hay_dateWithUnixTimestamp:(NSTimeInterval)timestamp
 {
     return [NSDate dateWithTimeIntervalSince1970:timestamp];
 }
 
-+ (NSTimeInterval)unixTimestampForToday
++ (NSTimeInterval)hay_unixTimestampForToday
 {
-    return [self unixTimestampDayForDate:[NSDate date]];
+    return [self hay_unixTimestampDayForDate:[NSDate date]];
 }
 
-+ (NSTimeInterval)unixTimestampDayForDate:(NSDate *)date
++ (NSTimeInterval)hay_unixTimestampDayForDate:(NSDate *)date
 {
-    NSTimeInterval timestamp = [self unixTimestampFromDate:date];
+    NSTimeInterval timestamp = [self hay_unixTimestampFromDate:date];
     
     //
     // Cut away seconds and hours and milliseconds

@@ -1,14 +1,14 @@
 //
-//  HSUnitFormatterUnit.m
+//  HAYUnitFormatterUnit.m
 //
 
-#import "HSUnitFormatterUnit.h"
+#import "HAYUnitFormatterUnit.h"
 
-@implementation HSUnitFormatterUnit
+@implementation HAYUnitFormatterUnit
 
 + (instancetype)unitFormatterUnitForFullName:(NSString *)fullName shortName:(NSString *)shortName excludedPrefixes:(NSArray *)excludedPrefixes
 {
-    HSUnitFormatterUnit *unit = [[HSUnitFormatterUnit alloc] init];
+    HAYUnitFormatterUnit *unit = [[HAYUnitFormatterUnit alloc] init];
     
     unit.fullName = fullName;
     unit.shortName = shortName;

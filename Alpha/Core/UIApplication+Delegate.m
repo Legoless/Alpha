@@ -22,8 +22,7 @@
     // Swizzle delegate methods, to hide Alpha's delegation injection
     //
     
-    [UIApplication swizzleInstanceMethod:@selector(setDelegate:) withMethod:@selector(alpha_setDelegate:)];
-    //[UIApplication swizzleInstanceMethod:@selector(delegate) withMethod:@selector(alpha_delegate)];
+    [UIApplication hay_swizzleInstanceMethod:@selector(setDelegate:) withMethod:@selector(alpha_setDelegate:)];
 }
 
 - (id)alpha_injectedDelegate

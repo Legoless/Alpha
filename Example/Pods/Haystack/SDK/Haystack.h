@@ -13,9 +13,9 @@
 #import "NSString+Validation.h"
 #import "NSURL+Parameters.h"
 
-#import "HSMath.h"
-#import "HSWeakPointer.h"
-#import "HSUnitFormatter.h"
+#import "HAYMath.h"
+#import "HAYWeakPointer.h"
+#import "HAYUnitFormatter.h"
 
 #import "UIApplication+Information.h"
 #import "UIApplication+Screenshot.h"

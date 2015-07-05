@@ -6,12 +6,12 @@
 
 @implementation NSString (Validation)
 
-- (BOOL)isValidEmail
+- (BOOL)hay_isValidEmail
 {
-    return [self isValidEmailWithStrictFilter:YES];
+    return [self hay_isValidEmailWithStrictFilter:YES];
 }
 
-- (BOOL)isValidEmailWithStrictFilter:(BOOL)strict
+- (BOOL)hay_isValidEmailWithStrictFilter:(BOOL)strict
 {
     //
     // Discussion http://stackoverflow.com/questions/3139619/check-that-an-email-address-is-valid-on-ios

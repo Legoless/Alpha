@@ -73,7 +73,7 @@
         }
     }
     
-    UIImage *screenshot = [[UIApplication sharedApplication] screenshotExcludingWindows:excludedWindows];
+    UIImage *screenshot = [[UIApplication sharedApplication] hay_screenshotExcludingWindows:excludedWindows];
     
     [self saveImage:screenshot];
 }

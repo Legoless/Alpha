@@ -23,17 +23,17 @@
 
 @implementation UIDevice (Network)
 
-- (NSString *)hs_SSID
+- (NSString *)hay_SSID
 {
     return [self fetchSSID][@"SSID"];
 }
 
-- (NSString *)hs_BSSID
+- (NSString *)hay_BSSID
 {
     return [self fetchSSID][@"BSSID"];
 }
 
-- (NSString *)hs_macAddress
+- (NSString *)hay_macAddress
 {
     int mib[6];
     size_t len;
@@ -82,7 +82,7 @@
     return outstring;
 }
 
-- (NSDictionary *)hs_localIPAddresses
+- (NSDictionary *)hay_localIPAddresses
 {
     NSMutableDictionary *localInterfaces = [NSMutableDictionary dictionary];
     
@@ -121,22 +121,22 @@
     return [localInterfaces copy];
 }
 
-- (NSNumber *)hs_receivedWiFi
+- (NSNumber *)hay_receivedWiFi
 {
     return [[self networkDataCounters] objectAtIndex:1];
 }
 
-- (NSNumber *)hs_receivedCellular
+- (NSNumber *)hay_receivedCellular
 {
     return [[self networkDataCounters] objectAtIndex:3];
 }
 
-- (NSNumber *)hs_sentWifi
+- (NSNumber *)hay_sentWifi
 {
     return [[self networkDataCounters] objectAtIndex:0];
 }
 
-- (NSNumber *)hs_sentCellular
+- (NSNumber *)hay_sentCellular
 {
     return [[self networkDataCounters] objectAtIndex:2];
 }

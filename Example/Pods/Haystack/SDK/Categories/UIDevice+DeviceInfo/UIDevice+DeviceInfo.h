@@ -4,18 +4,16 @@
 
 @import UIKit;
 
-#define isWideScreen ([[UIDevice currentDevice] isWidescreen])
-
 /*!
  * Device family enum
  */
-typedef NS_ENUM(NSUInteger, UIDeviceFamily)
+typedef NS_ENUM(NSUInteger, HAYDeviceFamily)
 {
-    UIDeviceFamilyiPhone,
-    UIDeviceFamilyiPod,
-    UIDeviceFamilyiPad,
-    UIDeviceFamilyAppleTV,
-    UIDeviceFamilyUnknown,
+    HAYDeviceFamilyiPhone,
+    HAYDeviceFamilyiPod,
+    HAYDeviceFamilyiPad,
+    HAYDeviceFamilyAppleTV,
+    HAYDeviceFamilyUnknown,
 };
 
 /*!
@@ -26,52 +24,45 @@ typedef NS_ENUM(NSUInteger, UIDeviceFamily)
 /*!
  * Returns YES if device is iPhone.
  */
-- (BOOL)isiPhone;
+- (BOOL)hay_isiPhone;
 
 /*!
  * Returns YES if device is iPod.
  */
-- (BOOL)isiPod;
+- (BOOL)hay_isiPod;
 
 /*!
  * Returns YES if device is iPad.
  */
-- (BOOL)isiPad;
+- (BOOL)hay_isiPad;
 
 /*!
  * Returns if the device is iPhone 5 or iPod touch that has widescreen display of 16:9 ratio.
  */
-- (BOOL)isWidescreen;
+- (BOOL)hay_isWidescreen;
 
 /*!
- * Returns formatted consumer name of Apple device
+ * Returns formatted consumer hay_name of Apple device
  */
-- (NSString *)modelIdentifier;
+- (NSString *)hay_modelIdentifier;
 
 /*!
- * Returns model name.
+ * Returns model hay_name.
  */
-- (NSString *)modelName;
+- (NSString *)hay_modelName;
 
 /*!
  * Returns device family of the device
  */
-- (UIDeviceFamily)deviceFamily;
+- (HAYDeviceFamily)hay_deviceFamily;
 
 /**
  *  Returns specific system information by name
  *
- *  @param name type specifier
+ *  @param hay_name type specifier
  *
  *  @return system information in human readable format
  */
-- (NSString *)systemInfoByName:(NSString *)name;
-
-/*!
- *  Returns YES if target is currently being tested
- *
- *  @return YES if running tests
- */
-- (BOOL)isRunningTests;
+- (NSString *)hay_systemInfoByName:(NSString *)name;
 
 @end

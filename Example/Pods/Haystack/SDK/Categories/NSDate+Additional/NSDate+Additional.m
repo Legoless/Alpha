@@ -6,7 +6,7 @@
 
 @implementation NSDate (Timestamp)
 
-- (NSComparisonResult)compareDateWithoutTimeTo:(NSDate *)date
+- (NSComparisonResult)hay_compareDateWithoutTimeTo:(NSDate *)date
 {
     return NSOrderedSame;
 }

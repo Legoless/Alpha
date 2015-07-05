@@ -2,13 +2,13 @@
 //  NSInvocation+Argument.m
 //
 
-#import <objc/runtime.h>
+@import ObjectiveC.runtime;
 
 #import "NSInvocation+Argument.h"
 
 @implementation NSInvocation (Argument)
 
-- (id)hs_objectAtIndex:(NSInteger)index
+- (id)hay_objectAtIndex:(NSInteger)index
 {
     //
     // Protect against arguments out of bounds

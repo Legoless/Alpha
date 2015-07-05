@@ -191,7 +191,7 @@
     
     [sections addObject:mainSection];
     
-    for (NSString* propertyName in model.properties)
+    for (NSString* propertyName in model.hay_properties)
     {
         if ([[model valueForKey:propertyName] isKindOfClass:[NSArray class]])
         {

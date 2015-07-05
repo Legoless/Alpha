@@ -14,7 +14,7 @@
 
 @implementation UIApplication (Information)
 
-- (long long)memorySize
+- (long long)hay_memorySize
 {
     struct task_basic_info info;
     mach_msg_type_number_t size = sizeof(info);
@@ -30,7 +30,7 @@
     }
 }
 
-- (NSUInteger)threadCount
+- (NSUInteger)hay_threadCount
 {
     mach_msg_type_number_t count;
     thread_act_array_t list;
@@ -40,7 +40,7 @@
     return  count;
 }
 
-- (float)cpuUsage
+- (float)hay_cpuUsage
 {
     kern_return_t kr;
     task_info_data_t tinfo;
@@ -110,7 +110,7 @@
     return tot_cpu;
 }
 
-- (BOOL)isRunningTests
+- (BOOL)hay_isRunningTests
 {
     NSDictionary* environment = [[NSProcessInfo processInfo] environment];
     NSString* injectBundle = environment[@"XCInjectBundle"];

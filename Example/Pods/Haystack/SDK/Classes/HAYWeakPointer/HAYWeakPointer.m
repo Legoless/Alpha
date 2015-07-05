@@ -1,6 +1,6 @@
-#import "HSWeakPointer.h"
+#import "HAYWeakPointer.h"
 
-@implementation HSWeakPointer
+@implementation HAYWeakPointer
 
 - (BOOL)isValid
 {
@@ -9,7 +9,7 @@
 
 + (instancetype)weakPointerWithObject:(id)object
 {
-    HSWeakPointer* pointer = [[[self class] alloc] init];
+    HAYWeakPointer * pointer = [[[self class] alloc] init];
     pointer.object = object;
     
     return pointer;

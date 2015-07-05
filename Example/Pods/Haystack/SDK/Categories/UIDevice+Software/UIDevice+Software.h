@@ -26,30 +26,30 @@ typedef enum : NSUInteger
  *
  *  @return YES if device is jailbroken
  */
-- (BOOL)isJailbroken;
+- (BOOL)hay_isJailbroken;
 
 /*!
  *  Returns device jailbreak status after series of tests.
  *
  *  @return jailbreak status
  */
-- (UIDeviceJailbreakStatus)hs_jailbreakStatus;
+- (UIDeviceJailbreakStatus)hay_jailbreakStatus;
 
 /**
  *  Returns device boot date
  *
  *  @return device boot date
  */
-- (NSDate *)hs_systemBootDate;
+- (NSDate *)hay_systemBootDate;
 
 //
 // Process related information
 //
 
-- (NSArray *)hs_processList;
+- (NSArray *)hay_processList;
 
-- (NSUInteger)hs_processCount;
+- (NSUInteger)hay_processCount;
 
-- (float)hs_cpuUsage;
+- (float)hay_cpuUsage;
 
 @end

@@ -6,10 +6,10 @@
 
 @interface NSURL (Parameters)
 
-- (NSDictionary *)queryParameters;
+- (NSDictionary *)hay_queryParameters;
 
-- (NSURL *)urlByAppendingParameter:(NSString *)parameter value:(NSString *)value;
+- (NSURL *)hay_urlByAppendingParameter:(NSString *)parameter value:(NSString *)value;
 
-- (NSURL *)urlByAppendingParameters:(NSDictionary *)parameters;
+- (NSURL *)hay_urlByAppendingParameters:(NSDictionary *)parameters;
 
 @end

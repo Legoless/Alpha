@@ -6,7 +6,7 @@
 
 @implementation NSObject (PropertyList)
 
-- (BOOL)isPropertyList
+- (BOOL)hay_isPropertyList
 {
     return [[self class] isObjectPropertyListItem:self];
 }

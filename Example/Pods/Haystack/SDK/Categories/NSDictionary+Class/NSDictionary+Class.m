@@ -6,7 +6,7 @@
 
 @implementation NSDictionary (Class)
 
-- (BOOL)containsObjectOfClass:(Class)objectClass
+- (BOOL)hay_containsObjectOfClass:(Class)objectClass
 {
     for (id object in self.allValues)
     {
@@ -19,7 +19,7 @@
     return NO;
 }
 
-- (BOOL)containsObjectOfInheritedClass:(Class)objectClass
+- (BOOL)hay_containsObjectOfInheritedClass:(Class)objectClass
 {
     for (id object in self.allValues)
     {
@@ -32,7 +32,7 @@
     return NO;
 }
 
-- (BOOL)containsAllObjectsOfClass:(Class)objectClass
+- (BOOL)hay_containsAllObjectsOfClass:(Class)objectClass
 {
     for (id object in self.allValues)
     {
@@ -45,7 +45,7 @@
     return YES;
 }
 
-- (BOOL)containsAllObjectsOfInheritedClass:(Class)objectClass
+- (BOOL)hay_containsAllObjectsOfInheritedClass:(Class)objectClass
 {
     for (id object in self.allValues)
     {

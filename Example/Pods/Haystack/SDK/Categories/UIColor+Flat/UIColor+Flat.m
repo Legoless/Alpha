@@ -6,104 +6,104 @@
 
 @implementation UIColor (Flat)
 
-+ (UIColor *)turquoiseColor
++ (UIColor *)hay_turquoiseColor
 {
-    return [self colorWithHex:@"1abc9c"];
+    return [self hay_colorWithHex:@"1abc9c"];
 }
 
-+ (UIColor *)greenSeaColor
++ (UIColor *)hay_greenSeaColor
 {
-    return [self colorWithHex:@"16a085"];
+    return [self hay_colorWithHex:@"16a085"];
 }
 
-+ (UIColor *)emeraldColor
++ (UIColor *)hay_emeraldColor
 {
-    return [self colorWithHex:@"2ecc71"];
+    return [self hay_colorWithHex:@"2ecc71"];
 }
 
-+ (UIColor *)nephritisColor
++ (UIColor *)hay_nephritisColor
 {
-    return [self colorWithHex:@"27ae60"];
+    return [self hay_colorWithHex:@"27ae60"];
 }
 
-+ (UIColor *)peterRiverColor
++ (UIColor *)hay_peterRiverColor
 {
-    return [self colorWithHex:@"3498db"];
+    return [self hay_colorWithHex:@"3498db"];
 }
 
-+ (UIColor *)belizeHoleColor
++ (UIColor *)hay_belizeHoleColor
 {
-    return [self colorWithHex:@"2980b9"];
+    return [self hay_colorWithHex:@"2980b9"];
 }
 
-+ (UIColor *)amethystColor
++ (UIColor *)hay_amethystColor
 {
-    return [self colorWithHex:@"9b59b6"];
+    return [self hay_colorWithHex:@"9b59b6"];
 }
 
-+ (UIColor *)wisteriaColor
++ (UIColor *)hay_wisteriaColor
 {
-    return [self colorWithHex:@"8e44ad"];
+    return [self hay_colorWithHex:@"8e44ad"];
 }
 
-+ (UIColor *)wetAsphaltColor
++ (UIColor *)hay_wetAsphaltColor
 {
-    return [self colorWithHex:@"34495e"];
+    return [self hay_colorWithHex:@"34495e"];
 }
 
-+ (UIColor *)midnightBlueColor
++ (UIColor *)hay_midnightBlueColor
 {
-    return [self colorWithHex:@"2c3e50"];
+    return [self hay_colorWithHex:@"2c3e50"];
 }
 
-+ (UIColor *)sunFlowerColor
++ (UIColor *)hay_sunFlowerColor
 {
-    return [self colorWithHex:@"f1c40f"];
+    return [self hay_colorWithHex:@"f1c40f"];
 }
 
-+ (UIColor *)carrotColor
++ (UIColor *)hay_carrotColor
 {
-    return [self colorWithHex:@"e67e22"];
+    return [self hay_colorWithHex:@"e67e22"];
 }
 
-+ (UIColor *)orangeFruitColor
++ (UIColor *)hay_orangeFruitColor
 {
-    return [self colorWithHex:@"f39c12"];
+    return [self hay_colorWithHex:@"f39c12"];
 }
 
-+ (UIColor *)pumpkinColor
++ (UIColor *)hay_pumpkinColor
 {
-    return [self colorWithHex:@"d35400"];
+    return [self hay_colorWithHex:@"d35400"];
 }
 
-+ (UIColor *)alizarinColor
++ (UIColor *)hay_alizarinColor
 {
-    return [self colorWithHex:@"e74c3c"];
+    return [self hay_colorWithHex:@"e74c3c"];
 }
 
-+ (UIColor *)pomegranateColor
++ (UIColor *)hay_pomegranateColor
 {
-    return [self colorWithHex:@"c0392b"];
+    return [self hay_colorWithHex:@"c0392b"];
 }
 
-+ (UIColor *)cloudsColor
++ (UIColor *)hay_cloudsColor
 {
-    return [self colorWithHex:@"ecf0f1"];
+    return [self hay_colorWithHex:@"ecf0f1"];
 }
 
-+ (UIColor *)silverColor
++ (UIColor *)hay_silverColor
 {
-    return [self colorWithHex:@"bdc3c7"];
+    return [self hay_colorWithHex:@"bdc3c7"];
 }
 
-+ (UIColor *)concreteColor
++ (UIColor *)hay_concreteColor
 {
-    return [self colorWithHex:@"95a5a6"];
+    return [self hay_colorWithHex:@"95a5a6"];
 }
 
-+ (UIColor *)asbestosColor
++ (UIColor *)hay_asbestosColor
 {
-    return [self colorWithHex:@"7f8c8d"];
+    return [self hay_colorWithHex:@"7f8c8d"];
 }
 
 @end

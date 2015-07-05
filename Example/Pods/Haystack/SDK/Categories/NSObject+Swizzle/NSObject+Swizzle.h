@@ -13,7 +13,7 @@
  * @param firstMethod first method
  * @param secondMethod second method
  */
-+ (void)swizzleInstanceMethod:(SEL)firstMethod withMethod:(SEL)secondMethod;
++ (void)hay_swizzleInstanceMethod:(SEL)firstMethod withMethod:(SEL)secondMethod;
 
 /*!
  * Method changes the implementation of the first class method to second method.
@@ -22,10 +22,10 @@
  * @param firstMethod first method
  * @param secondMethod second method
  */
-+ (void)swizzleClassMethod:(SEL)firstMethod withMethod:(SEL)secondMethod;
++ (void)hay_swizzleClassMethod:(SEL)firstMethod withMethod:(SEL)secondMethod;
 
-+ (void)swizzleInstanceMethod:(SEL)firstMethod withMethod:(SEL)secondMethod inClass:(Class)class;
++ (void)hay_swizzleInstanceMethod:(SEL)firstMethod withMethod:(SEL)secondMethod inClass:(Class)class;
 
-+ (void)swizzleClassMethod:(SEL)firstMethod withMethod:(SEL)secondMethod inClass:(Class)class;
++ (void)hay_swizzleClassMethod:(SEL)firstMethod withMethod:(SEL)secondMethod inClass:(Class)class;
 
 @end

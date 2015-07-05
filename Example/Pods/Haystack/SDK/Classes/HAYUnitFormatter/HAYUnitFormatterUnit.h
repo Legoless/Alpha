@@ -1,10 +1,10 @@
 //
-//  HSUnitFormatterUnit.h
+//  HAYUnitFormatterUnit.h
 //
 
 @import Foundation;
 
-@interface HSUnitFormatterUnit : NSObject
+@interface HAYUnitFormatterUnit : NSObject
 
 @property (nonatomic, copy) NSString *fullName;
 @property (nonatomic, copy) NSString *shortName;

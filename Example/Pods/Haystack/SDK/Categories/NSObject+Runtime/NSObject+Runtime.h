@@ -6,17 +6,17 @@
 
 @interface NSObject (Runtime)
 
-+ (NSArray *)subclasses;
++ (NSArray *)hay_subclasses;
 
-- (NSArray *)subclasses;
+- (NSArray *)hay_subclasses;
 
 /**
- *  Returns array of Class that are subclasses of class
+ *  Returns array of Class that are hay_subclasses of class
  *
  *  @param parent subclasses
  *
  *  @return array of Class objects
  */
-+ (NSArray *)subclassesOfClass:(Class)parentClass;
++ (NSArray *)hay_subclassesOfClass:(Class)parentClass;
 
 @end
