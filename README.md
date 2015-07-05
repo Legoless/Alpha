@@ -8,7 +8,7 @@
 [![Obj-C Code](https://img.shields.io/badge/code in-Objective--C-yellow.svg)](http://github.com/legoless/Alpha)
 [![Pod Version](http://img.shields.io/cocoapods/v/Alpha.svg?style=flat)](http://cocoadocs.org/docsets/Alpha/)
 [![Pod Platform](http://img.shields.io/cocoapods/p/Alpha.svg?style=flat)](http://cocoadocs.org/docsets/Alpha/)
-[![Pod License](http://img.shields.io/cocoapods/l/Alpha.svg?style=flat)](http://opensource.org/licenses/BSD-3-Clause)
+[![Pod License](http://img.shields.io/cocoapods/l/Alpha.svg?style=flat)](http://opensource.org/licenses/MIT)
 
 
 **Alpha** is an idea of the next generation debugging framework for iOS applications. It combines multiple debugging tools built on top of a **simple, unified API**. It lives entirely in your app sandbox and collects many types of data during your application lifetime. It is very easy to integrate and requires **no code changes**.
@@ -21,22 +21,22 @@
 
 Features are separated into multiple plugins, which can be enabled or disabled, depending on application requirements.
 
-- **Bonjour** contains a simple Bonjour server allowing Alpha to work over local Wi-Fi network.
-- **Bootstrap** checks for [KZBootstrap](https://github.com/krzysztofzablocki/KZBootstrap) environments and allows modifying them in real-time.
-- **Console** displays console logs (logged by NSLog) inside the application.
-- **Event** logs and displays application wide events such as background state transitions and view controller appearances.
-- **File** allows browsing the sandboxed file system and previewing common file types, such as images, videos and text.
-- **Global** information plugin displays linked frameworks, libraries and classes. Requires **Object** plugin to work.
-- **Heap** allows inspection of active object instances on ther heap and helps with debugging memory errors. Requires **Object** plugin to work.
-- **Interface** plugin is a specific plugin and is required to display Alpha menu interface and actions.
-- **Network** logs network connections made using `NSURLSession` and `NSURLConnection` API's.
-- **Notification** displays scheduled and fired local notifications, received push notifications and notification permissions.
-- **Object** allows for inspection of any class or object in the application, including `NSUserDefaults`, arrays and dictionaries.
-- **Remote** plugin allows connecting to Alpha on another device.
-- **Screenshot** plugin allows taking screenshots of the application with a single action.
-- **State** allows inspecting the device state and settings, such as locale, time and available memory.
-- **Touch** plugin displays touches on screen when activated.
-- **View** allows view hierarchy manipulation and inspection in real-time.
+- **Bonjour** - contains a simple Bonjour server allowing Alpha to work over local Wi-Fi network.
+- **Bootstrap** - checks for [KZBootstrap](https://github.com/krzysztofzablocki/KZBootstrap) environments and allows modifying them in real-time.
+- **Console** - displays console logs (logged by NSLog) inside the application.
+- **Event** - logs and displays application wide events such as background state transitions and view controller appearances.
+- **File** - allows browsing the sandboxed file system and previewing common file types, such as images, videos and text.
+- **Global** - information plugin displays linked frameworks, libraries and classes.
+- **Heap** - allows inspection of active object instances on ther heap and helps with debugging memory errors.
+- **Interface** - plugin is a specific plugin and is required to display Alpha menu interface and actions.
+- **Network** - logs network connections made using `NSURLSession` and `NSURLConnection` API's.
+- **Notification** - displays scheduled and fired local notifications, received push notifications and notification permissions.
+- **Object** - allows for inspection of any class or object in the application, including `NSUserDefaults`, arrays and dictionaries.
+- **Remote** - plugin allows connecting to Alpha on another device.
+- **Screenshot** - plugin allows taking screenshots of the application with a single action.
+- **State** - allows inspecting the device state and settings, such as locale, time and available memory.
+- **Touch** - plugin displays touches on screen when activated.
+- **View** - allows view hierarchy manipulation and inspection in real-time.
 
 Currently work in progress:
 
@@ -85,7 +85,7 @@ To use Alpha in your project, all you need to do is add a **CocoaPods** library:
 ```ruby
 pod 'Alpha'
 ```
-This automatically includes all plugins and features. To avoid clashes with libraries in application, all Alpha classes use `ALPHA` prefix. The recommended way is to ignore Alpha version and always use the latest version, to ensure best stability possible. You can also pick the plugins to integrate manually.
+This automatically includes all plugins and features. To avoid clashes with certain libraries used in application, all Alpha classes use `ALPHA` prefix. The recommended way is to ignore Alpha version and always use the latest version, to ensure best stability possible. You can also pick the plugins to integrate manually.
 
 ```ruby
 pod 'Alpha/Bonjour'
@@ -109,7 +109,7 @@ The entire Alpha documentation is available on [Wiki]() and on [CocoaDocs]().
 
 - Read [Getting Started]().
 - Browse [Architecture]().
-- Go through [Frequently Asked Questions]().
+- Go through [Frequently Asked Questions](https://github.com/Legoless/Alpha/wiki/Frequently-Asked-Questions).
 
 # Contributions
 
@@ -121,16 +121,16 @@ This project would not be possible without all the work done by respected commun
 Thanks to all contributors of the following projects:
 
 - [**FLEX (Flipboard Explorer)**](https://github.com/Flipboard/FLEX)
-- [PonyDebugger](https://github.com/square/PonyDebugger)
-- [KZBootstrap](https://github.com/krzysztofzablocki/KZBootstrap)
-- [Touchpose](https://github.com/toddreed/Touchpose)
-- [PINCache](https://github.com/pinterest/PINCache)
 - [CKCircleMenuView](https://github.com/JaNd3r/CKCircleMenuView)
 - [CWStatusBarNotification](https://github.com/cezarywojcik/CWStatusBarNotification)
 - [DTBonjour](https://github.com/Cocoanetics/DTBonjour)
-- [Super DB](https://github.com/Shopify/superdb)
-- [iConsole](https://github.com/nicklockwood/iConsole)
 - [Haystack](https://github.com/legoless/Haystack)
+- [iConsole](https://github.com/nicklockwood/iConsole)
+- [KZBootstrap](https://github.com/krzysztofzablocki/KZBootstrap)
+- [PonyDebugger](https://github.com/square/PonyDebugger)
+- [PINCache](https://github.com/pinterest/PINCache)
+- [Super DB](https://github.com/Shopify/superdb)
+- [Touchpose](https://github.com/toddreed/Touchpose)
 - Many more...
 
 Contact
