@@ -8,7 +8,7 @@ Pod::Spec.new do |spec|
                                 - Easy integration with no code changes.
                                 - Display device information, network connections and console logs.
                                 - Log push notifications and inspect payload.
-                                - Follow application life-cycle and user session.
+                                - Follow application life-cycle and user events.
                               DESC
 
   spec.license                = { :type => "MIT", :file => "LICENSE" }
