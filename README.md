@@ -49,7 +49,7 @@ Currently work in progress:
 
 Alpha is meant to work with any application, but the default dark theme does not always fit best with the application color scheme.
 
-To better fit with various applications Alpha has theme support, which allows you to choose the color palette you wish to display Alpha in.
+To fit in with any application Alpha has theme support, which allows you to choose the color palette you wish to display Alpha in.
 
 ![Default](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Default_Theme.png "Default Theme")
 ![Formentera](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Formentera_Theme.png "Formentera Theme")
