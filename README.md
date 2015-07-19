@@ -65,7 +65,7 @@ There are **6 themes** available:
 
 If is also possible to create your own theme and use it in Alpha system.
 
-*Read more on [Themes]().*
+*Read more on [Themes](https://github.com/Legoless/Alpha/wiki/Themes).*
 
 ### Triggers
 
@@ -76,7 +76,7 @@ Triggers are a way to activate Alpha interface from your application. By default
 
 Both triggers are activated by default. Alternatively you can implement your own trigger or use the manual trigger.
 
-*Read more on [Triggers]().*
+*Read more on [Triggers](https://github.com/Legoless/Alpha/wiki/Triggers).*
 
 # Integration
 
@@ -95,7 +95,7 @@ pod 'Alpha/State'
 
 *Alpha supports iOS 8 and up. Not all features are available on all versions.*
 
-*Read more on [Integration]().*
+*Read more on [Integration](https://github.com/Legoless/Alpha/wiki/Integration).*
 
 # The Story
 
@@ -105,10 +105,10 @@ pod 'Alpha/State'
 
 # Documentation
 
-The entire Alpha documentation is available on [Wiki]() and on [CocoaDocs]().
+The entire Alpha documentation is available on [Wiki](https://github.com/Legoless/Alpha/wiki) and on [CocoaDocs](http://cocoadocs.org/docsets/Alpha).
 
-- Read [Getting Started]().
-- Browse [Architecture]().
+- Read [Getting Started](https://github.com/Legoless/Alpha/wiki/Getting-Started).
+- Browse [Architecture](https://github.com/Legoless/Alpha/wiki/Architecture).
 - Go through [Frequently Asked Questions](https://github.com/Legoless/Alpha/wiki/Frequently-Asked-Questions).
 
 # Contributions
