@@ -46,7 +46,7 @@ NSString *const ALPHAAppsListDataIdentifier = @"com.odnairy.alpha.data.applicati
 
 -(NSArray*)applicationsOfType:(_ApplicationType)appType{
     NSArray* apps = [[objc_getClass("LSApplicationWorkspace") defaultWorkspace] applicationsOfType:appType];
-    apps = [apps filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(LSApplicationProxy*  __nonnull evaluatedObject, NSDictionary<NSString *,id> * __nullable bindings) {
+    apps = [apps filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(LSApplicationProxy*  evaluatedObject, NSDictionary* bindings) {
         return [self titleForApplication:evaluatedObject].length > 0;
     }]];
     return apps;
