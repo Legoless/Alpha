@@ -1,4 +1,8 @@
 #import "LSApplicationProxy.h"
+
+typedef NS_ENUM(NSUInteger, _ApplicationType)
+{$_LSUserApplicationType,$_LSSystemApplicationType, $_LSInternalApplicationType};
+
 @interface LSApplicationWorkspace
 
 + (instancetype)defaultWorkspace;
@@ -16,7 +20,7 @@
 - (BOOL)applicationIsInstalled:(id)arg1;
 - (id)applicationsAvailableForHandlingURLScheme:(id)arg1;
 - (id)applicationsAvailableForOpeningDocument:(id)arg1;
-- (id)applicationsOfType:(unsigned int)arg1;
+- (id)applicationsOfType:(_ApplicationType)arg1;
 - (id)applicationsWithAudioComponents;
 - (id)applicationsWithExternalAccessoryProtocols;
 - (id)applicationsWithSettingsBundle;

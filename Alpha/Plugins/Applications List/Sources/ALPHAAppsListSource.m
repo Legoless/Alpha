@@ -36,19 +36,36 @@ NSString *const ALPHAAppsListDataIdentifier = @"com.odnairy.alpha.data.applicati
     return self;
 }
 
--(void)loadApplications{
-    self.applicationsList =  [[objc_getClass("LSApplicationWorkspace") defaultWorkspace] allApplications];
-    
-    self.applicationsList = [self.applicationsList filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(LSApplicationProxy*  __nonnull evaluatedObject, NSDictionary<NSString *,id> * __nullable bindings) {
+-(NSArray*)availableScopes{
+    NSArray* scopes = @[@"User",@"System"];
+    if ([self applicationsOfType:$_LSInternalApplicationType].count) {
+        scopes = [scopes arrayByAddingObject:@"Internal"];
+    }
+    return scopes;
+}
+
+-(NSArray*)applicationsOfType:(_ApplicationType)appType{
+    NSArray* apps = [[objc_getClass("LSApplicationWorkspace") defaultWorkspace] applicationsOfType:appType];
+    apps = [apps filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(LSApplicationProxy*  __nonnull evaluatedObject, NSDictionary<NSString *,id> * __nullable bindings) {
         return [self titleForApplication:evaluatedObject].length > 0;
     }]];
+    return apps;
 }
 
 - (ALPHAModel *)modelForRequest:(ALPHARequest *)request
 {
-    [self loadApplications];
+    NSUInteger selectedScope = [request.parameters[ALPHASearchScopeParameterKey] unsignedIntegerValue];
+    _ApplicationType appType = $_LSUserApplicationType;
+    if (selectedScope == 1) {
+        appType = $_LSSystemApplicationType;
+    }else if (selectedScope == 2){
+        appType = $_LSInternalApplicationType;
+    }
+    
+    self.applicationsList = [self applicationsOfType:appType];
     
     ALPHATableScreenModel* screenModel = [[ALPHATableScreenModel alloc] initWithIdentifier:ALPHAAppsListDataIdentifier];
+    screenModel.scopes = [self availableScopes];
     screenModel.title = @"Applications List";
     
     ALPHAScreenSection* section = [[ALPHAScreenSection alloc] init];
