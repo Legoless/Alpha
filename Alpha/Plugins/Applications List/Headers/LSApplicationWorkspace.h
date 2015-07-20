@@ -1,5 +1,3 @@
-#import "LSApplicationProxy.h"
-
 typedef NS_ENUM(NSUInteger, _ApplicationType)
 {$_LSUserApplicationType,$_LSSystemApplicationType, $_LSInternalApplicationType};
 
@@ -12,7 +10,7 @@ typedef NS_ENUM(NSUInteger, _ApplicationType)
 - (BOOL)_LSPrivateRebuildApplicationDatabasesForSystemApps:(BOOL)arg1 internal:(BOOL)arg2 user:(BOOL)arg3;
 - (void)_clearCachedAdvertisingIdentifier;
 - (void)addObserver:(id)arg1;
-- (NSArray<LSApplicationProxy*>*)allApplications;
+- (NSArray*)allApplications;
 - (id)allInstalledApplications;
 - (id)applicationForOpeningResource:(id)arg1;
 - (id)applicationForUserActivityDomainName:(id)arg1;
