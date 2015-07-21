@@ -85,7 +85,9 @@ To use Alpha in your project, all you need to do is add a **CocoaPods** library:
 ```ruby
 pod 'Alpha'
 ```
-This automatically includes all plugins and features. To avoid clashes with certain libraries used in application, all Alpha classes use `ALPHA` prefix. The recommended way is to ignore Alpha version and always use the latest version, to ensure best stability possible. You can also pick the plugins to integrate manually.
+This automatically includes all plugins and features. To avoid clashes with any libraries used in application, all Alpha classes use `ALPHA` prefix (even classes ported from other libraries). The recommended way is to ignore Alpha version and always use the latest version, to ensure best stability possible.
+
+You can also pick the plugins to integrate manually.
 
 ```ruby
 pod 'Alpha/Bonjour'
