@@ -6,5 +6,5 @@ link_with 'UICatalog', 'AlphaTests'
 
 pod 'Haystack'
 
-# Remote plugin
+# Remote plugin for testing
 pod 'DTBonjour'
