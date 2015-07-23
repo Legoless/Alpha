@@ -9,6 +9,6 @@
 #import "ALPHAAsset.h"
 
 extern NSString *const ALPHAIconAppsListIdentifier;
-@interface ALPHAAppsListIcon : ALPHAAsset
+@interface ALPHAApplicationIcon : ALPHAAsset
 
 @end

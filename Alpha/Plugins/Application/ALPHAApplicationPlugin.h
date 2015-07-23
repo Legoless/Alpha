@@ -8,6 +8,6 @@
 
 #import "ALPHAPlugin.h"
 
-@interface ALPHAAppsListPlugin : ALPHAPlugin
+@interface ALPHAApplicationPlugin : ALPHAPlugin
 
 @end

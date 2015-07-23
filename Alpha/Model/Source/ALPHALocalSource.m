@@ -19,16 +19,7 @@
 
 - (void)loadSourcesFromPlugins:(NSArray *)plugins
 {
-    NSMutableArray *sources = [NSMutableArray array];
-    
-    for (ALPHAPlugin *plugin in plugins)
-    {
-        for (id<ALPHADataSource> source in plugin.sources)
-        {
-            [sources addObject:source];
-        }
-    }
-    
+    NSMutableArray *sources = [plugins valueForKeyPath:@"@unionOfArrays.sources"];
     //
     // Insert file source
     //

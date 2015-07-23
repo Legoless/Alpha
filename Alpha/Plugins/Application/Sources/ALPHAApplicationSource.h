@@ -8,7 +8,7 @@
 
 #import "ALPHABaseDataSource.h"
 
-extern NSString *const ALPHAAppsListDataIdentifier;
-@interface ALPHAAppsListSource : ALPHABaseDataSource
+extern NSString *const ALPHAApplicationDataIdentifier;
+@interface ALPHAApplicationSource : ALPHABaseDataSource
 
 @end

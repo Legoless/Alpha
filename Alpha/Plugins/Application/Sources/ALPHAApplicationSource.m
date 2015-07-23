@@ -6,7 +6,7 @@
 //  Copyright © 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHAAppsListSource.h"
+#import "ALPHAApplicationSource.h"
 #import "ALPHATableScreenModel.h"
 #import <objc/runtime.h>
 
@@ -15,14 +15,14 @@
 #import "LSApplicationProxy.h"
 #import "UIImage+UIApplicationIconPrivate.h"
 
-NSString *const ALPHAAppsListDataIdentifier = @"com.odnairy.alpha.data.applicationslist";
+NSString *const ALPHAApplicationDataIdentifier = @"com.odnairy.alpha.data.application";
 
 
-@interface ALPHAAppsListSource ()
+@interface ALPHAApplicationSource ()
 @property (nonatomic, strong) NSArray* applicationsList;
 @end
 
-@implementation ALPHAAppsListSource
+@implementation ALPHAApplicationSource
 
 - (instancetype)init
 {
@@ -30,7 +30,7 @@ NSString *const ALPHAAppsListDataIdentifier = @"com.odnairy.alpha.data.applicati
     
     if (self)
     {
-        [self addDataIdentifier:ALPHAAppsListDataIdentifier];
+        [self addDataIdentifier:ALPHAApplicationDataIdentifier];
     }
     
     return self;
@@ -64,7 +64,7 @@ NSString *const ALPHAAppsListDataIdentifier = @"com.odnairy.alpha.data.applicati
     
     self.applicationsList = [self applicationsOfType:appType];
     
-    ALPHATableScreenModel* screenModel = [[ALPHATableScreenModel alloc] initWithIdentifier:ALPHAAppsListDataIdentifier];
+    ALPHATableScreenModel* screenModel = [[ALPHATableScreenModel alloc] initWithIdentifier:ALPHAApplicationDataIdentifier];
     screenModel.scopes = [self availableScopes];
     screenModel.title = @"Applications List";
     

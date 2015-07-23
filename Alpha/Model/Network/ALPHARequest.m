@@ -45,7 +45,7 @@ NSString *const ALPHAObjectDataClassNameIdentifier  = @"kALPHAObjectDataClassNam
 
 + (instancetype)requestForFile:(NSString *)fileURL fileClass:(NSString *)fileClass
 {
-    NSAssert(fileURL != nil, @"File URL must not be nil.");
+    NSParameterAssert(fileURL != nil);
     
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[ALPHAFileURLParameterKey] = fileURL;

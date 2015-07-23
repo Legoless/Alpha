@@ -6,11 +6,11 @@
 //  Copyright © 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHAAppsListIcon.h"
+#import "ALPHAApplicationIcon.h"
 
-NSString *const ALPHAIconAppsListIdentifier = @"com.odnairy.alpha.icon.applicationslist";
+NSString *const ALPHAIconAppsListIdentifier = @"com.odnairy.alpha.icon.application";
 
-@implementation ALPHAAppsListIcon
+@implementation ALPHAApplicationIcon
 - (instancetype)init
 {
     self = [super initWithIdentifier:ALPHAIconAppsListIdentifier];
