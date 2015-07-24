@@ -96,7 +96,7 @@ Pod::Spec.new do |spec|
   # Trigger framework
   #
 
-  spec.subspec 'Asset' do |subspec|
+  spec.subspec 'Trigger' do |subspec|
     subspec.source_files = 'Alpha/Triggers/**/*.{h,m}'
 
     subspec.dependency 'Alpha/Core'
