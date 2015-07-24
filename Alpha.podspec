@@ -32,7 +32,7 @@ Pod::Spec.new do |spec|
   #
   spec.subspec 'Asset' do |subspec|
     subspec.source_files = 'Alpha/Asset/**/*.{h,m}'
-    subspec.dependency = 'Haystack'
+    subspec.dependency 'Haystack'
   end
 
   #
@@ -41,7 +41,7 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'Theme' do |subspec|
     subspec.source_files = 'Alpha/Themes/**/*.{h,m}'
-    subspec.dependency = 'Haystack'
+    subspec.dependency 'Haystack'
   end
 
   #
@@ -67,10 +67,10 @@ Pod::Spec.new do |spec|
   spec.subspec 'Core' do |subspec|
     subspec.source_files = 'Alpha/Core/**/*.{h,m}', 'Alpha/Manager/**/*.{h,m}'
 
-    subspec.dependency = 'Alpha/Asset'
-    subspec.dependency = 'Alpha/Theme'
-    subspec.dependency = 'Alpha/Model'
-    subspec.dependency = 'Alpha/Private'
+    subspec.dependency 'Alpha/Asset'
+    subspec.dependency 'Alpha/Theme'
+    subspec.dependency 'Alpha/Model'
+    subspec.dependency 'Alpha/Private'
   end
 
   #
@@ -79,7 +79,7 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'Palettes' do |subspec|
     subspec.source_files = 'Alpha/Palettes/**/*.{h,m}'
-    subspec.dependency = 'Alpha/Theme'
+    subspec.dependency 'Alpha/Theme'
   end
 
   #
@@ -89,7 +89,7 @@ Pod::Spec.new do |spec|
   spec.subspec 'Render' do |subspec|
     subspec.source_files = 'Alpha/Renderers/**/*.{h,m}'
 
-    subspec.dependency = 'Alpha/Core'
+    subspec.dependency 'Alpha/Core'
   end
 
   #
@@ -99,7 +99,7 @@ Pod::Spec.new do |spec|
   spec.subspec 'Asset' do |subspec|
     subspec.source_files = 'Alpha/Triggers/**/*.{h,m}'
 
-    subspec.dependency = 'Alpha/Core'
+    subspec.dependency 'Alpha/Core'
   end
 
   #
@@ -109,7 +109,7 @@ Pod::Spec.new do |spec|
   spec.subspec 'View' do |subspec|
     subspec.source_files = 'Alpha/View/**/*.{h,m}'
 
-    subspec.dependency = 'Alpha/Core'
+    subspec.dependency 'Alpha/Core'
   end
 
   #
@@ -122,7 +122,7 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'Interface' do |subspec|
     subspec.source_files = 'Alpha/Plugins/Interface/**/*.{h,m}'
-    subspec.dependency = 'Alpha/Core'
+    subspec.dependency 'Alpha/Core'
   end
 
   #
@@ -132,8 +132,8 @@ Pod::Spec.new do |spec|
   spec.subspec 'Bonjour' do |subspec|
     subspec.source_files = 'Alpha/Plugins/Bonjour/**/*.{h,m}'
 
-    subspec.dependency = 'Alpha/Core'
-    subspec.dependency = 'DTBonjour'
+    subspec.dependency 'Alpha/Core'
+    subspec.dependency 'DTBonjour'
   end
 
   #
@@ -142,7 +142,7 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'Bootstrap' do |subspec|
     subspec.source_files = 'Alpha/Plugins/Bootstrap/**/*.{h,m}'
-    subspec.dependency = 'Alpha/Core'
+    subspec.dependency 'Alpha/Core'
   end
 
   #
@@ -151,7 +151,7 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'Console' do |subspec|
     subspec.source_files = 'Alpha/Plugins/Console/**/*.{h,m}'
-    subspec.dependency = 'Alpha/Core'
+    subspec.dependency 'Alpha/Core'
   end
 
   #
@@ -160,7 +160,7 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'Event' do |subspec|
     subspec.source_files = 'Alpha/Plugins/Event/**/*.{h,m}'
-    subspec.dependency = 'Alpha/Core'
+    subspec.dependency 'Alpha/Core'
   end
 
   #
@@ -169,7 +169,7 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'File' do |subspec|
     subspec.source_files = 'Alpha/Plugins/File/**/*.{h,m}'
-    subspec.dependency = 'Alpha/Core'
+    subspec.dependency 'Alpha/Core'
   end
 
   #
@@ -178,8 +178,8 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'Global' do |subspec|
     subspec.source_files = 'Alpha/Plugins/Global/**/*.{h,m}'
-    subspec.dependency = 'Alpha/Core'
-    subspec.dependency = 'Alpha/Object'
+    subspec.dependency 'Alpha/Core'
+    subspec.dependency 'Alpha/Object'
   end
 
   #
@@ -188,8 +188,8 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'Heap' do |subspec|
     subspec.source_files = 'Alpha/Plugins/Heap/**/*.{h,m}'
-    subspec.dependency = 'Alpha/Core'
-    subspec.dependency = 'Alpha/Object'
+    subspec.dependency 'Alpha/Core'
+    subspec.dependency 'Alpha/Object'
   end
 
   #
@@ -198,7 +198,7 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'Network' do |subspec|
     subspec.source_files = 'Alpha/Plugins/Network/**/*.{h,m}'
-    subspec.dependency = 'Alpha/Core'
+    subspec.dependency 'Alpha/Core'
   end
 
   #
@@ -207,7 +207,7 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'Notification' do |subspec|
     subspec.source_files = 'Alpha/Plugins/Notification/**/*.{h,m}'
-    subspec.dependency = 'Alpha/Core'
+    subspec.dependency 'Alpha/Core'
   end
 
   #
@@ -216,7 +216,7 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'Object' do |subspec|
     subspec.source_files = 'Alpha/Plugins/Object/**/*.{h,m}'
-    subspec.dependency = 'Alpha/Core'
+    subspec.dependency 'Alpha/Core'
   end
 
   #
@@ -225,8 +225,8 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'Remote' do |subspec|
     subspec.source_files = 'Alpha/Plugins/Screenshot/**/*.{h,m}'
-    subspec.dependency = 'Alpha/Core'
-    subspec.dependency = 'DTBonjour'
+    subspec.dependency 'Alpha/Core'
+    subspec.dependency 'DTBonjour'
   end
 
   #
@@ -235,7 +235,7 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'Screenshot' do |subspec|
     subspec.source_files = 'Alpha/Plugins/Screenshot/**/*.{h,m}'
-    subspec.dependency = 'Alpha/Core'
+    subspec.dependency 'Alpha/Core'
   end
 
   #
@@ -244,7 +244,7 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'State' do |subspec|
     subspec.source_files = 'Alpha/Plugins/State/**/*.{h,m}'
-    subspec.dependency = 'Alpha/Core'
+    subspec.dependency 'Alpha/Core'
 
     subspec.frameworks = 'CoreTelephony'
   end
@@ -255,7 +255,7 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'Touch' do |subspec|
     subspec.source_files = 'Alpha/Plugins/Touch/**/*.{h,m}'
-    subspec.dependency = 'Alpha/Core'
+    subspec.dependency 'Alpha/Core'
   end
 
   #
@@ -264,7 +264,7 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'View' do |subspec|
     subspec.source_files = 'Alpha/Plugins/View/**/*.{h,m}'
-    subspec.dependency = 'Alpha/Core'
+    subspec.dependency 'Alpha/Core'
   end
 
 end
