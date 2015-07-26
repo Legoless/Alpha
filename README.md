@@ -88,12 +88,18 @@ pod 'Alpha'
 ```
 This automatically includes all plugins and features. To avoid clashes with any libraries used in application, all Alpha classes use `ALPHA` prefix (even classes ported from other libraries). The recommended way is to ignore Alpha version and always use the latest version, to ensure best stability possible.
 
-You can also pick the plugins to integrate manually.
+You can also pick only the plugins you need manually.
 
 ```ruby
 pod 'Alpha/Bonjour'
 pod 'Alpha/Interface'
 pod 'Alpha/State'
+```
+
+To use automatic integration feature, add Integration subspec (when using Alpha pod, it is automatically included).
+
+```ruby
+pod 'Alpha/Integration'
 ```
 
 *Alpha supports iOS 8 and up. Not all features are available on all versions.*
