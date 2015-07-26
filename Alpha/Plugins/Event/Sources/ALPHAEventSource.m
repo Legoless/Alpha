@@ -34,7 +34,7 @@ NSString *const ALPHAEventDataIdentifier = @"com.unifiedsense.alpha.data.event";
     return _events;
 }
 
-+ (instancetype)sharedCollector
++ (instancetype)sharedSource
 {
     static id sharedCollector = nil;
     static dispatch_once_t onceToken;

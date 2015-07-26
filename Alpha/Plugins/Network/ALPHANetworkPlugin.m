@@ -31,7 +31,7 @@
         
         [self registerAction:menuAction];
         
-        [self registerSource:[ALPHANetworkSource sharedCollector]];
+        [self registerSource:[ALPHANetworkSource sharedSource]];
     }
     
     return self;

@@ -45,7 +45,7 @@
         // Collectors
         //
         
-        [self registerSource:[ALPHAEventSource sharedCollector]];
+        [self registerSource:[ALPHAEventSource sharedSource]];
     }
     
     return self;

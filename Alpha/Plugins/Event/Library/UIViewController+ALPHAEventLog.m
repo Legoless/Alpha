@@ -30,7 +30,7 @@
 
     if (![event.sender hasPrefix:@"ALPHA"])
     {
-        [[ALPHAEventSource sharedCollector] addEvent:event];
+        [[ALPHAEventSource sharedSource] addEvent:event];
     }
     
     [self alpha_viewDidAppear:animated];
@@ -45,7 +45,7 @@
 
     if (![event.sender hasPrefix:@"ALPHA"])
     {
-        [[ALPHAEventSource sharedCollector] addEvent:event];
+        [[ALPHAEventSource sharedSource] addEvent:event];
     }
     
     [self alpha_viewDidDisappear:animated];

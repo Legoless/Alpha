@@ -14,7 +14,7 @@ extern NSString *const ALPHAEventDataIdentifier;
 
 @interface ALPHAEventSource : ALPHABaseDataSource
 
-+ (instancetype)sharedCollector;
++ (instancetype)sharedSource;
 
 /*!
  *  Adds new event

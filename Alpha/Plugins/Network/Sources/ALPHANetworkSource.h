@@ -19,8 +19,7 @@ extern NSString *const ALPHANetworkDataIdentifier;
  *
  *  @return shared instance
  */
-+ (instancetype)sharedCollector;
-
++ (instancetype)sharedSource;
 
 + (void)injectIntoAllNSURLConnectionDelegateClasses;
 + (void)swizzleNSURLSessionClasses;
