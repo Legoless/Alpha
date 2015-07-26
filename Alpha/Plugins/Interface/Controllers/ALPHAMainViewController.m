@@ -18,8 +18,6 @@
 #import "ALPHAManager.h"
 #import "ALPHAPlugin.h"
 
-#import "ALPHAToolbarItem.h"
-
 #import "ALPHACoreAssets.h"
 
 #import "ALPHAExplorerMenu.h"
