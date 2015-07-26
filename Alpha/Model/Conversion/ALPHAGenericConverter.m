@@ -12,7 +12,6 @@
 
 #import "NSString+Identifier.h"
 
-#import "ALPHAWebRendererViewController.h"
 #import "ALPHAScreenActionItem.h"
 
 #import "ALPHAGenericConverter.h"
@@ -20,6 +19,7 @@
 #import "ALPHATableScreenModel.h"
 #import "ALPHATableRendererViewController.h"
 #import "ALPHAImageRendererViewController.h"
+#import "ALPHAWebRendererViewController.h"
 
 @implementation ALPHAGenericConverter
 
