@@ -10,16 +10,19 @@
 #import "ALPHATableScreenModel.h"
 #import <objc/runtime.h>
 
-// private headers
+//
+// Private headers
+//
 #import "LSApplicationWorkspace.h"
 #import "LSApplicationProxy.h"
 #import "UIImage+UIApplicationIconPrivate.h"
 
 NSString *const ALPHAApplicationDataIdentifier = @"com.odnairy.alpha.data.application";
 
-
 @interface ALPHAApplicationSource ()
+
 @property (nonatomic, strong) NSArray* applicationsList;
+
 @end
 
 @implementation ALPHAApplicationSource
@@ -36,19 +39,25 @@ NSString *const ALPHAApplicationDataIdentifier = @"com.odnairy.alpha.data.applic
     return self;
 }
 
--(NSArray*)availableScopes{
-    NSArray* scopes = @[@"User",@"System"];
-    if ([self applicationsOfType:$_LSInternalApplicationType].count) {
+- (NSArray *)availableScopes
+{
+    NSArray* scopes = @[ @"User", @"System" ];
+    
+    if ([self applicationsOfType:$_LSInternalApplicationType].count)
+    {
         scopes = [scopes arrayByAddingObject:@"Internal"];
     }
     return scopes;
 }
 
--(NSArray*)applicationsOfType:(_ApplicationType)appType{
+- (NSArray *)applicationsOfType:(_ApplicationType)appType
+{
     NSArray* apps = [[objc_getClass("LSApplicationWorkspace") defaultWorkspace] applicationsOfType:appType];
-    apps = [apps filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(LSApplicationProxy*  evaluatedObject, NSDictionary* bindings) {
+    apps = [apps filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(LSApplicationProxy *evaluatedObject, NSDictionary *bindings)
+    {
         return [self titleForApplication:evaluatedObject].length > 0;
     }]];
+    
     return apps;
 }
 
@@ -56,9 +65,13 @@ NSString *const ALPHAApplicationDataIdentifier = @"com.odnairy.alpha.data.applic
 {
     NSUInteger selectedScope = [request.parameters[ALPHASearchScopeParameterKey] unsignedIntegerValue];
     _ApplicationType appType = $_LSUserApplicationType;
-    if (selectedScope == 1) {
+    
+    if (selectedScope == 1)
+    {
         appType = $_LSSystemApplicationType;
-    }else if (selectedScope == 2){
+    }
+    else if (selectedScope == 2)
+    {
         appType = $_LSInternalApplicationType;
     }
     
@@ -93,7 +106,8 @@ NSString *const ALPHAApplicationDataIdentifier = @"com.odnairy.alpha.data.applic
     return screenModel;
 }
 
--(NSString*)titleForApplication:(LSApplicationProxy*)applicationProxy{
+- (NSString*)titleForApplication:(LSApplicationProxy*)applicationProxy
+{
     return [applicationProxy localizedShortName];
 }
 
