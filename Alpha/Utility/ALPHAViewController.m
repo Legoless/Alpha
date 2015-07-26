@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Unified Sense. All rights reserved.
 //
 
-#import "ALPHAActionItem.h"
-
 #import "ALPHAManager.h"
 
 #import "ALPHACanvasView.h"

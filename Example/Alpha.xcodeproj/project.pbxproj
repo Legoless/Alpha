@@ -1118,7 +1118,6 @@
 			isa = PBXGroup;
 			children = (
 				67E64426620AD6BF8160D76D /* Asset */,
-				67E64D307CFB0230951C8214 /* Core */,
 				67E64DFF65C81262C8BF1782 /* Manager */,
 				67E64F7DA608FE0028857810 /* Model */,
 				67E649562EFFC317E3D02B4F /* Palettes */,
@@ -1127,6 +1126,7 @@
 				67E641E42B06BA5F2E0472E6 /* Renderers */,
 				67E647277F95D9D2C51F4F63 /* Themes */,
 				67E645A3C17D68F41D430A7A /* Triggers */,
+				67E64D307CFB0230951C8214 /* Utility */,
 				67E64764452D02A7CF397018 /* View */,
 				67E6443967640579E23C145D /* Alpha.h */,
 			);
@@ -2011,42 +2011,42 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		67E64D307CFB0230951C8214 /* Core */ = {
+		67E64D307CFB0230951C8214 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
 				67E649BBBE0B281ADD8977EE /* ALPHACore.h */,
 				67E64E68C42D7B9BAB34BB74 /* ALPHAUtility.h */,
 				67E64C429A5C805B35A0BD6E /* ALPHAUtility.m */,
-				67E64819466273A2724F2A73 /* NSString+Data.h */,
-				67E64701E6FFE9948EDA2A1E /* NSString+Data.m */,
-				67E647912A9BFDC5855D0A5C /* UIColor+Random.h */,
-				67E64723B1AE34390B1E419E /* UIColor+Random.m */,
+				67E640B5D0B24AEE399CAD1E /* ALPHAApplicationDelegate.h */,
+				67E646EB152F51F48E19D7F0 /* ALPHAApplicationDelegate.m */,
+				67E647AACBBB5DB5D23BB8E7 /* ALPHANavigationController.h */,
+				67E6416CF78C486B8AAA0C99 /* ALPHANavigationController.m */,
 				67E64D3BE4206F2C81475B9C /* ALPHACanvasView.h */,
 				67E64D598742165B2155491D /* ALPHACanvasView.m */,
 				67E64DA626ABA4F1E3FD0917 /* ALPHAMockObject.h */,
 				67E645F69563DA203146146E /* ALPHAMockObject.m */,
 				67E6477E16E875FF0804FA9C /* ALPHAFileManager.h */,
 				67E64BD266623CC24A9238D4 /* ALPHAFileManager.m */,
-				67E64306AB90FE22A7FC6576 /* NSString+Entities.h */,
-				67E64004CEF568B5ADF0909F /* NSString+Entities.m */,
 				67E64538E38B372BBC40AF6A /* ALPHAHeapEnumerator.h */,
 				67E643D09221E7E1925B8DC6 /* ALPHAHeapEnumerator.m */,
 				67E64731B33A2A77974B832D /* ALPHARuntimeUtility.h */,
 				67E644EF97DA0E847C2C0702 /* ALPHARuntimeUtility.m */,
 				67E642DBE9FCBB05E8EC8E3B /* ALPHAViewController.h */,
 				67E646405C9B797D5F9FFF2A /* ALPHAViewController.m */,
+				67E64819466273A2724F2A73 /* NSString+Data.h */,
+				67E64701E6FFE9948EDA2A1E /* NSString+Data.m */,
+				67E64306AB90FE22A7FC6576 /* NSString+Entities.h */,
+				67E64004CEF568B5ADF0909F /* NSString+Entities.m */,
 				67E646E960DBBAAA02FEE447 /* NSString+Identifier.h */,
 				67E64F6A81170F5A646015DC /* NSString+Identifier.m */,
 				67E64E630B96023BA5678678 /* UIApplication+Event.h */,
 				67E64BFAA106A1FD58A45137 /* UIApplication+Event.m */,
 				67E641E133396E0E9E3D9447 /* UIApplication+Delegate.h */,
 				67E640CDEBBF15479A3F986C /* UIApplication+Delegate.m */,
-				67E640B5D0B24AEE399CAD1E /* ALPHAApplicationDelegate.h */,
-				67E646EB152F51F48E19D7F0 /* ALPHAApplicationDelegate.m */,
-				67E647AACBBB5DB5D23BB8E7 /* ALPHANavigationController.h */,
-				67E6416CF78C486B8AAA0C99 /* ALPHANavigationController.m */,
+				67E647912A9BFDC5855D0A5C /* UIColor+Random.h */,
+				67E64723B1AE34390B1E419E /* UIColor+Random.m */,
 			);
-			path = Core;
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		67E64D40EFCC9DB90ABCD40E /* Controllers */ = {

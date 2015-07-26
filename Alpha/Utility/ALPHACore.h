@@ -11,7 +11,6 @@
 #import "UIApplication+Delegate.h"
 #import "UIApplication+Event.h"
 #import "UIColor+Random.h"
-#import "UIImage+Creation.h"
 
 #import "ALPHAApplicationDelegate.h"
 #import "ALPHACanvasView.h"

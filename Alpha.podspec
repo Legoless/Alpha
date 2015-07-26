@@ -52,6 +52,14 @@ Pod::Spec.new do |spec|
   end
 
   #
+  # Utility framework (non-dependent)
+  #
+
+  spec.subspec 'Utility' do |subspec|
+    subspec.source_files = 'Alpha/Utility/**/*.{h,m}'
+  end
+
+  #
   # Theme framework
   #
 
@@ -65,7 +73,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.subspec 'Core' do |subspec|
-    subspec.source_files = 'Alpha/Core/**/*.{h,m}', 'Alpha/Manager/**/*.{h,m}'
+    subspec.source_files = 'Alpha/Manager/**/*.{h,m}'
 
     subspec.dependency 'Alpha/Asset'
     subspec.dependency 'Alpha/Theme'
