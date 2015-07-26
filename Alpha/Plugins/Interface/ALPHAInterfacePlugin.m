@@ -65,7 +65,7 @@
 
 - (id)init
 {
-    self = [super initWithIdentifier:@"com.unifiedsense.alpha.base"];
+    self = [super initWithIdentifier:@"com.unifiedsense.alpha.interface"];
     
     if (self)
     {

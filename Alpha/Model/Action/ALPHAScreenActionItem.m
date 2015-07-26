@@ -7,8 +7,6 @@
 //
 
 #import "ALPHAScreenActionItem.h"
-#import "ALPHADataRenderer.h"
-#import "ALPHATableRendererViewController.h"
 
 @implementation ALPHAScreenActionItem
 

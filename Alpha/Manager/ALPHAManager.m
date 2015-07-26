@@ -11,10 +11,8 @@
 #import "UIApplication+Private.h"
 
 #import "ALPHAManager.h"
-#import "ALPHAWindow.h"
 
 // Defaults
-#import "ALPHAInterfacePlugin.h"
 #import "ALPHAColorPalette.h"
 
 #import "ALPHAViewController.h"
@@ -69,7 +67,7 @@
 {
     if (!_interfacePlugin)
     {
-        _interfacePlugin = [self.plugins hay_firstObjectOfClass:[ALPHAInterfacePlugin class]];
+        _interfacePlugin = [self.plugins hay_firstObjectOfClass:NSClassFromString(@"ALPHAInterfacePlugin")];
         [self addOverlayViewController:_interfacePlugin.mainInterface animated:NO completion:nil];
     }
     

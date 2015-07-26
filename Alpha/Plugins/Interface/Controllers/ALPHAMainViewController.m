@@ -10,19 +10,12 @@
 
 #import "ALPHAMenuSource.h"
 #import "ALPHABlockActionItem.h"
-#import "ALPHANavigationController.h"
 
-#import "ALPHACanvasView.h"
-
-#import "ALPHATableRendererViewController.h"
 #import "ALPHAManager.h"
-#import "ALPHAPlugin.h"
 
 #import "ALPHACoreAssets.h"
 
 #import "ALPHAExplorerMenu.h"
-
-#import "ALPHAViewController.h"
 
 #import "ALPHAScreenManager.h"
 

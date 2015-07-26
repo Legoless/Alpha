@@ -36,14 +36,6 @@ Pod::Spec.new do |spec|
   end
 
   #
-  # Model framework (non-dependent)
-  #
-
-  spec.subspec 'Model' do |subspec|
-    subspec.source_files = 'Alpha/Model/**/*.{h,m}'
-  end
-
-  #
   # Private framework (non-dependent)
   #
 
@@ -57,6 +49,7 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'Utility' do |subspec|
     subspec.source_files = 'Alpha/Utility/**/*.{h,m}'
+    subspec.dependency 'Haystack'
   end
 
   #
@@ -66,6 +59,17 @@ Pod::Spec.new do |spec|
   spec.subspec 'Theme' do |subspec|
     subspec.source_files = 'Alpha/Themes/**/*.{h,m}'
     subspec.dependency 'Alpha/Asset'
+  end
+
+  #
+  # Model framework
+  #
+
+  spec.subspec 'Model' do |subspec|
+    subspec.source_files = 'Alpha/Model/**/*.{h,m}'
+
+    subspec.dependency 'Alpha/Utility'
+    subspec.dependency 'Alpha/Theme'
   end
 
   #
@@ -79,6 +83,26 @@ Pod::Spec.new do |spec|
     subspec.dependency 'Alpha/Theme'
     subspec.dependency 'Alpha/Model'
     subspec.dependency 'Alpha/Private'
+  end
+
+  #
+  # Integration framework
+  #
+
+  spec.subspec 'Integration' do |subspec|
+    subspec.source_files = 'Alpha/Integration/**/*.{h,m}'
+
+    subspec.dependency 'Alpha/Core'
+  end
+
+  #
+  # View framework
+  #
+
+  spec.subspec 'View' do |subspec|
+    subspec.source_files = 'Alpha/View/**/*.{h,m}'
+
+    subspec.dependency 'Alpha/Core'
   end
 
   #
@@ -98,6 +122,7 @@ Pod::Spec.new do |spec|
     subspec.source_files = 'Alpha/Renderers/**/*.{h,m}'
 
     subspec.dependency 'Alpha/Core'
+    subspec.dependency 'Alpha/View'
   end
 
   #
@@ -110,15 +135,6 @@ Pod::Spec.new do |spec|
     subspec.dependency 'Alpha/Core'
   end
 
-  #
-  # View framework
-  #
-
-  spec.subspec 'View' do |subspec|
-    subspec.source_files = 'Alpha/View/**/*.{h,m}'
-
-    subspec.dependency 'Alpha/Core'
-  end
 
   #
   # Plugins
@@ -131,6 +147,7 @@ Pod::Spec.new do |spec|
   spec.subspec 'Interface' do |subspec|
     subspec.source_files = 'Alpha/Plugins/Interface/**/*.{h,m}'
     subspec.dependency 'Alpha/Core'
+    subspec.dependency 'Alpha/Render'
   end
 
   #
@@ -187,7 +204,6 @@ Pod::Spec.new do |spec|
   spec.subspec 'Global' do |subspec|
     subspec.source_files = 'Alpha/Plugins/Global/**/*.{h,m}'
     subspec.dependency 'Alpha/Core'
-    subspec.dependency 'Alpha/Object'
   end
 
   #
@@ -198,6 +214,7 @@ Pod::Spec.new do |spec|
     subspec.source_files = 'Alpha/Plugins/Heap/**/*.{h,m}'
     subspec.dependency 'Alpha/Core'
     subspec.dependency 'Alpha/Object'
+    subspec.dependency 'Alpha/Global'
   end
 
   #
@@ -225,6 +242,8 @@ Pod::Spec.new do |spec|
   spec.subspec 'Object' do |subspec|
     subspec.source_files = 'Alpha/Plugins/Object/**/*.{h,m}'
     subspec.dependency 'Alpha/Core'
+    subspec.dependency 'Alpha/Global'
+    subspec.dependency 'Alpha/Render'
   end
 
   #

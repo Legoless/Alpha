@@ -18,12 +18,6 @@
 
 #import "ALPHARuntimeUtility.h"
 
-#import "ALPHAObjectProperty.h"
-#import "ALPHAObjectIvar.h"
-#import "ALPHAObjectMethod.h"
-
-#import "ALPHAObjectModel.h"
-
 #import "ALPHATableScreenModel.h"
 
 #import "ALPHAObjectConverter.h"
