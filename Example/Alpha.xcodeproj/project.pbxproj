@@ -1237,6 +1237,7 @@
 		67E641E42B06BA5F2E0472E6 /* Renderers */ = {
 			isa = PBXGroup;
 			children = (
+				67E64A126ACC9F917A8BDF9D /* Converter */,
 				67E64E943FF4C7E8C6CA42E3 /* Manager */,
 				67E64DC2AAC3F259C2E30FAC /* ALPHAWebRendererViewController.h */,
 				67E64C8C419D90EF6DF0AD25 /* ALPHAWebRendererViewController.m */,
@@ -1254,7 +1255,6 @@
 				67E6455A250F43A35459A4F4 /* ALPHADefaultsRendererViewController.m */,
 				67E64ED15BD08AAF0D9FB974 /* ALPHAPropertyRendererViewController.h */,
 				67E64A97AE74952B2F07E55F /* ALPHAPropertyRendererViewController.m */,
-				67E64A126ACC9F917A8BDF9D /* Converter */,
 			);
 			path = Renderers;
 			sourceTree = "<group>";
@@ -1856,8 +1856,8 @@
 		67E64A126ACC9F917A8BDF9D /* Converter */ = {
 			isa = PBXGroup;
 			children = (
-				67E6412E59045233D6802FA6 /* ALPHAGenericConverter.m */,
 				67E649A04C571D5A3C8085B9 /* ALPHAGenericConverter.h */,
+				67E6412E59045233D6802FA6 /* ALPHAGenericConverter.m */,
 			);
 			path = Converter;
 			sourceTree = "<group>";
