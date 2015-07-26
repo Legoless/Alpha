@@ -415,6 +415,9 @@
 		67E64FFA842D6490401AF494 /* ALPHACache.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6431139066ACFBB4A7CC4 /* ALPHACache.m */; };
 		B72E57EC5EF5071C383C26A9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC22ABC4E8D617E74145AB1C /* libPods.a */; };
 		C880721E1307571D224A9E73 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC22ABC4E8D617E74145AB1C /* libPods.a */; };
+		FEDA7AB01B5C12E000BB35FD /* ALPHAApplicationPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDA7AAF1B5C12E000BB35FD /* ALPHAApplicationPlugin.m */; };
+		FEDA7AB71B5C17D800BB35FD /* ALPHAApplicationSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDA7AB61B5C17D800BB35FD /* ALPHAApplicationSource.m */; };
+		FEDA7ABF1B5C2D2300BB35FD /* ALPHAApplicationIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDA7ABE1B5C2D2300BB35FD /* ALPHAApplicationIcon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -889,6 +892,15 @@
 		67E64FF512FD6A8D0D3560ED /* ALPHABonjourPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHABonjourPlugin.m; sourceTree = "<group>"; };
 		8EFDBC5D9C946F8E17E67DBC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		DC22ABC4E8D617E74145AB1C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEDA7AAE1B5C12E000BB35FD /* ALPHAApplicationPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAApplicationPlugin.h; sourceTree = "<group>"; };
+		FEDA7AAF1B5C12E000BB35FD /* ALPHAApplicationPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAApplicationPlugin.m; sourceTree = "<group>"; };
+		FEDA7AB51B5C17D800BB35FD /* ALPHAApplicationSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAApplicationSource.h; sourceTree = "<group>"; };
+		FEDA7AB61B5C17D800BB35FD /* ALPHAApplicationSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAApplicationSource.m; sourceTree = "<group>"; };
+		FEDA7AB91B5C1E6B00BB35FD /* LSApplicationProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSApplicationProxy.h; sourceTree = "<group>"; };
+		FEDA7ABA1B5C20C100BB35FD /* UIImage+UIApplicationIconPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+UIApplicationIconPrivate.h"; sourceTree = "<group>"; };
+		FEDA7ABB1B5C257A00BB35FD /* LSApplicationWorkspace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSApplicationWorkspace.h; sourceTree = "<group>"; };
+		FEDA7ABD1B5C2D2300BB35FD /* ALPHAApplicationIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAApplicationIcon.h; sourceTree = "<group>"; };
+		FEDA7ABE1B5C2D2300BB35FD /* ALPHAApplicationIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAApplicationIcon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1678,6 +1690,7 @@
 		67E6483B736446656F6DEAA8 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
+				FEDA7AAD1B5C119E00BB35FD /* Application */,
 				67E6497118E36E624757672E /* Bonjour */,
 				67E6454053E81E261F580466 /* Bootstrap */,
 				67E6488209B64A4741ECA516 /* Console */,
@@ -1685,9 +1698,9 @@
 				67E64D06D864C54366ED543A /* File */,
 				67E64754B22FBC05049FAB84 /* Global */,
 				67E649D26296F8AE6E773097 /* Heap */,
+				67E64553DDDB81B456C81C50 /* Interface */,
 				67E64935394AE934A87B955C /* Network */,
 				67E6405FD7D9EDD1267D522A /* Notification */,
-				67E64553DDDB81B456C81C50 /* Interface */,
 				67E640A6A2C7EBBE3E27804B /* Object */,
 				67E64F50CD592289415F5388 /* Remote */,
 				67E6422F192F47316655F52C /* Screenshot */,
@@ -2199,6 +2212,46 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		FEDA7AAD1B5C119E00BB35FD /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				FEDA7ABC1B5C2CD300BB35FD /* Assets */,
+				FEDA7AB81B5C1E5300BB35FD /* Headers */,
+				FEDA7AB11B5C16CE00BB35FD /* Sources */,
+				FEDA7AAE1B5C12E000BB35FD /* ALPHAApplicationPlugin.h */,
+				FEDA7AAF1B5C12E000BB35FD /* ALPHAApplicationPlugin.m */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		FEDA7AB11B5C16CE00BB35FD /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				FEDA7AB51B5C17D800BB35FD /* ALPHAApplicationSource.h */,
+				FEDA7AB61B5C17D800BB35FD /* ALPHAApplicationSource.m */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		FEDA7AB81B5C1E5300BB35FD /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				FEDA7AB91B5C1E6B00BB35FD /* LSApplicationProxy.h */,
+				FEDA7ABB1B5C257A00BB35FD /* LSApplicationWorkspace.h */,
+				FEDA7ABA1B5C20C100BB35FD /* UIImage+UIApplicationIconPrivate.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		FEDA7ABC1B5C2CD300BB35FD /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				FEDA7ABD1B5C2D2300BB35FD /* ALPHAApplicationIcon.h */,
+				FEDA7ABE1B5C2D2300BB35FD /* ALPHAApplicationIcon.m */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2247,15 +2300,13 @@
 		5356823218F3656900BAAD62 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = ALPHA;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Unified Sense";
 				TargetAttributes = {
 					38AB0F261B315B1700F0CC21 = {
 						CreatedOnToolsVersion = 6.3.2;
 						TestTargetID = 5356823918F3656900BAAD62;
-					};
-					5356823918F3656900BAAD62 = {
-						DevelopmentTeam = 289M6XEDV4;
 					};
 				};
 			};
@@ -2700,6 +2751,7 @@
 				67E6451C5D34BA1E6E91D8CB /* UIDevice+ALPHAStatus.m in Sources */,
 				67E64C5069F9CCC9844AAA47 /* ALPHADeviceStatusSource.m in Sources */,
 				67E644C4880243E17408DA89 /* ALPHAStatePlugin.m in Sources */,
+				FEDA7AB01B5C12E000BB35FD /* ALPHAApplicationPlugin.m in Sources */,
 				67E6404A44531BE5D0945132 /* ALPHATouchIcon.m in Sources */,
 				67E64F640BE2DF8BDA460D8D /* ALPHATouchWindow.m in Sources */,
 				67E64629B32B92E578572A95 /* ALPHATouchPlugin.m in Sources */,
@@ -2709,6 +2761,7 @@
 				67E6479C548367AAC4FB30F1 /* ALPHALibrarySource.m in Sources */,
 				67E643E73E6553E1E3759F09 /* ALPHAInstanceSource.m in Sources */,
 				67E64E41E043DB8292A7B28E /* ALPHAGlobalPlugin.m in Sources */,
+				FEDA7ABF1B5C2D2300BB35FD /* ALPHAApplicationIcon.m in Sources */,
 				67E64EF2161E3405317B2EFC /* ALPHAObjectSource.m in Sources */,
 				67E647FC4A384C699DCA382B /* ALPHAObjectConverter.m in Sources */,
 				67E645C2001DB0856CCB8114 /* ALPHAObjectPlugin.m in Sources */,
@@ -2771,6 +2824,7 @@
 				67E6485A00C28CBF5190ECDE /* ALPHAImageRendererViewController.m in Sources */,
 				67E64DACE9AF5E9E2416858E /* ALPHATableRendererViewController.m in Sources */,
 				67E64AFE330E17117A817778 /* ALPHAMethodRendererViewController.m in Sources */,
+				FEDA7AB71B5C17D800BB35FD /* ALPHAApplicationSource.m in Sources */,
 				67E64C37E3E5598E3D479C5D /* ALPHADefaultsRendererViewController.m in Sources */,
 				67E645CD614A7C518CF4A523 /* ALPHAPropertyRendererViewController.m in Sources */,
 			);
@@ -2820,6 +2874,8 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2827,16 +2883,14 @@
 					"$(inherited)",
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = ../AlphaTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.unifiedsense.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UICatalog.app/UICatalog";
 			};
 			name = Debug;
@@ -2847,6 +2901,8 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -2861,6 +2917,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.unifiedsense.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UICatalog.app/UICatalog";
 			};
 			name = Release;
@@ -2881,7 +2938,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2921,7 +2978,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2944,8 +3001,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UICatalog/UICatalog-Prefix.pch";
@@ -2953,7 +3008,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.unifiedsense.apple-samplecode.UICatalog";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2964,8 +3018,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UICatalog/UICatalog-Prefix.pch";
@@ -2973,7 +3025,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.unifiedsense.apple-samplecode.UICatalog";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

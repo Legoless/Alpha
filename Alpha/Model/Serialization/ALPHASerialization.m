@@ -239,6 +239,7 @@ static NSString *const ALPHASerializationException = @"ALPHASerializationExcepti
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
+    self = [self init];
     [self setWithCoder:aDecoder];
     return self;
 }
