@@ -10,7 +10,6 @@
 
 #import "ALPHAPlugin.h"
 #import "ALPHATheme.h"
-#import "ALPHATrigger.h"
 
 #import "ALPHAStatusBarNotification.h"
 

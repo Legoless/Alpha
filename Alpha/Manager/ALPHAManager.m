@@ -228,8 +228,8 @@
         return;
     }
     
-    self.plugins = [self createInstancesOfClass:[ALPHAPlugin class]];
-    self.triggers = [self createInstancesOfClass:[ALPHATrigger class]];
+    self.plugins = [self createInstancesOfClass:NSClassFromString(@"ALPHAPlugin")];
+    self.triggers = [self createInstancesOfClass:NSClassFromString(@"ALPHATrigger")];
 }
 
 - (NSArray *)createInstancesOfClass:(Class)class

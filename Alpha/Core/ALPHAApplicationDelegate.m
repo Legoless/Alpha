@@ -8,9 +8,6 @@
 
 #import <Haystack/Haystack.h>
 
-#import "ALPHANotification.h"
-#import "ALPHANotificationSource.h"
-
 #import "ALPHAApplicationDelegate.h"
 
 NSString *const ALPHAApplicationDelegateNotification = @"kALPHAApplicationDelegateNotification";
