@@ -153,7 +153,7 @@
     [[ALPHAScreenManager defaultManager] pushObject:[ALPHARequest requestWithIdentifier:ALPHAMenuDataIdentifier]];
 }
 
-- (void)closeButtonTapped:(ALPHAToolbarItem *)sender
+- (void)closeButtonTapped:(id)sender
 {
     [self close];
 }
