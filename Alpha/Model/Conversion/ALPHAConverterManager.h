@@ -9,7 +9,7 @@
 #import "ALPHADataConverterSource.h"
 
 /*!
- *  Object can convert Alpha Data Model to Screen Model that can be convertred using one of
+ *  Object can convert Alpha Data Model to Screen Model that can be converted using one of
  *  the child data converter sources.
  */
 @interface ALPHAConverterManager : NSObject <ALPHADataConverterSource>

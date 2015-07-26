@@ -231,7 +231,9 @@ NSString *const ALPHANetworkDataIdentifier = @"com.unifiedsense.alpha.data.netwo
         
         //NSLog(@"SWIZZLING: %@ with %@", sourceMethodName, originalMethodName);
         
-        NSAssert(class_addMethod(cfURLSessionConnectionClass, sourceMethod, originalImp, encoding), @"Should be successful");
+        BOOL success = class_addMethod(cfURLSessionConnectionClass, sourceMethod, originalImp, encoding);
+        
+        NSAssert(success, @"Should be successful");
         class_replaceMethod(cfURLSessionConnectionClass, originalMethod, sourceImp, encoding);
         
         // TODO: Check if replaced imp in case of redirectRequest.

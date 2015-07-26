@@ -36,15 +36,6 @@ Pod::Spec.new do |spec|
   end
 
   #
-  # Theme framework (non-dependent)
-  #
-
-  spec.subspec 'Theme' do |subspec|
-    subspec.source_files = 'Alpha/Themes/**/*.{h,m}'
-    subspec.dependency 'Haystack'
-  end
-
-  #
   # Model framework (non-dependent)
   #
 
@@ -58,6 +49,15 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'Private' do |subspec|
     subspec.source_files = 'Alpha/Private/**/*.{h,m}'
+  end
+
+  #
+  # Theme framework
+  #
+
+  spec.subspec 'Theme' do |subspec|
+    subspec.source_files = 'Alpha/Themes/**/*.{h,m}'
+    subspec.dependency 'Alpha/Asset'
   end
 
   #

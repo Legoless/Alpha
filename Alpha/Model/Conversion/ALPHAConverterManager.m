@@ -9,7 +9,6 @@
 @import ObjectiveC.runtime;
 
 #import "ALPHAConverterManager.h"
-#import "ALPHAGenericConverter.h"
 
 @interface ALPHAConverterManager ()
 
@@ -18,7 +17,7 @@
 /*!
  *  We keep a separate instance of generic converter which we use if we cannot find any other converter
  */
-@property (nonatomic, strong) ALPHAGenericConverter *genericConverter;
+@property (nonatomic, strong) id<ALPHADataConverterSource> genericConverter;
 
 @end
 
@@ -34,11 +33,16 @@
     return _baseConverters;
 }
 
-- (ALPHAGenericConverter *)genericConverter
+- (id<ALPHADataConverterSource>)genericConverter
 {
     if (!_genericConverter)
     {
-        _genericConverter = [[ALPHAGenericConverter alloc] init];
+        Class genericConverterClass = NSClassFromString(@"ALPHAGenericConverter");
+        
+        if (genericConverterClass)
+        {
+            _genericConverter = [[genericConverterClass alloc] init];
+        }
     }
     
     return _genericConverter;
@@ -160,7 +164,7 @@
         {
             Class nextClass = classes[index];
             
-            if (class_conformsToProtocol(nextClass, @protocol(ALPHADataConverterSource)) && nextClass != [self class] && nextClass != [ALPHAGenericConverter class])
+            if (class_conformsToProtocol(nextClass, @protocol(ALPHADataConverterSource)) && nextClass != [self class] && nextClass != NSClassFromString(@"ALPHAGenericConverter"))
             {
                 [sourceClasses addObject:nextClass];
             }
