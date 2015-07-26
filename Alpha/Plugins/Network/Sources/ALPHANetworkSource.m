@@ -231,8 +231,7 @@ NSString *const ALPHANetworkDataIdentifier = @"com.unifiedsense.alpha.data.netwo
         
         //NSLog(@"SWIZZLING: %@ with %@", sourceMethodName, originalMethodName);
         
-        BOOL success = class_addMethod(cfURLSessionConnectionClass, sourceMethod, originalImp, encoding);
-        NSAssert(success, @"Should be successful");
+        NSAssert(class_addMethod(cfURLSessionConnectionClass, sourceMethod, originalImp, encoding), @"Should be successful");
         class_replaceMethod(cfURLSessionConnectionClass, originalMethod, sourceImp, encoding);
         
         // TODO: Check if replaced imp in case of redirectRequest.
@@ -538,8 +537,8 @@ NSString *const ALPHANetworkDataIdentifier = @"com.unifiedsense.alpha.data.netwo
 {
     //id<PDPrettyStringPrinting> prettyStringPrinter = [PDNetworkDomainController prettyStringPrinterForResponse:response withRequest:request];
     
-    NSString *encodedBody;
-    BOOL isBinary;
+    NSString *encodedBody = @"";
+    BOOL isBinary = NO;
     /*if (!prettyStringPrinter) {
         encodedBody = [responseBody base64EncodedStringWithOptions:0];
 
