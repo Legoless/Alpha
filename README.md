@@ -126,7 +126,7 @@ To contribute to Alpha, please open pull requests. We warmly welcome any feature
 
 # Thanks
 
-This project would not be possible without all the work done by respected community contributors.
+This project would not be possible without all the work done by many respected community contributors.
 Thanks to all contributors of the following projects:
 
 - [**FLEX (Flipboard Explorer)**](https://github.com/Flipboard/FLEX)
