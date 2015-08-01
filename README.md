@@ -33,7 +33,7 @@ Features are separated into multiple plugins, which can be enabled or disabled, 
 - **Network** - logs network connections made using `NSURLSession` and `NSURLConnection` API's.
 - **Notification** - displays scheduled and fired local notifications, received push notifications and notification permissions.
 - **Object** - allows for inspection of any class or object in the application, including `NSUserDefaults`, arrays and dictionaries.
-- **Remote** - plugin allows connecting to Alpha on another device.
+- **Remote** - plugin allows connecting to Alpha from another device (needs Bonjour running on target).
 - **Screenshot** - plugin allows taking screenshots of the application with a single action.
 - **State** - allows inspecting the device state and settings, such as locale, time and available memory.
 - **Touch** - plugin displays touches on screen when activated.
