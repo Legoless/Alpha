@@ -42,7 +42,7 @@ Features are separated into multiple plugins, which can be enabled or disabled, 
 Currently work in progress:
 
 **0.3.0**
-- *Entire Application State Snapshot*
+- *Application State Snapshot*
 - *Recording touches and replaying actions*
 - *In-app debugger*
 
