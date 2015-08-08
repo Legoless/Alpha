@@ -108,7 +108,7 @@ pod 'Alpha/Integration'
 
 # The Story
 
-*Alpha originally started as an unofficial fork from [FLEX](https://github.com/Flipboard/FLEX) (Flipboard Explorer). It began with a desire to add multiple features to FLEX, but looking at it more and more, it was obvious that many architectural changes were required to support remote clients. Those kind of changes are the hardest to merge into original repository without breaking multiple features, it was obvious that it fits more to create a separate repository.*
+*Alpha originally started as an unofficial fork from [FLEX](https://github.com/Flipboard/FLEX) (Flipboard Explorer). It began with a simple desire to add multiple features to FLEX, but looking at it more and more, it was obvious that many architectural changes were required to support remote clients. Those kind of changes are the hardest to merge into original repository without breaking multiple features, it was obvious that it fits more to create a separate repository.*
 
 *So Alpha was converted into a separate repository and work began on top of that. Many features were added and there are many architectural changes under the hood. Alpha is now not a separate tool, but a framework that offers a full API. Features from tools are now working on top of plugin API, which allows dynamic loading and incredible extensibility.*
 
