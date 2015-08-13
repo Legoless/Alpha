@@ -122,7 +122,7 @@ The entire Alpha documentation is available on [Wiki](https://github.com/Legoles
 
 # Contributions
 
-To contribute to Alpha, please open pull requests. We warmly welcome any feature implementations or improvements, bug fixes, documentation or anything else you can think of.
+To contribute to Alpha, please open pull requests. Any feature implementations or improvements, bug fixes, documentation are very welcome.
 
 # Thanks
 
