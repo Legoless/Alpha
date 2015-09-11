@@ -143,6 +143,7 @@
         
         for (ALPHAArgumentInputView *newInputView in argumentInputViews)
         {
+            newInputView.titleLabel.textColor = self.tintColor;
             [self addSubview:newInputView];
         }
         

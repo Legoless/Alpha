@@ -84,7 +84,11 @@
     self.fieldEditorView = [[ALPHAFieldEditorView alloc] init];
     self.fieldEditorView.backgroundColor = self.theme.backgroundColor;
     self.fieldEditorView.separatorColor = self.theme.fieldSeparatorColor;
-    self.fieldEditorView.tintColor = self.theme.fieldTintColor;
+    if (self.theme.fieldTintColor) {
+        self.fieldEditorView.tintColor = self.theme.fieldTintColor;
+    }else {
+        self.fieldEditorView.tintColor = self.theme.cellTitleColor;
+    }
     
     [self.scrollView addSubview:self.fieldEditorView];
     
