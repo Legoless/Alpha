@@ -13,7 +13,7 @@
 /*!
  *  Carries pointers to internal objects in case of arrays or sets
  */
-@interface ALPHAObjectContent : NSObject <ALPHASerializableItem>
+@interface ALPHAObjectContent : NSObject <ALPHASerializableItem,NSCopying>
 
 @property (nonatomic, copy) NSArray<ALPHAObjectElement> *items;
 

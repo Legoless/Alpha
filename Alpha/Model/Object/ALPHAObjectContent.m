@@ -77,4 +77,11 @@
     return [self objectContentForDictionary:defaults.dictionaryRepresentation];
 }
 
+#pragma mark - NSCopying Protocol
+-(id)copyWithZone:(NSZone *)zone{
+    ALPHAObjectContent* content = [ALPHAObjectContent allocWithZone:zone];
+    content.items = [content.items copy];
+    return content;
+}
+
 @end
