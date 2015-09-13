@@ -468,10 +468,8 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
 }
 
 #pragma mark - Actions
-
-- (BOOL)canPerformAction:(id<ALPHAIdentifiableItem>)action
-{
-    return [action isKindOfClass:[ALPHAObjectActionItem class]];
+-(void)canPerformAction:(id<ALPHAIdentifiableItem>)action completion:(ALPHADataSourceRequestVerification)completion{
+    completion([action isKindOfClass:[ALPHAObjectActionItem class]]);
 }
 
 - (void)performAction:(ALPHAObjectActionItem *)action completion:(ALPHADataSourceRequestCompletion)completion
@@ -499,6 +497,12 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
         returnObject = [self executeAction:action onObject:object withError:&error];
     }
 
+    if (returnObject && ![returnObject isKindOfClass:[ALPHAModel class]]) {
+        ALPHARequest* request = [ALPHARequest requestForObject:returnObject];
+        ALPHAObjectModel* objectModel = (ALPHAObjectModel*)[self modelForRequest:request];
+        returnObject = objectModel;
+    }
+    
     //
     // Call completion
     //
