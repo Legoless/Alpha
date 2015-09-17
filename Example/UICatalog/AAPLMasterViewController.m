@@ -61,12 +61,13 @@
 #if DEBUG
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Alpha" style:UIBarButtonItemStylePlain target:self action:@selector(alphaButtonTapped:)];
 #endif
+    [self performSelector:@selector(alphaButtonTapped:) withObject:self afterDelay:1.0];
 }
 
 - (void)alphaButtonTapped:(id)sender
 {
 #if DEBUG
-    [[ALPHAManager defaultManager] setHidden:NO];
+    [ALPHAManager defaultManager].interfaceHidden = NO;
 #endif
 }
 
