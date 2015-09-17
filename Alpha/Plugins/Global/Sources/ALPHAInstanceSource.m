@@ -99,6 +99,9 @@ NSString* const ALPHAInstanceDataClassNameIdentifier = @"kALPHAInstanceDataClass
         }
         
         item.title = title;
+        if ([instanceData[@"instances"] isEqual:instance]) {
+            item.cellParameters = @{@"backgroundColor":[UIColor redColor]};
+        }
         item.detail = [ALPHARuntimeUtility descriptionForIvarOrPropertyValue:instance];
         
         row++;
