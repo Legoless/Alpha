@@ -82,8 +82,9 @@ NSString* const ALPHAInstanceDataClassNameIdentifier = @"kALPHAInstanceDataClass
     
     for (id instance in instanceData[@"instances"])
     {
+        
         ALPHAScreenItem* item = [[ALPHAScreenItem alloc] init];
-        item.object = instance;
+        item.object = [ALPHARequest requestForObject:instance];
         
         NSString *title = nil;
         
