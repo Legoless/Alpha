@@ -10,7 +10,7 @@
 #import "NSString+Identifier.h"
 #import "UIApplication+Delegate.h"
 #import "UIApplication+Event.h"
-#import "UIColor+Random.h"
+#import "UIColor+Utility.h"
 
 #import "ALPHAApplicationDelegate.h"
 #import "ALPHACanvasView.h"

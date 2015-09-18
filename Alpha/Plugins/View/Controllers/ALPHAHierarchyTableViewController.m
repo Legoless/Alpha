@@ -13,7 +13,7 @@
 #import "ALPHATableScreenModel.h"
 #import "ALPHAActions.h"
 
-#import "UIColor+Random.h"
+#import "UIColor+Utility.h"
 
 static const NSInteger kALPHAHierarchyScopeViewsAtTapIndex = 0;
 static const NSInteger kALPHAHierarchyScopeFullHierarchyIndex = 1;
