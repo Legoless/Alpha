@@ -1,4 +1,4 @@
-//  PINCache is a modified version of TMCache
+//  ALPHACache is a modified version of TMCache
 //  Modifications by Garrett Moon
 //  Copyright (c) 2015 Pinterest. All rights reserved.
 
@@ -8,22 +8,22 @@
 @import UIKit;
 #endif
 
-#define PINDiskCacheError(error) if (error) { NSLog(@"%@ (%d) ERROR: %@", \
+#define ALPHADiskCacheError(error) if (error) { NSLog(@"%@ (%d) ERROR: %@", \
 [[NSString stringWithUTF8String:__FILE__] lastPathComponent], \
 __LINE__, [error localizedDescription]); }
 
-#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_4_0 && !defined(PIN_APP_EXTENSIONS)
-#define PINCacheStartBackgroundTask() UIBackgroundTaskIdentifier taskID = UIBackgroundTaskInvalid; \
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_4_0 && !defined(ALPHA_APP_EXTENSIONS)
+#define ALPHACacheStartBackgroundTask() UIBackgroundTaskIdentifier taskID = UIBackgroundTaskInvalid; \
 taskID = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{ \
 [[UIApplication sharedApplication] endBackgroundTask:taskID]; }];
-#define PINCacheEndBackgroundTask() [[UIApplication sharedApplication] endBackgroundTask:taskID];
+#define ALPHACacheEndBackgroundTask() [[UIApplication sharedApplication] endBackgroundTask:taskID];
 #else
-#define PINCacheStartBackgroundTask()
-#define PINCacheEndBackgroundTask()
+#define ALPHACacheStartBackgroundTask()
+#define ALPHACacheEndBackgroundTask()
 #endif
 
-NSString * const PINDiskCachePrefix = @"com.unifiedsense.alpha.AssetCacheDisk";
-NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
+NSString * const ALPHADiskCachePrefix = @"com.unifiedsense.alpha.AssetCacheDisk";
+NSString * const ALPHADiskCacheSharedName = @"ALPHADiskAssetCacheShared";
 
 @interface ALPHADiskCache ()
 
@@ -62,6 +62,11 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
 #endif
 }
 
+- (instancetype)init
+{
+    return [self initWithName:@"com.unifiedsense.Alpha"];
+}
+
 - (instancetype)initWithName:(NSString *)name
 {
     return [self initWithName:name rootPath:[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0]];
@@ -74,7 +79,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
     
     if (self = [super init]) {
         _name = [name copy];
-        _asyncQueue = dispatch_queue_create([[NSString stringWithFormat:@"%@ Asynchronous Queue", PINDiskCachePrefix] UTF8String], DISPATCH_QUEUE_CONCURRENT);
+        _asyncQueue = dispatch_queue_create([[NSString stringWithFormat:@"%@ Asynchronous Queue", ALPHADiskCachePrefix] UTF8String], DISPATCH_QUEUE_CONCURRENT);
         _lockSemaphore = dispatch_semaphore_create(1);
         _willAddObjectBlock = nil;
         _willRemoveObjectBlock = nil;
@@ -90,7 +95,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
         _dates = [[NSMutableDictionary alloc] init];
         _sizes = [[NSMutableDictionary alloc] init];
         
-        NSString *pathComponent = [[NSString alloc] initWithFormat:@"%@.%@", PINDiskCachePrefix, _name];
+        NSString *pathComponent = [[NSString alloc] initWithFormat:@"%@.%@", ALPHADiskCachePrefix, _name];
         _cacheURL = [NSURL fileURLWithPathComponents:@[ rootPath, pathComponent ]];
         
         __weak ALPHADiskCache *weakSelf = self;
@@ -107,7 +112,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
 
 - (NSString *)description
 {
-    return [[NSString alloc] initWithFormat:@"%@.%@.%p", PINDiskCachePrefix, _name, self];
+    return [[NSString alloc] initWithFormat:@"%@.%@.%p", ALPHADiskCachePrefix, _name, self];
 }
 
 + (instancetype)sharedCache
@@ -116,7 +121,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
     static dispatch_once_t predicate;
     
     dispatch_once(&predicate, ^{
-        cache = [[self alloc] initWithName:PINDiskCacheSharedName];
+        cache = [[self alloc] initWithName:ALPHADiskCacheSharedName];
     });
     
     return cache;
@@ -175,7 +180,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
     static dispatch_once_t predicate;
     
     dispatch_once(&predicate, ^{
-        NSString *queueName = [[NSString alloc] initWithFormat:@"%@.trash", PINDiskCachePrefix];
+        NSString *queueName = [[NSString alloc] initWithFormat:@"%@.trash", ALPHADiskCachePrefix];
         trashQueue = dispatch_queue_create([queueName UTF8String], DISPATCH_QUEUE_SERIAL);
         dispatch_set_target_queue(trashQueue, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0));
     });
@@ -189,7 +194,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
     static dispatch_once_t predicate;
     
     dispatch_once(&predicate, ^{
-        sharedTrashURL = [[[NSURL alloc] initFileURLWithPath:NSTemporaryDirectory()] URLByAppendingPathComponent:PINDiskCachePrefix isDirectory:YES];
+        sharedTrashURL = [[[NSURL alloc] initFileURLWithPath:NSTemporaryDirectory()] URLByAppendingPathComponent:ALPHADiskCachePrefix isDirectory:YES];
         
         if (![[NSFileManager defaultManager] fileExistsAtPath:[sharedTrashURL path]]) {
             NSError *error = nil;
@@ -197,7 +202,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
                                      withIntermediateDirectories:YES
                                                       attributes:nil
                                                            error:&error];
-            PINDiskCacheError(error);
+            ALPHADiskCacheError(error);
         }
     });
     
@@ -213,13 +218,13 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
     NSString *uniqueString = [[NSProcessInfo processInfo] globallyUniqueString];
     NSURL *uniqueTrashURL = [[ALPHADiskCache sharedTrashURL] URLByAppendingPathComponent:uniqueString];
     BOOL moved = [[NSFileManager defaultManager] moveItemAtURL:itemURL toURL:uniqueTrashURL error:&error];
-    PINDiskCacheError(error);
+    ALPHADiskCacheError(error);
     return moved;
 }
 
 + (void)emptyTrash
 {
-    PINCacheStartBackgroundTask();
+    ALPHACacheStartBackgroundTask();
     
     dispatch_async([self sharedTrashQueue], ^{
         NSError *error = nil;
@@ -227,15 +232,15 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
                                                               includingPropertiesForKeys:nil
                                                                                  options:0
                                                                                    error:&error];
-        PINDiskCacheError(error);
+        ALPHADiskCacheError(error);
         
         for (NSURL *trashedItemURL in trashedItems) {
             NSError *error = nil;
             [[NSFileManager defaultManager] removeItemAtURL:trashedItemURL error:&error];
-            PINDiskCacheError(error);
+            ALPHADiskCacheError(error);
         }
         
-        PINCacheEndBackgroundTask();
+        ALPHACacheEndBackgroundTask();
     });
 }
 
@@ -251,7 +256,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
                                             withIntermediateDirectories:YES
                                                              attributes:nil
                                                                   error:&error];
-    PINDiskCacheError(error);
+    ALPHADiskCacheError(error);
     
     return success;
 }
@@ -266,14 +271,14 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
                                                    includingPropertiesForKeys:keys
                                                                       options:NSDirectoryEnumerationSkipsHiddenFiles
                                                                         error:&error];
-    PINDiskCacheError(error);
+    ALPHADiskCacheError(error);
     
     for (NSURL *fileURL in files) {
         NSString *key = [self keyForEncodedFileURL:fileURL];
         
         error = nil;
         NSDictionary *dictionary = [fileURL resourceValuesForKeys:keys error:&error];
-        PINDiskCacheError(error);
+        ALPHADiskCacheError(error);
         
         NSDate *date = [dictionary objectForKey:NSURLContentModificationDateKey];
         if (date && key)
@@ -300,7 +305,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
     BOOL success = [[NSFileManager defaultManager] setAttributes:@{ NSFileModificationDate: date }
                                                     ofItemAtPath:[fileURL path]
                                                            error:&error];
-    PINDiskCacheError(error);
+    ALPHADiskCacheError(error);
     
     if (success) {
         NSString *key = [self keyForEncodedFileURL:fileURL];
@@ -425,7 +430,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
     });
 }
 
-- (void)objectForKey:(NSString *)key block:(PINDiskCacheObjectBlock)block
+- (void)objectForKey:(NSString *)key block:(ALPHADiskCacheObjectBlock)block
 {
     __weak ALPHADiskCache *weakSelf = self;
     
@@ -442,7 +447,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
     });
 }
 
-- (void)fileURLForKey:(NSString *)key block:(PINDiskCacheObjectBlock)block
+- (void)fileURLForKey:(NSString *)key block:(ALPHADiskCacheObjectBlock)block
 {
     __weak ALPHADiskCache *weakSelf = self;
     
@@ -458,7 +463,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
     });
 }
 
-- (void)setObject:(id <NSCoding>)object forKey:(NSString *)key block:(PINDiskCacheObjectBlock)block
+- (void)setObject:(id <NSCoding>)object forKey:(NSString *)key block:(ALPHADiskCacheObjectBlock)block
 {
     __weak ALPHADiskCache *weakSelf = self;
     
@@ -475,7 +480,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
     });
 }
 
-- (void)removeObjectForKey:(NSString *)key block:(PINDiskCacheObjectBlock)block
+- (void)removeObjectForKey:(NSString *)key block:(ALPHADiskCacheObjectBlock)block
 {
     __weak ALPHADiskCache *weakSelf = self;
     
@@ -492,7 +497,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
     });
 }
 
-- (void)trimToSize:(NSUInteger)trimByteCount block:(PINDiskCacheBlock)block
+- (void)trimToSize:(NSUInteger)trimByteCount block:(ALPHADiskCacheBlock)block
 {
     __weak ALPHADiskCache *weakSelf = self;
     
@@ -508,7 +513,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
     });
 }
 
-- (void)trimToDate:(NSDate *)trimDate block:(PINDiskCacheBlock)block
+- (void)trimToDate:(NSDate *)trimDate block:(ALPHADiskCacheBlock)block
 {
     __weak ALPHADiskCache *weakSelf = self;
     
@@ -524,7 +529,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
     });
 }
 
-- (void)trimToSizeByDate:(NSUInteger)trimByteCount block:(PINDiskCacheBlock)block
+- (void)trimToSizeByDate:(NSUInteger)trimByteCount block:(ALPHADiskCacheBlock)block
 {
     __weak ALPHADiskCache *weakSelf = self;
     
@@ -540,7 +545,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
     });
 }
 
-- (void)removeAllObjects:(PINDiskCacheBlock)block
+- (void)removeAllObjects:(ALPHADiskCacheBlock)block
 {
     __weak ALPHADiskCache *weakSelf = self;
     
@@ -556,7 +561,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
     });
 }
 
-- (void)enumerateObjectsWithBlock:(PINDiskCacheObjectBlock)block completionBlock:(PINDiskCacheBlock)completionBlock
+- (void)enumerateObjectsWithBlock:(ALPHADiskCacheObjectBlock)block completionBlock:(ALPHADiskCacheBlock)completionBlock
 {
     __weak ALPHADiskCache *weakSelf = self;
     
@@ -609,7 +614,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
             @catch (NSException *exception) {
                 NSError *error = nil;
                 [[NSFileManager defaultManager] removeItemAtPath:[fileURL path] error:&error];
-                PINDiskCacheError(error);
+                ALPHADiskCacheError(error);
             }
             
             [self setFileModificationDate:now forURL:fileURL];
@@ -656,7 +661,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
     if (!key || !object)
         return;
     
-    PINCacheStartBackgroundTask();
+    ALPHACacheStartBackgroundTask();
     
     NSURL *fileURL = nil;
     
@@ -673,7 +678,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
             
             NSError *error = nil;
             NSDictionary *values = [fileURL resourceValuesForKeys:@[ NSURLTotalFileAllocatedSizeKey ] error:&error];
-            PINDiskCacheError(error);
+            ALPHADiskCacheError(error);
             
             NSNumber *diskFileSize = [values objectForKey:NSURLTotalFileAllocatedSizeKey];
             if (diskFileSize) {
@@ -695,7 +700,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
         *outFileURL = fileURL;
     }
     
-    PINCacheEndBackgroundTask();
+    ALPHACacheEndBackgroundTask();
 }
 
 - (void)removeObjectForKey:(NSString *)key
@@ -708,7 +713,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
     if (!key)
         return;
     
-    PINCacheStartBackgroundTask();
+    ALPHACacheStartBackgroundTask();
     
     NSURL *fileURL = nil;
     
@@ -717,7 +722,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
         [self removeFileAndExecuteBlocksForKey:key];
     [self unlock];
     
-    PINCacheEndBackgroundTask();
+    ALPHACacheEndBackgroundTask();
     
     if (outFileURL) {
         *outFileURL = fileURL;
@@ -731,13 +736,13 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
         return;
     }
     
-    PINCacheStartBackgroundTask();
+    ALPHACacheStartBackgroundTask();
     
     [self lock];
         [self trimDiskToSize:trimByteCount];
     [self unlock];
     
-    PINCacheEndBackgroundTask();
+    ALPHACacheEndBackgroundTask();
 }
 
 - (void)trimToDate:(NSDate *)trimDate
@@ -750,13 +755,13 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
         return;
     }
     
-    PINCacheStartBackgroundTask();
+    ALPHACacheStartBackgroundTask();
     
     [self lock];
         [self trimDiskToDate:trimDate];
     [self unlock];
     
-    PINCacheEndBackgroundTask();
+    ALPHACacheEndBackgroundTask();
 }
 
 - (void)trimToSizeByDate:(NSUInteger)trimByteCount
@@ -766,18 +771,18 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
         return;
     }
     
-    PINCacheStartBackgroundTask();
+    ALPHACacheStartBackgroundTask();
     
     [self lock];
         [self trimDiskToSizeByDate:trimByteCount];
     [self unlock];
     
-    PINCacheEndBackgroundTask();
+    ALPHACacheEndBackgroundTask();
 }
 
 - (void)removeAllObjects
 {
-    PINCacheStartBackgroundTask();
+    ALPHACacheStartBackgroundTask();
     
     [self lock];
         if (self->_willRemoveAllObjectsBlock)
@@ -796,15 +801,15 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
             self->_didRemoveAllObjectsBlock(self);
     [self unlock];
     
-    PINCacheEndBackgroundTask();
+    ALPHACacheEndBackgroundTask();
 }
 
-- (void)enumerateObjectsWithBlock:(PINDiskCacheObjectBlock)block
+- (void)enumerateObjectsWithBlock:(ALPHADiskCacheObjectBlock)block
 {
     if (!block)
         return;
     
-    PINCacheStartBackgroundTask();
+    ALPHACacheStartBackgroundTask();
     
     [self lock];
         NSArray *keysSortedByDate = [self->_dates keysSortedByValueUsingSelector:@selector(compare:)];
@@ -815,14 +820,14 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
         }
     [self unlock];
     
-    PINCacheEndBackgroundTask();
+    ALPHACacheEndBackgroundTask();
 }
 
 #pragma mark - Public Thread Safe Accessors -
 
-- (PINDiskCacheObjectBlock)willAddObjectBlock
+- (ALPHADiskCacheObjectBlock)willAddObjectBlock
 {
-    PINDiskCacheObjectBlock block = nil;
+    ALPHADiskCacheObjectBlock block = nil;
     
     [self lock];
         block = _willAddObjectBlock;
@@ -831,7 +836,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
     return block;
 }
 
-- (void)setWillAddObjectBlock:(PINDiskCacheObjectBlock)block
+- (void)setWillAddObjectBlock:(ALPHADiskCacheObjectBlock)block
 {
     __weak ALPHADiskCache *weakSelf = self;
     
@@ -845,9 +850,9 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
     });
 }
 
-- (PINDiskCacheObjectBlock)willRemoveObjectBlock
+- (ALPHADiskCacheObjectBlock)willRemoveObjectBlock
 {
-    PINDiskCacheObjectBlock block = nil;
+    ALPHADiskCacheObjectBlock block = nil;
     
     [self lock];
         block = _willRemoveObjectBlock;
@@ -856,7 +861,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
     return block;
 }
 
-- (void)setWillRemoveObjectBlock:(PINDiskCacheObjectBlock)block
+- (void)setWillRemoveObjectBlock:(ALPHADiskCacheObjectBlock)block
 {
     __weak ALPHADiskCache *weakSelf = self;
     
@@ -871,9 +876,9 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
     });
 }
 
-- (PINDiskCacheBlock)willRemoveAllObjectsBlock
+- (ALPHADiskCacheBlock)willRemoveAllObjectsBlock
 {
-    PINDiskCacheBlock block = nil;
+    ALPHADiskCacheBlock block = nil;
     
     [self lock];
         block = _willRemoveAllObjectsBlock;
@@ -882,7 +887,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
     return block;
 }
 
-- (void)setWillRemoveAllObjectsBlock:(PINDiskCacheBlock)block
+- (void)setWillRemoveAllObjectsBlock:(ALPHADiskCacheBlock)block
 {
     __weak ALPHADiskCache *weakSelf = self;
     
@@ -897,9 +902,9 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
     });
 }
 
-- (PINDiskCacheObjectBlock)didAddObjectBlock
+- (ALPHADiskCacheObjectBlock)didAddObjectBlock
 {
-    PINDiskCacheObjectBlock block = nil;
+    ALPHADiskCacheObjectBlock block = nil;
     
     [self lock];
         block = _didAddObjectBlock;
@@ -908,7 +913,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
     return block;
 }
 
-- (void)setDidAddObjectBlock:(PINDiskCacheObjectBlock)block
+- (void)setDidAddObjectBlock:(ALPHADiskCacheObjectBlock)block
 {
     __weak ALPHADiskCache *weakSelf = self;
     
@@ -923,9 +928,9 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
     });
 }
 
-- (PINDiskCacheObjectBlock)didRemoveObjectBlock
+- (ALPHADiskCacheObjectBlock)didRemoveObjectBlock
 {
-    PINDiskCacheObjectBlock block = nil;
+    ALPHADiskCacheObjectBlock block = nil;
     
     [self lock];
         block = _didRemoveObjectBlock;
@@ -934,7 +939,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
     return block;
 }
 
-- (void)setDidRemoveObjectBlock:(PINDiskCacheObjectBlock)block
+- (void)setDidRemoveObjectBlock:(ALPHADiskCacheObjectBlock)block
 {
     __weak ALPHADiskCache *weakSelf = self;
     
@@ -949,9 +954,9 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
     });
 }
 
-- (PINDiskCacheBlock)didRemoveAllObjectsBlock
+- (ALPHADiskCacheBlock)didRemoveAllObjectsBlock
 {
-    PINDiskCacheBlock block = nil;
+    ALPHADiskCacheBlock block = nil;
     
     [self lock];
         block = _didRemoveAllObjectsBlock;
@@ -960,7 +965,7 @@ NSString * const PINDiskCacheSharedName = @"ALPHADiskAssetCacheShared";
     return block;
 }
 
-- (void)setDidRemoveAllObjectsBlock:(PINDiskCacheBlock)block
+- (void)setDidRemoveAllObjectsBlock:(ALPHADiskCacheBlock)block
 {
     __weak ALPHADiskCache *weakSelf = self;
     

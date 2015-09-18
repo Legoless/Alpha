@@ -1,4 +1,4 @@
-//  PINCache is a modified version of TMCache
+//  ALPHACache is a modified version of PINCache
 //  Modifications by Garrett Moon
 //  Copyright (c) 2015 Pinterest. All rights reserved.
 
@@ -15,13 +15,13 @@ NS_ASSUME_NONNULL_BEGIN
  A callback block which provides only the cache as an argument
  */
 
-typedef void (^PINCacheBlock)(ALPHACache *cache);
+typedef void (^ALPHACacheBlock)(ALPHACache *cache);
 
 /**
  A callback block which provides the cache, key and object as arguments
  */
 
-typedef void (^PINCacheObjectBlock)(ALPHACache *cache, NSString *key, id __nullable object);
+typedef void (^ALPHACacheObjectBlock)(ALPHACache *cache, NSString *key, id __nullable object);
 
 /**
  `ALPHACache` is a thread safe key/value store designed for persisting temporary objects that are expensive to
@@ -111,7 +111,7 @@ typedef void (^PINCacheObjectBlock)(ALPHACache *cache, NSString *key, id __nulla
  @param key The key associated with the requested object.
  @param block A block to be executed concurrently when the object is available.
  */
-- (void)objectForKey:(NSString *)key block:(PINCacheObjectBlock)block;
+- (void)objectForKey:(NSString *)key block:(ALPHACacheObjectBlock)block;
 
 /**
  Stores an object in the cache for the specified key. This method returns immediately and executes the
@@ -121,7 +121,7 @@ typedef void (^PINCacheObjectBlock)(ALPHACache *cache, NSString *key, id __nulla
  @param key A key to associate with the object. This string will be copied.
  @param block A block to be executed concurrently after the object has been stored, or nil.
  */
-- (void)setObject:(id <NSCoding>)object forKey:(NSString *)key block:(nullable PINCacheObjectBlock)block;
+- (void)setObject:(id <NSCoding>)object forKey:(NSString *)key block:(nullable ALPHACacheObjectBlock)block;
 
 /**
  Removes the object for the specified key. This method returns immediately and executes the passed
@@ -130,7 +130,7 @@ typedef void (^PINCacheObjectBlock)(ALPHACache *cache, NSString *key, id __nulla
  @param key The key associated with the object to be removed.
  @param block A block to be executed concurrently after the object has been removed, or nil.
  */
-- (void)removeObjectForKey:(NSString *)key block:(nullable PINCacheObjectBlock)block;
+- (void)removeObjectForKey:(NSString *)key block:(nullable ALPHACacheObjectBlock)block;
 
 /**
  Removes all objects from the cache that have not been used since the specified date. This method returns immediately and
@@ -139,7 +139,7 @@ typedef void (^PINCacheObjectBlock)(ALPHACache *cache, NSString *key, id __nulla
  @param date Objects that haven't been accessed since this date are removed from the cache.
  @param block A block to be executed concurrently after the cache has been trimmed, or nil.
  */
-- (void)trimToDate:(NSDate *)date block:(nullable PINCacheBlock)block;
+- (void)trimToDate:(NSDate *)date block:(nullable ALPHACacheBlock)block;
 
 /**
  Removes all objects from the cache.This method returns immediately and executes the passed block after the
@@ -147,7 +147,7 @@ typedef void (^PINCacheObjectBlock)(ALPHACache *cache, NSString *key, id __nulla
  
  @param block A block to be executed concurrently after the cache has been cleared, or nil.
  */
-- (void)removeAllObjects:(nullable PINCacheBlock)block;
+- (void)removeAllObjects:(nullable ALPHACacheBlock)block;
 
 #pragma mark -
 /// @name Synchronous Methods

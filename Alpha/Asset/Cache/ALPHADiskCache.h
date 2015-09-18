@@ -1,4 +1,4 @@
-//  PINCache is a modified version of TMCache
+//  ALPHACache is a modified version of TMCache
 //  Modifications by Garrett Moon
 //  Copyright (c) 2015 Pinterest. All rights reserved.
 
@@ -14,13 +14,13 @@ NS_ASSUME_NONNULL_BEGIN
  A callback block which provides only the cache as an argument
  */
 
-typedef void (^PINDiskCacheBlock)(ALPHADiskCache *cache);
+typedef void (^ALPHADiskCacheBlock)(ALPHADiskCache *cache);
 
 /**
  A callback block which provides the cache, key and object as arguments
  */
 
-typedef void (^PINDiskCacheObjectBlock)(ALPHADiskCache *cache, NSString *key, id <NSCoding>  __nullable object, NSURL *fileURL);
+typedef void (^ALPHADiskCacheObjectBlock)(ALPHADiskCache *cache, NSString *key, id <NSCoding>  __nullable object, NSURL *fileURL);
 
 /**
  `ALPHADiskCache` is a thread safe key/value store backed by the file system. It accepts any object conforming
@@ -104,34 +104,34 @@ typedef void (^PINDiskCacheObjectBlock)(ALPHADiskCache *cache, NSString *key, id
 /**
  A block to be executed just before an object is added to the cache. The queue waits during execution.
  */
-@property (copy) PINDiskCacheObjectBlock __nullable willAddObjectBlock;
+@property (copy) ALPHADiskCacheObjectBlock __nullable willAddObjectBlock;
 
 /**
  A block to be executed just before an object is removed from the cache. The queue waits during execution.
  */
-@property (copy) PINDiskCacheObjectBlock __nullable willRemoveObjectBlock;
+@property (copy) ALPHADiskCacheObjectBlock __nullable willRemoveObjectBlock;
 
 /**
  A block to be executed just before all objects are removed from the cache as a result of <removeAllObjects:>.
  The queue waits during execution.
  */
-@property (copy) PINDiskCacheBlock __nullable willRemoveAllObjectsBlock;
+@property (copy) ALPHADiskCacheBlock __nullable willRemoveAllObjectsBlock;
 
 /**
  A block to be executed just after an object is added to the cache. The queue waits during execution.
  */
-@property (copy) PINDiskCacheObjectBlock __nullable didAddObjectBlock;
+@property (copy) ALPHADiskCacheObjectBlock __nullable didAddObjectBlock;
 
 /**
  A block to be executed just after an object is removed from the cache. The queue waits during execution.
  */
-@property (copy) PINDiskCacheObjectBlock __nullable didRemoveObjectBlock;
+@property (copy) ALPHADiskCacheObjectBlock __nullable didRemoveObjectBlock;
 
 /**
  A block to be executed just after all objects are removed from the cache as a result of <removeAllObjects:>.
  The queue waits during execution.
  */
-@property (copy) PINDiskCacheBlock __nullable didRemoveAllObjectsBlock;
+@property (copy) ALPHADiskCacheBlock __nullable didRemoveAllObjectsBlock;
 
 #pragma mark -
 /// @name Initialization
@@ -179,7 +179,7 @@ typedef void (^PINDiskCacheObjectBlock)(ALPHADiskCache *cache, NSString *key, id
  
  @param block A block to be executed when a lock is available.
  */
-- (void)lockFileAccessWhileExecutingBlock:(nullable PINDiskCacheBlock)block;
+- (void)lockFileAccessWhileExecutingBlock:(nullable ALPHADiskCacheBlock)block;
 
 /**
  Retrieves the object for the specified key. This method returns immediately and executes the passed
@@ -190,7 +190,7 @@ typedef void (^PINDiskCacheObjectBlock)(ALPHADiskCache *cache, NSString *key, id
  @param key The key associated with the requested object.
  @param block A block to be executed serially when the object is available.
  */
-- (void)objectForKey:(NSString *)key block:(nullable PINDiskCacheObjectBlock)block;
+- (void)objectForKey:(NSString *)key block:(nullable ALPHADiskCacheObjectBlock)block;
 
 /**
  Retrieves the fileURL for the specified key without actually reading the data from disk. This method
@@ -202,7 +202,7 @@ typedef void (^PINDiskCacheObjectBlock)(ALPHADiskCache *cache, NSString *key, id
  @param key The key associated with the requested object.
  @param block A block to be executed serially when the file URL is available.
  */
-- (void)fileURLForKey:(nullable NSString *)key block:(nullable PINDiskCacheObjectBlock)block;
+- (void)fileURLForKey:(nullable NSString *)key block:(nullable ALPHADiskCacheObjectBlock)block;
 
 /**
  Stores an object in the cache for the specified key. This method returns immediately and executes the
@@ -212,7 +212,7 @@ typedef void (^PINDiskCacheObjectBlock)(ALPHADiskCache *cache, NSString *key, id
  @param key A key to associate with the object. This string will be copied.
  @param block A block to be executed serially after the object has been stored, or nil.
  */
-- (void)setObject:(id <NSCoding>)object forKey:(NSString *)key block:(nullable PINDiskCacheObjectBlock)block;
+- (void)setObject:(id <NSCoding>)object forKey:(NSString *)key block:(nullable ALPHADiskCacheObjectBlock)block;
 
 /**
  Removes the object for the specified key. This method returns immediately and executes the passed block
@@ -221,7 +221,7 @@ typedef void (^PINDiskCacheObjectBlock)(ALPHADiskCache *cache, NSString *key, id
  @param key The key associated with the object to be removed.
  @param block A block to be executed serially after the object has been removed, or nil.
  */
-- (void)removeObjectForKey:(NSString *)key block:(nullable PINDiskCacheObjectBlock)block;
+- (void)removeObjectForKey:(NSString *)key block:(nullable ALPHADiskCacheObjectBlock)block;
 
 /**
  Removes all objects from the cache that have not been used since the specified date.
@@ -230,7 +230,7 @@ typedef void (^PINDiskCacheObjectBlock)(ALPHADiskCache *cache, NSString *key, id
  @param date Objects that haven't been accessed since this date are removed from the cache.
  @param block A block to be executed serially after the cache has been trimmed, or nil.
  */
-- (void)trimToDate:(NSDate *)date block:(nullable PINDiskCacheBlock)block;
+- (void)trimToDate:(NSDate *)date block:(nullable ALPHADiskCacheBlock)block;
 
 /**
  Removes objects from the cache, largest first, until the cache is equal to or smaller than the specified byteCount.
@@ -239,7 +239,7 @@ typedef void (^PINDiskCacheObjectBlock)(ALPHADiskCache *cache, NSString *key, id
  @param byteCount The cache will be trimmed equal to or smaller than this size.
  @param block A block to be executed serially after the cache has been trimmed, or nil.
  */
-- (void)trimToSize:(NSUInteger)byteCount block:(nullable PINDiskCacheBlock)block;
+- (void)trimToSize:(NSUInteger)byteCount block:(nullable ALPHADiskCacheBlock)block;
 
 /**
  Removes objects from the cache, ordered by date (least recently used first), until the cache is equal to or smaller
@@ -249,7 +249,7 @@ typedef void (^PINDiskCacheObjectBlock)(ALPHADiskCache *cache, NSString *key, id
  @param byteCount The cache will be trimmed equal to or smaller than this size.
  @param block A block to be executed serially after the cache has been trimmed, or nil.
  */
-- (void)trimToSizeByDate:(NSUInteger)byteCount block:(nullable PINDiskCacheBlock)block;
+- (void)trimToSizeByDate:(NSUInteger)byteCount block:(nullable ALPHADiskCacheBlock)block;
 
 /**
  Removes all objects from the cache. This method returns immediately and executes the passed block as soon as the
@@ -257,7 +257,7 @@ typedef void (^PINDiskCacheObjectBlock)(ALPHADiskCache *cache, NSString *key, id
  
  @param block A block to be executed serially after the cache has been cleared, or nil.
  */
-- (void)removeAllObjects:(nullable PINDiskCacheBlock)block;
+- (void)removeAllObjects:(nullable ALPHADiskCacheBlock)block;
 
 /**
  Loops through all objects in the cache (reads and writes are suspended during the enumeration). Data is not actually
@@ -267,7 +267,7 @@ typedef void (^PINDiskCacheObjectBlock)(ALPHADiskCache *cache, NSString *key, id
  @param block A block to be executed for every object in the cache.
  @param completionBlock An optional block to be executed after the enumeration is complete.
  */
-- (void)enumerateObjectsWithBlock:(PINDiskCacheObjectBlock)block completionBlock:(nullable PINDiskCacheBlock)completionBlock;
+- (void)enumerateObjectsWithBlock:(ALPHADiskCacheObjectBlock)block completionBlock:(nullable ALPHADiskCacheBlock)completionBlock;
 
 #pragma mark -
 /// @name Synchronous Methods
@@ -280,7 +280,7 @@ typedef void (^PINDiskCacheObjectBlock)(ALPHADiskCache *cache, NSString *key, id
  
  @param block A block to be executed when a lock is available.
  */
-- (void)synchronouslyLockFileAccessWhileExecutingBlock:(nullable PINDiskCacheBlock)block;
+- (void)synchronouslyLockFileAccessWhileExecutingBlock:(nullable ALPHADiskCacheBlock)block;
 
 /**
  Retrieves the object for the specified key. This method blocks the calling thread until the
@@ -356,7 +356,7 @@ typedef void (^PINDiskCacheObjectBlock)(ALPHADiskCache *cache, NSString *key, id
  @warning Do not call this method within the event blocks (<didRemoveObjectBlock>, etc.)
  Instead use the asynchronous version, <enumerateObjectsWithBlock:completionBlock:>.
  */
-- (void)enumerateObjectsWithBlock:(nullable PINDiskCacheObjectBlock)block;
+- (void)enumerateObjectsWithBlock:(nullable ALPHADiskCacheObjectBlock)block;
 
 @end
 

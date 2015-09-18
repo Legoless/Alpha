@@ -1,4 +1,4 @@
-//  PINCache is a modified version of TMCache
+//  ALPHACache is a modified version of TMCache
 //  Modifications by Garrett Moon
 //  Copyright (c) 2015 Pinterest. All rights reserved.
 
@@ -14,12 +14,12 @@ NS_ASSUME_NONNULL_BEGIN
  A callback block which provides only the cache as an argument
  */
 
-typedef void (^PINMemoryCacheBlock)(ALPHAMemoryCache *cache);
+typedef void (^ALPHAMemoryCacheBlock)(ALPHAMemoryCache *cache);
 
 /**
  A callback block which provides the cache, key and object as arguments
  */
-typedef void (^PINMemoryCacheObjectBlock)(ALPHAMemoryCache *cache, NSString *key, id __nullable object);
+typedef void (^ALPHAMemoryCacheObjectBlock)(ALPHAMemoryCache *cache, NSString *key, id __nullable object);
 
 /**
  `ALPHAMemoryCache` is a fast, thread safe key/value store similar to `NSCache`. On iOS it will clear itself
@@ -86,54 +86,54 @@ typedef void (^PINMemoryCacheObjectBlock)(ALPHAMemoryCache *cache, NSString *key
  a lock, i.e. all reads and writes are suspended for the duration of the block.
  Calling synchronous methods on the cache within this callback will likely cause a deadlock.
  */
-@property (copy) PINMemoryCacheObjectBlock __nullable willAddObjectBlock;
+@property (copy) ALPHAMemoryCacheObjectBlock __nullable willAddObjectBlock;
 
 /**
  A block to be executed just before an object is removed from the cache. This block will be excuted
  within a lock, i.e. all reads and writes are suspended for the duration of the block.
  Calling synchronous methods on the cache within this callback will likely cause a deadlock.
  */
-@property (copy) PINMemoryCacheObjectBlock __nullable willRemoveObjectBlock;
+@property (copy) ALPHAMemoryCacheObjectBlock __nullable willRemoveObjectBlock;
 
 /**
  A block to be executed just before all objects are removed from the cache as a result of <removeAllObjects:>.
  This block will be excuted within a lock, i.e. all reads and writes are suspended for the duration of the block.
  Calling synchronous methods on the cache within this callback will likely cause a deadlock.
  */
-@property (copy) PINMemoryCacheBlock __nullable willRemoveAllObjectsBlock;
+@property (copy) ALPHAMemoryCacheBlock __nullable willRemoveAllObjectsBlock;
 
 /**
  A block to be executed just after an object is added to the cache. This block will be excuted within
  a lock, i.e. all reads and writes are suspended for the duration of the block.
  Calling synchronous methods on the cache within this callback will likely cause a deadlock.
  */
-@property (copy) PINMemoryCacheObjectBlock __nullable didAddObjectBlock;
+@property (copy) ALPHAMemoryCacheObjectBlock __nullable didAddObjectBlock;
 
 /**
  A block to be executed just after an object is removed from the cache. This block will be excuted
  within a lock, i.e. all reads and writes are suspended for the duration of the block.
  Calling synchronous methods on the cache within this callback will likely cause a deadlock.
  */
-@property (copy) PINMemoryCacheObjectBlock __nullable didRemoveObjectBlock;
+@property (copy) ALPHAMemoryCacheObjectBlock __nullable didRemoveObjectBlock;
 
 /**
  A block to be executed just after all objects are removed from the cache as a result of <removeAllObjects:>.
  This block will be excuted within a lock, i.e. all reads and writes are suspended for the duration of the block.
  Calling synchronous methods on the cache within this callback will likely cause a deadlock.
  */
-@property (copy) PINMemoryCacheBlock __nullable didRemoveAllObjectsBlock;
+@property (copy) ALPHAMemoryCacheBlock __nullable didRemoveAllObjectsBlock;
 
 /**
  A block to be executed upon receiving a memory warning (iOS only) potentially in parallel with other blocks on the <queue>.
  This block will be executed regardless of the value of <removeAllObjectsOnMemoryWarning>. Defaults to `nil`.
  */
-@property (copy) PINMemoryCacheBlock __nullable didReceiveMemoryWarningBlock;
+@property (copy) ALPHAMemoryCacheBlock __nullable didReceiveMemoryWarningBlock;
 
 /**
  A block to be executed when the app enters the background (iOS only) potentially in parallel with other blocks on the <concurrentQueue>.
  This block will be executed regardless of the value of <removeAllObjectsOnEnteringBackground>. Defaults to `nil`.
  */
-@property (copy) PINMemoryCacheBlock __nullable didEnterBackgroundBlock;
+@property (copy) ALPHAMemoryCacheBlock __nullable didEnterBackgroundBlock;
 
 #pragma mark -
 /// @name Shared Cache
@@ -155,7 +155,7 @@ typedef void (^PINMemoryCacheObjectBlock)(ALPHAMemoryCache *cache, NSString *key
  @param key The key associated with the requested object.
  @param block A block to be executed concurrently when the object is available.
  */
-- (void)objectForKey:(NSString *)key block:(nullable PINMemoryCacheObjectBlock)block;
+- (void)objectForKey:(NSString *)key block:(nullable ALPHAMemoryCacheObjectBlock)block;
 
 /**
  Stores an object in the cache for the specified key. This method returns immediately and executes the
@@ -165,7 +165,7 @@ typedef void (^PINMemoryCacheObjectBlock)(ALPHAMemoryCache *cache, NSString *key
  @param key A key to associate with the object. This string will be copied.
  @param block A block to be executed concurrently after the object has been stored, or nil.
  */
-- (void)setObject:(id)object forKey:(NSString *)key block:(nullable PINMemoryCacheObjectBlock)block;
+- (void)setObject:(id)object forKey:(NSString *)key block:(nullable ALPHAMemoryCacheObjectBlock)block;
 
 /**
  Stores an object in the cache for the specified key and the specified cost. If the cost causes the total
@@ -178,7 +178,7 @@ typedef void (^PINMemoryCacheObjectBlock)(ALPHAMemoryCache *cache, NSString *key
  @param cost An amount to add to the <totalCost>.
  @param block A block to be executed concurrently after the object has been stored, or nil.
  */
-- (void)setObject:(id)object forKey:(NSString *)key withCost:(NSUInteger)cost block:(nullable PINMemoryCacheObjectBlock)block;
+- (void)setObject:(id)object forKey:(NSString *)key withCost:(NSUInteger)cost block:(nullable ALPHAMemoryCacheObjectBlock)block;
 
 /**
  Removes the object for the specified key. This method returns immediately and executes the passed
@@ -187,7 +187,7 @@ typedef void (^PINMemoryCacheObjectBlock)(ALPHAMemoryCache *cache, NSString *key
  @param key The key associated with the object to be removed.
  @param block A block to be executed concurrently after the object has been removed, or nil.
  */
-- (void)removeObjectForKey:(NSString *)key block:(nullable PINMemoryCacheObjectBlock)block;
+- (void)removeObjectForKey:(NSString *)key block:(nullable ALPHAMemoryCacheObjectBlock)block;
 
 /**
  Removes all objects from the cache that have not been used since the specified date.
@@ -197,7 +197,7 @@ typedef void (^PINMemoryCacheObjectBlock)(ALPHAMemoryCache *cache, NSString *key
  @param date Objects that haven't been accessed since this date are removed from the cache.
  @param block A block to be executed concurrently after the cache has been trimmed, or nil.
  */
-- (void)trimToDate:(NSDate *)date block:(nullable PINMemoryCacheBlock)block;
+- (void)trimToDate:(NSDate *)date block:(nullable ALPHAMemoryCacheBlock)block;
 
 /**
  Removes objects from the cache, costliest objects first, until the <totalCost> is below the specified
@@ -207,7 +207,7 @@ typedef void (^PINMemoryCacheObjectBlock)(ALPHAMemoryCache *cache, NSString *key
  @param cost The total accumulation allowed to remain after the cache has been trimmed.
  @param block A block to be executed concurrently after the cache has been trimmed, or nil.
  */
-- (void)trimToCost:(NSUInteger)cost block:(nullable PINMemoryCacheBlock)block;
+- (void)trimToCost:(NSUInteger)cost block:(nullable ALPHAMemoryCacheBlock)block;
 
 /**
  Removes objects from the cache, ordered by date (least recently used first), until the <totalCost> is below
@@ -217,7 +217,7 @@ typedef void (^PINMemoryCacheObjectBlock)(ALPHAMemoryCache *cache, NSString *key
  @param cost The total accumulation allowed to remain after the cache has been trimmed.
  @param block A block to be executed concurrently after the cache has been trimmed, or nil.
  */
-- (void)trimToCostByDate:(NSUInteger)cost block:(nullable PINMemoryCacheBlock)block;
+- (void)trimToCostByDate:(NSUInteger)cost block:(nullable ALPHAMemoryCacheBlock)block;
 
 /**
  Removes all objects from the cache. This method returns immediately and executes the passed block after
@@ -225,7 +225,7 @@ typedef void (^PINMemoryCacheObjectBlock)(ALPHAMemoryCache *cache, NSString *key
  
  @param block A block to be executed concurrently after the cache has been cleared, or nil.
  */
-- (void)removeAllObjects:(nullable PINMemoryCacheBlock)block;
+- (void)removeAllObjects:(nullable ALPHAMemoryCacheBlock)block;
 
 /**
  Loops through all objects in the cache with reads and writes suspended. Calling serial methods which
@@ -234,7 +234,7 @@ typedef void (^PINMemoryCacheObjectBlock)(ALPHAMemoryCache *cache, NSString *key
  @param block A block to be executed for every object in the cache.
  @param completionBlock An optional block to be executed concurrently when the enumeration is complete.
  */
-- (void)enumerateObjectsWithBlock:(PINMemoryCacheObjectBlock)block completionBlock:(nullable PINMemoryCacheBlock)completionBlock;
+- (void)enumerateObjectsWithBlock:(ALPHAMemoryCacheObjectBlock)block completionBlock:(nullable ALPHAMemoryCacheBlock)completionBlock;
 
 #pragma mark -
 /// @name Synchronous Methods
@@ -318,7 +318,7 @@ typedef void (^PINMemoryCacheObjectBlock)(ALPHAMemoryCache *cache, NSString *key
  Instead use the asynchronous version, <enumerateObjectsWithBlock:completionBlock:>.
  
  */
-- (void)enumerateObjectsWithBlock:(nullable PINMemoryCacheObjectBlock)block;
+- (void)enumerateObjectsWithBlock:(nullable ALPHAMemoryCacheObjectBlock)block;
 
 @end
 
