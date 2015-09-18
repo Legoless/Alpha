@@ -98,11 +98,11 @@ const unsigned int ALPHANumberOfImplicitArgsKey = 2;
 {
     // Don't assume that we have an NSObject subclass.
     // Check to make sure the object responds to the description methods.
-    NSString *description = nil;
+    NSString *description = @"";
     if ([object respondsToSelector:@selector(debugDescription)]) {
-        description = [object debugDescription];
+//        description = [object debugDescription];
     } else if ([object respondsToSelector:@selector(description)]) {
-        description = [object description];
+//        description = [object description];
     }
     return description;
 }
@@ -264,6 +264,9 @@ const unsigned int ALPHANumberOfImplicitArgsKey = 2;
 
 + (NSString *)descriptionForIvarOrPropertyValue:(id)value
 {
+    if (![value isKindOfClass:[NSObject class]] && ![value isKindOfClass:[NSProxy class]]) {
+        return nil;
+    }
     NSString *description = nil;
     
     // Special case BOOL for better readability.
@@ -280,6 +283,10 @@ const unsigned int ALPHANumberOfImplicitArgsKey = 2;
         }
     }
     
+    if ([ALPHARuntimeUtility isSelfContainingCollection:value]) {
+        return [NSString stringWithFormat:@"<%@ %p self-containing collection>",[value class],value];
+    }
+    
     if (!description) {
         // Single line display - replace newlines and tabs with spaces.
         description = [[value description] stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
@@ -291,6 +298,31 @@ const unsigned int ALPHANumberOfImplicitArgsKey = 2;
     }
     
     return description;
+}
+
++(BOOL)isSelfContainingCollection:(id)value{
+    BOOL(^arrayContainsValue)(NSArray*, id) = ^BOOL(NSArray* collection, id value){
+        return [collection indexOfObject:value] != NSNotFound;
+    };
+    
+    if ([value isKindOfClass:[NSArray class]]) {
+        return arrayContainsValue(value,value);
+    } else if ([value isKindOfClass:[NSDictionary class]]){
+        return arrayContainsValue([(NSDictionary*)value allValues],value);
+    } else if ([value isKindOfClass:[NSSet class]]){
+        return arrayContainsValue([(NSSet*)value allObjects],value);
+    } else if ([value isKindOfClass:[NSOrderedSet class]]){
+        return arrayContainsValue([(NSOrderedSet*)value array],value);
+    } else if ([value isKindOfClass:[NSHashTable class]]){
+        return arrayContainsValue([(NSHashTable*)value allObjects],value);
+    } else if ([value isKindOfClass:[NSMapTable class]]){
+        return arrayContainsValue([(NSDictionary*)[(NSMapTable*)value dictionaryRepresentation] allValues],
+                                  value);
+    } else if ([value isKindOfClass:[NSPointerArray class]]){
+        return arrayContainsValue([(NSPointerArray*)value allObjects],value);
+    }
+
+    return NO;
 }
 
 + (void)tryAddPropertyWithName:(const char *)name attributes:(NSDictionary *)attributePairs toClass:(__unsafe_unretained Class)theClass
