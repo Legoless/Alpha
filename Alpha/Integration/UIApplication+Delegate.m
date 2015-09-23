@@ -51,7 +51,12 @@
         //
         
         //dispatch_async(dispatch_get_main_queue(), ^{
-            [[ALPHAManager defaultManager] integrate];
+        [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationDidFinishLaunchingNotification
+                                                          object:nil
+                                                           queue:[NSOperationQueue mainQueue]
+                                                      usingBlock:^(NSNotification * _Nonnull note) {
+                                                          [[ALPHAManager defaultManager] integrate];
+                                                      }];
         //});
         
         //
