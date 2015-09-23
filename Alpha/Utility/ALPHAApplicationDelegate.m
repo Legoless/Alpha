@@ -13,6 +13,7 @@
 NSString *const ALPHAApplicationDelegateNotification = @"kALPHAApplicationDelegateNotification";
 
 @implementation ALPHAApplicationDelegate
+@dynamic window;
 
 - (instancetype)initWithDelegate:(id<UIApplicationDelegate>)delegate
 {
