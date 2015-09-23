@@ -91,18 +91,21 @@ NSString* const ALPHAInstanceDataClassNameIdentifier = @"kALPHAInstanceDataClass
         
         if (instanceData[@"fieldNames"] && (NSInteger)[instanceData[@"fieldNames"] count] > row)
         {
-            title = [NSString stringWithFormat:@"%@ %@", NSStringFromClass(object_getClass(instance)), [instanceData[@"fieldNames"] objectAtIndex:row]];
+//            title = [NSString stringWithFormat:@"%@ %@", NSStringFromClass(object_getClass(instance)), [instanceData[@"fieldNames"] objectAtIndex:row]];
+            title = NSStringFromClass(object_getClass(instance));
+            item.detail = [instanceData[@"fieldNames"] objectAtIndex:row];
         }
         else
         {
             title = [NSString stringWithFormat:@"%@ %p", NSStringFromClass(object_getClass(instance)), instance];
+            item.detail = [ALPHARuntimeUtility descriptionForIvarOrPropertyValue:instance];
         }
         
         item.title = title;
         if ([instanceData[@"instances"] isEqual:instance]) {
             item.cellParameters = @{@"backgroundColor":[UIColor redColor]};
         }
-        item.detail = [ALPHARuntimeUtility descriptionForIvarOrPropertyValue:instance];
+        item.style = UITableViewCellStyleSubtitle;
         
         row++;
         [items addObject:item];
