@@ -69,7 +69,7 @@ NSString* const ALPHAInstanceDataClassNameIdentifier = @"kALPHAInstanceDataClass
     
     NSDictionary *instanceData = nil;
     
-    if (request.parameters[ALPHAInstanceDataClassNameIdentifier])
+    if (request.parameters[ALPHAInstanceDataClassNameIdentifier] && ! request.parameters[ALPHAInstanceDataReferenceObjectIdentifier])
     {
         instanceData = [self instancesForClassName:request.parameters[ALPHAInstanceDataClassNameIdentifier]];
     }
