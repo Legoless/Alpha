@@ -1,4 +1,4 @@
-//  PINCache is a modified version of TMCache
+//  ALPHACache is a modified version of TMCache
 //  Modifications by Garrett Moon
 //  Copyright (c) 2015 Pinterest. All rights reserved.
 
@@ -8,7 +8,7 @@
 @import UIKit;
 #endif
 
-NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCacheShared";
+NSString * const ALPHAMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCacheShared";
 
 @interface ALPHAMemoryCache ()
 #if OS_OBJECT_USE_OBJC
@@ -54,7 +54,7 @@ NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCach
 {
     if (self = [super init]) {
         _lockSemaphore = dispatch_semaphore_create(1);
-        NSString *queueName = [[NSString alloc] initWithFormat:@"%@.%p", PINMemoryCachePrefix, self];
+        NSString *queueName = [[NSString alloc] initWithFormat:@"%@.%p", ALPHAMemoryCachePrefix, self];
         _concurrentQueue = dispatch_queue_create([queueName UTF8String], DISPATCH_QUEUE_CONCURRENT);
 
         _dictionary = [[NSMutableDictionary alloc] init];
@@ -84,7 +84,7 @@ NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCach
             [[NSNotificationCenter defaultCenter] addObserver:self
                                                      selector:@selector(didObserveApocalypticNotification:)
                                                          name:name
-#if !defined(PIN_APP_EXTENSIONS)
+#if !defined(ALPHA_APP_EXTENSIONS)
                                                        object:[UIApplication sharedApplication]];
 #else
                                                        object:nil];
@@ -126,7 +126,7 @@ NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCach
             }
             
             [strongSelf lock];
-                PINMemoryCacheBlock didReceiveMemoryWarningBlock = strongSelf->_didReceiveMemoryWarningBlock;
+                ALPHAMemoryCacheBlock didReceiveMemoryWarningBlock = strongSelf->_didReceiveMemoryWarningBlock;
             [strongSelf unlock];
             
             if (didReceiveMemoryWarningBlock)
@@ -145,7 +145,7 @@ NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCach
             }
 
             [strongSelf lock];
-                PINMemoryCacheBlock didEnterBackgroundBlock = strongSelf->_didEnterBackgroundBlock;
+                ALPHAMemoryCacheBlock didEnterBackgroundBlock = strongSelf->_didEnterBackgroundBlock;
             [strongSelf unlock];
             
             if (didEnterBackgroundBlock)
@@ -161,8 +161,8 @@ NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCach
     [self lock];
         id object = _dictionary[key];
         NSNumber *cost = _costs[key];
-        PINMemoryCacheObjectBlock willRemoveObjectBlock = _willRemoveObjectBlock;
-        PINMemoryCacheObjectBlock didRemoveObjectBlock = _didRemoveObjectBlock;
+        ALPHAMemoryCacheObjectBlock willRemoveObjectBlock = _willRemoveObjectBlock;
+        ALPHAMemoryCacheObjectBlock didRemoveObjectBlock = _didRemoveObjectBlock;
     [self unlock];
 
     if (willRemoveObjectBlock)
@@ -270,7 +270,7 @@ NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCach
 
 #pragma mark - Public Asynchronous Methods -
 
-- (void)objectForKey:(NSString *)key block:(PINMemoryCacheObjectBlock)block
+- (void)objectForKey:(NSString *)key block:(ALPHAMemoryCacheObjectBlock)block
 {
     __weak ALPHAMemoryCache *weakSelf = self;
     
@@ -283,12 +283,12 @@ NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCach
     });
 }
 
-- (void)setObject:(id)object forKey:(NSString *)key block:(PINMemoryCacheObjectBlock)block
+- (void)setObject:(id)object forKey:(NSString *)key block:(ALPHAMemoryCacheObjectBlock)block
 {
     [self setObject:object forKey:key withCost:0 block:block];
 }
 
-- (void)setObject:(id)object forKey:(NSString *)key withCost:(NSUInteger)cost block:(PINMemoryCacheObjectBlock)block
+- (void)setObject:(id)object forKey:(NSString *)key withCost:(NSUInteger)cost block:(ALPHAMemoryCacheObjectBlock)block
 {
     __weak ALPHAMemoryCache *weakSelf = self;
     
@@ -301,7 +301,7 @@ NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCach
     });
 }
 
-- (void)removeObjectForKey:(NSString *)key block:(PINMemoryCacheObjectBlock)block
+- (void)removeObjectForKey:(NSString *)key block:(ALPHAMemoryCacheObjectBlock)block
 {
     __weak ALPHAMemoryCache *weakSelf = self;
     
@@ -314,7 +314,7 @@ NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCach
     });
 }
 
-- (void)trimToDate:(NSDate *)trimDate block:(PINMemoryCacheBlock)block
+- (void)trimToDate:(NSDate *)trimDate block:(ALPHAMemoryCacheBlock)block
 {
     __weak ALPHAMemoryCache *weakSelf = self;
     
@@ -327,7 +327,7 @@ NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCach
     });
 }
 
-- (void)trimToCost:(NSUInteger)cost block:(PINMemoryCacheBlock)block
+- (void)trimToCost:(NSUInteger)cost block:(ALPHAMemoryCacheBlock)block
 {
     __weak ALPHAMemoryCache *weakSelf = self;
     
@@ -340,7 +340,7 @@ NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCach
     });
 }
 
-- (void)trimToCostByDate:(NSUInteger)cost block:(PINMemoryCacheBlock)block
+- (void)trimToCostByDate:(NSUInteger)cost block:(ALPHAMemoryCacheBlock)block
 {
     __weak ALPHAMemoryCache *weakSelf = self;
     
@@ -353,7 +353,7 @@ NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCach
     });
 }
 
-- (void)removeAllObjects:(PINMemoryCacheBlock)block
+- (void)removeAllObjects:(ALPHAMemoryCacheBlock)block
 {
     __weak ALPHAMemoryCache *weakSelf = self;
     
@@ -366,7 +366,7 @@ NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCach
     });
 }
 
-- (void)enumerateObjectsWithBlock:(PINMemoryCacheObjectBlock)block completionBlock:(PINMemoryCacheBlock)completionBlock
+- (void)enumerateObjectsWithBlock:(ALPHAMemoryCacheObjectBlock)block completionBlock:(ALPHAMemoryCacheBlock)completionBlock
 {
     __weak ALPHAMemoryCache *weakSelf = self;
     
@@ -414,8 +414,8 @@ NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCach
         return;
     
     [self lock];
-        PINMemoryCacheObjectBlock willAddObjectBlock = _willAddObjectBlock;
-        PINMemoryCacheObjectBlock didAddObjectBlock = _didAddObjectBlock;
+        ALPHAMemoryCacheObjectBlock willAddObjectBlock = _willAddObjectBlock;
+        ALPHAMemoryCacheObjectBlock didAddObjectBlock = _didAddObjectBlock;
         NSUInteger costLimit = _costLimit;
     [self unlock];
     
@@ -471,8 +471,8 @@ NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCach
 - (void)removeAllObjects
 {
     [self lock];
-        PINMemoryCacheBlock willRemoveAllObjectsBlock = _willRemoveAllObjectsBlock;
-        PINMemoryCacheBlock didRemoveAllObjectsBlock = _didRemoveAllObjectsBlock;
+        ALPHAMemoryCacheBlock willRemoveAllObjectsBlock = _willRemoveAllObjectsBlock;
+        ALPHAMemoryCacheBlock didRemoveAllObjectsBlock = _didRemoveAllObjectsBlock;
     [self unlock];
     
     if (willRemoveAllObjectsBlock)
@@ -491,7 +491,7 @@ NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCach
     
 }
 
-- (void)enumerateObjectsWithBlock:(PINMemoryCacheObjectBlock)block
+- (void)enumerateObjectsWithBlock:(ALPHAMemoryCacheObjectBlock)block
 {
     if (!block)
         return;
@@ -507,128 +507,128 @@ NSString * const PINMemoryCachePrefix = @"com.unifiedsense.alpha.MemoryAssetCach
 
 #pragma mark - Public Thread Safe Accessors -
 
-- (PINMemoryCacheObjectBlock)willAddObjectBlock
+- (ALPHAMemoryCacheObjectBlock)willAddObjectBlock
 {
     [self lock];
-        PINMemoryCacheObjectBlock block = _willAddObjectBlock;
+        ALPHAMemoryCacheObjectBlock block = _willAddObjectBlock;
     [self unlock];
 
     return block;
 }
 
-- (void)setWillAddObjectBlock:(PINMemoryCacheObjectBlock)block
+- (void)setWillAddObjectBlock:(ALPHAMemoryCacheObjectBlock)block
 {
     [self lock];
         _willAddObjectBlock = [block copy];
     [self unlock];
 }
 
-- (PINMemoryCacheObjectBlock)willRemoveObjectBlock
+- (ALPHAMemoryCacheObjectBlock)willRemoveObjectBlock
 {
     [self lock];
-        PINMemoryCacheObjectBlock block = _willRemoveObjectBlock;
+        ALPHAMemoryCacheObjectBlock block = _willRemoveObjectBlock;
     [self unlock];
 
     return block;
 }
 
-- (void)setWillRemoveObjectBlock:(PINMemoryCacheObjectBlock)block
+- (void)setWillRemoveObjectBlock:(ALPHAMemoryCacheObjectBlock)block
 {
     [self lock];
         _willRemoveObjectBlock = [block copy];
     [self unlock];
 }
 
-- (PINMemoryCacheBlock)willRemoveAllObjectsBlock
+- (ALPHAMemoryCacheBlock)willRemoveAllObjectsBlock
 {
     [self lock];
-        PINMemoryCacheBlock block = _willRemoveAllObjectsBlock;
+        ALPHAMemoryCacheBlock block = _willRemoveAllObjectsBlock;
     [self unlock];
 
     return block;
 }
 
-- (void)setWillRemoveAllObjectsBlock:(PINMemoryCacheBlock)block
+- (void)setWillRemoveAllObjectsBlock:(ALPHAMemoryCacheBlock)block
 {
     [self lock];
         _willRemoveAllObjectsBlock = [block copy];
     [self unlock];
 }
 
-- (PINMemoryCacheObjectBlock)didAddObjectBlock
+- (ALPHAMemoryCacheObjectBlock)didAddObjectBlock
 {
     [self lock];
-        PINMemoryCacheObjectBlock block = _didAddObjectBlock;
+        ALPHAMemoryCacheObjectBlock block = _didAddObjectBlock;
     [self unlock];
 
     return block;
 }
 
-- (void)setDidAddObjectBlock:(PINMemoryCacheObjectBlock)block
+- (void)setDidAddObjectBlock:(ALPHAMemoryCacheObjectBlock)block
 {
     [self lock];
         _didAddObjectBlock = [block copy];
     [self unlock];
 }
 
-- (PINMemoryCacheObjectBlock)didRemoveObjectBlock
+- (ALPHAMemoryCacheObjectBlock)didRemoveObjectBlock
 {
     [self lock];
-        PINMemoryCacheObjectBlock block = _didRemoveObjectBlock;
+        ALPHAMemoryCacheObjectBlock block = _didRemoveObjectBlock;
     [self unlock];
 
     return block;
 }
 
-- (void)setDidRemoveObjectBlock:(PINMemoryCacheObjectBlock)block
+- (void)setDidRemoveObjectBlock:(ALPHAMemoryCacheObjectBlock)block
 {
     [self lock];
         _didRemoveObjectBlock = [block copy];
     [self unlock];
 }
 
-- (PINMemoryCacheBlock)didRemoveAllObjectsBlock
+- (ALPHAMemoryCacheBlock)didRemoveAllObjectsBlock
 {
     [self lock];
-        PINMemoryCacheBlock block = _didRemoveAllObjectsBlock;
+        ALPHAMemoryCacheBlock block = _didRemoveAllObjectsBlock;
     [self unlock];
 
     return block;
 }
 
-- (void)setDidRemoveAllObjectsBlock:(PINMemoryCacheBlock)block
+- (void)setDidRemoveAllObjectsBlock:(ALPHAMemoryCacheBlock)block
 {
     [self lock];
         _didRemoveAllObjectsBlock = [block copy];
     [self unlock];
 }
 
-- (PINMemoryCacheBlock)didReceiveMemoryWarningBlock
+- (ALPHAMemoryCacheBlock)didReceiveMemoryWarningBlock
 {
     [self lock];
-        PINMemoryCacheBlock block = _didReceiveMemoryWarningBlock;
+        ALPHAMemoryCacheBlock block = _didReceiveMemoryWarningBlock;
     [self unlock];
 
     return block;
 }
 
-- (void)setDidReceiveMemoryWarningBlock:(PINMemoryCacheBlock)block
+- (void)setDidReceiveMemoryWarningBlock:(ALPHAMemoryCacheBlock)block
 {
     [self lock];
         _didReceiveMemoryWarningBlock = [block copy];
     [self unlock];
 }
 
-- (PINMemoryCacheBlock)didEnterBackgroundBlock
+- (ALPHAMemoryCacheBlock)didEnterBackgroundBlock
 {
     [self lock];
-        PINMemoryCacheBlock block = _didEnterBackgroundBlock;
+        ALPHAMemoryCacheBlock block = _didEnterBackgroundBlock;
     [self unlock];
 
     return block;
 }
 
-- (void)setDidEnterBackgroundBlock:(PINMemoryCacheBlock)block
+- (void)setDidEnterBackgroundBlock:(ALPHAMemoryCacheBlock)block
 {
     [self lock];
         _didEnterBackgroundBlock = [block copy];

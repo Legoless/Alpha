@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Unified Sense. All rights reserved.
 //
 
-#import "UIColor+Random.h"
+#import "UIColor+Utility.h"
 
 #import "ALPHATableScreenModel.h"
 

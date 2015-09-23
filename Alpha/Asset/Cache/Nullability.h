@@ -1,9 +1,9 @@
-//  PINCache is a modified version of TMCache
+//  ALPHACache is a modified version of TMCache
 //  Modifications by Garrett Moon
 //  Copyright (c) 2015 Pinterest. All rights reserved.
 
-#ifndef PINCache_nullability_h
-#define PINCache_nullability_h
+#ifndef ALPHACache_nullability_h
+#define ALPHACache_nullability_h
 
 #if !__has_feature(nullability)
 #define NS_ASSUME_NONNULL_BEGIN

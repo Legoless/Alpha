@@ -1,11 +1,11 @@
-//  PINCache is a modified version of PINCache
+//  ALPHACache is a modified version of ALPHACache
 //  Modifications by Garrett Moon
 //  Copyright (c) 2015 Pinterest. All rights reserved.
 
 #import "ALPHACache.h"
 
-NSString * const PINCachePrefix = @"com.unifiedsense.alpha.AssetCacheShared";
-NSString * const PINCacheSharedName = @"ALPHAAssetCacheShared";
+NSString * const ALPHACachePrefix = @"com.unifiedsense.alpha.AssetCacheShared";
+NSString * const ALPHACacheSharedName = @"ALPHAAssetCacheShared";
 
 @interface ALPHACache ()
 #if OS_OBJECT_USE_OBJC
@@ -27,6 +27,11 @@ NSString * const PINCacheSharedName = @"ALPHAAssetCacheShared";
 }
 #endif
 
+- (instancetype)init
+{
+    return [self initWithName:@"com.unifiedsense.Alpha"];
+}
+
 - (instancetype)initWithName:(NSString *)name
 {
     return [self initWithName:name rootPath:[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]];
@@ -40,7 +45,7 @@ NSString * const PINCacheSharedName = @"ALPHAAssetCacheShared";
     if (self = [super init]) {
         _name = [name copy];
         
-        NSString *queueName = [[NSString alloc] initWithFormat:@"%@.%p", PINCachePrefix, self];
+        NSString *queueName = [[NSString alloc] initWithFormat:@"%@.%p", ALPHACachePrefix, self];
         _concurrentQueue = dispatch_queue_create([[NSString stringWithFormat:@"%@ Asynchronous Queue", queueName] UTF8String], DISPATCH_QUEUE_CONCURRENT);
         
         _diskCache = [[ALPHADiskCache alloc] initWithName:_name rootPath:rootPath];
@@ -51,7 +56,7 @@ NSString * const PINCacheSharedName = @"ALPHAAssetCacheShared";
 
 - (NSString *)description
 {
-    return [[NSString alloc] initWithFormat:@"%@.%@.%p", PINCachePrefix, _name, self];
+    return [[NSString alloc] initWithFormat:@"%@.%@.%p", ALPHACachePrefix, _name, self];
 }
 
 + (instancetype)sharedCache
@@ -60,7 +65,7 @@ NSString * const PINCacheSharedName = @"ALPHAAssetCacheShared";
     static dispatch_once_t predicate;
     
     dispatch_once(&predicate, ^{
-        cache = [[self alloc] initWithName:PINCacheSharedName];
+        cache = [[self alloc] initWithName:ALPHACacheSharedName];
     });
     
     return cache;
@@ -69,7 +74,7 @@ NSString * const PINCacheSharedName = @"ALPHAAssetCacheShared";
 #pragma mark - Public Asynchronous Methods -
 
 
-- (void)objectForKey:(NSString *)key block:(PINCacheObjectBlock)block
+- (void)objectForKey:(NSString *)key block:(ALPHACacheObjectBlock)block
 {
     if (!key || !block)
         return;
@@ -123,14 +128,14 @@ NSString * const PINCacheSharedName = @"ALPHAAssetCacheShared";
     });
 }
 
-- (void)setObject:(id <NSCoding>)object forKey:(NSString *)key block:(PINCacheObjectBlock)block
+- (void)setObject:(id <NSCoding>)object forKey:(NSString *)key block:(ALPHACacheObjectBlock)block
 {
     if (!key || !object)
         return;
     
     dispatch_group_t group = nil;
-    PINMemoryCacheObjectBlock memBlock = nil;
-    PINDiskCacheObjectBlock diskBlock = nil;
+    ALPHAMemoryCacheObjectBlock memBlock = nil;
+    ALPHADiskCacheObjectBlock diskBlock = nil;
     
     if (block) {
         group = dispatch_group_create();
@@ -163,14 +168,14 @@ NSString * const PINCacheSharedName = @"ALPHAAssetCacheShared";
     }
 }
 
-- (void)removeObjectForKey:(NSString *)key block:(PINCacheObjectBlock)block
+- (void)removeObjectForKey:(NSString *)key block:(ALPHACacheObjectBlock)block
 {
     if (!key)
         return;
     
     dispatch_group_t group = nil;
-    PINMemoryCacheObjectBlock memBlock = nil;
-    PINDiskCacheObjectBlock diskBlock = nil;
+    ALPHAMemoryCacheObjectBlock memBlock = nil;
+    ALPHADiskCacheObjectBlock diskBlock = nil;
     
     if (block) {
         group = dispatch_group_create();
@@ -203,11 +208,11 @@ NSString * const PINCacheSharedName = @"ALPHAAssetCacheShared";
     }
 }
 
-- (void)removeAllObjects:(PINCacheBlock)block
+- (void)removeAllObjects:(ALPHACacheBlock)block
 {
     dispatch_group_t group = nil;
-    PINMemoryCacheBlock memBlock = nil;
-    PINDiskCacheBlock diskBlock = nil;
+    ALPHAMemoryCacheBlock memBlock = nil;
+    ALPHADiskCacheBlock diskBlock = nil;
     
     if (block) {
         group = dispatch_group_create();
@@ -240,14 +245,14 @@ NSString * const PINCacheSharedName = @"ALPHAAssetCacheShared";
     }
 }
 
-- (void)trimToDate:(NSDate *)date block:(PINCacheBlock)block
+- (void)trimToDate:(NSDate *)date block:(ALPHACacheBlock)block
 {
     if (!date)
         return;
     
     dispatch_group_t group = nil;
-    PINMemoryCacheBlock memBlock = nil;
-    PINDiskCacheBlock diskBlock = nil;
+    ALPHAMemoryCacheBlock memBlock = nil;
+    ALPHADiskCacheBlock diskBlock = nil;
     
     if (block) {
         group = dispatch_group_create();
