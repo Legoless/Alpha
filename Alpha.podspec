@@ -298,7 +298,7 @@ Pod::Spec.new do |spec|
   # View
   #
 
-  spec.subspec 'View' do |subspec|
+  spec.subspec 'ViewHierarchy' do |subspec|
     subspec.source_files = 'Alpha/Plugins/View/**/*.{h,m}'
     subspec.dependency 'Alpha/Core'
   end
