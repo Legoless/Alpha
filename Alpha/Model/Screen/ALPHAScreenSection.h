@@ -23,7 +23,7 @@
 //
 // Array of Display Item objects, protocols define which objects can be in array
 //
-@property (nonatomic, copy) NSArray* items;
+@property (nonatomic, copy) NSArray<ALPHAScreenItem*>* items;
 
 - (instancetype)initWithIdentifier:(NSString *)identifier;
 - (instancetype)initWithIdentifier:(NSString *)identifier title:(NSString *)title;
