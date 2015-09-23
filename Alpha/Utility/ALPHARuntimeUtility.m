@@ -96,13 +96,16 @@ const unsigned int ALPHANumberOfImplicitArgsKey = 2;
 
 + (NSString *)safeDescriptionForObject:(id)object
 {
+    if ([self isSelfContainingCollection:object]) {
+        return @"Self-containing object";
+    }
     // Don't assume that we have an NSObject subclass.
     // Check to make sure the object responds to the description methods.
     NSString *description = @"";
     if ([object respondsToSelector:@selector(debugDescription)]) {
-//        description = [object debugDescription];
+        description = [object debugDescription];
     } else if ([object respondsToSelector:@selector(description)]) {
-//        description = [object description];
+        description = [object description];
     }
     return description;
 }
