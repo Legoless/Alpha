@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name                   = "Alpha"
-  spec.version                = "0.2.5"
+  spec.version                = "0.2.6"
   spec.summary                = "Next generation debugging framework for iOS"
   spec.description            = <<-DESC
                                 - A simple unified debugging plugin API.
@@ -300,7 +300,8 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'ViewHierarchy' do |subspec|
     subspec.source_files = 'Alpha/Plugins/View/**/*.{h,m}'
-    subspec.dependency 'Alpha/Core'
+    subspec.dependency 'Alpha/Integration'
+    subspec.dependency 'Alpha/Render'
   end
 
 end

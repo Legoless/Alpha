@@ -8,7 +8,6 @@
 
 #import "ALPHACore.h"
 
-#import "ALPHAMainViewController.h"
 #import "ALPHAExplorerToolbar.h"
 #import "ALPHAToolbarItem.h"
 #import "ALPHAHierarchyTableViewController.h"
