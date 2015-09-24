@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name                   = "Alpha"
-  spec.version                = "0.2.4"
+  spec.version                = "0.2.5"
   spec.summary                = "Next generation debugging framework for iOS"
   spec.description            = <<-DESC
                                 - A simple unified debugging plugin API.
@@ -23,7 +23,7 @@ Pod::Spec.new do |spec|
   spec.social_media_url       = "https://twitter.com/thelegoless"
   spec.platform               = :ios, "9.0"
   spec.source                 = { :git => "https://github.com/legoless/Alpha.git", :tag => "#{spec.version}" }
-  spec.ios.deployment_target  = '7.0'
+  spec.ios.deployment_target  = '8.0'
   spec.source_files           = "Alpha/Alpha.h"
   spec.requires_arc           = true
 

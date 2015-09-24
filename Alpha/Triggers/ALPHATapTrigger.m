@@ -34,7 +34,6 @@ NSString *const ALPHATapTriggerKeyWindowChangeKeyPath = @"keyWindow";
 
 - (void)dealloc
 {
-    //[[UIApplication sharedApplication] removeObserver:self forKeyPath:ALPHATapTriggerKeyWindowChangeKeyPath];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -47,7 +46,6 @@ NSString *const ALPHATapTriggerKeyWindowChangeKeyPath = @"keyWindow";
     if (!keyWindow)
     {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationNotification:) name:UIApplicationDidFinishLaunchingNotification object:nil];
-        //[[UIApplication sharedApplication] addObserver:self forKeyPath:ALPHATapTriggerKeyWindowChangeKeyPath options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:NULL];
     }
     else
     {
@@ -72,40 +70,6 @@ NSString *const ALPHATapTriggerKeyWindowChangeKeyPath = @"keyWindow";
     }
 }
 
-/*
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
-{
-    if (![keyPath isEqualToString:ALPHATapTriggerKeyWindowChangeKeyPath])
-    {
-        return;
-    }
-    
-    id changedWindow = change[NSKeyValueChangeNewKey];
-    
-    //
-    // Ignore ALPHAWindow
-    //
-    if ([changedWindow isKindOfClass:NSClassFromString(@"ALPHAWindow")])
-    {
-        return;
-    }
-    else if ([changedWindow isKindOfClass:[UIWindow class]])
-    {
-        UIWindow* window = changedWindow;
-        
-        if (![window.gestureRecognizers containsObject:self.recognizer] && self.enabled)
-        {
-            [window addGestureRecognizer:self.recognizer];
-        }
-        
-        //
-        // Usually only do this once
-        //
-        [[UIApplication sharedApplication] removeObserver:self forKeyPath:ALPHATapTriggerKeyWindowChangeKeyPath];
-    }
-}
-*/
-
 - (void)updateTriggerWindow:(UIWindow *)window
 {
     //
@@ -124,7 +88,6 @@ NSString *const ALPHATapTriggerKeyWindowChangeKeyPath = @"keyWindow";
     //
     // Usually only do this once
     //
-    //[[UIApplication sharedApplication] removeObserver:self forKeyPath:ALPHATapTriggerKeyWindowChangeKeyPath];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 
 }
