@@ -36,7 +36,7 @@ Features are separated into multiple plugins, which can be enabled or disabled, 
 - **Remote** - plugin allows connecting to Alpha from another device (needs Bonjour running on target).
 - **Screenshot** - plugin allows taking screenshots of the application with a single action.
 - **State** - allows inspecting the device state and settings, such as locale, time and available memory.
-- **Touch** - plugin displays touches on screen when activated.
+- **Touch** - plugin displays touches on screen when activated and their force touch. 
 - **View** - allows view hierarchy manipulation and inspection in real-time.
 
 Currently work in progress:
