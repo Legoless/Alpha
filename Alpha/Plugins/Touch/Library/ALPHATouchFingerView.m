@@ -11,6 +11,7 @@
 #import "ALPHATouchFingerView.h"
 
 CGFloat const ALPHADefaultMaxFingerRadius = 22.0;
+CGFloat const ALPHADefaultForceTouchScale = 0.75;
 
 @interface ALPHATouchFingerView ()
 
@@ -90,7 +91,7 @@ CGFloat const ALPHADefaultMaxFingerRadius = 22.0;
     
     self.center = point;
     
-    self.lastScale = CGPointMake(MAX(1, touch.force), MAX(1, touch.force));
+    self.lastScale = CGPointMake(MAX(1, touch.force * ALPHADefaultForceTouchScale), MAX(1, touch.force * ALPHADefaultForceTouchScale));
     
     self.transform = CGAffineTransformMakeScale(self.lastScale.x, self.lastScale.y);
     
