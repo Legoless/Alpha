@@ -97,7 +97,7 @@ CGFloat const ALPHADefaultForceTouchScale = 0.75;
     
     CGFloat force = touch.maximumPossibleForce - touch.force;
     
-    UIColor *forceColor = [UIColor alpha_interpolatedColorFromStartColor:self.color endColor:[UIColor redColor] fraction:force];
+    UIColor *forceColor = [UIColor alpha_interpolatedColorFromStartColor:[UIColor redColor] endColor:self.color fraction:force];
     
     self.backgroundColor = [forceColor colorWithAlphaComponent:0.4];
 }
