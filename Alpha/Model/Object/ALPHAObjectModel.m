@@ -7,12 +7,15 @@
 //
 
 #import "ALPHAObjectModel.h"
+#import "ALPHARuntimeUtility.h"
 
 @implementation ALPHAObjectModel
 
 - (void)setObjectPointer:(NSString *)objectPointer
 {
     _objectPointer = objectPointer;
+    id<NSObject> object = [ALPHARuntimeUtility objectForPointerString:objectPointer className:nil];
+    self->_objectIsClass = [object class] == object;
     
     [self updateReferencesWithObjectPointer:objectPointer objectClass:nil];
 }

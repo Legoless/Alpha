@@ -29,6 +29,11 @@
 @property (nonatomic, copy) NSString *objectClass;
 
 /*!
+ *  Check is the object is the Class structure
+ */
+@property (nonatomic, readonly) BOOL objectIsClass;
+
+/*!
  *  Contains the class name of Apple superclass - usually NSObject, but can be array, set,
  *  or UIKit. Nil if class or metaclass. This is to ensure we can handle view controller
  *  subclasses correctly.
