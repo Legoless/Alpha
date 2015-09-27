@@ -13,6 +13,7 @@
 #import "ALPHARuntimeUtility.h"
 
 #import "ALPHAClassSource.h"
+#import "ALPHAObjectSource.h"
 
 NSString* const ALPHAClassDataIdentifier = @"com.unifiedsense.alpha.data.class";
 NSString* const ALPHAClassBinaryParameterKey = @"kALPHAClassBinaryParameterKey";
@@ -56,7 +57,9 @@ NSString* const ALPHAClassBinaryParameterKey = @"kALPHAClassBinaryParameterKey";
     {
         ALPHAScreenItem* item = [[ALPHAScreenItem alloc] init];
         item.title = class;
-        item.object = NSClassFromString(class);
+        
+        ALPHARequest* request = [ALPHARequest requestForObject:NSClassFromString(class)];
+        item.object = request;
         
         [items addObject:item];
     }
