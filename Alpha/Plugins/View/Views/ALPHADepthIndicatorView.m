@@ -17,6 +17,7 @@
     if (self)
     {
         self.depthIndicatorWidth = 4.0;
+        self.backgroundColor = [UIColor clearColor];
     }
     
     return self;
