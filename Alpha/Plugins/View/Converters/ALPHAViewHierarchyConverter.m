@@ -30,7 +30,7 @@
         ALPHAScreenItem *item = [[ALPHAScreenItem alloc] init];
         item.style = UITableViewCellStyleSubtitle;
         
-        item.title = view.viewClass;
+        item.title = view.viewDescription;
         item.detail = [NSString stringWithFormat:@"Frame: %@", view.frame];
         
         item.cellClass = @"ALPHAHierarchyTableViewCell";
