@@ -43,7 +43,7 @@ NSString *const ALPHAViewDataPointerIdentifier  = @"com.unifiedsense.alpha.data.
     
     NSArray *serializedViews = serializableViews.copy;
     
-    if (request.parameters[ALPHASearchTextParameterKey])
+    if ([request.parameters[ALPHASearchTextParameterKey] length])
     {
         serializedViews = [serializedViews filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(ALPHASerializableView *candidateView, NSDictionary *bindings)
         {
