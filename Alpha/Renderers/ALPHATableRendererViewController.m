@@ -170,9 +170,7 @@
 }
 
 - (void)refresh
-{
-    [self.refreshControl beginRefreshing];
-    
+{    
     [self.source dataForRequest:self.request completion:^(ALPHAModel *dataModel, NSError *error)
     {
         self.object = dataModel;
