@@ -52,6 +52,9 @@ const unsigned int ALPHANumberOfImplicitArgsKey = 2;
 + (UIViewController *)viewControllerForView:(UIView *)view
 {
     UIViewController *viewController = nil;
+    if ([view isKindOfClass:[UIWindow class]]) {
+        return [(UIWindow*)view rootViewController];
+    }
     SEL viewDelSel = NSSelectorFromString([NSString stringWithFormat:@"%@ewDelegate", @"_vi"]);
     if ([view respondsToSelector:viewDelSel]) {
 #pragma clang diagnostic push
