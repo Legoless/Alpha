@@ -43,7 +43,6 @@
         UIBezierPath *path = [UIBezierPath bezierPath];
         [path moveToPoint:CGPointMake(x, 0.0)];
         [path addLineToPoint:CGPointMake(x, rect.size.height)];
-        NSLog(@"Print path on coors: %f,%f",x*[UIScreen mainScreen].scale,rect.size.height*[UIScreen mainScreen].scale);
         path.lineWidth = lineWidth;
         
         [path stroke];
