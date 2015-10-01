@@ -9,9 +9,13 @@ Haystack
 [![Pod Platform](http://img.shields.io/cocoapods/p/Haystack.svg?style=flat)](http://cocoadocs.org/docsets/Haystack/)
 [![Pod License](http://img.shields.io/cocoapods/l/Haystack.svg?style=flat)](http://opensource.org/licenses/MIT)
 
-Haystack SDK contains multiple extensions and enhancements for **iOS** developers, including a collection of simple Objective-C classes and categories that fit in almost every project. Most of these classes are not large or structured enough to fit in a special library or framework, but are regurarely needed throughout the most projects you are working on. Basically it is meant to fill the void of classes without entire libraries.
+Haystack SDK contains multiple extensions and enhancements for **iOS** development, including a collection of simple Objective-C classes and categories that fit in almost every project. Most of these classes are not large or structured enough to fit in a special library or framework, but are regurarely needed throughout the most projects you are working on. Basically it is meant to fill the void of classes without entire libraries.
 
-Project is actively developed and as the Apple SDK's changes, project is updated. Note that the project is not finished and might contain bugs. Feel free to open an issue. To avoid clashing with any future framework improvements, all Haystack categories and classes are prefixed with `Hay`.
+Project is actively developed and as the Apple SDK's changes, project is updated. Note that the project is not finished and might contain bugs. Feel free to open an issue. To avoid clashing with any future framework improvements, all Haystack classes are prefixed with `HAY` and category methods are prefixed with lowercase `hay`.
+
+### Swift Support
+
+*Haystack supports Swift, but as it is written in Objective-C, it currently needs to be added to the bridging header. Framework and Carthage support on the way.*
 
 Contents
 ========
@@ -24,11 +28,11 @@ Haystack is **not limited only** to Objective-C code, but contains multiple reso
    
 - **Scripts**
 
-   Handful of bash and Ruby scripts that help with iOS development. Scripts include management of Xcode SDK's, copying them around, which is useful for Beta development.
+   Handful of Bash and Ruby scripts that speed up iOS development. Scripts include management of Xcode SDK's, copying them around, which is useful for Beta development.
 
 - **SDK**
 
-   Contains Objective-C classes and categories that are installed part of a CocoaPods install. The classes are general and extend base Apple SDK's.  
+   Contains Objective-C classes and categories that are installed part of a CocoaPods install. The classes are general and extend base Apple SDK's. **Haystack SDK supports iOS 7 and up**.  
    
    - **[Categories](https://github.com/Legoless/Haystack/blob/master/Wiki/Categories.md)**
      - *Foundation*
@@ -60,6 +64,7 @@ Haystack is **not limited only** to Objective-C code, but contains multiple reso
         - UIDevice+Network
         - UIDevice+Software
         - UIFont+SmallCaps
+        - UIStoryboard+Initialization
         - UIView+Cell
         - UIView+Debug
         - UIView+Hierarchy
@@ -73,10 +78,6 @@ Haystack is **not limited only** to Objective-C code, but contains multiple reso
 - **Templates**
 
    Contains Liftoff templates for different types of iOS or Mac OS X projects.
-   
-- **Tests**
-
-   Contains Rspec style tests for Haystack SDK.
 
 - **Wiki**
 
@@ -92,7 +93,7 @@ Usage
 
 Documentation
 -------
-All header files and fully documented for ease of use. Only method stubs are displayed in readme, to keep it short. The documentation is in DoxyGen format, allowing Xcode to parse documentation headers.
+All header files and fully documented for ease of use. Only method stubs are displayed in readme, to keep it short. The documentation is in DoxyGen format, allowing Xcode to parse documentation headers or generate HTML docs.
 
 Installation & Setup
 --------
@@ -105,7 +106,7 @@ Or manually drag & drop `Haystack` folder into Xcode project, then follow the **
 
 Using in project
 --------
-It is recommended for you to add Haystack.h file into precompiled header (.pch) file. That way all classes and categories are added to all files and you can use them everywhere throughout the project.
+It is recommended for you to add Haystack.h file into precompiled header (.pch). That way all classes and categories are added to all files and you can use them everywhere throughout the project.
 
 Documents
 =======
@@ -124,7 +125,7 @@ Dal Rupnik
 
 - [legoless](https://github.com/legoless) on **GitHub**
 - [@thelegoless](https://twitter.com/thelegoless) on **Twitter**
-- [legoless@arvystate.net](mailto:legoless@arvystate.net)
+- [dal@unifiedsense.com](mailto:dal@unifiedsense.com)
 
 License
 ======

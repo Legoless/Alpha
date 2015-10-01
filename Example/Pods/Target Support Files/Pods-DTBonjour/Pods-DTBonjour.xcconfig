@@ -1,1 +1,0 @@
-PODS_DTBONJOUR_OTHER_LDFLAGS = -framework "CoreFoundation" -framework "Foundation" -framework "UIKit"

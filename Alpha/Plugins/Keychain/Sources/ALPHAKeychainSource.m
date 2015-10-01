@@ -8,8 +8,16 @@
 
 #import "ALPHAKeychainSource.h"
 #import "ALPHATableScreenModel.h"
+#import "ALPHAKeychainItem.h"
 
 NSString *const ALPHAKeychainDataIdentifier = @"com.unifiedsense.alpha.data.keychain";
+
+@interface ALPHAKeychainSource ()
+
+@property (nonatomic, copy) NSArray *items;
+
+@end
+
 
 @implementation ALPHAKeychainSource
 
@@ -19,10 +27,11 @@ NSString *const ALPHAKeychainDataIdentifier = @"com.unifiedsense.alpha.data.keyc
     // http://stackoverflow.com/questions/10966969/enumerate-all-keychain-items-in-my-ios-application
     //
     
-    NSMutableDictionary *query = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                  (__bridge id)kCFBooleanTrue, (__bridge id)kSecReturnAttributes,
-                                  (__bridge id)kSecMatchLimitAll, (__bridge id)kSecMatchLimit,
-                                  nil];
+    NSMutableDictionary *query = [@{ (__bridge id)kSecReturnAttributes : (__bridge id)kCFBooleanTrue,
+                                     (__bridge id)kSecMatchLimit : (__bridge id)kSecMatchLimitAll,
+                                     (__bridge id)kSecReturnData : (__bridge id)kCFBooleanTrue
+                                 } mutableCopy];
+    
     
     NSArray *secItemClasses = @[ (__bridge id)kSecClassGenericPassword, (__bridge id)kSecClassInternetPassword, (__bridge id)kSecClassCertificate, (__bridge id)kSecClassKey, (__bridge id)kSecClassIdentity ];
     
@@ -36,13 +45,12 @@ NSString *const ALPHAKeychainDataIdentifier = @"com.unifiedsense.alpha.data.keyc
         SecItemCopyMatching((__bridge CFDictionaryRef)query, &result);
         
         id item = (__bridge id)result;
-        
-        NSLog(@"Result: %@", item);
-        
-        [items addObject:item];
-        
+
         if (result != NULL)
         {
+            //NSLog(@"REsult: %@", result);
+            
+            [items addObject:[[ALPHAKeychainItem alloc] initWithDictionary:[item firstObject]]];
             CFRelease(result);
         }
     }
@@ -66,19 +74,22 @@ NSString *const ALPHAKeychainDataIdentifier = @"com.unifiedsense.alpha.data.keyc
 {
     
     ALPHATableScreenModel* screenModel = [[ALPHATableScreenModel alloc] initWithIdentifier:ALPHAKeychainDataIdentifier];
-    screenModel.title = @"Screenshots";
+    screenModel.title = @"Keychain Items";
     
     ALPHAScreenSection* section = [[ALPHAScreenSection alloc] init];
     
-    NSArray *keychainItems = [self keychainItems];
+    self.items = [self keychainItems];
     
     NSMutableArray* items = [NSMutableArray array];
     
-    for (id keychainItem in keychainItems)
+    for (ALPHAKeychainItem* keychainItem in self.items)
     {
         ALPHAScreenItem* item = [[ALPHAScreenItem alloc] init];
-        item.title = [keychainItem description];
-        //item.object = [ALPHARequest requestForFile:screenshot.absoluteString];
+        item.title = keychainItem.account;
+        item.detail = keychainItem.service;
+        item.style = UITableViewCellStyleSubtitle;
+        
+        item.object = [ALPHARequest requestForObject:keychainItem];
         
         [items addObject:item];
     }

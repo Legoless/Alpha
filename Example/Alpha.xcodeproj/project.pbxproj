@@ -19,6 +19,7 @@
 		38E2F7111BBDB4E30010FC35 /* ALPHAKeychainIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F7101BBDB4E30010FC35 /* ALPHAKeychainIcon.m */; settings = {ASSET_TAGS = (); }; };
 		38E2F7151BBDBAB70010FC35 /* ALPHAKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F7141BBDBAB70010FC35 /* ALPHAKeychain.m */; settings = {ASSET_TAGS = (); }; };
 		38E2F7181BBDBAC20010FC35 /* ALPHAKeychainSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F7171BBDBAC20010FC35 /* ALPHAKeychainSource.m */; settings = {ASSET_TAGS = (); }; };
+		38E2F71C1BBDC2320010FC35 /* ALPHAKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F71B1BBDC2320010FC35 /* ALPHAKeychainItem.m */; settings = {ASSET_TAGS = (); }; };
 		3EC6487318FF8A5000024205 /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3EC6487218FF8A5000024205 /* ReadMe.txt */; };
 		5356823E18F3656900BAAD62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5356823D18F3656900BAAD62 /* Foundation.framework */; };
 		5356824018F3656900BAAD62 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5356823F18F3656900BAAD62 /* CoreGraphics.framework */; };
@@ -461,6 +462,8 @@
 		38E2F7141BBDBAB70010FC35 /* ALPHAKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAKeychain.m; sourceTree = "<group>"; };
 		38E2F7161BBDBAC20010FC35 /* ALPHAKeychainSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAKeychainSource.h; sourceTree = "<group>"; };
 		38E2F7171BBDBAC20010FC35 /* ALPHAKeychainSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAKeychainSource.m; sourceTree = "<group>"; };
+		38E2F71A1BBDC2320010FC35 /* ALPHAKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAKeychainItem.h; sourceTree = "<group>"; };
+		38E2F71B1BBDC2320010FC35 /* ALPHAKeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAKeychainItem.m; sourceTree = "<group>"; };
 		3EC6487218FF8A5000024205 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = SOURCE_ROOT; };
 		5356823A18F3656900BAAD62 /* UICatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UICatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5356823D18F3656900BAAD62 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -964,6 +967,7 @@
 			children = (
 				38E2F70D1BBDB3A80010FC35 /* Assets */,
 				38E2F7121BBDB90C0010FC35 /* Library */,
+				38E2F7191BBDC21C0010FC35 /* Model */,
 				38E2F70E1BBDB3B40010FC35 /* Sources */,
 				38E2F70A1BBDB3940010FC35 /* ALPHAKeychainPlugin.h */,
 				38E2F70B1BBDB3940010FC35 /* ALPHAKeychainPlugin.m */,
@@ -996,6 +1000,15 @@
 				38E2F7141BBDBAB70010FC35 /* ALPHAKeychain.m */,
 			);
 			path = Library;
+			sourceTree = "<group>";
+		};
+		38E2F7191BBDC21C0010FC35 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				38E2F71A1BBDC2320010FC35 /* ALPHAKeychainItem.h */,
+				38E2F71B1BBDC2320010FC35 /* ALPHAKeychainItem.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		5356823118F3656900BAAD62 = {
@@ -2760,6 +2773,7 @@
 				67E645FF09AE2A54387C9148 /* ALPHAAsset.m in Sources */,
 				67E641EDE1F7162E0B4F68BF /* ALPHACoreAssets.m in Sources */,
 				67E64EDDD3FC470EC18F657A /* UIImage+Creation.m in Sources */,
+				38E2F71C1BBDC2320010FC35 /* ALPHAKeychainItem.m in Sources */,
 				67E64B0268CE1467F66DB214 /* ALPHAAssetManager.m in Sources */,
 				67E647BDB33185AB1B6164E3 /* ALPHAModel.m in Sources */,
 				67E64E2C909F3D8E198169E3 /* ALPHAPlugin.m in Sources */,

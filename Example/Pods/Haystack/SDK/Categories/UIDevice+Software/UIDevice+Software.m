@@ -243,7 +243,7 @@
                     #endif
                     
                     NSDictionary *dict = @{@"pid" : processID,
-                                           @"hay_name" : processName,
+                                           @"name" : processName,
                                            @"priority" : processPriority,
                                            @"ruid" : ruid,
                                            @"rgid" : rgid,

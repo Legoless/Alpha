@@ -7,6 +7,8 @@
 
 #import "AAPLCatalogTableTableViewController.h"
 
+#import <FXKeychain/FXKeychain.h>
+
 #if DEBUG
 // Alpha should only be compiled and used in debug builds.
 #import "ALPHAManager.h"
@@ -30,6 +32,13 @@
     #if DEBUG
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Alpha" style:UIBarButtonItemStylePlain target:self action:@selector(alphaButtonTapped:)];
     #endif
+    
+    FXKeychain* keychain = [FXKeychain defaultKeychain];
+    
+    if (!keychain[@"TestPassword"])
+    {
+        keychain[@"TestPassword"] = @"My Password";
+    }
     
     //
     // Local notification test

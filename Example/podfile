@@ -8,3 +8,5 @@ pod 'Haystack'
 
 # Remote plugin for testing
 pod 'DTBonjour'
+
+pod 'FXKeychain'

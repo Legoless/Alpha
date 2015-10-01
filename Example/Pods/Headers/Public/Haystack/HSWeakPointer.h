@@ -1,1 +1,0 @@
-../../../Haystack/SDK/Classes/HSWeakPointer/HSWeakPointer.h

@@ -32,6 +32,7 @@
 #import "UIDevice+Hardware.h"
 #import "UIDevice+Network.h"
 #import "UIDevice+Software.h"
+#import "UIStoryboard+Initialization.h"
 
 #import "UIViewController+BackgroundImage.h"
 #import "UIView+Snapshot.h"
