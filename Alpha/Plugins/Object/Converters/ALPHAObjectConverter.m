@@ -214,6 +214,7 @@
     //
 
     NSArray *shortcuts = [self shortcutsForClass:class];
+    
     ALPHAScreenItem *liveInstancesShortcut = [self liveInstancesShortcutForClass:NSClassFromString(model.objectClass)];
     shortcuts = [shortcuts arrayByAddingObject:liveInstancesShortcut];
 
