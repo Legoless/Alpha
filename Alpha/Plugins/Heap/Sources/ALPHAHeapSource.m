@@ -8,7 +8,7 @@
 
 @import ObjectiveC.runtime;
 
-#import "ALPHAHeapEnumerator.h"
+#import "ALPHAHeapUtility.h"
 #import "ALPHAUtility.h"
 
 #import "ALPHAInstanceSource.h"
@@ -128,7 +128,7 @@ NSString* const ALPHAHeapDataIdentifier = @"com.unifiedsense.alpha.data.heap";
     }
     
     // Enumerate all objects on the heap to build the counts of instances for each class.
-    [ALPHAHeapEnumerator enumerateLiveObjectsUsingBlock:^(__unsafe_unretained id object, __unsafe_unretained Class actualClass) {
+    [ALPHAHeapUtility enumerateLiveObjectsUsingBlock:^(__unsafe_unretained id object, __unsafe_unretained Class actualClass) {
         NSUInteger instanceCount = (NSUInteger) CFDictionaryGetValue(mutableCountsForClasses, (__bridge const void *) actualClass);
         instanceCount++;
         CFDictionarySetValue(mutableCountsForClasses, (__bridge const void *) actualClass, (const void *) instanceCount);

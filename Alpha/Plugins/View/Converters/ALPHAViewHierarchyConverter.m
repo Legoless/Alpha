@@ -13,7 +13,7 @@
 #import "ALPHAViewHierarchyModel.h"
 
 #import "ALPHAViewHierarchyConverter.h"
-#import "ALPHARuntimeUtility.h"
+#import "ALPHAHeapUtility.h"
 
 @implementation ALPHAViewHierarchyConverter
 
@@ -36,7 +36,7 @@
         
         item.cellClass = @"ALPHAHierarchyTableViewCell";
         
-        id originalView = [ALPHARuntimeUtility objectForPointerString:view.viewPointer className:nil];
+        id originalView = [ALPHAHeapUtility objectForPointerString:view.viewPointer className:nil];
         item.cellParameters = @{ @"viewDepth" : @(view.depth), @"viewColor" : [UIColor alpha_consistentRandomColorForObject:originalView] };
         
         item.transparent = view.hidden;

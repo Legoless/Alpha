@@ -14,7 +14,7 @@
 
 #import "ALPHAApplicationDelegate.h"
 #import "ALPHACanvasView.h"
-#import "ALPHAHeapEnumerator.h"
+#import "ALPHAHeapUtility.h"
 #import "ALPHAMockObject.h"
 #import "ALPHARuntimeUtility.h"
 #import "ALPHAUtility.h"

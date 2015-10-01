@@ -8,6 +8,7 @@
 
 @import UIKit;
 #import "ALPHARuntimeUtility.h"
+#import "ALPHAHeapUtility.h"
 
 // See https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtPropertyIntrospection.html#//apple_ref/doc/uid/TP40008048-CH101-SW6
 NSString *const ALPHAUtilityAttributeTypeEncoding = @"T";
@@ -136,29 +137,6 @@ const unsigned int ALPHANumberOfImplicitArgsKey = 2;
     }
     
     return [[className substringToIndex:location] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-}
-
-
-+ (id)objectForPointerString:(NSString *)pointerString className:(NSString *)className
-{
-    __unsafe_unretained id object;
-    sscanf([pointerString cStringUsingEncoding:NSUTF8StringEncoding], "%p", &object);
-    
-    //
-    // Do a class name check
-    //
-    
-    if (className)
-    {
-        Class objectClass = NSClassFromString(className);
-        
-        if ([object class] == objectClass)
-        {
-            return object;
-        }
-    }
-    
-    return object;
 }
 
 #pragma mark - Property Helpers (Public)

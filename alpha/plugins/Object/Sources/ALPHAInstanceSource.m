@@ -8,7 +8,7 @@
 
 #import "ALPHARuntimeUtility.h"
 #import "ALPHAUtility.h"
-#import "ALPHAHeapEnumerator.h"
+#import "ALPHAHeapUtility.h"
 
 #import "ALPHATableScreenModel.h"
 
@@ -130,7 +130,7 @@ NSString* const ALPHAInstanceDataClassNameIdentifier = @"kALPHAInstanceDataClass
 
 - (NSDictionary *)instancesReferencingObjectPointer:(NSString *)pointer className:(NSString *)className
 {
-    id object = [ALPHARuntimeUtility objectForPointerString:pointer className:pointer];
+    id object = [ALPHAHeapUtility objectForPointerString:pointer className:pointer];
     
     if (!object)
     {
@@ -140,7 +140,7 @@ NSString* const ALPHAInstanceDataClassNameIdentifier = @"kALPHAInstanceDataClass
     NSMutableArray *instances = [NSMutableArray array];
     NSMutableArray *fieldNames = [NSMutableArray array];
     
-    [ALPHAHeapEnumerator enumerateLiveObjectsUsingBlock:^(__unsafe_unretained id tryObject, __unsafe_unretained Class actualClass) {
+    [ALPHAHeapUtility enumerateLiveObjectsUsingBlock:^(__unsafe_unretained id tryObject, __unsafe_unretained Class actualClass) {
         // Get all the ivars on the object. Start with the class and and travel up the inheritance chain.
         // Once we find a match, record it and move on to the next object. There's no reason to find multiple matches within the same object.
         Class tryClass = actualClass;
@@ -178,7 +178,7 @@ NSString* const ALPHAInstanceDataClassNameIdentifier = @"kALPHAInstanceDataClass
     const char *classNameCString = [className UTF8String];
     NSMutableArray *instances = [NSMutableArray array];
     
-    [ALPHAHeapEnumerator enumerateLiveObjectsUsingBlock:^(__unsafe_unretained id object, __unsafe_unretained Class actualClass) {
+    [ALPHAHeapUtility enumerateLiveObjectsUsingBlock:^(__unsafe_unretained id object, __unsafe_unretained Class actualClass) {
         if (strcmp(classNameCString, class_getName(actualClass)) == 0)
         {
             // Note: objects of certain classes crash when retain is called. It is up to the user to avoid tapping into instance lists for these classes.

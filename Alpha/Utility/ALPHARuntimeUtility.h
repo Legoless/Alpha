@@ -46,8 +46,6 @@ extern NSString *const ALPHAUtilityAttributeOldStyleTypeEncoding;
 + (NSString *)prefixOfClassName:(NSString *)className;
 + (NSString *)readableTypeForEncoding:(NSString *)encodingString;
 
-+ (id)objectForPointerString:(NSString *)pointerString className:(NSString *)className;
-
 // Property Helpers
 + (NSString *)prettyNameForProperty:(objc_property_t)property;
 + (NSString *)prettyTypeForProperty:(objc_property_t)property;

@@ -15,6 +15,7 @@
 #import "ALPHAObjectIvar.h"
 #import "ALPHAObjectMethod.h"
 
+#import "ALPHAHeapUtility.h"
 #import "ALPHARuntimeUtility.h"
 
 #import "ALPHAObjectModel.h"
@@ -56,7 +57,7 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     
     if (request.parameters[ALPHAObjectDataPointerIdentifier] && request.parameters[ALPHAObjectDataClassNameIdentifier])
     {
-        object = [ALPHARuntimeUtility objectForPointerString:request.parameters[ALPHAObjectDataPointerIdentifier] className:request.parameters[ALPHAObjectDataClassNameIdentifier]];
+        object = [ALPHAHeapUtility objectForPointerString:request.parameters[ALPHAObjectDataPointerIdentifier] className:request.parameters[ALPHAObjectDataClassNameIdentifier]];
     }
 
     if (!object)
@@ -362,7 +363,6 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     }];
 }
 
-
 + (NSArray *)methodsForClass:(Class)class areClassMethods:(BOOL)areClassMethods
 {
     NSMutableArray *methods = [NSMutableArray array];
@@ -456,7 +456,8 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
         
         for (NSString *superclass in superclasses)
         {
-            if ([superclass rangeOfString:search options:NSCaseInsensitiveSearch].length > 0) {
+            if ([superclass rangeOfString:search options:NSCaseInsensitiveSearch].length > 0)
+            {
                 [filteredSuperclasses addObject:superclass];
             }
         }
@@ -468,7 +469,8 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
 }
 
 #pragma mark - Actions
--(void)canPerformAction:(id<ALPHAIdentifiableItem>)action completion:(ALPHADataSourceRequestVerification)completion{
+-(void)canPerformAction:(id<ALPHAIdentifiableItem>)action completion:(ALPHADataSourceRequestVerification)completion
+{
     completion([action isKindOfClass:[ALPHAObjectActionItem class]]);
 }
 
@@ -489,7 +491,7 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
     // First find the referenced object
     //
     
-    id object = [ALPHARuntimeUtility objectForPointerString:action.objectPointer className:action.objectClass];
+    id object = [ALPHAHeapUtility objectForPointerString:action.objectPointer className:action.objectClass];
     id returnObject = nil;
     
     if (!error && object)
@@ -497,9 +499,10 @@ NSString *const ALPHAObjectDataIdentifier = @"com.unifiedsense.alpha.data.object
         returnObject = [self executeAction:action onObject:object withError:&error];
     }
 
-    if (returnObject && ![returnObject isKindOfClass:[ALPHAModel class]]) {
+    if (returnObject && ![returnObject isKindOfClass:[ALPHAModel class]])
+    {
         ALPHARequest* request = [ALPHARequest requestForObject:returnObject];
-        ALPHAObjectModel* objectModel = (ALPHAObjectModel*)[self modelForRequest:request];
+        ALPHAObjectModel* objectModel = (ALPHAObjectModel *)[self modelForRequest:request];
         returnObject = objectModel;
     }
     
