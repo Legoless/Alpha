@@ -17,6 +17,8 @@
 		38DE4A4C1A0B7DB000EB447A /* AAPLNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DE4A4B1A0B7DB000EB447A /* AAPLNetworkViewController.m */; };
 		38E2F70C1BBDB3940010FC35 /* ALPHAKeychainPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F70B1BBDB3940010FC35 /* ALPHAKeychainPlugin.m */; settings = {ASSET_TAGS = (); }; };
 		38E2F7111BBDB4E30010FC35 /* ALPHAKeychainIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F7101BBDB4E30010FC35 /* ALPHAKeychainIcon.m */; settings = {ASSET_TAGS = (); }; };
+		38E2F7151BBDBAB70010FC35 /* ALPHAKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F7141BBDBAB70010FC35 /* ALPHAKeychain.m */; settings = {ASSET_TAGS = (); }; };
+		38E2F7181BBDBAC20010FC35 /* ALPHAKeychainSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F7171BBDBAC20010FC35 /* ALPHAKeychainSource.m */; settings = {ASSET_TAGS = (); }; };
 		3EC6487318FF8A5000024205 /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3EC6487218FF8A5000024205 /* ReadMe.txt */; };
 		5356823E18F3656900BAAD62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5356823D18F3656900BAAD62 /* Foundation.framework */; };
 		5356824018F3656900BAAD62 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5356823F18F3656900BAAD62 /* CoreGraphics.framework */; };
@@ -455,6 +457,10 @@
 		38E2F70B1BBDB3940010FC35 /* ALPHAKeychainPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAKeychainPlugin.m; sourceTree = "<group>"; };
 		38E2F70F1BBDB4E30010FC35 /* ALPHAKeychainIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAKeychainIcon.h; sourceTree = "<group>"; };
 		38E2F7101BBDB4E30010FC35 /* ALPHAKeychainIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAKeychainIcon.m; sourceTree = "<group>"; };
+		38E2F7131BBDBAB70010FC35 /* ALPHAKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAKeychain.h; sourceTree = "<group>"; };
+		38E2F7141BBDBAB70010FC35 /* ALPHAKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAKeychain.m; sourceTree = "<group>"; };
+		38E2F7161BBDBAC20010FC35 /* ALPHAKeychainSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAKeychainSource.h; sourceTree = "<group>"; };
+		38E2F7171BBDBAC20010FC35 /* ALPHAKeychainSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAKeychainSource.m; sourceTree = "<group>"; };
 		3EC6487218FF8A5000024205 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = SOURCE_ROOT; };
 		5356823A18F3656900BAAD62 /* UICatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UICatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5356823D18F3656900BAAD62 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -977,6 +983,8 @@
 		38E2F70E1BBDB3B40010FC35 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				38E2F7161BBDBAC20010FC35 /* ALPHAKeychainSource.h */,
+				38E2F7171BBDBAC20010FC35 /* ALPHAKeychainSource.m */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -984,8 +992,10 @@
 		38E2F7121BBDB90C0010FC35 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				38E2F7131BBDBAB70010FC35 /* ALPHAKeychain.h */,
+				38E2F7141BBDBAB70010FC35 /* ALPHAKeychain.m */,
 			);
-			name = Library;
+			path = Library;
 			sourceTree = "<group>";
 		};
 		5356823118F3656900BAAD62 = {
@@ -1259,13 +1269,13 @@
 		67E641B1372BEAD8F929DA95 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				67E648C2792A56DC6E4A3703 /* Model */,
-				67E64587F1A1CD1602C8DCBE /* Views */,
 				67E6402FC256ECFABD31D7BB /* Assets */,
-				67E6474A9ABE7A7AA74C2DCC /* Sources */,
-				67E647CB2551EEEC77CA3559 /* Toolbar */,
 				67E64218F7310AE05D50CB19 /* Converters */,
 				67E64D40EFCC9DB90ABCD40E /* Controllers */,
+				67E648C2792A56DC6E4A3703 /* Model */,
+				67E6474A9ABE7A7AA74C2DCC /* Sources */,
+				67E647CB2551EEEC77CA3559 /* Toolbar */,
+				67E64587F1A1CD1602C8DCBE /* Views */,
 				67E64F750A784EE45796FBB2 /* ALPHAViewHierarchyPlugin.h */,
 				67E649B1309A520BB8D8733A /* ALPHAViewHierarchyPlugin.m */,
 			);
@@ -2877,10 +2887,12 @@
 				67E640EB32A6DE94950185A1 /* ALPHANotification.m in Sources */,
 				67E645AA465E13EB33E872F3 /* ALPHANotificationModel.m in Sources */,
 				67E649B02AC5E04F62A793E4 /* ALPHANotificationIcon.m in Sources */,
+				38E2F7181BBDBAC20010FC35 /* ALPHAKeychainSource.m in Sources */,
 				67E645145ACA62E5C7DBA8C5 /* ALPHANotificationSource.m in Sources */,
 				67E64704B29AA63477EBFEC0 /* ALPHANotificationConverter.m in Sources */,
 				67E64A3D04F7985F71C6C2B1 /* ALPHANotificationPlugin.m in Sources */,
 				67E64DE9D2EE6BFAD09A80D1 /* UIApplication+Private.m in Sources */,
+				38E2F7151BBDBAB70010FC35 /* ALPHAKeychain.m in Sources */,
 				67E64042591B45C93975819E /* ALPHANotioColorPalette.m in Sources */,
 				67E64796B9E61BEEFBDB99FC /* ALPHAFormenteraColorPalette.m in Sources */,
 				67E6493AFB19C641A9D2FCA0 /* ALPHATrigger.m in Sources */,

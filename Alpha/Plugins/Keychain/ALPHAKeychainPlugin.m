@@ -11,6 +11,8 @@
 #import "ALPHAKeychainPlugin.h"
 
 #import "ALPHAKeychainIcon.h"
+#import "ALPHAKeychainSource.h"
+
 #import "ALPHAAssetManager.h"
 
 @implementation ALPHAKeychainPlugin
@@ -24,12 +26,12 @@
         ALPHAScreenActionItem* menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.keychain"];
         menuAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconKeychainIdentifier color:nil size:CGSizeMake(20.0, 20.0)];
         menuAction.title = @"Keychain";
-        //menuAction.dataIdentifier = ALPHAKeychainDataIdentifier;
+        menuAction.dataIdentifier = ALPHAKeychainDataIdentifier;
         menuAction.isMain = YES;
         
         [self registerAction:menuAction];
         
-        //[self registerSource:[ALPHAKeychainSource new]];
+        [self registerSource:[ALPHAKeychainSource new]];
     }
     
     return self;
