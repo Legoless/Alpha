@@ -1,6 +1,6 @@
 //  ALPHACache is a modified version of PINCache
 //  Modifications by Garrett Moon
-//  Copyright (c) 2015 Pinterest. All rights reserved.
+//  Copyright © 2015 Pinterest. All rights reserved.
 
 @import Foundation;
 

@@ -3,7 +3,7 @@
 //  Alpha
 //
 //  Created by Ryan Olson on 6/8/14.
-//  Copyright (c) 2014 Unified Sense. All rights reserved.
+//  Copyright © 2014 Unified Sense. All rights reserved.
 //
 
 @import UIKit;

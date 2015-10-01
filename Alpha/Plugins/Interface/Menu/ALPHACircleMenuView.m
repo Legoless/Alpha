@@ -2,7 +2,7 @@
 //  ALPHACircleMenuView.m
 //
 //  Created by Christian Klaproth on 31.08.14.
-//  Copyright (c) 2014 Christian Klaproth. All rights reserved.
+//  Copyright © 2014 Christian Klaproth. All rights reserved.
 //
 
 #import "ALPHACircleMenuView.h"

@@ -3,7 +3,7 @@
 //  Alpha
 //
 //  Created by Dal Rupnik on 16/6/2015.
-//  Copyright (c) 2015 Unified Sense. All rights reserved.
+//  Copyright © 2015 Unified Sense. All rights reserved.
 //
 
 #import "ALPHATableRendererViewController.h"

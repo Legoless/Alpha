@@ -3,7 +3,7 @@
 //  SMG
 //
 //  Created by Sam Green on 3/25/14.
-//  Copyright (c) 2014 Sam Green. All rights reserved.
+//  Copyright © 2014 Sam Green. All rights reserved.
 //
 
 #ifndef __CG_VECTOR_ADDITIONS_H

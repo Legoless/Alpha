@@ -3,7 +3,7 @@
 //  Alpha
 //
 //  Created by Ryan Olson on 5/30/14.
-//  Copyright (c) 2014 Unified Sense. All rights reserved.
+//  Copyright © 2014 Unified Sense. All rights reserved.
 //
 
 #import "ALPHAArgumentInputView.h"
