@@ -30,6 +30,7 @@ Features are separated into multiple plugins, which can be enabled or disabled, 
 - **Global** - information plugin displays linked frameworks, libraries and classes.
 - **Heap** - allows inspection of active object instances on ther heap and helps with debugging memory errors.
 - **Interface** - plugin is a specific plugin and is required to display Alpha menu interface and actions.
+- **Keychain** - browse items in keychain added by the application.
 - **Network** - logs network connections made using `NSURLSession` and `NSURLConnection` API's.
 - **Notification** - displays scheduled and fired local notifications, received push notifications and notification permissions.
 - **Object** - allows for inspection of any class or object in the application, including `NSUserDefaults`, arrays and dictionaries.
