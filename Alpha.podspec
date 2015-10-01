@@ -213,6 +213,7 @@ Pod::Spec.new do |spec|
   spec.subspec 'Global' do |subspec|
     subspec.source_files = 'Alpha/Plugins/Global/**/*.{h,m}'
     subspec.dependency 'Alpha/Core'
+    subspec.dependency 'Alpha/Object'
   end
 
   #
@@ -260,7 +261,6 @@ Pod::Spec.new do |spec|
   spec.subspec 'Object' do |subspec|
     subspec.source_files = 'Alpha/Plugins/Object/**/*.{h,m}'
     subspec.dependency 'Alpha/Core'
-    subspec.dependency 'Alpha/Global'
     subspec.dependency 'Alpha/Render'
   end
 
