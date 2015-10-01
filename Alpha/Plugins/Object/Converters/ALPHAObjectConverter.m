@@ -190,9 +190,7 @@
             screenItem.title = item.name;
             screenItem.detail = item.objectClass;
 
-            screenItem.object =
-            [ALPHARequest requestForObjectPointer:item.objectPointer
-            className:item.objectClass];
+            screenItem.object = [ALPHARequest requestForObjectPointer:item.objectPointer className:item.objectClass];
         }
 
         section.items = items.copy;
