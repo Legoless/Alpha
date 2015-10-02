@@ -141,6 +141,7 @@ Thanks to all contributors of the following projects:
 - [PINCache](https://github.com/pinterest/PINCache)
 - [Super DB](https://github.com/Shopify/superdb)
 - [Touchpose](https://github.com/toddreed/Touchpose)
+- [ISHPermissionKit](https://github.com/iosphere/ISHPermissionKit)
 - Many more...
 
 Contact
