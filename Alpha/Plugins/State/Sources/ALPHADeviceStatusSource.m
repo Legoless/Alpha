@@ -106,6 +106,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     [items addObjectsFromArray:@[
         @{ @"System Version" : [NSString stringWithFormat:@"%@ %@", [UIDevice currentDevice].systemName, [UIDevice currentDevice].systemVersion] },
         @{ @"System Time" : [self.dateFormatter stringFromDate:[NSDate date]] },
+        @{ @"Low Power Mode" : ALPHAEncodeBool([[NSProcessInfo processInfo] isLowPowerModeEnabled]) }
     ]];
     
     NSArray *keyboards = [[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] objectForKey:@"AppleKeyboards"];;
@@ -114,7 +115,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     {
         NSString* title = @"";
         
-        if (items.count <= 2)
+        if (items.count <= 3)
         {
             title = @"User Keyboards";
         }
