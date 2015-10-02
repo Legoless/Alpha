@@ -94,6 +94,29 @@ static void range_callback(task_t task, void *context, unsigned type, vm_range_t
 
 + (id)objectForPointerString:(NSString *)pointerString className:(NSString *)className
 {
+    __unsafe_unretained id object;
+    sscanf([pointerString cStringUsingEncoding:NSUTF8StringEncoding], "%p", &object);
+    
+    //
+    // Do a class name check
+    //
+    
+    if (className)
+    {
+        Class objectClass = NSClassFromString(className);
+        
+        if ([object class] == objectClass)
+        {
+            return object;
+        }
+    }
+    
+    return object;
+}
+
+/*
++ (id)objectForPointerString:(NSString *)pointerString className:(NSString *)className
+{
     //
     // Do a class name check
     //
@@ -156,5 +179,5 @@ static void range_callback(task_t task, void *context, unsigned type, vm_range_t
         }
     });
 }
-
+*/
 @end
