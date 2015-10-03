@@ -509,7 +509,6 @@ NSString *const ALPHALogoIdentifier             = @"com.unifiedsense.alpha.logo"
                 bezierPath.lineWidth = 3 * (size.width / 80.0);
                 [bezierPath stroke];
                 
-                
                 //// Oval 4 Drawing
                 UIBezierPath* oval4Path = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(CGRectGetMinX(alphaGroup) + floor(CGRectGetWidth(alphaGroup) * 0.45314 + 0.05) + 0.45, CGRectGetMinY(alphaGroup) + floor(CGRectGetHeight(alphaGroup) * 0.00000 - 0.15) + 0.65, floor(CGRectGetWidth(alphaGroup) * 0.51530 + 0.05) - floor(CGRectGetWidth(alphaGroup) * 0.45314 + 0.05), floor(CGRectGetHeight(alphaGroup) * 0.06278 - 0.15) - floor(CGRectGetHeight(alphaGroup) * 0.00000 - 0.15))];
                 [fillColor setFill];

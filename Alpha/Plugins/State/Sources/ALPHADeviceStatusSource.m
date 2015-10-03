@@ -14,15 +14,14 @@
 
 #import "ALPHARuntimeUtility.h"
 
+#import "ALPHAUtility.h"
+
 #import "UIDevice+ALPHAStatus.h"
 #import "ALPHADeviceStatusSource.h"
 #import "ALPHAModel.h"
 #import "ALPHATableScreenModel.h"
 
 extern NSString* CTSettingCopyMyPhoneNumber();
-
-#define ALPHAEncodeBool(expr) ( (expr) ? @"Yes" : @"No" )
-#define ALPHAEncodeString(expr) ( (expr != nil) ? [expr description] : @"" )
 
 NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.status";
 
