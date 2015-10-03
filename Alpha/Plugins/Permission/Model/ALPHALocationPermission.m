@@ -12,6 +12,13 @@
 
 @implementation ALPHALocationPermission
 
+#pragma mark - Initialization
+
+- (instancetype)init
+{
+    return [self initWithIdentifier:@"com.unifiedsense.alpha.data.permission.location"];
+}
+
 #pragma mark - Public methods
 
 - (ALPHAApplicationAuthorizationStatus)status

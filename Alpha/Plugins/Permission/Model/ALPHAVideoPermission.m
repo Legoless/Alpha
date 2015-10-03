@@ -17,6 +17,13 @@
     return @"Camera";
 }
 
+#pragma mark - Initialization
+
+- (instancetype)init
+{
+    return [self initWithIdentifier:@"com.unifiedsense.alpha.data.permission.video"];
+}
+
 - (ALPHAApplicationAuthorizationStatus)status
 {
     return (ALPHAApplicationAuthorizationStatus)[AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];

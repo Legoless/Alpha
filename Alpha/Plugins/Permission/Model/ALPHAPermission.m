@@ -73,6 +73,8 @@ NSString* NSStringFromAuthorizationStatus (ALPHAApplicationAuthorizationStatus s
 - (void)requestPermission:(ALPHAPermissionRequestCompletion)completion
 {
     // Abstract
+    
+    NSLog(@"Requesting permission: %@", self.identifier);
 }
 
 + (NSArray *)allPermissions
