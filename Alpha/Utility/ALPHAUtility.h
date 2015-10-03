@@ -11,6 +11,9 @@
 
 #define ALPHAFloor(x) (floor([[UIScreen mainScreen] scale] * (x)) / [[UIScreen mainScreen] scale])
 
+#define ALPHAEncodeBool(expr) ( (expr) ? @"Yes" : @"No" )
+#define ALPHAEncodeString(expr) ( (expr != nil) ? [expr description] : @"" )
+
 @interface ALPHAUtility : NSObject
 
 + (UIInterfaceOrientationMask)infoPlistSupportedInterfaceOrientationsMask;

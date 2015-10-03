@@ -13,6 +13,9 @@
 		38921B931B34E64C00A50DED /* ALPHAGreenSeaColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 38921B921B34E64C00A50DED /* ALPHAGreenSeaColorPalette.m */; };
 		38921B961B34E6BB00A50DED /* ALPHAAlizarinColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 38921B951B34E6BB00A50DED /* ALPHAAlizarinColorPalette.m */; };
 		38921B991B34E6DC00A50DED /* ALPHAAmethystColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 38921B981B34E6DC00A50DED /* ALPHAAmethystColorPalette.m */; };
+		38DAAE4A1BBF03C50023841C /* ALPHAPermissionPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DAAE491BBF03C50023841C /* ALPHAPermissionPlugin.m */; settings = {ASSET_TAGS = (); }; };
+		38DAAE4D1BBF03D30023841C /* ALPHAPermissionIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DAAE4C1BBF03D30023841C /* ALPHAPermissionIcon.m */; settings = {ASSET_TAGS = (); }; };
+		38DAAE501BBF03DF0023841C /* ALPHAPermissionSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DAAE4F1BBF03DF0023841C /* ALPHAPermissionSource.m */; settings = {ASSET_TAGS = (); }; };
 		38DE4A491A0B78BC00EB447A /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38DE4A481A0B78BC00EB447A /* Launch.xib */; };
 		38DE4A4C1A0B7DB000EB447A /* AAPLNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DE4A4B1A0B7DB000EB447A /* AAPLNetworkViewController.m */; };
 		38E2F70C1BBDB3940010FC35 /* ALPHAKeychainPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F70B1BBDB3940010FC35 /* ALPHAKeychainPlugin.m */; settings = {ASSET_TAGS = (); }; };
@@ -450,6 +453,12 @@
 		38921B971B34E6DC00A50DED /* ALPHAAmethystColorPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAAmethystColorPalette.h; sourceTree = "<group>"; };
 		38921B981B34E6DC00A50DED /* ALPHAAmethystColorPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAAmethystColorPalette.m; sourceTree = "<group>"; };
 		38AB0F271B315B1700F0CC21 /* AlphaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlphaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		38DAAE481BBF03C50023841C /* ALPHAPermissionPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAPermissionPlugin.h; sourceTree = "<group>"; };
+		38DAAE491BBF03C50023841C /* ALPHAPermissionPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAPermissionPlugin.m; sourceTree = "<group>"; };
+		38DAAE4B1BBF03D30023841C /* ALPHAPermissionIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAPermissionIcon.h; sourceTree = "<group>"; };
+		38DAAE4C1BBF03D30023841C /* ALPHAPermissionIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAPermissionIcon.m; sourceTree = "<group>"; };
+		38DAAE4E1BBF03DF0023841C /* ALPHAPermissionSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAPermissionSource.h; sourceTree = "<group>"; };
+		38DAAE4F1BBF03DF0023841C /* ALPHAPermissionSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAPermissionSource.m; sourceTree = "<group>"; };
 		38DE4A481A0B78BC00EB447A /* Launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
 		38DE4A4A1A0B7DB000EB447A /* AAPLNetworkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLNetworkViewController.h; sourceTree = "<group>"; };
 		38DE4A4B1A0B7DB000EB447A /* AAPLNetworkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLNetworkViewController.m; sourceTree = "<group>"; };
@@ -961,6 +970,35 @@
 			path = Integration;
 			sourceTree = "<group>";
 		};
+		38DAAE451BBF038C0023841C /* Permission */ = {
+			isa = PBXGroup;
+			children = (
+				38DAAE461BBF03A20023841C /* Assets */,
+				38DAAE471BBF03AB0023841C /* Sources */,
+				38DAAE481BBF03C50023841C /* ALPHAPermissionPlugin.h */,
+				38DAAE491BBF03C50023841C /* ALPHAPermissionPlugin.m */,
+			);
+			path = Permission;
+			sourceTree = "<group>";
+		};
+		38DAAE461BBF03A20023841C /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				38DAAE4B1BBF03D30023841C /* ALPHAPermissionIcon.h */,
+				38DAAE4C1BBF03D30023841C /* ALPHAPermissionIcon.m */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		38DAAE471BBF03AB0023841C /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				38DAAE4E1BBF03DF0023841C /* ALPHAPermissionSource.h */,
+				38DAAE4F1BBF03DF0023841C /* ALPHAPermissionSource.m */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		38E2F7091BBDB36C0010FC35 /* Keychain */ = {
 			isa = PBXGroup;
 			children = (
@@ -1159,10 +1197,10 @@
 		67E6405FD7D9EDD1267D522A /* Notification */ = {
 			isa = PBXGroup;
 			children = (
-				67E64A9658F7B41D559477DF /* Model */,
 				67E64C4D972721CFAECD2AF2 /* Assets */,
-				67E64A2408E4BBBCB175C910 /* Sources */,
 				67E644553A3B585962321AA3 /* Converters */,
+				67E64A9658F7B41D559477DF /* Model */,
+				67E64A2408E4BBBCB175C910 /* Sources */,
 				67E64660C26EC83889FD4F3B /* ALPHANotificationPlugin.h */,
 				67E6474C3FDE8A669ACE0C58 /* ALPHANotificationPlugin.m */,
 			);
@@ -1781,6 +1819,7 @@
 				67E64935394AE934A87B955C /* Network */,
 				67E6405FD7D9EDD1267D522A /* Notification */,
 				67E640A6A2C7EBBE3E27804B /* Object */,
+				38DAAE451BBF038C0023841C /* Permission */,
 				67E64F50CD592289415F5388 /* Remote */,
 				67E6422F192F47316655F52C /* Screenshot */,
 				67E641297A8817344A015F3B /* State */,
@@ -2754,6 +2793,7 @@
 				67E640404FFDFDA173B7AEE2 /* ALPHAArgumentInputStringView.m in Sources */,
 				38921B961B34E6BB00A50DED /* ALPHAAlizarinColorPalette.m in Sources */,
 				67E64A01D8AB098215FB7834 /* ALPHAArgumentInputStructView.m in Sources */,
+				38DAAE501BBF03DF0023841C /* ALPHAPermissionSource.m in Sources */,
 				67E6467528CF5476ADFCE4AA /* ALPHAArgumentInputSwitchView.m in Sources */,
 				67E6407F8CFCED2DF07581A6 /* ALPHAArgumentInputViewFactory.m in Sources */,
 				67E64834ACA9321B8FEA087C /* ALPHAArgumentInputJSONObjectView.m in Sources */,
@@ -2770,6 +2810,7 @@
 				67E64EDDD3FC470EC18F657A /* UIImage+Creation.m in Sources */,
 				38E2F71C1BBDC2320010FC35 /* ALPHAKeychainItem.m in Sources */,
 				67E64B0268CE1467F66DB214 /* ALPHAAssetManager.m in Sources */,
+				38DAAE4D1BBF03D30023841C /* ALPHAPermissionIcon.m in Sources */,
 				67E647BDB33185AB1B6164E3 /* ALPHAModel.m in Sources */,
 				67E64E2C909F3D8E198169E3 /* ALPHAPlugin.m in Sources */,
 				38921B991B34E6DC00A50DED /* ALPHAAmethystColorPalette.m in Sources */,
@@ -2884,6 +2925,7 @@
 				67E64774D42B6D4649417ADE /* ALPHACircleMenuView.m in Sources */,
 				67E647A064CAF82A7B8C8B9C /* ALPHAExplorerMenu.m in Sources */,
 				67E647E62FC673561454F472 /* ALPHAMenuCenterView.m in Sources */,
+				38DAAE4A1BBF03C50023841C /* ALPHAPermissionPlugin.m in Sources */,
 				38E2F70C1BBDB3940010FC35 /* ALPHAKeychainPlugin.m in Sources */,
 				67E64C881168D6DE755EA836 /* ALPHAMenuSource.m in Sources */,
 				386601531B4184A000217F85 /* ALPHATouchViewController.m in Sources */,
