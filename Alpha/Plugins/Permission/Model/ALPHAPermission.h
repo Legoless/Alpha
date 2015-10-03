@@ -18,6 +18,7 @@ typedef enum : NSUInteger {
     ALPHAApplicationAuthorizationStatusUnsupported,
     ALPHAApplicationAuthorizationStatusAskAgain,
     ALPHAApplicationAuthorizationStatusDoNotAskAgain,
+    ALPHAApplicationAuthorizationStatusMissingFramework
 } ALPHAApplicationAuthorizationStatus;
 
 typedef void (^ALPHAPermissionRequestCompletion)(ALPHAPermission* permission, ALPHAApplicationAuthorizationStatus status, NSError* error);

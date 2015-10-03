@@ -27,7 +27,8 @@ NSString* NSStringFromAuthorizationStatus (ALPHAApplicationAuthorizationStatus s
             return @"Ask Again";
         case ALPHAApplicationAuthorizationStatusDoNotAskAgain:
             return @"Do Not Ask Again";
-            
+        case ALPHAApplicationAuthorizationStatusMissingFramework:
+            return @"Not Linked";
     }
 }
 
