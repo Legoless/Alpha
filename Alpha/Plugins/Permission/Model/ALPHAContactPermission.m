@@ -39,6 +39,30 @@
     }
 }
 
+- (void)requestPermission:(ALPHAPermissionRequestCompletion)completion
+{
+    if ([self useContactsFramework])
+    {
+        [self requestContactsPermissionWithCompletion:^(BOOL granted, NSError *error)
+        {
+            if (completion)
+            {
+                completion (self, (granted) ? ALPHAApplicationAuthorizationStatusAuthorized : ALPHAApplicationAuthorizationStatusDenied, error);
+            }
+        }];
+    }
+    else
+    {
+        [self requestAddressBookPermissionWithCompletion:^(BOOL granted, NSError *error)
+        {
+            if (completion)
+            {
+                completion (self, (granted) ? ALPHAApplicationAuthorizationStatusAuthorized : ALPHAApplicationAuthorizationStatusDenied, error);
+            }
+        }];
+    }
+}
+
 #pragma mark - Private Methods
 
 - (BOOL)useContactsFramework

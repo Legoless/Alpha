@@ -6,7 +6,7 @@
 //  Copyright © 2015 Unified Sense. All rights reserved.
 //
 
-@import AssetsLibrary;
+@import Photos;
 
 #import "ALPHAAssetPermission.h"
 
@@ -28,7 +28,18 @@
 
 - (ALPHAApplicationAuthorizationStatus)status
 {
-    return (ALPHAApplicationAuthorizationStatus)[ALAssetsLibrary authorizationStatus];
+    return (ALPHAApplicationAuthorizationStatus)[PHPhotoLibrary authorizationStatus];
+}
+
+- (void)requestPermission:(ALPHAPermissionRequestCompletion)completion
+{
+    [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status)
+    {
+        if (completion)
+        {
+            completion(self, (ALPHAApplicationAuthorizationStatus)status, nil);
+        }
+    }];
 }
 
 @end

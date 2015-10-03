@@ -21,6 +21,8 @@
 
 @implementation ALPHASocialPermission
 
+#pragma mark - Getters and Setters
+
 - (ACAccountType *)accountType
 {
     if (!_accountType)
@@ -41,14 +43,27 @@
     return _accountStore;
 }
 
-- (NSString *)name
-{
-    return [[[self.identifier componentsSeparatedByString:@"."] lastObject] capitalizedString];
-}
+#pragma mark - Public Methods
 
 - (ALPHAApplicationAuthorizationStatus)status
 {
     return self.accountType.accessGranted ? ALPHAApplicationAuthorizationStatusAuthorized : ALPHAApplicationAuthorizationStatusDenied;
+}
+
+- (void)requestPermission:(ALPHAPermissionRequestCompletion)completion
+{
+    [self.accountStore requestAccessToAccountsWithType:self.accountType options:nil completion:^(BOOL granted, NSError *error)
+    {
+        if (completion)
+        {
+            completion (self, (granted) ? ALPHAApplicationAuthorizationStatusAuthorized : ALPHAApplicationAuthorizationStatusDenied, error);
+        }
+    }];
+}
+
+- (NSString *)name
+{
+    return [[[self.identifier componentsSeparatedByString:@"."] lastObject] capitalizedString];
 }
 
 + (NSArray *)allPermissions

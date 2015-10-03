@@ -66,6 +66,17 @@
     }
 }
 
+- (void)requestPermission:(ALPHAPermissionRequestCompletion)completion
+{
+    [[[self class] healthStore] requestAuthorizationToShareTypes:nil readTypes:[NSSet setWithArray:@[ [self objectType] ]] completion:^(BOOL success, NSError * _Nullable error)
+    {
+        if (completion)
+        {
+            completion (self, (success) ? ALPHAApplicationAuthorizationStatusAuthorized : ALPHAApplicationAuthorizationStatusDenied, error);
+        }
+    }];
+}
+
 - (NSString *)name
 {
     NSString* identifier = self.identifier.copy;

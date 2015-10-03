@@ -12,11 +12,6 @@
 
 @implementation ALPHAVideoPermission
 
-- (NSString *)name
-{
-    return @"Camera";
-}
-
 #pragma mark - Initialization
 
 - (instancetype)init
@@ -24,9 +19,27 @@
     return [self initWithIdentifier:@"com.unifiedsense.alpha.data.permission.video"];
 }
 
+#pragma mark - Public Methods
+
 - (ALPHAApplicationAuthorizationStatus)status
 {
     return (ALPHAApplicationAuthorizationStatus)[AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+}
+
+- (void)requestPermission:(ALPHAPermissionRequestCompletion)completion
+{
+    [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted)
+    {
+        if (completion)
+        {
+            completion (self, (granted) ? ALPHAApplicationAuthorizationStatusAuthorized : ALPHAApplicationAuthorizationStatusDenied, nil);
+        }
+    }];
+}
+
+- (NSString *)name
+{
+    return @"Camera";
 }
 
 @end

@@ -52,4 +52,9 @@
     }
 }
 
+- (void)requestPermission:(ALPHAPermissionRequestCompletion)completion
+{
+    
+}
+
 @end

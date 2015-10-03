@@ -8,23 +8,54 @@
 
 #import "ALPHAEventPermission.h"
 
+@interface ALPHAEventPermission ()
+
+@property (nonatomic, strong) EKEventStore* eventStore;
+
+@end
+
 @implementation ALPHAEventPermission
 
-#pragma mark - Initialization
+#pragma mark - Getters and Setters
 
-- (NSString *)name
+- (EKEventStore *)eventStore
 {
-    return self.entityType == EKEntityTypeEvent ? @"Calendar" : @"Reminders";
+    if (!_eventStore)
+    {
+        _eventStore = [[EKEventStore alloc] init];
+    }
+    
+    return _eventStore;
 }
+
+#pragma mark - Initialization
 
 - (instancetype)init
 {
     return [self initWithIdentifier:@"com.unifiedsense.alpha.data.permission.calendar"];
 }
 
+#pragma mark - Public Methods
+
 - (ALPHAApplicationAuthorizationStatus)status
 {
     return (ALPHAApplicationAuthorizationStatus)[EKEventStore authorizationStatusForEntityType:self.entityType];
+}
+
+- (void)requestPermission:(ALPHAPermissionRequestCompletion)completion
+{
+    [self.eventStore requestAccessToEntityType:self.entityType completion:^(BOOL granted, NSError * _Nullable error)
+    {
+        if (completion)
+        {
+            completion (self, (granted) ? ALPHAApplicationAuthorizationStatusAuthorized : ALPHAApplicationAuthorizationStatusDenied, error);
+        }
+    }];
+}
+
+- (NSString *)name
+{
+    return self.entityType == EKEntityTypeEvent ? @"Calendar" : @"Reminders";
 }
 
 + (NSArray *)allPermissions
@@ -39,5 +70,7 @@
     
     return eventPermission;
 }
+
+#pragma mark - Private Methods
 
 @end

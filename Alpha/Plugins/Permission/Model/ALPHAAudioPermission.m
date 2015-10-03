@@ -57,4 +57,15 @@
     }
 }
 
+- (void)requestPermission:(ALPHAPermissionRequestCompletion)completion
+{
+    [self.audioSession requestRecordPermission:^(BOOL granted)
+    {
+        if (completion)
+        {
+            completion(self, (granted) ? ALPHAApplicationAuthorizationStatusAuthorized : ALPHAApplicationAuthorizationStatusDenied, nil);
+        }
+    }];
+}
+
 @end

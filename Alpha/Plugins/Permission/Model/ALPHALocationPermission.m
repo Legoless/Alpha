@@ -10,7 +10,27 @@
 
 #import "ALPHALocationPermission.h"
 
+@interface ALPHALocationPermission () <CLLocationManagerDelegate>
+
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, assign) ALPHAPermissionRequestCompletion completionBlock;
+
+@end
+
 @implementation ALPHALocationPermission
+
+#pragma mark - Getters and Setters
+
+- (CLLocationManager *)locationManager
+{
+    if (!_locationManager)
+    {
+        _locationManager = [[CLLocationManager alloc] init];
+        _locationManager.delegate = self;
+    }
+    
+    return _locationManager;
+}
 
 #pragma mark - Initialization
 
@@ -36,12 +56,45 @@
     }
 }
 
+- (void)requestPermission:(ALPHAPermissionRequestCompletion)completion
+{
+    self.completionBlock = completion;
+    
+    [self.locationManager requestAlwaysAuthorization];
+}
+
 - (NSString *)statusString
 {
     return [self stringForLocationPermissionStatus:[CLLocationManager authorizationStatus]];
 }
 
+#pragma mark - CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    if (self.completionBlock)
+    {
+        self.completionBlock (self, [self statusForLocationStatus:status], nil);
+        self.completionBlock = nil;
+    }
+}
+
 #pragma mark - Private Methods
+
+- (ALPHAApplicationAuthorizationStatus)statusForLocationStatus:(CLAuthorizationStatus)status
+{
+    switch (status)
+    {
+        case kCLAuthorizationStatusNotDetermined:
+            return ALPHAApplicationAuthorizationStatusNotDetermined;
+        case kCLAuthorizationStatusRestricted:
+            return ALPHAApplicationAuthorizationStatusRestricted;
+        case kCLAuthorizationStatusDenied:
+            return ALPHAApplicationAuthorizationStatusDenied;
+        default:
+            return ALPHAApplicationAuthorizationStatusAuthorized;
+    }
+}
 
 - (NSString *)stringForLocationPermissionStatus:(CLAuthorizationStatus)status
 {
