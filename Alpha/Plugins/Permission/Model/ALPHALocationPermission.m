@@ -60,7 +60,7 @@
 {
     self.completionBlock = completion;
     
-    [self.locationManager requestWhenInUseAuthorization];
+    [self.locationManager requestAlwaysAuthorization];
 }
 
 - (NSString *)statusString
@@ -75,6 +75,15 @@
     if (self.completionBlock)
     {
         self.completionBlock (self, [self statusForLocationStatus:status], nil);
+        self.completionBlock = nil;
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    if (self.completionBlock)
+    {
+        self.completionBlock (self, [self status], error);
         self.completionBlock = nil;
     }
 }
