@@ -60,7 +60,8 @@
 {
     self.completionBlock = completion;
     
-    [self.locationManager requestAlwaysAuthorization];
+    [self.locationManager requestWhenInUseAuthorization];
+    [self.locationManager startUpdatingLocation];
 }
 
 - (NSString *)statusString
@@ -72,6 +73,8 @@
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
 {
+    [manager stopUpdatingLocation];
+    
     if (self.completionBlock)
     {
         self.completionBlock (self, [self statusForLocationStatus:status], nil);
@@ -79,8 +82,21 @@
     }
 }
 
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
+{
+    [manager stopUpdatingLocation];
+    
+    if (self.completionBlock)
+    {
+        self.completionBlock (self, [self status], nil);
+        self.completionBlock = nil;
+    }
+}
+
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
+    [manager stopUpdatingLocation];
+    
     if (self.completionBlock)
     {
         self.completionBlock (self, [self status], error);
