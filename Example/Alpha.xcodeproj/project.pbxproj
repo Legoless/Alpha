@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		380042681BC0238F00369725 /* ALPHAPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 380042671BC0238F00369725 /* ALPHAPermission.m */; settings = {ASSET_TAGS = (); }; };
+		3800426B1BC0252700369725 /* ALPHAHealthPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 3800426A1BC0252700369725 /* ALPHAHealthPermission.m */; settings = {ASSET_TAGS = (); }; };
+		3800426E1BC0253300369725 /* ALPHALocationPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 3800426D1BC0253300369725 /* ALPHALocationPermission.m */; settings = {ASSET_TAGS = (); }; };
+		380042711BC0254800369725 /* ALPHAEventPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 380042701BC0254800369725 /* ALPHAEventPermission.m */; settings = {ASSET_TAGS = (); }; };
+		380042741BC0255900369725 /* ALPHAAudioPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 380042731BC0255900369725 /* ALPHAAudioPermission.m */; settings = {ASSET_TAGS = (); }; };
+		380042771BC0256600369725 /* ALPHABluetoothPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 380042761BC0256600369725 /* ALPHABluetoothPermission.m */; settings = {ASSET_TAGS = (); }; };
+		3800427A1BC0257200369725 /* ALPHAVideoPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 380042791BC0257200369725 /* ALPHAVideoPermission.m */; settings = {ASSET_TAGS = (); }; };
+		3800427D1BC0257B00369725 /* ALPHAContactPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 3800427C1BC0257B00369725 /* ALPHAContactPermission.m */; settings = {ASSET_TAGS = (); }; };
+		380042801BC0258A00369725 /* ALPHAAssetPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 3800427F1BC0258A00369725 /* ALPHAAssetPermission.m */; settings = {ASSET_TAGS = (); }; };
+		380042841BC0318900369725 /* ALPHASocialPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 380042831BC0318900369725 /* ALPHASocialPermission.m */; settings = {ASSET_TAGS = (); }; };
 		38353E891B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38353E881B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m */; };
 		385A687C1BACA111000B4898 /* ALPHATouchFingerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 385A687B1BACA111000B4898 /* ALPHATouchFingerView.m */; };
 		386601531B4184A000217F85 /* ALPHATouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386601521B4184A000217F85 /* ALPHATouchViewController.m */; };
@@ -440,6 +450,27 @@
 
 /* Begin PBXFileReference section */
 		0C6C81861F8DC133E5D85165 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		380042661BC0238F00369725 /* ALPHAPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAPermission.h; sourceTree = "<group>"; };
+		380042671BC0238F00369725 /* ALPHAPermission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAPermission.m; sourceTree = "<group>"; };
+		380042691BC0252700369725 /* ALPHAHealthPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAHealthPermission.h; sourceTree = "<group>"; };
+		3800426A1BC0252700369725 /* ALPHAHealthPermission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAHealthPermission.m; sourceTree = "<group>"; };
+		3800426C1BC0253300369725 /* ALPHALocationPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHALocationPermission.h; sourceTree = "<group>"; };
+		3800426D1BC0253300369725 /* ALPHALocationPermission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHALocationPermission.m; sourceTree = "<group>"; };
+		3800426F1BC0254800369725 /* ALPHAEventPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAEventPermission.h; sourceTree = "<group>"; };
+		380042701BC0254800369725 /* ALPHAEventPermission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAEventPermission.m; sourceTree = "<group>"; };
+		380042721BC0255900369725 /* ALPHAAudioPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAAudioPermission.h; sourceTree = "<group>"; };
+		380042731BC0255900369725 /* ALPHAAudioPermission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAAudioPermission.m; sourceTree = "<group>"; };
+		380042751BC0256600369725 /* ALPHABluetoothPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHABluetoothPermission.h; sourceTree = "<group>"; };
+		380042761BC0256600369725 /* ALPHABluetoothPermission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHABluetoothPermission.m; sourceTree = "<group>"; };
+		380042781BC0257200369725 /* ALPHAVideoPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAVideoPermission.h; sourceTree = "<group>"; };
+		380042791BC0257200369725 /* ALPHAVideoPermission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAVideoPermission.m; sourceTree = "<group>"; };
+		3800427B1BC0257B00369725 /* ALPHAContactPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAContactPermission.h; sourceTree = "<group>"; };
+		3800427C1BC0257B00369725 /* ALPHAContactPermission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAContactPermission.m; sourceTree = "<group>"; };
+		3800427E1BC0258A00369725 /* ALPHAAssetPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAAssetPermission.h; sourceTree = "<group>"; };
+		3800427F1BC0258A00369725 /* ALPHAAssetPermission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAAssetPermission.m; sourceTree = "<group>"; };
+		380042821BC0318900369725 /* ALPHASocialPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHASocialPermission.h; sourceTree = "<group>"; };
+		380042831BC0318900369725 /* ALPHASocialPermission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHASocialPermission.m; sourceTree = "<group>"; };
+		380042851BC03B8200369725 /* ALPHAPermissions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALPHAPermissions.h; sourceTree = "<group>"; };
 		38353E871B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLCatalogTableTableViewController.h; sourceTree = "<group>"; };
 		38353E881B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLCatalogTableTableViewController.m; sourceTree = "<group>"; };
 		385A687A1BACA111000B4898 /* ALPHATouchFingerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHATouchFingerView.h; sourceTree = "<group>"; };
@@ -964,6 +995,27 @@
 		380042651BC0233400369725 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				380042851BC03B8200369725 /* ALPHAPermissions.h */,
+				380042661BC0238F00369725 /* ALPHAPermission.h */,
+				380042671BC0238F00369725 /* ALPHAPermission.m */,
+				3800427E1BC0258A00369725 /* ALPHAAssetPermission.h */,
+				3800427F1BC0258A00369725 /* ALPHAAssetPermission.m */,
+				380042721BC0255900369725 /* ALPHAAudioPermission.h */,
+				380042731BC0255900369725 /* ALPHAAudioPermission.m */,
+				380042751BC0256600369725 /* ALPHABluetoothPermission.h */,
+				380042761BC0256600369725 /* ALPHABluetoothPermission.m */,
+				3800427B1BC0257B00369725 /* ALPHAContactPermission.h */,
+				3800427C1BC0257B00369725 /* ALPHAContactPermission.m */,
+				3800426F1BC0254800369725 /* ALPHAEventPermission.h */,
+				380042701BC0254800369725 /* ALPHAEventPermission.m */,
+				380042691BC0252700369725 /* ALPHAHealthPermission.h */,
+				3800426A1BC0252700369725 /* ALPHAHealthPermission.m */,
+				3800426C1BC0253300369725 /* ALPHALocationPermission.h */,
+				3800426D1BC0253300369725 /* ALPHALocationPermission.m */,
+				380042821BC0318900369725 /* ALPHASocialPermission.h */,
+				380042831BC0318900369725 /* ALPHASocialPermission.m */,
+				380042781BC0257200369725 /* ALPHAVideoPermission.h */,
+				380042791BC0257200369725 /* ALPHAVideoPermission.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2789,6 +2841,7 @@
 				67E64418B783BAA0DEC033DF /* NSString+Entities.m in Sources */,
 				67E64457B2955E83EF7062CA /* ALPHAHeapUtility.m in Sources */,
 				67E648F3F50D029746AD4EA5 /* ALPHARuntimeUtility.m in Sources */,
+				380042801BC0258A00369725 /* ALPHAAssetPermission.m in Sources */,
 				67E64B811C98E31485978FE2 /* NSString+Identifier.m in Sources */,
 				67E6442632072F2D63B42802 /* UIApplication+Event.m in Sources */,
 				67E64CE7713C160D2AF6792D /* ALPHAApplicationDelegate.m in Sources */,
@@ -2805,9 +2858,11 @@
 				67E6467528CF5476ADFCE4AA /* ALPHAArgumentInputSwitchView.m in Sources */,
 				67E6407F8CFCED2DF07581A6 /* ALPHAArgumentInputViewFactory.m in Sources */,
 				67E64834ACA9321B8FEA087C /* ALPHAArgumentInputJSONObjectView.m in Sources */,
+				3800427D1BC0257B00369725 /* ALPHAContactPermission.m in Sources */,
 				67E64CC12F5670E58F603BA2 /* ALPHAArgumentInputFontsPickerView.m in Sources */,
 				67E645A80E2E59CE9AE683BD /* ALPHAArgumentInputNotSupportedView.m in Sources */,
 				67E641EC48B15430C875913A /* ALPHAFieldEditorView.m in Sources */,
+				380042681BC0238F00369725 /* ALPHAPermission.m in Sources */,
 				67E64ED22A2D5D69256FBDDC /* ALPHASearchScopeView.m in Sources */,
 				67E640DD29FF48C8FE7CEAE3 /* ALPHAMultilineTableViewCell.m in Sources */,
 				67E64FFA842D6490401AF494 /* ALPHACache.m in Sources */,
@@ -2819,6 +2874,7 @@
 				38E2F71C1BBDC2320010FC35 /* ALPHAKeychainItem.m in Sources */,
 				67E64B0268CE1467F66DB214 /* ALPHAAssetManager.m in Sources */,
 				38DAAE4D1BBF03D30023841C /* ALPHAPermissionIcon.m in Sources */,
+				380042741BC0255900369725 /* ALPHAAudioPermission.m in Sources */,
 				67E647BDB33185AB1B6164E3 /* ALPHAModel.m in Sources */,
 				67E64E2C909F3D8E198169E3 /* ALPHAPlugin.m in Sources */,
 				38921B991B34E6DC00A50DED /* ALPHAAmethystColorPalette.m in Sources */,
@@ -2827,11 +2883,13 @@
 				67E643BED0951F643380C519 /* ALPHABlockActionItem.m in Sources */,
 				67E64DB705220C4B4BAB9428 /* ALPHAScreenActionItem.m in Sources */,
 				67E643F341348CA3EEFCFBA9 /* ALPHASelectorActionItem.m in Sources */,
+				3800427A1BC0257200369725 /* ALPHAVideoPermission.m in Sources */,
 				67E6475D47DF19A05345B096 /* ALPHAGlobalActionIdentifiers.m in Sources */,
 				67E64A7B80A0A3004A646FB2 /* ALPHAObjectIvar.m in Sources */,
 				67E641E31869279134A821C0 /* ALPHAObjectType.m in Sources */,
 				67E64C6D65948DB2D5195E1A /* ALPHAObjectModel.m in Sources */,
 				67E6456DAEC35948817AC242 /* ALPHAObjectMethod.m in Sources */,
+				3800426E1BC0253300369725 /* ALPHALocationPermission.m in Sources */,
 				67E64417B129C755488AF9BE /* ALPHAObjectContent.m in Sources */,
 				67E64AEEE6C46FEBB6B0CCEF /* ALPHAObjectElement.m in Sources */,
 				67E6439A7F55D1FD3CDAC57C /* ALPHAObjectArgument.m in Sources */,
@@ -2856,6 +2914,7 @@
 				67E646C9C2476E5A7168E742 /* ALPHAWindow.m in Sources */,
 				67E64B3D8327687B90EBB27C /* ALPHAManager.m in Sources */,
 				67E64D01E0797359E5251375 /* ALPHAFileModel.m in Sources */,
+				380042771BC0256600369725 /* ALPHABluetoothPermission.m in Sources */,
 				67E64DC122E8499B65449E45 /* ALPHAFileObject.m in Sources */,
 				67E646EE286B4DF4950142E0 /* ALPHAFileIcon.m in Sources */,
 				67E64623DF05648C49F58891 /* ALPHAFileSource.m in Sources */,
@@ -2871,6 +2930,7 @@
 				67E646FFEC7E987B4F02AB16 /* ALPHAViewIcon.m in Sources */,
 				67E6490C59903CE3AD96127F /* ALPHASelectIcon.m in Sources */,
 				67E64567D111D285D7B02012 /* ALPHAViewHierarchySource.m in Sources */,
+				380042711BC0254800369725 /* ALPHAEventPermission.m in Sources */,
 				67E64E49AB173C7C446C68A7 /* ALPHAToolbarItem.m in Sources */,
 				67E64B075FA200AD8487CC68 /* ALPHAExplorerToolbar.m in Sources */,
 				67E64FC64B38052B9BA7FF7A /* ALPHAViewHierarchyConverter.m in Sources */,
@@ -2941,6 +3001,7 @@
 				67E6454FB9FC6FDB26EC5825 /* ALPHAScreenshotIcon.m in Sources */,
 				38E2F7111BBDB4E30010FC35 /* ALPHAKeychainIcon.m in Sources */,
 				67E647EA38B504601F9ED87F /* ALPHAScreenshotSource.m in Sources */,
+				380042841BC0318900369725 /* ALPHASocialPermission.m in Sources */,
 				67E64CF6B0CA635A422BD217 /* ALPHAScreenshotPlugin.m in Sources */,
 				67E640EB32A6DE94950185A1 /* ALPHANotification.m in Sources */,
 				67E645AA465E13EB33E872F3 /* ALPHANotificationModel.m in Sources */,
@@ -2963,6 +3024,7 @@
 				67E64642610A5065FF82A700 /* ALPHAIvarRendererViewController.m in Sources */,
 				67E64D1646344CBC304CF302 /* ALPHAFieldRendererViewController.m in Sources */,
 				67E6485A00C28CBF5190ECDE /* ALPHAImageRendererViewController.m in Sources */,
+				3800426B1BC0252700369725 /* ALPHAHealthPermission.m in Sources */,
 				67E64DACE9AF5E9E2416858E /* ALPHATableRendererViewController.m in Sources */,
 				67E64AFE330E17117A817778 /* ALPHAMethodRendererViewController.m in Sources */,
 				FEDA7AB71B5C17D800BB35FD /* ALPHAApplicationSource.m in Sources */,
