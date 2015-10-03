@@ -12,6 +12,8 @@
 #import "ALPHAContactPermission.h"
 #import "ALPHAEventPermission.h"
 #import "ALPHAHealthPermission.h"
+#import "ALPHAMotionPermission.h"
+#import "ALPHANotificationPermission.h"
 #import "ALPHALocationPermission.h"
 #import "ALPHASocialPermission.h"
 #import "ALPHAVideoPermission.h"

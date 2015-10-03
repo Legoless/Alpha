@@ -41,7 +41,7 @@
 
 - (NSString *)name
 {
-    return @"Contacts";
+    return @"Motion";
 }
 
 - (ALPHAApplicationAuthorizationStatus)status

@@ -12,23 +12,13 @@
 
 @interface ALPHABluetoothPermission ()
 
-@property (nonatomic, strong) CBCentralManager *centralManager;
+@property (nonatomic, strong) CBPeripheralManager *peripheralManager;
 
 @end
 
 @implementation ALPHABluetoothPermission
 
 #pragma mark - Getters and Setters
-
-- (CBCentralManager *)centralManager
-{
-    if (!_centralManager)
-    {
-        _centralManager = [[CBCentralManager alloc] initWithDelegate:nil queue:nil];
-    }
-    
-    return _centralManager;
-}
 
 #pragma mark - Initialization
 
@@ -41,20 +31,20 @@
 
 - (ALPHAApplicationAuthorizationStatus)status
 {
-    switch (self.centralManager.state)
-    {
-        case CBCentralManagerStateUnsupported:
-            return ALPHAApplicationAuthorizationStatusUnsupported;
-        case CBCentralManagerStateUnauthorized:
-            return ALPHAApplicationAuthorizationStatusDenied;
-        default:
-            return ALPHAApplicationAuthorizationStatusNotDetermined;
-    }
+    return (ALPHAApplicationAuthorizationStatus)[CBPeripheralManager authorizationStatus];
 }
 
 - (void)requestPermission:(ALPHAPermissionRequestCompletion)completion
 {
+    if (self.peripheralManager == nil)
+    {
+        self.peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:nil queue:nil];
+    }
     
+    if (completion)
+    {
+        completion(self, self.status, nil);
+    }
 }
 
 @end

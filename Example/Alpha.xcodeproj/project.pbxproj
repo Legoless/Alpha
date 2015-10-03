@@ -24,6 +24,7 @@
 		38921B961B34E6BB00A50DED /* ALPHAAlizarinColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 38921B951B34E6BB00A50DED /* ALPHAAlizarinColorPalette.m */; };
 		38921B991B34E6DC00A50DED /* ALPHAAmethystColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 38921B981B34E6DC00A50DED /* ALPHAAmethystColorPalette.m */; };
 		38D00BFA1BC0603100FCCD2A /* ALPHAMotionPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D00BF91BC0603100FCCD2A /* ALPHAMotionPermission.m */; settings = {ASSET_TAGS = (); }; };
+		38D00BFD1BC0632200FCCD2A /* ALPHANotificationPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D00BFC1BC0632200FCCD2A /* ALPHANotificationPermission.m */; settings = {ASSET_TAGS = (); }; };
 		38DAAE4A1BBF03C50023841C /* ALPHAPermissionPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DAAE491BBF03C50023841C /* ALPHAPermissionPlugin.m */; settings = {ASSET_TAGS = (); }; };
 		38DAAE4D1BBF03D30023841C /* ALPHAPermissionIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DAAE4C1BBF03D30023841C /* ALPHAPermissionIcon.m */; settings = {ASSET_TAGS = (); }; };
 		38DAAE501BBF03DF0023841C /* ALPHAPermissionSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DAAE4F1BBF03DF0023841C /* ALPHAPermissionSource.m */; settings = {ASSET_TAGS = (); }; };
@@ -487,6 +488,8 @@
 		38AB0F271B315B1700F0CC21 /* AlphaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlphaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		38D00BF81BC0603100FCCD2A /* ALPHAMotionPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAMotionPermission.h; sourceTree = "<group>"; };
 		38D00BF91BC0603100FCCD2A /* ALPHAMotionPermission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAMotionPermission.m; sourceTree = "<group>"; };
+		38D00BFB1BC0632200FCCD2A /* ALPHANotificationPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHANotificationPermission.h; sourceTree = "<group>"; };
+		38D00BFC1BC0632200FCCD2A /* ALPHANotificationPermission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHANotificationPermission.m; sourceTree = "<group>"; };
 		38DAAE481BBF03C50023841C /* ALPHAPermissionPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAPermissionPlugin.h; sourceTree = "<group>"; };
 		38DAAE491BBF03C50023841C /* ALPHAPermissionPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAPermissionPlugin.m; sourceTree = "<group>"; };
 		38DAAE4B1BBF03D30023841C /* ALPHAPermissionIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAPermissionIcon.h; sourceTree = "<group>"; };
@@ -1017,6 +1020,8 @@
 				3800426D1BC0253300369725 /* ALPHALocationPermission.m */,
 				38D00BF81BC0603100FCCD2A /* ALPHAMotionPermission.h */,
 				38D00BF91BC0603100FCCD2A /* ALPHAMotionPermission.m */,
+				38D00BFB1BC0632200FCCD2A /* ALPHANotificationPermission.h */,
+				38D00BFC1BC0632200FCCD2A /* ALPHANotificationPermission.m */,
 				380042821BC0318900369725 /* ALPHASocialPermission.h */,
 				380042831BC0318900369725 /* ALPHASocialPermission.m */,
 				380042781BC0257200369725 /* ALPHAVideoPermission.h */,
@@ -2862,6 +2867,7 @@
 				38DAAE501BBF03DF0023841C /* ALPHAPermissionSource.m in Sources */,
 				67E6467528CF5476ADFCE4AA /* ALPHAArgumentInputSwitchView.m in Sources */,
 				67E6407F8CFCED2DF07581A6 /* ALPHAArgumentInputViewFactory.m in Sources */,
+				38D00BFD1BC0632200FCCD2A /* ALPHANotificationPermission.m in Sources */,
 				67E64834ACA9321B8FEA087C /* ALPHAArgumentInputJSONObjectView.m in Sources */,
 				3800427D1BC0257B00369725 /* ALPHAContactPermission.m in Sources */,
 				67E64CC12F5670E58F603BA2 /* ALPHAArgumentInputFontsPickerView.m in Sources */,
