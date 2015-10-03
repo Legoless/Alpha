@@ -23,7 +23,7 @@
 + (HKHealthStore *)healthStore
 {
     static dispatch_once_t onceToken;
-    static HKHealthStore *healthStore = nil;
+    static HKHealthStore *healthStore;
     
     dispatch_once(&onceToken, ^{
         healthStore = [[HKHealthStore alloc] init];

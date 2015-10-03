@@ -13,7 +13,7 @@
 @interface ALPHALocationPermission () <CLLocationManagerDelegate>
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
-@property (nonatomic, assign) ALPHAPermissionRequestCompletion completionBlock;
+@property (nonatomic, strong) ALPHAPermissionRequestCompletion completionBlock;
 
 @end
 
@@ -60,7 +60,7 @@
 {
     self.completionBlock = completion;
     
-    [self.locationManager requestAlwaysAuthorization];
+    [self.locationManager requestWhenInUseAuthorization];
 }
 
 - (NSString *)statusString

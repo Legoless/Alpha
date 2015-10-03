@@ -116,10 +116,13 @@
     {
         [renderer.source performAction:(ALPHAActionItem *)item completion:^(ALPHAModel *model, NSError *error)
         {
-            if (!error)
+            dispatch_async(dispatch_get_main_queue(), ^
             {
-                [renderer refresh];
-            }
+                if (!error)
+                {
+                    [renderer refresh];
+                }
+            });
         }];
     }
     else

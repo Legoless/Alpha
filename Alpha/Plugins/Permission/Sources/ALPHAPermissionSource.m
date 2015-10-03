@@ -159,11 +159,9 @@ NSString* const ALPHAActionPermissionRequestPermissionIdentifier = @"com.unified
     
     for (ALPHAPermission *permission in permissions)
     {
-        ALPHARequest *request = [ALPHARequest requestWithIdentifier:ALPHAActionPermissionRequestIdentifier];
+        ALPHARequest *request = [ALPHARequest requestWithIdentifier:ALPHAActionPermissionRequestIdentifier parameters:@{ ALPHAActionPermissionRequestPermissionIdentifier : permission.identifier }];
         
         ALPHASelectorActionItem *item = [[ALPHASelectorActionItem alloc] initWithRequest:request];
-        item.selector = @"requestPermissionWithParameters:";
-        item.object = @{ ALPHAActionPermissionRequestPermissionIdentifier : permission.identifier };
         item.title = [permission name];
         item.detail = [permission statusString];
         item.style = UITableViewCellStyleValue1;
@@ -174,25 +172,33 @@ NSString* const ALPHAActionPermissionRequestPermissionIdentifier = @"com.unified
     return items;
 }
 
-- (void)requestPermissionWithParameters:(NSDictionary *)parameters
+- (void)performAction:(id<ALPHAIdentifiableItem>)action completion:(ALPHADataSourceRequestCompletion)completion
 {
-    NSString* identifier = parameters[ALPHAActionPermissionRequestPermissionIdentifier];
-    
-    for (NSArray *permissions in self.permissions)
+    if (![action.request.identifier isEqualToString:ALPHAActionPermissionRequestIdentifier])
     {
-        for (ALPHAPermission *permission in permissions)
+        [super performAction:action completion:completion];
+    }
+    else
+    {
+        NSString* identifier = action.request.parameters[ALPHAActionPermissionRequestPermissionIdentifier];
+        
+        for (NSArray *permissions in self.permissions)
         {
-            if (![permission.identifier isEqualToString:identifier])
+            for (ALPHAPermission *permission in permissions)
             {
-                continue;
+                if (![permission.identifier isEqualToString:identifier])
+                {
+                    continue;
+                }
+                
+                [permission requestPermission:^(ALPHAPermission *permission, ALPHAApplicationAuthorizationStatus status, NSError *error)
+                {
+                    if (completion)
+                    {
+                        completion(nil, nil);
+                    }
+                }];
             }
-            
-            [permission requestPermission:^(ALPHAPermission *permission, ALPHAApplicationAuthorizationStatus status, NSError *error)
-            {
-                //
-                // TODO: Notify user somehow.
-                //
-            }];
         }
     }
 }
