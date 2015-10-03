@@ -28,14 +28,19 @@
 
 - (void)requestPermission:(ALPHAPermissionRequestCompletion)completion
 {
+    [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationDidBecomeActiveNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * __nonnull note)
+    {
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidBecomeActiveNotification object:nil];
+        
+        if (completion)
+        {
+            completion(self, [self status], nil);
+        }
+    }];
+    
     UIUserNotificationSettings *userNotificationSettings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound) categories:nil];
 
     [[UIApplication sharedApplication] registerUserNotificationSettings:userNotificationSettings];
-    
-    if (completion)
-    {
-        completion(self, [self status], nil);
-    }
 }
 
 - (NSString *)name
