@@ -41,6 +41,11 @@
     return _accountStore;
 }
 
+- (NSString *)name
+{
+    return [[[self.identifier componentsSeparatedByString:@"."] lastObject] capitalizedString];
+}
+
 - (ALPHAApplicationAuthorizationStatus)status
 {
     return self.accountType.accessGranted ? ALPHAApplicationAuthorizationStatusAuthorized : ALPHAApplicationAuthorizationStatusDenied;

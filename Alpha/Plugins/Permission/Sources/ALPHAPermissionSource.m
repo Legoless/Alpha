@@ -86,6 +86,7 @@ NSString* const ALPHAPermissionDataIdentifier = @"com.unifiedsense.alpha.data.pe
     //
     
     ALPHAScreenSection* permissionSection = [[ALPHAScreenSection alloc] initWithIdentifier:@"com.unifiedsense.alpha.data.permission.global"];
+    permissionSection.headerText = @"Global";
     
     permissionSection.items = [self itemsForPermissions:@[
         [ALPHABluetoothPermission new],
@@ -111,6 +112,7 @@ NSString* const ALPHAPermissionDataIdentifier = @"com.unifiedsense.alpha.data.pe
     }
     
     ALPHAScreenSection *healthSection = [[ALPHAScreenSection alloc] initWithIdentifier:@"com.unifiedsense.alpha.data.permission.health"];
+    healthSection.headerText = @"HealthKit";
     
     healthSection.items = [self itemsForPermissions:permissions];
     
@@ -120,6 +122,7 @@ NSString* const ALPHAPermissionDataIdentifier = @"com.unifiedsense.alpha.data.pe
 - (ALPHAScreenSection *)socialSection
 {
     ALPHAScreenSection* socialSection = [[ALPHAScreenSection alloc] initWithIdentifier:@"com.unifiedsense.alpha.data.permission.social"];
+    socialSection.headerText = @"Social Accounts";
     
     socialSection.items = [self itemsForPermissions:[ALPHASocialPermission allPermissions]];
     
@@ -135,6 +138,7 @@ NSString* const ALPHAPermissionDataIdentifier = @"com.unifiedsense.alpha.data.pe
         ALPHAScreenItem *item = [[ALPHAScreenItem alloc] init];
         item.title = [permission name];
         item.detail = [permission statusString];
+        item.style = UITableViewCellStyleValue1;
         
         [items addObject:item];
     }

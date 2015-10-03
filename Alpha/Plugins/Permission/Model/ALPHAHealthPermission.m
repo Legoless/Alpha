@@ -75,7 +75,9 @@
         identifier = [identifier stringByReplacingOccurrencesOfString:[self stringForObjectTypeString:type] withString:@""];
     }
     
-    return [identifier alpha_cleanCodeIdentifier];
+    identifier = [identifier alpha_cleanCodeIdentifier];
+    
+    return identifier.length > 0 ? identifier : @"Workout";
 }
 
 + (NSArray *)allPermissions
@@ -269,7 +271,6 @@
         HKCorrelationTypeIdentifierBloodPressure,
         HKCorrelationTypeIdentifierFood
     ]];
-    
     
     //
     // Workout type

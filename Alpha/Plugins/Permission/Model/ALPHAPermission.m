@@ -60,6 +60,8 @@ NSString* NSStringFromAuthorizationStatus (ALPHAApplicationAuthorizationStatus s
 {
     NSString *name = NSStringFromClass(self.class);
     
+    name = [name stringByReplacingOccurrencesOfString:@"Permission" withString:@""];
+    
     return [name alpha_cleanCodeIdentifier];
 }
 
