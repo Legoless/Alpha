@@ -57,6 +57,7 @@ NSString* const ALPHAActionPermissionRequestPermissionIdentifier = @"com.unified
             [ALPHAHomePermission new],
             [ALPHALocationPermission new],
             [ALPHAAudioPermission new],
+            [ALPHAMobileDataPermission new],
             [ALPHAMotionPermission new],
             [ALPHANotificationPermission new],
             [ALPHAAssetPermission new],

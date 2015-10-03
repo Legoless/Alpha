@@ -26,6 +26,7 @@
 		38D00BFA1BC0603100FCCD2A /* ALPHAMotionPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D00BF91BC0603100FCCD2A /* ALPHAMotionPermission.m */; settings = {ASSET_TAGS = (); }; };
 		38D00BFD1BC0632200FCCD2A /* ALPHANotificationPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D00BFC1BC0632200FCCD2A /* ALPHANotificationPermission.m */; settings = {ASSET_TAGS = (); }; };
 		38D00C001BC0674F00FCCD2A /* ALPHAHomePermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D00BFF1BC0674F00FCCD2A /* ALPHAHomePermission.m */; settings = {ASSET_TAGS = (); }; };
+		38D00C041BC0686E00FCCD2A /* ALPHAMobileDataPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D00C031BC0686E00FCCD2A /* ALPHAMobileDataPermission.m */; settings = {ASSET_TAGS = (); }; };
 		38DAAE4A1BBF03C50023841C /* ALPHAPermissionPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DAAE491BBF03C50023841C /* ALPHAPermissionPlugin.m */; settings = {ASSET_TAGS = (); }; };
 		38DAAE4D1BBF03D30023841C /* ALPHAPermissionIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DAAE4C1BBF03D30023841C /* ALPHAPermissionIcon.m */; settings = {ASSET_TAGS = (); }; };
 		38DAAE501BBF03DF0023841C /* ALPHAPermissionSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DAAE4F1BBF03DF0023841C /* ALPHAPermissionSource.m */; settings = {ASSET_TAGS = (); }; };
@@ -493,6 +494,8 @@
 		38D00BFC1BC0632200FCCD2A /* ALPHANotificationPermission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHANotificationPermission.m; sourceTree = "<group>"; };
 		38D00BFE1BC0674F00FCCD2A /* ALPHAHomePermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAHomePermission.h; sourceTree = "<group>"; };
 		38D00BFF1BC0674F00FCCD2A /* ALPHAHomePermission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAHomePermission.m; sourceTree = "<group>"; };
+		38D00C021BC0686E00FCCD2A /* ALPHAMobileDataPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAMobileDataPermission.h; sourceTree = "<group>"; };
+		38D00C031BC0686E00FCCD2A /* ALPHAMobileDataPermission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAMobileDataPermission.m; sourceTree = "<group>"; };
 		38DAAE481BBF03C50023841C /* ALPHAPermissionPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAPermissionPlugin.h; sourceTree = "<group>"; };
 		38DAAE491BBF03C50023841C /* ALPHAPermissionPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAPermissionPlugin.m; sourceTree = "<group>"; };
 		38DAAE4B1BBF03D30023841C /* ALPHAPermissionIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAPermissionIcon.h; sourceTree = "<group>"; };
@@ -1023,6 +1026,8 @@
 				38D00BFF1BC0674F00FCCD2A /* ALPHAHomePermission.m */,
 				3800426C1BC0253300369725 /* ALPHALocationPermission.h */,
 				3800426D1BC0253300369725 /* ALPHALocationPermission.m */,
+				38D00C021BC0686E00FCCD2A /* ALPHAMobileDataPermission.h */,
+				38D00C031BC0686E00FCCD2A /* ALPHAMobileDataPermission.m */,
 				38D00BF81BC0603100FCCD2A /* ALPHAMotionPermission.h */,
 				38D00BF91BC0603100FCCD2A /* ALPHAMotionPermission.m */,
 				38D00BFB1BC0632200FCCD2A /* ALPHANotificationPermission.h */,
@@ -2979,6 +2984,7 @@
 				67E647FC4A384C699DCA382B /* ALPHAObjectConverter.m in Sources */,
 				38D00BFA1BC0603100FCCD2A /* ALPHAMotionPermission.m in Sources */,
 				67E645C2001DB0856CCB8114 /* ALPHAObjectPlugin.m in Sources */,
+				38D00C041BC0686E00FCCD2A /* ALPHAMobileDataPermission.m in Sources */,
 				67E641526515600829B4EAE2 /* ALPHABonjourConnection.m in Sources */,
 				67E642BE491CB28983F30EB1 /* ALPHABonjourSource.m in Sources */,
 				67E64609A4170A9CD7609870 /* ALPHABonjourServerSource.m in Sources */,
