@@ -26,7 +26,7 @@
         //
         
         ALPHAScreenActionItem* menuAction = [ALPHAScreenActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.permission.all"];
-        //menuAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconPermissionIdentifier color:nil size:CGSizeMake(20.0, 20.0)];
+        menuAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconPermissionIdentifier color:nil size:CGSizeMake(20.0, 20.0)];
         menuAction.title = @"Permissions";
         menuAction.dataIdentifier = ALPHAPermissionDataIdentifier;
         menuAction.isMain = YES;
