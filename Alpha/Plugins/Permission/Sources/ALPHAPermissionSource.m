@@ -39,7 +39,7 @@ NSString* const ALPHAActionPermissionRequestPermissionIdentifier = @"com.unified
     if (!_permissions)
     {
         //
-        // TODO: Add Notifications, HomeKit, Mobile Data and Motion Activity Permissions,
+        // TODO: Mobile Data
         // Ask for permission execution.
         //
         
@@ -54,6 +54,7 @@ NSString* const ALPHAActionPermissionRequestPermissionIdentifier = @"com.unified
             [ALPHAEventPermission new],
             [ALPHAVideoPermission new],
             [ALPHAContactPermission new],
+            [ALPHAHomePermission new],
             [ALPHALocationPermission new],
             [ALPHAAudioPermission new],
             [ALPHAMotionPermission new],
