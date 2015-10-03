@@ -961,6 +961,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		380042651BC0233400369725 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		38353E861B1DADEF009E4ACF /* Integration */ = {
 			isa = PBXGroup;
 			children = (
@@ -974,6 +981,7 @@
 			isa = PBXGroup;
 			children = (
 				38DAAE461BBF03A20023841C /* Assets */,
+				380042651BC0233400369725 /* Model */,
 				38DAAE471BBF03AB0023841C /* Sources */,
 				38DAAE481BBF03C50023841C /* ALPHAPermissionPlugin.h */,
 				38DAAE491BBF03C50023841C /* ALPHAPermissionPlugin.m */,
