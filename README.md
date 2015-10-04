@@ -13,7 +13,7 @@
 
 **Alpha** is an idea of the next generation debugging framework for iOS applications. It combines multiple debugging tools built on top of a **simple, unified API**. It lives entirely in your application sandbox and collects information during your application lifetime. It is very easy to integrate and requires **no code changes**.
 
-***The project is currently a work in progress and might be too unstable to be used in real environment yet. Feel free to open GitHub issues (especially Swift projects).***
+***The project is currently a work in progress and might be too unstable to be used in real environment yet. Feel free to open GitHub issues (especially Swift projects). Currently the most unstable is the Heap plugin.***
 
 ![intro](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Intro.gif "Alpha Intro")
 
@@ -45,7 +45,10 @@ Currently work in progress:
 
 **0.3.0**
 - *Application State Snapshot*
-- *Recording touches and replaying actions*
+- *Display crashes inside Alpha.*
+- *Font Family list*
+- *Remote client target*
+- *Larger example apps*
 - *In-app debugger*
 
 ### Themes
