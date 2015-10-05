@@ -45,10 +45,10 @@ Currently work in progress:
 
 **0.3.0**
 - *Application State Snapshot*
-- *Display crashes inside Alpha.*
+- *Display crashes inside Alpha*
 - *Font Family list*
 - *Remote client target*
-- *Larger example apps*
+- *Larger example apps with more functionality*
 - *In-app debugger*
 
 ### Themes
