@@ -50,6 +50,7 @@ Currently work in progress:
 - *Remote client target*
 - *Larger example apps with more functionality*
 - *In-app debugger*
+- *Resetting permissions*
 
 ### Themes
 
