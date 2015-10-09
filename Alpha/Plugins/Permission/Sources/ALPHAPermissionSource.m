@@ -22,6 +22,8 @@ NSString* const ALPHAActionPermissionRequestIdentifier = @"com.unifiedsense.alph
 
 NSString* const ALPHAActionPermissionRequestPermissionIdentifier = @"com.unifiedsense.alpha.action.permission.request.identifier";
 
+NSString* const ALPHAActionPermissionResetIdentifier = @"com.unifiedsense.alpha.action.permission.reset";
+
 #pragma mark - Permission Source
 
 @interface ALPHAPermissionSource ()
@@ -84,6 +86,7 @@ NSString* const ALPHAActionPermissionRequestPermissionIdentifier = @"com.unified
         [self addDataIdentifier:ALPHAPermissionDataIdentifier];
         
         [self addActionIdentifier:ALPHAActionPermissionRequestIdentifier];
+        [self addActionIdentifier:ALPHAActionPermissionResetIdentifier];
     }
     
     return self;
@@ -100,6 +103,23 @@ NSString* const ALPHAActionPermissionRequestPermissionIdentifier = @"com.unified
     ALPHATableScreenModel* dataModel = [[ALPHATableScreenModel alloc] initWithIdentifier:ALPHAPermissionDataIdentifier];
     dataModel.title = @"Permissions";
     dataModel.tableViewStyle = UITableViewStyleGrouped;
+    
+    //
+    // Action
+    //
+    ALPHABlockActionItem *resetAction = [ALPHABlockActionItem itemWithIdentifier:ALPHAActionPermissionResetIdentifier];
+    resetAction.title = @"Reset All";
+    resetAction.actionBlock = ^id (UIBarButtonItem *sender)
+    {
+        //[[ALPHAManager defaultManager] setInterfaceHidden:YES];
+        
+        [self resetPermissions];
+        
+        return nil;
+    };
+
+    
+    dataModel.rightAction = resetAction;
     
     NSMutableArray *array = [NSMutableArray array];
     
@@ -174,6 +194,11 @@ NSString* const ALPHAActionPermissionRequestPermissionIdentifier = @"com.unified
     }
     
     return items;
+}
+
+- (void)resetPermissions
+{
+
 }
 
 - (void)performAction:(id<ALPHAIdentifiableItem>)action completion:(ALPHADataSourceRequestCompletion)completion

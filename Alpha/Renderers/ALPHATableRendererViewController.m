@@ -161,6 +161,14 @@
 
 #pragma mark - Actions
 
+- (void)rightBarButtonTap:(UIBarButtonItem *)button
+{
+    if (self.screenModel.rightAction)
+    {
+        [[ALPHAScreenManager defaultManager] renderer:self didSelectItem:self.screenModel.rightAction];
+    }
+}
+
 - (void)donePressed:(id)sender
 {
     if ([self.delegate respondsToSelector:@selector(viewControllerDidFinish:)])
@@ -494,11 +502,20 @@
     {
         [self createCloseBarButtonItem];
     }
+    else if (self.screenModel.rightAction)
+    {
+        [self createRightBarButtonItem];
+    }
     else
     {
         self.navigationItem.rightBarButtonItem = nil;
     }
 
+}
+
+- (void)createRightBarButtonItem
+{
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:self.screenModel.rightAction.title style:UIBarButtonItemStyleDone target:self action:@selector(rightBarButtonTap:)];
 }
 
 - (void)createCloseBarButtonItem
