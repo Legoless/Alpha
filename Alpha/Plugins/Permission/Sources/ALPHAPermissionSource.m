@@ -198,15 +198,18 @@ NSString* const ALPHAActionPermissionResetIdentifier = @"com.unifiedsense.alpha.
 
 - (void)resetPermissions
 {
-    for (ALPHAPermission* permission in self.permissions)
+    for (NSArray* permissions in self.permissions)
     {
-        [permission resetPermission:^(BOOL success)
+        for (ALPHAPermission *permission in permissions)
         {
-            if (success)
+            [permission resetPermission:^(BOOL success)
             {
-                NSLog(@"RESET PERMISSION: %d", (int)success);
-            }
-        }];
+                if (success)
+                {
+                    NSLog(@"RESET PERMISSION: %d", (int)success);
+                }
+            }];
+        }
     }
 }
 
