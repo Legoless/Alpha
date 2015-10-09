@@ -36,6 +36,28 @@ const unsigned int ALPHANumberOfImplicitArgsKey = 2;
 
 @implementation ALPHARuntimeUtility
 
+#pragma mark - Framework Helpers
+
++ (BOOL)loadFramework:(NSString *)framework
+{
+    NSString *frameworkPath = [NSString stringWithFormat:@"/System/Library/Frameworks/%@.framework", framework];
+    
+    return [self loadBundleWithPath:frameworkPath];
+}
+
++ (BOOL)loadPrivateFramework:(NSString *)framework
+{
+    NSString *frameworkPath = [NSString stringWithFormat:@"/System/Library/PrivateFrameworks/%@.framework", framework];
+    
+    return [self loadBundleWithPath:frameworkPath];
+}
+
++ (BOOL)loadBundleWithPath:(NSString *)path
+{
+    NSBundle *b = [NSBundle bundleWithPath:@"/System/Library/PrivateFrameworks/FTServices.framework"];
+    return [b load];
+}
+
 #pragma mark - Application Helpers
 
 + (NSString *)applicationImageName

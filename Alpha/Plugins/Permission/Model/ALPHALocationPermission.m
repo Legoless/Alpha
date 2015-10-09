@@ -8,6 +8,8 @@
 
 @import CoreLocation;
 
+#import "ALPHARuntimeUtility.h"
+
 #import "ALPHALocationPermission.h"
 
 @interface ALPHALocationPermission () <CLLocationManagerDelegate>
@@ -62,6 +64,11 @@
     
     [self.locationManager requestWhenInUseAuthorization];
     [self.locationManager startUpdatingLocation];
+}
+
+- (void)resetPermission:(void (^)(BOOL))completion
+{
+    completion([ALPHARuntimeUtility loadPrivateFramework:@"GEOServices"]);
 }
 
 - (NSString *)statusString

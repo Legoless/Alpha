@@ -30,23 +30,38 @@ extern NSString *const ALPHAUtilityAttributeOldStyleTypeEncoding;
 
 @interface ALPHARuntimeUtility : NSObject
 
+//
+// Frameworks
+//
+
++ (BOOL)loadFramework:(NSString *)framework;
++ (BOOL)loadPrivateFramework:(NSString *)framework;
+
+//
 // Application helpers
+//
 + (NSString *)applicationImageName;
 + (NSString *)applicationName;
 
+//
 // Object helpers
+//
 + (BOOL)isImagePathExtension:(NSString *)extension;
 + (NSString *)safeDescriptionForObject:(id)object;
 + (NSString *)detailDescriptionForView:(UIView *)view;
 + (UIViewController *)viewControllerForView:(UIView *)view;
 + (NSString *)descriptionForView:(UIView *)view includingFrame:(BOOL)includeFrame;
 
+//
 // Global Helpers
+//
 + (NSString *)appendName:(NSString *)name toType:(NSString *)type;
 + (NSString *)prefixOfClassName:(NSString *)className;
 + (NSString *)readableTypeForEncoding:(NSString *)encodingString;
 
+//
 // Property Helpers
+//
 + (NSString *)prettyNameForProperty:(objc_property_t)property;
 + (NSString *)prettyTypeForProperty:(objc_property_t)property;
 + (NSString *)typeEncodingForProperty:(objc_property_t)property;
@@ -58,19 +73,25 @@ extern NSString *const ALPHAUtilityAttributeOldStyleTypeEncoding;
 + (void)tryAddPropertyWithName:(const char *)name attributes:(NSDictionary *)attributePairs toClass:(__unsafe_unretained Class)theClass;
 + (NSDictionary *)attributesDictionaryForProperty:(objc_property_t)property;
 
+//
 // Ivar Helpers
+//
 + (NSString *)prettyNameForIvar:(Ivar)ivar;
 + (NSString *)prettyTypeForIvar:(Ivar)ivar;
 + (NSString *)typeEncodingForIvar:(Ivar)ivar;
 + (id)valueForIvar:(Ivar)ivar onObject:(id)object;
 + (void)setValue:(id)value forIvar:(Ivar)ivar onObject:(id)object;
 
+//
 // Method Helpers
+//
 + (NSString *)prettyReturnTypeForMethod:(Method)method;
 + (NSString *)prettyNameForMethod:(Method)method isClassMethod:(BOOL)isClassMethod;
 + (NSArray *)prettyArgumentComponentsForMethod:(Method)method;
 
+//
 // Method Calling/Field Editing
+//
 + (id)performSelector:(SEL)selector onObject:(id)object withArguments:(NSArray *)arguments error:(NSError * __autoreleasing *)error;
 + (NSString *)editableJSONStringForObject:(id)object;
 + (id)objectValueFromEditableJSONString:(NSString *)string;
