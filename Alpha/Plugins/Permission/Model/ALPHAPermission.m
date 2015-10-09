@@ -78,6 +78,14 @@ NSString* NSStringFromAuthorizationStatus (ALPHAApplicationAuthorizationStatus s
     NSLog(@"Requesting permission: %@", self.identifier);
 }
 
+- (void)resetPermission:(void (^)(BOOL))completion
+{
+    if (completion)
+    {
+        completion (NO);
+    }
+}
+
 + (NSArray *)allPermissions
 {
     return nil;

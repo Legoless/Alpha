@@ -47,6 +47,13 @@ NSString* NSStringFromAuthorizationStatus (ALPHAApplicationAuthorizationStatus s
 - (void)requestPermission:(ALPHAPermissionRequestCompletion)completion;
 
 /*!
+ *  Resets permission to original state
+ *
+ *  @param completion called when done
+ */
+- (void)resetPermission:(void (^)(BOOL success))completion;
+
+/*!
  *  Factory method that returns all permissions for a specific class
  *
  *  @return all permission for specific permission
