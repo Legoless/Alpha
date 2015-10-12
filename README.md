@@ -17,6 +17,8 @@
 
 ![intro](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Intro.gif "Alpha Intro")
 
+Watch [presentation](https://www.youtube.com/watch?v=XlycM-37DQw) of Alpha background from **SwiftConf**.
+
 # Features
 
 Features are separated into multiple plugins, which can be enabled or disabled, depending on application requirements.
