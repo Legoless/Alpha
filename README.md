@@ -17,7 +17,7 @@
 
 ![intro](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Intro.gif "Alpha Intro")
 
-Watch [presentation](https://www.youtube.com/watch?v=XlycM-37DQw) by @legoless of Alpha background from **SwiftConf**.
+Watch [presentation](https://www.youtube.com/watch?v=XlycM-37DQw) by [Dal Rupnik](https://github.com/legoless) of Alpha background from **SwiftConf 2015**.
 
 # Features
 
