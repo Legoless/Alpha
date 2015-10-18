@@ -20,6 +20,14 @@
 
 #pragma mark - Getters and Setters
 
+- (id)motionUtilities
+{
+    //
+    // This is a private class included in Core Motion framework that has.
+    //
+    return NSClassFromString(@"CMMotionUtils");
+}
+
 - (CMMotionActivityManager *)motionManager
 {
     if (!_motionManager)
@@ -51,11 +59,27 @@
         return ALPHAApplicationAuthorizationStatusUnsupported;
     }
     
-    return ALPHAApplicationAuthorizationStatusNotDetermined;
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+    BOOL access = [[self motionUtilities] performSelector:NSSelectorFromString(@"isMotionActivityEntitled")];
+    #pragma clang diagnostic pop
+    
+    return access ? ALPHAApplicationAuthorizationStatusAuthorized : ALPHAApplicationAuthorizationStatusDenied;
 }
 
 - (void)requestPermission:(ALPHAPermissionRequestCompletion)completion
 {
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+    [[self motionUtilities] performSelector:NSSelectorFromString(@"tccServiceMotionAccess")];
+    #pragma clang diagnostic pop
+    
+    if (completion)
+    {
+        completion(self, [self status], nil);
+    }
+    
+    /*
     CMMotionActivityManager *motionManager = [[CMMotionActivityManager alloc] init];
     NSOperationQueue *motionQueue = [[NSOperationQueue alloc] init];
     
@@ -68,6 +92,7 @@
             completion(self, ALPHAApplicationAuthorizationStatusAuthorized, nil);
         }
     }];
+     */
 }
 
 @end
