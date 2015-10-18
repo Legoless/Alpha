@@ -32,6 +32,7 @@
 		38DAAE4D1BBF03D30023841C /* ALPHAPermissionIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DAAE4C1BBF03D30023841C /* ALPHAPermissionIcon.m */; settings = {ASSET_TAGS = (); }; };
 		38DAAE501BBF03DF0023841C /* ALPHAPermissionSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DAAE4F1BBF03DF0023841C /* ALPHAPermissionSource.m */; settings = {ASSET_TAGS = (); }; };
 		38DDA2121BD4294D004A0A0A /* ALPHATCCAccessManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DDA2111BD4294D004A0A0A /* ALPHATCCAccessManager.m */; settings = {ASSET_TAGS = (); }; };
+		38DDA2151BD4422F004A0A0A /* ALPHATCC.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DDA2141BD4422F004A0A0A /* ALPHATCC.m */; settings = {ASSET_TAGS = (); }; };
 		38DE4A491A0B78BC00EB447A /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38DE4A481A0B78BC00EB447A /* Launch.xib */; };
 		38DE4A4C1A0B7DB000EB447A /* AAPLNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DE4A4B1A0B7DB000EB447A /* AAPLNetworkViewController.m */; };
 		38E2F70C1BBDB3940010FC35 /* ALPHAKeychainPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F70B1BBDB3940010FC35 /* ALPHAKeychainPlugin.m */; settings = {ASSET_TAGS = (); }; };
@@ -507,6 +508,8 @@
 		38DAAE4F1BBF03DF0023841C /* ALPHAPermissionSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAPermissionSource.m; sourceTree = "<group>"; };
 		38DDA2101BD4294D004A0A0A /* ALPHATCCAccessManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHATCCAccessManager.h; sourceTree = "<group>"; };
 		38DDA2111BD4294D004A0A0A /* ALPHATCCAccessManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHATCCAccessManager.m; sourceTree = "<group>"; };
+		38DDA2131BD43A0C004A0A0A /* ALPHATCC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALPHATCC.h; sourceTree = "<group>"; };
+		38DDA2141BD4422F004A0A0A /* ALPHATCC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHATCC.m; sourceTree = "<group>"; };
 		38DE4A481A0B78BC00EB447A /* Launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
 		38DE4A4A1A0B7DB000EB447A /* AAPLNetworkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLNetworkViewController.h; sourceTree = "<group>"; };
 		38DE4A4B1A0B7DB000EB447A /* AAPLNetworkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLNetworkViewController.m; sourceTree = "<group>"; };
@@ -1089,6 +1092,8 @@
 		38DDA20F1BD42924004A0A0A /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				38DDA2131BD43A0C004A0A0A /* ALPHATCC.h */,
+				38DDA2141BD4422F004A0A0A /* ALPHATCC.m */,
 				38DDA2101BD4294D004A0A0A /* ALPHATCCAccessManager.h */,
 				38DDA2111BD4294D004A0A0A /* ALPHATCCAccessManager.m */,
 			);
@@ -2893,6 +2898,7 @@
 				67E64A01D8AB098215FB7834 /* ALPHAArgumentInputStructView.m in Sources */,
 				38DAAE501BBF03DF0023841C /* ALPHAPermissionSource.m in Sources */,
 				67E6467528CF5476ADFCE4AA /* ALPHAArgumentInputSwitchView.m in Sources */,
+				38DDA2151BD4422F004A0A0A /* ALPHATCC.m in Sources */,
 				67E6407F8CFCED2DF07581A6 /* ALPHAArgumentInputViewFactory.m in Sources */,
 				38D00BFD1BC0632200FCCD2A /* ALPHANotificationPermission.m in Sources */,
 				67E64834ACA9321B8FEA087C /* ALPHAArgumentInputJSONObjectView.m in Sources */,
@@ -3260,6 +3266,23 @@
 				GCC_PREFIX_HEADER = "UICatalog/UICatalog-Prefix.pch";
 				INFOPLIST_FILE = "UICatalog/UICatalog-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"DTBonjour\"",
+					"-l\"FXKeychain\"",
+					"-l\"Haystack\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"UIKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.unifiedsense.apple-samplecode.UICatalog";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -3280,6 +3303,23 @@
 				GCC_PREFIX_HEADER = "UICatalog/UICatalog-Prefix.pch";
 				INFOPLIST_FILE = "UICatalog/UICatalog-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"DTBonjour\"",
+					"-l\"FXKeychain\"",
+					"-l\"Haystack\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"UIKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.unifiedsense.apple-samplecode.UICatalog";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

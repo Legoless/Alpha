@@ -6,9 +6,12 @@
 //  Copyright © 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHARuntimeUtility.h"
-
+#import "ALPHATCC.h"
 #import "ALPHATCCAccessManager.h"
+
+//
+// These symbols are extracted from TCC.framework/TCC binary
+//
 
 NSString *const ALPHATCCAccessAddressBook               = @"kTCCServiceAddressBook";
 NSString *const ALPHATCCAccessBluetoothPeripheral       = @"kTCCServiceBluetoothPeripheral";
@@ -30,26 +33,13 @@ NSString *const ALPHATCCAccessWillow                    = @"kTCCServiceWillow";
 
 + (void)test
 {
-    [ALPHARuntimeUtility loadPrivateFramework:@"Preferences"];
-    [ALPHARuntimeUtility loadPrivateFramework:@"TCC"];
-    
-    [NSClassFromString(@"PSSystemPolicyManager") performSelector:NSSelectorFromString(@"_populateBBSectionIDs")];
-    
-    id dataUsageWorkSpace = [NSClassFromString(@"PSSystemPolicyManager") performSelector:NSSelectorFromString(@"thirdPartyApplicationProxies")];
-    
-    //NSLog(@"DATA: %@", dataUsageWorkSpace);
-    
-    //NSLog(@"DATA: %@", [[dataUsageWorkSpace lastObject] performSelector:NSSelectorFromString(@"applicationIdentifier")]);
-    
-    
-    
-    id systempolicy = [[NSClassFromString(@"PSSystemPolicyForApp") alloc] performSelector:NSSelectorFromString(@"initWithBundleIdentifier:") withObject:@"com.google.Maps"];
-    NSLog(@"DATA: %@", systempolicy);
+    int access = TCCAccessRequest(ALPHATCCAccessBluetoothPeripheral, @"Testy", 0);
+    NSLog(@"Access: %d", access);
 }
 
 + (NSArray *)accessIdentifiers
 {
-    return nil;
+    return @[ ALPHATCCAccessAddressBook, ALPHATCCAccessBluetoothPeripheral, ALPHATCCAccessCalendar, ALPHATCCAccessCamera, ALPHATCCAccessKeyboardNetwork, ALPHATCCAccessMicrophone, ALPHATCCAccessMotion, ALPHATCCAccessPhotos, ALPHATCCAccessReminders, ALPHATCCAccessFacebook, ALPHATCCAccessTwitter, ALPHATCCAccessSinaWeibo, ALPHATCCAccessTencentWeibo, ALPHATCCAccessWillow ];
 }
 
 @end
