@@ -54,8 +54,12 @@ const unsigned int ALPHANumberOfImplicitArgsKey = 2;
 
 + (BOOL)loadBundleWithPath:(NSString *)path
 {
-    NSBundle *b = [NSBundle bundleWithPath:@"/System/Library/PrivateFrameworks/FTServices.framework"];
-    return [b load];
+    NSBundle *b = [NSBundle bundleWithPath:path];
+    
+    BOOL success = [b load];
+    
+    NSLog(@"Success: %@: %d", path, (int)success);
+    return success;
 }
 
 #pragma mark - Application Helpers

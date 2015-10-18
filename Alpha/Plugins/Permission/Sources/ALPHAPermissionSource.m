@@ -86,7 +86,7 @@ NSString* const ALPHAActionPermissionResetIdentifier = @"com.unifiedsense.alpha.
         [self addDataIdentifier:ALPHAPermissionDataIdentifier];
         
         [self addActionIdentifier:ALPHAActionPermissionRequestIdentifier];
-        [self addActionIdentifier:ALPHAActionPermissionResetIdentifier];
+        //[self addActionIdentifier:ALPHAActionPermissionResetIdentifier];
     }
     
     return self;
@@ -107,19 +107,16 @@ NSString* const ALPHAActionPermissionResetIdentifier = @"com.unifiedsense.alpha.
     //
     // Action
     //
-    ALPHABlockActionItem *resetAction = [ALPHABlockActionItem itemWithIdentifier:ALPHAActionPermissionResetIdentifier];
+    /*ALPHABlockActionItem *resetAction = [ALPHABlockActionItem itemWithIdentifier:ALPHAActionPermissionResetIdentifier];
     resetAction.title = @"Reset All";
     resetAction.actionBlock = ^id (UIBarButtonItem *sender)
     {
-        //[[ALPHAManager defaultManager] setInterfaceHidden:YES];
-        
         [self resetPermissions];
         
         return nil;
     };
-
     
-    dataModel.rightAction = resetAction;
+    dataModel.rightAction = resetAction;*/
     
     NSMutableArray *array = [NSMutableArray array];
     
@@ -206,7 +203,7 @@ NSString* const ALPHAActionPermissionResetIdentifier = @"com.unifiedsense.alpha.
             {
                 if (success)
                 {
-                    NSLog(@"RESET PERMISSION: %d", (int)success);
+                    //NSLog(@"RESET PERMISSION: %d", (int)success);
                 }
             }];
         }

@@ -66,11 +66,6 @@
     [self.locationManager startUpdatingLocation];
 }
 
-- (void)resetPermission:(void (^)(BOOL))completion
-{
-    completion([ALPHARuntimeUtility loadPrivateFramework:@"GEOServices"]);
-}
-
 - (NSString *)statusString
 {
     return [self stringForLocationPermissionStatus:[CLLocationManager authorizationStatus]];

@@ -32,8 +32,6 @@ NSString* const ALPHALibraryDataIdentifier = @"com.unifiedsense.alpha.data.libra
     if (self)
     {
         [self addDataIdentifier:ALPHALibraryDataIdentifier];
-        
-        [self loadImageNames];
     }
     
     return self;
@@ -44,6 +42,8 @@ NSString* const ALPHALibraryDataIdentifier = @"com.unifiedsense.alpha.data.libra
 - (ALPHAModel *)modelForRequest:(ALPHARequest *)request
 {
     NSMutableArray *items = [NSMutableArray array];
+    
+    [self loadImageNames];
     
     for (NSString* fullImageName in self.imageNames)
     {
@@ -76,7 +76,9 @@ NSString* const ALPHALibraryDataIdentifier = @"com.unifiedsense.alpha.data.libra
 {
     unsigned int imageNamesCount = 0;
     const char **imageNames = objc_copyImageNames(&imageNamesCount);
-    if (imageNames) {
+    
+    if (imageNames)
+    {
         NSMutableArray *imageNameStrings = [NSMutableArray array];
         NSString *appImageName = [ALPHARuntimeUtility applicationImageName];
         for (unsigned int i = 0; i < imageNamesCount; i++) {
