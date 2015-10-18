@@ -19,6 +19,8 @@
 #import "ALPHAFormenteraColorPalette.h"
 #endif
 
+#import "ALPHATCCAccessManager.h"
+
 @interface AAPLCatalogTableTableViewController ()
 
 @end
@@ -61,6 +63,13 @@
     }
     
     [self performSelector:@selector(alphaButtonTapped:) withObject:self afterDelay:1.0];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [ALPHATCCAccessManager test];
 }
 
 - (void)alphaButtonTapped:(id)sender

@@ -31,6 +31,7 @@
 		38DAAE4A1BBF03C50023841C /* ALPHAPermissionPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DAAE491BBF03C50023841C /* ALPHAPermissionPlugin.m */; settings = {ASSET_TAGS = (); }; };
 		38DAAE4D1BBF03D30023841C /* ALPHAPermissionIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DAAE4C1BBF03D30023841C /* ALPHAPermissionIcon.m */; settings = {ASSET_TAGS = (); }; };
 		38DAAE501BBF03DF0023841C /* ALPHAPermissionSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DAAE4F1BBF03DF0023841C /* ALPHAPermissionSource.m */; settings = {ASSET_TAGS = (); }; };
+		38DDA2121BD4294D004A0A0A /* ALPHATCCAccessManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DDA2111BD4294D004A0A0A /* ALPHATCCAccessManager.m */; settings = {ASSET_TAGS = (); }; };
 		38DE4A491A0B78BC00EB447A /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38DE4A481A0B78BC00EB447A /* Launch.xib */; };
 		38DE4A4C1A0B7DB000EB447A /* AAPLNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DE4A4B1A0B7DB000EB447A /* AAPLNetworkViewController.m */; };
 		38E2F70C1BBDB3940010FC35 /* ALPHAKeychainPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F70B1BBDB3940010FC35 /* ALPHAKeychainPlugin.m */; settings = {ASSET_TAGS = (); }; };
@@ -504,6 +505,8 @@
 		38DAAE4C1BBF03D30023841C /* ALPHAPermissionIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAPermissionIcon.m; sourceTree = "<group>"; };
 		38DAAE4E1BBF03DF0023841C /* ALPHAPermissionSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAPermissionSource.h; sourceTree = "<group>"; };
 		38DAAE4F1BBF03DF0023841C /* ALPHAPermissionSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAPermissionSource.m; sourceTree = "<group>"; };
+		38DDA2101BD4294D004A0A0A /* ALPHATCCAccessManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHATCCAccessManager.h; sourceTree = "<group>"; };
+		38DDA2111BD4294D004A0A0A /* ALPHATCCAccessManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHATCCAccessManager.m; sourceTree = "<group>"; };
 		38DE4A481A0B78BC00EB447A /* Launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
 		38DE4A4A1A0B7DB000EB447A /* AAPLNetworkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLNetworkViewController.h; sourceTree = "<group>"; };
 		38DE4A4B1A0B7DB000EB447A /* AAPLNetworkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLNetworkViewController.m; sourceTree = "<group>"; };
@@ -1056,6 +1059,7 @@
 			isa = PBXGroup;
 			children = (
 				38DAAE461BBF03A20023841C /* Assets */,
+				38DDA20F1BD42924004A0A0A /* Library */,
 				380042651BC0233400369725 /* Model */,
 				38DAAE471BBF03AB0023841C /* Sources */,
 				38DAAE481BBF03C50023841C /* ALPHAPermissionPlugin.h */,
@@ -1080,6 +1084,15 @@
 				38DAAE4F1BBF03DF0023841C /* ALPHAPermissionSource.m */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		38DDA20F1BD42924004A0A0A /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				38DDA2101BD4294D004A0A0A /* ALPHATCCAccessManager.h */,
+				38DDA2111BD4294D004A0A0A /* ALPHATCCAccessManager.m */,
+			);
+			path = Library;
 			sourceTree = "<group>";
 		};
 		38E2F7091BBDB36C0010FC35 /* Keychain */ = {
@@ -2913,6 +2926,7 @@
 				67E64A7B80A0A3004A646FB2 /* ALPHAObjectIvar.m in Sources */,
 				67E641E31869279134A821C0 /* ALPHAObjectType.m in Sources */,
 				67E64C6D65948DB2D5195E1A /* ALPHAObjectModel.m in Sources */,
+				38DDA2121BD4294D004A0A0A /* ALPHATCCAccessManager.m in Sources */,
 				67E6456DAEC35948817AC242 /* ALPHAObjectMethod.m in Sources */,
 				3800426E1BC0253300369725 /* ALPHALocationPermission.m in Sources */,
 				67E64417B129C755488AF9BE /* ALPHAObjectContent.m in Sources */,
