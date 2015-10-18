@@ -263,7 +263,15 @@ Pod::Spec.new do |spec|
     subspec.dependency 'Alpha/Core'
     subspec.dependency 'Alpha/Render'
   end
+  
+  #
+  # Permission
+  #
 
+  spec.subspec 'Permission' do |subspec|
+    subspec.source_files = 'Alpha/Plugins/Permission/**/*.{h,m}'
+    subspec.dependency 'Alpha/Core'
+  end
   #
   # Remote
   #
