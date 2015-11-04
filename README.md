@@ -110,7 +110,7 @@ To use automatic integration feature, add Integration subspec (when using Alpha 
 pod 'Alpha/Integration'
 ```
 
-*Alpha supports iOS 8 and up. Not all features are available on all versions.*
+*Alpha supports iOS 8 and up. Not all features are available on all versions. tvOS and watchOS versions coming soon.*
 
 *Read more on [Integration](https://github.com/Legoless/Alpha/wiki/Integration).*
 
