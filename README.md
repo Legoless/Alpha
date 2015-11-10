@@ -37,7 +37,7 @@ Features are separated into multiple plugins, which can be enabled or disabled, 
 - **Notification** - displays scheduled and fired local notifications, received push notifications and notification permissions.
 - **Object** - allows for inspection of any class or object in the application, including `NSUserDefaults`, arrays and dictionaries.
 - [**Permission**](https://github.com/Legoless/Alpha/wiki/Permission-Plugin) - displays current permissions and adds the ability to request specific permission.
-- **Remote** - plugin allows connecting to Alpha from another device (needs Bonjour running on target).
+- [**Remote**](https://github.com/Legoless/Alpha/wiki/Remote-Plugin) - plugin allows connecting to Alpha from another device (needs Bonjour running on target).
 - **Screenshot** - plugin allows taking screenshots of the application with a single action.
 - **State** - allows inspecting the device state and settings, such as locale, time and available memory.
 - [**Touch**](https://github.com/Legoless/Alpha/wiki/Touch-Plugin) - plugin displays touches on screen when activated and their force touch. 
