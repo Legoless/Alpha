@@ -37,9 +37,23 @@ NSString *const ALPHATCCAccessWillow                    = @"kTCCServiceWillow";
     NSLog(@"Access: %d", access);
 }
 
-+ (NSArray *)accessIdentifiers
-{
-    return @[ ALPHATCCAccessAddressBook, ALPHATCCAccessBluetoothPeripheral, ALPHATCCAccessCalendar, ALPHATCCAccessCamera, ALPHATCCAccessKeyboardNetwork, ALPHATCCAccessMicrophone, ALPHATCCAccessMotion, ALPHATCCAccessPhotos, ALPHATCCAccessReminders, ALPHATCCAccessFacebook, ALPHATCCAccessTwitter, ALPHATCCAccessSinaWeibo, ALPHATCCAccessTencentWeibo, ALPHATCCAccessWillow ];
++ (NSArray *)accessIdentifiers {
+    return @[
+        ALPHATCCAccessAddressBook,
+        ALPHATCCAccessBluetoothPeripheral,
+        ALPHATCCAccessCalendar,
+        ALPHATCCAccessCamera,
+        ALPHATCCAccessKeyboardNetwork,
+        ALPHATCCAccessMicrophone,
+        ALPHATCCAccessMotion,
+        ALPHATCCAccessPhotos,
+        ALPHATCCAccessReminders,
+        ALPHATCCAccessFacebook,
+        ALPHATCCAccessTwitter,
+        ALPHATCCAccessSinaWeibo,
+        ALPHATCCAccessTencentWeibo,
+        ALPHATCCAccessWillow
+    ];
 }
 
 @end
