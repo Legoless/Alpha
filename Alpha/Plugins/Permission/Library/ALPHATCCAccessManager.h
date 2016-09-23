@@ -26,8 +26,6 @@ extern NSString *const ALPHATCCAccessWillow;
 
 @interface ALPHATCCAccessManager : NSObject
 
-+ (void)test;
-
 + (NSArray *)accessIdentifiers;
 
 @end

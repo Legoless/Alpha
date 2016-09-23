@@ -66,6 +66,8 @@ NSString* const ALPHAActionPermissionResetIdentifier = @"com.unifiedsense.alpha.
             [ALPHAEventPermission reminderPermission]
         ]];
         
+        [permissions addObject:[ALPHATCCPermission allPermissions]];
+        
         [permissions addObject:[ALPHAHealthPermission allPermissions]];
         [permissions addObject:[ALPHASocialPermission allPermissions]];
         
@@ -152,13 +154,18 @@ NSString* const ALPHAActionPermissionResetIdentifier = @"com.unifiedsense.alpha.
             sectionIdentifier = @"com.unifiedsense.alpha.data.permission.global";
             sectionHeader = @"Global";
             break;
-            
+        
         case 1:
+            sectionIdentifier = @"com.unifiedsense.alpha.data.permission.tcc";
+            sectionHeader = @"TCC";
+            break;
+            
+        case 2:
             sectionIdentifier = @"com.unifiedsense.alpha.data.permission.health";
             sectionHeader = @"HealthKit";
             break;
             
-        case 2:
+        case 3:
             sectionIdentifier = @"com.unifiedsense.alpha.data.permission.social";
             sectionHeader = @"Social Accounts";
             break;

@@ -19,3 +19,4 @@
 #import "ALPHALocationPermission.h"
 #import "ALPHASocialPermission.h"
 #import "ALPHAVideoPermission.h"
+#import "ALPHATCCPermission.h"
