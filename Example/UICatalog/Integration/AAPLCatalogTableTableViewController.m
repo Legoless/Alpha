@@ -69,7 +69,7 @@
 {
     [super viewDidAppear:animated];
     
-    [ALPHATCCAccessManager test];
+    //[ALPHATCCAccessManager test];
 }
 
 - (void)alphaButtonTapped:(id)sender
