@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		380042681BC0238F00369725 /* ALPHAPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 380042671BC0238F00369725 /* ALPHAPermission.m */; settings = {ASSET_TAGS = (); }; };
-		3800426B1BC0252700369725 /* ALPHAHealthPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 3800426A1BC0252700369725 /* ALPHAHealthPermission.m */; settings = {ASSET_TAGS = (); }; };
-		3800426E1BC0253300369725 /* ALPHALocationPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 3800426D1BC0253300369725 /* ALPHALocationPermission.m */; settings = {ASSET_TAGS = (); }; };
-		380042711BC0254800369725 /* ALPHAEventPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 380042701BC0254800369725 /* ALPHAEventPermission.m */; settings = {ASSET_TAGS = (); }; };
-		380042741BC0255900369725 /* ALPHAAudioPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 380042731BC0255900369725 /* ALPHAAudioPermission.m */; settings = {ASSET_TAGS = (); }; };
-		380042771BC0256600369725 /* ALPHABluetoothPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 380042761BC0256600369725 /* ALPHABluetoothPermission.m */; settings = {ASSET_TAGS = (); }; };
-		3800427A1BC0257200369725 /* ALPHAVideoPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 380042791BC0257200369725 /* ALPHAVideoPermission.m */; settings = {ASSET_TAGS = (); }; };
-		3800427D1BC0257B00369725 /* ALPHAContactPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 3800427C1BC0257B00369725 /* ALPHAContactPermission.m */; settings = {ASSET_TAGS = (); }; };
-		380042801BC0258A00369725 /* ALPHAAssetPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 3800427F1BC0258A00369725 /* ALPHAAssetPermission.m */; settings = {ASSET_TAGS = (); }; };
-		380042841BC0318900369725 /* ALPHASocialPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 380042831BC0318900369725 /* ALPHASocialPermission.m */; settings = {ASSET_TAGS = (); }; };
+		380042681BC0238F00369725 /* ALPHAPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 380042671BC0238F00369725 /* ALPHAPermission.m */; };
+		3800426B1BC0252700369725 /* ALPHAHealthPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 3800426A1BC0252700369725 /* ALPHAHealthPermission.m */; };
+		3800426E1BC0253300369725 /* ALPHALocationPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 3800426D1BC0253300369725 /* ALPHALocationPermission.m */; };
+		380042711BC0254800369725 /* ALPHAEventPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 380042701BC0254800369725 /* ALPHAEventPermission.m */; };
+		380042741BC0255900369725 /* ALPHAAudioPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 380042731BC0255900369725 /* ALPHAAudioPermission.m */; };
+		380042771BC0256600369725 /* ALPHABluetoothPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 380042761BC0256600369725 /* ALPHABluetoothPermission.m */; };
+		3800427A1BC0257200369725 /* ALPHAVideoPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 380042791BC0257200369725 /* ALPHAVideoPermission.m */; };
+		3800427D1BC0257B00369725 /* ALPHAContactPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 3800427C1BC0257B00369725 /* ALPHAContactPermission.m */; };
+		380042801BC0258A00369725 /* ALPHAAssetPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 3800427F1BC0258A00369725 /* ALPHAAssetPermission.m */; };
+		380042841BC0318900369725 /* ALPHASocialPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 380042831BC0318900369725 /* ALPHASocialPermission.m */; };
 		38353E891B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38353E881B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m */; };
 		385A687C1BACA111000B4898 /* ALPHATouchFingerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 385A687B1BACA111000B4898 /* ALPHATouchFingerView.m */; };
 		386601531B4184A000217F85 /* ALPHATouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386601521B4184A000217F85 /* ALPHATouchViewController.m */; };
@@ -24,21 +24,23 @@
 		38921B931B34E64C00A50DED /* ALPHAGreenSeaColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 38921B921B34E64C00A50DED /* ALPHAGreenSeaColorPalette.m */; };
 		38921B961B34E6BB00A50DED /* ALPHAAlizarinColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 38921B951B34E6BB00A50DED /* ALPHAAlizarinColorPalette.m */; };
 		38921B991B34E6DC00A50DED /* ALPHAAmethystColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 38921B981B34E6DC00A50DED /* ALPHAAmethystColorPalette.m */; };
-		38D00BFA1BC0603100FCCD2A /* ALPHAMotionPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D00BF91BC0603100FCCD2A /* ALPHAMotionPermission.m */; settings = {ASSET_TAGS = (); }; };
-		38D00BFD1BC0632200FCCD2A /* ALPHANotificationPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D00BFC1BC0632200FCCD2A /* ALPHANotificationPermission.m */; settings = {ASSET_TAGS = (); }; };
-		38D00C001BC0674F00FCCD2A /* ALPHAHomePermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D00BFF1BC0674F00FCCD2A /* ALPHAHomePermission.m */; settings = {ASSET_TAGS = (); }; };
-		38D00C041BC0686E00FCCD2A /* ALPHAMobileDataPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D00C031BC0686E00FCCD2A /* ALPHAMobileDataPermission.m */; settings = {ASSET_TAGS = (); }; };
-		38DAAE4A1BBF03C50023841C /* ALPHAPermissionPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DAAE491BBF03C50023841C /* ALPHAPermissionPlugin.m */; settings = {ASSET_TAGS = (); }; };
-		38DAAE4D1BBF03D30023841C /* ALPHAPermissionIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DAAE4C1BBF03D30023841C /* ALPHAPermissionIcon.m */; settings = {ASSET_TAGS = (); }; };
-		38DAAE501BBF03DF0023841C /* ALPHAPermissionSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DAAE4F1BBF03DF0023841C /* ALPHAPermissionSource.m */; settings = {ASSET_TAGS = (); }; };
+		38D00BFA1BC0603100FCCD2A /* ALPHAMotionPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D00BF91BC0603100FCCD2A /* ALPHAMotionPermission.m */; };
+		38D00BFD1BC0632200FCCD2A /* ALPHANotificationPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D00BFC1BC0632200FCCD2A /* ALPHANotificationPermission.m */; };
+		38D00C001BC0674F00FCCD2A /* ALPHAHomePermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D00BFF1BC0674F00FCCD2A /* ALPHAHomePermission.m */; };
+		38D00C041BC0686E00FCCD2A /* ALPHAMobileDataPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D00C031BC0686E00FCCD2A /* ALPHAMobileDataPermission.m */; };
+		38DAAE4A1BBF03C50023841C /* ALPHAPermissionPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DAAE491BBF03C50023841C /* ALPHAPermissionPlugin.m */; };
+		38DAAE4D1BBF03D30023841C /* ALPHAPermissionIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DAAE4C1BBF03D30023841C /* ALPHAPermissionIcon.m */; };
+		38DAAE501BBF03DF0023841C /* ALPHAPermissionSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DAAE4F1BBF03DF0023841C /* ALPHAPermissionSource.m */; };
+		38DDA2121BD4294D004A0A0A /* ALPHATCCAccessManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DDA2111BD4294D004A0A0A /* ALPHATCCAccessManager.m */; };
+		38DDA2151BD4422F004A0A0A /* ALPHATCC.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DDA2141BD4422F004A0A0A /* ALPHATCC.m */; };
 		38DE4A491A0B78BC00EB447A /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38DE4A481A0B78BC00EB447A /* Launch.xib */; };
 		38DE4A4C1A0B7DB000EB447A /* AAPLNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DE4A4B1A0B7DB000EB447A /* AAPLNetworkViewController.m */; };
-		38E2F70C1BBDB3940010FC35 /* ALPHAKeychainPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F70B1BBDB3940010FC35 /* ALPHAKeychainPlugin.m */; settings = {ASSET_TAGS = (); }; };
-		38E2F7111BBDB4E30010FC35 /* ALPHAKeychainIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F7101BBDB4E30010FC35 /* ALPHAKeychainIcon.m */; settings = {ASSET_TAGS = (); }; };
-		38E2F7151BBDBAB70010FC35 /* ALPHAKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F7141BBDBAB70010FC35 /* ALPHAKeychain.m */; settings = {ASSET_TAGS = (); }; };
-		38E2F7181BBDBAC20010FC35 /* ALPHAKeychainSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F7171BBDBAC20010FC35 /* ALPHAKeychainSource.m */; settings = {ASSET_TAGS = (); }; };
-		38E2F71C1BBDC2320010FC35 /* ALPHAKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F71B1BBDC2320010FC35 /* ALPHAKeychainItem.m */; settings = {ASSET_TAGS = (); }; };
-		38E2F71F1BBDD6540010FC35 /* ALPHAInstanceSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F71E1BBDD6540010FC35 /* ALPHAInstanceSource.m */; settings = {ASSET_TAGS = (); }; };
+		38E2F70C1BBDB3940010FC35 /* ALPHAKeychainPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F70B1BBDB3940010FC35 /* ALPHAKeychainPlugin.m */; };
+		38E2F7111BBDB4E30010FC35 /* ALPHAKeychainIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F7101BBDB4E30010FC35 /* ALPHAKeychainIcon.m */; };
+		38E2F7151BBDBAB70010FC35 /* ALPHAKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F7141BBDBAB70010FC35 /* ALPHAKeychain.m */; };
+		38E2F7181BBDBAC20010FC35 /* ALPHAKeychainSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F7171BBDBAC20010FC35 /* ALPHAKeychainSource.m */; };
+		38E2F71C1BBDC2320010FC35 /* ALPHAKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F71B1BBDC2320010FC35 /* ALPHAKeychainItem.m */; };
+		38E2F71F1BBDD6540010FC35 /* ALPHAInstanceSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F71E1BBDD6540010FC35 /* ALPHAInstanceSource.m */; };
 		3EC6487318FF8A5000024205 /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3EC6487218FF8A5000024205 /* ReadMe.txt */; };
 		5356823E18F3656900BAAD62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5356823D18F3656900BAAD62 /* Foundation.framework */; };
 		5356824018F3656900BAAD62 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5356823F18F3656900BAAD62 /* CoreGraphics.framework */; };
@@ -504,6 +506,10 @@
 		38DAAE4C1BBF03D30023841C /* ALPHAPermissionIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAPermissionIcon.m; sourceTree = "<group>"; };
 		38DAAE4E1BBF03DF0023841C /* ALPHAPermissionSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAPermissionSource.h; sourceTree = "<group>"; };
 		38DAAE4F1BBF03DF0023841C /* ALPHAPermissionSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAPermissionSource.m; sourceTree = "<group>"; };
+		38DDA2101BD4294D004A0A0A /* ALPHATCCAccessManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHATCCAccessManager.h; sourceTree = "<group>"; };
+		38DDA2111BD4294D004A0A0A /* ALPHATCCAccessManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHATCCAccessManager.m; sourceTree = "<group>"; };
+		38DDA2131BD43A0C004A0A0A /* ALPHATCC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALPHATCC.h; sourceTree = "<group>"; };
+		38DDA2141BD4422F004A0A0A /* ALPHATCC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHATCC.m; sourceTree = "<group>"; };
 		38DE4A481A0B78BC00EB447A /* Launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
 		38DE4A4A1A0B7DB000EB447A /* AAPLNetworkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLNetworkViewController.h; sourceTree = "<group>"; };
 		38DE4A4B1A0B7DB000EB447A /* AAPLNetworkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLNetworkViewController.m; sourceTree = "<group>"; };
@@ -1056,6 +1062,7 @@
 			isa = PBXGroup;
 			children = (
 				38DAAE461BBF03A20023841C /* Assets */,
+				38DDA20F1BD42924004A0A0A /* Library */,
 				380042651BC0233400369725 /* Model */,
 				38DAAE471BBF03AB0023841C /* Sources */,
 				38DAAE481BBF03C50023841C /* ALPHAPermissionPlugin.h */,
@@ -1080,6 +1087,17 @@
 				38DAAE4F1BBF03DF0023841C /* ALPHAPermissionSource.m */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		38DDA20F1BD42924004A0A0A /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				38DDA2131BD43A0C004A0A0A /* ALPHATCC.h */,
+				38DDA2141BD4422F004A0A0A /* ALPHATCC.m */,
+				38DDA2101BD4294D004A0A0A /* ALPHATCCAccessManager.h */,
+				38DDA2111BD4294D004A0A0A /* ALPHATCCAccessManager.m */,
+			);
+			path = Library;
 			sourceTree = "<group>";
 		};
 		38E2F7091BBDB36C0010FC35 /* Keychain */ = {
@@ -2517,12 +2535,16 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = ALPHA;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Unified Sense";
 				TargetAttributes = {
 					38AB0F261B315B1700F0CC21 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 289M6XEDV4;
 						TestTargetID = 5356823918F3656900BAAD62;
+					};
+					5356823918F3656900BAAD62 = {
+						DevelopmentTeam = 289M6XEDV4;
 					};
 				};
 			};
@@ -2880,6 +2902,7 @@
 				67E64A01D8AB098215FB7834 /* ALPHAArgumentInputStructView.m in Sources */,
 				38DAAE501BBF03DF0023841C /* ALPHAPermissionSource.m in Sources */,
 				67E6467528CF5476ADFCE4AA /* ALPHAArgumentInputSwitchView.m in Sources */,
+				38DDA2151BD4422F004A0A0A /* ALPHATCC.m in Sources */,
 				67E6407F8CFCED2DF07581A6 /* ALPHAArgumentInputViewFactory.m in Sources */,
 				38D00BFD1BC0632200FCCD2A /* ALPHANotificationPermission.m in Sources */,
 				67E64834ACA9321B8FEA087C /* ALPHAArgumentInputJSONObjectView.m in Sources */,
@@ -2913,6 +2936,7 @@
 				67E64A7B80A0A3004A646FB2 /* ALPHAObjectIvar.m in Sources */,
 				67E641E31869279134A821C0 /* ALPHAObjectType.m in Sources */,
 				67E64C6D65948DB2D5195E1A /* ALPHAObjectModel.m in Sources */,
+				38DDA2121BD4294D004A0A0A /* ALPHATCCAccessManager.m in Sources */,
 				67E6456DAEC35948817AC242 /* ALPHAObjectMethod.m in Sources */,
 				3800426E1BC0253300369725 /* ALPHALocationPermission.m in Sources */,
 				67E64417B129C755488AF9BE /* ALPHAObjectContent.m in Sources */,
@@ -3115,6 +3139,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 289M6XEDV4;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -3143,6 +3168,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 289M6XEDV4;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -3173,14 +3199,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -3213,13 +3244,18 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -3241,11 +3277,29 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 289M6XEDV4;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UICatalog/UICatalog-Prefix.pch";
 				INFOPLIST_FILE = "UICatalog/UICatalog-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"DTBonjour\"",
+					"-l\"FXKeychain\"",
+					"-l\"Haystack\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"UIKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.unifiedsense.apple-samplecode.UICatalog";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -3261,11 +3315,29 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 289M6XEDV4;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UICatalog/UICatalog-Prefix.pch";
 				INFOPLIST_FILE = "UICatalog/UICatalog-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"DTBonjour\"",
+					"-l\"FXKeychain\"",
+					"-l\"Haystack\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"UIKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.unifiedsense.apple-samplecode.UICatalog";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

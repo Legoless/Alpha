@@ -38,6 +38,12 @@ extern NSString *const ALPHAUtilityAttributeOldStyleTypeEncoding;
 + (BOOL)loadPrivateFramework:(NSString *)framework;
 
 //
+// Dynamic libraries
+//
+
++ (void *)openPrivateDynamicLibrary:(NSString *)library;
+
+//
 // Application helpers
 //
 + (NSString *)applicationImageName;

@@ -6,7 +6,10 @@
 //  Copyright © 2014 Unified Sense. All rights reserved.
 //
 
+#import <dlfcn.h>
+
 @import UIKit;
+
 #import "ALPHARuntimeUtility.h"
 #import "ALPHAHeapUtility.h"
 
@@ -60,6 +63,14 @@ const unsigned int ALPHANumberOfImplicitArgsKey = 2;
     
     NSLog(@"Success: %@: %d", path, (int)success);
     return success;
+}
+
++ (void *)openPrivateDynamicLibrary:(NSString *)library
+{
+    NSString *frameworkPath = [NSString stringWithFormat:@"/System/Library/PrivateFrameworks/%@.framework/%@", library, library];
+    void *handle = dlopen([frameworkPath cStringUsingEncoding:NSUTF8StringEncoding], RTLD_NOW);
+    
+    return handle;
 }
 
 #pragma mark - Application Helpers
