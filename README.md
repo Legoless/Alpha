@@ -11,11 +11,11 @@
 [![Pod License](http://img.shields.io/cocoapods/l/Alpha.svg?style=flat)](http://opensource.org/licenses/MIT)
 
 
-**Alpha** is an idea of the next generation debugging framework for iOS applications. It combines multiple debugging tools built on top of a **simple, unified API**. It lives entirely in your application sandbox and collects information during your application lifetime. It is very easy to integrate and requires **no code changes**.
+**Alpha** is an idea of the next generation debugging framework for iOS applications. It combines multiple debugging tools built on top of a **simple, unified API**. It lives entirely in your application sandbox and collects information during your application lifetime. Only 1 minute is needed to integrate and requires **no code changes**.
 
-Watch [presentation](https://www.youtube.com/watch?v=XlycM-37DQw) by [Dal Rupnik](https://github.com/legoless) of **Alpha** background at [**SwiftConf 2015**](http://objcgn.com).
+Watch [presentation](https://www.youtube.com/watch?v=XlycM-37DQw) by [Dal Rupnik](https://github.com/legoless) of **Alpha** ideas at [**SwiftConf 2015**](http://objcgn.com).
 
-***The project is currently a work in progress and might be too unstable to be used in real environment yet. Feel free to open GitHub issues (especially Swift projects). Currently the most unstable is the Heap plugin.***
+***The project is currently a work in progress and might be too unstable to be used in real environment yet. Feel free to open GitHub issues (especially Swift projects). Currently the most unstable is the Heap plugin, so it might be best to avoid using it.***
 
 ![intro](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Intro.gif "Alpha Intro")
 
@@ -37,7 +37,7 @@ Features are separated into multiple plugins, which can be enabled or disabled, 
 - **Notification** - displays scheduled and fired local notifications, received push notifications and notification permissions.
 - **Object** - allows for inspection of any class or object in the application, including `NSUserDefaults`, arrays and dictionaries.
 - [**Permission**](https://github.com/Legoless/Alpha/wiki/Permission-Plugin) - displays current permissions and adds the ability to request specific permission.
-- **Remote** - plugin allows connecting to Alpha from another device (needs Bonjour running on target).
+- [**Remote**](https://github.com/Legoless/Alpha/wiki/Remote-Plugin) - plugin allows connecting to Alpha from another device (needs Bonjour running on target).
 - **Screenshot** - plugin allows taking screenshots of the application with a single action.
 - **State** - allows inspecting the device state and settings, such as locale, time and available memory.
 - [**Touch**](https://github.com/Legoless/Alpha/wiki/Touch-Plugin) - plugin displays touches on screen when activated and their force touch. 
@@ -110,7 +110,7 @@ To use automatic integration feature, add Integration subspec (when using Alpha 
 pod 'Alpha/Integration'
 ```
 
-*Alpha supports iOS 8 and up. Not all features are available on all versions.*
+*Alpha supports iOS 8 and up. Not all features are available on all versions. tvOS and watchOS versions coming soon.*
 
 *Read more on [Integration](https://github.com/Legoless/Alpha/wiki/Integration).*
 
