@@ -30,7 +30,7 @@
         completion(self, self.status, nil);
     });
     
-    int access = TCCAccessRequest(self.identifier, @"Alpha is requesting permission", (int)block);
+    int access = TCCAccessRequest(self.identifier, @"Alpha is requesting permission", 0);
     
     NSLog(@"Access: %d", access);
 }
