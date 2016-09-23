@@ -10,6 +10,10 @@
 
 @implementation ALPHAObjectType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 - (NSString *)prettyDescription
 {
     return self.name;

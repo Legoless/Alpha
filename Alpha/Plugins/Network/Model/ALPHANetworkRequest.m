@@ -10,8 +10,11 @@
 
 @implementation ALPHANetworkRequest
 
-- (id)initWithURLRequest:(NSURLRequest *)request
-{
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
+- (id)initWithURLRequest:(NSURLRequest *)request {
     self = [super init];
     if (!self) {
         return nil;
@@ -29,8 +32,7 @@
     return self;
 }
 
-+ (ALPHANetworkRequest *)networkRequestWithURLRequest:(NSURLRequest *)request;
-{
++ (ALPHANetworkRequest *)networkRequestWithURLRequest:(NSURLRequest *)request {
     return [[[self class] alloc] initWithURLRequest:request];
 }
 

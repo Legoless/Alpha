@@ -10,4 +10,8 @@
 
 @implementation ALPHANetworkConnectionTiming
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end

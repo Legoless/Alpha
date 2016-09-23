@@ -12,6 +12,10 @@
 
 @implementation ALPHAKeychainItem
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
     self = [super init];

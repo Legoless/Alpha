@@ -10,8 +10,11 @@
 
 @implementation ALPHAObjectElement
 
-+ (NSString *)descriptionForIvarOrPropertyValue:(id)value
-{
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
++ (NSString *)descriptionForIvarOrPropertyValue:(id)value {
     NSString *description = nil;
     
     // Special case BOOL for better readability.

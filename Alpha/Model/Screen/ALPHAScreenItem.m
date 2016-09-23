@@ -14,6 +14,10 @@ NSString* const ALPHADisplayItemDetailkey = @"kALPHADisplayItemDetailkey";
 
 @implementation ALPHAScreenItem
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 #pragma mark - Getters and Setters
 
 - (NSString *)title

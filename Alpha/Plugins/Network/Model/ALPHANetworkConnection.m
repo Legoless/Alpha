@@ -10,6 +10,10 @@
 
 @implementation ALPHANetworkConnection
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 - (void)updateWithRequest:(ALPHANetworkRequest *)request withResponse:(ALPHANetworkResponse *)response
 {
     if (request)

@@ -13,6 +13,10 @@
 
 @implementation ALPHANotification
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (instancetype)notificationWithLocalNotification:(UILocalNotification *)localNotification
 {
     ALPHANotification *notification = [[ALPHANotification alloc] init];

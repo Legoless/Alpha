@@ -11,6 +11,10 @@
 
 @implementation ALPHAModel
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 - (instancetype)init
 {
     return [self initWithRequest:nil];

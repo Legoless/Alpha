@@ -12,6 +12,10 @@
 
 @implementation ALPHASerializableView
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 - (instancetype)initWithView:(UIView *)view
 {
     self = [super init];

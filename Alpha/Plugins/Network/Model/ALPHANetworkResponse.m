@@ -10,15 +10,18 @@
 
 @implementation ALPHANetworkResponse
 
-- (id)initWithURLResponse:(NSURLResponse *)response request:(NSURLRequest *)request
-{
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
+- (id)initWithURLResponse:(NSURLResponse *)response request:(NSURLRequest *)request {
     self = [super init];
+    
     if (!self) {
         return nil;
     }
     
-    if (!response)
-    {
+    if (!response) {
         return nil;
     }
     
@@ -40,8 +43,7 @@
     return self;
 }
 
-+ (ALPHANetworkResponse *)networkResponseWithURLResponse:(NSURLResponse *)response request:(NSURLRequest *)request;
-{
++ (ALPHANetworkResponse *)networkResponseWithURLResponse:(NSURLResponse *)response request:(NSURLRequest *)request {
     return [[[self class] alloc] initWithURLResponse:response request:request];
 }
 

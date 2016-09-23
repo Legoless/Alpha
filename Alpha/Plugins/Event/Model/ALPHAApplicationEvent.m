@@ -11,6 +11,10 @@
 
 @implementation ALPHAApplicationEvent
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 - (instancetype)init
 {
     self = [super init];

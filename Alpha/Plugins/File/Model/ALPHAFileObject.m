@@ -10,4 +10,8 @@
 
 @implementation ALPHAFileObject
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end

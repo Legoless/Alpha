@@ -10,20 +10,21 @@
 
 @implementation ALPHAObjectArgument
 
-- (instancetype)init
-{
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
+- (instancetype)init {
     self = [super init];
     
-    if (self)
-    {
+    if (self) {
         self.type = [ALPHAObjectType new];
     }
     
     return self;
 }
 
-- (NSString *)prettyDescription
-{
+- (NSString *)prettyDescription {
     return [NSString stringWithFormat:@"%@:(%@)", self.name, self.type.prettyDescription];
 }
 

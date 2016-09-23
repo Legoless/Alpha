@@ -10,6 +10,10 @@
 
 @implementation ALPHAObjectContent
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (instancetype)objectContentForArray:(NSArray *)array
 {
     NSMutableArray *items = [NSMutableArray array];

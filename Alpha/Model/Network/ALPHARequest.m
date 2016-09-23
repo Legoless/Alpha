@@ -28,8 +28,11 @@ NSString *const ALPHAObjectDataClassNameIdentifier  = @"kALPHAObjectDataClassNam
 
 @implementation ALPHARequest
 
-+ (instancetype)requestWithIdentifier:(NSString *)identifier
-{
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
++ (instancetype)requestWithIdentifier:(NSString *)identifier {
     return [[self alloc] initWithIdentifier:identifier];
 }
 

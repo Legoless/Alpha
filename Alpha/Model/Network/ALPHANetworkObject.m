@@ -18,4 +18,8 @@ NSString *const ALPHANetworkObjectVerificationKey = @"kALPHANetworkObjectVerific
 
 @implementation ALPHANetworkObject
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end

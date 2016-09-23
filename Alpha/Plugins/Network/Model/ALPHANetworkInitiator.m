@@ -10,4 +10,8 @@
 
 @implementation ALPHANetworkInitiator
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end

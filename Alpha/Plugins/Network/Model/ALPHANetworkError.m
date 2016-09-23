@@ -10,10 +10,12 @@
 
 @implementation ALPHANetworkError
 
-+ (instancetype)networkErrorWithError:(NSError *)error
-{
-    if (!error)
-    {
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
++ (instancetype)networkErrorWithError:(NSError *)error {
+    if (!error) {
         return nil;
     }
     

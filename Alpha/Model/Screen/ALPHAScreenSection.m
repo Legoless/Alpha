@@ -12,6 +12,10 @@
 
 @implementation ALPHAScreenSection
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (instancetype)screenSectionWithDictionary:(NSDictionary *)dictionary
 {
     ALPHAScreenSection* section = [[ALPHAScreenSection alloc] init];
