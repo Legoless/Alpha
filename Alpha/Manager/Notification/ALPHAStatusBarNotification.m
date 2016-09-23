@@ -205,6 +205,8 @@ static void cancel_delayed_block(ALPHADelayedBlockHandle delayedHandle)
 
 @implementation ALPHANotificationViewController
 
+@synthesize preferredStatusBarStyle = _preferredStatusBarStyle;
+
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return _preferredStatusBarStyle;
