@@ -15,7 +15,7 @@
 
 Watch [presentation](https://www.youtube.com/watch?v=XlycM-37DQw) by [Dal Rupnik](https://github.com/legoless) of **Alpha** ideas at [**SwiftConf 2015**](http://objcgn.com).
 
-***The project is currently a work in progress and might be too unstable to be used in real environment yet. Feel free to open GitHub issues (especially Swift projects). Currently the most unstable is the Heap plugin, so it might be best to avoid using it (might be removed in the future).***
+***The project is currently a work in progress and might be too unstable to be used in real environment yet. Feel free to open GitHub issues (especially Swift projects). Currently the most unstable is the Heap plugin, so it might be best to avoid using it (might be removed in the future, as it is technically impossible to know when memory is freed).***
 
 ![intro](https://raw.githubusercontent.com/Legoless/Alpha/master/Resources/Intro.gif "Alpha Intro")
 
