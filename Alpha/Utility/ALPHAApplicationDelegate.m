@@ -6,8 +6,6 @@
 //  Copyright © 2014 Unified Sense. All rights reserved.
 //
 
-#import <Haystack/Haystack.h>
-
 #import "ALPHAApplicationDelegate.h"
 
 NSString *const ALPHAApplicationDelegateNotification = @"kALPHAApplicationDelegateNotification";

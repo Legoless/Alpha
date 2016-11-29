@@ -6,7 +6,7 @@
 //  Copyright © 2015 Unified Sense. All rights reserved.
 //
 
-#import <Haystack/Haystack.h>
+#import "UIColor+Utility.h"
 
 #import "ALPHAColorPalette.h"
 #import "UIColor+Tools.h"
@@ -100,7 +100,7 @@
     palette.contentFontSize = 12.0;
     
     palette.mainColor = [UIColor colorWithWhite:0.05 alpha:1.0];
-    palette.accentColor = UIColorFromKey(@"#f7d746");
+    palette.accentColor = ALPHAColorFromKey(@"#f7d746");
     palette.contentTintColor = palette.accentColor;
     palette.backgroundColor = [UIColor colorWithWhite:0.06 alpha:1.0];
     palette.contentColor = [UIColor colorWithWhite:0.02 alpha:1.0];

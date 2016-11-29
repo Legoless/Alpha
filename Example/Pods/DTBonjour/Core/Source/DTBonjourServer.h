@@ -17,11 +17,18 @@
 @optional
 
 /**
- Callend when a new incoming connection was accepted by the server.
+ Called when a new incoming connection was accepted by the server.
  @param server The server
  @param connection The connection that was accepted
  */
 - (void)bonjourServer:(DTBonjourServer *)server didAcceptConnection:(DTBonjourDataConnection *)connection;
+
+/**
+ Called when a client connection was closed.
+ @param server The server
+ @param connection The connection that was closed
+ */
+- (void)bonjourServer:(DTBonjourServer *)server didCloseConnection:(DTBonjourDataConnection *)connection;
 
 /**
  Called when the server received a new object on a given connection

@@ -6,8 +6,7 @@
 //  Copyright © 2015 Unified Sense. All rights reserved.
 //
 
-#import <Haystack/Haystack.h>
-
+#import "UIColor+Utility.h"
 #import "ALPHANotioColorPalette.h"
 
 @implementation ALPHANotioColorPalette
@@ -20,12 +19,12 @@
     palette.contentFontFamily = @"Menlo";
     palette.contentFontSize = 12.0;
     
-    palette.mainColor = UIColorFromKey(@"#E46A6B");
+    palette.mainColor = ALPHAColorFromKey(@"#E46A6B");
     palette.accentColor = [UIColor whiteColor];
-    palette.backgroundColor = UIColorFromKey(@"#EEEEEE");
+    palette.backgroundColor = ALPHAColorFromKey(@"#EEEEEE");
     palette.contentColor = [UIColor whiteColor];
-    palette.contentTintColor = UIColorFromKey(@"#6E6E6E");
-    palette.textColor = UIColorFromKey(@"#3F3F3F");
+    palette.contentTintColor = ALPHAColorFromKey(@"#6E6E6E");
+    palette.textColor = ALPHAColorFromKey(@"#3F3F3F");
     
     return palette;
 }

@@ -6,7 +6,7 @@
 //  Copyright © 2015 Unified Sense. All rights reserved.
 //
 
-#import <Haystack/Haystack.h>
+#import "UIColor+Utility.h"
 #import "ALPHAAlizarinColorPalette.h"
 
 @implementation ALPHAAlizarinColorPalette
@@ -19,12 +19,12 @@
     palette.contentFontFamily = @"Menlo";
     palette.contentFontSize = 12.0;
     
-    palette.mainColor = UIColorFromKey(@"#1B1F28");
-    palette.accentColor = UIColorFromKey(@"#EA6573");
-    palette.backgroundColor = UIColorFromKey(@"#1B1F28");
-    palette.contentColor = UIColorFromKey(@"#30353A");
-    palette.contentTintColor = UIColorFromKey(@"#EA6B76");
-    palette.textColor = UIColorFromKey(@"#B3B6BD");
+    palette.mainColor = ALPHAColorFromKey(@"#1B1F28");
+    palette.accentColor = ALPHAColorFromKey(@"#EA6573");
+    palette.backgroundColor = ALPHAColorFromKey(@"#1B1F28");
+    palette.contentColor = ALPHAColorFromKey(@"#30353A");
+    palette.contentTintColor = ALPHAColorFromKey(@"#EA6B76");
+    palette.textColor = ALPHAColorFromKey(@"#B3B6BD");
     
     return palette;
 }

@@ -6,7 +6,8 @@
 //  Copyright © 2014 Unifed Sense. All rights reserved.
 //
 
-#import <Haystack/Haystack.h>
+#import "NSInvocation+Argument.h"
+
 #import "ALPHAApplicationDelegate.h"
 
 #import "NSString+Data.h"
@@ -165,7 +166,7 @@ NSString *const ALPHANotificationDataIdentifier = @"com.unifiedsense.alpha.data.
         //
         // Get a dictionary
         //
-        NSDictionary* userInfo = [anInvocation hay_objectAtIndex:3];
+        NSDictionary* userInfo = [anInvocation alpha_objectAtIndex:3];
         
         ALPHANotification* notification = [ALPHANotification notificationWithRemoteNotification:[userInfo copy]];
         
@@ -183,7 +184,7 @@ NSString *const ALPHANotificationDataIdentifier = @"com.unifiedsense.alpha.data.
     
     else if (anInvocation.selector == @selector(application:didFinishLaunchingWithOptions:))
     {
-        NSDictionary *launchOptions = [anInvocation hay_objectAtIndex:3];
+        NSDictionary *launchOptions = [anInvocation alpha_objectAtIndex:3];
         
         //
         // Remote Notifications
@@ -208,7 +209,7 @@ NSString *const ALPHANotificationDataIdentifier = @"com.unifiedsense.alpha.data.
     
     else if (anInvocation.selector == @selector(application:didRegisterForRemoteNotificationsWithDeviceToken:))
     {
-        NSData* deviceToken = [anInvocation hay_objectAtIndex:3];
+        NSData* deviceToken = [anInvocation alpha_objectAtIndex:3];
         
         NSString* tokenString = [NSString alpha_hexStringFromData:deviceToken];
         
@@ -217,12 +218,12 @@ NSString *const ALPHANotificationDataIdentifier = @"com.unifiedsense.alpha.data.
     }
     else if (anInvocation.selector == @selector(application:didFailToRegisterForRemoteNotificationsWithError:))
     {
-        NSError *error = [anInvocation hay_objectAtIndex:3];
+        NSError *error = [anInvocation alpha_objectAtIndex:3];
         self.remoteRegistrationDescription = error.localizedDescription;
     }
     else if (anInvocation.selector == @selector(application:didReceiveLocalNotification:))
     {
-        UILocalNotification *localNotifiation = [anInvocation hay_objectAtIndex:3];
+        UILocalNotification *localNotifiation = [anInvocation alpha_objectAtIndex:3];
         
         ALPHANotification *notification = [ALPHANotification notificationWithLocalNotification:localNotifiation];
         

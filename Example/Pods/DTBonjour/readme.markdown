@@ -1,7 +1,7 @@
 About DTBonjour
 ==================
 
-[![Build Status](https://travis-ci.org/Cocoanetics/DTBonjour.png?branch=develop)](https://travis-ci.org/Cocoanetics/DTFoundation) [![Coverage Status](https://coveralls.io/repos/Cocoanetics/DTFoundation/badge.png?branch=develop)](https://coveralls.io/r/Cocoanetics/DTBonjour?branch=develop)
+[![Build Status](https://travis-ci.org/Cocoanetics/DTBonjour.png?branch=develop)](https://travis-ci.org/Cocoanetics/DTBonjour) [![Coverage Status](https://coveralls.io/repos/Cocoanetics/DTFoundation/badge.png?branch=develop)](https://coveralls.io/r/Cocoanetics/DTBonjour?branch=develop)
 
 DTBonjour had its origin when I wanted communicate between a Mac app and an iOS app. It greatly simplifies networking over WiFi by giving you an easy method to transmit any NSObject that conforms to NSCoding.
 

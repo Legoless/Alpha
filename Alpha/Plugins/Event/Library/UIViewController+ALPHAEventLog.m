@@ -6,7 +6,7 @@
 //  Copyright © 2015 Unified Sense. All rights reserved.
 //
 
-#import <Haystack/Haystack.h>
+#import "NSObject+Swizzle.h"
 
 #import "NSString+Identifier.h"
 
@@ -17,8 +17,8 @@
 
 + (void)load
 {
-    [UIViewController hay_swizzleInstanceMethod:@selector(viewDidAppear:) withMethod:@selector(alpha_viewDidAppear:)];
-    [UIViewController hay_swizzleInstanceMethod:@selector(viewDidDisappear:) withMethod:@selector(alpha_viewDidDisappear:)];
+    [UIViewController alpha_swizzleInstanceMethod:@selector(viewDidAppear:) withMethod:@selector(alpha_viewDidAppear:)];
+    [UIViewController alpha_swizzleInstanceMethod:@selector(viewDidDisappear:) withMethod:@selector(alpha_viewDidDisappear:)];
 }
 
 - (void)alpha_viewDidAppear:(BOOL)animated

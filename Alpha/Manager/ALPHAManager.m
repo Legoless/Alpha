@@ -6,9 +6,13 @@
 //  Copyright © 2015 Unified Sense. All rights reserved.
 //
 
-#import <Haystack/Haystack.h>
-
 #import "UIApplication+Private.h"
+
+#import "UIApplication+Information.h"
+
+#import "NSObject+Runtime.h"
+
+#import "NSArray+Class.h"
 
 #import "ALPHAManager.h"
 
@@ -67,7 +71,7 @@
 {
     if (!_interfacePlugin)
     {
-        _interfacePlugin = [self.plugins hay_firstObjectOfClass:NSClassFromString(@"ALPHAInterfacePlugin")];
+        _interfacePlugin = [self.plugins alpha_firstObjectOfClass:NSClassFromString(@"ALPHAInterfacePlugin")];
         [self addOverlayViewController:_interfacePlugin.mainInterface animated:NO completion:nil];
     }
     
@@ -199,7 +203,7 @@
     // If we are running tests, we'll just return nil here, to disable all Alpha functionality
     // and speed up loading time.
     //
-    if ([[UIApplication sharedApplication] hay_isRunningTests])
+    if ([[UIApplication sharedApplication] alpha_isRunningTests])
     {
         return nil;
     }
@@ -232,7 +236,7 @@
 
 - (NSArray *)createInstancesOfClass:(Class)class
 {
-    NSArray *subclasses = [class hay_subclasses];
+    NSArray *subclasses = [class alpha_subclasses];
     NSMutableArray* instances = [NSMutableArray array];
     
     for (Class class in subclasses)

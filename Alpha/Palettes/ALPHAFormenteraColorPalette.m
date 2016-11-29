@@ -6,7 +6,7 @@
 //  Copyright © 2015 Unified Sense. All rights reserved.
 //
 
-#import <Haystack/Haystack.h>
+#import "UIColor+Utility.h"
 
 #import "ALPHAFormenteraColorPalette.h"
 
@@ -20,12 +20,12 @@
     palette.contentFontFamily = @"Menlo";
     palette.contentFontSize = 12.0;
     
-    palette.mainColor = UIColorFromKey(@"#07263B");
-    palette.accentColor = UIColorFromKey(@"#85E3EB");
-    palette.backgroundColor = UIColorFromKey(@"#07263B");
-    palette.contentColor = UIColorFromKey(@"#0B304A");
-    palette.contentTintColor = UIColorFromKey(@"#E5D947");
-    palette.textColor = UIColorFromKey(@"#95B3CB");
+    palette.mainColor = ALPHAColorFromKey(@"#07263B");
+    palette.accentColor = ALPHAColorFromKey(@"#85E3EB");
+    palette.backgroundColor = ALPHAColorFromKey(@"#07263B");
+    palette.contentColor = ALPHAColorFromKey(@"#0B304A");
+    palette.contentTintColor = ALPHAColorFromKey(@"#E5D947");
+    palette.textColor = ALPHAColorFromKey(@"#95B3CB");
     
     return palette;
 }

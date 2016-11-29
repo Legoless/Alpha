@@ -8,7 +8,7 @@
 
 @import ObjectiveC.runtime;
 
-#import <Haystack/Haystack.h>
+#import "NSObject+Swizzle.h"
 
 #import "UIApplication+Delegate.h"
 #import "ALPHAApplicationDelegate.h"
@@ -22,7 +22,7 @@
     // Swizzle delegate methods, to hide Alpha's delegation injection
     //
     
-    [UIApplication hay_swizzleInstanceMethod:@selector(setDelegate:) withMethod:@selector(alpha_setDelegate:)];
+    [UIApplication alpha_swizzleInstanceMethod:@selector(setDelegate:) withMethod:@selector(alpha_setDelegate:)];
 }
 
 - (id)alpha_injectedDelegate

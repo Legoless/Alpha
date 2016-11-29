@@ -25,10 +25,10 @@
 }
 
 - (void)requestPermission:(ALPHAPermissionRequestCompletion)completion {
-    
+    /*
     void *block = (__bridge void *)(^{
         completion(self, self.status, nil);
-    });
+    });*/
     
     int access = TCCAccessRequest(self.identifier, @"Alpha is requesting permission", 0);
     

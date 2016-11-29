@@ -8,9 +8,14 @@
 
 @import CoreTelephony;
 
-#import <Haystack/Haystack.h>
-
 #import "NSString+Data.h"
+#import "UIApplication+Information.h"
+#import "UIApplication+Version.h"
+
+#import "UIDevice+DeviceInfo.h"
+#import "UIDevice+Hardware.h"
+#import "UIDevice+Software.h"
+#import "UIDevice+Network.h"
 
 #import "ALPHARuntimeUtility.h"
 
@@ -67,8 +72,8 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     NSDictionary* sectionData = @{ @"identifier" : @"com.unifiedsense.alpha.data.status.application",
                                    @"items" : @[
                                          @{ @"Name" : [ALPHARuntimeUtility applicationName] },
-                                         @{ @"Version" : [[UIApplication sharedApplication] hay_version] },
-                                         @{ @"Build" : [[UIApplication sharedApplication] hay_build] },
+                                         @{ @"Version" : [[UIApplication sharedApplication] alpha_version] },
+                                         @{ @"Build" : [[UIApplication sharedApplication] alpha_build] },
                                          @{ @"Build Date" : [NSString stringWithFormat:@"%@ - %@", [NSString stringWithUTF8String:__DATE__], [NSString stringWithUTF8String:__TIME__]] },
                                          @{ @"Bundle ID" : [[NSBundle mainBundle] bundleIdentifier] },
                                          @{ @"Badge Number" : [@([UIApplication sharedApplication].applicationIconBadgeNumber) stringValue] }
@@ -84,12 +89,12 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     
     sectionData = @{ @"identifier" : @"com.unifiedsense.alpha.data.status.usage",
                      @"items" : @[
-                             @{ @"Memory Size" : [NSByteCountFormatter stringFromByteCount:[UIApplication sharedApplication].hay_memorySize countStyle:NSByteCountFormatterCountStyleBinary] },
+                             @{ @"Memory Size" : [NSByteCountFormatter stringFromByteCount:[UIApplication sharedApplication].alpha_memorySize countStyle:NSByteCountFormatterCountStyleBinary] },
                              @{ @"Documents Size" : [self sizeOfFolder: [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]] },
                              @{ @"Sandbox Size" : [self sizeOfFolder:NSHomeDirectory()] },
-                             @{ @"Thread Count" : [NSString stringWithFormat:@"%lu", (unsigned long)[UIApplication sharedApplication].hay_threadCount] },
-                             @{ @"Process Count" : [NSString stringWithFormat:@"%lu", (unsigned long)[UIDevice currentDevice].hay_processCount] },
-                             @{ @"CPU Usage" : [NSString stringWithFormat:@"%lu%%", (unsigned long)([UIApplication sharedApplication].hay_cpuUsage * 100.0)] }
+                             @{ @"Thread Count" : [NSString stringWithFormat:@"%lu", (unsigned long)[UIApplication sharedApplication].alpha_threadCount] },
+                             @{ @"Process Count" : [NSString stringWithFormat:@"%lu", (unsigned long)[UIDevice currentDevice].alpha_processCount] },
+                             @{ @"CPU Usage" : [NSString stringWithFormat:@"%lu%%", (unsigned long)([UIApplication sharedApplication].alpha_cpuUsage * 100.0)] }
                      ],
                      @"style" : @(UITableViewCellStyleValue1),
                      @"headerText" : @"Usage" };
@@ -174,17 +179,17 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     sectionData = @{ @"identifier" : @"com.unifiedsense.alpha.data.status.device",
                      @"items" : @[
                              @{ @"Name" : [UIDevice currentDevice].name },
-                             @{ @"Model" : [UIDevice currentDevice].hay_modelName },
-                             @{ @"Identifier" : [UIDevice currentDevice].hay_modelIdentifier },
-                             @{ @"CPU Count" : [NSString stringWithFormat:@"%lu", (unsigned long)([UIDevice currentDevice].hay_cpuPhysicalCount)] },
-                             @{ @"CPU Type" : [UIDevice currentDevice].hay_cpuType },
-                             @{ @"Architectures" : [UIDevice currentDevice].hay_cpuArchitectures },
-                             @{ @"Total Memory" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].hay_memoryMarketingSize countStyle:NSByteCountFormatterCountStyleBinary] },
-                             @{ @"Available Memory" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].hay_memoryPhysicalSize countStyle:NSByteCountFormatterCountStyleBinary] },
-                             @{ @"Capacity" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].hay_diskMarketingSpace countStyle:NSByteCountFormatterCountStyleBinary] },
-                             @{ @"Total Capacity" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].hay_diskTotalSpace countStyle:NSByteCountFormatterCountStyleBinary] },
-                             @{ @"Free Capacity" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].hay_diskFreeSpace countStyle:NSByteCountFormatterCountStyleBinary] },
-                             @{ @"Jailbroken" : ALPHAEncodeBool([UIDevice currentDevice].hay_jailbreakStatus != UIDeviceJailbreakStatusNotJailbroken) },
+                             @{ @"Model" : [UIDevice currentDevice].alpha_modelName },
+                             @{ @"Identifier" : [UIDevice currentDevice].alpha_modelIdentifier },
+                             @{ @"CPU Count" : [NSString stringWithFormat:@"%lu", (unsigned long)([UIDevice currentDevice].alpha_cpuPhysicalCount)] },
+                             @{ @"CPU Type" : [UIDevice currentDevice].alpha_cpuType },
+                             @{ @"Architectures" : [UIDevice currentDevice].alpha_cpuArchitectures },
+                             @{ @"Total Memory" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].alpha_memoryMarketingSize countStyle:NSByteCountFormatterCountStyleBinary] },
+                             @{ @"Available Memory" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].alpha_memoryPhysicalSize countStyle:NSByteCountFormatterCountStyleBinary] },
+                             @{ @"Capacity" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].alpha_diskMarketingSpace countStyle:NSByteCountFormatterCountStyleBinary] },
+                             @{ @"Total Capacity" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].alpha_diskTotalSpace countStyle:NSByteCountFormatterCountStyleBinary] },
+                             @{ @"Free Capacity" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].alpha_diskFreeSpace countStyle:NSByteCountFormatterCountStyleBinary] },
+                             @{ @"Jailbroken" : ALPHAEncodeBool([UIDevice currentDevice].alpha_jailbreakStatus != UIDeviceJailbreakStatusNotJailbroken) },
                              @{ @"Battery level" : [NSString stringWithFormat:@"%ld%%", (long)([UIDevice currentDevice].batteryLevel * 100)] }
                      ],
                      @"style" : @(UITableViewCellStyleValue1),
@@ -198,7 +203,7 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     
     items = [NSMutableArray array];
     
-    NSDictionary* ipInfo = [UIDevice currentDevice].hay_localIPAddresses;
+    NSDictionary* ipInfo = [UIDevice currentDevice].alpha_localIPAddresses;
     
     for (NSString* key in ipInfo)
     {
@@ -219,13 +224,13 @@ NSString* const ALPHADeviceStatusDataIdentifier = @"com.unifiedsense.alpha.data.
     
     sectionData = @{ @"identifier" : @"com.unifiedsense.alpha.data.status.network",
                      @"items" : @[
-                             @{ @"MAC Address" : ALPHAEncodeString([UIDevice currentDevice].hay_macAddress) },
-                             @{ @"SSID" : ALPHAEncodeString([UIDevice currentDevice].hay_SSID) },
-                             @{ @"BSSDID" : ALPHAEncodeString([UIDevice currentDevice].hay_BSSID) },
-                             @{ @"Received Wi-Fi" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].hay_receivedWiFi.longLongValue countStyle:NSByteCountFormatterCountStyleBinary] },
-                             @{ @"Sent Wi-Fi" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].hay_sentWifi.longLongValue countStyle:NSByteCountFormatterCountStyleBinary] },
-                             @{ @"Received Cellular" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].hay_receivedCellular.longLongValue countStyle:NSByteCountFormatterCountStyleBinary] },
-                             @{ @"Sent Cellular" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].hay_sentCellular.longLongValue countStyle:NSByteCountFormatterCountStyleBinary] }
+                             @{ @"MAC Address" : ALPHAEncodeString([UIDevice currentDevice].alpha_macAddress) },
+                             @{ @"SSID" : ALPHAEncodeString([UIDevice currentDevice].alpha_SSID) },
+                             @{ @"BSSDID" : ALPHAEncodeString([UIDevice currentDevice].alpha_BSSID) },
+                             @{ @"Received Wi-Fi" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].alpha_receivedWiFi.longLongValue countStyle:NSByteCountFormatterCountStyleBinary] },
+                             @{ @"Sent Wi-Fi" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].alpha_sentWifi.longLongValue countStyle:NSByteCountFormatterCountStyleBinary] },
+                             @{ @"Received Cellular" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].alpha_receivedCellular.longLongValue countStyle:NSByteCountFormatterCountStyleBinary] },
+                             @{ @"Sent Cellular" : [NSByteCountFormatter stringFromByteCount:[UIDevice currentDevice].alpha_sentCellular.longLongValue countStyle:NSByteCountFormatterCountStyleBinary] }
                      ],
                      @"style" : @(UITableViewCellStyleValue1),
                      @"headerText" : @"Network" };

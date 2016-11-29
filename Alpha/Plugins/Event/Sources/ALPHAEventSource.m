@@ -6,7 +6,7 @@
 //  Copyright © 2015 Unified Sense. All rights reserved.
 //
 
-#import <Haystack/Haystack.h>
+#import "NSInvocation+Argument.h"
 
 #import "ALPHAEventSource.h"
 #import "ALPHAEventModel.h"
@@ -105,7 +105,7 @@ NSString *const ALPHAEventDataIdentifier = @"com.unifiedsense.alpha.data.event";
     if (anInvocation.selector == @selector(application:didFinishLaunchingWithOptions:))
     {
         // Launched with options, 0 - self, 1 - _cmd, 2 - UIApplication, 3 - options
-        event.info = [anInvocation hay_objectAtIndex:3];
+        event.info = [anInvocation alpha_objectAtIndex:3];
     }
     
     [self addEvent:event];

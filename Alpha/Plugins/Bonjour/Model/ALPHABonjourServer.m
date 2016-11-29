@@ -6,9 +6,9 @@
 //  Copyright © 2015 Unified Sense. All rights reserved.
 //
 
-#import <Haystack/Haystack.h>
-
 #import <DTBonjour/DTBonjourServer.h>
+
+#import "NSString+Random.h"
 
 #import "ALPHABonjourConfig.h"
 #import "ALPHANetworkObject.h"
@@ -35,7 +35,7 @@
 - (void)start
 {
     self.server = [[DTBonjourServer alloc] initWithBonjourType:ALPHABonjourType];
-    self.server.TXTRecord = @{ @"id" : [NSString hay_UUID], @"name" : [[UIDevice currentDevice] name], @"type" : [[UIDevice currentDevice] model], @"system" : [[UIDevice currentDevice] systemName], @"version" : [[UIDevice currentDevice] systemVersion] };
+    self.server.TXTRecord = @{ @"id" : [NSString alpha_UUID], @"name" : [[UIDevice currentDevice] name], @"type" : [[UIDevice currentDevice] model], @"system" : [[UIDevice currentDevice] systemName], @"version" : [[UIDevice currentDevice] systemVersion] };
     
     self.server.delegate = self;
     [self.server start];

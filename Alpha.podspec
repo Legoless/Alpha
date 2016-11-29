@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name                   = "Alpha"
-  spec.version                = "0.2.8"
+  spec.version                = "0.3.0"
   spec.summary                = "Next generation debugging framework for iOS"
   spec.description            = <<-DESC
                                 - A simple unified debugging plugin API.
@@ -21,7 +21,6 @@ Pod::Spec.new do |spec|
   spec.documentation_url      = "https://github.com/Legoless/Alpha/wiki"
   spec.author                 = { "Dal Rupnik" => "legoless@gmail.com" }
   spec.social_media_url       = "https://twitter.com/thelegoless"
-  spec.platform               = :ios, "9.0"
   spec.source                 = { :git => "https://github.com/legoless/Alpha.git", :tag => "#{spec.version}" }
   spec.ios.deployment_target  = '8.0'
   spec.source_files           = "Alpha/Alpha.h"
@@ -32,7 +31,6 @@ Pod::Spec.new do |spec|
   #
   spec.subspec 'Asset' do |subspec|
     subspec.source_files = 'Alpha/Asset/**/*.{h,m}'
-    subspec.dependency 'Haystack'
   end
 
   #
@@ -49,7 +47,6 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'Utility' do |subspec|
     subspec.source_files = 'Alpha/Utility/**/*.{h,m}'
-    subspec.dependency 'Haystack'
   end
 
   #

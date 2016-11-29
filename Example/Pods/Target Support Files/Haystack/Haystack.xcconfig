@@ -1,5 +1,0 @@
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/Haystack" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/DTBonjour" "${PODS_ROOT}/Headers/Public/FXKeychain" "${PODS_ROOT}/Headers/Public/Haystack"
-OTHER_LDFLAGS = -framework "CoreText"
-PODS_ROOT = ${SRCROOT}
-SKIP_INSTALL = YES

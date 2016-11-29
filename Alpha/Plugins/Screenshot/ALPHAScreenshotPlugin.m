@@ -6,7 +6,7 @@
 //  Copyright © 2014 Unified Sense. All rights reserved.
 //
 
-#import <Haystack/Haystack.h>
+#import "UIApplication+Screenshot.h"
 
 #import "ALPHAWindow.h"
 #import "ALPHAFileManager.h"
@@ -73,7 +73,7 @@
         }
     }
     
-    UIImage *screenshot = [[UIApplication sharedApplication] hay_screenshotExcludingWindows:excludedWindows];
+    UIImage *screenshot = [[UIApplication sharedApplication] alpha_screenshotExcludingWindows:excludedWindows];
     
     [self saveImage:screenshot];
 }

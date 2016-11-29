@@ -19,7 +19,7 @@
 #import "DTBonjourDataChunk.h"
 
 #if TARGET_OS_IPHONE
-@import UIKit;
+#import <UIKit/UIKit.h>
 #endif
 
 @interface DTBonjourServer() <NSNetServiceDelegate, DTBonjourDataConnectionDelegate>
@@ -393,6 +393,10 @@ static void ListeningSocketCallback(CFSocketRef s, CFSocketCallBackType type, CF
 - (void)connectionDidClose:(DTBonjourDataConnection *)connection
 {
 	[_connections removeObject:connection];
+    if ([_delegate respondsToSelector:@selector(bonjourServer:didCloseConnection:)])
+    {
+        [_delegate bonjourServer:self didCloseConnection:connection];
+    }
 }
 
 #pragma mark - Notifications

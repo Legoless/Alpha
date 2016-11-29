@@ -1,16 +1,15 @@
 PODS:
-  - DTBonjour (1.1.1)
+  - DTBonjour (1.1.2)
   - FXKeychain (1.5.3)
-  - Haystack (0.9.3)
 
 DEPENDENCIES:
   - DTBonjour
   - FXKeychain
-  - Haystack
 
 SPEC CHECKSUMS:
-  DTBonjour: f221ef5500b109de0eb8cf0f6700c10a27cc8eb0
+  DTBonjour: 4ba65279c1abe7a7d0173d4ffe436b2abec19101
   FXKeychain: 2fe54573946ffef634f4e2a2851e6c8f4ea15e76
-  Haystack: 95a43b34eab0b539ef5f8af066a737b2ecd411e6
 
-COCOAPODS: 0.39.0.beta.4
+PODFILE CHECKSUM: c2151e80c33af8401588cf933618366b28be5a62
+
+COCOAPODS: 1.1.1

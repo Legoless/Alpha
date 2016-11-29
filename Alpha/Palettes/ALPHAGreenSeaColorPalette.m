@@ -6,7 +6,7 @@
 //  Copyright © 2015 Unified Sense. All rights reserved.
 //
 
-#import <Haystack/Haystack.h>
+#import "UIColor+Utility.h"
 
 #import "ALPHAGreenSeaColorPalette.h"
 
@@ -20,12 +20,12 @@
     palette.contentFontFamily = @"Menlo";
     palette.contentFontSize = 12.0;
 
-    palette.mainColor = UIColorFromKey(@"#343842");
-    palette.accentColor = UIColorFromKey(@"#4CBA9C");
-    palette.backgroundColor = UIColorFromKey(@"#46535B");
-    palette.contentColor = UIColorFromKey(@"#464A55");
-    palette.contentTintColor = UIColorFromKey(@"#6BB9A6");
-    palette.textColor = UIColorFromKey(@"#FFFFFF");
+    palette.mainColor = ALPHAColorFromKey(@"#343842");
+    palette.accentColor = ALPHAColorFromKey(@"#4CBA9C");
+    palette.backgroundColor = ALPHAColorFromKey(@"#46535B");
+    palette.contentColor = ALPHAColorFromKey(@"#464A55");
+    palette.contentTintColor = ALPHAColorFromKey(@"#6BB9A6");
+    palette.textColor = ALPHAColorFromKey(@"#FFFFFF");
     
     return palette;
 }

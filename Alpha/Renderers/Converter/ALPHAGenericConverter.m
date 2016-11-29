@@ -8,9 +8,8 @@
 
 @import ObjectiveC.runtime;
 
-#import <Haystack/Haystack.h>
-
 #import "NSString+Identifier.h"
+#import "NSObject+Property.h"
 
 #import "ALPHAScreenActionItem.h"
 
@@ -191,7 +190,7 @@
     
     [sections addObject:mainSection];
     
-    for (NSString* propertyName in model.hay_properties)
+    for (NSString* propertyName in model.alpha_properties)
     {
         if ([[model valueForKey:propertyName] isKindOfClass:[NSArray class]])
         {
