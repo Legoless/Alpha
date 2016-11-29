@@ -3145,23 +3145,6 @@
 				INFOPLIST_FILE = "UICatalog/UICatalog-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-l\"DTBonjour\"",
-					"-l\"FXKeychain\"",
-					"-l\"Haystack\"",
-					"-framework",
-					"\"CoreFoundation\"",
-					"-framework",
-					"\"CoreText\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"UIKit\"",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.unifiedsense.apple-samplecode.UICatalog";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -3184,23 +3167,6 @@
 				INFOPLIST_FILE = "UICatalog/UICatalog-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-l\"DTBonjour\"",
-					"-l\"FXKeychain\"",
-					"-l\"Haystack\"",
-					"-framework",
-					"\"CoreFoundation\"",
-					"-framework",
-					"\"CoreText\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"UIKit\"",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.unifiedsense.apple-samplecode.UICatalog";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
