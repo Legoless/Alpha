@@ -6,6 +6,8 @@
 //  Copyright © 2015 Unified Sense. All rights reserved.
 //
 
+@import UIKit;
+
 #import "ALPHANotificationPermission.h"
 
 @implementation ALPHANotificationPermission
