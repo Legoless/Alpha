@@ -7,5 +7,4 @@
 //
 
 #import "ALPHADataConverterSource.h"
-#import "ALPHAGenericConverter.h"
 #import "ALPHAConverterManager.h"

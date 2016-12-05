@@ -61,7 +61,7 @@
     
     #pragma clang diagnostic push
     #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-    BOOL access = [[self motionUtilities] performSelector:NSSelectorFromString(@"isMotionActivityEntitled")];
+    BOOL access = (BOOL)[[self motionUtilities] performSelector:NSSelectorFromString(@"isMotionActivityEntitled")];
     #pragma clang diagnostic pop
     
     return access ? ALPHAApplicationAuthorizationStatusAuthorized : ALPHAApplicationAuthorizationStatusDenied;

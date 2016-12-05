@@ -8,7 +8,6 @@
 
 #import "NSString+Entities.h"
 #import "NSString+Identifier.h"
-#import "UIApplication+Delegate.h"
 #import "UIApplication+Event.h"
 #import "UIColor+Utility.h"
 

@@ -6,7 +6,7 @@
 //  Copyright © 2015 Unified Sense. All rights reserved.
 //
 
-@import Foundation.h;
+@import Foundation;
 
 @protocol ALPHASerializer <NSObject>
 

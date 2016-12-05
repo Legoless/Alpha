@@ -56,6 +56,7 @@ Pod::Spec.new do |spec|
   spec.subspec 'Theme' do |subspec|
     subspec.source_files = 'Alpha/Themes/**/*.{h,m}'
     subspec.dependency 'Alpha/Asset'
+    subspec.dependency 'Alpha/Utility'
   end
 
   #
