@@ -7,6 +7,7 @@
 //
 
 #import <asl.h>
+#import <os/log.h>
 
 #import "ALPHAConsoleLog.h"
 #import "ALPHAConsoleModel.h"
@@ -21,8 +22,7 @@ NSString *const ALPHAConsoleDataIdentifier = @"com.unifiedsense.alpha.data.conso
 
 @implementation ALPHAConsoleSource
 
-- (NSArray *)systemLogs
-{
+- (NSArray *)systemLogs {
     NSMutableArray* logs = [NSMutableArray array];
     
     //
@@ -32,15 +32,16 @@ NSString *const ALPHAConsoleDataIdentifier = @"com.unifiedsense.alpha.data.conso
     int i;
     const char *key, *val;
     
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    
     q = asl_new(ASL_TYPE_QUERY);
     
     aslresponse r = asl_search(NULL, q);
-    while (NULL != (m = asl_next(r)))
-    {
+    while (NULL != (m = asl_next(r))) {
         NSMutableDictionary *tmpDict = [NSMutableDictionary dictionary];
         
-        for (i = 0; (NULL != (key = asl_key(m, i))); i++)
-        {
+        for (i = 0; (NULL != (key = asl_key(m, i))); i++) {
             NSString *keyString = [NSString stringWithUTF8String:(char *)key];
             
             val = asl_get(m, key);
@@ -51,12 +52,20 @@ NSString *const ALPHAConsoleDataIdentifier = @"com.unifiedsense.alpha.data.conso
         
         ALPHAConsoleLog* log = [[ALPHAConsoleLog alloc] initWithDictionary:tmpDict];
         
-        if (log)
-        {
+        if (log) {
             [logs addObject:log];
         }
     }
     asl_release(r);
+    
+    #pragma clang diagnostic pop
+    
+    return [logs copy];
+}
+
+- (NSArray *)systemLogsOS {
+    
+    NSMutableArray* logs = [NSMutableArray array];
     
     return [logs copy];
 }
