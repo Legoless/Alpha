@@ -8,9 +8,18 @@
 
 #import "ALPHAToolDelegate.h"
 
+#import "ALPHAManager.h"
+
 @implementation ALPHAToolDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        [ALPHAManager defaultManager].hidden = NO;
+    });
+    
+    
     return YES;
 }
 
