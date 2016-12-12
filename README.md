@@ -25,7 +25,6 @@ Watch [presentation](https://www.youtube.com/watch?v=XlycM-37DQw) by [Dal Rupnik
 Features are separated into multiple plugins, which can be enabled or disabled, depending on application requirements.
 
 - **Application** - displays a list of all installed applications on the device.
-
 - **Bootstrap** - checks for [KZBootstrap](https://github.com/krzysztofzablocki/KZBootstrap) environments and allows modifying them in real-time.
 - **Console** - displays console logs (logged by NSLog) inside the application.
 - **Event** - logs and displays application wide events such as background state transitions and view controller appearances.
