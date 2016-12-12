@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name                   = "Alpha"
-  spec.version                = "0.3.1"
+  spec.version                = "0.3.2"
   spec.summary                = "Next generation debugging framework for iOS"
   spec.description            = <<-DESC
                                 - A simple unified debugging plugin API.
