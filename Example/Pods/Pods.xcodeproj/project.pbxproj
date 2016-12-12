@@ -7,39 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00F136B0DBD7B034F71584BD5C1D5521 /* FXKeychain-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E374F28FBB0CEE7B847CD77AE299B494 /* FXKeychain-dummy.m */; };
-		025DFC5C461517515DA83F89C6E1D956 /* NSScanner+DTBonjour.h in Headers */ = {isa = PBXBuildFile; fileRef = 998D849AB2F2F3089787CF65415AD108 /* NSScanner+DTBonjour.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		04A48A007E2D4A1CE3665E898C2CE827 /* DTBonjour-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AF0694D02D0F907F70866BCACD86D562 /* DTBonjour-dummy.m */; };
-		15DDA2C25AD523BCB683F779B68853DC /* FXKeychain-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B26B73738B5392FFF81251698CA9FA8 /* FXKeychain-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		220083BE4C28A52EFC2AB7C4B2A97E8B /* DTBonjourDataChunk.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FEFA231A6CBCAB28AA40D28402CC55 /* DTBonjourDataChunk.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		2599ADDE937B37133C5B2C6D8C193C7A /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D857D33229ADFC04172D2408661A23 /* CoreFoundation.framework */; };
-		38A23E5FFE02022DC8455AD1A3E85AAB /* FXKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = ACFC2D87DDF145BD0C6BA4BDE6AC2A3F /* FXKeychain.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4156DA010CE3C2CA46CE630F15FB504F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13CA9F15B8ECBB53B6D1EC676F76A818 /* Security.framework */; };
-		5656F8282901BC8D544A3015307FCF51 /* DTBonjour-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F0B7E4010FB9A0FABA3726441B64E777 /* DTBonjour-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5CE365B5D8D4FE1FCE47EC9C4B164515 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14B93E61E2A4BB6E6AD35A114B2C2B6B /* Foundation.framework */; };
-		7BB296BD4E0BDFF01CADF0C95C89B40F /* DTBonjourDataConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = B9ABD0919C2EC6D947BED0329CF19790 /* DTBonjourDataConnection.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		92FA8C73E840064C13F6A0220F46CFA5 /* DTBonjourDataChunk.h in Headers */ = {isa = PBXBuildFile; fileRef = E7BD46BBEA5FE858C3030104B3F5DDC9 /* DTBonjourDataChunk.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A1FBE4CFA4068B0FED2A421B751B9538 /* Pods-UICatalog-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 26DEE54D34C4E08E1CD7F8FA357A990B /* Pods-UICatalog-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A330FE568E9F44957FB00A77A0F22D00 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14B93E61E2A4BB6E6AD35A114B2C2B6B /* Foundation.framework */; };
-		A91439AEDE6F9EEE7FDBD7715A9F2D1E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 256CAC05792A9C97823DC92A0A499AC6 /* UIKit.framework */; };
-		AB7A60CA87C8675264DED6DB96287B85 /* DTBonjourServer.h in Headers */ = {isa = PBXBuildFile; fileRef = FC54F1DCB8302179DEDD502FDD7755B9 /* DTBonjourServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B09E1E190919C5D813014A9EED8AA234 /* NSScanner+DTBonjour.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C38BFEDA0CA2EE792D94D9ABD9B92F /* NSScanner+DTBonjour.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		BB2AA31A213D114307685D4FE9641C62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14B93E61E2A4BB6E6AD35A114B2C2B6B /* Foundation.framework */; };
-		D1CCBB6CCA02D2B658F2132E926AAC3B /* FXKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE91D6EB5FE703C21C8C3FEADF406A1 /* FXKeychain.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		DFF9F03FFA7A4B0A5B7275B83BCD3824 /* DTBonjourDataConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DBC21EFC3B72D62DA53BF87B2380B03 /* DTBonjourDataConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EFCC1216ED09833F42C77C000765A4BA /* Pods-UICatalog-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0B71D2D1F5C4AD6761AC9A07E690EB /* Pods-UICatalog-dummy.m */; };
-		F993363A0CBF279669E8B368355B2816 /* DTBonjourServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A31A9193B236B58E1A65425DC9AAD14 /* DTBonjourServer.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		00F136B0DBD7B034F71584BD5C1D5521 /* FXKeychain-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEC4B453353F45DC58DBF7D8D458790 /* FXKeychain-dummy.m */; };
+		060ABC0DE037DDBF2A648148B23840DB /* Pods-UICatalog-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0B71D2D1F5C4AD6761AC9A07E690EB /* Pods-UICatalog-dummy.m */; };
+		15DDA2C25AD523BCB683F779B68853DC /* FXKeychain-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BD78EBC6FE5EF9EB490C12C68DDEEFEB /* FXKeychain-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38A23E5FFE02022DC8455AD1A3E85AAB /* FXKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 510BAC5135D33706706A0A371DBAC3B0 /* FXKeychain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4156DA010CE3C2CA46CE630F15FB504F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAFD15069DBFFAF7E7CD48183E2D230C /* Security.framework */; };
+		5CE365B5D8D4FE1FCE47EC9C4B164515 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4690263E3C2DD3C24DEAC554FFBD486 /* Foundation.framework */; };
+		669CC8AF4390A6777121BEB6F95F266C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4690263E3C2DD3C24DEAC554FFBD486 /* Foundation.framework */; };
+		B4E8CB4F64C83C721FDF9BEC099FAAB3 /* Pods-UICatalog-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 26DEE54D34C4E08E1CD7F8FA357A990B /* Pods-UICatalog-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D1CCBB6CCA02D2B658F2132E926AAC3B /* FXKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F7CF8AC32123E8A89D7795DB02D710 /* FXKeychain.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		82F5BD98D0283FF5AB35D74B29B260BB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BDBA1D9A425B0F12F0644EF3C826E1A8;
-			remoteInfo = DTBonjour;
-		};
-		C5709CE677921D09254CF7AB0D595FAF /* PBXContainerItemProxy */ = {
+		240F9B8E0E7CCA5BD7A2C6966D8371FE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -51,44 +31,27 @@
 /* Begin PBXFileReference section */
 		01AFF570FAF92481E1CB53D4D45BB504 /* Pods-UICatalog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UICatalog.debug.xcconfig"; sourceTree = "<group>"; };
 		036EB348B184E4E7C51FFBF43F25384D /* Pods-UICatalog-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-UICatalog-frameworks.sh"; sourceTree = "<group>"; };
-		0B26B73738B5392FFF81251698CA9FA8 /* FXKeychain-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FXKeychain-umbrella.h"; sourceTree = "<group>"; };
-		13CA9F15B8ECBB53B6D1EC676F76A818 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
-		14B93E61E2A4BB6E6AD35A114B2C2B6B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		15B3046ACF62C97FD0F9B5012A5FB69F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		230ECFEC185988F7A8E9D79424D049CB /* FXKeychain.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FXKeychain.xcconfig; sourceTree = "<group>"; };
-		256CAC05792A9C97823DC92A0A499AC6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		26DEE54D34C4E08E1CD7F8FA357A990B /* Pods-UICatalog-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-UICatalog-umbrella.h"; sourceTree = "<group>"; };
-		31358E0AF6610EA9F64C1E1F0F0FC6AD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3544D9BDBB202BC663DEEA16A3142AEE /* Pods-UICatalog-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-UICatalog-resources.sh"; sourceTree = "<group>"; };
 		42C3CB756A7A4C2555C4C016E4A48DBE /* Pods-UICatalog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UICatalog.release.xcconfig"; sourceTree = "<group>"; };
 		45B85913759562F8C19D520E54B32A39 /* Pods-UICatalog-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UICatalog-acknowledgements.plist"; sourceTree = "<group>"; };
-		46E47B1B4974A081BB173074C0B251CD /* Pods_UICatalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_UICatalog.framework; path = "Pods-UICatalog.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		666A09C192CFF60843D47DBA7B64C610 /* DTBonjour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DTBonjour.framework; path = DTBonjour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		67C38BFEDA0CA2EE792D94D9ABD9B92F /* NSScanner+DTBonjour.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSScanner+DTBonjour.m"; path = "Core/Source/NSScanner+DTBonjour.m"; sourceTree = "<group>"; };
-		6DBC21EFC3B72D62DA53BF87B2380B03 /* DTBonjourDataConnection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTBonjourDataConnection.h; path = Core/Source/DTBonjourDataConnection.h; sourceTree = "<group>"; };
-		6DE91D6EB5FE703C21C8C3FEADF406A1 /* FXKeychain.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FXKeychain.m; path = FXKeychain/FXKeychain.m; sourceTree = "<group>"; };
-		7094DD976E1CD50FE8C5160BF50278F2 /* DTBonjour.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = DTBonjour.modulemap; sourceTree = "<group>"; };
+		510BAC5135D33706706A0A371DBAC3B0 /* FXKeychain.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FXKeychain.h; path = FXKeychain/FXKeychain.h; sourceTree = "<group>"; };
+		71F7CF8AC32123E8A89D7795DB02D710 /* FXKeychain.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FXKeychain.m; path = FXKeychain/FXKeychain.m; sourceTree = "<group>"; };
 		749636A6029BA936EB7A8FC7477DF7DB /* Pods-UICatalog-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-UICatalog-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7A31A9193B236B58E1A65425DC9AAD14 /* DTBonjourServer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTBonjourServer.m; path = Core/Source/DTBonjourServer.m; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		93D3522D13D30AD6318AE3F8AB931C9E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		998D849AB2F2F3089787CF65415AD108 /* NSScanner+DTBonjour.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSScanner+DTBonjour.h"; path = "Core/Source/NSScanner+DTBonjour.h"; sourceTree = "<group>"; };
 		9A0B71D2D1F5C4AD6761AC9A07E690EB /* Pods-UICatalog-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UICatalog-dummy.m"; sourceTree = "<group>"; };
-		ACFC2D87DDF145BD0C6BA4BDE6AC2A3F /* FXKeychain.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FXKeychain.h; path = FXKeychain/FXKeychain.h; sourceTree = "<group>"; };
-		AE32B98ADE58D2EA74C606B3D0E86D32 /* FXKeychain-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FXKeychain-prefix.pch"; sourceTree = "<group>"; };
-		AF0694D02D0F907F70866BCACD86D562 /* DTBonjour-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DTBonjour-dummy.m"; sourceTree = "<group>"; };
-		B9ABD0919C2EC6D947BED0329CF19790 /* DTBonjourDataConnection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTBonjourDataConnection.m; path = Core/Source/DTBonjourDataConnection.m; sourceTree = "<group>"; };
-		B9D857D33229ADFC04172D2408661A23 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		A528F6ECCF5F4F3FF41A7211ADD75F0C /* Pods_UICatalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_UICatalog.framework; path = "Pods-UICatalog.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4690263E3C2DD3C24DEAC554FFBD486 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		BD208FEA8D3CB8ED24B90D7937B28387 /* Pods-UICatalog.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-UICatalog.modulemap"; sourceTree = "<group>"; };
-		C25B51602BD6CDCEC851601FB2137164 /* FXKeychain.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = FXKeychain.modulemap; sourceTree = "<group>"; };
-		C2FEFA231A6CBCAB28AA40D28402CC55 /* DTBonjourDataChunk.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTBonjourDataChunk.m; path = Core/Source/DTBonjourDataChunk.m; sourceTree = "<group>"; };
-		D38D9E191D1F1BAFC612C43A3F1628FB /* DTBonjour.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DTBonjour.xcconfig; sourceTree = "<group>"; };
-		E374F28FBB0CEE7B847CD77AE299B494 /* FXKeychain-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FXKeychain-dummy.m"; sourceTree = "<group>"; };
-		E7BD46BBEA5FE858C3030104B3F5DDC9 /* DTBonjourDataChunk.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTBonjourDataChunk.h; path = Core/Source/DTBonjourDataChunk.h; sourceTree = "<group>"; };
-		E83E1DC79FA4B2F4C586EE331C8A9C03 /* DTBonjour-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DTBonjour-prefix.pch"; sourceTree = "<group>"; };
-		F0B7E4010FB9A0FABA3726441B64E777 /* DTBonjour-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DTBonjour-umbrella.h"; sourceTree = "<group>"; };
-		FA81F509FA774CC7B858F7EA15117970 /* FXKeychain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FXKeychain.framework; path = FXKeychain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC54F1DCB8302179DEDD502FDD7755B9 /* DTBonjourServer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTBonjourServer.h; path = Core/Source/DTBonjourServer.h; sourceTree = "<group>"; };
+		BD78EBC6FE5EF9EB490C12C68DDEEFEB /* FXKeychain-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FXKeychain-umbrella.h"; sourceTree = "<group>"; };
+		CAFD15069DBFFAF7E7CD48183E2D230C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		D8B02727AF5013EAE7A93F8ED3C05FB9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8D474FF70B8538162DB8FFFA46B0499 /* FXKeychain.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = FXKeychain.modulemap; sourceTree = "<group>"; };
+		DEEC4B453353F45DC58DBF7D8D458790 /* FXKeychain-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FXKeychain-dummy.m"; sourceTree = "<group>"; };
+		E58D55BB10108DB8255540441AECBD5E /* FXKeychain-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FXKeychain-prefix.pch"; sourceTree = "<group>"; };
+		E77C86A8AFBF7371ECD399D92097774F /* FXKeychain.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FXKeychain.xcconfig; sourceTree = "<group>"; };
+		EE8DA1772F17C9C9F541CD9E81DB4969 /* FXKeychain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FXKeychain.framework; path = FXKeychain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,27 +64,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		35F5414C0D01741B98C8FDAB18014660 /* Frameworks */ = {
+		F02ABE5A3FA07A22A1CD29C53CE75F89 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A330FE568E9F44957FB00A77A0F22D00 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6377FD0F5902EA797505A43647806239 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2599ADDE937B37133C5B2C6D8C193C7A /* CoreFoundation.framework in Frameworks */,
-				BB2AA31A213D114307685D4FE9641C62 /* Foundation.framework in Frameworks */,
-				A91439AEDE6F9EEE7FDBD7715A9F2D1E /* UIKit.framework in Frameworks */,
+				669CC8AF4390A6777121BEB6F95F266C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08DAA05AB69F7B51B6167CB2E160F2C5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B0D08E1A01B715840414C4D15F82D7A2 /* FXKeychain */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		0C78A6E3276F73C75EFDF9CA9CD0F3CE /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,95 +91,63 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */ = {
+		2E339049816F198EB76DEA4264EF8374 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				D1F6D5A50C403DF733B2695DC82BA35B /* iOS */,
+				B4690263E3C2DD3C24DEAC554FFBD486 /* Foundation.framework */,
+				CAFD15069DBFFAF7E7CD48183E2D230C /* Security.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2E339049816F198EB76DEA4264EF8374 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5DB2E51474954CC3E58AE9D885A5AD63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EE8DA1772F17C9C9F541CD9E81DB4969 /* FXKeychain.framework */,
+				A528F6ECCF5F4F3FF41A7211ADD75F0C /* Pods_UICatalog.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */,
-				A94568DB817E402857858F3687A2DF9C /* Pods */,
-				B5D26287DBE28AAFB5578AE726CAA2AA /* Products */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				08DAA05AB69F7B51B6167CB2E160F2C5 /* Pods */,
+				5DB2E51474954CC3E58AE9D885A5AD63 /* Products */,
 				0C78A6E3276F73C75EFDF9CA9CD0F3CE /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		94339569BB96DFFCB9827DA15B2084C9 /* Support Files */ = {
+		B0D08E1A01B715840414C4D15F82D7A2 /* FXKeychain */ = {
 			isa = PBXGroup;
 			children = (
-				7094DD976E1CD50FE8C5160BF50278F2 /* DTBonjour.modulemap */,
-				D38D9E191D1F1BAFC612C43A3F1628FB /* DTBonjour.xcconfig */,
-				AF0694D02D0F907F70866BCACD86D562 /* DTBonjour-dummy.m */,
-				E83E1DC79FA4B2F4C586EE331C8A9C03 /* DTBonjour-prefix.pch */,
-				F0B7E4010FB9A0FABA3726441B64E777 /* DTBonjour-umbrella.h */,
-				93D3522D13D30AD6318AE3F8AB931C9E /* Info.plist */,
+				510BAC5135D33706706A0A371DBAC3B0 /* FXKeychain.h */,
+				71F7CF8AC32123E8A89D7795DB02D710 /* FXKeychain.m */,
+				EA9C5CD9A904BC4E3075D0DD904AE0B3 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/DTBonjour";
+			name = FXKeychain;
+			path = FXKeychain;
 			sourceTree = "<group>";
 		};
-		A01C7B7A3869A2C53EF870EDD1F303B5 /* DTBonjour */ = {
+		EA9C5CD9A904BC4E3075D0DD904AE0B3 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				E7BD46BBEA5FE858C3030104B3F5DDC9 /* DTBonjourDataChunk.h */,
-				C2FEFA231A6CBCAB28AA40D28402CC55 /* DTBonjourDataChunk.m */,
-				6DBC21EFC3B72D62DA53BF87B2380B03 /* DTBonjourDataConnection.h */,
-				B9ABD0919C2EC6D947BED0329CF19790 /* DTBonjourDataConnection.m */,
-				FC54F1DCB8302179DEDD502FDD7755B9 /* DTBonjourServer.h */,
-				7A31A9193B236B58E1A65425DC9AAD14 /* DTBonjourServer.m */,
-				998D849AB2F2F3089787CF65415AD108 /* NSScanner+DTBonjour.h */,
-				67C38BFEDA0CA2EE792D94D9ABD9B92F /* NSScanner+DTBonjour.m */,
-				94339569BB96DFFCB9827DA15B2084C9 /* Support Files */,
-			);
-			name = DTBonjour;
-			path = DTBonjour;
-			sourceTree = "<group>";
-		};
-		A94568DB817E402857858F3687A2DF9C /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				A01C7B7A3869A2C53EF870EDD1F303B5 /* DTBonjour */,
-				FAEAA5A26C7C13DE9B25753AFC43C724 /* FXKeychain */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		B5D26287DBE28AAFB5578AE726CAA2AA /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				666A09C192CFF60843D47DBA7B64C610 /* DTBonjour.framework */,
-				FA81F509FA774CC7B858F7EA15117970 /* FXKeychain.framework */,
-				46E47B1B4974A081BB173074C0B251CD /* Pods_UICatalog.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		D1F6D5A50C403DF733B2695DC82BA35B /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				B9D857D33229ADFC04172D2408661A23 /* CoreFoundation.framework */,
-				14B93E61E2A4BB6E6AD35A114B2C2B6B /* Foundation.framework */,
-				13CA9F15B8ECBB53B6D1EC676F76A818 /* Security.framework */,
-				256CAC05792A9C97823DC92A0A499AC6 /* UIKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		D886AE398FF12270A3EC824B7C864406 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				C25B51602BD6CDCEC851601FB2137164 /* FXKeychain.modulemap */,
-				230ECFEC185988F7A8E9D79424D049CB /* FXKeychain.xcconfig */,
-				E374F28FBB0CEE7B847CD77AE299B494 /* FXKeychain-dummy.m */,
-				AE32B98ADE58D2EA74C606B3D0E86D32 /* FXKeychain-prefix.pch */,
-				0B26B73738B5392FFF81251698CA9FA8 /* FXKeychain-umbrella.h */,
-				31358E0AF6610EA9F64C1E1F0F0FC6AD /* Info.plist */,
+				D8D474FF70B8538162DB8FFFA46B0499 /* FXKeychain.modulemap */,
+				E77C86A8AFBF7371ECD399D92097774F /* FXKeychain.xcconfig */,
+				DEEC4B453353F45DC58DBF7D8D458790 /* FXKeychain-dummy.m */,
+				E58D55BB10108DB8255540441AECBD5E /* FXKeychain-prefix.pch */,
+				BD78EBC6FE5EF9EB490C12C68DDEEFEB /* FXKeychain-umbrella.h */,
+				D8B02727AF5013EAE7A93F8ED3C05FB9 /* Info.plist */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/FXKeychain";
@@ -242,37 +171,14 @@
 			path = "Target Support Files/Pods-UICatalog";
 			sourceTree = "<group>";
 		};
-		FAEAA5A26C7C13DE9B25753AFC43C724 /* FXKeychain */ = {
-			isa = PBXGroup;
-			children = (
-				ACFC2D87DDF145BD0C6BA4BDE6AC2A3F /* FXKeychain.h */,
-				6DE91D6EB5FE703C21C8C3FEADF406A1 /* FXKeychain.m */,
-				D886AE398FF12270A3EC824B7C864406 /* Support Files */,
-			);
-			name = FXKeychain;
-			path = FXKeychain;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		39D4BF737ED4C2E60206459BFC1CBEA6 /* Headers */ = {
+		445B594872731CF9277EC4941A1B8C42 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5656F8282901BC8D544A3015307FCF51 /* DTBonjour-umbrella.h in Headers */,
-				92FA8C73E840064C13F6A0220F46CFA5 /* DTBonjourDataChunk.h in Headers */,
-				DFF9F03FFA7A4B0A5B7275B83BCD3824 /* DTBonjourDataConnection.h in Headers */,
-				AB7A60CA87C8675264DED6DB96287B85 /* DTBonjourServer.h in Headers */,
-				025DFC5C461517515DA83F89C6E1D956 /* NSScanner+DTBonjour.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8A3FE67C42A82DE0B36AF9840F776365 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A1FBE4CFA4068B0FED2A421B751B9538 /* Pods-UICatalog-umbrella.h in Headers */,
+				B4E8CB4F64C83C721FDF9BEC099FAAB3 /* Pods-UICatalog-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,40 +194,22 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		BDBA1D9A425B0F12F0644EF3C826E1A8 /* DTBonjour */ = {
+		D5E994C23352518D33E58CFA230385C2 /* Pods-UICatalog */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EAD7B8C34552669D1EEF7F3DBA7F2D76 /* Build configuration list for PBXNativeTarget "DTBonjour" */;
+			buildConfigurationList = 02666653E7BDB2B0B94848CF77FBC2C4 /* Build configuration list for PBXNativeTarget "Pods-UICatalog" */;
 			buildPhases = (
-				B9AE32C331BBA27A7E953369EF7875E0 /* Sources */,
-				6377FD0F5902EA797505A43647806239 /* Frameworks */,
-				39D4BF737ED4C2E60206459BFC1CBEA6 /* Headers */,
+				0223F4FEDAC48D1D808B461D5F55DD3A /* Sources */,
+				F02ABE5A3FA07A22A1CD29C53CE75F89 /* Frameworks */,
+				445B594872731CF9277EC4941A1B8C42 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			name = DTBonjour;
-			productName = DTBonjour;
-			productReference = 666A09C192CFF60843D47DBA7B64C610 /* DTBonjour.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		C934A92098F68CACFA0AC09D73351F78 /* Pods-UICatalog */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CDB5729270658EF2E6AF2C7DA4E494C6 /* Build configuration list for PBXNativeTarget "Pods-UICatalog" */;
-			buildPhases = (
-				99CF4DB41C45792175E894595881AC2C /* Sources */,
-				35F5414C0D01741B98C8FDAB18014660 /* Frameworks */,
-				8A3FE67C42A82DE0B36AF9840F776365 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C4DF969D8A3994632D712CBB1CA8D1A0 /* PBXTargetDependency */,
-				DC4DFDC9F808010397A3E8C9F22AF7C4 /* PBXTargetDependency */,
+				782611BF80130DB23AECEF5E49376889 /* PBXTargetDependency */,
 			);
 			name = "Pods-UICatalog";
 			productName = "Pods-UICatalog";
-			productReference = 46E47B1B4974A081BB173074C0B251CD /* Pods_UICatalog.framework */;
+			productReference = A528F6ECCF5F4F3FF41A7211ADD75F0C /* Pods_UICatalog.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		FD1C01BCED4F8B57AAF4E31D56C44968 /* FXKeychain */ = {
@@ -338,7 +226,7 @@
 			);
 			name = FXKeychain;
 			productName = FXKeychain;
-			productReference = FA81F509FA774CC7B858F7EA15117970 /* FXKeychain.framework */;
+			productReference = EE8DA1772F17C9C9F541CD9E81DB4969 /* FXKeychain.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -358,18 +246,25 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = B5D26287DBE28AAFB5578AE726CAA2AA /* Products */;
+			productRefGroup = 5DB2E51474954CC3E58AE9D885A5AD63 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BDBA1D9A425B0F12F0644EF3C826E1A8 /* DTBonjour */,
 				FD1C01BCED4F8B57AAF4E31D56C44968 /* FXKeychain */,
-				C934A92098F68CACFA0AC09D73351F78 /* Pods-UICatalog */,
+				D5E994C23352518D33E58CFA230385C2 /* Pods-UICatalog */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0223F4FEDAC48D1D808B461D5F55DD3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				060ABC0DE037DDBF2A648148B23840DB /* Pods-UICatalog-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2845E445F23529BC21A645ECF328003E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -379,40 +274,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		99CF4DB41C45792175E894595881AC2C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EFCC1216ED09833F42C77C000765A4BA /* Pods-UICatalog-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B9AE32C331BBA27A7E953369EF7875E0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				04A48A007E2D4A1CE3665E898C2CE827 /* DTBonjour-dummy.m in Sources */,
-				220083BE4C28A52EFC2AB7C4B2A97E8B /* DTBonjourDataChunk.m in Sources */,
-				7BB296BD4E0BDFF01CADF0C95C89B40F /* DTBonjourDataConnection.m in Sources */,
-				F993363A0CBF279669E8B368355B2816 /* DTBonjourServer.m in Sources */,
-				B09E1E190919C5D813014A9EED8AA234 /* NSScanner+DTBonjour.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C4DF969D8A3994632D712CBB1CA8D1A0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DTBonjour;
-			target = BDBA1D9A425B0F12F0644EF3C826E1A8 /* DTBonjour */;
-			targetProxy = 82F5BD98D0283FF5AB35D74B29B260BB /* PBXContainerItemProxy */;
-		};
-		DC4DFDC9F808010397A3E8C9F22AF7C4 /* PBXTargetDependency */ = {
+		782611BF80130DB23AECEF5E49376889 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FXKeychain;
 			target = FD1C01BCED4F8B57AAF4E31D56C44968 /* FXKeychain */;
-			targetProxy = C5709CE677921D09254CF7AB0D595FAF /* PBXContainerItemProxy */;
+			targetProxy = 240F9B8E0E7CCA5BD7A2C6966D8371FE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -501,9 +370,9 @@
 			};
 			name = Release;
 		};
-		685DA148E19989659B3B40DA35D35B5F /* Release */ = {
+		9D9D11FC73AE0EA0DAEED15CB6ACF18B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D38D9E191D1F1BAFC612C43A3F1628FB /* DTBonjour.xcconfig */;
+			baseConfigurationReference = E77C86A8AFBF7371ECD399D92097774F /* FXKeychain.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -516,14 +385,14 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/DTBonjour/DTBonjour-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DTBonjour/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/FXKeychain/FXKeychain-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FXKeychain/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/DTBonjour/DTBonjour.modulemap";
+				MODULEMAP_FILE = "Target Support Files/FXKeychain/FXKeychain.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = DTBonjour;
+				PRODUCT_NAME = FXKeychain;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -532,7 +401,7 @@
 			};
 			name = Release;
 		};
-		87EA8C61BD502DA272B410223004BAD4 /* Release */ = {
+		B41D30C9E9BB8142A845127B0BD5E5DE /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 42C3CB756A7A4C2555C4C016E4A48DBE /* Pods-UICatalog.release.xcconfig */;
 			buildSettings = {
@@ -567,100 +436,7 @@
 			};
 			name = Release;
 		};
-		9D9D11FC73AE0EA0DAEED15CB6ACF18B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 230ECFEC185988F7A8E9D79424D049CB /* FXKeychain.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/FXKeychain/FXKeychain-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FXKeychain/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FXKeychain/FXKeychain.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = FXKeychain;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		C41751690E19E9611565B5B672C7E3A8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D38D9E191D1F1BAFC612C43A3F1628FB /* DTBonjour.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/DTBonjour/DTBonjour-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DTBonjour/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/DTBonjour/DTBonjour.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = DTBonjour;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		CB510DDB11680AFD4335003F89BA8618 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 230ECFEC185988F7A8E9D79424D049CB /* FXKeychain.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/FXKeychain/FXKeychain-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FXKeychain/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FXKeychain/FXKeychain.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = FXKeychain;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		DCEA28B8BF296CA1B4119A183657A521 /* Debug */ = {
+		B52C38AA13BC327CB3F8A00EF28EABAF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 01AFF570FAF92481E1CB53D4D45BB504 /* Pods-UICatalog.debug.xcconfig */;
 			buildSettings = {
@@ -695,9 +471,49 @@
 			};
 			name = Debug;
 		};
+		CB510DDB11680AFD4335003F89BA8618 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E77C86A8AFBF7371ECD399D92097774F /* FXKeychain.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FXKeychain/FXKeychain-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FXKeychain/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FXKeychain/FXKeychain.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = FXKeychain;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		02666653E7BDB2B0B94848CF77FBC2C4 /* Build configuration list for PBXNativeTarget "Pods-UICatalog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B52C38AA13BC327CB3F8A00EF28EABAF /* Debug */,
+				B41D30C9E9BB8142A845127B0BD5E5DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -712,24 +528,6 @@
 			buildConfigurations = (
 				CB510DDB11680AFD4335003F89BA8618 /* Debug */,
 				9D9D11FC73AE0EA0DAEED15CB6ACF18B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CDB5729270658EF2E6AF2C7DA4E494C6 /* Build configuration list for PBXNativeTarget "Pods-UICatalog" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DCEA28B8BF296CA1B4119A183657A521 /* Debug */,
-				87EA8C61BD502DA272B410223004BAD4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EAD7B8C34552669D1EEF7F3DBA7F2D76 /* Build configuration list for PBXNativeTarget "DTBonjour" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C41751690E19E9611565B5B672C7E3A8 /* Debug */,
-				685DA148E19989659B3B40DA35D35B5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

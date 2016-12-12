@@ -4,8 +4,5 @@ use_frameworks!
 source 'https://github.com/CocoaPods/Specs.git'
 
 target 'UICatalog' do
-  # Remote plugin for testing
-  pod 'DTBonjour'
   pod 'FXKeychain'
-
 end
