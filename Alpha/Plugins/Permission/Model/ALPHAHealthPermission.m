@@ -225,14 +225,11 @@
         HKQuantityTypeIdentifierDietaryCaffeine                 // Mass, Cumulative
     ] mutableCopy];
     
-    if (&HKQuantityTypeIdentifierBasalBodyTemperature != NULL)
-    {
-        [identifiers addObjectsFromArray:@[
-            HKQuantityTypeIdentifierBasalBodyTemperature,       // Basal Body Temperature,      Discrete
-            HKQuantityTypeIdentifierDietaryWater,               // Volume, Cumulative
-            HKQuantityTypeIdentifierUVExposure                  // Scalar (Count), Discrete
-        ]];
-    }
+    [identifiers addObjectsFromArray:@[
+        HKQuantityTypeIdentifierBasalBodyTemperature,       // Basal Body Temperature,      Discrete
+        HKQuantityTypeIdentifierDietaryWater,               // Volume, Cumulative
+        HKQuantityTypeIdentifierUVExposure                  // Scalar (Count), Discrete
+    ]];
     
     //
     // Category type
@@ -242,17 +239,14 @@
         HKCategoryTypeIdentifierSleepAnalysis
     ]];
     
-    if (&HKCategoryTypeIdentifierAppleStandHour != NULL)
-    {
-        [identifiers addObjectsFromArray:@[
-            HKCategoryTypeIdentifierAppleStandHour,            // HKCategoryValueAppleStandHour
-            HKCategoryTypeIdentifierCervicalMucusQuality,      // HKCategoryValueCervicalMucusQuality
-            HKCategoryTypeIdentifierOvulationTestResult,       // HKCategoryValueOvulationTestResult
-            HKCategoryTypeIdentifierMenstrualFlow,             // HKCategoryValueMenstrualFlow
-            HKCategoryTypeIdentifierIntermenstrualBleeding,    // (Spotting) HKCategoryValue
-            HKCategoryTypeIdentifierSexualActivity,            // HKCategoryValue
-        ]];
-    }
+    [identifiers addObjectsFromArray:@[
+        HKCategoryTypeIdentifierAppleStandHour,            // HKCategoryValueAppleStandHour
+        HKCategoryTypeIdentifierCervicalMucusQuality,      // HKCategoryValueCervicalMucusQuality
+        HKCategoryTypeIdentifierOvulationTestResult,       // HKCategoryValueOvulationTestResult
+        HKCategoryTypeIdentifierMenstrualFlow,             // HKCategoryValueMenstrualFlow
+        HKCategoryTypeIdentifierIntermenstrualBleeding,    // (Spotting) HKCategoryValue
+        HKCategoryTypeIdentifierSexualActivity,            // HKCategoryValue
+    ]];
     
     //
     // Characteristic type
@@ -267,12 +261,9 @@
     //
     // Adds iOS9 only identifiers
     //
-    if (&HKCharacteristicTypeIdentifierFitzpatrickSkinType != NULL)
-    {
-        [identifiers addObjectsFromArray:@[
-            HKCharacteristicTypeIdentifierFitzpatrickSkinType   // HKFitzpatrickSkinType
-        ]];
-    }
+    [identifiers addObjectsFromArray:@[
+        HKCharacteristicTypeIdentifierFitzpatrickSkinType   // HKFitzpatrickSkinType
+    ]];
     
     //
     // Correlation type
