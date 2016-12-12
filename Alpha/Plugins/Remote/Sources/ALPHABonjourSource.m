@@ -6,12 +6,12 @@
 //  Copyright © 2015 Unified Sense. All rights reserved.
 //
 
-#import <DTBonjour/DTBonjourDataConnection.h>
+#import "ALPHABonjourDataConnection.h"
 
 #import "ALPHABonjourSource.h"
 #import "ALPHANetworkObject.h"
 
-@interface ALPHABonjourSource () <DTBonjourDataConnectionDelegate>
+@interface ALPHABonjourSource () <ALPHABonjourDataConnectionDelegate>
 
 @property (nonatomic, copy) ALPHADataSourceRequestCompletion completion;
 @property (nonatomic, copy) ALPHADataSourceRequestVerification verification;
@@ -81,7 +81,7 @@
     
     self.completion = completion;
     
-    NSLog(@"SETTING COMPLETION: %@", completion);
+    //NSLog(@"SETTING COMPLETION: %@", completion);
     
     NSError* error = nil;
     
@@ -94,7 +94,7 @@
     
     if (error)
     {
-        NSLog(@"Error sending object: %@", error);
+        //NSLog(@"Error sending object: %@", error);
         
         if (completion)
         {

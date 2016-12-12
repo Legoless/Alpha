@@ -6,9 +6,9 @@
 //  Copyright © 2015 Unified Sense. All rights reserved.
 //
 
-#import "DTBonjourDataConnection.h"
+#import "ALPHABonjourDataConnection.h"
 
-@interface ALPHABonjourConnection : DTBonjourDataConnection
+@interface ALPHABonjourConnection : ALPHABonjourDataConnection
 
 @property (nonatomic, weak) NSNetService* service;
 

@@ -6,7 +6,7 @@
 //  Copyright © 2015 Unified Sense. All rights reserved.
 //
 
-#import <DTBonjour/DTBonjourServer.h>
+#import "ALPHABonjourServer.h"
 
 #import "NSString+Random.h"
 
@@ -17,9 +17,9 @@
 
 #import "ALPHAManager.h"
 
-@interface ALPHABonjourServerNode () <DTBonjourServerDelegate>
+@interface ALPHABonjourServerNode () <ALPHABonjourServerDelegate>
 
-@property (atomic, strong) DTBonjourServer *server;
+@property (atomic, strong) ALPHABonjourServer *server;
 
 @property (nonatomic, strong) ALPHAStatusBarNotification *notification;
 
@@ -34,7 +34,7 @@
 
 - (void)start
 {
-    self.server = [[DTBonjourServer alloc] initWithBonjourType:ALPHABonjourType];
+    self.server = [[ALPHABonjourServer alloc] initWithBonjourType:ALPHABonjourType];
     self.server.TXTRecord = @{ @"id" : [NSString alpha_UUID], @"name" : [[UIDevice currentDevice] name], @"type" : [[UIDevice currentDevice] model], @"system" : [[UIDevice currentDevice] systemName], @"version" : [[UIDevice currentDevice] systemVersion] };
     
     self.server.delegate = self;
@@ -55,14 +55,14 @@
     }];
 }
 
-#pragma mark - DTBonjourServerDelegate
+#pragma mark - ALPHABonjourServerDelegate
 
-- (void)bonjourServer:(DTBonjourServer *)server didAcceptConnection:(DTBonjourDataConnection *)connection
+- (void)bonjourServer:(ALPHABonjourServer *)server didAcceptConnection:(ALPHABonjourDataConnection *)connection
 {
     self.notification.notificationLabel.text = [self serverStatusText];
 }
 
-- (void)bonjourServer:(DTBonjourServer *)server didReceiveObject:(ALPHANetworkObject *)object onConnection:(DTBonjourDataConnection *)connection
+- (void)bonjourServer:(ALPHABonjourServer *)server didReceiveObject:(ALPHANetworkObject *)object onConnection:(ALPHABonjourDataConnection *)connection
 {
     //
     // We had received an object, we assume it is bonjour object, but make a check to prevent crashing.
