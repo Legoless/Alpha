@@ -82,7 +82,7 @@
             [[UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[ navigationControllerClass ]] setTitleTextAttributes:@{ NSFontAttributeName : self.headerTitleFont, NSForegroundColorAttributeName : self.headerTitleColor }];
             
             [[UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[ navigationControllerClass ]] setBackgroundImage:[UIImage alpha_imageWithColor:self.headerBackgroundColor] forBarMetrics:UIBarMetricsDefault];
-            //[[UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[ navigationControllerClass ]] setTranslucent:NO];
+            [[UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[ navigationControllerClass]] setTranslucent:NO];
             [[UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[ navigationControllerClass ]] setTintColor:self.headerButtonColor];
             [[UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[ navigationControllerClass ]] setShadowImage:[UIImage alpha_imageWithColor:self.headerShadowColor]];
             
@@ -96,6 +96,10 @@
     else {
         #pragma clang diagnostic push
         #pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        
+        //
+        // Here we are in iOS 8, so we must call the deprecated methods. Disable warnings.
+        //
         
         if (navigationControllerClass)
         {
