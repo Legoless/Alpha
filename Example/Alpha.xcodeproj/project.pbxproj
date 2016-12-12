@@ -18,6 +18,265 @@
 		3800427D1BC0257B00369725 /* ALPHAContactPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 3800427C1BC0257B00369725 /* ALPHAContactPermission.m */; };
 		380042801BC0258A00369725 /* ALPHAAssetPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 3800427F1BC0258A00369725 /* ALPHAAssetPermission.m */; };
 		380042841BC0318900369725 /* ALPHASocialPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 380042831BC0318900369725 /* ALPHASocialPermission.m */; };
+		3810F5761DFED3C3004F51B6 /* ALPHATouchFingerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 385A687B1BACA111000B4898 /* ALPHATouchFingerView.m */; };
+		3810F5771DFED3C3004F51B6 /* AAPLDatePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356828418F3670300BAAD62 /* AAPLDatePickerController.m */; };
+		3810F5781DFED3C3004F51B6 /* AAPLButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356827E18F3670300BAAD62 /* AAPLButtonViewController.m */; };
+		3810F5791DFED3C3004F51B6 /* AAPLSegmentedControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356829418F3670300BAAD62 /* AAPLSegmentedControlViewController.m */; };
+		3810F57A1DFED3C3004F51B6 /* AAPLDefaultToolbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356828818F3670300BAAD62 /* AAPLDefaultToolbarViewController.m */; };
+		3810F57B1DFED3C3004F51B6 /* AAPLTintedToolbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 535682A218F3670300BAAD62 /* AAPLTintedToolbarViewController.m */; };
+		3810F57C1DFED3C3004F51B6 /* AAPLPageControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356828E18F3670300BAAD62 /* AAPLPageControlViewController.m */; };
+		3810F57D1DFED3C3004F51B6 /* AAPLSwitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356829C18F3670300BAAD62 /* AAPLSwitchViewController.m */; };
+		3810F57E1DFED3C3004F51B6 /* AAPLDefaultSearchBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356828618F3670300BAAD62 /* AAPLDefaultSearchBarViewController.m */; };
+		3810F57F1DFED3C3004F51B6 /* AAPLNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DE4A4B1A0B7DB000EB447A /* AAPLNetworkViewController.m */; };
+		3810F5801DFED3C3004F51B6 /* AAPLTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 535682A018F3670300BAAD62 /* AAPLTextViewController.m */; };
+		3810F5811DFED3C3004F51B6 /* AAPLPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356829018F3670300BAAD62 /* AAPLPickerViewController.m */; };
+		3810F5821DFED3C3004F51B6 /* AAPLWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 535682A418F3670300BAAD62 /* AAPLWebViewController.m */; };
+		3810F5831DFED3C3004F51B6 /* AAPLTextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356829E18F3670300BAAD62 /* AAPLTextFieldViewController.m */; };
+		3810F5841DFED3C3004F51B6 /* UIColor+AAPLApplicationSpecific.m in Sources */ = {isa = PBXBuildFile; fileRef = 535682A618F3670300BAAD62 /* UIColor+AAPLApplicationSpecific.m */; };
+		3810F5851DFED3C3004F51B6 /* AAPLSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356829618F3670300BAAD62 /* AAPLSliderViewController.m */; };
+		3810F5861DFED3C3004F51B6 /* AAPLStepperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356829A18F3670300BAAD62 /* AAPLStepperViewController.m */; };
+		3810F5871DFED3C3004F51B6 /* AAPLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356827C18F3670300BAAD62 /* AAPLAppDelegate.m */; };
+		3810F5881DFED3C3004F51B6 /* AAPLProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356829218F3670300BAAD62 /* AAPLProgressViewController.m */; };
+		3810F5891DFED3C3004F51B6 /* AAPLCustomToolbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356828218F3670300BAAD62 /* AAPLCustomToolbarViewController.m */; };
+		3810F58A1DFED3C3004F51B6 /* AAPLCatalogTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38353E881B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m */; };
+		3810F58B1DFED3C3004F51B6 /* AAPLActivityIndicatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356827818F3670300BAAD62 /* AAPLActivityIndicatorViewController.m */; };
+		3810F58C1DFED3C3004F51B6 /* AAPLSplitViewControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356829818F3670300BAAD62 /* AAPLSplitViewControllerDelegate.m */; };
+		3810F58D1DFED3C3004F51B6 /* AAPLCustomSearchBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356828018F3670300BAAD62 /* AAPLCustomSearchBarViewController.m */; };
+		3810F58E1DFED3C3004F51B6 /* AAPLActionSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356827618F3670200BAAD62 /* AAPLActionSheetViewController.m */; };
+		3810F5901DFED3C3004F51B6 /* AAPLImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356828A18F3670300BAAD62 /* AAPLImageViewController.m */; };
+		3810F5911DFED3C3004F51B6 /* AAPLAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356827A18F3670300BAAD62 /* AAPLAlertViewController.m */; };
+		3810F5921DFED3C3004F51B6 /* AAPLMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5356828C18F3670300BAAD62 /* AAPLMasterViewController.m */; };
+		3810F5931DFED3C3004F51B6 /* ALPHAAssetPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 3800427F1BC0258A00369725 /* ALPHAAssetPermission.m */; };
+		3810F5941DFED3C3004F51B6 /* ALPHAApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E646EB152F51F48E19D7F0 /* ALPHAApplicationDelegate.m */; };
+		3810F5951DFED3C3004F51B6 /* ALPHAArgumentInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E645E11DF2F516FD803626 /* ALPHAArgumentInputView.m */; };
+		3810F5961DFED3C3004F51B6 /* ALPHAArgumentInputDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E647BD16D28CAA30DBEB36 /* ALPHAArgumentInputDateView.m */; };
+		3810F5971DFED3C3004F51B6 /* ALPHAArgumentInputFontView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E648EA2617EA13078FF7CF /* ALPHAArgumentInputFontView.m */; };
+		3810F5981DFED3C3004F51B6 /* ALPHAArgumentInputTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6439C97ED08B8CD48C7BF /* ALPHAArgumentInputTextView.m */; };
+		3810F5991DFED3C3004F51B6 /* ALPHAArgumentInputColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64D11E21D909791053C9D /* ALPHAArgumentInputColorView.m */; };
+		3810F59A1DFED3C3004F51B6 /* ALPHAArgumentInputNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64E0366E4DEA5C460AABE /* ALPHAArgumentInputNumberView.m */; };
+		3810F59B1DFED3C3004F51B6 /* ALPHAArgumentInputStringView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64E2129A60241310A4E77 /* ALPHAArgumentInputStringView.m */; };
+		3810F59C1DFED3C3004F51B6 /* ALPHAAlizarinColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 38921B951B34E6BB00A50DED /* ALPHAAlizarinColorPalette.m */; };
+		3810F59D1DFED3C3004F51B6 /* ALPHAArgumentInputStructView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6469769208705A7C6EA4A /* ALPHAArgumentInputStructView.m */; };
+		3810F59E1DFED3C3004F51B6 /* ALPHAPermissionSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DAAE4F1BBF03DF0023841C /* ALPHAPermissionSource.m */; };
+		3810F59F1DFED3C3004F51B6 /* ALPHAArgumentInputSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64706A4801CB3284F0520 /* ALPHAArgumentInputSwitchView.m */; };
+		3810F5A01DFED3C3004F51B6 /* ALPHATCC.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DDA2141BD4422F004A0A0A /* ALPHATCC.m */; };
+		3810F5A11DFED3C3004F51B6 /* ALPHAArgumentInputViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64201C71E82A1C23F47AB /* ALPHAArgumentInputViewFactory.m */; };
+		3810F5A21DFED3C3004F51B6 /* ALPHANotificationPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D00BFC1BC0632200FCCD2A /* ALPHANotificationPermission.m */; };
+		3810F5A31DFED3C3004F51B6 /* ALPHAArgumentInputJSONObjectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E645D600867604B6584F8E /* ALPHAArgumentInputJSONObjectView.m */; };
+		3810F5A41DFED3C3004F51B6 /* ALPHAContactPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 3800427C1BC0257B00369725 /* ALPHAContactPermission.m */; };
+		3810F5A51DFED3C3004F51B6 /* ALPHAArgumentInputFontsPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64AAB5130500A5991B02D /* ALPHAArgumentInputFontsPickerView.m */; };
+		3810F5A61DFED3C3004F51B6 /* ALPHAArgumentInputNotSupportedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64DA5969FDF394FDC7C34 /* ALPHAArgumentInputNotSupportedView.m */; };
+		3810F5A71DFED3C3004F51B6 /* ALPHAFieldEditorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6430A8E7E895A161C5DDC /* ALPHAFieldEditorView.m */; };
+		3810F5A81DFED3C3004F51B6 /* ALPHAPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 380042671BC0238F00369725 /* ALPHAPermission.m */; };
+		3810F5A91DFED3C3004F51B6 /* ALPHASearchScopeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6499BE649DA3597893D0B /* ALPHASearchScopeView.m */; };
+		3810F5AA1DFED3C3004F51B6 /* ALPHAMultilineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64288BF273F3B5EC707A5 /* ALPHAMultilineTableViewCell.m */; };
+		3810F5AB1DFED3C3004F51B6 /* ALPHACache.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6431139066ACFBB4A7CC4 /* ALPHACache.m */; };
+		3810F5AC1DFED3C3004F51B6 /* ALPHADiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E644B253A57FBA7D259256 /* ALPHADiskCache.m */; };
+		3810F5AD1DFED3C3004F51B6 /* ALPHAMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64D4B5308995FF54C8C60 /* ALPHAMemoryCache.m */; };
+		3810F5AE1DFED3C3004F51B6 /* ALPHAAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E646D40194EF6C1C8C94B9 /* ALPHAAsset.m */; };
+		3810F5AF1DFED3C3004F51B6 /* ALPHACoreAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64B41D0DC0C18744ACA4F /* ALPHACoreAssets.m */; };
+		3810F5B01DFED3C3004F51B6 /* UIImage+Creation.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E641DC5A9EBD922381B43C /* UIImage+Creation.m */; };
+		3810F5B11DFED3C3004F51B6 /* ALPHAKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F71B1BBDC2320010FC35 /* ALPHAKeychainItem.m */; };
+		3810F5B21DFED3C3004F51B6 /* ALPHAAssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64E3EC013DFEAB611D118 /* ALPHAAssetManager.m */; };
+		3810F5B31DFED3C3004F51B6 /* ALPHAPermissionIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DAAE4C1BBF03D30023841C /* ALPHAPermissionIcon.m */; };
+		3810F5B41DFED3C3004F51B6 /* ALPHAAudioPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 380042731BC0255900369725 /* ALPHAAudioPermission.m */; };
+		3810F5B51DFED3C3004F51B6 /* ALPHAModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64140C295D54EDDDC03B1 /* ALPHAModel.m */; };
+		3810F5B61DFED3C3004F51B6 /* ALPHAPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E643EBB7DC7DCBFF250E64 /* ALPHAPlugin.m */; };
+		3810F5B71DFED3C3004F51B6 /* ALPHAAmethystColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 38921B981B34E6DC00A50DED /* ALPHAAmethystColorPalette.m */; };
+		3810F5B81DFED3C3004F51B6 /* ALPHAGenericModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64A1B52B57EFC736D99D1 /* ALPHAGenericModel.m */; };
+		3810F5B91DFED3C3004F51B6 /* ALPHAActionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64557041FDF319837AA1F /* ALPHAActionItem.m */; };
+		3810F5BA1DFED3C3004F51B6 /* ALPHABlockActionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64D445BD2FFFF9B7969AE /* ALPHABlockActionItem.m */; };
+		3810F5BB1DFED3C3004F51B6 /* ALPHAScreenActionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64C373CD7EFA5E2535D75 /* ALPHAScreenActionItem.m */; };
+		3810F5BC1DFED3C3004F51B6 /* ALPHASelectorActionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6413FDE2F997043C2D24A /* ALPHASelectorActionItem.m */; };
+		3810F5BD1DFED3C3004F51B6 /* ALPHAVideoPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 380042791BC0257200369725 /* ALPHAVideoPermission.m */; };
+		3810F5BE1DFED3C3004F51B6 /* ALPHAGlobalActionIdentifiers.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64E6E76E6D5281CD4BE4C /* ALPHAGlobalActionIdentifiers.m */; };
+		3810F5BF1DFED3C3004F51B6 /* ALPHAObjectIvar.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E643D6B2EB95DA1DF7D7FF /* ALPHAObjectIvar.m */; };
+		3810F5C01DFED3C3004F51B6 /* ALPHAObjectType.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E646C03F7E86B3676183CF /* ALPHAObjectType.m */; };
+		3810F5C11DFED3C3004F51B6 /* ALPHAObjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E640914F76BF10A6C0ADD6 /* ALPHAObjectModel.m */; };
+		3810F5C21DFED3C3004F51B6 /* ALPHATCCAccessManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DDA2111BD4294D004A0A0A /* ALPHATCCAccessManager.m */; };
+		3810F5C31DFED3C3004F51B6 /* ALPHAObjectMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64401EAA221BFE7A27AFB /* ALPHAObjectMethod.m */; };
+		3810F5C41DFED3C3004F51B6 /* ALPHALocationPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 3800426D1BC0253300369725 /* ALPHALocationPermission.m */; };
+		3810F5C51DFED3C3004F51B6 /* ALPHAObjectContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E643022E66710EDD848A8C /* ALPHAObjectContent.m */; };
+		3810F5C61DFED3C3004F51B6 /* ALPHAObjectElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E644EF7C129C26329412A9 /* ALPHAObjectElement.m */; };
+		3810F5C71DFED3C3004F51B6 /* ALPHAObjectArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6456F2D140455C14D96BA /* ALPHAObjectArgument.m */; };
+		3810F5C81DFED3C3004F51B6 /* ALPHAObjectProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64562E0523BFB2F16C65C /* ALPHAObjectProperty.m */; };
+		3810F5C91DFED3C3004F51B6 /* ALPHAObjectActionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6435193C938160FC3270A /* ALPHAObjectActionItem.m */; };
+		3810F5CA1DFED3C3004F51B6 /* ALPHAScreenItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6418E8380F9A7A882BF1F /* ALPHAScreenItem.m */; };
+		3810F5CB1DFED3C3004F51B6 /* ALPHAScreenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6473F98FE59675899D294 /* ALPHAScreenModel.m */; };
+		3810F5CC1DFED3C3004F51B6 /* ALPHAScreenSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64515AEF5872DDECB045F /* ALPHAScreenSection.m */; };
+		3810F5CD1DFED3C3004F51B6 /* ALPHATableScreenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64E8F1CFC492D32AABCFC /* ALPHATableScreenModel.m */; };
+		3810F5CE1DFED3C3004F51B6 /* ALPHALocalSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64FB34C76E8DE0802E5D4 /* ALPHALocalSource.m */; };
+		3810F5CF1DFED3C3004F51B6 /* ALPHABaseDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E643F2B4DCB91DCE33358C /* ALPHABaseDataSource.m */; };
+		3810F5D01DFED3C3004F51B6 /* ALPHALocalFileSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64431CBCECB371ABCF086 /* ALPHALocalFileSource.m */; };
+		3810F5D11DFED3C3004F51B6 /* ALPHAGreenSeaColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 38921B921B34E64C00A50DED /* ALPHAGreenSeaColorPalette.m */; };
+		3810F5D21DFED3C3004F51B6 /* ALPHARequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64F30D0AA048293B5695F /* ALPHARequest.m */; };
+		3810F5D31DFED3C3004F51B6 /* ALPHANetworkObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64C3D7A0B2067991AE9D7 /* ALPHANetworkObject.m */; };
+		3810F5D41DFED3C3004F51B6 /* ALPHAConverterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E648216DA1B6196D416396 /* ALPHAConverterManager.m */; };
+		3810F5D51DFED3C3004F51B6 /* ALPHASerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E648E15FFB932E8C1C8F31 /* ALPHASerialization.m */; };
+		3810F5D61DFED3C3004F51B6 /* ALPHATheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64B1F84594923C5CB244E /* ALPHATheme.m */; };
+		3810F5D71DFED3C3004F51B6 /* UIColor+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E640D73B83F4B23F016B19 /* UIColor+Tools.m */; };
+		3810F5D81DFED3C3004F51B6 /* ALPHAColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6466B335BB573ECAFBF31 /* ALPHAColorPalette.m */; };
+		3810F5D91DFED3C3004F51B6 /* UIFont+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E641BF956FAC052BA0E3B6 /* UIFont+Convenience.m */; };
+		3810F5DA1DFED3C3004F51B6 /* ALPHAWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E640C5C2A9E1031857BED9 /* ALPHAWindow.m */; };
+		3810F5DB1DFED3C3004F51B6 /* ALPHAManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E643E5D9BC6C3EA2B16038 /* ALPHAManager.m */; };
+		3810F5DC1DFED3C3004F51B6 /* ALPHAFileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E643B85B6A9B0820A9314C /* ALPHAFileModel.m */; };
+		3810F5DD1DFED3C3004F51B6 /* ALPHABluetoothPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 380042761BC0256600369725 /* ALPHABluetoothPermission.m */; };
+		3810F5DE1DFED3C3004F51B6 /* ALPHAFileObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6427B99B504D1BF340444 /* ALPHAFileObject.m */; };
+		3810F5DF1DFED3C3004F51B6 /* ALPHAFileIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E646F302B321138D3609D6 /* ALPHAFileIcon.m */; };
+		3810F5E01DFED3C3004F51B6 /* ALPHAFileSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64894C065619D983360F1 /* ALPHAFileSource.m */; };
+		3810F5E11DFED3C3004F51B6 /* ALPHAFileConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6450C0DF714383FF018F6 /* ALPHAFileConverter.m */; };
+		3810F5E21DFED3C3004F51B6 /* ALPHAFilePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64B6EDBC8337F9A3FD1D9 /* ALPHAFilePlugin.m */; };
+		3810F5E31DFED3C3004F51B6 /* ALPHAHeapSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64499AD4D8B9965DF4B17 /* ALPHAHeapSource.m */; };
+		3810F5E41DFED3C3004F51B6 /* ALPHAHeapPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64EF3F48FEB3B31B3E6B5 /* ALPHAHeapPlugin.m */; };
+		3810F5E51DFED3C3004F51B6 /* ALPHASerializableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E647A6C4C18DE593642A3D /* ALPHASerializableView.m */; };
+		3810F5E61DFED3C3004F51B6 /* ALPHAViewHierarchyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E647557349A7B3F9952986 /* ALPHAViewHierarchyModel.m */; };
+		3810F5E71DFED3C3004F51B6 /* ALPHADepthIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64AACB8FDA9E290C2B326 /* ALPHADepthIndicatorView.m */; };
+		3810F5E81DFED3C3004F51B6 /* ALPHAHierarchyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E642D0FB0D8757E1871BC2 /* ALPHAHierarchyTableViewCell.m */; };
+		3810F5E91DFED3C3004F51B6 /* ALPHAMoveIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6495FF94368D00635CCC2 /* ALPHAMoveIcon.m */; };
+		3810F5EA1DFED3C3004F51B6 /* ALPHAViewIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E645F18DAB13C4F4329699 /* ALPHAViewIcon.m */; };
+		3810F5EB1DFED3C3004F51B6 /* ALPHASelectIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6424B965E2AE53F8FD082 /* ALPHASelectIcon.m */; };
+		3810F5EC1DFED3C3004F51B6 /* ALPHAViewHierarchySource.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64D3210EE8DD6861ADCC5 /* ALPHAViewHierarchySource.m */; };
+		3810F5ED1DFED3C3004F51B6 /* ALPHAEventPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 380042701BC0254800369725 /* ALPHAEventPermission.m */; };
+		3810F5EE1DFED3C3004F51B6 /* ALPHAToolbarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64E17A193BCB4AC50DE55 /* ALPHAToolbarItem.m */; };
+		3810F5EF1DFED3C3004F51B6 /* ALPHAExplorerToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64EC72C7C8C90C384313D /* ALPHAExplorerToolbar.m */; };
+		3810F5F01DFED3C3004F51B6 /* ALPHAViewHierarchyConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64909A2AEB194AE426F7F /* ALPHAViewHierarchyConverter.m */; };
+		3810F5F11DFED3C3004F51B6 /* ALPHAViewHierarchyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6421E2F831DA436D0D06E /* ALPHAViewHierarchyViewController.m */; };
+		3810F5F21DFED3C3004F51B6 /* ALPHAHierarchyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E641D2D18EF1650D98A462 /* ALPHAHierarchyTableViewController.m */; };
+		3810F5F31DFED3C3004F51B6 /* ALPHAViewHierarchyPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E649B1309A520BB8D8733A /* ALPHAViewHierarchyPlugin.m */; };
+		3810F5F41DFED3C3004F51B6 /* ALPHAEventModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64AC78BBCB8D3E42EF904 /* ALPHAEventModel.m */; };
+		3810F5F51DFED3C3004F51B6 /* ALPHAApplicationEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E644CA99FD490CBA4365FD /* ALPHAApplicationEvent.m */; };
+		3810F5F61DFED3C3004F51B6 /* ALPHAEventIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64A016960608E62D41B92 /* ALPHAEventIcon.m */; };
+		3810F5F71DFED3C3004F51B6 /* UIViewController+ALPHAEventLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E644C4C424FCFA6C080937 /* UIViewController+ALPHAEventLog.m */; };
+		3810F5F81DFED3C3004F51B6 /* ALPHAEventSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6485A4B0B0AC58F6D16C4 /* ALPHAEventSource.m */; };
+		3810F5F91DFED3C3004F51B6 /* ALPHAEventConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E645F5F742D75940136E8A /* ALPHAEventConverter.m */; };
+		3810F5FA1DFED3C3004F51B6 /* ALPHAEventPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6442218FC62DFFB64CDFF /* ALPHAEventPlugin.m */; };
+		3810F5FB1DFED3C3004F51B6 /* ALPHAStatusIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64B757C827FC4FD0CF083 /* ALPHAStatusIcon.m */; };
+		3810F5FC1DFED3C3004F51B6 /* UIDevice+ALPHAStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E642E0E015B2D3078774FA /* UIDevice+ALPHAStatus.m */; };
+		3810F5FD1DFED3C3004F51B6 /* ALPHADeviceStatusSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E644B66FE05379FA58AB9F /* ALPHADeviceStatusSource.m */; };
+		3810F5FE1DFED3C3004F51B6 /* ALPHAStatePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E640DE08418BEDFBEABBB8 /* ALPHAStatePlugin.m */; };
+		3810F5FF1DFED3C3004F51B6 /* ALPHAApplicationPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDA7AAF1B5C12E000BB35FD /* ALPHAApplicationPlugin.m */; };
+		3810F6001DFED3C3004F51B6 /* ALPHATCCPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FF936B1D95AE7700108D72 /* ALPHATCCPermission.m */; };
+		3810F6011DFED3C3004F51B6 /* ALPHATouchIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64A16D01380CFE81AB707 /* ALPHATouchIcon.m */; };
+		3810F6021DFED3C3004F51B6 /* ALPHATouchWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64ECEA58CF255B0CC5633 /* ALPHATouchWindow.m */; };
+		3810F6031DFED3C3004F51B6 /* ALPHATouchPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64FC964F043C419DC0879 /* ALPHATouchPlugin.m */; };
+		3810F6041DFED3C3004F51B6 /* ALPHAGlobalIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E641273A3081D0236CAA63 /* ALPHAGlobalIcon.m */; };
+		3810F6051DFED3C3004F51B6 /* ALPHAClassSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64D0BC964A2AD25A2FCD3 /* ALPHAClassSource.m */; };
+		3810F6061DFED3C3004F51B6 /* ALPHAGlobalSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6448BD6C56B2080424F91 /* ALPHAGlobalSource.m */; };
+		3810F6071DFED3C3004F51B6 /* ALPHALibrarySource.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64BC88D4093BAB657D1FA /* ALPHALibrarySource.m */; };
+		3810F6081DFED3C3004F51B6 /* ALPHAGlobalPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64726C998A6A70165191A /* ALPHAGlobalPlugin.m */; };
+		3810F6091DFED3C3004F51B6 /* ALPHAHomePermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D00BFF1BC0674F00FCCD2A /* ALPHAHomePermission.m */; };
+		3810F60A1DFED3C3004F51B6 /* ALPHAApplicationIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDA7ABE1B5C2D2300BB35FD /* ALPHAApplicationIcon.m */; };
+		3810F60B1DFED3C3004F51B6 /* ALPHAObjectSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64537EA38EE9360B91B89 /* ALPHAObjectSource.m */; };
+		3810F60C1DFED3C3004F51B6 /* ALPHAObjectConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E644266D51071765BC4E2E /* ALPHAObjectConverter.m */; };
+		3810F60D1DFED3C3004F51B6 /* ALPHAMotionPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D00BF91BC0603100FCCD2A /* ALPHAMotionPermission.m */; };
+		3810F60E1DFED3C3004F51B6 /* ALPHAObjectPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64B1C4D56B91967382C7A /* ALPHAObjectPlugin.m */; };
+		3810F60F1DFED3C3004F51B6 /* ALPHAMobileDataPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D00C031BC0686E00FCCD2A /* ALPHAMobileDataPermission.m */; };
+		3810F6101DFED3C3004F51B6 /* ALPHAConsoleLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6472BBD34BF38857826A4 /* ALPHAConsoleLog.m */; };
+		3810F6111DFED3C3004F51B6 /* ALPHAConsoleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6448B2B0B17B9A266E8D4 /* ALPHAConsoleModel.m */; };
+		3810F6121DFED3C3004F51B6 /* ALPHAConsoleIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E643AA35420C72C09FE871 /* ALPHAConsoleIcon.m */; };
+		3810F6131DFED3C3004F51B6 /* ALPHAConsoleSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64A1AFB49463A8C45E6EA /* ALPHAConsoleSource.m */; };
+		3810F6141DFED3C3004F51B6 /* ALPHAConsoleConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64020E8958D50EA093F11 /* ALPHAConsoleConverter.m */; };
+		3810F6151DFED3C3004F51B6 /* ALPHAConsolePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E643F8963204419CA79909 /* ALPHAConsolePlugin.m */; };
+		3810F6161DFED3C3004F51B6 /* ALPHANetworkError.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64281B9C8169BED4035A0 /* ALPHANetworkError.m */; };
+		3810F6171DFED3C3004F51B6 /* ALPHANetworkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E640648F4F1DD7C6697534 /* ALPHANetworkModel.m */; };
+		3810F6181DFED3C3004F51B6 /* ALPHANetworkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64EAF4E1970E3A4B57F6B /* ALPHANetworkRequest.m */; };
+		3810F6191DFED3C3004F51B6 /* ALPHANetworkResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6489267A79F908E13DF20 /* ALPHANetworkResponse.m */; };
+		3810F61A1DFED3C3004F51B6 /* ALPHANetworkInitiator.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64E650F33D26415B9CB5A /* ALPHANetworkInitiator.m */; };
+		3810F61B1DFED3C3004F51B6 /* ALPHANetworkConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64FA5C4FDCF9B8641AC23 /* ALPHANetworkConnection.m */; };
+		3810F61C1DFED3C3004F51B6 /* ALPHANetworkConnectionTiming.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64B6A2A73F6CBAFFFF0EB /* ALPHANetworkConnectionTiming.m */; };
+		3810F61D1DFED3C3004F51B6 /* ALPHANetworkIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64F054A367B37E3EE6A45 /* ALPHANetworkIcon.m */; };
+		3810F61E1DFED3C3004F51B6 /* ALPHARequestState.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E645B98E24A37830366288 /* ALPHARequestState.m */; };
+		3810F61F1DFED3C3004F51B6 /* ALPHANetworkSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E647C6FD5421F79F3FD88A /* ALPHANetworkSource.m */; };
+		3810F6201DFED3C3004F51B6 /* ALPHANetworkConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E645733356329D59546C04 /* ALPHANetworkConverter.m */; };
+		3810F6211DFED3C3004F51B6 /* ALPHANetworkPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64CBE4CA1E3936B08C068 /* ALPHANetworkPlugin.m */; };
+		3810F6221DFED3C3004F51B6 /* ALPHAEnvironmentIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64D8EBBABF00FEC4CAB4E /* ALPHAEnvironmentIcon.m */; };
+		3810F6231DFED3C3004F51B6 /* ALPHABootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64A25DEE28EE7B54AAFE9 /* ALPHABootstrap.m */; };
+		3810F6241DFED3C3004F51B6 /* ALPHACircleMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E641C9DF3FF079B0DE9863 /* ALPHACircleMenuView.m */; };
+		3810F6251DFED3C3004F51B6 /* ALPHAExplorerMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E645A11A1834CA7573AD27 /* ALPHAExplorerMenu.m */; };
+		3810F6261DFED3C3004F51B6 /* ALPHAMenuCenterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64CA1FE3F2C933F49D682 /* ALPHAMenuCenterView.m */; };
+		3810F6271DFED3C3004F51B6 /* ALPHAPermissionPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DAAE491BBF03C50023841C /* ALPHAPermissionPlugin.m */; };
+		3810F6281DFED3C3004F51B6 /* ALPHAKeychainPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F70B1BBDB3940010FC35 /* ALPHAKeychainPlugin.m */; };
+		3810F6291DFED3C3004F51B6 /* ALPHAMenuSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64EE3429DD4A44F2435C7 /* ALPHAMenuSource.m */; };
+		3810F62A1DFED3C3004F51B6 /* ALPHATouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386601521B4184A000217F85 /* ALPHATouchViewController.m */; };
+		3810F62B1DFED3C3004F51B6 /* ALPHAInterfacePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6437951689DFD830BCE66 /* ALPHAInterfacePlugin.m */; };
+		3810F62C1DFED3C3004F51B6 /* ALPHAScreenshotIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6489FAE7C1F70127B7CDD /* ALPHAScreenshotIcon.m */; };
+		3810F62D1DFED3C3004F51B6 /* ALPHAKeychainIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F7101BBDB4E30010FC35 /* ALPHAKeychainIcon.m */; };
+		3810F62E1DFED3C3004F51B6 /* ALPHAScreenshotSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E648E9E35B4F4CEE9A73F9 /* ALPHAScreenshotSource.m */; };
+		3810F62F1DFED3C3004F51B6 /* ALPHASocialPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 380042831BC0318900369725 /* ALPHASocialPermission.m */; };
+		3810F6301DFED3C3004F51B6 /* ALPHAScreenshotPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E642C93AD7F77C775A4CBD /* ALPHAScreenshotPlugin.m */; };
+		3810F6311DFED3C3004F51B6 /* ALPHANotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E644FA1315C3AAB18CD7D4 /* ALPHANotification.m */; };
+		3810F6321DFED3C3004F51B6 /* ALPHANotificationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64AA94B8AC8A68A701EA1 /* ALPHANotificationModel.m */; };
+		3810F6331DFED3C3004F51B6 /* ALPHANotificationIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64315D2C90FF395F784AC /* ALPHANotificationIcon.m */; };
+		3810F6341DFED3C3004F51B6 /* ALPHAKeychainSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F7171BBDBAC20010FC35 /* ALPHAKeychainSource.m */; };
+		3810F6351DFED3C3004F51B6 /* ALPHANotificationSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6477FCE8D60B83DE44D0C /* ALPHANotificationSource.m */; };
+		3810F6361DFED3C3004F51B6 /* ALPHANotificationConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6452F02A3D71157F625B4 /* ALPHANotificationConverter.m */; };
+		3810F6371DFED3C3004F51B6 /* ALPHANotificationPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6474C3FDE8A669ACE0C58 /* ALPHANotificationPlugin.m */; };
+		3810F6381DFED3C3004F51B6 /* UIApplication+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E642CCB1CF2D3BD750ADDE /* UIApplication+Private.m */; };
+		3810F6391DFED3C3004F51B6 /* ALPHAKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F7141BBDBAB70010FC35 /* ALPHAKeychain.m */; };
+		3810F63A1DFED3C3004F51B6 /* ALPHANotioColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64BF582C828B926AAA794 /* ALPHANotioColorPalette.m */; };
+		3810F63B1DFED3C3004F51B6 /* ALPHAFormenteraColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E644B1BF05EC3DC0F15223 /* ALPHAFormenteraColorPalette.m */; };
+		3810F63C1DFED3C3004F51B6 /* ALPHATrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64BE57C6B1340278E36D5 /* ALPHATrigger.m */; };
+		3810F63D1DFED3C3004F51B6 /* ALPHATapTrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6428E5322491CD0A7AD0B /* ALPHATapTrigger.m */; };
+		3810F63E1DFED3C3004F51B6 /* ALPHAShakeTrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E645715B59C59D99A6BE6C /* ALPHAShakeTrigger.m */; };
+		3810F63F1DFED3C3004F51B6 /* ALPHAInstanceSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F71E1BBDD6540010FC35 /* ALPHAInstanceSource.m */; };
+		3810F6401DFED3C3004F51B6 /* ALPHATrigger+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E648FC29C74FC22E4DD607 /* ALPHATrigger+Private.m */; };
+		3810F6411DFED3C3004F51B6 /* ALPHAScreenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64515E8FF6F1F53A7E39E /* ALPHAScreenManager.m */; };
+		3810F6421DFED3C3004F51B6 /* ALPHAWebRendererViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64C8C419D90EF6DF0AD25 /* ALPHAWebRendererViewController.m */; };
+		3810F6431DFED3C3004F51B6 /* ALPHAIvarRendererViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E646B28784ED9C20757631 /* ALPHAIvarRendererViewController.m */; };
+		3810F6441DFED3C3004F51B6 /* ALPHAFieldRendererViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64BB9534C2E762D2EDCDC /* ALPHAFieldRendererViewController.m */; };
+		3810F6451DFED3C3004F51B6 /* ALPHAImageRendererViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6457D49F16BB1E6956800 /* ALPHAImageRendererViewController.m */; };
+		3810F6461DFED3C3004F51B6 /* ALPHAHealthPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 3800426A1BC0252700369725 /* ALPHAHealthPermission.m */; };
+		3810F6471DFED3C3004F51B6 /* ALPHATableRendererViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6486E2CA8083ADBF373B8 /* ALPHATableRendererViewController.m */; };
+		3810F6481DFED3C3004F51B6 /* ALPHAMethodRendererViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64DF8E4997F95F7FC1734 /* ALPHAMethodRendererViewController.m */; };
+		3810F6491DFED3C3004F51B6 /* ALPHAApplicationSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDA7AB61B5C17D800BB35FD /* ALPHAApplicationSource.m */; };
+		3810F64A1DFED3C3004F51B6 /* ALPHADefaultsRendererViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6455A250F43A35459A4F4 /* ALPHADefaultsRendererViewController.m */; };
+		3810F64B1DFED3C3004F51B6 /* ALPHAPropertyRendererViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64A97AE74952B2F07E55F /* ALPHAPropertyRendererViewController.m */; };
+		3810F64C1DFED3C3004F51B6 /* ALPHAGenericConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6412E59045233D6802FA6 /* ALPHAGenericConverter.m */; };
+		3810F64D1DFED3C3004F51B6 /* ALPHANavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E649CCC9F4E4DE97537827 /* ALPHANavigationController.m */; };
+		3810F64E1DFED3C3004F51B6 /* ALPHAStatusBarNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E642861AD834F103D2C0B9 /* ALPHAStatusBarNotification.m */; };
+		3810F64F1DFED3C3004F51B6 /* ALPHAHeapIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6450E9A0336DC8264760A /* ALPHAHeapIcon.m */; };
+		3810F6501DFED3C3004F51B6 /* UIApplication+Delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6499A1B119A1DBDD5DC80 /* UIApplication+Delegate.m */; };
+		3810F6511DFED3C3004F51B6 /* ALPHAMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64BA9D92EC77EFD47E60C /* ALPHAMainViewController.m */; };
+		3810F6521DFED3C3004F51B6 /* UIApplication+Screenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6474440D3138A5BDFEA1D /* UIApplication+Screenshot.m */; };
+		3810F6531DFED3C3004F51B6 /* UIApplication+Information.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64AD041F9733142D78238 /* UIApplication+Information.m */; };
+		3810F6541DFED3C3004F51B6 /* UIView+Snapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64E1EB499F9FE344B1FB4 /* UIView+Snapshot.m */; };
+		3810F6551DFED3C3004F51B6 /* UIColor+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64872D4D7D58B5F4A850B /* UIColor+Utility.m */; };
+		3810F6561DFED3C3004F51B6 /* UIApplication+Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E641DF1424CEE0F56D96EA /* UIApplication+Event.m */; };
+		3810F6571DFED3C3004F51B6 /* UIDevice+Software.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6489D002CB07D01A935F8 /* UIDevice+Software.m */; };
+		3810F6581DFED3C3004F51B6 /* UIDevice+Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64138F829428A2FA534B1 /* UIDevice+Hardware.m */; };
+		3810F6591DFED3C3004F51B6 /* UIDevice+DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64E91B30FD3B26A119021 /* UIDevice+DeviceInfo.m */; };
+		3810F65A1DFED3C3004F51B6 /* UIDevice+Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E646111670FB31CED938FF /* UIDevice+Network.m */; };
+		3810F65B1DFED3C3004F51B6 /* UIApplication+Version.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64A8268B61C7A550B612C /* UIApplication+Version.m */; };
+		3810F65C1DFED3C3004F51B6 /* ALPHAUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6434E5B2861CEFEA82FC3 /* ALPHAUtility.m */; };
+		3810F65D1DFED3C3004F51B6 /* ALPHAFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64DD148ED07D454AE1EF9 /* ALPHAFileManager.m */; };
+		3810F65E1DFED3C3004F51B6 /* ALPHAMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E647828BA65BA40A64E54C /* ALPHAMath.m */; };
+		3810F65F1DFED3C3004F51B6 /* ALPHARuntimeUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64AA41CA8B090C514D725 /* ALPHARuntimeUtility.m */; };
+		3810F6601DFED3C3004F51B6 /* ALPHAHeapUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E648842AAC0B1217F9E785 /* ALPHAHeapUtility.m */; };
+		3810F6611DFED3C3004F51B6 /* ALPHAMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6432CF2E5F8E50F3C4E57 /* ALPHAMockObject.m */; };
+		3810F6621DFED3C3004F51B6 /* ALPHACanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64B9C0980E8BCB1A59A24 /* ALPHACanvasView.m */; };
+		3810F6631DFED3C3004F51B6 /* ALPHAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64C88D1CE108A78EFD0FB /* ALPHAViewController.m */; };
+		3810F6641DFED3C3004F51B6 /* NSString+Entities.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E644E372A430A193C3A468 /* NSString+Entities.m */; };
+		3810F6651DFED3C3004F51B6 /* NSString+Identifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E642C7AF44F7AA405780C5 /* NSString+Identifier.m */; };
+		3810F6661DFED3C3004F51B6 /* NSString+Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64002A30566680CFA164F /* NSString+Data.m */; };
+		3810F6671DFED3C3004F51B6 /* NSObject+Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64F927D5ED9E627B00C62 /* NSObject+Property.m */; };
+		3810F6681DFED3C3004F51B6 /* NSString+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64F9935E350C52DD3B7CD /* NSString+Random.m */; };
+		3810F6691DFED3C3004F51B6 /* NSInvocation+Argument.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E648743DEF651DA77133BC /* NSInvocation+Argument.m */; };
+		3810F66A1DFED3C3004F51B6 /* NSArray+Class.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6473637973D0EB85A01F8 /* NSArray+Class.m */; };
+		3810F66B1DFED3C3004F51B6 /* NSObject+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E6484A21F18120FFFA31C0 /* NSObject+Swizzle.m */; };
+		3810F66C1DFED3C3004F51B6 /* NSObject+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64A2F19429E756AE9135A /* NSObject+Runtime.m */; };
+		3810F66E1DFED3C3004F51B6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5356823F18F3656900BAAD62 /* CoreGraphics.framework */; };
+		3810F66F1DFED3C3004F51B6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5356824118F3656900BAAD62 /* UIKit.framework */; };
+		3810F6701DFED3C3004F51B6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5356823D18F3656900BAAD62 /* Foundation.framework */; };
+		3810F6711DFED3C3004F51B6 /* Pods_UICatalog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37054DA17DB1C1270E871813 /* Pods_UICatalog.framework */; };
+		3810F6731DFED3C3004F51B6 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5356825218F3656900BAAD62 /* Main_iPad.storyboard */; };
+		3810F6741DFED3C3004F51B6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53874F9718F36B1800510922 /* Localizable.strings */; };
+		3810F6751DFED3C3004F51B6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5356825818F3656900BAAD62 /* Images.xcassets */; };
+		3810F6771DFED3C3004F51B6 /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38DE4A481A0B78BC00EB447A /* Launch.xib */; };
+		3810F6781DFED3C3004F51B6 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5356824F18F3656900BAAD62 /* Main_iPhone.storyboard */; };
+		3810F6831DFED5D2004F51B6 /* ALPHAToolDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3810F6821DFED5D2004F51B6 /* ALPHAToolDelegate.m */; };
+		3810F6861DFED61E004F51B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3810F6851DFED61E004F51B6 /* main.m */; };
+		3810F6881DFED62D004F51B6 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3810F6871DFED62D004F51B6 /* Launch.storyboard */; };
+		3810F68B1DFED6E8004F51B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3810F68A1DFED6E8004F51B6 /* Main.storyboard */; };
 		38353E891B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38353E881B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m */; };
 		385A687C1BACA111000B4898 /* ALPHATouchFingerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 385A687B1BACA111000B4898 /* ALPHATouchFingerView.m */; };
 		38614DEF1DFEBCEB001D3209 /* ALPHABonjourDataChunk.h in Headers */ = {isa = PBXBuildFile; fileRef = 38614DED1DFEBCEB001D3209 /* ALPHABonjourDataChunk.h */; };
@@ -284,7 +543,6 @@
 		38E2F71C1BBDC2320010FC35 /* ALPHAKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F71B1BBDC2320010FC35 /* ALPHAKeychainItem.m */; };
 		38E2F71F1BBDD6540010FC35 /* ALPHAInstanceSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F71E1BBDD6540010FC35 /* ALPHAInstanceSource.m */; };
 		38FF936C1D95AE7700108D72 /* ALPHATCCPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FF936B1D95AE7700108D72 /* ALPHATCCPermission.m */; };
-		3EC6487318FF8A5000024205 /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3EC6487218FF8A5000024205 /* ReadMe.txt */; };
 		5356823E18F3656900BAAD62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5356823D18F3656900BAAD62 /* Foundation.framework */; };
 		5356824018F3656900BAAD62 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5356823F18F3656900BAAD62 /* CoreGraphics.framework */; };
 		5356824218F3656900BAAD62 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5356824118F3656900BAAD62 /* UIKit.framework */; };
@@ -548,6 +806,13 @@
 		380042821BC0318900369725 /* ALPHASocialPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHASocialPermission.h; sourceTree = "<group>"; };
 		380042831BC0318900369725 /* ALPHASocialPermission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHASocialPermission.m; sourceTree = "<group>"; };
 		380042851BC03B8200369725 /* ALPHAPermissions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALPHAPermissions.h; sourceTree = "<group>"; };
+		3810F67E1DFED3C3004F51B6 /* AlphaTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlphaTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3810F67F1DFED3C3004F51B6 /* AlphaTool-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "AlphaTool-Info.plist"; path = "/Users/legoless/Dropbox/Work/Library/Alpha/AlphaTool/AlphaTool-Info.plist"; sourceTree = "<absolute>"; };
+		3810F6811DFED5D2004F51B6 /* ALPHAToolDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAToolDelegate.h; sourceTree = "<group>"; };
+		3810F6821DFED5D2004F51B6 /* ALPHAToolDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAToolDelegate.m; sourceTree = "<group>"; };
+		3810F6851DFED61E004F51B6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3810F6871DFED62D004F51B6 /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
+		3810F68A1DFED6E8004F51B6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		38353E871B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLCatalogTableTableViewController.h; sourceTree = "<group>"; };
 		38353E881B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLCatalogTableTableViewController.m; sourceTree = "<group>"; };
 		385A687A1BACA111000B4898 /* ALPHATouchFingerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHATouchFingerView.h; sourceTree = "<group>"; };
@@ -606,7 +871,6 @@
 		38E2F71E1BBDD6540010FC35 /* ALPHAInstanceSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ALPHAInstanceSource.m; path = ../../../../../alpha/alpha/plugins/Object/Sources/ALPHAInstanceSource.m; sourceTree = "<group>"; };
 		38FF936A1D95AE7700108D72 /* ALPHATCCPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHATCCPermission.h; sourceTree = "<group>"; };
 		38FF936B1D95AE7700108D72 /* ALPHATCCPermission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHATCCPermission.m; sourceTree = "<group>"; };
-		3EC6487218FF8A5000024205 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = SOURCE_ROOT; };
 		5356823A18F3656900BAAD62 /* UICatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UICatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5356823D18F3656900BAAD62 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5356823F18F3656900BAAD62 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1093,6 +1357,17 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3810F66D1DFED3C3004F51B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3810F66E1DFED3C3004F51B6 /* CoreGraphics.framework in Frameworks */,
+				3810F66F1DFED3C3004F51B6 /* UIKit.framework in Frameworks */,
+				3810F6701DFED3C3004F51B6 /* Foundation.framework in Frameworks */,
+				3810F6711DFED3C3004F51B6 /* Pods_UICatalog.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		38621EFE1DEDFABE00DE9281 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1158,6 +1433,28 @@
 				380042791BC0257200369725 /* ALPHAVideoPermission.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3810F6801DFED4F7004F51B6 /* AlphaTool */ = {
+			isa = PBXGroup;
+			children = (
+				3810F6851DFED61E004F51B6 /* main.m */,
+				3810F6811DFED5D2004F51B6 /* ALPHAToolDelegate.h */,
+				3810F6821DFED5D2004F51B6 /* ALPHAToolDelegate.m */,
+				3810F6841DFED5DD004F51B6 /* Supporting Files */,
+				3810F6871DFED62D004F51B6 /* Launch.storyboard */,
+				3810F68A1DFED6E8004F51B6 /* Main.storyboard */,
+			);
+			name = AlphaTool;
+			path = ../AlphaTool;
+			sourceTree = "<group>";
+		};
+		3810F6841DFED5DD004F51B6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3810F67F1DFED3C3004F51B6 /* AlphaTool-Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		38353E861B1DADEF009E4ACF /* Integration */ = {
@@ -1279,9 +1576,9 @@
 		5356823118F3656900BAAD62 = {
 			isa = PBXGroup;
 			children = (
-				3EC6487218FF8A5000024205 /* ReadMe.txt */,
 				5356824318F3656900BAAD62 /* UICatalog */,
 				67E640BD036992B1D2CEF64E /* Alpha */,
+				3810F6801DFED4F7004F51B6 /* AlphaTool */,
 				67E64D867CE01946BB4D8CD2 /* AlphaTests */,
 				5356823C18F3656900BAAD62 /* Frameworks */,
 				5356823B18F3656900BAAD62 /* Products */,
@@ -1295,6 +1592,7 @@
 				5356823A18F3656900BAAD62 /* UICatalog.app */,
 				38621F021DEDFABE00DE9281 /* Alpha.framework */,
 				38621F0A1DEDFABE00DE9281 /* AlphaTests.xctest */,
+				3810F67E1DFED3C3004F51B6 /* AlphaTool.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2711,6 +3009,26 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		3810F5731DFED3C3004F51B6 /* AlphaTool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3810F67B1DFED3C3004F51B6 /* Build configuration list for PBXNativeTarget "AlphaTool" */;
+			buildPhases = (
+				3810F5741DFED3C3004F51B6 /* [CP] Check Pods Manifest.lock */,
+				3810F5751DFED3C3004F51B6 /* Sources */,
+				3810F66D1DFED3C3004F51B6 /* Frameworks */,
+				3810F6721DFED3C3004F51B6 /* Resources */,
+				3810F6791DFED3C3004F51B6 /* [CP] Embed Pods Frameworks */,
+				3810F67A1DFED3C3004F51B6 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AlphaTool;
+			productName = UICatalog;
+			productReference = 3810F67E1DFED3C3004F51B6 /* AlphaTool.app */;
+			productType = "com.apple.product-type.application";
+		};
 		38621F011DEDFABE00DE9281 /* Alpha */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38621F191DEDFABE00DE9281 /* Build configuration list for PBXNativeTarget "Alpha" */;
@@ -2778,6 +3096,9 @@
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Unified Sense";
 				TargetAttributes = {
+					3810F5731DFED3C3004F51B6 = {
+						DevelopmentTeam = 289M6XEDV4;
+					};
 					38621F011DEDFABE00DE9281 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 289M6XEDV4;
@@ -2808,6 +3129,7 @@
 			projectRoot = "";
 			targets = (
 				5356823918F3656900BAAD62 /* UICatalog */,
+				3810F5731DFED3C3004F51B6 /* AlphaTool */,
 				38621F011DEDFABE00DE9281 /* Alpha */,
 				38621F091DEDFABE00DE9281 /* AlphaTests */,
 			);
@@ -2815,6 +3137,20 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3810F6721DFED3C3004F51B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3810F68B1DFED6E8004F51B6 /* Main.storyboard in Resources */,
+				3810F6731DFED3C3004F51B6 /* Main_iPad.storyboard in Resources */,
+				3810F6741DFED3C3004F51B6 /* Localizable.strings in Resources */,
+				3810F6751DFED3C3004F51B6 /* Images.xcassets in Resources */,
+				3810F6881DFED62D004F51B6 /* Launch.storyboard in Resources */,
+				3810F6771DFED3C3004F51B6 /* Launch.xib in Resources */,
+				3810F6781DFED3C3004F51B6 /* Main_iPhone.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		38621F001DEDFABE00DE9281 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2836,7 +3172,6 @@
 				5356825418F3656900BAAD62 /* Main_iPad.storyboard in Resources */,
 				53874F9918F36B1800510922 /* Localizable.strings in Resources */,
 				5356825918F3656900BAAD62 /* Images.xcassets in Resources */,
-				3EC6487318FF8A5000024205 /* ReadMe.txt in Resources */,
 				38DE4A491A0B78BC00EB447A /* Launch.xib in Resources */,
 				5356825118F3656900BAAD62 /* Main_iPhone.storyboard in Resources */,
 			);
@@ -2875,6 +3210,51 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UICatalog/Pods-UICatalog-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3810F5741DFED3C3004F51B6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3810F6791DFED3C3004F51B6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UICatalog/Pods-UICatalog-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3810F67A1DFED3C3004F51B6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UICatalog/Pods-UICatalog-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		EDEB3953FE5F54A21125E146 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2893,6 +3273,261 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3810F5751DFED3C3004F51B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3810F5761DFED3C3004F51B6 /* ALPHATouchFingerView.m in Sources */,
+				3810F5771DFED3C3004F51B6 /* AAPLDatePickerController.m in Sources */,
+				3810F5781DFED3C3004F51B6 /* AAPLButtonViewController.m in Sources */,
+				3810F5791DFED3C3004F51B6 /* AAPLSegmentedControlViewController.m in Sources */,
+				3810F57A1DFED3C3004F51B6 /* AAPLDefaultToolbarViewController.m in Sources */,
+				3810F57B1DFED3C3004F51B6 /* AAPLTintedToolbarViewController.m in Sources */,
+				3810F57C1DFED3C3004F51B6 /* AAPLPageControlViewController.m in Sources */,
+				3810F57D1DFED3C3004F51B6 /* AAPLSwitchViewController.m in Sources */,
+				3810F57E1DFED3C3004F51B6 /* AAPLDefaultSearchBarViewController.m in Sources */,
+				3810F57F1DFED3C3004F51B6 /* AAPLNetworkViewController.m in Sources */,
+				3810F6861DFED61E004F51B6 /* main.m in Sources */,
+				3810F5801DFED3C3004F51B6 /* AAPLTextViewController.m in Sources */,
+				3810F5811DFED3C3004F51B6 /* AAPLPickerViewController.m in Sources */,
+				3810F5821DFED3C3004F51B6 /* AAPLWebViewController.m in Sources */,
+				3810F5831DFED3C3004F51B6 /* AAPLTextFieldViewController.m in Sources */,
+				3810F5841DFED3C3004F51B6 /* UIColor+AAPLApplicationSpecific.m in Sources */,
+				3810F5851DFED3C3004F51B6 /* AAPLSliderViewController.m in Sources */,
+				3810F5861DFED3C3004F51B6 /* AAPLStepperViewController.m in Sources */,
+				3810F5871DFED3C3004F51B6 /* AAPLAppDelegate.m in Sources */,
+				3810F5881DFED3C3004F51B6 /* AAPLProgressViewController.m in Sources */,
+				3810F5891DFED3C3004F51B6 /* AAPLCustomToolbarViewController.m in Sources */,
+				3810F58A1DFED3C3004F51B6 /* AAPLCatalogTableTableViewController.m in Sources */,
+				3810F58B1DFED3C3004F51B6 /* AAPLActivityIndicatorViewController.m in Sources */,
+				3810F58C1DFED3C3004F51B6 /* AAPLSplitViewControllerDelegate.m in Sources */,
+				3810F58D1DFED3C3004F51B6 /* AAPLCustomSearchBarViewController.m in Sources */,
+				3810F58E1DFED3C3004F51B6 /* AAPLActionSheetViewController.m in Sources */,
+				3810F5901DFED3C3004F51B6 /* AAPLImageViewController.m in Sources */,
+				3810F5911DFED3C3004F51B6 /* AAPLAlertViewController.m in Sources */,
+				3810F5921DFED3C3004F51B6 /* AAPLMasterViewController.m in Sources */,
+				3810F5931DFED3C3004F51B6 /* ALPHAAssetPermission.m in Sources */,
+				3810F5941DFED3C3004F51B6 /* ALPHAApplicationDelegate.m in Sources */,
+				3810F5951DFED3C3004F51B6 /* ALPHAArgumentInputView.m in Sources */,
+				3810F5961DFED3C3004F51B6 /* ALPHAArgumentInputDateView.m in Sources */,
+				3810F5971DFED3C3004F51B6 /* ALPHAArgumentInputFontView.m in Sources */,
+				3810F5981DFED3C3004F51B6 /* ALPHAArgumentInputTextView.m in Sources */,
+				3810F5991DFED3C3004F51B6 /* ALPHAArgumentInputColorView.m in Sources */,
+				3810F59A1DFED3C3004F51B6 /* ALPHAArgumentInputNumberView.m in Sources */,
+				3810F59B1DFED3C3004F51B6 /* ALPHAArgumentInputStringView.m in Sources */,
+				3810F59C1DFED3C3004F51B6 /* ALPHAAlizarinColorPalette.m in Sources */,
+				3810F59D1DFED3C3004F51B6 /* ALPHAArgumentInputStructView.m in Sources */,
+				3810F59E1DFED3C3004F51B6 /* ALPHAPermissionSource.m in Sources */,
+				3810F59F1DFED3C3004F51B6 /* ALPHAArgumentInputSwitchView.m in Sources */,
+				3810F5A01DFED3C3004F51B6 /* ALPHATCC.m in Sources */,
+				3810F5A11DFED3C3004F51B6 /* ALPHAArgumentInputViewFactory.m in Sources */,
+				3810F5A21DFED3C3004F51B6 /* ALPHANotificationPermission.m in Sources */,
+				3810F5A31DFED3C3004F51B6 /* ALPHAArgumentInputJSONObjectView.m in Sources */,
+				3810F5A41DFED3C3004F51B6 /* ALPHAContactPermission.m in Sources */,
+				3810F5A51DFED3C3004F51B6 /* ALPHAArgumentInputFontsPickerView.m in Sources */,
+				3810F5A61DFED3C3004F51B6 /* ALPHAArgumentInputNotSupportedView.m in Sources */,
+				3810F5A71DFED3C3004F51B6 /* ALPHAFieldEditorView.m in Sources */,
+				3810F5A81DFED3C3004F51B6 /* ALPHAPermission.m in Sources */,
+				3810F5A91DFED3C3004F51B6 /* ALPHASearchScopeView.m in Sources */,
+				3810F5AA1DFED3C3004F51B6 /* ALPHAMultilineTableViewCell.m in Sources */,
+				3810F5AB1DFED3C3004F51B6 /* ALPHACache.m in Sources */,
+				3810F5AC1DFED3C3004F51B6 /* ALPHADiskCache.m in Sources */,
+				3810F5AD1DFED3C3004F51B6 /* ALPHAMemoryCache.m in Sources */,
+				3810F5AE1DFED3C3004F51B6 /* ALPHAAsset.m in Sources */,
+				3810F5AF1DFED3C3004F51B6 /* ALPHACoreAssets.m in Sources */,
+				3810F5B01DFED3C3004F51B6 /* UIImage+Creation.m in Sources */,
+				3810F5B11DFED3C3004F51B6 /* ALPHAKeychainItem.m in Sources */,
+				3810F5B21DFED3C3004F51B6 /* ALPHAAssetManager.m in Sources */,
+				3810F5B31DFED3C3004F51B6 /* ALPHAPermissionIcon.m in Sources */,
+				3810F5B41DFED3C3004F51B6 /* ALPHAAudioPermission.m in Sources */,
+				3810F5B51DFED3C3004F51B6 /* ALPHAModel.m in Sources */,
+				3810F5B61DFED3C3004F51B6 /* ALPHAPlugin.m in Sources */,
+				3810F5B71DFED3C3004F51B6 /* ALPHAAmethystColorPalette.m in Sources */,
+				3810F5B81DFED3C3004F51B6 /* ALPHAGenericModel.m in Sources */,
+				3810F5B91DFED3C3004F51B6 /* ALPHAActionItem.m in Sources */,
+				3810F5BA1DFED3C3004F51B6 /* ALPHABlockActionItem.m in Sources */,
+				3810F5BB1DFED3C3004F51B6 /* ALPHAScreenActionItem.m in Sources */,
+				3810F5BC1DFED3C3004F51B6 /* ALPHASelectorActionItem.m in Sources */,
+				3810F5BD1DFED3C3004F51B6 /* ALPHAVideoPermission.m in Sources */,
+				3810F5BE1DFED3C3004F51B6 /* ALPHAGlobalActionIdentifiers.m in Sources */,
+				3810F5BF1DFED3C3004F51B6 /* ALPHAObjectIvar.m in Sources */,
+				3810F5C01DFED3C3004F51B6 /* ALPHAObjectType.m in Sources */,
+				3810F5C11DFED3C3004F51B6 /* ALPHAObjectModel.m in Sources */,
+				3810F5C21DFED3C3004F51B6 /* ALPHATCCAccessManager.m in Sources */,
+				3810F5C31DFED3C3004F51B6 /* ALPHAObjectMethod.m in Sources */,
+				3810F5C41DFED3C3004F51B6 /* ALPHALocationPermission.m in Sources */,
+				3810F5C51DFED3C3004F51B6 /* ALPHAObjectContent.m in Sources */,
+				3810F5C61DFED3C3004F51B6 /* ALPHAObjectElement.m in Sources */,
+				3810F5C71DFED3C3004F51B6 /* ALPHAObjectArgument.m in Sources */,
+				3810F5C81DFED3C3004F51B6 /* ALPHAObjectProperty.m in Sources */,
+				3810F5C91DFED3C3004F51B6 /* ALPHAObjectActionItem.m in Sources */,
+				3810F5CA1DFED3C3004F51B6 /* ALPHAScreenItem.m in Sources */,
+				3810F5CB1DFED3C3004F51B6 /* ALPHAScreenModel.m in Sources */,
+				3810F5CC1DFED3C3004F51B6 /* ALPHAScreenSection.m in Sources */,
+				3810F5CD1DFED3C3004F51B6 /* ALPHATableScreenModel.m in Sources */,
+				3810F5CE1DFED3C3004F51B6 /* ALPHALocalSource.m in Sources */,
+				3810F5CF1DFED3C3004F51B6 /* ALPHABaseDataSource.m in Sources */,
+				3810F5D01DFED3C3004F51B6 /* ALPHALocalFileSource.m in Sources */,
+				3810F5D11DFED3C3004F51B6 /* ALPHAGreenSeaColorPalette.m in Sources */,
+				3810F5D21DFED3C3004F51B6 /* ALPHARequest.m in Sources */,
+				3810F5D31DFED3C3004F51B6 /* ALPHANetworkObject.m in Sources */,
+				3810F5D41DFED3C3004F51B6 /* ALPHAConverterManager.m in Sources */,
+				3810F5D51DFED3C3004F51B6 /* ALPHASerialization.m in Sources */,
+				3810F5D61DFED3C3004F51B6 /* ALPHATheme.m in Sources */,
+				3810F5D71DFED3C3004F51B6 /* UIColor+Tools.m in Sources */,
+				3810F5D81DFED3C3004F51B6 /* ALPHAColorPalette.m in Sources */,
+				3810F5D91DFED3C3004F51B6 /* UIFont+Convenience.m in Sources */,
+				3810F5DA1DFED3C3004F51B6 /* ALPHAWindow.m in Sources */,
+				3810F5DB1DFED3C3004F51B6 /* ALPHAManager.m in Sources */,
+				3810F5DC1DFED3C3004F51B6 /* ALPHAFileModel.m in Sources */,
+				3810F5DD1DFED3C3004F51B6 /* ALPHABluetoothPermission.m in Sources */,
+				3810F5DE1DFED3C3004F51B6 /* ALPHAFileObject.m in Sources */,
+				3810F5DF1DFED3C3004F51B6 /* ALPHAFileIcon.m in Sources */,
+				3810F5E01DFED3C3004F51B6 /* ALPHAFileSource.m in Sources */,
+				3810F5E11DFED3C3004F51B6 /* ALPHAFileConverter.m in Sources */,
+				3810F5E21DFED3C3004F51B6 /* ALPHAFilePlugin.m in Sources */,
+				3810F5E31DFED3C3004F51B6 /* ALPHAHeapSource.m in Sources */,
+				3810F5E41DFED3C3004F51B6 /* ALPHAHeapPlugin.m in Sources */,
+				3810F5E51DFED3C3004F51B6 /* ALPHASerializableView.m in Sources */,
+				3810F5E61DFED3C3004F51B6 /* ALPHAViewHierarchyModel.m in Sources */,
+				3810F5E71DFED3C3004F51B6 /* ALPHADepthIndicatorView.m in Sources */,
+				3810F5E81DFED3C3004F51B6 /* ALPHAHierarchyTableViewCell.m in Sources */,
+				3810F5E91DFED3C3004F51B6 /* ALPHAMoveIcon.m in Sources */,
+				3810F5EA1DFED3C3004F51B6 /* ALPHAViewIcon.m in Sources */,
+				3810F5EB1DFED3C3004F51B6 /* ALPHASelectIcon.m in Sources */,
+				3810F5EC1DFED3C3004F51B6 /* ALPHAViewHierarchySource.m in Sources */,
+				3810F5ED1DFED3C3004F51B6 /* ALPHAEventPermission.m in Sources */,
+				3810F5EE1DFED3C3004F51B6 /* ALPHAToolbarItem.m in Sources */,
+				3810F5EF1DFED3C3004F51B6 /* ALPHAExplorerToolbar.m in Sources */,
+				3810F5F01DFED3C3004F51B6 /* ALPHAViewHierarchyConverter.m in Sources */,
+				3810F5F11DFED3C3004F51B6 /* ALPHAViewHierarchyViewController.m in Sources */,
+				3810F5F21DFED3C3004F51B6 /* ALPHAHierarchyTableViewController.m in Sources */,
+				3810F5F31DFED3C3004F51B6 /* ALPHAViewHierarchyPlugin.m in Sources */,
+				3810F5F41DFED3C3004F51B6 /* ALPHAEventModel.m in Sources */,
+				3810F5F51DFED3C3004F51B6 /* ALPHAApplicationEvent.m in Sources */,
+				3810F5F61DFED3C3004F51B6 /* ALPHAEventIcon.m in Sources */,
+				3810F5F71DFED3C3004F51B6 /* UIViewController+ALPHAEventLog.m in Sources */,
+				3810F5F81DFED3C3004F51B6 /* ALPHAEventSource.m in Sources */,
+				3810F5F91DFED3C3004F51B6 /* ALPHAEventConverter.m in Sources */,
+				3810F5FA1DFED3C3004F51B6 /* ALPHAEventPlugin.m in Sources */,
+				3810F5FB1DFED3C3004F51B6 /* ALPHAStatusIcon.m in Sources */,
+				3810F5FC1DFED3C3004F51B6 /* UIDevice+ALPHAStatus.m in Sources */,
+				3810F5FD1DFED3C3004F51B6 /* ALPHADeviceStatusSource.m in Sources */,
+				3810F5FE1DFED3C3004F51B6 /* ALPHAStatePlugin.m in Sources */,
+				3810F5FF1DFED3C3004F51B6 /* ALPHAApplicationPlugin.m in Sources */,
+				3810F6001DFED3C3004F51B6 /* ALPHATCCPermission.m in Sources */,
+				3810F6011DFED3C3004F51B6 /* ALPHATouchIcon.m in Sources */,
+				3810F6021DFED3C3004F51B6 /* ALPHATouchWindow.m in Sources */,
+				3810F6031DFED3C3004F51B6 /* ALPHATouchPlugin.m in Sources */,
+				3810F6041DFED3C3004F51B6 /* ALPHAGlobalIcon.m in Sources */,
+				3810F6051DFED3C3004F51B6 /* ALPHAClassSource.m in Sources */,
+				3810F6061DFED3C3004F51B6 /* ALPHAGlobalSource.m in Sources */,
+				3810F6071DFED3C3004F51B6 /* ALPHALibrarySource.m in Sources */,
+				3810F6081DFED3C3004F51B6 /* ALPHAGlobalPlugin.m in Sources */,
+				3810F6091DFED3C3004F51B6 /* ALPHAHomePermission.m in Sources */,
+				3810F60A1DFED3C3004F51B6 /* ALPHAApplicationIcon.m in Sources */,
+				3810F60B1DFED3C3004F51B6 /* ALPHAObjectSource.m in Sources */,
+				3810F60C1DFED3C3004F51B6 /* ALPHAObjectConverter.m in Sources */,
+				3810F60D1DFED3C3004F51B6 /* ALPHAMotionPermission.m in Sources */,
+				3810F60E1DFED3C3004F51B6 /* ALPHAObjectPlugin.m in Sources */,
+				3810F60F1DFED3C3004F51B6 /* ALPHAMobileDataPermission.m in Sources */,
+				3810F6101DFED3C3004F51B6 /* ALPHAConsoleLog.m in Sources */,
+				3810F6111DFED3C3004F51B6 /* ALPHAConsoleModel.m in Sources */,
+				3810F6121DFED3C3004F51B6 /* ALPHAConsoleIcon.m in Sources */,
+				3810F6131DFED3C3004F51B6 /* ALPHAConsoleSource.m in Sources */,
+				3810F6141DFED3C3004F51B6 /* ALPHAConsoleConverter.m in Sources */,
+				3810F6151DFED3C3004F51B6 /* ALPHAConsolePlugin.m in Sources */,
+				3810F6161DFED3C3004F51B6 /* ALPHANetworkError.m in Sources */,
+				3810F6171DFED3C3004F51B6 /* ALPHANetworkModel.m in Sources */,
+				3810F6181DFED3C3004F51B6 /* ALPHANetworkRequest.m in Sources */,
+				3810F6191DFED3C3004F51B6 /* ALPHANetworkResponse.m in Sources */,
+				3810F61A1DFED3C3004F51B6 /* ALPHANetworkInitiator.m in Sources */,
+				3810F61B1DFED3C3004F51B6 /* ALPHANetworkConnection.m in Sources */,
+				3810F61C1DFED3C3004F51B6 /* ALPHANetworkConnectionTiming.m in Sources */,
+				3810F61D1DFED3C3004F51B6 /* ALPHANetworkIcon.m in Sources */,
+				3810F61E1DFED3C3004F51B6 /* ALPHARequestState.m in Sources */,
+				3810F61F1DFED3C3004F51B6 /* ALPHANetworkSource.m in Sources */,
+				3810F6201DFED3C3004F51B6 /* ALPHANetworkConverter.m in Sources */,
+				3810F6211DFED3C3004F51B6 /* ALPHANetworkPlugin.m in Sources */,
+				3810F6221DFED3C3004F51B6 /* ALPHAEnvironmentIcon.m in Sources */,
+				3810F6231DFED3C3004F51B6 /* ALPHABootstrap.m in Sources */,
+				3810F6241DFED3C3004F51B6 /* ALPHACircleMenuView.m in Sources */,
+				3810F6251DFED3C3004F51B6 /* ALPHAExplorerMenu.m in Sources */,
+				3810F6261DFED3C3004F51B6 /* ALPHAMenuCenterView.m in Sources */,
+				3810F6271DFED3C3004F51B6 /* ALPHAPermissionPlugin.m in Sources */,
+				3810F6281DFED3C3004F51B6 /* ALPHAKeychainPlugin.m in Sources */,
+				3810F6291DFED3C3004F51B6 /* ALPHAMenuSource.m in Sources */,
+				3810F62A1DFED3C3004F51B6 /* ALPHATouchViewController.m in Sources */,
+				3810F62B1DFED3C3004F51B6 /* ALPHAInterfacePlugin.m in Sources */,
+				3810F62C1DFED3C3004F51B6 /* ALPHAScreenshotIcon.m in Sources */,
+				3810F62D1DFED3C3004F51B6 /* ALPHAKeychainIcon.m in Sources */,
+				3810F62E1DFED3C3004F51B6 /* ALPHAScreenshotSource.m in Sources */,
+				3810F62F1DFED3C3004F51B6 /* ALPHASocialPermission.m in Sources */,
+				3810F6301DFED3C3004F51B6 /* ALPHAScreenshotPlugin.m in Sources */,
+				3810F6311DFED3C3004F51B6 /* ALPHANotification.m in Sources */,
+				3810F6321DFED3C3004F51B6 /* ALPHANotificationModel.m in Sources */,
+				3810F6331DFED3C3004F51B6 /* ALPHANotificationIcon.m in Sources */,
+				3810F6341DFED3C3004F51B6 /* ALPHAKeychainSource.m in Sources */,
+				3810F6351DFED3C3004F51B6 /* ALPHANotificationSource.m in Sources */,
+				3810F6361DFED3C3004F51B6 /* ALPHANotificationConverter.m in Sources */,
+				3810F6371DFED3C3004F51B6 /* ALPHANotificationPlugin.m in Sources */,
+				3810F6381DFED3C3004F51B6 /* UIApplication+Private.m in Sources */,
+				3810F6391DFED3C3004F51B6 /* ALPHAKeychain.m in Sources */,
+				3810F63A1DFED3C3004F51B6 /* ALPHANotioColorPalette.m in Sources */,
+				3810F63B1DFED3C3004F51B6 /* ALPHAFormenteraColorPalette.m in Sources */,
+				3810F63C1DFED3C3004F51B6 /* ALPHATrigger.m in Sources */,
+				3810F63D1DFED3C3004F51B6 /* ALPHATapTrigger.m in Sources */,
+				3810F63E1DFED3C3004F51B6 /* ALPHAShakeTrigger.m in Sources */,
+				3810F63F1DFED3C3004F51B6 /* ALPHAInstanceSource.m in Sources */,
+				3810F6401DFED3C3004F51B6 /* ALPHATrigger+Private.m in Sources */,
+				3810F6411DFED3C3004F51B6 /* ALPHAScreenManager.m in Sources */,
+				3810F6421DFED3C3004F51B6 /* ALPHAWebRendererViewController.m in Sources */,
+				3810F6431DFED3C3004F51B6 /* ALPHAIvarRendererViewController.m in Sources */,
+				3810F6441DFED3C3004F51B6 /* ALPHAFieldRendererViewController.m in Sources */,
+				3810F6451DFED3C3004F51B6 /* ALPHAImageRendererViewController.m in Sources */,
+				3810F6461DFED3C3004F51B6 /* ALPHAHealthPermission.m in Sources */,
+				3810F6471DFED3C3004F51B6 /* ALPHATableRendererViewController.m in Sources */,
+				3810F6481DFED3C3004F51B6 /* ALPHAMethodRendererViewController.m in Sources */,
+				3810F6491DFED3C3004F51B6 /* ALPHAApplicationSource.m in Sources */,
+				3810F64A1DFED3C3004F51B6 /* ALPHADefaultsRendererViewController.m in Sources */,
+				3810F64B1DFED3C3004F51B6 /* ALPHAPropertyRendererViewController.m in Sources */,
+				3810F64C1DFED3C3004F51B6 /* ALPHAGenericConverter.m in Sources */,
+				3810F64D1DFED3C3004F51B6 /* ALPHANavigationController.m in Sources */,
+				3810F64E1DFED3C3004F51B6 /* ALPHAStatusBarNotification.m in Sources */,
+				3810F64F1DFED3C3004F51B6 /* ALPHAHeapIcon.m in Sources */,
+				3810F6501DFED3C3004F51B6 /* UIApplication+Delegate.m in Sources */,
+				3810F6511DFED3C3004F51B6 /* ALPHAMainViewController.m in Sources */,
+				3810F6521DFED3C3004F51B6 /* UIApplication+Screenshot.m in Sources */,
+				3810F6831DFED5D2004F51B6 /* ALPHAToolDelegate.m in Sources */,
+				3810F6531DFED3C3004F51B6 /* UIApplication+Information.m in Sources */,
+				3810F6541DFED3C3004F51B6 /* UIView+Snapshot.m in Sources */,
+				3810F6551DFED3C3004F51B6 /* UIColor+Utility.m in Sources */,
+				3810F6561DFED3C3004F51B6 /* UIApplication+Event.m in Sources */,
+				3810F6571DFED3C3004F51B6 /* UIDevice+Software.m in Sources */,
+				3810F6581DFED3C3004F51B6 /* UIDevice+Hardware.m in Sources */,
+				3810F6591DFED3C3004F51B6 /* UIDevice+DeviceInfo.m in Sources */,
+				3810F65A1DFED3C3004F51B6 /* UIDevice+Network.m in Sources */,
+				3810F65B1DFED3C3004F51B6 /* UIApplication+Version.m in Sources */,
+				3810F65C1DFED3C3004F51B6 /* ALPHAUtility.m in Sources */,
+				3810F65D1DFED3C3004F51B6 /* ALPHAFileManager.m in Sources */,
+				3810F65E1DFED3C3004F51B6 /* ALPHAMath.m in Sources */,
+				3810F65F1DFED3C3004F51B6 /* ALPHARuntimeUtility.m in Sources */,
+				3810F6601DFED3C3004F51B6 /* ALPHAHeapUtility.m in Sources */,
+				3810F6611DFED3C3004F51B6 /* ALPHAMockObject.m in Sources */,
+				3810F6621DFED3C3004F51B6 /* ALPHACanvasView.m in Sources */,
+				3810F6631DFED3C3004F51B6 /* ALPHAViewController.m in Sources */,
+				3810F6641DFED3C3004F51B6 /* NSString+Entities.m in Sources */,
+				3810F6651DFED3C3004F51B6 /* NSString+Identifier.m in Sources */,
+				3810F6661DFED3C3004F51B6 /* NSString+Data.m in Sources */,
+				3810F6671DFED3C3004F51B6 /* NSObject+Property.m in Sources */,
+				3810F6681DFED3C3004F51B6 /* NSString+Random.m in Sources */,
+				3810F6691DFED3C3004F51B6 /* NSInvocation+Argument.m in Sources */,
+				3810F66A1DFED3C3004F51B6 /* NSArray+Class.m in Sources */,
+				3810F66B1DFED3C3004F51B6 /* NSObject+Swizzle.m in Sources */,
+				3810F66C1DFED3C3004F51B6 /* NSObject+Runtime.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		38621EFD1DEDFABE00DE9281 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3441,6 +4076,50 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3810F67C1DFED3C3004F51B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFD5E5B01720C9B3145015EF /* Pods-UICatalog.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 289M6XEDV4;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UICatalog/UICatalog-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/../AlphaTool/AlphaTool-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.unifiedsense.alpha.tool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3810F67D1DFED3C3004F51B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D41A57F9F6654EE322C93AB /* Pods-UICatalog.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 289M6XEDV4;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UICatalog/UICatalog-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/../AlphaTool/AlphaTool-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.unifiedsense.alpha.tool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		38621F1A1DEDFABE00DE9281 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3667,6 +4346,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3810F67B1DFED3C3004F51B6 /* Build configuration list for PBXNativeTarget "AlphaTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3810F67C1DFED3C3004F51B6 /* Debug */,
+				3810F67D1DFED3C3004F51B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		38621F191DEDFABE00DE9281 /* Build configuration list for PBXNativeTarget "Alpha" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
