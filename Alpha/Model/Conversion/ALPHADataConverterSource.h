@@ -18,7 +18,7 @@
  *  Each source is asked if object can be converted, no other calls are made if this call returns NO, to save
  *  the resources required to convert some objects.
  *
- *  @param model of data
+ *  @param object of data
  *
  *  @return YES if conversion is possible
  */
@@ -27,7 +27,7 @@
 /*!
  *  Method converts data model into screen model to be rendered
  *
- *  @param model of data
+ *  @param object of data
  *
  *  @return screen model if successful, nil otherwise
  */

@@ -73,7 +73,7 @@
 /*!
  *  Registers data collector source to plugin.
  *
- *  @param collector data
+ *  @param source data
  */
 - (void)registerSource:(id<ALPHADataSource>)source;
 

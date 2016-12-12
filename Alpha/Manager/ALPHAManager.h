@@ -117,7 +117,7 @@
  *  Adds overlay view controller (child view controller) - use this if view controller is not full-screen.
  *  Uses ChildViewController API
  *
- *  @param viewController
+ *  @param viewController controller to overlay
  *  @param animated       if transition is animated
  *  @param completion     called when finished
  */

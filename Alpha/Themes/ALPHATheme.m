@@ -104,7 +104,8 @@
 /*!
  *  Creates all UIFonts with specified family
  *
- *  @param fontFamily
+ *  @param fontFamily   font family
+ *  @param size         font size
  */
 - (void)setFontsWithFamily:(NSString *)fontFamily defaultPointSize:(CGFloat)size
 {

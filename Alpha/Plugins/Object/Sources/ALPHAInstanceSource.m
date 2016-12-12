@@ -41,8 +41,6 @@ NSString* const ALPHAInstanceDataClassNameIdentifier = @"kALPHAInstanceDataClass
  *  Override: Instance data source can only work if an object is provided for instances
  *
  *  @param request data request
- *
- *  @return YES if correct parameters are provided
  */
 - (void)hasDataForRequest:(ALPHARequest *)request completion:(ALPHADataSourceRequestVerification)completion
 {

@@ -25,7 +25,7 @@
 /*!
  *  Convenience wrapper around alloc init
  *
- *  @param identifier
+ *  @param identifier action item identifier
  *
  *  @return instance of data item
  */

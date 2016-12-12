@@ -21,8 +21,6 @@ typedef void (^ALPHADataSourceRequestVerification)(BOOL result);
  *  data you are looking for. The call is really fast and can be done on any thread.
  *
  *  @param request data request
- *
- *  @return YES if data for request is available
  */
 - (void)hasDataForRequest:(ALPHARequest *)request completion:(ALPHADataSourceRequestVerification)completion;
 
@@ -42,15 +40,13 @@ typedef void (^ALPHADataSourceRequestVerification)(BOOL result);
  *  the return callback of the call will be unknown
  *
  *  @param action to perform
- *
- *  @return YES if action can be performed
  */
 - (void)canPerformAction:(id<ALPHAIdentifiableItem>)action completion:(ALPHADataSourceRequestVerification)completion;
 
 /*!
  *  Performs actions with identifiers
  *
- *  @param identifiers to be performed
+ *  @param action to be performed
  *  @param completion  called upon completion
  */
 - (void)performAction:(id<ALPHAIdentifiableItem>)action completion:(ALPHADataSourceRequestCompletion)completion;

@@ -19,7 +19,7 @@
 /**
  *  Returns array of Class that are hay_subclasses of class
  *
- *  @param parent subclasses
+ *  @param parentClass subclasses
  *
  *  @return array of Class objects
  */
