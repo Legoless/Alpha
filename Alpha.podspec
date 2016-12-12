@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name                   = "Alpha"
-  spec.version                = "0.3.0"
+  spec.version                = "0.3.1"
   spec.summary                = "Next generation debugging framework for iOS"
   spec.description            = <<-DESC
                                 - A simple unified debugging plugin API.
@@ -133,6 +133,14 @@ Pod::Spec.new do |spec|
     subspec.dependency 'Alpha/Core'
   end
 
+  #
+  # Bonjour framework
+  #
+   spec.subspec 'Bonjour' do |subspec|
+    subspec.source_files = 'Alpha/Bonjour/**/*.{h,m}'
+
+    #subspec.dependency 'Alpha/Core'
+  end
 
   #
   # Plugins
@@ -165,7 +173,7 @@ Pod::Spec.new do |spec|
     subspec.source_files = 'Alpha/Plugins/Bonjour/**/*.{h,m}'
 
     subspec.dependency 'Alpha/Core'
-    subspec.dependency 'DTBonjour'
+    subspec.dependency 'Alpha/Bonjour'
   end
 
   #
@@ -277,7 +285,7 @@ Pod::Spec.new do |spec|
   spec.subspec 'Remote' do |subspec|
     subspec.source_files = 'Alpha/Plugins/Screenshot/**/*.{h,m}'
     subspec.dependency 'Alpha/Core'
-    subspec.dependency 'DTBonjour'
+    subspec.dependency 'Alpha/Bonjour'
   end
 
   #
