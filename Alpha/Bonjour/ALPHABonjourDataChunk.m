@@ -12,7 +12,7 @@
 
 #import "ALPHABonjourDataChunk.h"
 #import "ALPHABonjourDataConnection.h"
-#import "NSScanner+ALPHABonjour.h"
+#import "NSScanner+Bonjour.h"
 
 #import <Foundation/NSJSONSerialization.h>
 
@@ -228,7 +228,8 @@
     }
     
     NSDictionary *headers;
-    if (![scanner scanBonjourConnectionHeaders:&headers])
+    
+    if (![scanner alpha_scanBonjourConnectionHeaders:&headers])
     {
         return;
     }
