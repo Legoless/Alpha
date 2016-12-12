@@ -1,5 +1,5 @@
 //
-//  ALPHABonjourPlugin.h
+//  ALPHAServerPlugin.h
 //  Alpha
 //
 //  Created by Dal Rupnik on 16/06/15.
@@ -8,6 +8,6 @@
 
 #import "ALPHAPlugin.h"
 
-@interface ALPHABonjourPlugin : ALPHAPlugin
+@interface ALPHAServerPlugin : ALPHAPlugin
 
 @end

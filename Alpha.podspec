@@ -169,8 +169,8 @@ Pod::Spec.new do |spec|
   # Bonjour
   #
 
-  spec.subspec 'Bonjour' do |subspec|
-    subspec.source_files = 'Alpha/Plugins/Bonjour/**/*.{h,m}'
+  spec.subspec 'Server' do |subspec|
+    subspec.source_files = 'Alpha/Plugins/Server/**/*.{h,m}'
 
     subspec.dependency 'Alpha/Core'
     subspec.dependency 'Alpha/Bonjour'
@@ -278,6 +278,7 @@ Pod::Spec.new do |spec|
     subspec.source_files = 'Alpha/Plugins/Permission/**/*.{h,m}'
     subspec.dependency 'Alpha/Core'
   end
+  
   #
   # Remote
   #

@@ -8,4 +8,4 @@
 
 #import "ALPHABonjourConfig.h"
 
-NSString *const ALPHABonjourType = @"_alphabonjour._tcp";
+NSString *const ALPHABonjourType = @"_alphaserver._tcp";

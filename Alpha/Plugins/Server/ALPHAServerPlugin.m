@@ -1,34 +1,34 @@
 //
-//  ALPHABonjourPlugin.m
+//  ALPHAServerPlugin.m
 //  Alpha
 //
 //  Created by Dal Rupnik on 16/06/15.
 //  Copyright © 2015 Unified Sense. All rights reserved.
 //
 
-#import "ALPHABonjourPlugin.h"
+#import "ALPHAServerPlugin.h"
 #import "ALPHAActions.h"
 #import "ALPHABonjourConfig.h"
 #import "ALPHALocalSource.h"
-#import "ALPHABonjourServerNode.h"
+#import "ALPHAServerNode.h"
 #import "ALPHAManager.h"
 #import "ALPHACoreAssets.h"
 
-@interface ALPHABonjourPlugin ()
+@interface ALPHAServerPlugin ()
 
-@property (nonatomic, strong) ALPHABonjourServerNode* server;
+@property (nonatomic, strong) ALPHAServerNode* server;
 
 @end
 
-@implementation ALPHABonjourPlugin
+@implementation ALPHAServerPlugin
 
 #pragma mark - Getters and Setters
 
-- (ALPHABonjourServerNode *)server
+- (ALPHAServerNode *)server
 {
     if (!_server)
     {
-        _server = [[ALPHABonjourServerNode alloc] init];
+        _server = [[ALPHAServerNode alloc] init];
         
         ALPHALocalSource* source = [ALPHALocalSource new];
         [source loadSourcesFromPlugins:[ALPHAManager defaultManager].plugins];
@@ -43,12 +43,12 @@
 
 - (id)init
 {
-    self = [super initWithIdentifier:@"com.unifiedsense.alpha.plugin.bonjour"];
+    self = [super initWithIdentifier:@"com.unifiedsense.alpha.plugin.server"];
     
     if (self)
     {
-        ALPHABlockActionItem *touchAction = [ALPHABlockActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.bonjour.activate"];
-        touchAction.title = @"Bonjour";
+        ALPHABlockActionItem *touchAction = [ALPHABlockActionItem itemWithIdentifier:@"com.unifiedsense.alpha.plugin.server.activate"];
+        touchAction.title = @"Server";
         touchAction.icon = [[ALPHAAssetManager sharedManager] imageWithIdentifier:ALPHAIconRemoteIdentifier color:nil size:CGSizeMake(28.0, 28.0)];
         touchAction.priority = 3000.0;
         touchAction.actionBlock = ^id(id sender)

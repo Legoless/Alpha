@@ -1,5 +1,5 @@
 //
-//  ALPHABonjourServerNode.h
+//  ALPHAServerNode.h
 //  Alpha
 //
 //  Created by Dal Rupnik on 16/06/15.
@@ -10,7 +10,7 @@
 
 #import "ALPHADataSource.h"
 
-@interface ALPHABonjourServerNode : NSObject
+@interface ALPHAServerNode : NSObject
 
 @property (nonatomic, readonly) BOOL isActive;
 
