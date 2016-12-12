@@ -6,24 +6,17 @@
 //  Copyright © 2015 Unified Sense. All rights reserved.
 //
 
-
 #import "ALPHABonjourPlugin.h"
-
 #import "ALPHAActions.h"
-
 #import "ALPHABonjourConfig.h"
-
 #import "ALPHALocalSource.h"
-
-#import "ALPHABonjourServer.h"
-
+#import "ALPHABonjourServerNode.h"
 #import "ALPHAManager.h"
-
 #import "ALPHACoreAssets.h"
 
 @interface ALPHABonjourPlugin ()
 
-@property (nonatomic, strong) ALPHABonjourServer* server;
+@property (nonatomic, strong) ALPHABonjourServerNode* server;
 
 @end
 
@@ -31,11 +24,11 @@
 
 #pragma mark - Getters and Setters
 
-- (ALPHABonjourServer *)server
+- (ALPHABonjourServerNode *)server
 {
     if (!_server)
     {
-        _server = [[ALPHABonjourServer alloc] init];
+        _server = [[ALPHABonjourServerNode alloc] init];
         
         ALPHALocalSource* source = [ALPHALocalSource new];
         [source loadSourcesFromPlugins:[ALPHAManager defaultManager].plugins];

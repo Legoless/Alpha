@@ -13,11 +13,11 @@
 #import "ALPHABonjourConfig.h"
 #import "ALPHANetworkObject.h"
 
-#import "ALPHABonjourServer.h"
+#import "ALPHABonjourServerNode.h"
 
 #import "ALPHAManager.h"
 
-@interface ALPHABonjourServer () <DTBonjourServerDelegate>
+@interface ALPHABonjourServerNode () <DTBonjourServerDelegate>
 
 @property (atomic, strong) DTBonjourServer *server;
 
@@ -25,7 +25,7 @@
 
 @end
 
-@implementation ALPHABonjourServer
+@implementation ALPHABonjourServerNode
 
 - (BOOL)isActive
 {
