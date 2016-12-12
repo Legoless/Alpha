@@ -161,7 +161,7 @@
 
 #pragma mark - DTBonjourDataConnectionDelegate
 
-- (void)connection:(DTBonjourDataConnection *)connection didReceiveObject:(ALPHANetworkObject *)object
+- (void)connection:(ALPHABonjourDataConnection *)connection didReceiveObject:(ALPHANetworkObject *)object
 {
     //
     // Check if it errored
@@ -203,7 +203,7 @@
     }
 }
 
-- (void)connectionDidClose:(DTBonjourDataConnection *)connection
+- (void)connectionDidClose:(ALPHABonjourDataConnection *)connection
 {
     self.connection = nil;
     

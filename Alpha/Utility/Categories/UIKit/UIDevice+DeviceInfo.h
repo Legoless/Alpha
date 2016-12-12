@@ -69,7 +69,7 @@ typedef NS_ENUM(NSUInteger, ALPHADeviceFamily)
 /**
  *  Returns specific system information by name
  *
- *  @param hay_name type specifier
+ *  @param name type specifier
  *
  *  @return system information in human readable format
  */
