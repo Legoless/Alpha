@@ -63,6 +63,9 @@
     }
     
     [self performSelector:@selector(alphaButtonTapped:) withObject:self afterDelay:1.0];
+    
+    NSLog(@"Logging a message to console...");
+    NSLog(@"Logging another message to console...");
 }
 
 - (void)viewDidAppear:(BOOL)animated
