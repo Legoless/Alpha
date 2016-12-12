@@ -6,6 +6,8 @@
 //  Copyright © 2014 Unified Sense. All rights reserved.
 //
 
+@import UIKit;
+
 #import "UIImage+Creation.h"
 
 #import "ALPHATheme.h"
@@ -71,21 +73,48 @@
 
     Class navigationControllerClass = NSClassFromString(@"ALPHANavigationController");
 
-    if (navigationControllerClass)
-    {
-        [[UINavigationBar appearanceWhenContainedIn:navigationControllerClass, nil] setTitleTextAttributes:@{ NSFontAttributeName : self.headerTitleFont, NSForegroundColorAttributeName : self.headerTitleColor }];
-    
-        [[UINavigationBar appearanceWhenContainedIn:navigationControllerClass, nil] setBackgroundImage:[UIImage alpha_imageWithColor:self.headerBackgroundColor] forBarMetrics:UIBarMetricsDefault];
-        [[UINavigationBar appearanceWhenContainedIn:navigationControllerClass, nil] setTranslucent:NO];
-        [[UINavigationBar appearanceWhenContainedIn:navigationControllerClass, nil] setTintColor:self.headerButtonColor];
-        [[UINavigationBar appearanceWhenContainedIn:navigationControllerClass, nil] setShadowImage:[UIImage alpha_imageWithColor:self.headerShadowColor]];
-
-        [[UIBarButtonItem appearanceWhenContainedIn:navigationControllerClass, nil] setTitleTextAttributes:@{ NSFontAttributeName : self.headerButtonFont, NSForegroundColorAttributeName : self.headerButtonColor } forState:UIControlStateNormal];
-
-        [[UISegmentedControl appearanceWhenContainedIn:navigationControllerClass, nil] setTitleTextAttributes:@{ NSFontAttributeName : self.searchBarFont, NSForegroundColorAttributeName : self.searchTintColor } forState:UIControlStateNormal];
+    //
+    // iOS 9 deprecates appearanceWhenContainedIn:, but we still must fallback to it for iOS 8.
+    //
+    if ([navigationControllerClass respondsToSelector:@selector(appearanceWhenContainedInInstancesOfClasses:)]) {
+        if (navigationControllerClass)
+        {
+            [[UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[ navigationControllerClass ]] setTitleTextAttributes:@{ NSFontAttributeName : self.headerTitleFont, NSForegroundColorAttributeName : self.headerTitleColor }];
+            
+            [[UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[ navigationControllerClass ]] setBackgroundImage:[UIImage alpha_imageWithColor:self.headerBackgroundColor] forBarMetrics:UIBarMetricsDefault];
+            //[[UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[ navigationControllerClass ]] setTranslucent:NO];
+            [[UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[ navigationControllerClass ]] setTintColor:self.headerButtonColor];
+            [[UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[ navigationControllerClass ]] setShadowImage:[UIImage alpha_imageWithColor:self.headerShadowColor]];
+            
+            [[UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[ navigationControllerClass ]] setTitleTextAttributes:@{ NSFontAttributeName : self.headerButtonFont, NSForegroundColorAttributeName : self.headerButtonColor } forState:UIControlStateNormal];
+            
+            [[UISegmentedControl appearanceWhenContainedInInstancesOfClasses:@[ navigationControllerClass ]] setTitleTextAttributes:@{ NSFontAttributeName : self.searchBarFont, NSForegroundColorAttributeName : self.searchTintColor } forState:UIControlStateNormal];
+        }
+        
+        [[UITextField appearanceWhenContainedInInstancesOfClasses:@[ [UISearchBar class] ]] setDefaultTextAttributes:@{ NSFontAttributeName : self.searchBarFont, NSForegroundColorAttributeName : self.searchTintColor }];
     }
-
-    [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setDefaultTextAttributes:@{ NSFontAttributeName : self.searchBarFont, NSForegroundColorAttributeName : self.searchTintColor }];
+    else {
+        #pragma clang diagnostic push
+        #pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        
+        if (navigationControllerClass)
+        {
+            [[UINavigationBar appearanceWhenContainedIn:navigationControllerClass, nil] setTitleTextAttributes:@{ NSFontAttributeName : self.headerTitleFont, NSForegroundColorAttributeName : self.headerTitleColor }];
+            
+            [[UINavigationBar appearanceWhenContainedIn:navigationControllerClass, nil] setBackgroundImage:[UIImage alpha_imageWithColor:self.headerBackgroundColor] forBarMetrics:UIBarMetricsDefault];
+            [[UINavigationBar appearanceWhenContainedIn:navigationControllerClass, nil] setTranslucent:NO];
+            [[UINavigationBar appearanceWhenContainedIn:navigationControllerClass, nil] setTintColor:self.headerButtonColor];
+            [[UINavigationBar appearanceWhenContainedIn:navigationControllerClass, nil] setShadowImage:[UIImage alpha_imageWithColor:self.headerShadowColor]];
+            
+            [[UIBarButtonItem appearanceWhenContainedIn:navigationControllerClass, nil] setTitleTextAttributes:@{ NSFontAttributeName : self.headerButtonFont, NSForegroundColorAttributeName : self.headerButtonColor } forState:UIControlStateNormal];
+            
+            [[UISegmentedControl appearanceWhenContainedIn:navigationControllerClass, nil] setTitleTextAttributes:@{ NSFontAttributeName : self.searchBarFont, NSForegroundColorAttributeName : self.searchTintColor } forState:UIControlStateNormal];
+        }
+        
+        [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setDefaultTextAttributes:@{ NSFontAttributeName : self.searchBarFont, NSForegroundColorAttributeName : self.searchTintColor }];
+        
+        #pragma clang diagnostic pop
+    }
 }
 
 - (CGRect)rect:(CGRect)rect withMargin:(UIEdgeInsets)margin
