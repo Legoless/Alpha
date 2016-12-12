@@ -25,7 +25,7 @@ Watch [presentation](https://www.youtube.com/watch?v=XlycM-37DQw) by [Dal Rupnik
 Features are separated into multiple plugins, which can be enabled or disabled, depending on application requirements.
 
 - **Application** - displays a list of all installed applications on the device.
-- **Bonjour** - contains a simple Bonjour server allowing Alpha to work over local Wi-Fi network.
+
 - **Bootstrap** - checks for [KZBootstrap](https://github.com/krzysztofzablocki/KZBootstrap) environments and allows modifying them in real-time.
 - **Console** - displays console logs (logged by NSLog) inside the application.
 - **Event** - logs and displays application wide events such as background state transitions and view controller appearances.
@@ -40,13 +40,14 @@ Features are separated into multiple plugins, which can be enabled or disabled, 
 - [**Permission**](https://github.com/Legoless/Alpha/wiki/Permission-Plugin) - displays current permissions and adds the ability to request specific permission.
 - [**Remote**](https://github.com/Legoless/Alpha/wiki/Remote-Plugin) - plugin allows connecting to Alpha from another device (needs Bonjour running on target).
 - **Screenshot** - plugin allows taking screenshots of the application with a single action.
+- **Server** - contains a simple Bonjour server allowing Alpha to work over local Wi-Fi network.
 - **State** - allows inspecting the device state and settings, such as locale, time and available memory.
 - [**Touch**](https://github.com/Legoless/Alpha/wiki/Touch-Plugin) - plugin displays touches on screen when activated and their force touch. 
 - **View** - allows view hierarchy manipulation and inspection in real-time.
 
 Currently work in progress:
 
-**0.3.0**
+**0.4.0**
 - *Application State Snapshot*
 - *Display crashes inside Alpha*
 - *Font Family list*
