@@ -26,6 +26,7 @@
 		3810F69D1DFEE29C004F51B6 /* Alpha.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 38621F021DEDFABE00DE9281 /* Alpha.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3810F6A11DFEE2AF004F51B6 /* ALPHAToolDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3810F6821DFED5D2004F51B6 /* ALPHAToolDelegate.m */; };
 		38353E891B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38353E881B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m */; };
+		383A3F1A1E00576200AD9708 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 383A3F191E00576200AD9708 /* Assets.xcassets */; };
 		38614DEF1DFEBCEB001D3209 /* ALPHABonjourDataChunk.h in Headers */ = {isa = PBXBuildFile; fileRef = 38614DED1DFEBCEB001D3209 /* ALPHABonjourDataChunk.h */; };
 		38614DF01DFEBCEB001D3209 /* ALPHABonjourDataChunk.m in Sources */ = {isa = PBXBuildFile; fileRef = 38614DEE1DFEBCEB001D3209 /* ALPHABonjourDataChunk.m */; };
 		38614DF31DFEBCFB001D3209 /* ALPHABonjourDataConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 38614DF11DFEBCFB001D3209 /* ALPHABonjourDataConnection.h */; };
@@ -268,6 +269,69 @@
 		389CBEBA1DEE04A600D3F99C /* UIImage+Creation.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E641DC5A9EBD922381B43C /* UIImage+Creation.m */; };
 		389CBEBB1DEE04C300D3F99C /* ALPHAAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E646D40194EF6C1C8C94B9 /* ALPHAAsset.m */; };
 		389CBEBC1DEE04C500D3F99C /* ALPHAAssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64E3EC013DFEAB611D118 /* ALPHAAssetManager.m */; };
+		38C5DBAB1E00555300AE4954 /* AlertFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5DB691E00555300AE4954 /* AlertFormViewController.swift */; };
+		38C5DBAC1E00555300AE4954 /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5DB6A1E00555300AE4954 /* AlertsViewController.swift */; };
+		38C5DBAD1E00555300AE4954 /* ButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5DB6B1E00555300AE4954 /* ButtonsViewController.swift */; };
+		38C5DBAE1E00555300AE4954 /* CollectionViewContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5DB6C1E00555300AE4954 /* CollectionViewContainerCell.swift */; };
+		38C5DBAF1E00555300AE4954 /* CollectionViewContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5DB6D1E00555300AE4954 /* CollectionViewContainerViewController.swift */; };
+		38C5DBB01E00555300AE4954 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5DB6E1E00555300AE4954 /* CollectionViewController.swift */; };
+		38C5DBB11E00555300AE4954 /* ControlsMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5DB6F1E00555300AE4954 /* ControlsMenuViewController.swift */; };
+		38C5DBB21E00555300AE4954 /* CustomInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5DB701E00555300AE4954 /* CustomInputAccessoryView.swift */; };
+		38C5DBB31E00555300AE4954 /* DataItem+ImageName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5DB711E00555300AE4954 /* DataItem+ImageName.swift */; };
+		38C5DBB41E00555300AE4954 /* DataItem+SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5DB721E00555300AE4954 /* DataItem+SampleData.swift */; };
+		38C5DBB51E00555300AE4954 /* DataItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5DB731E00555300AE4954 /* DataItem.swift */; };
+		38C5DBB61E00555300AE4954 /* DataItemCellComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5DB741E00555300AE4954 /* DataItemCellComposer.swift */; };
+		38C5DBB71E00555300AE4954 /* DataItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5DB751E00555300AE4954 /* DataItemCollectionViewCell.swift */; };
+		38C5DBB81E00555300AE4954 /* DataItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5DB761E00555300AE4954 /* DataItemViewController.swift */; };
+		38C5DBB91E00555300AE4954 /* FocusGuidesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5DB771E00555300AE4954 /* FocusGuidesViewController.swift */; };
+		38C5DBBA1E00555300AE4954 /* GradientMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5DB781E00555300AE4954 /* GradientMaskView.swift */; };
+		38C5DBBC1E00555300AE4954 /* MenuSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5DB7A1E00555300AE4954 /* MenuSplitViewController.swift */; };
+		38C5DBBD1E00555300AE4954 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5DB7B1E00555300AE4954 /* MenuTableViewController.swift */; };
+		38C5DBBE1E00555300AE4954 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5DB7C1E00555300AE4954 /* PageViewController.swift */; };
+		38C5DBBF1E00555300AE4954 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5DB7D1E00555300AE4954 /* ProgressViewController.swift */; };
+		38C5DBC01E00555300AE4954 /* Baby 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB7F1E00555300AE4954 /* Baby 1.jpg */; };
+		38C5DBC11E00555300AE4954 /* Baby 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB801E00555300AE4954 /* Baby 2.jpg */; };
+		38C5DBC21E00555300AE4954 /* Baby 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB811E00555300AE4954 /* Baby 3.jpg */; };
+		38C5DBC31E00555300AE4954 /* Baby 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB821E00555300AE4954 /* Baby 4.jpg */; };
+		38C5DBC41E00555300AE4954 /* Baby 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB831E00555300AE4954 /* Baby 5.jpg */; };
+		38C5DBC51E00555300AE4954 /* Baby 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB841E00555300AE4954 /* Baby 6.jpg */; };
+		38C5DBC61E00555300AE4954 /* Baby 7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB851E00555300AE4954 /* Baby 7.jpg */; };
+		38C5DBC71E00555300AE4954 /* Baby 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB861E00555300AE4954 /* Baby 8.jpg */; };
+		38C5DBC81E00555300AE4954 /* Iceland 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB871E00555300AE4954 /* Iceland 1.jpg */; };
+		38C5DBC91E00555300AE4954 /* Iceland 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB881E00555300AE4954 /* Iceland 2.jpg */; };
+		38C5DBCA1E00555300AE4954 /* Iceland 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB891E00555300AE4954 /* Iceland 3.jpg */; };
+		38C5DBCB1E00555300AE4954 /* Iceland 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB8A1E00555300AE4954 /* Iceland 4.jpg */; };
+		38C5DBCC1E00555300AE4954 /* Iceland 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB8B1E00555300AE4954 /* Iceland 5.jpg */; };
+		38C5DBCD1E00555300AE4954 /* Iceland 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB8C1E00555300AE4954 /* Iceland 6.jpg */; };
+		38C5DBCE1E00555300AE4954 /* Iceland 7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB8D1E00555300AE4954 /* Iceland 7.jpg */; };
+		38C5DBCF1E00555300AE4954 /* Iceland 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB8E1E00555300AE4954 /* Iceland 8.jpg */; };
+		38C5DBD01E00555300AE4954 /* Italy 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB8F1E00555300AE4954 /* Italy 1.jpg */; };
+		38C5DBD11E00555300AE4954 /* Italy 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB901E00555300AE4954 /* Italy 2.jpg */; };
+		38C5DBD21E00555300AE4954 /* Italy 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB911E00555300AE4954 /* Italy 3.jpg */; };
+		38C5DBD31E00555300AE4954 /* Italy 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB921E00555300AE4954 /* Italy 4.jpg */; };
+		38C5DBD41E00555300AE4954 /* Italy 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB931E00555300AE4954 /* Italy 5.jpg */; };
+		38C5DBD51E00555300AE4954 /* Italy 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB941E00555300AE4954 /* Italy 6.jpg */; };
+		38C5DBD61E00555300AE4954 /* Italy 7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB951E00555300AE4954 /* Italy 7.jpg */; };
+		38C5DBD71E00555300AE4954 /* Italy 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB961E00555300AE4954 /* Italy 8.jpg */; };
+		38C5DBD81E00555300AE4954 /* Lola 1 Large.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB971E00555300AE4954 /* Lola 1 Large.jpg */; };
+		38C5DBD91E00555300AE4954 /* Lola 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB981E00555300AE4954 /* Lola 1.jpg */; };
+		38C5DBDA1E00555300AE4954 /* Lola 2 Large.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB991E00555300AE4954 /* Lola 2 Large.jpg */; };
+		38C5DBDB1E00555300AE4954 /* Lola 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB9A1E00555300AE4954 /* Lola 2.jpg */; };
+		38C5DBDC1E00555300AE4954 /* Lola 3 Large.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB9B1E00555300AE4954 /* Lola 3 Large.jpg */; };
+		38C5DBDD1E00555300AE4954 /* Lola 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB9C1E00555300AE4954 /* Lola 3.jpg */; };
+		38C5DBDE1E00555300AE4954 /* Lola 4 Large.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB9D1E00555300AE4954 /* Lola 4 Large.jpg */; };
+		38C5DBDF1E00555300AE4954 /* Lola 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DB9E1E00555300AE4954 /* Lola 4.jpg */; };
+		38C5DBE01E00555300AE4954 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5DB9F1E00555300AE4954 /* SearchResultsViewController.swift */; };
+		38C5DBE11E00555300AE4954 /* SegmentedControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5DBA01E00555300AE4954 /* SegmentedControlsViewController.swift */; };
+		38C5DBE21E00555300AE4954 /* ControlSamples.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DBA21E00555300AE4954 /* ControlSamples.storyboard */; };
+		38C5DBE31E00555300AE4954 /* FocusSamples.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DBA31E00555300AE4954 /* FocusSamples.storyboard */; };
+		38C5DBE41E00555300AE4954 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DBA41E00555300AE4954 /* Main.storyboard */; };
+		38C5DBE51E00555300AE4954 /* TextEntry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DBA51E00555300AE4954 /* TextEntry.storyboard */; };
+		38C5DBE61E00555300AE4954 /* ViewControllerSamples.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38C5DBA61E00555300AE4954 /* ViewControllerSamples.storyboard */; };
+		38C5DBE71E00555300AE4954 /* TextEntryMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5DBA71E00555300AE4954 /* TextEntryMenuViewController.swift */; };
+		38C5DBE81E00555300AE4954 /* TextFieldsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5DBA81E00555300AE4954 /* TextFieldsViewController.swift */; };
+		38C5DBE91E00555300AE4954 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5DBA91E00555300AE4954 /* VideoPlayerViewController.swift */; };
+		38C5DBEA1E00555300AE4954 /* ViewControllersMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5DBAA1E00555300AE4954 /* ViewControllersMenuViewController.swift */; };
 		38DE4A491A0B78BC00EB447A /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38DE4A481A0B78BC00EB447A /* Launch.xib */; };
 		38DE4A4C1A0B7DB000EB447A /* AAPLNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DE4A4B1A0B7DB000EB447A /* AAPLNetworkViewController.m */; };
 		5356823E18F3656900BAAD62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5356823D18F3656900BAAD62 /* Foundation.framework */; };
@@ -393,6 +457,7 @@
 		3810F68A1DFED6E8004F51B6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		38353E871B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLCatalogTableTableViewController.h; sourceTree = "<group>"; };
 		38353E881B1DADEF009E4ACF /* AAPLCatalogTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLCatalogTableTableViewController.m; sourceTree = "<group>"; };
+		383A3F191E00576200AD9708 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		385A687A1BACA111000B4898 /* ALPHATouchFingerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHATouchFingerView.h; sourceTree = "<group>"; };
 		385A687B1BACA111000B4898 /* ALPHATouchFingerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHATouchFingerView.m; sourceTree = "<group>"; };
 		38614DED1DFEBCEB001D3209 /* ALPHABonjourDataChunk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHABonjourDataChunk.h; sourceTree = "<group>"; };
@@ -418,6 +483,71 @@
 		38C5DB4F1E00539F00AE4954 /* AlphaService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AlphaService-Info.plist"; sourceTree = "<group>"; };
 		38C5DB501E0053A600AE4954 /* Alpha-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Alpha-Info.plist"; sourceTree = "<group>"; };
 		38C5DB511E0053AD00AE4954 /* AlphaService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlphaService.h; sourceTree = "<group>"; };
+		38C5DB561E00552C00AE4954 /* UIKitCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		38C5DB691E00555300AE4954 /* AlertFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertFormViewController.swift; sourceTree = "<group>"; };
+		38C5DB6A1E00555300AE4954 /* AlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
+		38C5DB6B1E00555300AE4954 /* ButtonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonsViewController.swift; sourceTree = "<group>"; };
+		38C5DB6C1E00555300AE4954 /* CollectionViewContainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewContainerCell.swift; sourceTree = "<group>"; };
+		38C5DB6D1E00555300AE4954 /* CollectionViewContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewContainerViewController.swift; sourceTree = "<group>"; };
+		38C5DB6E1E00555300AE4954 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		38C5DB6F1E00555300AE4954 /* ControlsMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsMenuViewController.swift; sourceTree = "<group>"; };
+		38C5DB701E00555300AE4954 /* CustomInputAccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInputAccessoryView.swift; sourceTree = "<group>"; };
+		38C5DB711E00555300AE4954 /* DataItem+ImageName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataItem+ImageName.swift"; sourceTree = "<group>"; };
+		38C5DB721E00555300AE4954 /* DataItem+SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataItem+SampleData.swift"; sourceTree = "<group>"; };
+		38C5DB731E00555300AE4954 /* DataItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataItem.swift; sourceTree = "<group>"; };
+		38C5DB741E00555300AE4954 /* DataItemCellComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataItemCellComposer.swift; sourceTree = "<group>"; };
+		38C5DB751E00555300AE4954 /* DataItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		38C5DB761E00555300AE4954 /* DataItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataItemViewController.swift; sourceTree = "<group>"; };
+		38C5DB771E00555300AE4954 /* FocusGuidesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusGuidesViewController.swift; sourceTree = "<group>"; };
+		38C5DB781E00555300AE4954 /* GradientMaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientMaskView.swift; sourceTree = "<group>"; };
+		38C5DB7A1E00555300AE4954 /* MenuSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuSplitViewController.swift; sourceTree = "<group>"; };
+		38C5DB7B1E00555300AE4954 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		38C5DB7C1E00555300AE4954 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		38C5DB7D1E00555300AE4954 /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		38C5DB7F1E00555300AE4954 /* Baby 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Baby 1.jpg"; sourceTree = "<group>"; };
+		38C5DB801E00555300AE4954 /* Baby 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Baby 2.jpg"; sourceTree = "<group>"; };
+		38C5DB811E00555300AE4954 /* Baby 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Baby 3.jpg"; sourceTree = "<group>"; };
+		38C5DB821E00555300AE4954 /* Baby 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Baby 4.jpg"; sourceTree = "<group>"; };
+		38C5DB831E00555300AE4954 /* Baby 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Baby 5.jpg"; sourceTree = "<group>"; };
+		38C5DB841E00555300AE4954 /* Baby 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Baby 6.jpg"; sourceTree = "<group>"; };
+		38C5DB851E00555300AE4954 /* Baby 7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Baby 7.jpg"; sourceTree = "<group>"; };
+		38C5DB861E00555300AE4954 /* Baby 8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Baby 8.jpg"; sourceTree = "<group>"; };
+		38C5DB871E00555300AE4954 /* Iceland 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Iceland 1.jpg"; sourceTree = "<group>"; };
+		38C5DB881E00555300AE4954 /* Iceland 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Iceland 2.jpg"; sourceTree = "<group>"; };
+		38C5DB891E00555300AE4954 /* Iceland 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Iceland 3.jpg"; sourceTree = "<group>"; };
+		38C5DB8A1E00555300AE4954 /* Iceland 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Iceland 4.jpg"; sourceTree = "<group>"; };
+		38C5DB8B1E00555300AE4954 /* Iceland 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Iceland 5.jpg"; sourceTree = "<group>"; };
+		38C5DB8C1E00555300AE4954 /* Iceland 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Iceland 6.jpg"; sourceTree = "<group>"; };
+		38C5DB8D1E00555300AE4954 /* Iceland 7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Iceland 7.jpg"; sourceTree = "<group>"; };
+		38C5DB8E1E00555300AE4954 /* Iceland 8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Iceland 8.jpg"; sourceTree = "<group>"; };
+		38C5DB8F1E00555300AE4954 /* Italy 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Italy 1.jpg"; sourceTree = "<group>"; };
+		38C5DB901E00555300AE4954 /* Italy 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Italy 2.jpg"; sourceTree = "<group>"; };
+		38C5DB911E00555300AE4954 /* Italy 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Italy 3.jpg"; sourceTree = "<group>"; };
+		38C5DB921E00555300AE4954 /* Italy 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Italy 4.jpg"; sourceTree = "<group>"; };
+		38C5DB931E00555300AE4954 /* Italy 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Italy 5.jpg"; sourceTree = "<group>"; };
+		38C5DB941E00555300AE4954 /* Italy 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Italy 6.jpg"; sourceTree = "<group>"; };
+		38C5DB951E00555300AE4954 /* Italy 7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Italy 7.jpg"; sourceTree = "<group>"; };
+		38C5DB961E00555300AE4954 /* Italy 8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Italy 8.jpg"; sourceTree = "<group>"; };
+		38C5DB971E00555300AE4954 /* Lola 1 Large.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Lola 1 Large.jpg"; sourceTree = "<group>"; };
+		38C5DB981E00555300AE4954 /* Lola 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Lola 1.jpg"; sourceTree = "<group>"; };
+		38C5DB991E00555300AE4954 /* Lola 2 Large.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Lola 2 Large.jpg"; sourceTree = "<group>"; };
+		38C5DB9A1E00555300AE4954 /* Lola 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Lola 2.jpg"; sourceTree = "<group>"; };
+		38C5DB9B1E00555300AE4954 /* Lola 3 Large.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Lola 3 Large.jpg"; sourceTree = "<group>"; };
+		38C5DB9C1E00555300AE4954 /* Lola 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Lola 3.jpg"; sourceTree = "<group>"; };
+		38C5DB9D1E00555300AE4954 /* Lola 4 Large.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Lola 4 Large.jpg"; sourceTree = "<group>"; };
+		38C5DB9E1E00555300AE4954 /* Lola 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Lola 4.jpg"; sourceTree = "<group>"; };
+		38C5DB9F1E00555300AE4954 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		38C5DBA01E00555300AE4954 /* SegmentedControlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControlsViewController.swift; sourceTree = "<group>"; };
+		38C5DBA21E00555300AE4954 /* ControlSamples.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ControlSamples.storyboard; sourceTree = "<group>"; };
+		38C5DBA31E00555300AE4954 /* FocusSamples.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FocusSamples.storyboard; sourceTree = "<group>"; };
+		38C5DBA41E00555300AE4954 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		38C5DBA51E00555300AE4954 /* TextEntry.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TextEntry.storyboard; sourceTree = "<group>"; };
+		38C5DBA61E00555300AE4954 /* ViewControllerSamples.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ViewControllerSamples.storyboard; sourceTree = "<group>"; };
+		38C5DBA71E00555300AE4954 /* TextEntryMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextEntryMenuViewController.swift; sourceTree = "<group>"; };
+		38C5DBA81E00555300AE4954 /* TextFieldsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldsViewController.swift; sourceTree = "<group>"; };
+		38C5DBA91E00555300AE4954 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
+		38C5DBAA1E00555300AE4954 /* ViewControllersMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersMenuViewController.swift; sourceTree = "<group>"; };
+		38C5DBEC1E00563000AE4954 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38D00BF81BC0603100FCCD2A /* ALPHAMotionPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAMotionPermission.h; sourceTree = "<group>"; };
 		38D00BF91BC0603100FCCD2A /* ALPHAMotionPermission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAMotionPermission.m; sourceTree = "<group>"; };
 		38D00BFB1BC0632200FCCD2A /* ALPHANotificationPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHANotificationPermission.h; sourceTree = "<group>"; };
@@ -972,6 +1102,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		38C5DB531E00552C00AE4954 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5356823718F3656900BAAD62 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1072,6 +1209,102 @@
 			path = Bonjour;
 			sourceTree = "<group>";
 		};
+		38C5DB681E00555300AE4954 /* UIKitCatalog */ = {
+			isa = PBXGroup;
+			children = (
+				383A3F191E00576200AD9708 /* Assets.xcassets */,
+				38C5DB691E00555300AE4954 /* AlertFormViewController.swift */,
+				38C5DB6A1E00555300AE4954 /* AlertsViewController.swift */,
+				38C5DB6B1E00555300AE4954 /* ButtonsViewController.swift */,
+				38C5DB6C1E00555300AE4954 /* CollectionViewContainerCell.swift */,
+				38C5DB6D1E00555300AE4954 /* CollectionViewContainerViewController.swift */,
+				38C5DB6E1E00555300AE4954 /* CollectionViewController.swift */,
+				38C5DB6F1E00555300AE4954 /* ControlsMenuViewController.swift */,
+				38C5DB701E00555300AE4954 /* CustomInputAccessoryView.swift */,
+				38C5DB711E00555300AE4954 /* DataItem+ImageName.swift */,
+				38C5DB721E00555300AE4954 /* DataItem+SampleData.swift */,
+				38C5DB731E00555300AE4954 /* DataItem.swift */,
+				38C5DB741E00555300AE4954 /* DataItemCellComposer.swift */,
+				38C5DB751E00555300AE4954 /* DataItemCollectionViewCell.swift */,
+				38C5DB761E00555300AE4954 /* DataItemViewController.swift */,
+				38C5DB771E00555300AE4954 /* FocusGuidesViewController.swift */,
+				38C5DB781E00555300AE4954 /* GradientMaskView.swift */,
+				38C5DB7A1E00555300AE4954 /* MenuSplitViewController.swift */,
+				38C5DB7B1E00555300AE4954 /* MenuTableViewController.swift */,
+				38C5DB7C1E00555300AE4954 /* PageViewController.swift */,
+				38C5DB7D1E00555300AE4954 /* ProgressViewController.swift */,
+				38C5DB7E1E00555300AE4954 /* Resources */,
+				38C5DB9F1E00555300AE4954 /* SearchResultsViewController.swift */,
+				38C5DBA01E00555300AE4954 /* SegmentedControlsViewController.swift */,
+				38C5DBA11E00555300AE4954 /* Storyboards */,
+				38C5DBEB1E00561000AE4954 /* Supporting Files */,
+				38C5DBA71E00555300AE4954 /* TextEntryMenuViewController.swift */,
+				38C5DBA81E00555300AE4954 /* TextFieldsViewController.swift */,
+				38C5DBA91E00555300AE4954 /* VideoPlayerViewController.swift */,
+				38C5DBAA1E00555300AE4954 /* ViewControllersMenuViewController.swift */,
+			);
+			path = UIKitCatalog;
+			sourceTree = "<group>";
+		};
+		38C5DB7E1E00555300AE4954 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				38C5DB7F1E00555300AE4954 /* Baby 1.jpg */,
+				38C5DB801E00555300AE4954 /* Baby 2.jpg */,
+				38C5DB811E00555300AE4954 /* Baby 3.jpg */,
+				38C5DB821E00555300AE4954 /* Baby 4.jpg */,
+				38C5DB831E00555300AE4954 /* Baby 5.jpg */,
+				38C5DB841E00555300AE4954 /* Baby 6.jpg */,
+				38C5DB851E00555300AE4954 /* Baby 7.jpg */,
+				38C5DB861E00555300AE4954 /* Baby 8.jpg */,
+				38C5DB871E00555300AE4954 /* Iceland 1.jpg */,
+				38C5DB881E00555300AE4954 /* Iceland 2.jpg */,
+				38C5DB891E00555300AE4954 /* Iceland 3.jpg */,
+				38C5DB8A1E00555300AE4954 /* Iceland 4.jpg */,
+				38C5DB8B1E00555300AE4954 /* Iceland 5.jpg */,
+				38C5DB8C1E00555300AE4954 /* Iceland 6.jpg */,
+				38C5DB8D1E00555300AE4954 /* Iceland 7.jpg */,
+				38C5DB8E1E00555300AE4954 /* Iceland 8.jpg */,
+				38C5DB8F1E00555300AE4954 /* Italy 1.jpg */,
+				38C5DB901E00555300AE4954 /* Italy 2.jpg */,
+				38C5DB911E00555300AE4954 /* Italy 3.jpg */,
+				38C5DB921E00555300AE4954 /* Italy 4.jpg */,
+				38C5DB931E00555300AE4954 /* Italy 5.jpg */,
+				38C5DB941E00555300AE4954 /* Italy 6.jpg */,
+				38C5DB951E00555300AE4954 /* Italy 7.jpg */,
+				38C5DB961E00555300AE4954 /* Italy 8.jpg */,
+				38C5DB971E00555300AE4954 /* Lola 1 Large.jpg */,
+				38C5DB981E00555300AE4954 /* Lola 1.jpg */,
+				38C5DB991E00555300AE4954 /* Lola 2 Large.jpg */,
+				38C5DB9A1E00555300AE4954 /* Lola 2.jpg */,
+				38C5DB9B1E00555300AE4954 /* Lola 3 Large.jpg */,
+				38C5DB9C1E00555300AE4954 /* Lola 3.jpg */,
+				38C5DB9D1E00555300AE4954 /* Lola 4 Large.jpg */,
+				38C5DB9E1E00555300AE4954 /* Lola 4.jpg */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		38C5DBA11E00555300AE4954 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				38C5DBA21E00555300AE4954 /* ControlSamples.storyboard */,
+				38C5DBA31E00555300AE4954 /* FocusSamples.storyboard */,
+				38C5DBA41E00555300AE4954 /* Main.storyboard */,
+				38C5DBA51E00555300AE4954 /* TextEntry.storyboard */,
+				38C5DBA61E00555300AE4954 /* ViewControllerSamples.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		38C5DBEB1E00561000AE4954 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				38C5DBEC1E00563000AE4954 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		38DAAE451BBF038C0023841C /* Permission */ = {
 			isa = PBXGroup;
 			children = (
@@ -1167,6 +1400,7 @@
 			isa = PBXGroup;
 			children = (
 				5356824318F3656900BAAD62 /* UICatalog */,
+				38C5DB681E00555300AE4954 /* UIKitCatalog */,
 				67E640BD036992B1D2CEF64E /* Alpha */,
 				3810F6801DFED4F7004F51B6 /* AlphaTool */,
 				67E64D867CE01946BB4D8CD2 /* AlphaTests */,
@@ -1184,6 +1418,7 @@
 				38621F0A1DEDFABE00DE9281 /* AlphaTests.xctest */,
 				3810F67E1DFED3C3004F51B6 /* AlphaTool.app */,
 				38C5DB471E00524F00AE4954 /* AlphaService.framework */,
+				38C5DB561E00552C00AE4954 /* UIKitCatalog.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2686,6 +2921,23 @@
 			productReference = 38C5DB471E00524F00AE4954 /* AlphaService.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		38C5DB551E00552C00AE4954 /* UIKitCatalog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38C5DB651E00552C00AE4954 /* Build configuration list for PBXNativeTarget "UIKitCatalog" */;
+			buildPhases = (
+				38C5DB521E00552C00AE4954 /* Sources */,
+				38C5DB531E00552C00AE4954 /* Frameworks */,
+				38C5DB541E00552C00AE4954 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UIKitCatalog;
+			productName = UIKitCatalog;
+			productReference = 38C5DB561E00552C00AE4954 /* UIKitCatalog.app */;
+			productType = "com.apple.product-type.application";
+		};
 		5356823918F3656900BAAD62 /* UICatalog */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5356826F18F3656900BAAD62 /* Build configuration list for PBXNativeTarget "UICatalog" */;
@@ -2715,6 +2967,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = ALPHA;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Unified Sense";
 				TargetAttributes = {
@@ -2733,6 +2986,11 @@
 						TestTargetID = 5356823918F3656900BAAD62;
 					};
 					38C5DB461E00524F00AE4954 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 289M6XEDV4;
+						ProvisioningStyle = Automatic;
+					};
+					38C5DB551E00552C00AE4954 = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = 289M6XEDV4;
 						ProvisioningStyle = Automatic;
@@ -2756,6 +3014,7 @@
 			projectRoot = "";
 			targets = (
 				5356823918F3656900BAAD62 /* UICatalog */,
+				38C5DB551E00552C00AE4954 /* UIKitCatalog */,
 				3810F5731DFED3C3004F51B6 /* AlphaTool */,
 				38621F011DEDFABE00DE9281 /* Alpha */,
 				38C5DB461E00524F00AE4954 /* AlphaService */,
@@ -2797,6 +3056,51 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38C5DB541E00552C00AE4954 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38C5DBC01E00555300AE4954 /* Baby 1.jpg in Resources */,
+				38C5DBD81E00555300AE4954 /* Lola 1 Large.jpg in Resources */,
+				38C5DBC11E00555300AE4954 /* Baby 2.jpg in Resources */,
+				38C5DBC21E00555300AE4954 /* Baby 3.jpg in Resources */,
+				38C5DBE21E00555300AE4954 /* ControlSamples.storyboard in Resources */,
+				38C5DBD71E00555300AE4954 /* Italy 8.jpg in Resources */,
+				38C5DBE31E00555300AE4954 /* FocusSamples.storyboard in Resources */,
+				38C5DBDD1E00555300AE4954 /* Lola 3.jpg in Resources */,
+				38C5DBDE1E00555300AE4954 /* Lola 4 Large.jpg in Resources */,
+				38C5DBCE1E00555300AE4954 /* Iceland 7.jpg in Resources */,
+				38C5DBC51E00555300AE4954 /* Baby 6.jpg in Resources */,
+				38C5DBD51E00555300AE4954 /* Italy 6.jpg in Resources */,
+				38C5DBD91E00555300AE4954 /* Lola 1.jpg in Resources */,
+				38C5DBD11E00555300AE4954 /* Italy 2.jpg in Resources */,
+				38C5DBC31E00555300AE4954 /* Baby 4.jpg in Resources */,
+				38C5DBE41E00555300AE4954 /* Main.storyboard in Resources */,
+				38C5DBD01E00555300AE4954 /* Italy 1.jpg in Resources */,
+				38C5DBDA1E00555300AE4954 /* Lola 2 Large.jpg in Resources */,
+				38C5DBE61E00555300AE4954 /* ViewControllerSamples.storyboard in Resources */,
+				383A3F1A1E00576200AD9708 /* Assets.xcassets in Resources */,
+				38C5DBD21E00555300AE4954 /* Italy 3.jpg in Resources */,
+				38C5DBCB1E00555300AE4954 /* Iceland 4.jpg in Resources */,
+				38C5DBC41E00555300AE4954 /* Baby 5.jpg in Resources */,
+				38C5DBD61E00555300AE4954 /* Italy 7.jpg in Resources */,
+				38C5DBDC1E00555300AE4954 /* Lola 3 Large.jpg in Resources */,
+				38C5DBC61E00555300AE4954 /* Baby 7.jpg in Resources */,
+				38C5DBD31E00555300AE4954 /* Italy 4.jpg in Resources */,
+				38C5DBC71E00555300AE4954 /* Baby 8.jpg in Resources */,
+				38C5DBD41E00555300AE4954 /* Italy 5.jpg in Resources */,
+				38C5DBCC1E00555300AE4954 /* Iceland 5.jpg in Resources */,
+				38C5DBDB1E00555300AE4954 /* Lola 2.jpg in Resources */,
+				38C5DBDF1E00555300AE4954 /* Lola 4.jpg in Resources */,
+				38C5DBC81E00555300AE4954 /* Iceland 1.jpg in Resources */,
+				38C5DBCF1E00555300AE4954 /* Iceland 8.jpg in Resources */,
+				38C5DBC91E00555300AE4954 /* Iceland 2.jpg in Resources */,
+				38C5DBCA1E00555300AE4954 /* Iceland 3.jpg in Resources */,
+				38C5DBE51E00555300AE4954 /* TextEntry.storyboard in Resources */,
+				38C5DBCD1E00555300AE4954 /* Iceland 6.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3175,6 +3479,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		38C5DB521E00552C00AE4954 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38C5DBB31E00555300AE4954 /* DataItem+ImageName.swift in Sources */,
+				38C5DBB81E00555300AE4954 /* DataItemViewController.swift in Sources */,
+				38C5DBE91E00555300AE4954 /* VideoPlayerViewController.swift in Sources */,
+				38C5DBB71E00555300AE4954 /* DataItemCollectionViewCell.swift in Sources */,
+				38C5DBB01E00555300AE4954 /* CollectionViewController.swift in Sources */,
+				38C5DBB61E00555300AE4954 /* DataItemCellComposer.swift in Sources */,
+				38C5DBB41E00555300AE4954 /* DataItem+SampleData.swift in Sources */,
+				38C5DBBC1E00555300AE4954 /* MenuSplitViewController.swift in Sources */,
+				38C5DBBA1E00555300AE4954 /* GradientMaskView.swift in Sources */,
+				38C5DBB11E00555300AE4954 /* ControlsMenuViewController.swift in Sources */,
+				38C5DBB51E00555300AE4954 /* DataItem.swift in Sources */,
+				38C5DBAB1E00555300AE4954 /* AlertFormViewController.swift in Sources */,
+				38C5DBE71E00555300AE4954 /* TextEntryMenuViewController.swift in Sources */,
+				38C5DBE81E00555300AE4954 /* TextFieldsViewController.swift in Sources */,
+				38C5DBEA1E00555300AE4954 /* ViewControllersMenuViewController.swift in Sources */,
+				38C5DBB21E00555300AE4954 /* CustomInputAccessoryView.swift in Sources */,
+				38C5DBAF1E00555300AE4954 /* CollectionViewContainerViewController.swift in Sources */,
+				38C5DBAD1E00555300AE4954 /* ButtonsViewController.swift in Sources */,
+				38C5DBBE1E00555300AE4954 /* PageViewController.swift in Sources */,
+				38C5DBBF1E00555300AE4954 /* ProgressViewController.swift in Sources */,
+				38C5DBBD1E00555300AE4954 /* MenuTableViewController.swift in Sources */,
+				38C5DBE11E00555300AE4954 /* SegmentedControlsViewController.swift in Sources */,
+				38C5DBB91E00555300AE4954 /* FocusGuidesViewController.swift in Sources */,
+				38C5DBAE1E00555300AE4954 /* CollectionViewContainerCell.swift in Sources */,
+				38C5DBE01E00555300AE4954 /* SearchResultsViewController.swift in Sources */,
+				38C5DBAC1E00555300AE4954 /* AlertsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5356823618F3656900BAAD62 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3458,6 +3795,54 @@
 			};
 			name = Release;
 		};
+		38C5DB661E00552C00AE4954 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 289M6XEDV4;
+				INFOPLIST_FILE = UIKitCatalog/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.UIKitCatalog";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		38C5DB671E00552C00AE4954 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 289M6XEDV4;
+				INFOPLIST_FILE = UIKitCatalog/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.UIKitCatalog";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		5356826D18F3656900BAAD62 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3622,6 +4007,16 @@
 				38C5DB4D1E00524F00AE4954 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38C5DB651E00552C00AE4954 /* Build configuration list for PBXNativeTarget "UIKitCatalog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38C5DB661E00552C00AE4954 /* Debug */,
+				38C5DB671E00552C00AE4954 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5356823518F3656900BAAD62 /* Build configuration list for PBXProject "Alpha" */ = {
 			isa = XCConfigurationList;
