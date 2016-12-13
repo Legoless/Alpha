@@ -414,6 +414,10 @@
 		38921B951B34E6BB00A50DED /* ALPHAAlizarinColorPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAAlizarinColorPalette.m; sourceTree = "<group>"; };
 		38921B971B34E6DC00A50DED /* ALPHAAmethystColorPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAAmethystColorPalette.h; sourceTree = "<group>"; };
 		38921B981B34E6DC00A50DED /* ALPHAAmethystColorPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAAmethystColorPalette.m; sourceTree = "<group>"; };
+		38C5DB471E00524F00AE4954 /* AlphaService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlphaService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38C5DB4F1E00539F00AE4954 /* AlphaService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AlphaService-Info.plist"; sourceTree = "<group>"; };
+		38C5DB501E0053A600AE4954 /* Alpha-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Alpha-Info.plist"; sourceTree = "<group>"; };
+		38C5DB511E0053AD00AE4954 /* AlphaService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlphaService.h; sourceTree = "<group>"; };
 		38D00BF81BC0603100FCCD2A /* ALPHAMotionPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAMotionPermission.h; sourceTree = "<group>"; };
 		38D00BF91BC0603100FCCD2A /* ALPHAMotionPermission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAMotionPermission.m; sourceTree = "<group>"; };
 		38D00BFB1BC0632200FCCD2A /* ALPHANotificationPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHANotificationPermission.h; sourceTree = "<group>"; };
@@ -587,7 +591,6 @@
 		67E642CCB1CF2D3BD750ADDE /* UIApplication+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Private.m"; sourceTree = "<group>"; };
 		67E642D0FB0D8757E1871BC2 /* ALPHAHierarchyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAHierarchyTableViewCell.m; sourceTree = "<group>"; };
 		67E642E0E015B2D3078774FA /* UIDevice+ALPHAStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+ALPHAStatus.m"; sourceTree = "<group>"; };
-		67E642E64A3630FAF601410A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		67E642EAD0AB3FAA6E9D6C6A /* ALPHABonjourSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHABonjourSource.h; sourceTree = "<group>"; };
 		67E642FD782A58FAF9C090FF /* ALPHAObjectActionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAObjectActionItem.h; sourceTree = "<group>"; };
 		67E643022E66710EDD848A8C /* ALPHAObjectContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAObjectContent.m; sourceTree = "<group>"; };
@@ -962,6 +965,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		38C5DB431E00524F00AE4954 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5356823718F3656900BAAD62 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1173,6 +1183,7 @@
 				38621F021DEDFABE00DE9281 /* Alpha.framework */,
 				38621F0A1DEDFABE00DE9281 /* AlphaTests.xctest */,
 				3810F67E1DFED3C3004F51B6 /* AlphaTool.app */,
+				38C5DB471E00524F00AE4954 /* AlphaService.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1342,7 +1353,9 @@
 				67E64D307CFB0230951C8214 /* Utility */,
 				67E64764452D02A7CF397018 /* View */,
 				67E6443967640579E23C145D /* Alpha.h */,
-				67E642E64A3630FAF601410A /* Info.plist */,
+				38C5DB511E0053AD00AE4954 /* AlphaService.h */,
+				38C5DB501E0053A600AE4954 /* Alpha-Info.plist */,
+				38C5DB4F1E00539F00AE4954 /* AlphaService-Info.plist */,
 			);
 			name = Alpha;
 			path = ../Alpha;
@@ -2586,6 +2599,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		38C5DB441E00524F00AE4954 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -2648,6 +2668,24 @@
 			productReference = 38621F0A1DEDFABE00DE9281 /* AlphaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		38C5DB461E00524F00AE4954 /* AlphaService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38C5DB4E1E00524F00AE4954 /* Build configuration list for PBXNativeTarget "AlphaService" */;
+			buildPhases = (
+				38C5DB421E00524F00AE4954 /* Sources */,
+				38C5DB431E00524F00AE4954 /* Frameworks */,
+				38C5DB441E00524F00AE4954 /* Headers */,
+				38C5DB451E00524F00AE4954 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AlphaService;
+			productName = AlphaService;
+			productReference = 38C5DB471E00524F00AE4954 /* AlphaService.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		5356823918F3656900BAAD62 /* UICatalog */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5356826F18F3656900BAAD62 /* Build configuration list for PBXNativeTarget "UICatalog" */;
@@ -2694,6 +2732,11 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 5356823918F3656900BAAD62;
 					};
+					38C5DB461E00524F00AE4954 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 289M6XEDV4;
+						ProvisioningStyle = Automatic;
+					};
 					5356823918F3656900BAAD62 = {
 						DevelopmentTeam = 289M6XEDV4;
 					};
@@ -2715,6 +2758,7 @@
 				5356823918F3656900BAAD62 /* UICatalog */,
 				3810F5731DFED3C3004F51B6 /* AlphaTool */,
 				38621F011DEDFABE00DE9281 /* Alpha */,
+				38C5DB461E00524F00AE4954 /* AlphaService */,
 				38621F091DEDFABE00DE9281 /* AlphaTests */,
 			);
 		};
@@ -2743,6 +2787,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		38621F081DEDFABE00DE9281 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38C5DB451E00524F00AE4954 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -3117,6 +3168,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		38C5DB421E00524F00AE4954 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5356823618F3656900BAAD62 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3264,7 +3322,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ../Alpha/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/../Alpha/Alpha-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -3293,7 +3351,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ../Alpha/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/../Alpha/Alpha-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -3342,6 +3400,61 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.unifiedsense.sdk.AlphaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UICatalog.app/UICatalog";
+			};
+			name = Release;
+		};
+		38C5DB4C1E00524F00AE4954 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 289M6XEDV4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/../Alpha/AlphaService-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.unifiedsense.sdk.AlphaService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		38C5DB4D1E00524F00AE4954 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 289M6XEDV4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/../Alpha/AlphaService-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.unifiedsense.sdk.AlphaService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -3501,6 +3614,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		38C5DB4E1E00524F00AE4954 /* Build configuration list for PBXNativeTarget "AlphaService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38C5DB4C1E00524F00AE4954 /* Debug */,
+				38C5DB4D1E00524F00AE4954 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		5356823518F3656900BAAD62 /* Build configuration list for PBXProject "Alpha" */ = {
 			isa = XCConfigurationList;
