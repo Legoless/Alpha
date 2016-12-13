@@ -1,6 +1,6 @@
 language: objective-c
 sudo: false
-osx_image: xcode8
+osx_image: xcode8.2
 script:
 - curl -fsSL https://raw.githubusercontent.com/legoless/Dominus/master/install.sh | sh
 env:
@@ -8,5 +8,5 @@ env:
   - ACTION=build
   - ACTION=test
   global:
-  - SDK=10.0
+  - SDK=10.2
   - PLATFORM='iphone'
