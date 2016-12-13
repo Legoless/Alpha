@@ -269,6 +269,7 @@
 		389CBEBA1DEE04A600D3F99C /* UIImage+Creation.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E641DC5A9EBD922381B43C /* UIImage+Creation.m */; };
 		389CBEBB1DEE04C300D3F99C /* ALPHAAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E646D40194EF6C1C8C94B9 /* ALPHAAsset.m */; };
 		389CBEBC1DEE04C500D3F99C /* ALPHAAssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E64E3EC013DFEAB611D118 /* ALPHAAssetManager.m */; };
+		38B5B7591E005CCB003A823B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B5B7581E005CCB003A823B /* AppDelegate.swift */; };
 		38C5DBAB1E00555300AE4954 /* AlertFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5DB691E00555300AE4954 /* AlertFormViewController.swift */; };
 		38C5DBAC1E00555300AE4954 /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5DB6A1E00555300AE4954 /* AlertsViewController.swift */; };
 		38C5DBAD1E00555300AE4954 /* ButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5DB6B1E00555300AE4954 /* ButtonsViewController.swift */; };
@@ -479,6 +480,7 @@
 		38921B951B34E6BB00A50DED /* ALPHAAlizarinColorPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAAlizarinColorPalette.m; sourceTree = "<group>"; };
 		38921B971B34E6DC00A50DED /* ALPHAAmethystColorPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAAmethystColorPalette.h; sourceTree = "<group>"; };
 		38921B981B34E6DC00A50DED /* ALPHAAmethystColorPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAAmethystColorPalette.m; sourceTree = "<group>"; };
+		38B5B7581E005CCB003A823B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38C5DB471E00524F00AE4954 /* AlphaService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlphaService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38C5DB4F1E00539F00AE4954 /* AlphaService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AlphaService-Info.plist"; sourceTree = "<group>"; };
 		38C5DB501E0053A600AE4954 /* Alpha-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Alpha-Info.plist"; sourceTree = "<group>"; };
@@ -1212,6 +1214,7 @@
 		38C5DB681E00555300AE4954 /* UIKitCatalog */ = {
 			isa = PBXGroup;
 			children = (
+				38B5B7581E005CCB003A823B /* AppDelegate.swift */,
 				383A3F191E00576200AD9708 /* Assets.xcassets */,
 				38C5DB691E00555300AE4954 /* AlertFormViewController.swift */,
 				38C5DB6A1E00555300AE4954 /* AlertsViewController.swift */,
@@ -3504,6 +3507,7 @@
 				38C5DBBE1E00555300AE4954 /* PageViewController.swift in Sources */,
 				38C5DBBF1E00555300AE4954 /* ProgressViewController.swift in Sources */,
 				38C5DBBD1E00555300AE4954 /* MenuTableViewController.swift in Sources */,
+				38B5B7591E005CCB003A823B /* AppDelegate.swift in Sources */,
 				38C5DBE11E00555300AE4954 /* SegmentedControlsViewController.swift in Sources */,
 				38C5DBB91E00555300AE4954 /* FocusGuidesViewController.swift in Sources */,
 				38C5DBAE1E00555300AE4954 /* CollectionViewContainerCell.swift in Sources */,
@@ -3816,6 +3820,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
 			};
 			name = Debug;
 		};
@@ -3840,6 +3845,7 @@
 				SDKROOT = appletvos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
 			};
 			name = Release;
 		};
