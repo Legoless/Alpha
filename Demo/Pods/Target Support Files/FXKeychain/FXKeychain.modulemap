@@ -1,0 +1,6 @@
+framework module FXKeychain {
+  umbrella header "FXKeychain-umbrella.h"
+
+  export *
+  module * { export * }
+}
