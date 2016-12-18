@@ -90,6 +90,14 @@ Both triggers are activated by default. Alternatively you can implement your own
 
 # Integration
 
+Alpha is separated into 2 modules:
+
+- Service
+  - Plugins
+- Interface
+
+Service module is installed into your app and executed when the application launches. Interface is launched by a trigger.
+
 To use Alpha in your project, all you need to do is add a **CocoaPods** library:
 
 ```ruby
