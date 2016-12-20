@@ -90,13 +90,17 @@ Both triggers are activated by default. Alternatively you can implement your own
 
 # Integration
 
-Alpha is separated into 2 modules:
+Alpha is separated into 2 frameworks:
 
 - Service
   - Plugins
 - Interface
 
-Service module is installed into your app and executed when the application launches. Interface is launched by a trigger.
+Service module is installed into your app and executed when the application launches. It automatically initializes plugins and starts collecting data from your application.
+
+Service framework includes Bonjour server, which can be activated by any of the available triggers.
+
+Alpha.framework includes both Service framework and interface module.
 
 To use Alpha in your project, all you need to do is add a **CocoaPods** library:
 
