@@ -192,7 +192,7 @@
 		10AFDA7D1E3339C900D74886 /* ALPHADepthIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E646BC8F753977BCE5F7E8 /* ALPHADepthIndicatorView.h */; };
 		10AFDA7E1E3339C900D74886 /* ALPHAHierarchyTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64022F4A1DE489E46C26C /* ALPHAHierarchyTableViewCell.h */; };
 		10AFDA7F1E3339C900D74886 /* ALPHAViewHierarchyPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64F750A784EE45796FBB2 /* ALPHAViewHierarchyPlugin.h */; };
-		10AFDA801E3339C900D74886 /* UIApplication+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E645FB8A7FA9241EFCA1DB /* UIApplication+Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		10AFDA801E3339C900D74886 /* UIApplication+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E645FB8A7FA9241EFCA1DB /* UIApplication+Private.h */; };
 		10AFDA811E3339C900D74886 /* ALPHAGenericConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E649A04C571D5A3C8085B9 /* ALPHAGenericConverter.h */; };
 		10AFDA821E3339C900D74886 /* ALPHAScreenManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E648C7669338CDB81D2339 /* ALPHAScreenManager.h */; };
 		10AFDA831E3339C900D74886 /* ALPHAWebRendererViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64DC2AAC3F259C2E30FAC /* ALPHAWebRendererViewController.h */; };
@@ -255,8 +255,6 @@
 		10AFDABC1E3339C900D74886 /* ALPHAFieldEditorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E644A25DFBFFA1FF5B463E /* ALPHAFieldEditorView.h */; };
 		10AFDABD1E3339C900D74886 /* ALPHASearchScopeView.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E649AA93497C42EA1BE601 /* ALPHASearchScopeView.h */; };
 		10AFDABE1E3339C900D74886 /* ALPHAMultilineTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64E68C94A7A5B49BAF0BA /* ALPHAMultilineTableViewCell.h */; };
-		10AFDAC21E33560F00D74886 /* NSObject+NSObject_copyZone.h in Headers */ = {isa = PBXBuildFile; fileRef = 10AFDAC01E33560F00D74886 /* NSObject+NSObject_copyZone.h */; };
-		10AFDAC31E33560F00D74886 /* NSObject+NSObject_copyZone.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AFDAC11E33560F00D74886 /* NSObject+NSObject_copyZone.m */; };
 		284C1D71FC9DCDC24992F833 /* Pods_UICatalog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37054DA17DB1C1270E871813 /* Pods_UICatalog.framework */; };
 		3810F66E1DFED3C3004F51B6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5356823F18F3656900BAAD62 /* CoreGraphics.framework */; };
 		3810F66F1DFED3C3004F51B6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5356824118F3656900BAAD62 /* UIKit.framework */; };
@@ -677,8 +675,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		10AFDAC01E33560F00D74886 /* NSObject+NSObject_copyZone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+NSObject_copyZone.h"; path = "Patch/NSObject+NSObject_copyZone.h"; sourceTree = "<group>"; };
-		10AFDAC11E33560F00D74886 /* NSObject+NSObject_copyZone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+NSObject_copyZone.m"; path = "Patch/NSObject+NSObject_copyZone.m"; sourceTree = "<group>"; };
 		37054DA17DB1C1270E871813 /* Pods_UICatalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UICatalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		380042661BC0238F00369725 /* ALPHAPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALPHAPermission.h; sourceTree = "<group>"; };
 		380042671BC0238F00369725 /* ALPHAPermission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALPHAPermission.m; sourceTree = "<group>"; };
@@ -1378,15 +1374,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		10AFDABF1E3355DE00D74886 /* Patch */ = {
-			isa = PBXGroup;
-			children = (
-				10AFDAC01E33560F00D74886 /* NSObject+NSObject_copyZone.h */,
-				10AFDAC11E33560F00D74886 /* NSObject+NSObject_copyZone.m */,
-			);
-			name = Patch;
-			sourceTree = "<group>";
-		};
 		380042651BC0233400369725 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1838,7 +1825,6 @@
 		67E640BD036992B1D2CEF64E /* Alpha */ = {
 			isa = PBXGroup;
 			children = (
-				10AFDABF1E3355DE00D74886 /* Patch */,
 				67E64426620AD6BF8160D76D /* Asset */,
 				38614DEC1DFEBC7B001D3209 /* Bonjour */,
 				67E6467E2FE1DCD8F014B947 /* Integration */,
@@ -3124,6 +3110,7 @@
 				10AFD9E51E3339C900D74886 /* ALPHAConverterManager.h in Headers */,
 				10AFD9E61E3339C900D74886 /* ALPHADataConverterSource.h in Headers */,
 				10AFD9E71E3339C900D74886 /* ALPHARequest.h in Headers */,
+				10AFDA801E3339C900D74886 /* UIApplication+Private.h in Headers */,
 				10AFD9E81E3339C900D74886 /* ALPHANetworkObject.h in Headers */,
 				10AFD9E91E3339C900D74886 /* ALPHAObjectIvar.h in Headers */,
 				10AFD9EA1E3339C900D74886 /* ALPHAObjectType.h in Headers */,
@@ -3259,7 +3246,6 @@
 				10AFDA6C1E3339C900D74886 /* ALPHAStatePlugin.h in Headers */,
 				10AFDA6D1E3339C900D74886 /* ALPHATouchIcon.h in Headers */,
 				10AFDA6E1E3339C900D74886 /* ALPHATouchWindow.h in Headers */,
-				10AFDAC21E33560F00D74886 /* NSObject+NSObject_copyZone.h in Headers */,
 				10AFDA6F1E3339C900D74886 /* ALPHATouchViewController.h in Headers */,
 				10AFDA701E3339C900D74886 /* ALPHATouchFingerView.h in Headers */,
 				10AFDA711E3339C900D74886 /* ALPHATouchPlugin.h in Headers */,
@@ -3277,7 +3263,6 @@
 				10AFDA7D1E3339C900D74886 /* ALPHADepthIndicatorView.h in Headers */,
 				10AFDA7E1E3339C900D74886 /* ALPHAHierarchyTableViewCell.h in Headers */,
 				10AFDA7F1E3339C900D74886 /* ALPHAViewHierarchyPlugin.h in Headers */,
-				10AFDA801E3339C900D74886 /* UIApplication+Private.h in Headers */,
 				10AFDA811E3339C900D74886 /* ALPHAGenericConverter.h in Headers */,
 				10AFDA821E3339C900D74886 /* ALPHAScreenManager.h in Headers */,
 				10AFDA831E3339C900D74886 /* ALPHAWebRendererViewController.h in Headers */,
@@ -3740,7 +3725,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				389CBDFA1DEE036B00D3F99C /* ALPHAScreenModel.m in Sources */,
-				10AFDAC31E33560F00D74886 /* NSObject+NSObject_copyZone.m in Sources */,
 				389CBE3A1DEE03D500D3F99C /* ALPHANetworkModel.m in Sources */,
 				389CBE261DEE03AF00D3F99C /* ALPHALibrarySource.m in Sources */,
 				38614E021DFEC619001D3209 /* ALPHABonjourConnection.m in Sources */,
