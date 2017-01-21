@@ -5,7 +5,7 @@
 //  Created by Dal Rupnik on 17/06/15.
 //  Copyright © 2015 Unified Sense. All rights reserved.
 //
-
+#import <UIKit/UIKit.h>
 #import "NSString+Entities.h"
 #import "NSString+Identifier.h"
 #import "UIApplication+Event.h"
