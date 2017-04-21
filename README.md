@@ -13,7 +13,7 @@
 
 **Alpha** is the idea of a next generation debugging framework for iOS applications. It combines multiple debugging tools built on top of a **simple, unified API**. It lives entirely in your application sandbox and collects information during your application lifetime. Only 1 minute is needed to integrate and requires **no code added**.
 
-Watch [presentation](https://www.youtube.com/watch?v=XlycM-37DQw) by [Dal Rupnik](https://github.com/legoless) of **Alpha** ideas at [**SwiftConf 2015**](http://objcgn.com).
+Watch [presentation](https://www.youtube.com/watch?v=XlycM-37DQw) by [Dal Rupnik](https://github.com/legoless) of **Alpha** idea at [**SwiftConf 2015**](http://objcgn.com).
 
 ***The project is work in progress and might be too unstable to be used in real environment yet. Feel free to open GitHub issues (especially Swift projects). Currently the most unstable is the Heap plugin, so it might be best to avoid using it (might be removed in the future, as it is technically impossible to know when memory is freed by the OS in an asynchronous way).***
 
