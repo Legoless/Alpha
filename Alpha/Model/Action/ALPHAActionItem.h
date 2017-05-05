@@ -17,9 +17,6 @@
 @end
 
 @interface ALPHAActionItem : ALPHAScreenItem <ALPHAIdentifiableItem>
-
-@property (nonatomic, copy) ALPHARequest* request;
-
 @property (nonatomic, getter = isEnabled) BOOL enabled;
 
 /*!
@@ -31,11 +28,16 @@
  */
 + (instancetype)itemWithIdentifier:(NSString *)identifier;
 
-- (instancetype)initWithRequest:(ALPHARequest *)request;
 
 - (instancetype)initWithIdentifier:(NSString *)identifier;
 - (instancetype)initWithIdentifier:(NSString *)identifier style:(UITableViewCellStyle)style;
 - (instancetype)initWithIdentifier:(NSString *)identifier title:(NSString *)title detail:(NSString *)detail;
 - (instancetype)initWithIdentifier:(NSString *)identifier title:(NSString *)title detail:(NSString *)detail style:(UITableViewCellStyle)style;
+
+
+#pragma mark - ALPHAIdentifiableItem
+@property (nonatomic, copy) ALPHARequest* request;
+
+- (instancetype)initWithRequest:(ALPHARequest *)request;
 
 @end

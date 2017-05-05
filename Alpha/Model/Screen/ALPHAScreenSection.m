@@ -22,6 +22,7 @@
     
     NSNumber* style = nil;
     
+    // TODO: Refactor
     for (NSString* key in dictionary)
     {
         if ([key isEqualToString:@"items"])
