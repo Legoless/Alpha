@@ -11,7 +11,7 @@
 [![Pod Platform](http://img.shields.io/cocoapods/p/Alpha.svg?style=flat)](http://cocoadocs.org/docsets/Alpha/)
 [![Pod License](http://img.shields.io/cocoapods/l/Alpha.svg?style=flat)](http://opensource.org/licenses/MIT)
 
-**Alpha** is the idea of a next generation debugging framework for iOS applications. It combines multiple debugging tools built on top of a **simple, unified API**. It lives entirely in your application sandbox and collects information during your application lifetime. Only 1 minute is needed for integration and requires **no code changes**.
+**Alpha** is the idea of a next generation debugging framework for iOS applications. It combines multiple debugging tools built on top of a **simple, unified API**. It lives entirely in your application sandbox and collects information during your application lifetime. The integration can be done in less than a minute and requires **no code changes**.
 
 Watch [presentation](https://www.youtube.com/watch?v=XlycM-37DQw) by [Dal Rupnik](https://github.com/legoless) of **Alpha** idea at [**SwiftConf 2015**](http://objcgn.com).
 
