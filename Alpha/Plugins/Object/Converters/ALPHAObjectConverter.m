@@ -107,7 +107,7 @@
    NSArray *array = [model valueForKey:property];
 
    section.headerText = [[property alpha_titleCaseForCamelCase] stringByAppendingFormat:@" (%ld)", (long)array.count];
-
+    
    for (id object in array)
    {
       ALPHAScreenItem *item = [[ALPHAScreenItem alloc] init];
@@ -145,7 +145,6 @@
       {
          item.object = object;
       }
-
       [items addObject:item];
    }
 

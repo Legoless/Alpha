@@ -337,8 +337,14 @@ const unsigned int ALPHANumberOfImplicitArgsKey = 2;
     } else if ([value isKindOfClass:[NSHashTable class]]){
         return arrayContainsValue([(NSHashTable*)value allObjects],value);
     } else if ([value isKindOfClass:[NSMapTable class]]){
-        return arrayContainsValue([(NSDictionary*)[(NSMapTable*)value dictionaryRepresentation] allValues],
-                                  value);
+        @try {
+            return arrayContainsValue([(NSDictionary*)[(NSMapTable*)value dictionaryRepresentation] allValues],
+                                      value);
+        } @catch (NSException *exception) {
+            
+        } @finally {
+            return NO;
+        }
     } else if ([value isKindOfClass:[NSPointerArray class]]){
         return arrayContainsValue([(NSPointerArray*)value allObjects],value);
     }

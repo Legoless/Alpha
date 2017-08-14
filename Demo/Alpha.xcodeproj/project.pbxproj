@@ -7,6 +7,254 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10AFD9C71E33393A00D74886 /* Alpha.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6443967640579E23C145D /* Alpha.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFD9C81E33394100D74886 /* AlphaService.h in Headers */ = {isa = PBXBuildFile; fileRef = 38C5DB511E0053AD00AE4954 /* AlphaService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFD9C91E33395000D74886 /* ALPHACore.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E649BBBE0B281ADD8977EE /* ALPHACore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFD9CA1E33395D00D74886 /* ALPHACoreAssets.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64D60762840CCCAF1A8A3 /* ALPHACoreAssets.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFD9CB1E33396700D74886 /* ALPHAManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64CDC74BBEC2EDFA4C0AE /* ALPHAManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFD9CC1E3339C800D74886 /* Nullability.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64C0D6B4B54D8E5468762 /* Nullability.h */; };
+		10AFD9CD1E3339C800D74886 /* ALPHACache.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64B3DA84A35CD83F206E7 /* ALPHACache.h */; };
+		10AFD9CE1E3339C800D74886 /* ALPHADiskCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64E0AAEB45FD33029490A /* ALPHADiskCache.h */; };
+		10AFD9CF1E3339C800D74886 /* ALPHAMemoryCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64437F45DE7D9C0771F54 /* ALPHAMemoryCache.h */; };
+		10AFD9D01E3339C800D74886 /* ALPHAAsset.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64CB6B9F85D918635824B /* ALPHAAsset.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFD9D11E3339C800D74886 /* ALPHAAssetManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64C1EA6E86512D84121DC /* ALPHAAssetManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFD9D21E3339C800D74886 /* UIImage+Creation.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E647364EB979AF37A2E6C5 /* UIImage+Creation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFD9D31E3339C800D74886 /* ALPHABonjour.h in Headers */ = {isa = PBXBuildFile; fileRef = 38614DFD1DFEBE61001D3209 /* ALPHABonjour.h */; };
+		10AFD9D41E3339C800D74886 /* UIApplication+Delegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E649F0C85F8B5E81A506C2 /* UIApplication+Delegate.h */; };
+		10AFD9D51E3339C800D74886 /* ALPHANavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64C4D203065C3AD56BDD6 /* ALPHANavigationController.h */; };
+		10AFD9D61E3339C800D74886 /* ALPHAStatusBarNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64E7CBE824A1CA8B40C75 /* ALPHAStatusBarNotification.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFD9D71E3339C900D74886 /* ALPHAWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E640E2E27D869F79D48EB4 /* ALPHAWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFD9D81E3339C900D74886 /* ALPHAActions.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64C0D69E7FC357CBFC2E3 /* ALPHAActions.h */; };
+		10AFD9D91E3339C900D74886 /* ALPHAActionItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E640805E1512804180BC7B /* ALPHAActionItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFD9DA1E3339C900D74886 /* ALPHABlockActionItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64E9BF676EECE0E6194AD /* ALPHABlockActionItem.h */; };
+		10AFD9DB1E3339C900D74886 /* ALPHAScreenActionItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64E8011012868E0602C43 /* ALPHAScreenActionItem.h */; };
+		10AFD9DC1E3339C900D74886 /* ALPHASelectorActionItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64E086CF69AE484A0938F /* ALPHASelectorActionItem.h */; };
+		10AFD9DD1E3339C900D74886 /* ALPHAGlobalActionIdentifiers.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6484BABE0FD0FB2098258 /* ALPHAGlobalActionIdentifiers.h */; };
+		10AFD9DE1E3339C900D74886 /* ALPHAModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64990B5BBD937041D44B0 /* ALPHAModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFD9DF1E3339C900D74886 /* ALPHAPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64A42DD44EBA573DB93B4 /* ALPHAPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFD9E01E3339C900D74886 /* ALPHADataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E642644C0B92F260CFDE8C /* ALPHADataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFD9E11E3339C900D74886 /* ALPHADataRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64075421392D0F8AA851F /* ALPHADataRenderer.h */; };
+		10AFD9E21E3339C900D74886 /* ALPHAGenericModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6428AFCC838EC9D781816 /* ALPHAGenericModel.h */; };
+		10AFD9E31E3339C900D74886 /* ALPHAIdentifiableItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64CA2C2BB3E7D80C5CDB7 /* ALPHAIdentifiableItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFD9E41E3339C900D74886 /* ALPHAConversion.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E642A1EC4A9D44D84843F9 /* ALPHAConversion.h */; };
+		10AFD9E51E3339C900D74886 /* ALPHAConverterManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64E7F52FD7A2DDA3D4571 /* ALPHAConverterManager.h */; };
+		10AFD9E61E3339C900D74886 /* ALPHADataConverterSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E644C8BC35BD701701167C /* ALPHADataConverterSource.h */; };
+		10AFD9E71E3339C900D74886 /* ALPHARequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64CF492729981873CE3BD /* ALPHARequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFD9E81E3339C900D74886 /* ALPHANetworkObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64F6D32A62A67426FEB2C /* ALPHANetworkObject.h */; };
+		10AFD9E91E3339C900D74886 /* ALPHAObjectIvar.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64EDC3DC8FF7D3C728985 /* ALPHAObjectIvar.h */; };
+		10AFD9EA1E3339C900D74886 /* ALPHAObjectType.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E641485698EFCE011F9A4B /* ALPHAObjectType.h */; };
+		10AFD9EB1E3339C900D74886 /* ALPHAObjectModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6474D6536F755723E166D /* ALPHAObjectModel.h */; };
+		10AFD9EC1E3339C900D74886 /* ALPHAObjectMethod.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E640A9D4E87C7BB883D836 /* ALPHAObjectMethod.h */; };
+		10AFD9ED1E3339C900D74886 /* ALPHAObjectContent.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6421A328621C36FB4C791 /* ALPHAObjectContent.h */; };
+		10AFD9EE1E3339C900D74886 /* ALPHAObjectElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E641094BB2A86CD3A1DC6D /* ALPHAObjectElement.h */; };
+		10AFD9EF1E3339C900D74886 /* ALPHAObjectArgument.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6406D8567B61148185DE4 /* ALPHAObjectArgument.h */; };
+		10AFD9F01E3339C900D74886 /* ALPHAObjectProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64D23A0E048AFB5A1BBDA /* ALPHAObjectProperty.h */; };
+		10AFD9F11E3339C900D74886 /* ALPHAObjectPrintable.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64B989738598539F40835 /* ALPHAObjectPrintable.h */; };
+		10AFD9F21E3339C900D74886 /* ALPHAObjectActionItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E642FD782A58FAF9C090FF /* ALPHAObjectActionItem.h */; };
+		10AFD9F31E3339C900D74886 /* ALPHAScreenItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64E01EF96DF20FD06F8BC /* ALPHAScreenItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFD9F41E3339C900D74886 /* ALPHAScreenModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64EFAEB1AC0D4D806364C /* ALPHAScreenModel.h */; };
+		10AFD9F51E3339C900D74886 /* ALPHAScreenSection.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6480E82C25B19C19BA816 /* ALPHAScreenSection.h */; };
+		10AFD9F61E3339C900D74886 /* ALPHATableScreenModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64FA33C8ADBAC4E4ACBC5 /* ALPHATableScreenModel.h */; };
+		10AFD9F71E3339C900D74886 /* ALPHAScreenRenderableItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64FC7D0F7F78D328EF6AE /* ALPHAScreenRenderableItem.h */; };
+		10AFD9F81E3339C900D74886 /* ALPHASerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64CC61C845F710616658B /* ALPHASerializer.h */; };
+		10AFD9F91E3339C900D74886 /* ALPHASerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E643176608F2179031A02A /* ALPHASerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFD9FA1E3339C900D74886 /* ALPHASerializableItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64682823E3D71883332C1 /* ALPHASerializableItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFD9FB1E3339C900D74886 /* ALPHALocalSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64B55D7DD2C9CC7DF1C53 /* ALPHALocalSource.h */; };
+		10AFD9FC1E3339C900D74886 /* ALPHABaseDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E647EFB828A88445F9A4FB /* ALPHABaseDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFD9FD1E3339C900D74886 /* ALPHALocalFileSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E649AF5DF0E876B94714F6 /* ALPHALocalFileSource.h */; };
+		10AFD9FE1E3339C900D74886 /* ALPHAAmethystColorPalette.h in Headers */ = {isa = PBXBuildFile; fileRef = 38921B971B34E6DC00A50DED /* ALPHAAmethystColorPalette.h */; };
+		10AFD9FF1E3339C900D74886 /* ALPHAFormenteraColorPalette.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64F6AF82C8B0461DD72C7 /* ALPHAFormenteraColorPalette.h */; };
+		10AFDA001E3339C900D74886 /* ALPHAAlizarinColorPalette.h in Headers */ = {isa = PBXBuildFile; fileRef = 38921B941B34E6BB00A50DED /* ALPHAAlizarinColorPalette.h */; };
+		10AFDA011E3339C900D74886 /* ALPHAGreenSeaColorPalette.h in Headers */ = {isa = PBXBuildFile; fileRef = 38921B911B34E64C00A50DED /* ALPHAGreenSeaColorPalette.h */; };
+		10AFDA021E3339C900D74886 /* ALPHANotioColorPalette.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6468F877E566242B7EC69 /* ALPHANotioColorPalette.h */; };
+		10AFDA031E3339C900D74886 /* ALPHAApplicationIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = FEDA7ABD1B5C2D2300BB35FD /* ALPHAApplicationIcon.h */; };
+		10AFDA041E3339C900D74886 /* LSApplicationProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = FEDA7AB91B5C1E6B00BB35FD /* LSApplicationProxy.h */; };
+		10AFDA051E3339C900D74886 /* LSApplicationWorkspace.h in Headers */ = {isa = PBXBuildFile; fileRef = FEDA7ABB1B5C257A00BB35FD /* LSApplicationWorkspace.h */; };
+		10AFDA061E3339C900D74886 /* UIImage+UIApplicationIconPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = FEDA7ABA1B5C20C100BB35FD /* UIImage+UIApplicationIconPrivate.h */; };
+		10AFDA071E3339C900D74886 /* ALPHAApplicationSource.h in Headers */ = {isa = PBXBuildFile; fileRef = FEDA7AB51B5C17D800BB35FD /* ALPHAApplicationSource.h */; };
+		10AFDA081E3339C900D74886 /* ALPHAApplicationPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = FEDA7AAE1B5C12E000BB35FD /* ALPHAApplicationPlugin.h */; };
+		10AFDA091E3339C900D74886 /* ALPHAEnvironmentIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E640E1AC1BCF87D9442866 /* ALPHAEnvironmentIcon.h */; };
+		10AFDA0A1E3339C900D74886 /* ALPHABootstrap.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E649EDDA19A124B3E9AFCC /* ALPHABootstrap.h */; };
+		10AFDA0B1E3339C900D74886 /* ALPHAEnvironmentSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64130ECD0781740A2A484 /* ALPHAEnvironmentSource.h */; };
+		10AFDA0C1E3339C900D74886 /* ALPHABootstrapPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6468BCE7F2733BF4A3565 /* ALPHABootstrapPlugin.h */; };
+		10AFDA0D1E3339C900D74886 /* ALPHAConsoleIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E646F47045CFDB5A47E61B /* ALPHAConsoleIcon.h */; };
+		10AFDA0E1E3339C900D74886 /* ALPHAConsoleConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6458E7C60149ACDF9A51E /* ALPHAConsoleConverter.h */; };
+		10AFDA0F1E3339C900D74886 /* ALPHAConsoleLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64C9C0B604AF58400567A /* ALPHAConsoleLog.h */; };
+		10AFDA101E3339C900D74886 /* ALPHAConsoleModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64C2261C71CD07AC40F5D /* ALPHAConsoleModel.h */; };
+		10AFDA111E3339C900D74886 /* ALPHAConsoleSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64C0A6CCD5D3D9335197F /* ALPHAConsoleSource.h */; };
+		10AFDA121E3339C900D74886 /* ALPHAConsolePlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64C97752CCDAAB9CCD5D8 /* ALPHAConsolePlugin.h */; };
+		10AFDA131E3339C900D74886 /* ALPHAEventIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6456221B30ABA8BFB2639 /* ALPHAEventIcon.h */; };
+		10AFDA141E3339C900D74886 /* ALPHAEventConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6460862878500881BBBCF /* ALPHAEventConverter.h */; };
+		10AFDA151E3339C900D74886 /* UIViewController+ALPHAEventLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E646691F2D61ADC4EDD34F /* UIViewController+ALPHAEventLog.h */; };
+		10AFDA161E3339C900D74886 /* ALPHAEventModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E641A7B01A704CB999D472 /* ALPHAEventModel.h */; };
+		10AFDA171E3339C900D74886 /* ALPHAApplicationEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64AB5E897367AF75AF317 /* ALPHAApplicationEvent.h */; };
+		10AFDA181E3339C900D74886 /* ALPHAEventSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64604AD362CDF14CAFC9B /* ALPHAEventSource.h */; };
+		10AFDA191E3339C900D74886 /* ALPHAEventPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64604C3B9A06968B30E15 /* ALPHAEventPlugin.h */; };
+		10AFDA1A1E3339C900D74886 /* ALPHAFileIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64C050B1D39AB7B117BC7 /* ALPHAFileIcon.h */; };
+		10AFDA1B1E3339C900D74886 /* ALPHAFileConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64B1F4E5048D604769009 /* ALPHAFileConverter.h */; };
+		10AFDA1C1E3339C900D74886 /* ALPHAFileModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64B33CCE081A426D51461 /* ALPHAFileModel.h */; };
+		10AFDA1D1E3339C900D74886 /* ALPHAFileObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64C3344D73B9B4C4FF913 /* ALPHAFileObject.h */; };
+		10AFDA1E1E3339C900D74886 /* ALPHAFileSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E649A50AD9AAC4D426B7FA /* ALPHAFileSource.h */; };
+		10AFDA1F1E3339C900D74886 /* ALPHAFilePlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64DEC7B5FE4C0E2AEAED4 /* ALPHAFilePlugin.h */; };
+		10AFDA201E3339C900D74886 /* ALPHAGlobalIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E642524B3058A56353A836 /* ALPHAGlobalIcon.h */; };
+		10AFDA211E3339C900D74886 /* ALPHAClassSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E643AFBE7A44B5AFE03579 /* ALPHAClassSource.h */; };
+		10AFDA221E3339C900D74886 /* ALPHAGlobalSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E648B3D697BA6532743429 /* ALPHAGlobalSource.h */; };
+		10AFDA231E3339C900D74886 /* ALPHALibrarySource.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64D34DD274FF9512D13FE /* ALPHALibrarySource.h */; };
+		10AFDA241E3339C900D74886 /* ALPHAGlobalPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64C8E7AFE530978428AA8 /* ALPHAGlobalPlugin.h */; };
+		10AFDA251E3339C900D74886 /* ALPHAHeapIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6444C2360CDA3EA097A38 /* ALPHAHeapIcon.h */; };
+		10AFDA261E3339C900D74886 /* ALPHAHeapSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6484DE11548D9D9D29CA0 /* ALPHAHeapSource.h */; };
+		10AFDA271E3339C900D74886 /* ALPHAHeapPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64FE5D3AAF0AC5E00EDE3 /* ALPHAHeapPlugin.h */; };
+		10AFDA281E3339C900D74886 /* ALPHAMainViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64183AC8F212EBE880453 /* ALPHAMainViewController.h */; };
+		10AFDA291E3339C900D74886 /* CGVectorAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E641B0CE9F581E85EC3C4D /* CGVectorAdditions.h */; };
+		10AFDA2A1E3339C900D74886 /* ALPHACircleMenuView.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64C6DCC64677F56487B60 /* ALPHACircleMenuView.h */; };
+		10AFDA2B1E3339C900D74886 /* ALPHAExplorerMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6409CABBA459E74D074DB /* ALPHAExplorerMenu.h */; };
+		10AFDA2C1E3339C900D74886 /* ALPHAMenuCenterView.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6455777A73E493A03A2E2 /* ALPHAMenuCenterView.h */; };
+		10AFDA2D1E3339C900D74886 /* ALPHAMenuSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64E0111C136EC0F0A32E5 /* ALPHAMenuSource.h */; };
+		10AFDA2E1E3339C900D74886 /* ALPHAInterfacePlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64170A50C22A771AD9AE8 /* ALPHAInterfacePlugin.h */; };
+		10AFDA2F1E3339C900D74886 /* ALPHAKeychainIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 38E2F70F1BBDB4E30010FC35 /* ALPHAKeychainIcon.h */; };
+		10AFDA301E3339C900D74886 /* ALPHAKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 38E2F7131BBDBAB70010FC35 /* ALPHAKeychain.h */; };
+		10AFDA311E3339C900D74886 /* ALPHAKeychainItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 38E2F71A1BBDC2320010FC35 /* ALPHAKeychainItem.h */; };
+		10AFDA321E3339C900D74886 /* ALPHAKeychainSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 38E2F7161BBDBAC20010FC35 /* ALPHAKeychainSource.h */; };
+		10AFDA331E3339C900D74886 /* ALPHAKeychainPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 38E2F70A1BBDB3940010FC35 /* ALPHAKeychainPlugin.h */; };
+		10AFDA341E3339C900D74886 /* ALPHANetworkIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E640BC409AA8F52C6A563D /* ALPHANetworkIcon.h */; };
+		10AFDA351E3339C900D74886 /* ALPHANetworkConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64EB23CD4E7BA7C517C4E /* ALPHANetworkConverter.h */; };
+		10AFDA361E3339C900D74886 /* ALPHARequestState.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6424F7236AA8D81E9AAFB /* ALPHARequestState.h */; };
+		10AFDA371E3339C900D74886 /* ALPHANetworkError.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64AC3D735C58B6E8850B7 /* ALPHANetworkError.h */; };
+		10AFDA381E3339C900D74886 /* ALPHANetworkModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E640400EE890BB45E2B7D5 /* ALPHANetworkModel.h */; };
+		10AFDA391E3339C900D74886 /* ALPHANetworkRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E646BDB7D38DF2EAAF97C5 /* ALPHANetworkRequest.h */; };
+		10AFDA3A1E3339C900D74886 /* ALPHANetworkResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64C25ACEEB0332713DCC1 /* ALPHANetworkResponse.h */; };
+		10AFDA3B1E3339C900D74886 /* ALPHANetworkInitiator.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64E98C554075456ECE7F7 /* ALPHANetworkInitiator.h */; };
+		10AFDA3C1E3339C900D74886 /* ALPHANetworkConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6430434DE04F669855F9F /* ALPHANetworkConnection.h */; };
+		10AFDA3D1E3339C900D74886 /* ALPHANetworkConnectionTiming.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64E6BF83AB51A2C8741A3 /* ALPHANetworkConnectionTiming.h */; };
+		10AFDA3E1E3339C900D74886 /* ALPHANetworkSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6475AC0294BF33337D537 /* ALPHANetworkSource.h */; };
+		10AFDA3F1E3339C900D74886 /* ALPHANetworkPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64372D0F7710F83067E55 /* ALPHANetworkPlugin.h */; };
+		10AFDA401E3339C900D74886 /* ALPHANotificationIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E645B1F74764C5568267FD /* ALPHANotificationIcon.h */; };
+		10AFDA411E3339C900D74886 /* ALPHANotificationConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64FF2E08E74238E9AD26C /* ALPHANotificationConverter.h */; };
+		10AFDA421E3339C900D74886 /* ALPHANotification.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E644B786EB24CD5F763D1D /* ALPHANotification.h */; };
+		10AFDA431E3339C900D74886 /* ALPHANotificationModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E640BA2EC9145B6193A0FA /* ALPHANotificationModel.h */; };
+		10AFDA441E3339C900D74886 /* ALPHANotificationSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64540F709E47B4B4589DB /* ALPHANotificationSource.h */; };
+		10AFDA451E3339C900D74886 /* ALPHANotificationPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64660C26EC83889FD4F3B /* ALPHANotificationPlugin.h */; };
+		10AFDA461E3339C900D74886 /* ALPHAObjectConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64BEB108EAA973B23E64A /* ALPHAObjectConverter.h */; };
+		10AFDA471E3339C900D74886 /* ALPHAInstanceSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 38E2F71D1BBDD6540010FC35 /* ALPHAInstanceSource.h */; };
+		10AFDA481E3339C900D74886 /* ALPHAObjectSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6446E1A8B9C13E4C20DAA /* ALPHAObjectSource.h */; };
+		10AFDA491E3339C900D74886 /* ALPHAObjectPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6480874C4C43499A6F427 /* ALPHAObjectPlugin.h */; };
+		10AFDA4A1E3339C900D74886 /* ALPHAPermissionIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 38DAAE4B1BBF03D30023841C /* ALPHAPermissionIcon.h */; };
+		10AFDA4B1E3339C900D74886 /* ALPHATCC.h in Headers */ = {isa = PBXBuildFile; fileRef = 38DDA2131BD43A0C004A0A0A /* ALPHATCC.h */; };
+		10AFDA4C1E3339C900D74886 /* ALPHATCCAccessManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 38DDA2101BD4294D004A0A0A /* ALPHATCCAccessManager.h */; };
+		10AFDA4D1E3339C900D74886 /* ALPHAPermissions.h in Headers */ = {isa = PBXBuildFile; fileRef = 380042851BC03B8200369725 /* ALPHAPermissions.h */; };
+		10AFDA4E1E3339C900D74886 /* ALPHAPermission.h in Headers */ = {isa = PBXBuildFile; fileRef = 380042661BC0238F00369725 /* ALPHAPermission.h */; };
+		10AFDA4F1E3339C900D74886 /* ALPHAAssetPermission.h in Headers */ = {isa = PBXBuildFile; fileRef = 3800427E1BC0258A00369725 /* ALPHAAssetPermission.h */; };
+		10AFDA501E3339C900D74886 /* ALPHAAudioPermission.h in Headers */ = {isa = PBXBuildFile; fileRef = 380042721BC0255900369725 /* ALPHAAudioPermission.h */; };
+		10AFDA511E3339C900D74886 /* ALPHABluetoothPermission.h in Headers */ = {isa = PBXBuildFile; fileRef = 380042751BC0256600369725 /* ALPHABluetoothPermission.h */; };
+		10AFDA521E3339C900D74886 /* ALPHAContactPermission.h in Headers */ = {isa = PBXBuildFile; fileRef = 3800427B1BC0257B00369725 /* ALPHAContactPermission.h */; };
+		10AFDA531E3339C900D74886 /* ALPHAEventPermission.h in Headers */ = {isa = PBXBuildFile; fileRef = 3800426F1BC0254800369725 /* ALPHAEventPermission.h */; };
+		10AFDA541E3339C900D74886 /* ALPHAHealthPermission.h in Headers */ = {isa = PBXBuildFile; fileRef = 380042691BC0252700369725 /* ALPHAHealthPermission.h */; };
+		10AFDA551E3339C900D74886 /* ALPHAHomePermission.h in Headers */ = {isa = PBXBuildFile; fileRef = 38D00BFE1BC0674F00FCCD2A /* ALPHAHomePermission.h */; };
+		10AFDA561E3339C900D74886 /* ALPHALocationPermission.h in Headers */ = {isa = PBXBuildFile; fileRef = 3800426C1BC0253300369725 /* ALPHALocationPermission.h */; };
+		10AFDA571E3339C900D74886 /* ALPHAMobileDataPermission.h in Headers */ = {isa = PBXBuildFile; fileRef = 38D00C021BC0686E00FCCD2A /* ALPHAMobileDataPermission.h */; };
+		10AFDA581E3339C900D74886 /* ALPHAMotionPermission.h in Headers */ = {isa = PBXBuildFile; fileRef = 38D00BF81BC0603100FCCD2A /* ALPHAMotionPermission.h */; };
+		10AFDA591E3339C900D74886 /* ALPHANotificationPermission.h in Headers */ = {isa = PBXBuildFile; fileRef = 38D00BFB1BC0632200FCCD2A /* ALPHANotificationPermission.h */; };
+		10AFDA5A1E3339C900D74886 /* ALPHASocialPermission.h in Headers */ = {isa = PBXBuildFile; fileRef = 380042821BC0318900369725 /* ALPHASocialPermission.h */; };
+		10AFDA5B1E3339C900D74886 /* ALPHATCCPermission.h in Headers */ = {isa = PBXBuildFile; fileRef = 38FF936A1D95AE7700108D72 /* ALPHATCCPermission.h */; };
+		10AFDA5C1E3339C900D74886 /* ALPHAVideoPermission.h in Headers */ = {isa = PBXBuildFile; fileRef = 380042781BC0257200369725 /* ALPHAVideoPermission.h */; };
+		10AFDA5D1E3339C900D74886 /* ALPHAPermissionSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 38DAAE4E1BBF03DF0023841C /* ALPHAPermissionSource.h */; };
+		10AFDA5E1E3339C900D74886 /* ALPHAPermissionPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 38DAAE481BBF03C50023841C /* ALPHAPermissionPlugin.h */; };
+		10AFDA5F1E3339C900D74886 /* ALPHABonjourConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E643FB28CBFA90543C8B86 /* ALPHABonjourConnection.h */; };
+		10AFDA601E3339C900D74886 /* ALPHABonjourSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E642EAD0AB3FAA6E9D6C6A /* ALPHABonjourSource.h */; };
+		10AFDA611E3339C900D74886 /* ALPHABonjourServerSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64BCDAFDBD346FB8D6326 /* ALPHABonjourServerSource.h */; };
+		10AFDA621E3339C900D74886 /* ALPHARemotePlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E649936E46876F2F25816E /* ALPHARemotePlugin.h */; };
+		10AFDA631E3339C900D74886 /* ALPHAScreenshotIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64669A07F282870D2FBF4 /* ALPHAScreenshotIcon.h */; };
+		10AFDA641E3339C900D74886 /* ALPHAScreenshotSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E643B378DA0B49AE568F1E /* ALPHAScreenshotSource.h */; };
+		10AFDA651E3339C900D74886 /* ALPHAScreenshotPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64505645CDB34A5EBAE67 /* ALPHAScreenshotPlugin.h */; };
+		10AFDA661E3339C900D74886 /* ALPHABonjourConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E642174BEBFA156EB4203B /* ALPHABonjourConfig.h */; };
+		10AFDA671E3339C900D74886 /* ALPHAServerNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64ECF2C9A4F565195D77F /* ALPHAServerNode.h */; };
+		10AFDA681E3339C900D74886 /* ALPHAServerPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64F13D02B8B15994ECD6A /* ALPHAServerPlugin.h */; };
+		10AFDA691E3339C900D74886 /* ALPHAStatusIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64C850E5A3252EA795E56 /* ALPHAStatusIcon.h */; };
+		10AFDA6A1E3339C900D74886 /* UIDevice+ALPHAStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64AE5AAA191801CBEA976 /* UIDevice+ALPHAStatus.h */; };
+		10AFDA6B1E3339C900D74886 /* ALPHADeviceStatusSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64CB5B3D59FB8E85CC732 /* ALPHADeviceStatusSource.h */; };
+		10AFDA6C1E3339C900D74886 /* ALPHAStatePlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64DEFCD97C55BC9E2B2DD /* ALPHAStatePlugin.h */; };
+		10AFDA6D1E3339C900D74886 /* ALPHATouchIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64A44EFFA8AB4F3F8D17F /* ALPHATouchIcon.h */; };
+		10AFDA6E1E3339C900D74886 /* ALPHATouchWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6405BBDB6CE36908B7D8F /* ALPHATouchWindow.h */; };
+		10AFDA6F1E3339C900D74886 /* ALPHATouchViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 386601511B4184A000217F85 /* ALPHATouchViewController.h */; };
+		10AFDA701E3339C900D74886 /* ALPHATouchFingerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 385A687A1BACA111000B4898 /* ALPHATouchFingerView.h */; };
+		10AFDA711E3339C900D74886 /* ALPHATouchPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E645B8C33A9FD593FCE0BC /* ALPHATouchPlugin.h */; };
+		10AFDA721E3339C900D74886 /* ALPHAMoveIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E644B290D977F3387421D7 /* ALPHAMoveIcon.h */; };
+		10AFDA731E3339C900D74886 /* ALPHAViewIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E649F73DCBFF000B8E2BDB /* ALPHAViewIcon.h */; };
+		10AFDA741E3339C900D74886 /* ALPHASelectIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E649DC226A6CE95259EC93 /* ALPHASelectIcon.h */; };
+		10AFDA751E3339C900D74886 /* ALPHAViewHierarchyConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64B005AACD1A8D80C59A1 /* ALPHAViewHierarchyConverter.h */; };
+		10AFDA761E3339C900D74886 /* ALPHAViewHierarchyViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E640011F9D73FD9EE629B8 /* ALPHAViewHierarchyViewController.h */; };
+		10AFDA771E3339C900D74886 /* ALPHAHierarchyTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64EFDC20631E7609CEA3D /* ALPHAHierarchyTableViewController.h */; };
+		10AFDA781E3339C900D74886 /* ALPHASerializableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E646985E815AF74F9861DD /* ALPHASerializableView.h */; };
+		10AFDA791E3339C900D74886 /* ALPHAViewHierarchyModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64632069FF686F834938F /* ALPHAViewHierarchyModel.h */; };
+		10AFDA7A1E3339C900D74886 /* ALPHAViewHierarchySource.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6426A83149465E64F1AFE /* ALPHAViewHierarchySource.h */; };
+		10AFDA7B1E3339C900D74886 /* ALPHAToolbarItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E648CD81012A30F350FDFE /* ALPHAToolbarItem.h */; };
+		10AFDA7C1E3339C900D74886 /* ALPHAExplorerToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64A5A21B517AB6AD48996 /* ALPHAExplorerToolbar.h */; };
+		10AFDA7D1E3339C900D74886 /* ALPHADepthIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E646BC8F753977BCE5F7E8 /* ALPHADepthIndicatorView.h */; };
+		10AFDA7E1E3339C900D74886 /* ALPHAHierarchyTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64022F4A1DE489E46C26C /* ALPHAHierarchyTableViewCell.h */; };
+		10AFDA7F1E3339C900D74886 /* ALPHAViewHierarchyPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64F750A784EE45796FBB2 /* ALPHAViewHierarchyPlugin.h */; };
+		10AFDA801E3339C900D74886 /* UIApplication+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E645FB8A7FA9241EFCA1DB /* UIApplication+Private.h */; };
+		10AFDA811E3339C900D74886 /* ALPHAGenericConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E649A04C571D5A3C8085B9 /* ALPHAGenericConverter.h */; };
+		10AFDA821E3339C900D74886 /* ALPHAScreenManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E648C7669338CDB81D2339 /* ALPHAScreenManager.h */; };
+		10AFDA831E3339C900D74886 /* ALPHAWebRendererViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64DC2AAC3F259C2E30FAC /* ALPHAWebRendererViewController.h */; };
+		10AFDA841E3339C900D74886 /* ALPHAIvarRendererViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64DC1816F19A8225C8622 /* ALPHAIvarRendererViewController.h */; };
+		10AFDA851E3339C900D74886 /* ALPHAFieldRendererViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64E90DA9C6C4B3204D7DC /* ALPHAFieldRendererViewController.h */; };
+		10AFDA861E3339C900D74886 /* ALPHAImageRendererViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6404C83875C32774520D1 /* ALPHAImageRendererViewController.h */; };
+		10AFDA871E3339C900D74886 /* ALPHATableRendererViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6495E852F70E92131FC52 /* ALPHATableRendererViewController.h */; };
+		10AFDA881E3339C900D74886 /* ALPHAMethodRendererViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64BDD00BC3273FF8008C8 /* ALPHAMethodRendererViewController.h */; };
+		10AFDA891E3339C900D74886 /* ALPHADefaultsRendererViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64E1D2FEF45115EB91E22 /* ALPHADefaultsRendererViewController.h */; };
+		10AFDA8A1E3339C900D74886 /* ALPHAPropertyRendererViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64ED15BD08AAF0D9FB974 /* ALPHAPropertyRendererViewController.h */; };
+		10AFDA8B1E3339C900D74886 /* ALPHATheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64FED946D2318F41F44B0 /* ALPHATheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFDA8C1E3339C900D74886 /* ALPHAColorPalette.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6466F952375114399E9B1 /* ALPHAColorPalette.h */; };
+		10AFDA8D1E3339C900D74886 /* UIFont+Convenience.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64BF3DFDF6594160352D0 /* UIFont+Convenience.h */; };
+		10AFDA8E1E3339C900D74886 /* UIColor+Tools.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64853E1077F1E2A9ACD78 /* UIColor+Tools.h */; };
+		10AFDA8F1E3339C900D74886 /* ALPHATrigger.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E646D9520ADC8183C5BC32 /* ALPHATrigger.h */; };
+		10AFDA901E3339C900D74886 /* ALPHATapTrigger.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E640455772D6E842D8D3C8 /* ALPHATapTrigger.h */; };
+		10AFDA911E3339C900D74886 /* ALPHAShakeTrigger.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6477E8A6C5BD68C7427AF /* ALPHAShakeTrigger.h */; };
+		10AFDA921E3339C900D74886 /* ALPHATrigger+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E644D046A0CA34DECD182E /* ALPHATrigger+Private.h */; };
+		10AFDA931E3339C900D74886 /* ALPHAApplicationDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E640B5D0B24AEE399CAD1E /* ALPHAApplicationDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFDA941E3339C900D74886 /* UIView+Snapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E642BE76014D6FB8F83D89 /* UIView+Snapshot.h */; };
+		10AFDA951E3339C900D74886 /* UIApplication+Version.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E640B3C97E5D6122F228C8 /* UIApplication+Version.h */; };
+		10AFDA961E3339C900D74886 /* UIApplication+Screenshot.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E644D19CEDE1C496345E79 /* UIApplication+Screenshot.h */; };
+		10AFDA971E3339C900D74886 /* UIApplication+Information.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64D9762CDE1911F362C46 /* UIApplication+Information.h */; };
+		10AFDA981E3339C900D74886 /* UIColor+Utility.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6400C9C911EA7D30BDD73 /* UIColor+Utility.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFDA991E3339C900D74886 /* UIDevice+DeviceInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E648CBFFA6355DED644AA8 /* UIDevice+DeviceInfo.h */; };
+		10AFDA9A1E3339C900D74886 /* UIApplication+Event.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E645A6245A1AA5B7BC4177 /* UIApplication+Event.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFDA9B1E3339C900D74886 /* UIDevice+Network.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64273B098791A0108F47A /* UIDevice+Network.h */; };
+		10AFDA9C1E3339C900D74886 /* UIDevice+Hardware.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64BD2F173F79C6956BEB1 /* UIDevice+Hardware.h */; };
+		10AFDA9D1E3339C900D74886 /* UIDevice+Software.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E647A36DECB8D618CA7881 /* UIDevice+Software.h */; };
+		10AFDA9E1E3339C900D74886 /* NSObject+Property.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64283FBC20119D5852F2A /* NSObject+Property.h */; };
+		10AFDA9F1E3339C900D74886 /* NSInvocation+Argument.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64FFDA2B5BB9190C09693 /* NSInvocation+Argument.h */; };
+		10AFDAA01E3339C900D74886 /* NSString+Identifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64EB5D30A97ECD9E43F68 /* NSString+Identifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFDAA11E3339C900D74886 /* NSString+Entities.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6449BD5D35D8B63CBB123 /* NSString+Entities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFDAA21E3339C900D74886 /* NSArray+Class.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6467EEB164A5B7762ED1C /* NSArray+Class.h */; };
+		10AFDAA31E3339C900D74886 /* NSObject+Runtime.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6495D10F625A66235327A /* NSObject+Runtime.h */; };
+		10AFDAA41E3339C900D74886 /* NSString+Data.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E641B2948A2F3A009E9701 /* NSString+Data.h */; };
+		10AFDAA51E3339C900D74886 /* NSString+Random.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64B5A68FE0387EC4908F3 /* NSString+Random.h */; };
+		10AFDAA61E3339C900D74886 /* NSObject+Swizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64684FAFB7CAF1F5CBD86 /* NSObject+Swizzle.h */; };
+		10AFDAA71E3339C900D74886 /* ALPHAUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E644D2A41A7816140B1483 /* ALPHAUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFDAA81E3339C900D74886 /* ALPHAFileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6493FB736EE1508AE067B /* ALPHAFileManager.h */; };
+		10AFDAA91E3339C900D74886 /* ALPHAMockObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64446CDE109BA9612CCC6 /* ALPHAMockObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFDAAA1E3339C900D74886 /* ALPHARuntimeUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E644B3FAA69146D609A203 /* ALPHARuntimeUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFDAAB1E3339C900D74886 /* ALPHAHeapUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E640E63F41D4DCB7CCE699 /* ALPHAHeapUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFDAAC1E3339C900D74886 /* ALPHAMath.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E648D9B29059E1A8A285E8 /* ALPHAMath.h */; };
+		10AFDAAD1E3339C900D74886 /* ALPHACanvasView.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6491C42DA4020F56380E5 /* ALPHACanvasView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFDAAE1E3339C900D74886 /* ALPHAViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64864328EEE48771DF0B8 /* ALPHAViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AFDAAF1E3339C900D74886 /* ALPHAArgumentInputView.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6469073643CD636065C50 /* ALPHAArgumentInputView.h */; };
+		10AFDAB01E3339C900D74886 /* ALPHAArgumentInputDateView.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E641B37B0F9C79DC258202 /* ALPHAArgumentInputDateView.h */; };
+		10AFDAB11E3339C900D74886 /* ALPHAArgumentInputFontView.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64C2CA0C894A217474256 /* ALPHAArgumentInputFontView.h */; };
+		10AFDAB21E3339C900D74886 /* ALPHAArgumentInputTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64A983ACED0317E4AFC50 /* ALPHAArgumentInputTextView.h */; };
+		10AFDAB31E3339C900D74886 /* ALPHAArgumentInputColorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64A917D27C9CFEA936B44 /* ALPHAArgumentInputColorView.h */; };
+		10AFDAB41E3339C900D74886 /* ALPHAArgumentInputNumberView.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6499F002EEF3FB310F2A7 /* ALPHAArgumentInputNumberView.h */; };
+		10AFDAB51E3339C900D74886 /* ALPHAArgumentInputStringView.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64D7EDDAF14420A825AD6 /* ALPHAArgumentInputStringView.h */; };
+		10AFDAB61E3339C900D74886 /* ALPHAArgumentInputStructView.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64547887BA7D6E5C0203C /* ALPHAArgumentInputStructView.h */; };
+		10AFDAB71E3339C900D74886 /* ALPHAArgumentInputSwitchView.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64775C8E9A06AEEF7A31D /* ALPHAArgumentInputSwitchView.h */; };
+		10AFDAB81E3339C900D74886 /* ALPHAArgumentInputViewFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64000B0F34244CAD0E108 /* ALPHAArgumentInputViewFactory.h */; };
+		10AFDAB91E3339C900D74886 /* ALPHAArgumentInputJSONObjectView.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64023E1B5F44874F8BC18 /* ALPHAArgumentInputJSONObjectView.h */; };
+		10AFDABA1E3339C900D74886 /* ALPHAArgumentInputFontsPickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64363980083CFD095ABE4 /* ALPHAArgumentInputFontsPickerView.h */; };
+		10AFDABB1E3339C900D74886 /* ALPHAArgumentInputNotSupportedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64F026594D79228721F65 /* ALPHAArgumentInputNotSupportedView.h */; };
+		10AFDABC1E3339C900D74886 /* ALPHAFieldEditorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E644A25DFBFFA1FF5B463E /* ALPHAFieldEditorView.h */; };
+		10AFDABD1E3339C900D74886 /* ALPHASearchScopeView.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E649AA93497C42EA1BE601 /* ALPHASearchScopeView.h */; };
+		10AFDABE1E3339C900D74886 /* ALPHAMultilineTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E64E68C94A7A5B49BAF0BA /* ALPHAMultilineTableViewCell.h */; };
 		284C1D71FC9DCDC24992F833 /* Pods_UICatalog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37054DA17DB1C1270E871813 /* Pods_UICatalog.framework */; };
 		3810F66E1DFED3C3004F51B6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5356823F18F3656900BAAD62 /* CoreGraphics.framework */; };
 		3810F66F1DFED3C3004F51B6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5356824118F3656900BAAD62 /* UIKit.framework */; };
@@ -2830,10 +3078,257 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10AFD9CA1E33395D00D74886 /* ALPHACoreAssets.h in Headers */,
+				10AFD9C91E33395000D74886 /* ALPHACore.h in Headers */,
+				10AFD9C71E33393A00D74886 /* Alpha.h in Headers */,
 				38614DF71DFEBD34001D3209 /* ALPHABonjourServer.h in Headers */,
+				10AFD9CC1E3339C800D74886 /* Nullability.h in Headers */,
+				10AFD9CD1E3339C800D74886 /* ALPHACache.h in Headers */,
+				10AFD9CE1E3339C800D74886 /* ALPHADiskCache.h in Headers */,
+				10AFD9CF1E3339C800D74886 /* ALPHAMemoryCache.h in Headers */,
+				10AFD9D01E3339C800D74886 /* ALPHAAsset.h in Headers */,
+				10AFD9D11E3339C800D74886 /* ALPHAAssetManager.h in Headers */,
+				10AFD9D21E3339C800D74886 /* UIImage+Creation.h in Headers */,
+				10AFD9D31E3339C800D74886 /* ALPHABonjour.h in Headers */,
+				10AFD9D41E3339C800D74886 /* UIApplication+Delegate.h in Headers */,
+				10AFD9D51E3339C800D74886 /* ALPHANavigationController.h in Headers */,
+				10AFD9D61E3339C800D74886 /* ALPHAStatusBarNotification.h in Headers */,
+				10AFD9D71E3339C900D74886 /* ALPHAWindow.h in Headers */,
+				10AFD9D81E3339C900D74886 /* ALPHAActions.h in Headers */,
+				10AFD9D91E3339C900D74886 /* ALPHAActionItem.h in Headers */,
+				10AFD9DA1E3339C900D74886 /* ALPHABlockActionItem.h in Headers */,
+				10AFD9DB1E3339C900D74886 /* ALPHAScreenActionItem.h in Headers */,
+				10AFD9DC1E3339C900D74886 /* ALPHASelectorActionItem.h in Headers */,
+				10AFD9DD1E3339C900D74886 /* ALPHAGlobalActionIdentifiers.h in Headers */,
+				10AFD9DE1E3339C900D74886 /* ALPHAModel.h in Headers */,
+				10AFD9DF1E3339C900D74886 /* ALPHAPlugin.h in Headers */,
+				10AFD9E01E3339C900D74886 /* ALPHADataSource.h in Headers */,
+				10AFD9E11E3339C900D74886 /* ALPHADataRenderer.h in Headers */,
+				10AFD9E21E3339C900D74886 /* ALPHAGenericModel.h in Headers */,
+				10AFD9E31E3339C900D74886 /* ALPHAIdentifiableItem.h in Headers */,
+				10AFD9E41E3339C900D74886 /* ALPHAConversion.h in Headers */,
+				10AFD9E51E3339C900D74886 /* ALPHAConverterManager.h in Headers */,
+				10AFD9E61E3339C900D74886 /* ALPHADataConverterSource.h in Headers */,
+				10AFD9E71E3339C900D74886 /* ALPHARequest.h in Headers */,
+				10AFDA801E3339C900D74886 /* UIApplication+Private.h in Headers */,
+				10AFD9E81E3339C900D74886 /* ALPHANetworkObject.h in Headers */,
+				10AFD9E91E3339C900D74886 /* ALPHAObjectIvar.h in Headers */,
+				10AFD9EA1E3339C900D74886 /* ALPHAObjectType.h in Headers */,
+				10AFD9EB1E3339C900D74886 /* ALPHAObjectModel.h in Headers */,
+				10AFD9EC1E3339C900D74886 /* ALPHAObjectMethod.h in Headers */,
+				10AFD9ED1E3339C900D74886 /* ALPHAObjectContent.h in Headers */,
+				10AFD9EE1E3339C900D74886 /* ALPHAObjectElement.h in Headers */,
+				10AFD9EF1E3339C900D74886 /* ALPHAObjectArgument.h in Headers */,
+				10AFD9F01E3339C900D74886 /* ALPHAObjectProperty.h in Headers */,
+				10AFD9F11E3339C900D74886 /* ALPHAObjectPrintable.h in Headers */,
+				10AFD9F21E3339C900D74886 /* ALPHAObjectActionItem.h in Headers */,
+				10AFD9F31E3339C900D74886 /* ALPHAScreenItem.h in Headers */,
+				10AFD9F41E3339C900D74886 /* ALPHAScreenModel.h in Headers */,
+				10AFD9F51E3339C900D74886 /* ALPHAScreenSection.h in Headers */,
+				10AFD9F61E3339C900D74886 /* ALPHATableScreenModel.h in Headers */,
+				10AFD9F71E3339C900D74886 /* ALPHAScreenRenderableItem.h in Headers */,
+				10AFD9F81E3339C900D74886 /* ALPHASerializer.h in Headers */,
+				10AFD9F91E3339C900D74886 /* ALPHASerialization.h in Headers */,
+				10AFD9FA1E3339C900D74886 /* ALPHASerializableItem.h in Headers */,
+				10AFD9FB1E3339C900D74886 /* ALPHALocalSource.h in Headers */,
+				10AFD9FC1E3339C900D74886 /* ALPHABaseDataSource.h in Headers */,
+				10AFD9FD1E3339C900D74886 /* ALPHALocalFileSource.h in Headers */,
+				10AFD9FE1E3339C900D74886 /* ALPHAAmethystColorPalette.h in Headers */,
+				10AFD9FF1E3339C900D74886 /* ALPHAFormenteraColorPalette.h in Headers */,
+				10AFDA001E3339C900D74886 /* ALPHAAlizarinColorPalette.h in Headers */,
+				10AFDA011E3339C900D74886 /* ALPHAGreenSeaColorPalette.h in Headers */,
+				10AFDA021E3339C900D74886 /* ALPHANotioColorPalette.h in Headers */,
+				10AFDA031E3339C900D74886 /* ALPHAApplicationIcon.h in Headers */,
+				10AFDA041E3339C900D74886 /* LSApplicationProxy.h in Headers */,
+				10AFDA051E3339C900D74886 /* LSApplicationWorkspace.h in Headers */,
+				10AFDA061E3339C900D74886 /* UIImage+UIApplicationIconPrivate.h in Headers */,
+				10AFDA071E3339C900D74886 /* ALPHAApplicationSource.h in Headers */,
+				10AFDA081E3339C900D74886 /* ALPHAApplicationPlugin.h in Headers */,
+				10AFDA091E3339C900D74886 /* ALPHAEnvironmentIcon.h in Headers */,
+				10AFDA0A1E3339C900D74886 /* ALPHABootstrap.h in Headers */,
+				10AFDA0B1E3339C900D74886 /* ALPHAEnvironmentSource.h in Headers */,
+				10AFDA0C1E3339C900D74886 /* ALPHABootstrapPlugin.h in Headers */,
+				10AFDA0D1E3339C900D74886 /* ALPHAConsoleIcon.h in Headers */,
+				10AFDA0E1E3339C900D74886 /* ALPHAConsoleConverter.h in Headers */,
+				10AFDA0F1E3339C900D74886 /* ALPHAConsoleLog.h in Headers */,
+				10AFDA101E3339C900D74886 /* ALPHAConsoleModel.h in Headers */,
+				10AFDA111E3339C900D74886 /* ALPHAConsoleSource.h in Headers */,
+				10AFDA121E3339C900D74886 /* ALPHAConsolePlugin.h in Headers */,
+				10AFDA131E3339C900D74886 /* ALPHAEventIcon.h in Headers */,
+				10AFDA141E3339C900D74886 /* ALPHAEventConverter.h in Headers */,
+				10AFDA151E3339C900D74886 /* UIViewController+ALPHAEventLog.h in Headers */,
+				10AFDA161E3339C900D74886 /* ALPHAEventModel.h in Headers */,
+				10AFDA171E3339C900D74886 /* ALPHAApplicationEvent.h in Headers */,
+				10AFDA181E3339C900D74886 /* ALPHAEventSource.h in Headers */,
+				10AFDA191E3339C900D74886 /* ALPHAEventPlugin.h in Headers */,
+				10AFDA1A1E3339C900D74886 /* ALPHAFileIcon.h in Headers */,
+				10AFDA1B1E3339C900D74886 /* ALPHAFileConverter.h in Headers */,
+				10AFDA1C1E3339C900D74886 /* ALPHAFileModel.h in Headers */,
+				10AFDA1D1E3339C900D74886 /* ALPHAFileObject.h in Headers */,
+				10AFDA1E1E3339C900D74886 /* ALPHAFileSource.h in Headers */,
+				10AFDA1F1E3339C900D74886 /* ALPHAFilePlugin.h in Headers */,
+				10AFDA201E3339C900D74886 /* ALPHAGlobalIcon.h in Headers */,
+				10AFDA211E3339C900D74886 /* ALPHAClassSource.h in Headers */,
+				10AFDA221E3339C900D74886 /* ALPHAGlobalSource.h in Headers */,
+				10AFDA231E3339C900D74886 /* ALPHALibrarySource.h in Headers */,
+				10AFDA241E3339C900D74886 /* ALPHAGlobalPlugin.h in Headers */,
+				10AFDA251E3339C900D74886 /* ALPHAHeapIcon.h in Headers */,
+				10AFDA261E3339C900D74886 /* ALPHAHeapSource.h in Headers */,
+				10AFDA271E3339C900D74886 /* ALPHAHeapPlugin.h in Headers */,
+				10AFDA281E3339C900D74886 /* ALPHAMainViewController.h in Headers */,
+				10AFDA291E3339C900D74886 /* CGVectorAdditions.h in Headers */,
+				10AFDA2A1E3339C900D74886 /* ALPHACircleMenuView.h in Headers */,
+				10AFDA2B1E3339C900D74886 /* ALPHAExplorerMenu.h in Headers */,
+				10AFDA2C1E3339C900D74886 /* ALPHAMenuCenterView.h in Headers */,
+				10AFDA2D1E3339C900D74886 /* ALPHAMenuSource.h in Headers */,
+				10AFDA2E1E3339C900D74886 /* ALPHAInterfacePlugin.h in Headers */,
+				10AFDA2F1E3339C900D74886 /* ALPHAKeychainIcon.h in Headers */,
+				10AFDA301E3339C900D74886 /* ALPHAKeychain.h in Headers */,
+				10AFDA311E3339C900D74886 /* ALPHAKeychainItem.h in Headers */,
+				10AFDA321E3339C900D74886 /* ALPHAKeychainSource.h in Headers */,
+				10AFDA331E3339C900D74886 /* ALPHAKeychainPlugin.h in Headers */,
+				10AFDA341E3339C900D74886 /* ALPHANetworkIcon.h in Headers */,
+				10AFDA351E3339C900D74886 /* ALPHANetworkConverter.h in Headers */,
+				10AFDA361E3339C900D74886 /* ALPHARequestState.h in Headers */,
+				10AFDA371E3339C900D74886 /* ALPHANetworkError.h in Headers */,
+				10AFDA381E3339C900D74886 /* ALPHANetworkModel.h in Headers */,
+				10AFDA391E3339C900D74886 /* ALPHANetworkRequest.h in Headers */,
+				10AFDA3A1E3339C900D74886 /* ALPHANetworkResponse.h in Headers */,
+				10AFDA3B1E3339C900D74886 /* ALPHANetworkInitiator.h in Headers */,
+				10AFDA3C1E3339C900D74886 /* ALPHANetworkConnection.h in Headers */,
+				10AFDA3D1E3339C900D74886 /* ALPHANetworkConnectionTiming.h in Headers */,
+				10AFDA3E1E3339C900D74886 /* ALPHANetworkSource.h in Headers */,
+				10AFDA3F1E3339C900D74886 /* ALPHANetworkPlugin.h in Headers */,
+				10AFDA401E3339C900D74886 /* ALPHANotificationIcon.h in Headers */,
+				10AFDA411E3339C900D74886 /* ALPHANotificationConverter.h in Headers */,
+				10AFDA421E3339C900D74886 /* ALPHANotification.h in Headers */,
+				10AFDA431E3339C900D74886 /* ALPHANotificationModel.h in Headers */,
+				10AFDA441E3339C900D74886 /* ALPHANotificationSource.h in Headers */,
+				10AFDA451E3339C900D74886 /* ALPHANotificationPlugin.h in Headers */,
+				10AFDA461E3339C900D74886 /* ALPHAObjectConverter.h in Headers */,
+				10AFDA471E3339C900D74886 /* ALPHAInstanceSource.h in Headers */,
+				10AFDA481E3339C900D74886 /* ALPHAObjectSource.h in Headers */,
+				10AFDA491E3339C900D74886 /* ALPHAObjectPlugin.h in Headers */,
+				10AFDA4A1E3339C900D74886 /* ALPHAPermissionIcon.h in Headers */,
+				10AFDA4B1E3339C900D74886 /* ALPHATCC.h in Headers */,
+				10AFDA4C1E3339C900D74886 /* ALPHATCCAccessManager.h in Headers */,
+				10AFDA4D1E3339C900D74886 /* ALPHAPermissions.h in Headers */,
+				10AFDA4E1E3339C900D74886 /* ALPHAPermission.h in Headers */,
+				10AFDA4F1E3339C900D74886 /* ALPHAAssetPermission.h in Headers */,
+				10AFDA501E3339C900D74886 /* ALPHAAudioPermission.h in Headers */,
+				10AFDA511E3339C900D74886 /* ALPHABluetoothPermission.h in Headers */,
+				10AFDA521E3339C900D74886 /* ALPHAContactPermission.h in Headers */,
+				10AFDA531E3339C900D74886 /* ALPHAEventPermission.h in Headers */,
+				10AFDA541E3339C900D74886 /* ALPHAHealthPermission.h in Headers */,
+				10AFDA551E3339C900D74886 /* ALPHAHomePermission.h in Headers */,
+				10AFDA561E3339C900D74886 /* ALPHALocationPermission.h in Headers */,
+				10AFDA571E3339C900D74886 /* ALPHAMobileDataPermission.h in Headers */,
+				10AFDA581E3339C900D74886 /* ALPHAMotionPermission.h in Headers */,
+				10AFDA591E3339C900D74886 /* ALPHANotificationPermission.h in Headers */,
+				10AFDA5A1E3339C900D74886 /* ALPHASocialPermission.h in Headers */,
+				10AFDA5B1E3339C900D74886 /* ALPHATCCPermission.h in Headers */,
+				10AFDA5C1E3339C900D74886 /* ALPHAVideoPermission.h in Headers */,
+				10AFDA5D1E3339C900D74886 /* ALPHAPermissionSource.h in Headers */,
+				10AFDA5E1E3339C900D74886 /* ALPHAPermissionPlugin.h in Headers */,
+				10AFDA5F1E3339C900D74886 /* ALPHABonjourConnection.h in Headers */,
+				10AFDA601E3339C900D74886 /* ALPHABonjourSource.h in Headers */,
+				10AFDA611E3339C900D74886 /* ALPHABonjourServerSource.h in Headers */,
+				10AFDA621E3339C900D74886 /* ALPHARemotePlugin.h in Headers */,
+				10AFDA631E3339C900D74886 /* ALPHAScreenshotIcon.h in Headers */,
+				10AFDA641E3339C900D74886 /* ALPHAScreenshotSource.h in Headers */,
+				10AFDA651E3339C900D74886 /* ALPHAScreenshotPlugin.h in Headers */,
+				10AFDA661E3339C900D74886 /* ALPHABonjourConfig.h in Headers */,
+				10AFDA671E3339C900D74886 /* ALPHAServerNode.h in Headers */,
+				10AFDA681E3339C900D74886 /* ALPHAServerPlugin.h in Headers */,
+				10AFDA691E3339C900D74886 /* ALPHAStatusIcon.h in Headers */,
+				10AFDA6A1E3339C900D74886 /* UIDevice+ALPHAStatus.h in Headers */,
+				10AFDA6B1E3339C900D74886 /* ALPHADeviceStatusSource.h in Headers */,
+				10AFDA6C1E3339C900D74886 /* ALPHAStatePlugin.h in Headers */,
+				10AFDA6D1E3339C900D74886 /* ALPHATouchIcon.h in Headers */,
+				10AFDA6E1E3339C900D74886 /* ALPHATouchWindow.h in Headers */,
+				10AFDA6F1E3339C900D74886 /* ALPHATouchViewController.h in Headers */,
+				10AFDA701E3339C900D74886 /* ALPHATouchFingerView.h in Headers */,
+				10AFDA711E3339C900D74886 /* ALPHATouchPlugin.h in Headers */,
+				10AFDA721E3339C900D74886 /* ALPHAMoveIcon.h in Headers */,
+				10AFDA731E3339C900D74886 /* ALPHAViewIcon.h in Headers */,
+				10AFDA741E3339C900D74886 /* ALPHASelectIcon.h in Headers */,
+				10AFDA751E3339C900D74886 /* ALPHAViewHierarchyConverter.h in Headers */,
+				10AFDA761E3339C900D74886 /* ALPHAViewHierarchyViewController.h in Headers */,
+				10AFDA771E3339C900D74886 /* ALPHAHierarchyTableViewController.h in Headers */,
+				10AFDA781E3339C900D74886 /* ALPHASerializableView.h in Headers */,
+				10AFDA791E3339C900D74886 /* ALPHAViewHierarchyModel.h in Headers */,
+				10AFDA7A1E3339C900D74886 /* ALPHAViewHierarchySource.h in Headers */,
+				10AFDA7B1E3339C900D74886 /* ALPHAToolbarItem.h in Headers */,
+				10AFDA7C1E3339C900D74886 /* ALPHAExplorerToolbar.h in Headers */,
+				10AFDA7D1E3339C900D74886 /* ALPHADepthIndicatorView.h in Headers */,
+				10AFDA7E1E3339C900D74886 /* ALPHAHierarchyTableViewCell.h in Headers */,
+				10AFDA7F1E3339C900D74886 /* ALPHAViewHierarchyPlugin.h in Headers */,
+				10AFDA811E3339C900D74886 /* ALPHAGenericConverter.h in Headers */,
+				10AFDA821E3339C900D74886 /* ALPHAScreenManager.h in Headers */,
+				10AFDA831E3339C900D74886 /* ALPHAWebRendererViewController.h in Headers */,
+				10AFDA841E3339C900D74886 /* ALPHAIvarRendererViewController.h in Headers */,
+				10AFDA851E3339C900D74886 /* ALPHAFieldRendererViewController.h in Headers */,
+				10AFDA861E3339C900D74886 /* ALPHAImageRendererViewController.h in Headers */,
+				10AFDA871E3339C900D74886 /* ALPHATableRendererViewController.h in Headers */,
+				10AFDA881E3339C900D74886 /* ALPHAMethodRendererViewController.h in Headers */,
+				10AFDA891E3339C900D74886 /* ALPHADefaultsRendererViewController.h in Headers */,
+				10AFDA8A1E3339C900D74886 /* ALPHAPropertyRendererViewController.h in Headers */,
+				10AFDA8B1E3339C900D74886 /* ALPHATheme.h in Headers */,
+				10AFDA8C1E3339C900D74886 /* ALPHAColorPalette.h in Headers */,
+				10AFDA8D1E3339C900D74886 /* UIFont+Convenience.h in Headers */,
+				10AFDA8E1E3339C900D74886 /* UIColor+Tools.h in Headers */,
+				10AFDA8F1E3339C900D74886 /* ALPHATrigger.h in Headers */,
+				10AFDA901E3339C900D74886 /* ALPHATapTrigger.h in Headers */,
+				10AFDA911E3339C900D74886 /* ALPHAShakeTrigger.h in Headers */,
+				10AFDA921E3339C900D74886 /* ALPHATrigger+Private.h in Headers */,
+				10AFDA931E3339C900D74886 /* ALPHAApplicationDelegate.h in Headers */,
+				10AFDA941E3339C900D74886 /* UIView+Snapshot.h in Headers */,
+				10AFDA951E3339C900D74886 /* UIApplication+Version.h in Headers */,
+				10AFDA961E3339C900D74886 /* UIApplication+Screenshot.h in Headers */,
+				10AFDA971E3339C900D74886 /* UIApplication+Information.h in Headers */,
+				10AFDA981E3339C900D74886 /* UIColor+Utility.h in Headers */,
+				10AFDA991E3339C900D74886 /* UIDevice+DeviceInfo.h in Headers */,
+				10AFDA9A1E3339C900D74886 /* UIApplication+Event.h in Headers */,
+				10AFDA9B1E3339C900D74886 /* UIDevice+Network.h in Headers */,
+				10AFDA9C1E3339C900D74886 /* UIDevice+Hardware.h in Headers */,
+				10AFDA9D1E3339C900D74886 /* UIDevice+Software.h in Headers */,
+				10AFDA9E1E3339C900D74886 /* NSObject+Property.h in Headers */,
+				10AFDA9F1E3339C900D74886 /* NSInvocation+Argument.h in Headers */,
+				10AFDAA01E3339C900D74886 /* NSString+Identifier.h in Headers */,
+				10AFDAA21E3339C900D74886 /* NSArray+Class.h in Headers */,
+				10AFDAA31E3339C900D74886 /* NSObject+Runtime.h in Headers */,
+				10AFDAA41E3339C900D74886 /* NSString+Data.h in Headers */,
+				10AFDAA51E3339C900D74886 /* NSString+Random.h in Headers */,
+				10AFDAA61E3339C900D74886 /* NSObject+Swizzle.h in Headers */,
+				10AFDAA71E3339C900D74886 /* ALPHAUtility.h in Headers */,
+				10AFDAA81E3339C900D74886 /* ALPHAFileManager.h in Headers */,
+				10AFDAA91E3339C900D74886 /* ALPHAMockObject.h in Headers */,
+				10AFDAAA1E3339C900D74886 /* ALPHARuntimeUtility.h in Headers */,
+				10AFDAAB1E3339C900D74886 /* ALPHAHeapUtility.h in Headers */,
+				10AFDAAC1E3339C900D74886 /* ALPHAMath.h in Headers */,
+				10AFDAAD1E3339C900D74886 /* ALPHACanvasView.h in Headers */,
+				10AFDAAE1E3339C900D74886 /* ALPHAViewController.h in Headers */,
+				10AFDAAF1E3339C900D74886 /* ALPHAArgumentInputView.h in Headers */,
+				10AFDAB01E3339C900D74886 /* ALPHAArgumentInputDateView.h in Headers */,
+				10AFDAB11E3339C900D74886 /* ALPHAArgumentInputFontView.h in Headers */,
+				10AFDAB21E3339C900D74886 /* ALPHAArgumentInputTextView.h in Headers */,
+				10AFDAB31E3339C900D74886 /* ALPHAArgumentInputColorView.h in Headers */,
+				10AFDAB41E3339C900D74886 /* ALPHAArgumentInputNumberView.h in Headers */,
+				10AFDAB51E3339C900D74886 /* ALPHAArgumentInputStringView.h in Headers */,
+				10AFDAB61E3339C900D74886 /* ALPHAArgumentInputStructView.h in Headers */,
+				10AFDAB71E3339C900D74886 /* ALPHAArgumentInputSwitchView.h in Headers */,
+				10AFDAB81E3339C900D74886 /* ALPHAArgumentInputViewFactory.h in Headers */,
+				10AFDAB91E3339C900D74886 /* ALPHAArgumentInputJSONObjectView.h in Headers */,
+				10AFDABA1E3339C900D74886 /* ALPHAArgumentInputFontsPickerView.h in Headers */,
+				10AFDABB1E3339C900D74886 /* ALPHAArgumentInputNotSupportedView.h in Headers */,
+				10AFDABC1E3339C900D74886 /* ALPHAFieldEditorView.h in Headers */,
+				10AFDABD1E3339C900D74886 /* ALPHASearchScopeView.h in Headers */,
+				10AFDABE1E3339C900D74886 /* ALPHAMultilineTableViewCell.h in Headers */,
 				38614DEF1DFEBCEB001D3209 /* ALPHABonjourDataChunk.h in Headers */,
 				38614DFB1DFEBD45001D3209 /* NSScanner+Bonjour.h in Headers */,
 				38614DF31DFEBCFB001D3209 /* ALPHABonjourDataConnection.h in Headers */,
+				10AFDAA11E3339C900D74886 /* NSString+Entities.h in Headers */,
+				10AFD9CB1E33396700D74886 /* ALPHAManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2841,6 +3336,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10AFD9C81E33394100D74886 /* AlphaService.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2975,11 +3471,11 @@
 				ORGANIZATIONNAME = "Unified Sense";
 				TargetAttributes = {
 					3810F5731DFED3C3004F51B6 = {
-						DevelopmentTeam = 289M6XEDV4;
+						DevelopmentTeam = NR6298RRHY;
 					};
 					38621F011DEDFABE00DE9281 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 289M6XEDV4;
+						DevelopmentTeam = NR6298RRHY;
 						ProvisioningStyle = Automatic;
 					};
 					38621F091DEDFABE00DE9281 = {
@@ -2990,7 +3486,7 @@
 					};
 					38C5DB461E00524F00AE4954 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 289M6XEDV4;
+						DevelopmentTeam = NR6298RRHY;
 						ProvisioningStyle = Automatic;
 					};
 					38C5DB551E00552C00AE4954 = {
@@ -2999,7 +3495,7 @@
 						ProvisioningStyle = Automatic;
 					};
 					5356823918F3656900BAAD62 = {
-						DevelopmentTeam = 289M6XEDV4;
+						DevelopmentTeam = NR6298RRHY;
 					};
 				};
 			};
@@ -3612,7 +4108,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 289M6XEDV4;
+				DEVELOPMENT_TEAM = NR6298RRHY;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UICatalog/UICatalog-Prefix.pch";
@@ -3634,7 +4130,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 289M6XEDV4;
+				DEVELOPMENT_TEAM = NR6298RRHY;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UICatalog/UICatalog-Prefix.pch";
@@ -3659,13 +4155,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 289M6XEDV4;
+				DEVELOPMENT_TEAM = NR6298RRHY;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/../Alpha/Alpha-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.unifiedsense.sdk.Alpha;
@@ -3688,13 +4184,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 289M6XEDV4;
+				DEVELOPMENT_TEAM = NR6298RRHY;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/../Alpha/Alpha-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.unifiedsense.sdk.Alpha;
@@ -3754,7 +4250,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 289M6XEDV4;
+				DEVELOPMENT_TEAM = NR6298RRHY;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3782,7 +4278,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 289M6XEDV4;
+				DEVELOPMENT_TEAM = NR6298RRHY;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3940,7 +4436,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 289M6XEDV4;
+				DEVELOPMENT_TEAM = NR6298RRHY;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UICatalog/UICatalog-Prefix.pch";
@@ -3962,7 +4458,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 289M6XEDV4;
+				DEVELOPMENT_TEAM = NR6298RRHY;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UICatalog/UICatalog-Prefix.pch";
